@@ -1,6 +1,8 @@
 # TODO:
 ## Pre-Hardmode
 ### Tier 1
+
+
 ### Tier 2
 ### Tier 3
 ### Tier 4
@@ -38,6 +40,6 @@
 >> Sword
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTk4OTUxNzM2NCwtMTE4NzczNjUxLDgzOD
-c5OTk2LDEzNDgyNjU1NzZdfQ==
+eyJoaXN0b3J5IjpbLTE0Njg4NTEwNTYsLTExODc3MzY1MSw4Mz
+g3OTk5NiwxMzQ4MjY1NTc2XX0=
 -->
