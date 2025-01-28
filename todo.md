@@ -9,8 +9,13 @@
 >Raw Ore Block
 >Ore Block
 >Ingot/Gem
->
+> Armor
+> Tools
+>> Pickaxe
+>> Axe
+>> Hammer?
+>Wea
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTM0ODI2NTU3Nl19
+eyJoaXN0b3J5IjpbMjk0OTE4MTI3LDEzNDgyNjU1NzZdfQ==
 -->
