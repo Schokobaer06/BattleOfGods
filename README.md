@@ -1,5 +1,6 @@
 # BattleOfGods
 ## Status
+This mod is **experimental** and in an **early alpha stage.
 
 ## Description
 Minecraft Mod based on [*Terraria*](https://terraria.org/) and its mods:
@@ -27,7 +28,7 @@ Minecraft Mod based on [*Terraria*](https://terraria.org/) and its mods:
 ### Structures
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjkzMDI5MzIxLDk1MTA4NjY2MywxNzg5NT
-A1MDg3LDEwNTA4MTU2OTcsMTA1MDgxNTY5NywtMTg5NjQzMzQx
-OSwxNjA2MDgyMzM0LC0xODE2NDI2NDU1XX0=
+eyJoaXN0b3J5IjpbLTgxOTE1NDI2NSw5NTEwODY2NjMsMTc4OT
+UwNTA4NywxMDUwODE1Njk3LDEwNTA4MTU2OTcsLTE4OTY0MzM0
+MTksMTYwNjA4MjMzNCwtMTgxNjQyNjQ1NV19
 -->
