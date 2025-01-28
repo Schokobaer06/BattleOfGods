@@ -4,7 +4,7 @@
 ![tier1-img](img/tiers_template/tier1.png)
 
 ### Tier 2
-![tier2-img](img/tiers_template/tier1.png)
+
 ### Tier 3
 ### Tier 4
 ## Hardmode
@@ -41,6 +41,6 @@
 >> Sword
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQ2NjAxMjQ3MSwtMTQ2ODg1MTA1NiwtMT
-E4NzczNjUxLDgzODc5OTk2LDEzNDgyNjU1NzZdfQ==
+eyJoaXN0b3J5IjpbODY5MzUzNzg2LC0xNDY4ODUxMDU2LC0xMT
+g3NzM2NTEsODM4Nzk5OTYsMTM0ODI2NTU3Nl19
 -->
