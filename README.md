@@ -16,7 +16,9 @@ Minecraft Mod based on [*Terraria*](https://terraria.org/) and its mods:
 ## Mobs
 ## Bosses
 ## Biomes
+## Events
+## Structures
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTM1NTY0OTY4LC0xODk2NDMzNDE5LDE2MD
-YwODIzMzQsLTE4MTY0MjY0NTVdfQ==
+eyJoaXN0b3J5IjpbMTA1MDgxNTY5NywtMTg5NjQzMzQxOSwxNj
+A2MDgyMzM0LC0xODE2NDI2NDU1XX0=
 -->
