@@ -1,6 +1,9 @@
 1.20.1 Changelog
 47.3
 ====
+ - 47.3.27 Fix incorrect method reference in TntBlock.explode()
+ - 47.3.26 Fix issues in VillagerTrades.EmeraldsForVillagerTypeItem related to custom Villager Types (#10315)
+           Add VillagerType#registerBiomeType
  - 47.3.25 Add `clientSideOnly` feature to mods.toml (#10085) (backport of #9804 to 1.20.1)
            Co-authored-by: Jonathing <me@jonathing.me>
  - 47.3.24 Fix non-passengers being tickable without checking canUpdate() (#10304)
