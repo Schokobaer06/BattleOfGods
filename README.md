@@ -1,4 +1,5 @@
 # BattleOfGods
+## Status
 
 ## Description
 Minecraft Mod based on [*Terraria*](https://terraria.org/) and its mods:
@@ -25,10 +26,8 @@ Minecraft Mod based on [*Terraria*](https://terraria.org/) and its mods:
 
 ### Structures
 
-## Status
-
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDc0MjE4MTA3LDk1MTA4NjY2MywxNzg5NT
+eyJoaXN0b3J5IjpbNjkzMDI5MzIxLDk1MTA4NjY2MywxNzg5NT
 A1MDg3LDEwNTA4MTU2OTcsMTA1MDgxNTY5NywtMTg5NjQzMzQx
 OSwxNjA2MDgyMzM0LC0xODE2NDI2NDU1XX0=
 -->
