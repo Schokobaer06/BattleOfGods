@@ -2,8 +2,9 @@
 
 ## Description
 
-Minecraft Mod based on Terraria and its mods
+Minecraft Mod based on [*Terraria*](https://terraria.org/) and its mods:
 
+ - 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjg5NDk0OTEwLC0xODE2NDI2NDU1XX0=
+eyJoaXN0b3J5IjpbLTIyMDkyMzM4MiwtMTgxNjQyNjQ1NV19
 -->
