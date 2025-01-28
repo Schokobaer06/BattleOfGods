@@ -74,6 +74,7 @@ Minecraft Mod based on [*Terraria*](https://terraria.org/) and its mods:
 </div>
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTA1MDgxNTY5NywxMDUwODE1Njk3LC0xOD
-k2NDMzNDE5LDE2MDYwODIzMzQsLTE4MTY0MjY0NTVdfQ==
+eyJoaXN0b3J5IjpbLTE3NTc2OTc4ODUsMTA1MDgxNTY5NywxMD
+UwODE1Njk3LC0xODk2NDMzNDE5LDE2MDYwODIzMzQsLTE4MTY0
+MjY0NTVdfQ==
 -->
