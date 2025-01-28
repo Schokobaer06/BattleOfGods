@@ -11,11 +11,12 @@ Minecraft Mod based on [*Terraria*](https://terraria.org/) and its mods:
  - [*Thorium Mod*](https://steamcommunity.com/sharedfiles/filedetails/?id=2909886416&searchtext=thorium)
 
 ## Progression
-## Bosses
 ## Classes
 ## Weapons
-## Environment
+## Mobs
+## Bosses
+## Biomes
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDcxMzYxMDg5LC0xODk2NDMzNDE5LDE2MD
+eyJoaXN0b3J5IjpbLTM1NTY0OTY4LC0xODk2NDMzNDE5LDE2MD
 YwODIzMzQsLTE4MTY0MjY0NTVdfQ==
 -->
