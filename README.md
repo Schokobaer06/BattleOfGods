@@ -1,11 +1,7 @@
 # BattleOfGods
 ## Status
 This mod is **experimental** and in an **early alpha stage**.
->### TODO:
->Starter Bag
->> Copper/Tin Ore
->> Copper/Tin Ore Shortsword
->>
+
 ## Description
 Minecraft Mod based on [*Terraria*](https://terraria.org/) and its mods:
 
@@ -34,8 +30,8 @@ Minecraft Mod based on [*Terraria*](https://terraria.org/) and its mods:
 ### Structures
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTg5ODk5MTc0NiwxMjkxNjEyNjQ0LC0zMz
-MxNjAwNzEsLTEzMzU2NDE5NDUsOTUxMDg2NjYzLDE3ODk1MDUw
-ODcsMTA1MDgxNTY5NywxMDUwODE1Njk3LC0xODk2NDMzNDE5LD
-E2MDYwODIzMzQsLTE4MTY0MjY0NTVdfQ==
+eyJoaXN0b3J5IjpbLTMzMzE2MDA3MSwxODk4OTkxNzQ2LDEyOT
+E2MTI2NDQsLTMzMzE2MDA3MSwtMTMzNTY0MTk0NSw5NTEwODY2
+NjMsMTc4OTUwNTA4NywxMDUwODE1Njk3LDEwNTA4MTU2OTcsLT
+E4OTY0MzM0MTksMTYwNjA4MjMzNCwtMTgxNjQyNjQ1NV19
 -->
