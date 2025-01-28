@@ -9,9 +9,7 @@ Minecraft Mod based on [*Terraria*](https://terraria.org/) and its mods:
  - [*Fargo's Souls Mod*](https://steamcommunity.com/sharedfiles/filedetails/?id=2815540735&searchtext=Fargo)
  - [*Fargo's Souls Mod DLC*](https://steamcommunity.com/sharedfiles/filedetails/?id=3044249615)
  - [*Thorium Mod*](https://steamcommunity.com/sharedfiles/filedetails/?id=2909886416&searchtext=thorium)
- - [**]()
- - [**]()
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTI3NjgwOTU5NywtMTg5NjQzMzQxOSwxNj
-A2MDgyMzM0LC0xODE2NDI2NDU1XX0=
+eyJoaXN0b3J5IjpbLTEwOTQwNjY0OTMsLTE4OTY0MzM0MTksMT
+YwNjA4MjMzNCwtMTgxNjQyNjQ1NV19
 -->
