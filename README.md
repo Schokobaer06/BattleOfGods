@@ -9,7 +9,13 @@ Minecraft Mod based on [*Terraria*](https://terraria.org/) and its mods:
  - [*Fargo's Souls Mod*](https://steamcommunity.com/sharedfiles/filedetails/?id=2815540735&searchtext=Fargo)
  - [*Fargo's Souls Mod DLC*](https://steamcommunity.com/sharedfiles/filedetails/?id=3044249615)
  - [*Thorium Mod*](https://steamcommunity.com/sharedfiles/filedetails/?id=2909886416&searchtext=thorium)
+
+## Progression
+## Bosses
+## Classes
+## Weapons
+## En
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwOTQwNjY0OTMsLTE4OTY0MzM0MTksMT
+eyJoaXN0b3J5IjpbLTE5OTEwODE3NjksLTE4OTY0MzM0MTksMT
 YwNjA4MjMzNCwtMTgxNjQyNjQ1NV19
 -->
