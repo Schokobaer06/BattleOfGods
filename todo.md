@@ -1,7 +1,7 @@
 # TODO:
 ## Pre-Hardmode
 ### Tier 1
-
+![tier 1](img/tiers_template/tier1.png)
 
 ### Tier 2
 ### Tier 3
@@ -40,6 +40,6 @@
 >> Sword
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0Njg4NTEwNTYsLTExODc3MzY1MSw4Mz
-g3OTk5NiwxMzQ4MjY1NTc2XX0=
+eyJoaXN0b3J5IjpbLTczNzUzNDQsLTE0Njg4NTEwNTYsLTExOD
+c3MzY1MSw4Mzg3OTk5NiwxMzQ4MjY1NTc2XX0=
 -->
