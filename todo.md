@@ -14,6 +14,8 @@
 ## Post MoonLord
 ### Tier 11
 ### Tier 12
+### Tier 13
+### Tier 14
 
 
 >Starter Bag
@@ -36,6 +38,6 @@
 >> Sword
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTEzOTc4NTU4OSwtMTE4NzczNjUxLDgzOD
+eyJoaXN0b3J5IjpbMTk4OTUxNzM2NCwtMTE4NzczNjUxLDgzOD
 c5OTk2LDEzNDgyNjU1NzZdfQ==
 -->
