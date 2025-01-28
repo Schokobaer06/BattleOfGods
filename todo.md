@@ -1,8 +1,11 @@
 # TODO:
+## Tier 1
+
 >Starter Bag
 >> Copper/Tin Ore
 >> Copper/Tin Ore Shortsword
 >>
+
 
 ### Setup for new Ore:
 >Raw Ore item
@@ -18,5 +21,6 @@
 >> Sword
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODM4Nzk5OTYsMTM0ODI2NTU3Nl19
+eyJoaXN0b3J5IjpbLTExODc3MzY1MSw4Mzg3OTk5NiwxMzQ4Mj
+Y1NTc2XX0=
 -->
