@@ -1,20 +1,8 @@
-<style>
-.fancy-box {
-    border: 2px solid #4CAF50; /* Grün als Rahmenfarbe */
-    border-radius: 10px;       /* Abgerundete Ecken */
-    #background-color: #f9f9f9; /* Heller Hintergrund */
-    padding: 10px;             /* Innenabstand */
-    margin: 10px 0;            /* Abstand zu anderen Inhalten */
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1); /* Schatteneffekt */
-}
-</style>
-
 # BattleOfGods
 
 
 
 ## Description
-<div class="fancy-box">
 Minecraft Mod based on [*Terraria*](https://terraria.org/) and its mods:
 
 - [*Calamity Mod*](https://steamcommunity.com/sharedfiles/filedetails/?id=2824688072&searchtext=calamity)
@@ -28,11 +16,8 @@ Minecraft Mod based on [*Terraria*](https://terraria.org/) and its mods:
 
 
 ## Progression
-<div class="fancy-box">
-</div>
 
 ## Description
-<div class="fancy-box">
 Minecraft Mod based on [*Terraria*](https://terraria.org/) and its mods:
 
  - [*Calamity Mod*](https://steamcommunity.com/sharedfiles/filedetails/?id=2824688072&searchtext=calamity)
@@ -40,41 +25,27 @@ Minecraft Mod based on [*Terraria*](https://terraria.org/) and its mods:
  - [*Fargo's Souls Mod*](https://steamcommunity.com/sharedfiles/filedetails/?id=2815540735&searchtext=Fargo)
  - [*Fargo's Souls Mod DLC*](https://steamcommunity.com/sharedfiles/filedetails/?id=3044249615)
  - [*Thorium Mod*](https://steamcommunity.com/sharedfiles/filedetails/?id=2909886416&searchtext=thorium)
-</div>
+
 ## Progression
-<div class="fancy-box">
-</div>
 
 ## Classes
 <div class="fancy-box">
 </div>
 
 ## Weapons
-<div class="fancy-box">
-</div>
 
 ## Mobs
-<div class="fancy-box">
-</div>
 
 ## Bosses
-<div class="fancy-box">
-</div>
 
 ## Biomes
-<div class="fancy-box">
-</div>
 
 ## Events
-<div class="fancy-box">
-</div>
 
 ## Structures
-<div class="fancy-box">
-</div>
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3NTc2OTc4ODUsMTA1MDgxNTY5NywxMD
-UwODE1Njk3LC0xODk2NDMzNDE5LDE2MDYwODIzMzQsLTE4MTY0
-MjY0NTVdfQ==
+eyJoaXN0b3J5IjpbLTQ3NDQ2MDM5OSwxMDUwODE1Njk3LDEwNT
+A4MTU2OTcsLTE4OTY0MzM0MTksMTYwNjA4MjMzNCwtMTgxNjQy
+NjQ1NV19
 -->
