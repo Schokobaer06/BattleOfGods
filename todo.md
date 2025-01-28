@@ -14,8 +14,9 @@
 >> Pickaxe
 >> Axe
 >> Hammer?
->Wea
+>Weapons
+>> Sword
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjk0OTE4MTI3LDEzNDgyNjU1NzZdfQ==
+eyJoaXN0b3J5IjpbODM4Nzk5OTYsMTM0ODI2NTU3Nl19
 -->
