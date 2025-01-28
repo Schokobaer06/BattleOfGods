@@ -14,8 +14,8 @@ Minecraft Mod based on [*Terraria*](https://terraria.org/) and its mods:
 ## Bosses
 ## Classes
 ## Weapons
-## En
+## Environment
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5OTEwODE3NjksLTE4OTY0MzM0MTksMT
-YwNjA4MjMzNCwtMTgxNjQyNjQ1NV19
+eyJoaXN0b3J5IjpbNDcxMzYxMDg5LC0xODk2NDMzNDE5LDE2MD
+YwODIzMzQsLTE4MTY0MjY0NTVdfQ==
 -->
