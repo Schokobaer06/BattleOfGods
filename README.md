@@ -4,7 +4,7 @@ This mod is **experimental** and in an **early alpha stage**.
 >### TODO:
 >Starter Bag
 >> Copper/Tin Ore
->> shortsword
+>> Copper/Tin Ore Shortsword
 >>
 ## Description
 Minecraft Mod based on [*Terraria*](https://terraria.org/) and its mods:
@@ -34,7 +34,7 @@ Minecraft Mod based on [*Terraria*](https://terraria.org/) and its mods:
 ### Structures
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTgzNTczOTYzNywxMjkxNjEyNjQ0LC0zMz
+eyJoaXN0b3J5IjpbMTg5ODk5MTc0NiwxMjkxNjEyNjQ0LC0zMz
 MxNjAwNzEsLTEzMzU2NDE5NDUsOTUxMDg2NjYzLDE3ODk1MDUw
 ODcsMTA1MDgxNTY5NywxMDUwODE1Njk3LC0xODk2NDMzNDE5LD
 E2MDYwODIzMzQsLTE4MTY0MjY0NTVdfQ==
