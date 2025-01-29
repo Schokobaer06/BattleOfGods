@@ -28,7 +28,8 @@ Ingot
 		 - [ ] Amethyst Staff
 		 - [ ] Lore
 		 - [ ] Chest
-		 - [ ]  
+		 - [ ]  Potions
+			 - [ ] 
  - [ ] Trojan Squirrel
  - [ ] Grand Thunder Bird
  - [ ] King Slime
@@ -74,7 +75,7 @@ Ingot
 >> Sword
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzUyNDM2ODg2LDY2ODI2OTE1MywtNzU3OT
-E4OTcsLTk2NjcxMTY1OSwtMjEyODY5Mzg3NiwtMTQ2ODg1MTA1
-NiwtMTE4NzczNjUxLDgzODc5OTk2LDEzNDgyNjU1NzZdfQ==
+eyJoaXN0b3J5IjpbMTQ3NzMzNzcxNyw2NjgyNjkxNTMsLTc1Nz
+kxODk3LC05NjY3MTE2NTksLTIxMjg2OTM4NzYsLTE0Njg4NTEw
+NTYsLTExODc3MzY1MSw4Mzg3OTk5NiwxMzQ4MjY1NTc2XX0=
 -->
