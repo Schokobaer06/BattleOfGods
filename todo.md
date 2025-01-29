@@ -19,7 +19,15 @@ Ingot
 
  - [ ] Start
 	 - [ ] Starter Bag
-		 - [ ] 
+		 - [ ] Copper/Tin:
+			 - [ ] Shortsword
+			 - [ ] Pickaxe
+			 - [ ] Axe
+			 - [ ] Broadsword
+			 - [ ] Bow
+		 - [ ] Amethyst Staff
+		 - [ ] Lore
+		 - [ ]  
  - [ ] Trojan Squirrel
  - [ ] Grand Thunder Bird
  - [ ] King Slime
@@ -65,7 +73,7 @@ Ingot
 >> Sword
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjY4MjY5MTUzLC03NTc5MTg5NywtOTY2Nz
-ExNjU5LC0yMTI4NjkzODc2LC0xNDY4ODUxMDU2LC0xMTg3NzM2
-NTEsODM4Nzk5OTYsMTM0ODI2NTU3Nl19
+eyJoaXN0b3J5IjpbLTE3MTI4NjUzMTQsNjY4MjY5MTUzLC03NT
+c5MTg5NywtOTY2NzExNjU5LC0yMTI4NjkzODc2LC0xNDY4ODUx
+MDU2LC0xMTg3NzM2NTEsODM4Nzk5OTYsMTM0ODI2NTU3Nl19
 -->
