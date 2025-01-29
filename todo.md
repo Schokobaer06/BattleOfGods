@@ -24,6 +24,9 @@ Ingot
 		 - [ ] Copper Pickaxe
 		 - [ ] Copper Axe
 		 - [ ] Guidebook
+	 - [ ] Mobs
+		 - [ ] Slime
+		 - [ ] 
  - [ ] Trojan Squirrel
  - [ ] Grand Thunder Bird
  - [ ] King Slime
@@ -69,7 +72,7 @@ Ingot
 >> Sword
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTY2NTUyNTg2NCwtNTU4NzQyNjUyLC04Nj
+eyJoaXN0b3J5IjpbMTk5MDgyODQwMiwtNTU4NzQyNjUyLC04Nj
 Y1Nzk4NTksLTUxNTAzODUyMSwxNDc3MzM3NzE3LDY2ODI2OTE1
 MywtNzU3OTE4OTcsLTk2NjcxMTY1OSwtMjEyODY5Mzg3NiwtMT
 Q2ODg1MTA1NiwtMTE4NzczNjUxLDgzODc5OTk2LDEzNDgyNjU1
