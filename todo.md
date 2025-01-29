@@ -26,7 +26,7 @@ Ingot
 		 - [ ] Guidebook
 	 - [ ] Mobs
 		 - [ ] Slime
-		 - [ ] 
+		 - [ ]  
  - [ ] Trojan Squirrel
  - [ ] Grand Thunder Bird
  - [ ] King Slime
@@ -72,9 +72,9 @@ Ingot
 >> Sword
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTk5MDgyODQwMiwtNTU4NzQyNjUyLC04Nj
-Y1Nzk4NTksLTUxNTAzODUyMSwxNDc3MzM3NzE3LDY2ODI2OTE1
-MywtNzU3OTE4OTcsLTk2NjcxMTY1OSwtMjEyODY5Mzg3NiwtMT
-Q2ODg1MTA1NiwtMTE4NzczNjUxLDgzODc5OTk2LDEzNDgyNjU1
-NzZdfQ==
+eyJoaXN0b3J5IjpbMTIwNDMwNTU4LDE5OTA4Mjg0MDIsLTU1OD
+c0MjY1MiwtODY2NTc5ODU5LC01MTUwMzg1MjEsMTQ3NzMzNzcx
+Nyw2NjgyNjkxNTMsLTc1NzkxODk3LC05NjY3MTE2NTksLTIxMj
+g2OTM4NzYsLTE0Njg4NTEwNTYsLTExODc3MzY1MSw4Mzg3OTk5
+NiwxMzQ4MjY1NTc2XX0=
 -->
