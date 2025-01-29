@@ -1,4 +1,8 @@
 # TODO:
+## Layouts
+### Ore
+
+
 ## Pre-Hardmode
 ### Tier 1
 ![tier1-img](img/tiers_template/tier1.png)
@@ -51,7 +55,7 @@
 >> Sword
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTk2NjcxMTY1OSwtMjEyODY5Mzg3NiwtMT
-Q2ODg1MTA1NiwtMTE4NzczNjUxLDgzODc5OTk2LDEzNDgyNjU1
-NzZdfQ==
+eyJoaXN0b3J5IjpbNjgzOTI2MjE5LC05NjY3MTE2NTksLTIxMj
+g2OTM4NzYsLTE0Njg4NTEwNTYsLTExODc3MzY1MSw4Mzg3OTk5
+NiwxMzQ4MjY1NTc2XX0=
 -->
