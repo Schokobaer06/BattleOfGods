@@ -18,19 +18,11 @@ Ingot
 ![tier1-img](img/tiers_template/tier1.png)
 
  - [ ] Start
-	 - [ ] Starter Bag
-		 - [ ] Copper/Tin:
-			 - [ ] Shortsword
-			 - [ ] Pickaxe
-			 - [ ] Axe
-			 - [ ] Broadsword
-			 - [ ] Bow
-		 - [ ] Amethyst Staff
-		 - [ ] Lore
-		 - [ ] Chest
-		 - [ ]  Potions
-			 - [ ] Resistance
-			 -  [ ] 
+	 - [ ] Starter Items
+		 - [ ] Copper Shortsword
+		 - [ ] Copper Bow
+		 - [ ] Copper Pickaxe
+		 - [ ] Copper Axe
  - [ ] Trojan Squirrel
  - [ ] Grand Thunder Bird
  - [ ] King Slime
@@ -76,8 +68,8 @@ Ingot
 >> Sword
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTg2NjU3OTg1OSwtNTE1MDM4NTIxLDE0Nz
-czMzc3MTcsNjY4MjY5MTUzLC03NTc5MTg5NywtOTY2NzExNjU5
-LC0yMTI4NjkzODc2LC0xNDY4ODUxMDU2LC0xMTg3NzM2NTEsOD
-M4Nzk5OTYsMTM0ODI2NTU3Nl19
+eyJoaXN0b3J5IjpbLTU1ODc0MjY1MiwtODY2NTc5ODU5LC01MT
+UwMzg1MjEsMTQ3NzMzNzcxNyw2NjgyNjkxNTMsLTc1NzkxODk3
+LC05NjY3MTE2NTksLTIxMjg2OTM4NzYsLTE0Njg4NTEwNTYsLT
+ExODc3MzY1MSw4Mzg3OTk5NiwxMzQ4MjY1NTc2XX0=
 -->
