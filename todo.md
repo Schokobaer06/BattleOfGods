@@ -3,6 +3,16 @@
 ### Tier 1
 ![tier1-img](img/tiers_template/tier1.png)
 
+ - [ ] Start
+	 - [ ] Starter Bag
+		 - [ ] 
+ - [ ] Trojan Squirrel
+ - [ ] Grand Thunder Bird
+ - [ ] King Slime
+ - [ ] The Torch God
+ - [ ] Desert Scourge
+ - [ ] Giant Clam
+ - [ ] Eye of Cthulu
 
 ### Tier 2
 ### Tier 3
@@ -41,7 +51,7 @@
 >> Sword
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzk4MDQwOTU0LC0yMTI4NjkzODc2LC0xND
-Y4ODUxMDU2LC0xMTg3NzM2NTEsODM4Nzk5OTYsMTM0ODI2NTU3
-Nl19
+eyJoaXN0b3J5IjpbLTk2NjcxMTY1OSwtMjEyODY5Mzg3NiwtMT
+Q2ODg1MTA1NiwtMTE4NzczNjUxLDgzODc5OTk2LDEzNDgyNjU1
+NzZdfQ==
 -->
