@@ -29,7 +29,8 @@ Ingot
 		 - [ ] Lore
 		 - [ ] Chest
 		 - [ ]  Potions
-			 - [R ] 
+			 - [ ] Resistance
+			 -  [ ] 
  - [ ] Trojan Squirrel
  - [ ] Grand Thunder Bird
  - [ ] King Slime
@@ -75,8 +76,8 @@ Ingot
 >> Sword
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTUxNTAzODUyMSwxNDc3MzM3NzE3LDY2OD
-I2OTE1MywtNzU3OTE4OTcsLTk2NjcxMTY1OSwtMjEyODY5Mzg3
-NiwtMTQ2ODg1MTA1NiwtMTE4NzczNjUxLDgzODc5OTk2LDEzND
-gyNjU1NzZdfQ==
+eyJoaXN0b3J5IjpbLTg2NjU3OTg1OSwtNTE1MDM4NTIxLDE0Nz
+czMzc3MTcsNjY4MjY5MTUzLC03NTc5MTg5NywtOTY2NzExNjU5
+LC0yMTI4NjkzODc2LC0xNDY4ODUxMDU2LC0xMTg3NzM2NTEsOD
+M4Nzk5OTYsMTM0ODI2NTU3Nl19
 -->
