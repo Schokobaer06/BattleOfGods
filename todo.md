@@ -27,6 +27,7 @@ Ingot
 			 - [ ] Bow
 		 - [ ] Amethyst Staff
 		 - [ ] Lore
+		 - [ ] Chest
 		 - [ ]  
  - [ ] Trojan Squirrel
  - [ ] Grand Thunder Bird
@@ -73,7 +74,7 @@ Ingot
 >> Sword
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3MTI4NjUzMTQsNjY4MjY5MTUzLC03NT
-c5MTg5NywtOTY2NzExNjU5LC0yMTI4NjkzODc2LC0xNDY4ODUx
-MDU2LC0xMTg3NzM2NTEsODM4Nzk5OTYsMTM0ODI2NTU3Nl19
+eyJoaXN0b3J5IjpbMzUyNDM2ODg2LDY2ODI2OTE1MywtNzU3OT
+E4OTcsLTk2NjcxMTY1OSwtMjEyODY5Mzg3NiwtMTQ2ODg1MTA1
+NiwtMTE4NzczNjUxLDgzODc5OTk2LDEzNDgyNjU1NzZdfQ==
 -->
