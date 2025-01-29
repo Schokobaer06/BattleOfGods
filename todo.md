@@ -9,7 +9,12 @@ Ingot
 >Weapon/Tools
 >>Sword
 >>Pickaxe
->>
+>>Waraxe/Drill/Repeater/etc.
+>Armor
+>>Head
+>>Body
+>>Leggings
+>>Boots
 
 ## Pre-Hardmode
 ### Tier 1
@@ -63,7 +68,7 @@ Ingot
 >> Sword
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTIwMzMwMTksLTk2NjcxMTY1OSwtMjEyOD
-Y5Mzg3NiwtMTQ2ODg1MTA1NiwtMTE4NzczNjUxLDgzODc5OTk2
-LDEzNDgyNjU1NzZdfQ==
+eyJoaXN0b3J5IjpbLTc1NzkxODk3LC05NjY3MTE2NTksLTIxMj
+g2OTM4NzYsLTE0Njg4NTEwNTYsLTExODc3MzY1MSw4Mzg3OTk5
+NiwxMzQ4MjY1NTc2XX0=
 -->
