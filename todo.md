@@ -1,7 +1,15 @@
 # TODO:
 ## Layouts
 ### Ore
-
+Ingot
+>Raw Ore Item
+>Raw Ore Block
+>Ore Block
+>Ingot Block
+>Weapon/Tools
+>>Sword
+>>Pickaxe
+>>
 
 ## Pre-Hardmode
 ### Tier 1
@@ -55,7 +63,7 @@
 >> Sword
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjgzOTI2MjE5LC05NjY3MTE2NTksLTIxMj
-g2OTM4NzYsLTE0Njg4NTEwNTYsLTExODc3MzY1MSw4Mzg3OTk5
-NiwxMzQ4MjY1NTc2XX0=
+eyJoaXN0b3J5IjpbOTIwMzMwMTksLTk2NjcxMTY1OSwtMjEyOD
+Y5Mzg3NiwtMTQ2ODg1MTA1NiwtMTE4NzczNjUxLDgzODc5OTk2
+LDEzNDgyNjU1NzZdfQ==
 -->
