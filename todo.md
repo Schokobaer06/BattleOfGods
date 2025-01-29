@@ -7,9 +7,6 @@ Ingot
 >Ore Block
 >Ingot Block
 >Weapon/Tools
->>Sword
->>Pickaxe
->>Waraxe/Drill/Repeater/etc.
 >Armor
 >>Head
 >>Body
@@ -68,7 +65,7 @@ Ingot
 >> Sword
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTc1NzkxODk3LC05NjY3MTE2NTksLTIxMj
-g2OTM4NzYsLTE0Njg4NTEwNTYsLTExODc3MzY1MSw4Mzg3OTk5
-NiwxMzQ4MjY1NTc2XX0=
+eyJoaXN0b3J5IjpbNjY4MjY5MTUzLC03NTc5MTg5NywtOTY2Nz
+ExNjU5LC0yMTI4NjkzODc2LC0xNDY4ODUxMDU2LC0xMTg3NzM2
+NTEsODM4Nzk5OTYsMTM0ODI2NTU3Nl19
 -->
