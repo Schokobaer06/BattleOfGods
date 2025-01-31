@@ -27,7 +27,8 @@ Ingot
 		 - [ ] Guidebook &#8594; with [Patchouli](https://github.com/VazkiiMods/Patchouli) ([Guide](https://vazkiimods.github.io/Patchouli/docs/patchouli-basics/getting-started/))
 		 - [ ] Amethyst Staff
 	- [ ] Environment
-		- [ ] Copper Ores  
+		- [ ] Copper Ore
+		- [ ] Tin Ore 
 		- [ ] Amethyst
 		- [ ] Topaz
 	 - [ ] Mobs
@@ -35,6 +36,8 @@ Ingot
 		 - [ ]  Squirrel
 		 - [ ] Guide?
 	 - [ ] Items
+		 - [ ] Tin Weapons & Tools
+		 - [ ] Copper Weapons & Tools
 		 - [ ] 
  - [ ] Trojan Squirrel
  - [ ] Grand Thunder Bird
@@ -81,9 +84,9 @@ Ingot
 >> Sword
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExNjc0NDEzMzAsMTIwNDMwNTU4LDE5OT
-A4Mjg0MDIsLTU1ODc0MjY1MiwtODY2NTc5ODU5LC01MTUwMzg1
-MjEsMTQ3NzMzNzcxNyw2NjgyNjkxNTMsLTc1NzkxODk3LC05Nj
-Y3MTE2NTksLTIxMjg2OTM4NzYsLTE0Njg4NTEwNTYsLTExODc3
-MzY1MSw4Mzg3OTk5NiwxMzQ4MjY1NTc2XX0=
+eyJoaXN0b3J5IjpbODYyMjk5NjcxLC0xMTY3NDQxMzMwLDEyMD
+QzMDU1OCwxOTkwODI4NDAyLC01NTg3NDI2NTIsLTg2NjU3OTg1
+OSwtNTE1MDM4NTIxLDE0NzczMzc3MTcsNjY4MjY5MTUzLC03NT
+c5MTg5NywtOTY2NzExNjU5LC0yMTI4NjkzODc2LC0xNDY4ODUx
+MDU2LC0xMTg3NzM2NTEsODM4Nzk5OTYsMTM0ODI2NTU3Nl19
 -->
