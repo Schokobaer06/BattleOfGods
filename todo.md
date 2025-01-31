@@ -23,7 +23,7 @@ Ingot
 		 - [ ] Copper Bow
 		 - [ ] Copper Pickaxe
 		 - [ ] Copper Axe
-		 - [ ] Guidebook
+		 - [ ] Guidebook &#8594; &#974;
 	 - [ ] Mobs
 		 - [ ] Slime
 		 - [ ]  
@@ -72,9 +72,9 @@ Ingot
 >> Sword
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTIwNDMwNTU4LDE5OTA4Mjg0MDIsLTU1OD
-c0MjY1MiwtODY2NTc5ODU5LC01MTUwMzg1MjEsMTQ3NzMzNzcx
-Nyw2NjgyNjkxNTMsLTc1NzkxODk3LC05NjY3MTE2NTksLTIxMj
-g2OTM4NzYsLTE0Njg4NTEwNTYsLTExODc3MzY1MSw4Mzg3OTk5
-NiwxMzQ4MjY1NTc2XX0=
+eyJoaXN0b3J5IjpbLTI0MzQ0MDkwMiwxMjA0MzA1NTgsMTk5MD
+gyODQwMiwtNTU4NzQyNjUyLC04NjY1Nzk4NTksLTUxNTAzODUy
+MSwxNDc3MzM3NzE3LDY2ODI2OTE1MywtNzU3OTE4OTcsLTk2Nj
+cxMTY1OSwtMjEyODY5Mzg3NiwtMTQ2ODg1MTA1NiwtMTE4Nzcz
+NjUxLDgzODc5OTk2LDEzNDgyNjU1NzZdfQ==
 -->
