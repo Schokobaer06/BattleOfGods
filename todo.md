@@ -20,6 +20,7 @@ Ingot
  - [ ] Start
 	 - [ ] Starter Items
 		 - [ ] Copper Shortsword
+		 - [ ] Copper Broadsword
 		 - [ ] Copper Bow
 		 - [ ] Copper Pickaxe
 		 - [ ] Copper Axe
@@ -72,9 +73,9 @@ Ingot
 >> Sword
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTc2NDM4NjMyOCwxMjA0MzA1NTgsMTk5MD
-gyODQwMiwtNTU4NzQyNjUyLC04NjY1Nzk4NTksLTUxNTAzODUy
-MSwxNDc3MzM3NzE3LDY2ODI2OTE1MywtNzU3OTE4OTcsLTk2Nj
-cxMTY1OSwtMjEyODY5Mzg3NiwtMTQ2ODg1MTA1NiwtMTE4Nzcz
-NjUxLDgzODc5OTk2LDEzNDgyNjU1NzZdfQ==
+eyJoaXN0b3J5IjpbOTE0NjMyNjUsMTIwNDMwNTU4LDE5OTA4Mj
+g0MDIsLTU1ODc0MjY1MiwtODY2NTc5ODU5LC01MTUwMzg1MjEs
+MTQ3NzMzNzcxNyw2NjgyNjkxNTMsLTc1NzkxODk3LC05NjY3MT
+E2NTksLTIxMjg2OTM4NzYsLTE0Njg4NTEwNTYsLTExODc3MzY1
+MSw4Mzg3OTk5NiwxMzQ4MjY1NTc2XX0=
 -->
