@@ -46,7 +46,9 @@ Ingot
 	 - [ ] Mechanics
 		 - [ ] NPC
 			 - [ ] House System
-			 - [ ] Buy/Sell System
+			 - [ ] Dialog System
+			 - [ ] Shop System
+			 - [ ] Happiness System
 		 - [ ] Money System
  - [ ] Trojan Squirrel
  - [ ] Grand Thunder Bird
@@ -93,10 +95,10 @@ Ingot
 >> Sword
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTMxNjM3NzkzNiwtMTc1NjI1MzM2OSwyMD
-YzODQ0MzYsLTExNjc0NDEzMzAsMTIwNDMwNTU4LDE5OTA4Mjg0
-MDIsLTU1ODc0MjY1MiwtODY2NTc5ODU5LC01MTUwMzg1MjEsMT
-Q3NzMzNzcxNyw2NjgyNjkxNTMsLTc1NzkxODk3LC05NjY3MTE2
-NTksLTIxMjg2OTM4NzYsLTE0Njg4NTEwNTYsLTExODc3MzY1MS
-w4Mzg3OTk5NiwxMzQ4MjY1NTc2XX0=
+eyJoaXN0b3J5IjpbNzUzNzE5NzI2LC0zMTYzNzc5MzYsLTE3NT
+YyNTMzNjksMjA2Mzg0NDM2LC0xMTY3NDQxMzMwLDEyMDQzMDU1
+OCwxOTkwODI4NDAyLC01NTg3NDI2NTIsLTg2NjU3OTg1OSwtNT
+E1MDM4NTIxLDE0NzczMzc3MTcsNjY4MjY5MTUzLC03NTc5MTg5
+NywtOTY2NzExNjU5LC0yMTI4NjkzODc2LC0xNDY4ODUxMDU2LC
+0xMTg3NzM2NTEsODM4Nzk5OTYsMTM0ODI2NTU3Nl19
 -->
