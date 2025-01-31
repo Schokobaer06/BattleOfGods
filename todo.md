@@ -52,6 +52,8 @@ Ingot
 			 - [ ] Shop System
 			 - [ ] Happiness System
 		 - [ ] Money System
+	 - [ ] Advancements
+		 - [ ] 
  - [ ] Trojan Squirrel
  - [ ] Grand Thunder Bird
  - [ ] King Slime
@@ -97,11 +99,11 @@ Ingot
 >> Sword
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTk4Mjg2NjI1MCw3NTM3MTk3MjYsLTMxNj
-M3NzkzNiwtMTc1NjI1MzM2OSwyMDYzODQ0MzYsLTExNjc0NDEz
-MzAsMTIwNDMwNTU4LDE5OTA4Mjg0MDIsLTU1ODc0MjY1MiwtOD
-Y2NTc5ODU5LC01MTUwMzg1MjEsMTQ3NzMzNzcxNyw2NjgyNjkx
-NTMsLTc1NzkxODk3LC05NjY3MTE2NTksLTIxMjg2OTM4NzYsLT
-E0Njg4NTEwNTYsLTExODc3MzY1MSw4Mzg3OTk5NiwxMzQ4MjY1
-NTc2XX0=
+eyJoaXN0b3J5IjpbLTIxMDY0NDkyNDcsLTk4Mjg2NjI1MCw3NT
+M3MTk3MjYsLTMxNjM3NzkzNiwtMTc1NjI1MzM2OSwyMDYzODQ0
+MzYsLTExNjc0NDEzMzAsMTIwNDMwNTU4LDE5OTA4Mjg0MDIsLT
+U1ODc0MjY1MiwtODY2NTc5ODU5LC01MTUwMzg1MjEsMTQ3NzMz
+NzcxNyw2NjgyNjkxNTMsLTc1NzkxODk3LC05NjY3MTE2NTksLT
+IxMjg2OTM4NzYsLTE0Njg4NTEwNTYsLTExODc3MzY1MSw4Mzg3
+OTk5Nl19
 -->
