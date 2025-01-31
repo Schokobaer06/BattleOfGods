@@ -35,10 +35,13 @@ Ingot
 		 - [ ] Slime
 		 - [ ]  Squirrel
 		 - [ ] Guide?
+		 - [ ] Merchant
 	 - [ ] Items
 		 - [ ] Tin Weapons & Tools
 		 - [ ] Copper Weapons & Tools
-		 - [ ] 
+		 - [ ] Bug Net
+	 - [ ] Mechanics
+		 - [ ] Money System
  - [ ] Trojan Squirrel
  - [ ] Grand Thunder Bird
  - [ ] King Slime
@@ -84,9 +87,10 @@ Ingot
 >> Sword
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODYyMjk5NjcxLC0xMTY3NDQxMzMwLDEyMD
-QzMDU1OCwxOTkwODI4NDAyLC01NTg3NDI2NTIsLTg2NjU3OTg1
-OSwtNTE1MDM4NTIxLDE0NzczMzc3MTcsNjY4MjY5MTUzLC03NT
-c5MTg5NywtOTY2NzExNjU5LC0yMTI4NjkzODc2LC0xNDY4ODUx
-MDU2LC0xMTg3NzM2NTEsODM4Nzk5OTYsMTM0ODI2NTU3Nl19
+eyJoaXN0b3J5IjpbMTY4Mzk2Mjk2MywtMTE2NzQ0MTMzMCwxMj
+A0MzA1NTgsMTk5MDgyODQwMiwtNTU4NzQyNjUyLC04NjY1Nzk4
+NTksLTUxNTAzODUyMSwxNDc3MzM3NzE3LDY2ODI2OTE1MywtNz
+U3OTE4OTcsLTk2NjcxMTY1OSwtMjEyODY5Mzg3NiwtMTQ2ODg1
+MTA1NiwtMTE4NzczNjUxLDgzODc5OTk2LDEzNDgyNjU1NzZdfQ
+==
 -->
