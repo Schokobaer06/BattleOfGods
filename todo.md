@@ -20,13 +20,40 @@ Ingot
  - [ ] Start
 	 - [ ] Starter Items
 		 - [ ] Copper Shortsword
+		 - [ ] Copper Broadsword
 		 - [ ] Copper Bow
 		 - [ ] Copper Pickaxe
 		 - [ ] Copper Axe
-		 - [ ] Guidebook
+		 - [ ] Guidebook &#8594; with [Patchouli](https://github.com/VazkiiMods/Patchouli) ([Guide](https://vazkiimods.github.io/Patchouli/docs/patchouli-basics/getting-started/))
+			 - [ ] Entries
+				 - [ ] Bestiary
+				 - [ ] Progression Path
+				 - [ ] NPCs
+		 - [ ] Amethyst Staff
+	- [ ] Environment
+		- [ ] Copper Ore
+		- [ ] Tin Ore 
+		- [ ] Amethyst
+		- [ ] Topaz
 	 - [ ] Mobs
 		 - [ ] Slime
-		 - [ ]  
+		 - [ ]  Squirrel
+		 - [ ] NPC
+			 - [ ] Guide
+			 - [ ] Merchant
+	 - [ ] Items
+		 - [ ] Tin Weapons & Tools
+		 - [ ] Copper Weapons & Tools
+		 - [ ] Bug Net
+	 - [ ] Mechanics
+		 - [ ] NPC
+			 - [ ] House System
+			 - [ ] Dialog System
+			 - [ ] Shop System
+			 - [ ] Happiness System
+		 - [ ] Money System
+	 - [ ] Advancements
+		 - [ ] 
  - [ ] Trojan Squirrel
  - [ ] Grand Thunder Bird
  - [ ] King Slime
@@ -72,9 +99,11 @@ Ingot
 >> Sword
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTIwNDMwNTU4LDE5OTA4Mjg0MDIsLTU1OD
-c0MjY1MiwtODY2NTc5ODU5LC01MTUwMzg1MjEsMTQ3NzMzNzcx
-Nyw2NjgyNjkxNTMsLTc1NzkxODk3LC05NjY3MTE2NTksLTIxMj
-g2OTM4NzYsLTE0Njg4NTEwNTYsLTExODc3MzY1MSw4Mzg3OTk5
-NiwxMzQ4MjY1NTc2XX0=
+eyJoaXN0b3J5IjpbLTIxMDY0NDkyNDcsLTk4Mjg2NjI1MCw3NT
+M3MTk3MjYsLTMxNjM3NzkzNiwtMTc1NjI1MzM2OSwyMDYzODQ0
+MzYsLTExNjc0NDEzMzAsMTIwNDMwNTU4LDE5OTA4Mjg0MDIsLT
+U1ODc0MjY1MiwtODY2NTc5ODU5LC01MTUwMzg1MjEsMTQ3NzMz
+NzcxNyw2NjgyNjkxNTMsLTc1NzkxODk3LC05NjY3MTE2NTksLT
+IxMjg2OTM4NzYsLTE0Njg4NTEwNTYsLTExODc3MzY1MSw4Mzg3
+OTk5Nl19
 -->
