@@ -25,6 +25,8 @@ Ingot
 		 - [ ] Copper Pickaxe
 		 - [ ] Copper Axe
 		 - [ ] Guidebook &#8594; with [Patchouli](https://github.com/VazkiiMods/Patchouli) ([Guide](https://vazkiimods.github.io/Patchouli/docs/patchouli-basics/getting-started/))
+			 - [ ] Entries
+				 - [ ] Bestiary
 		 - [ ] Amethyst Staff
 	- [ ] Environment
 		- [ ] Copper Ore
@@ -91,10 +93,10 @@ Ingot
 >> Sword
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3NTYyNTMzNjksMjA2Mzg0NDM2LC0xMT
-Y3NDQxMzMwLDEyMDQzMDU1OCwxOTkwODI4NDAyLC01NTg3NDI2
-NTIsLTg2NjU3OTg1OSwtNTE1MDM4NTIxLDE0NzczMzc3MTcsNj
-Y4MjY5MTUzLC03NTc5MTg5NywtOTY2NzExNjU5LC0yMTI4Njkz
-ODc2LC0xNDY4ODUxMDU2LC0xMTg3NzM2NTEsODM4Nzk5OTYsMT
-M0ODI2NTU3Nl19
+eyJoaXN0b3J5IjpbLTMxNjM3NzkzNiwtMTc1NjI1MzM2OSwyMD
+YzODQ0MzYsLTExNjc0NDEzMzAsMTIwNDMwNTU4LDE5OTA4Mjg0
+MDIsLTU1ODc0MjY1MiwtODY2NTc5ODU5LC01MTUwMzg1MjEsMT
+Q3NzMzNzcxNyw2NjgyNjkxNTMsLTc1NzkxODk3LC05NjY3MTE2
+NTksLTIxMjg2OTM4NzYsLTE0Njg4NTEwNTYsLTExODc3MzY1MS
+w4Mzg3OTk5NiwxMzQ4MjY1NTc2XX0=
 -->
