@@ -36,7 +36,7 @@ Ingot
 		 - [ ]  Squirrel
 		 - [ ] NPC
 			 - [ ] Guide
-			 - [ ] N
+			 - [ ] Merchant
 	 - [ ] Items
 		 - [ ] Tin Weapons & Tools
 		 - [ ] Copper Weapons & Tools
@@ -88,10 +88,10 @@ Ingot
 >> Sword
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2MDk1Njg2MDAsLTExNjc0NDEzMzAsMT
-IwNDMwNTU4LDE5OTA4Mjg0MDIsLTU1ODc0MjY1MiwtODY2NTc5
-ODU5LC01MTUwMzg1MjEsMTQ3NzMzNzcxNyw2NjgyNjkxNTMsLT
-c1NzkxODk3LC05NjY3MTE2NTksLTIxMjg2OTM4NzYsLTE0Njg4
-NTEwNTYsLTExODc3MzY1MSw4Mzg3OTk5NiwxMzQ4MjY1NTc2XX
-0=
+eyJoaXN0b3J5IjpbMTI1MDc0MzEyNCwtMTE2NzQ0MTMzMCwxMj
+A0MzA1NTgsMTk5MDgyODQwMiwtNTU4NzQyNjUyLC04NjY1Nzk4
+NTksLTUxNTAzODUyMSwxNDc3MzM3NzE3LDY2ODI2OTE1MywtNz
+U3OTE4OTcsLTk2NjcxMTY1OSwtMjEyODY5Mzg3NiwtMTQ2ODg1
+MTA1NiwtMTE4NzczNjUxLDgzODc5OTk2LDEzNDgyNjU1NzZdfQ
+==
 -->
