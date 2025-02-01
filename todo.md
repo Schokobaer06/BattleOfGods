@@ -62,7 +62,7 @@ Ingot
 
  - [ ] Start
 	 - [ ] Starter Items
-		 - [ ] Copper Shortsword
+		 - [ ] Copper Shortsword [`Me`](#melee)
 		 - [ ] Copper Broadsword
 		 - [ ] Copper Bow
 		 - [ ] Copper Pickaxe
@@ -123,7 +123,7 @@ Ingot
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzMwMjIzMjgwLDEzNDc5NzU1ODIsLTIxMD
+eyJoaXN0b3J5IjpbNzgyNTE2NzY4LDEzNDc5NzU1ODIsLTIxMD
 Y0NDkyNDcsLTk4Mjg2NjI1MCw3NTM3MTk3MjYsLTMxNjM3Nzkz
 NiwtMTc1NjI1MzM2OSwyMDYzODQ0MzYsLTExNjc0NDEzMzAsMT
 IwNDMwNTU4LDE5OTA4Mjg0MDIsLTU1ODc0MjY1MiwtODY2NTc5
