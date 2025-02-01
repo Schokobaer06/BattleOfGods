@@ -15,34 +15,45 @@ Ingot
 ### Class Setups
 #### All Classes
 >Weapons
->Ammunition
+>Ammo/Buffs/Potions
 >Armor
 >Accessories
 #### Melee
 >Weapons
+>Ammo/Buffs/Potions
 >Armor
 >Accessories
 #### Ranged
 >Weapons
->Ammunition
+>Ammo/Buffs/Potions
 >Armor
 >Accessories
 #### Magic
 >Weapons
->Ammunition
+>Ammo/Buffs/Potions
 >Armor
 >Accessories
 #### Summoner
 >Weapons
->Ammunition
+>Ammo/Buffs/Potions
 >Armor
 >Accessories
 #### Rogue
 >Weapons
->Ammunition
+>Ammo/Buffs/Potions
 >Armor
 >Accessories
-####
+#### Healer
+>Weapons
+>Ammo/Buffs/Potions
+>Armor
+>Accessories
+#### Bard
+>Weapons
+>Ammo/Buffs/Potions
+>Armor
+>Accessories
+
 
 ## Pre-Hardmode
 ### Tier 1
@@ -111,11 +122,11 @@ Ingot
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzU4NDE3NTEsLTIxMDY0NDkyNDcsLTk4Mj
-g2NjI1MCw3NTM3MTk3MjYsLTMxNjM3NzkzNiwtMTc1NjI1MzM2
-OSwyMDYzODQ0MzYsLTExNjc0NDEzMzAsMTIwNDMwNTU4LDE5OT
-A4Mjg0MDIsLTU1ODc0MjY1MiwtODY2NTc5ODU5LC01MTUwMzg1
-MjEsMTQ3NzMzNzcxNyw2NjgyNjkxNTMsLTc1NzkxODk3LC05Nj
-Y3MTE2NTksLTIxMjg2OTM4NzYsLTE0Njg4NTEwNTYsLTExODc3
-MzY1MV19
+eyJoaXN0b3J5IjpbMTM0Nzk3NTU4MiwtMjEwNjQ0OTI0NywtOT
+gyODY2MjUwLDc1MzcxOTcyNiwtMzE2Mzc3OTM2LC0xNzU2MjUz
+MzY5LDIwNjM4NDQzNiwtMTE2NzQ0MTMzMCwxMjA0MzA1NTgsMT
+k5MDgyODQwMiwtNTU4NzQyNjUyLC04NjY1Nzk4NTksLTUxNTAz
+ODUyMSwxNDc3MzM3NzE3LDY2ODI2OTE1MywtNzU3OTE4OTcsLT
+k2NjcxMTY1OSwtMjEyODY5Mzg3NiwtMTQ2ODg1MTA1NiwtMTE4
+NzczNjUxXX0=
 -->
