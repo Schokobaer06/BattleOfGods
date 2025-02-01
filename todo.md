@@ -4,11 +4,13 @@
 >[Layouts](#layouts)
 >>[Ore](#ore)
 >>[Class Setup](#class-setup)
+>
 >[Pre Hardmode](#pre-hardmode)
 >>[Tier 1](#tier-1)
 >>[Tier 2](#tier-2)
 >>[Tier 3](#tier-3)
 >>[Tier 4](#tier-4)
+>
 >[Hardmode](#hardmode)
 >>[Tier 5](#tier-5)
 >>[Tier 6](#tier-6)
@@ -16,6 +18,7 @@
 >>[Tier 8](#tier-8)
 >>[Tier 9](#tier-9)
 >>[Tier 10](#tier-10)
+>
 >[Post-MoonLord](#post-moonlord)
 >>[Tier 11](#tier-11)
 >>[Tier 12](#tier-12)
@@ -168,7 +171,7 @@ Ingot
 ### Tier 14
 ![tier14-img](img/tiers_template/tier14.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTc5ODcyNDYyMSwtMTMzNjc2MDY5MywxMz
+eyJoaXN0b3J5IjpbLTQ2MTc3OTcwMywtMTMzNjc2MDY5MywxMz
 Q3OTc1NTgyLC0yMTA2NDQ5MjQ3LC05ODI4NjYyNTAsNzUzNzE5
 NzI2LC0zMTYzNzc5MzYsLTE3NTYyNTMzNjksMjA2Mzg0NDM2LC
 0xMTY3NDQxMzMwLDEyMDQzMDU1OCwxOTkwODI4NDAyLC01NTg3
