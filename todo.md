@@ -13,12 +13,25 @@ Ingot
 >>Leggings
 >>Boots
 ### Class Setups
+#### All Classes
+>Weapons
+>Ammunition
+>Armor
+>Accessories
 #### Melee
 >Weapons
 >Armor
 >Accessories
 #### Ranged
+>Weapons
+>Ammunition
+>Armor
+>Accessories
 #### Magic
+>Weapons
+>Ammunition
+>Armor
+>Accessories
 #### Summoner
 
 ## Pre-Hardmode
@@ -88,11 +101,11 @@ Ingot
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0Mjc2MTMyNDcsLTIxMDY0NDkyNDcsLT
-k4Mjg2NjI1MCw3NTM3MTk3MjYsLTMxNjM3NzkzNiwtMTc1NjI1
-MzM2OSwyMDYzODQ0MzYsLTExNjc0NDEzMzAsMTIwNDMwNTU4LD
-E5OTA4Mjg0MDIsLTU1ODc0MjY1MiwtODY2NTc5ODU5LC01MTUw
-Mzg1MjEsMTQ3NzMzNzcxNyw2NjgyNjkxNTMsLTc1NzkxODk3LC
-05NjY3MTE2NTksLTIxMjg2OTM4NzYsLTE0Njg4NTEwNTYsLTEx
-ODc3MzY1MV19
+eyJoaXN0b3J5IjpbMTY4Nzc0MjYwOSwtMjEwNjQ0OTI0NywtOT
+gyODY2MjUwLDc1MzcxOTcyNiwtMzE2Mzc3OTM2LC0xNzU2MjUz
+MzY5LDIwNjM4NDQzNiwtMTE2NzQ0MTMzMCwxMjA0MzA1NTgsMT
+k5MDgyODQwMiwtNTU4NzQyNjUyLC04NjY1Nzk4NTksLTUxNTAz
+ODUyMSwxNDc3MzM3NzE3LDY2ODI2OTE1MywtNzU3OTE4OTcsLT
+k2NjcxMTY1OSwtMjEyODY5Mzg3NiwtMTQ2ODg1MTA1NiwtMTE4
+NzczNjUxXX0=
 -->
