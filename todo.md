@@ -3,8 +3,9 @@
 >[Layouts](#layouts)
 >>[Ore](#ore)
 >>[Class Setup](#class-setup)
-
->[]()
+>[Pre Hardmode](#pre-hardmode)
+>[Hardmode](#hardmode)
+>[Post-MoonLord](#)
 ## Layouts
 ### Ore
 Ingot
@@ -129,7 +130,7 @@ Ingot
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTczNzYyNjQyOSwxMzQ3OTc1NTgyLC0yMT
+eyJoaXN0b3J5IjpbLTQ4NzE4NDc4MiwxMzQ3OTc1NTgyLC0yMT
 A2NDQ5MjQ3LC05ODI4NjYyNTAsNzUzNzE5NzI2LC0zMTYzNzc5
 MzYsLTE3NTYyNTMzNjksMjA2Mzg0NDM2LC0xMTY3NDQxMzMwLD
 EyMDQzMDU1OCwxOTkwODI4NDAyLC01NTg3NDI2NTIsLTg2NjU3
