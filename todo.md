@@ -33,6 +33,12 @@ Ingot
 >Armor
 >Accessories
 #### Summoner
+>Weapons
+>Ammunition
+>Armor
+>Accessories
+#### Rogue
+
 
 ## Pre-Hardmode
 ### Tier 1
@@ -101,7 +107,7 @@ Ingot
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTY4Nzc0MjYwOSwtMjEwNjQ0OTI0NywtOT
+eyJoaXN0b3J5IjpbMTYyNDA4NDEyMiwtMjEwNjQ0OTI0NywtOT
 gyODY2MjUwLDc1MzcxOTcyNiwtMzE2Mzc3OTM2LC0xNzU2MjUz
 MzY5LDIwNjM4NDQzNiwtMTE2NzQ0MTMzMCwxMjA0MzA1NTgsMT
 k5MDgyODQwMiwtNTU4NzQyNjUyLC04NjY1Nzk4NTksLTUxNTAz
