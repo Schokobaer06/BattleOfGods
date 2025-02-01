@@ -52,12 +52,6 @@ authors="Josef Peer, MCreator"
     ordering="NONE"
     side="BOTH"
 [[dependencies.battleofgods]]
-    modId="irons_spellsn_spellbooks"
-    mandatory=false
-    versionRange="[0,)"
-    ordering="NONE"
-    side="BOTH"
-[[dependencies.battleofgods]]
     modId="jei"
     mandatory=false
     versionRange="[0,)"
