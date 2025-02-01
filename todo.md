@@ -4,7 +4,7 @@
 >[Layouts](#layouts)
 >>[Ore](#ore)
 >>[Class Setup](#class-setup)
->>[]()
+>
 >[Pre Hardmode](#pre-hardmode)
 >>[Tier 1](#tier-1)
 >>[Tier 2](#tier-2)
@@ -171,11 +171,11 @@ Ingot
 ### Tier 14
 ![tier14-img](img/tiers_template/tier14.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzMDk2MjY2NjYsLTQ2MTc3OTcwMywtMT
-MzNjc2MDY5MywxMzQ3OTc1NTgyLC0yMTA2NDQ5MjQ3LC05ODI4
-NjYyNTAsNzUzNzE5NzI2LC0zMTYzNzc5MzYsLTE3NTYyNTMzNj
-ksMjA2Mzg0NDM2LC0xMTY3NDQxMzMwLDEyMDQzMDU1OCwxOTkw
-ODI4NDAyLC01NTg3NDI2NTIsLTg2NjU3OTg1OSwtNTE1MDM4NT
-IxLDE0NzczMzc3MTcsNjY4MjY5MTUzLC03NTc5MTg5NywtOTY2
-NzExNjU5XX0=
+eyJoaXN0b3J5IjpbLTQ2MTc3OTcwMywtNDYxNzc5NzAzLC0xMz
+M2NzYwNjkzLDEzNDc5NzU1ODIsLTIxMDY0NDkyNDcsLTk4Mjg2
+NjI1MCw3NTM3MTk3MjYsLTMxNjM3NzkzNiwtMTc1NjI1MzM2OS
+wyMDYzODQ0MzYsLTExNjc0NDEzMzAsMTIwNDMwNTU4LDE5OTA4
+Mjg0MDIsLTU1ODc0MjY1MiwtODY2NTc5ODU5LC01MTUwMzg1Mj
+EsMTQ3NzMzNzcxNyw2NjgyNjkxNTMsLTc1NzkxODk3LC05NjY3
+MTE2NTldfQ==
 -->
