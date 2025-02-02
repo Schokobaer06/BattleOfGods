@@ -57,7 +57,18 @@ authors="Josef Peer, MCreator"
     versionRange="[0,)"
     ordering="NONE"
     side="BOTH"
-
+[[dependencies.battleofgods]]
+modId="cloth_config"
+mandatory=true
+versionRange="[0,)"
+ordering="NONE"
+side="BOTH"
+[[dependencies.battleofgods]]
+modId="bettercombat"
+mandatory=true
+versionRange="[0,)"
+ordering="NONE"
+side="BOTH"
 
 # Start of user code block dependencies configuration
 # End of user code block dependencies configuration

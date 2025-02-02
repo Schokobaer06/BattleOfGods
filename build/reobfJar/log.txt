@@ -153,7 +153,13 @@ Writing Output: C:\Users\Josef\OneDrive\Games\Minecraft Java\Mods\Eigene\Battle 
   assets/battleofgods/lang/en_us.json
   assets/battleofgods/models/
   assets/battleofgods/models/custom/
+  assets/battleofgods/models/custom/copper_shortsword.json
   assets/battleofgods/models/custom/shortswordcopper.json
+  assets/battleofgods/textures/
+  assets/battleofgods/textures/block/
+  assets/battleofgods/textures/block/copper_shortsword.png
+  assets/battleofgods/textures/item/
+  assets/battleofgods/textures/item/copper_shortsword.png
   com/
   com/schokobaer/
   com/schokobaer/battleofgods/
