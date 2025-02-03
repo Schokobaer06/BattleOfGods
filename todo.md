@@ -47,10 +47,8 @@ Ingot
 >Accessories
 #### Melee
 >Weapons
->>Shortswords 
->>Broadswords
->>Hardmode Swords
->	
+>Pre-Hardmode
+>
 >Ammo/Buffs/Potions
 >Armor
 >Accessories
@@ -174,7 +172,7 @@ Ingot
 ### Tier 14
 ![tier14-img](img/tiers_template/tier14.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExMTUzMTg5MiwtNDYxNzc5NzAzLC00Nj
+eyJoaXN0b3J5IjpbMTEzODExMzIxMiwtNDYxNzc5NzAzLC00Nj
 E3Nzk3MDMsLTEzMzY3NjA2OTMsMTM0Nzk3NTU4MiwtMjEwNjQ0
 OTI0NywtOTgyODY2MjUwLDc1MzcxOTcyNiwtMzE2Mzc3OTM2LC
 0xNzU2MjUzMzY5LDIwNjM4NDQzNiwtMTE2NzQ0MTMzMCwxMjA0
