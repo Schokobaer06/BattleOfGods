@@ -90,7 +90,7 @@ Ingot
 
 - [ ] Start
 	- [ ] Starter Items
-		- [x] Copper Shortsword  [`SSW`](#Shortswords)
+		- [x] Copper Shortsword
 		- [ ] Copper Broadsword
 		- [ ] Copper Bow
 		- [ ] Copper Pickaxe
@@ -174,7 +174,7 @@ Ingot
 ### Tier 14
 ![tier14-img](img/tiers_template/tier14.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQ5NzA2MDAwNSwtNDYxNzc5NzAzLC00Nj
+eyJoaXN0b3J5IjpbMTE0MDI4MzA0MCwtNDYxNzc5NzAzLC00Nj
 E3Nzk3MDMsLTEzMzY3NjA2OTMsMTM0Nzk3NTU4MiwtMjEwNjQ0
 OTI0NywtOTgyODY2MjUwLDc1MzcxOTcyNiwtMzE2Mzc3OTM2LC
 0xNzU2MjUzMzY5LDIwNjM4NDQzNiwtMTE2NzQ0MTMzMCwxMjA0
