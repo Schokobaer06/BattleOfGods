@@ -70,6 +70,10 @@ Ingot
 >Accessories
 #### Summoner
 >Weapons
+>>Minions
+>>Sentries
+>>Whips
+>
 >Ammo/Buffs/Potions
 >Armor
 >Accessories
@@ -178,11 +182,11 @@ Ingot
 ### Tier 14
 ![tier14-img](img/tiers_template/tier14.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTkwOTkxMjUwMSwtNDYxNzc5NzAzLC00Nj
-E3Nzk3MDMsLTEzMzY3NjA2OTMsMTM0Nzk3NTU4MiwtMjEwNjQ0
-OTI0NywtOTgyODY2MjUwLDc1MzcxOTcyNiwtMzE2Mzc3OTM2LC
-0xNzU2MjUzMzY5LDIwNjM4NDQzNiwtMTE2NzQ0MTMzMCwxMjA0
-MzA1NTgsMTk5MDgyODQwMiwtNTU4NzQyNjUyLC04NjY1Nzk4NT
-ksLTUxNTAzODUyMSwxNDc3MzM3NzE3LDY2ODI2OTE1MywtNzU3
-OTE4OTddfQ==
+eyJoaXN0b3J5IjpbNDYwMDY2NzMyLC05MDk5MTI1MDEsLTQ2MT
+c3OTcwMywtNDYxNzc5NzAzLC0xMzM2NzYwNjkzLDEzNDc5NzU1
+ODIsLTIxMDY0NDkyNDcsLTk4Mjg2NjI1MCw3NTM3MTk3MjYsLT
+MxNjM3NzkzNiwtMTc1NjI1MzM2OSwyMDYzODQ0MzYsLTExNjc0
+NDEzMzAsMTIwNDMwNTU4LDE5OTA4Mjg0MDIsLTU1ODc0MjY1Mi
+wtODY2NTc5ODU5LC01MTUwMzg1MjEsMTQ3NzMzNzcxNyw2Njgy
+NjkxNTNdfQ==
 -->
