@@ -42,7 +42,7 @@ Ingot
 
 #### All Classes
 >Weapons
->>Shortswords
+>>Shortswords 
 >>Broadswords
 >>Hardmode Swords
 >	
@@ -90,7 +90,7 @@ Ingot
 
 - [ ] Start
 	- [ ] Starter Items
-		- [x] Copper Shortsword [`Me`](#melee)
+		- [x] Copper Shortsword  [`SSW`](#shortswords)
 		- [ ] Copper Broadsword
 		- [ ] Copper Bow
 		- [ ] Copper Pickaxe
@@ -174,11 +174,11 @@ Ingot
 ### Tier 14
 ![tier14-img](img/tiers_template/tier14.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyMjczNjg0NzIsLTQ2MTc3OTcwMywtND
-YxNzc5NzAzLC0xMzM2NzYwNjkzLDEzNDc5NzU1ODIsLTIxMDY0
-NDkyNDcsLTk4Mjg2NjI1MCw3NTM3MTk3MjYsLTMxNjM3NzkzNi
-wtMTc1NjI1MzM2OSwyMDYzODQ0MzYsLTExNjc0NDEzMzAsMTIw
-NDMwNTU4LDE5OTA4Mjg0MDIsLTU1ODc0MjY1MiwtODY2NTc5OD
-U5LC01MTUwMzg1MjEsMTQ3NzMzNzcxNyw2NjgyNjkxNTMsLTc1
-NzkxODk3XX0=
+eyJoaXN0b3J5IjpbLTIwMjU4MTA3LC00NjE3Nzk3MDMsLTQ2MT
+c3OTcwMywtMTMzNjc2MDY5MywxMzQ3OTc1NTgyLC0yMTA2NDQ5
+MjQ3LC05ODI4NjYyNTAsNzUzNzE5NzI2LC0zMTYzNzc5MzYsLT
+E3NTYyNTMzNjksMjA2Mzg0NDM2LC0xMTY3NDQxMzMwLDEyMDQz
+MDU1OCwxOTkwODI4NDAyLC01NTg3NDI2NTIsLTg2NjU3OTg1OS
+wtNTE1MDM4NTIxLDE0NzczMzc3MTcsNjY4MjY5MTUzLC03NTc5
+MTg5N119
 -->
