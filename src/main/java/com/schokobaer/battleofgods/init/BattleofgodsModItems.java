@@ -10,12 +10,11 @@ import net.minecraftforge.registries.DeferredRegister;
 
 import net.minecraft.world.item.Item;
 
-import com.schokobaer.battleofgods.item.CopperShortSwordItem;
 import com.schokobaer.battleofgods.BattleofgodsMod;
 
 public class BattleofgodsModItems {
 	public static final DeferredRegister<Item> REGISTRY = DeferredRegister.create(ForgeRegistries.ITEMS, BattleofgodsMod.MODID);
-	public static final RegistryObject<Item> COPPER_SHORT_SWORD = REGISTRY.register("copper_short_sword", () -> new CopperShortSwordItem());
+	public static final RegistryObject<Item> COPPER_SHORTSWORD = REGISTRY.register("copper_shortsword", () -> new CopperShortswordItem());
 	// Start of user code block custom items
 	// End of user code block custom items
 }

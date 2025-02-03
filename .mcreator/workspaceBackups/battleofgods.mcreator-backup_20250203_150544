@@ -1,0 +1,40 @@
+{
+  "mod_elements": [],
+  "variable_elements": [],
+  "sound_elements": [],
+  "tag_elements": {},
+  "tab_element_order": {},
+  "language_map": {
+    "en_us": {
+      "item.battleofgods.copper_short_sword": "Copper Short Sword"
+    }
+  },
+  "foldersRoot": {
+    "name": "~",
+    "children": []
+  },
+  "workspaceSettings": {
+    "modid": "battleofgods",
+    "modName": "Battle Of Gods",
+    "version": "1.0.0",
+    "author": "Josef Peer, MCreator",
+    "websiteURL": "https://mcreator.net",
+    "license": "Not specified",
+    "serverSideOnly": false,
+    "requiredMods": [],
+    "dependencies": [],
+    "dependants": [],
+    "mcreatorDependencies": [
+      "cosmetic_armory",
+      "patchouli",
+      "geckolib",
+      "jeed",
+      "playeranimator",
+      "jei"
+    ],
+    "currentGenerator": "forge-1.20.1",
+    "credits": "Created using mod maker MCreator - https://mcreator.net/about",
+    "modElementsPackage": "com.schokobaer.battleofgods"
+  },
+  "mcreatorVersion": 202400452410
+}
