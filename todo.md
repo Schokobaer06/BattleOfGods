@@ -51,6 +51,7 @@ Ingot
 >>Broadswords
 >>Yoyos
 >>Spears
+>>Boomerangs
 >
 >
 >Ammo/Buffs/Potions
@@ -176,7 +177,7 @@ Ingot
 ### Tier 14
 ![tier14-img](img/tiers_template/tier14.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjAyNzA3OTk4NywtNDYxNzc5NzAzLC00Nj
+eyJoaXN0b3J5IjpbMTI2ODU3ODk2NiwtNDYxNzc5NzAzLC00Nj
 E3Nzk3MDMsLTEzMzY3NjA2OTMsMTM0Nzk3NTU4MiwtMjEwNjQ0
 OTI0NywtOTgyODY2MjUwLDc1MzcxOTcyNiwtMzE2Mzc3OTM2LC
 0xNzU2MjUzMzY5LDIwNjM4NDQzNiwtMTE2NzQ0MTMzMCwxMjA0
