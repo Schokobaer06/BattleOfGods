@@ -80,14 +80,13 @@ Ingot
 >Ammo/Buffs/Potions
 >Armor
 >Accessories
-
 ## Pre-Hardmode
 ### Tier 1
 ![tier1-img](img/tiers_template/tier1.png)
 
 - [ ] Start
 	- [ ] Starter Items
-		- [ ] Copper Shortsword [`Me`](#melee)
+		- [x] Copper Shortsword [`Me`](#melee)
 		- [ ] Copper Broadsword
 		- [ ] Copper Bow
 		- [ ] Copper Pickaxe
@@ -171,11 +170,11 @@ Ingot
 ### Tier 14
 ![tier14-img](img/tiers_template/tier14.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQ2MTc3OTcwMywtNDYxNzc5NzAzLC0xMz
-M2NzYwNjkzLDEzNDc5NzU1ODIsLTIxMDY0NDkyNDcsLTk4Mjg2
-NjI1MCw3NTM3MTk3MjYsLTMxNjM3NzkzNiwtMTc1NjI1MzM2OS
-wyMDYzODQ0MzYsLTExNjc0NDEzMzAsMTIwNDMwNTU4LDE5OTA4
-Mjg0MDIsLTU1ODc0MjY1MiwtODY2NTc5ODU5LC01MTUwMzg1Mj
-EsMTQ3NzMzNzcxNyw2NjgyNjkxNTMsLTc1NzkxODk3LC05NjY3
-MTE2NTldfQ==
+eyJoaXN0b3J5IjpbOTc0MTYxNjk1LC00NjE3Nzk3MDMsLTQ2MT
+c3OTcwMywtMTMzNjc2MDY5MywxMzQ3OTc1NTgyLC0yMTA2NDQ5
+MjQ3LC05ODI4NjYyNTAsNzUzNzE5NzI2LC0zMTYzNzc5MzYsLT
+E3NTYyNTMzNjksMjA2Mzg0NDM2LC0xMTY3NDQxMzMwLDEyMDQz
+MDU1OCwxOTkwODI4NDAyLC01NTg3NDI2NTIsLTg2NjU3OTg1OS
+wtNTE1MDM4NTIxLDE0NzczMzc3MTcsNjY4MjY5MTUzLC03NTc5
+MTg5N119
 -->
