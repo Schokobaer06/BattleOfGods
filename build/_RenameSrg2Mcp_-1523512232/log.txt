@@ -1,0 +1,17 @@
+Java Launcher: C:\Program Files\Eclipse Adoptium\jdk-17.0.14.7-hotspot\bin\java.exe
+Arguments: '--task, SRG_TO_MCP, --input, C:\Users\Josef Peer\.gradle\caches\modules-2\files-2.1\curse.maven\cosmetic-armor-reworked-237307\4600191\afd9fa3fe95e8c086e8d439df403ed1e5ea5cbea\cosmetic-armor-reworked-237307-4600191.jar, --output, C:\Users\Josef Peer\.gradle\caches\forge_gradle\deobf_dependencies\curse\maven\cosmetic-armor-reworked-237307\4600191_mapped_official_1.20.1\cosmetic-armor-reworked-237307-4600191_mapped_official_1.20.1.jar, --mcp, C:\Users\Josef Peer\.gradle\caches\forge_gradle\mcp_repo\net\minecraft\mapping\1.20.1\mapping-1.20.1-mapping.zip, --strip-signatures'
+Classpath:
+ - C:\Users\Josef Peer\.gradle\caches\forge_gradle\maven_downloader\net\minecraftforge\installertools\1.4.4\installertools-1.4.4-fatjar.jar
+Working directory: C:\Users\Josef Peer\OneDrive\Games\Minecraft Java\Mods\Eigene\Battle Of Gods\mcreator\build\_RenameSrg2Mcp_-1523512232
+Main class: net.minecraftforge.installertools.ConsoleTool
+====================================
+Task: SRG_TO_MCP
+Input:  C:\Users\Josef Peer\.gradle\caches\modules-2\files-2.1\curse.maven\cosmetic-armor-reworked-237307\4600191\afd9fa3fe95e8c086e8d439df403ed1e5ea5cbea\cosmetic-armor-reworked-237307-4600191.jar
+Output: C:\Users\Josef Peer\.gradle\caches\forge_gradle\deobf_dependencies\curse\maven\cosmetic-armor-reworked-237307\4600191_mapped_official_1.20.1\cosmetic-armor-reworked-237307-4600191_mapped_official_1.20.1.jar
+MCP:    C:\Users\Josef Peer\.gradle\caches\forge_gradle\mcp_repo\net\minecraft\mapping\1.20.1\mapping-1.20.1-mapping.zip
+Loading MCP Data
+Processing ZIP file
+Stripped Manifest of sha digests
+Stripped signature entry data META-INF/LAIN.SF
+Stripped signature entry data META-INF/LAIN.RSA
+Process complete
