@@ -90,7 +90,7 @@ Ingot
 
 - [ ] Start
 	- [ ] Starter Items
-		- [x] Copper Shortsword
+		- [x] Copper Shortsword [Me](#melee)
 		- [ ] Copper Broadsword
 		- [ ] Copper Bow
 		- [ ] Copper Pickaxe
@@ -174,11 +174,11 @@ Ingot
 ### Tier 14
 ![tier14-img](img/tiers_template/tier14.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTE0MDI4MzA0MCwtNDYxNzc5NzAzLC00Nj
-E3Nzk3MDMsLTEzMzY3NjA2OTMsMTM0Nzk3NTU4MiwtMjEwNjQ0
-OTI0NywtOTgyODY2MjUwLDc1MzcxOTcyNiwtMzE2Mzc3OTM2LC
-0xNzU2MjUzMzY5LDIwNjM4NDQzNiwtMTE2NzQ0MTMzMCwxMjA0
-MzA1NTgsMTk5MDgyODQwMiwtNTU4NzQyNjUyLC04NjY1Nzk4NT
-ksLTUxNTAzODUyMSwxNDc3MzM3NzE3LDY2ODI2OTE1MywtNzU3
-OTE4OTddfQ==
+eyJoaXN0b3J5IjpbLTE1MzYxMjgyMTIsLTQ2MTc3OTcwMywtND
+YxNzc5NzAzLC0xMzM2NzYwNjkzLDEzNDc5NzU1ODIsLTIxMDY0
+NDkyNDcsLTk4Mjg2NjI1MCw3NTM3MTk3MjYsLTMxNjM3NzkzNi
+wtMTc1NjI1MzM2OSwyMDYzODQ0MzYsLTExNjc0NDEzMzAsMTIw
+NDMwNTU4LDE5OTA4Mjg0MDIsLTU1ODc0MjY1MiwtODY2NTc5OD
+U5LC01MTUwMzg1MjEsMTQ3NzMzNzcxNyw2NjgyNjkxNTMsLTc1
+NzkxODk3XX0=
 -->
