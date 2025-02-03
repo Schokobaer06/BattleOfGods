@@ -7,7 +7,6 @@ package com.schokobaer.battleofgods.init;
 import net.minecraftforge.registries.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 
-import net.minecraft.world.item.Items;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.network.chat.Component;
@@ -18,7 +17,7 @@ import com.schokobaer.battleofgods.BattleofgodsMod;
 public class BattleofgodsModTabs {
 	public static final DeferredRegister<CreativeModeTab> REGISTRY = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, BattleofgodsMod.MODID);
 	public static final RegistryObject<CreativeModeTab> TIER_1 = REGISTRY.register("tier_1",
-			() -> CreativeModeTab.builder().title(Component.translatable("item_group.battleofgods.tier_1")).icon(() -> new ItemStack(Items.COPPER_INGOT)).displayItems((parameters, tabData) -> {
+			() -> CreativeModeTab.builder().title(Component.translatable("item_group.battleofgods.tier_1")).icon(() -> new ItemStack(BattleofgodsModItems.ITEM_COPPER_SHORTSWORD.get())).displayItems((parameters, tabData) -> {
 				tabData.accept(BattleofgodsModItems.COPPER_SHORTSWORD.get());
 			}).withSearchBar().build());
 }

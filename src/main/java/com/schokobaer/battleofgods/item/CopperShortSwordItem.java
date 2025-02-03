@@ -13,7 +13,7 @@ public class CopperShortswordItem extends SwordItem {
 	public CopperShortswordItem() {
 		super(new Tier() {
 			public int getUses() {
-				return 0;
+				return 100;
 			}
 
 			public float getSpeed() {
@@ -45,6 +45,16 @@ public class CopperShortswordItem extends SwordItem {
 
 	@Override
 	public ItemStack getCraftingRemainingItem(ItemStack itemstack) {
-		return new ItemStack(this);
+		ItemStack retval = new ItemStack(this);
+		retval.setDamageValue(itemstack.getDamageValue() + 1);
+		if (retval.getDamageValue() >= retval.getMaxDamage()) {
+			return ItemStack.EMPTY;
+		}
+		return retval;
+	}
+
+	@Override
+	public boolean isRepairable(ItemStack itemstack) {
+		return false;
 	}
 }

@@ -1,45 +1,38 @@
 {
   "mod_elements": [
     {
-      "name": "CopperShortSword",
-      "type": "tool",
+      "name": "ItemCopperShortsword",
+      "type": "item",
       "compiles": true,
       "locked_code": false,
-      "registry_name": "copper_short_sword",
+      "registry_name": "item_copper_shortsword",
       "metadata": {
         "files": [
-          "src/main/resources/assets/battleofgods/models/item/copper_short_sword.json",
-          "src/main/java/com/schokobaer/battleofgods/item/CopperShortSwordItem.java"
+          "src/main/java/com/schokobaer/battleofgods/item/ItemCopperShortswordItem.java",
+          "src/main/resources/assets/battleofgods/models/item/item_copper_shortsword.json"
         ]
       }
     },
     {
-      "name": "CopperShortsword3d",
-      "type": "tool",
+      "name": "Tier1",
+      "type": "tab",
       "compiles": true,
       "locked_code": false,
-      "registry_name": "copper_shortsword_3d",
+      "registry_name": "tier_1",
       "metadata": {
-        "files": [
-          "src/main/java/com/schokobaer/battleofgods/item/CopperShortsword3dItem.java",
-          "src/main/resources/assets/battleofgods/models/item/copper_shortsword_3d.json"
-        ]
+        "files": []
       }
     }
   ],
   "variable_elements": [],
   "sound_elements": [],
-  "tag_elements": {
-    "ITEMS:minecraft:swords": [
-      "~CUSTOM:CopperShortsword3d",
-      "~CUSTOM:CopperShortSword"
-    ]
-  },
+  "tag_elements": {},
   "tab_element_order": {},
   "language_map": {
     "en_us": {
-      "item.battleofgods.copper_shortsword_3d": "Copper Shortsword 3d",
-      "item.battleofgods.copper_short_sword": "Copper Short Sword"
+      "item.battleofgods.copper_short_sword": "Copper Short Sword",
+      "item.battleofgods.item_copper_shortsword": "Item Copper Shortsword",
+      "item_group.battleofgods.tier_1": "Tier 1"
     }
   },
   "foldersRoot": {
