@@ -63,6 +63,9 @@ Ingot
 >>Bow
 >>Gun
 >>Repeater
+>>Consumables
+>>Launchers
+>>Others
 >
 >Ammo/Buffs/Potions
 >Armor
@@ -186,7 +189,7 @@ Ingot
 ### Tier 14
 ![tier14-img](img/tiers_template/tier14.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTI0MTc0MzExNiwtOTA5OTEyNTAxLC00Nj
+eyJoaXN0b3J5IjpbLTQyNjE4Nzk4OCwtOTA5OTEyNTAxLC00Nj
 E3Nzk3MDMsLTQ2MTc3OTcwMywtMTMzNjc2MDY5MywxMzQ3OTc1
 NTgyLC0yMTA2NDQ5MjQ3LC05ODI4NjYyNTAsNzUzNzE5NzI2LC
 0zMTYzNzc5MzYsLTE3NTYyNTMzNjksMjA2Mzg0NDM2LC0xMTY3
