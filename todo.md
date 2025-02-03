@@ -92,7 +92,7 @@ Ingot
 	- [ ] Starter Items
 		- [x] Copper Shortsword [`Me`](#melee)
 		- [ ] Copper Broadsword  [`Me`](#melee)
-		- [ ] Copper Bow 
+		- [ ] Copper Bow  [`Ra`](#ranged)
 		- [ ] Copper Pickaxe
 		- [ ] Copper Axe
 		- [ ] Guidebook &#8594; with [Patchouli](https://github.com/VazkiiMods/Patchouli) ([Guide](https://vazkiimods.github.io/Patchouli/docs/patchouli-basics/getting-started/))
@@ -174,11 +174,11 @@ Ingot
 ### Tier 14
 ![tier14-img](img/tiers_template/tier14.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTg0Njc2MDIyLC00NjE3Nzk3MDMsLTQ2MT
-c3OTcwMywtMTMzNjc2MDY5MywxMzQ3OTc1NTgyLC0yMTA2NDQ5
-MjQ3LC05ODI4NjYyNTAsNzUzNzE5NzI2LC0zMTYzNzc5MzYsLT
-E3NTYyNTMzNjksMjA2Mzg0NDM2LC0xMTY3NDQxMzMwLDEyMDQz
-MDU1OCwxOTkwODI4NDAyLC01NTg3NDI2NTIsLTg2NjU3OTg1OS
-wtNTE1MDM4NTIxLDE0NzczMzc3MTcsNjY4MjY5MTUzLC03NTc5
-MTg5N119
+eyJoaXN0b3J5IjpbMTQ1MDg1NzY0NCwtNDYxNzc5NzAzLC00Nj
+E3Nzk3MDMsLTEzMzY3NjA2OTMsMTM0Nzk3NTU4MiwtMjEwNjQ0
+OTI0NywtOTgyODY2MjUwLDc1MzcxOTcyNiwtMzE2Mzc3OTM2LC
+0xNzU2MjUzMzY5LDIwNjM4NDQzNiwtMTE2NzQ0MTMzMCwxMjA0
+MzA1NTgsMTk5MDgyODQwMiwtNTU4NzQyNjUyLC04NjY1Nzk4NT
+ksLTUxNTAzODUyMSwxNDc3MzM3NzE3LDY2ODI2OTE1MywtNzU3
+OTE4OTddfQ==
 -->
