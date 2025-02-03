@@ -42,15 +42,15 @@ Ingot
 
 #### All Classes
 >Weapons
->>Shortswords 
->>Broadswords
->>Hardmode Swords
->	
 >Ammo/Buffs/Potions
 >Armor
 >Accessories
 #### Melee
 >Weapons
+>>>Shortswords 
+>>Broadswords
+>>Hardmode Swords
+>	
 >Ammo/Buffs/Potions
 >Armor
 >Accessories
@@ -174,7 +174,7 @@ Ingot
 ### Tier 14
 ![tier14-img](img/tiers_template/tier14.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQ1MDg1NzY0NCwtNDYxNzc5NzAzLC00Nj
+eyJoaXN0b3J5IjpbMjEyMDU3MTI0NiwtNDYxNzc5NzAzLC00Nj
 E3Nzk3MDMsLTEzMzY3NjA2OTMsMTM0Nzk3NTU4MiwtMjEwNjQ0
 OTI0NywtOTgyODY2MjUwLDc1MzcxOTcyNiwtMzE2Mzc3OTM2LC
 0xNzU2MjUzMzY5LDIwNjM4NDQzNiwtMTE2NzQ0MTMzMCwxMjA0
