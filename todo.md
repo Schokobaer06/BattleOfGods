@@ -141,6 +141,10 @@ Ingot
 	- [ ] Advancements
 		- [ ]
 - [ ] Trojan Squirrel
+	- [ ] Environment
+		- [ ] Platin Ore
+		- [ ] Gold Ore (Upgrade)
+		- [ ] Thorium Ore
 - [ ] Grand Thunder Bird
 - [ ] King Slime
 - [ ] The Torch God
@@ -189,11 +193,11 @@ Ingot
 ### Tier 14
 ![tier14-img](img/tiers_template/tier14.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQyNjE4Nzk4OCwtOTA5OTEyNTAxLC00Nj
-E3Nzk3MDMsLTQ2MTc3OTcwMywtMTMzNjc2MDY5MywxMzQ3OTc1
-NTgyLC0yMTA2NDQ5MjQ3LC05ODI4NjYyNTAsNzUzNzE5NzI2LC
-0zMTYzNzc5MzYsLTE3NTYyNTMzNjksMjA2Mzg0NDM2LC0xMTY3
-NDQxMzMwLDEyMDQzMDU1OCwxOTkwODI4NDAyLC01NTg3NDI2NT
-IsLTg2NjU3OTg1OSwtNTE1MDM4NTIxLDE0NzczMzc3MTcsNjY4
-MjY5MTUzXX0=
+eyJoaXN0b3J5IjpbLTc2MDY3MjIwNiwtNDI2MTg3OTg4LC05MD
+k5MTI1MDEsLTQ2MTc3OTcwMywtNDYxNzc5NzAzLC0xMzM2NzYw
+NjkzLDEzNDc5NzU1ODIsLTIxMDY0NDkyNDcsLTk4Mjg2NjI1MC
+w3NTM3MTk3MjYsLTMxNjM3NzkzNiwtMTc1NjI1MzM2OSwyMDYz
+ODQ0MzYsLTExNjc0NDEzMzAsMTIwNDMwNTU4LDE5OTA4Mjg0MD
+IsLTU1ODc0MjY1MiwtODY2NTc5ODU5LC01MTUwMzg1MjEsMTQ3
+NzMzNzcxN119
 -->
