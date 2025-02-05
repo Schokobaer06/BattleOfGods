@@ -139,7 +139,7 @@ Ingot
 			- [ ] Happiness System
 		- [ ] Money System
 	- [ ] Advancements
-		- [ ]
+		- [ ] Start
 - [ ] Trojan Squirrel
 	- [ ] Environment
 		- [ ] Platin Ore
@@ -193,7 +193,7 @@ Ingot
 ### Tier 14
 ![tier14-img](img/tiers_template/tier14.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTc2MDY3MjIwNiwtNDI2MTg3OTg4LC05MD
+eyJoaXN0b3J5IjpbLTYzNTUwMzIxMiwtNDI2MTg3OTg4LC05MD
 k5MTI1MDEsLTQ2MTc3OTcwMywtNDYxNzc5NzAzLC0xMzM2NzYw
 NjkzLDEzNDc5NzU1ODIsLTIxMDY0NDkyNDcsLTk4Mjg2NjI1MC
 w3NTM3MTk3MjYsLTMxNjM3NzkzNiwtMTc1NjI1MzM2OSwyMDYz
