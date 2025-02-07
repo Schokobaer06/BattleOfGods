@@ -21,7 +21,7 @@ public class CopperShortswordItem extends SwordItem {
 			}
 
 			public float getAttackDamageBonus() {
-				return 9f;
+				return 1f;
 			}
 
 			public int getLevel() {

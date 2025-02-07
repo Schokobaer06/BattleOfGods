@@ -144,6 +144,18 @@ Adding Libraries to Inheritance
 Reading Input: C:\Users\Josef Peer\OneDrive\Games\Minecraft Java\Mods\Eigene\Battle Of Gods\mcreator (LAPTOP)\BattleOfGods\build\libs\modid-1.0.jar
 Adding input to inheritance map
 Processing entries
+Conflicting propagated mapping for com/schokobaer/battleofgods/item/CopperShortswordItem$1/getUses()I from net/minecraft/world/item/Tier/getUses()I: getUses -> m_6609_
+Conflicting propagated mapping for com/schokobaer/battleofgods/item/CopperBroadswordItem$1/getUses()I from net/minecraft/world/item/Tier/getUses()I: getUses -> m_6609_
+Conflicting propagated mapping for com/schokobaer/battleofgods/item/CopperShortswordItem$1/getSpeed()F from net/minecraft/world/item/Tier/getSpeed()F: getSpeed -> m_6624_
+Conflicting propagated mapping for com/schokobaer/battleofgods/item/CopperBroadswordItem$1/getSpeed()F from net/minecraft/world/item/Tier/getSpeed()F: getSpeed -> m_6624_
+Conflicting propagated mapping for com/schokobaer/battleofgods/item/CopperShortswordItem$1/getRepairIngredient()Lnet/minecraft/world/item/crafting/Ingredient; from net/minecraft/world/item/Tier/getRepairIngredient()Lnet/minecraft/world/item/crafting/Ingredient;: getRepairIngredient -> m_6282_
+Conflicting propagated mapping for com/schokobaer/battleofgods/item/CopperBroadswordItem$1/getRepairIngredient()Lnet/minecraft/world/item/crafting/Ingredient; from net/minecraft/world/item/Tier/getRepairIngredient()Lnet/minecraft/world/item/crafting/Ingredient;: getRepairIngredient -> m_6282_
+Conflicting propagated mapping for com/schokobaer/battleofgods/item/CopperShortswordItem$1/getEnchantmentValue()I from net/minecraft/world/item/Tier/getEnchantmentValue()I: getEnchantmentValue -> m_6601_
+Conflicting propagated mapping for com/schokobaer/battleofgods/item/CopperBroadswordItem$1/getEnchantmentValue()I from net/minecraft/world/item/Tier/getEnchantmentValue()I: getEnchantmentValue -> m_6601_
+Conflicting propagated mapping for com/schokobaer/battleofgods/item/CopperShortswordItem$1/getLevel()I from net/minecraft/world/item/Tier/getLevel()I: getLevel -> m_6604_
+Conflicting propagated mapping for com/schokobaer/battleofgods/item/CopperBroadswordItem$1/getLevel()I from net/minecraft/world/item/Tier/getLevel()I: getLevel -> m_6604_
+Conflicting propagated mapping for com/schokobaer/battleofgods/item/CopperShortswordItem$1/getAttackDamageBonus()F from net/minecraft/world/item/Tier/getAttackDamageBonus()F: getAttackDamageBonus -> m_6631_
+Conflicting propagated mapping for com/schokobaer/battleofgods/item/CopperBroadswordItem$1/getAttackDamageBonus()F from net/minecraft/world/item/Tier/getAttackDamageBonus()F: getAttackDamageBonus -> m_6631_
 Adding extras
 Sorting
 Writing Output: C:\Users\Josef Peer\OneDrive\Games\Minecraft Java\Mods\Eigene\Battle Of Gods\mcreator (LAPTOP)\BattleOfGods\build\reobfJar\output.jar
@@ -154,16 +166,37 @@ Writing Output: C:\Users\Josef Peer\OneDrive\Games\Minecraft Java\Mods\Eigene\Ba
   assets/battleofgods/
   assets/battleofgods/lang/
   assets/battleofgods/lang/en_us.json
+  assets/battleofgods/models/
+  assets/battleofgods/models/item/
+  assets/battleofgods/models/item/copper_broadsword.json
+  assets/battleofgods/models/item/copper_shortsword.json
+  assets/battleofgods/models/item/item_copper_shortsword.json
   assets/battleofgods/textures/
   assets/battleofgods/textures/item/
+  assets/battleofgods/textures/item/copper_broadsword.png
   assets/battleofgods/textures/item/copper_shortsword.png
   com/
   com/schokobaer/
   com/schokobaer/battleofgods/
   com/schokobaer/battleofgods/BattleofgodsMod.class
+  com/schokobaer/battleofgods/init/
+  com/schokobaer/battleofgods/init/BattleofgodsModItems.class
+  com/schokobaer/battleofgods/init/BattleofgodsModTabs.class
+  com/schokobaer/battleofgods/item/
+  com/schokobaer/battleofgods/item/CopperBroadswordItem$1.class
+  com/schokobaer/battleofgods/item/CopperBroadswordItem.class
+  com/schokobaer/battleofgods/item/CopperShortswordItem$1.class
+  com/schokobaer/battleofgods/item/CopperShortswordItem.class
+  com/schokobaer/battleofgods/item/ItemCopperShortswordItem.class
   data/
   data/battleofgods/
   data/battleofgods/weapon_attributes/
+  data/battleofgods/weapon_attributes/broadsword.json
+  data/battleofgods/weapon_attributes/copper_broadsword.json
   data/battleofgods/weapon_attributes/copper_shortsword.json
   data/battleofgods/weapon_attributes/shortsword.json
+  data/minecraft/
+  data/minecraft/tags/
+  data/minecraft/tags/items/
+  data/minecraft/tags/items/swords.json
   pack.mcmeta

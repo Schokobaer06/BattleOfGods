@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "battleofgods:copper_broadsword",
     "battleofgods:copper_shortsword"
   ]
 }

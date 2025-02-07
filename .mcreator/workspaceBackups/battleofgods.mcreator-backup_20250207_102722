@@ -1,6 +1,19 @@
 {
   "mod_elements": [
     {
+      "name": "ItemCopperShortsword",
+      "type": "item",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "item_copper_shortsword",
+      "metadata": {
+        "files": [
+          "src/main/java/com/schokobaer/battleofgods/item/ItemCopperShortswordItem.java",
+          "src/main/resources/assets/battleofgods/models/item/item_copper_shortsword.json"
+        ]
+      }
+    },
+    {
       "name": "Tier1",
       "type": "tab",
       "compiles": true,
@@ -22,12 +35,38 @@
           "src/main/java/com/schokobaer/battleofgods/item/CopperShortswordItem.java"
         ]
       }
+    },
+    {
+      "name": "RecipeCopperShortsword",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "recipe_copper_shortsword",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/battleofgods/recipes/recipe_copper_shortsword.json"
+        ]
+      }
+    },
+    {
+      "name": "CopperBroadsword",
+      "type": "tool",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "copper_broadsword",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/battleofgods/models/item/copper_broadsword.json",
+          "src/main/java/com/schokobaer/battleofgods/item/CopperBroadswordItem.java"
+        ]
+      }
     }
   ],
   "variable_elements": [],
   "sound_elements": [],
   "tag_elements": {
     "ITEMS:minecraft:swords": [
+      "~CUSTOM:CopperBroadsword",
       "~CUSTOM:CopperShortsword"
     ]
   },
@@ -35,7 +74,9 @@
   "language_map": {
     "en_us": {
       "item.battleofgods.copper_short_sword": "Copper Short Sword",
+      "item.battleofgods.item_copper_shortsword": "Item Copper Shortsword",
       "item_group.battleofgods.tier_1": "Tier 1",
+      "item.battleofgods.copper_broadsword": "Copper Broadsword",
       "item.battleofgods.copper_shortsword": "Copper Shortsword"
     }
   },
