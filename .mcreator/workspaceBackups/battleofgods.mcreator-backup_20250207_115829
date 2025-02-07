@@ -37,18 +37,6 @@
       }
     },
     {
-      "name": "RecipeCopperShortsword",
-      "type": "recipe",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "recipe_copper_shortsword",
-      "metadata": {
-        "files": [
-          "src/main/resources/data/battleofgods/recipes/recipe_copper_shortsword.json"
-        ]
-      }
-    },
-    {
       "name": "CopperBroadsword",
       "type": "tool",
       "compiles": true,
@@ -65,6 +53,7 @@
   "variable_elements": [],
   "sound_elements": [],
   "tag_elements": {
+    "ITEMS:forge:ingots/iron": [],
     "ITEMS:minecraft:swords": [
       "~CUSTOM:CopperBroadsword",
       "~CUSTOM:CopperShortsword"

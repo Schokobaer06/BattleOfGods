@@ -53,6 +53,7 @@
   "variable_elements": [],
   "sound_elements": [],
   "tag_elements": {
+    "ITEMS:forge:ingots/iron": [],
     "ITEMS:minecraft:swords": [
       "~CUSTOM:CopperBroadsword",
       "~CUSTOM:CopperShortsword"
