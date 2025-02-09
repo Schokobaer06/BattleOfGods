@@ -117,8 +117,9 @@ Ingot
 >>Brass Instruments
 >>Percussion Instruments
 >>String Instruments
+>>Wind Instruments
+>>Electronic Instruments
 >
-><
 >Ammo/Buffs/Potions
 >Armor
 >Accessories
@@ -216,11 +217,11 @@ Ingot
 ### Tier 14
 ![tier14-img](img/tiers_template/tier14.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwODgzOTA0MzIsMTEzNDkzMTkzOSwtOT
-MyMDg1NTAwLC0yNjQ5NTk0OTQsLTYzNTUwMzIxMiwtNDI2MTg3
-OTg4LC05MDk5MTI1MDEsLTQ2MTc3OTcwMywtNDYxNzc5NzAzLC
-0xMzM2NzYwNjkzLDEzNDc5NzU1ODIsLTIxMDY0NDkyNDcsLTk4
-Mjg2NjI1MCw3NTM3MTk3MjYsLTMxNjM3NzkzNiwtMTc1NjI1Mz
-M2OSwyMDYzODQ0MzYsLTExNjc0NDEzMzAsMTIwNDMwNTU4LDE5
-OTA4Mjg0MDJdfQ==
+eyJoaXN0b3J5IjpbMTIwNjUyNTEzNiwxMTM0OTMxOTM5LC05Mz
+IwODU1MDAsLTI2NDk1OTQ5NCwtNjM1NTAzMjEyLC00MjYxODc5
+ODgsLTkwOTkxMjUwMSwtNDYxNzc5NzAzLC00NjE3Nzk3MDMsLT
+EzMzY3NjA2OTMsMTM0Nzk3NTU4MiwtMjEwNjQ0OTI0NywtOTgy
+ODY2MjUwLDc1MzcxOTcyNiwtMzE2Mzc3OTM2LC0xNzU2MjUzMz
+Y5LDIwNjM4NDQzNiwtMTE2NzQ0MTMzMCwxMjA0MzA1NTgsMTk5
+MDgyODQwMl19
 -->
