@@ -125,7 +125,6 @@ Ingot
 >Ammo/Buffs/Potions
 >Armor
 >Accessories
->
 ### Mechanics
 #### Rarity
 ## Pre-Hardmode
@@ -223,7 +222,7 @@ Ingot
 ### Tier 14
 ![tier14-img](img/tiers_template/tier14.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0MzE2NjE2NDksNTMxMzcxNTkxLDEwNT
+eyJoaXN0b3J5IjpbLTE1OTUwODA3NDMsNTMxMzcxNTkxLDEwNT
 YxMzM4ODIsMTEzNDkzMTkzOSwtOTMyMDg1NTAwLC0yNjQ5NTk0
 OTQsLTYzNTUwMzIxMiwtNDI2MTg3OTg4LC05MDk5MTI1MDEsLT
 Q2MTc3OTcwMywtNDYxNzc5NzAzLC0xMzM2NzYwNjkzLDEzNDc5
