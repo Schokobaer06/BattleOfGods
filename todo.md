@@ -114,7 +114,11 @@ Ingot
 >Accessories
 #### Bard
 >Weapons
+>>Brass Instruments
+>>Percussion Instruments
+>>String Instruments
 >
+><
 >Ammo/Buffs/Potions
 >Armor
 >Accessories
@@ -212,11 +216,11 @@ Ingot
 ### Tier 14
 ![tier14-img](img/tiers_template/tier14.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTEzNDkzMTkzOSwtOTMyMDg1NTAwLC0yNj
-Q5NTk0OTQsLTYzNTUwMzIxMiwtNDI2MTg3OTg4LC05MDk5MTI1
-MDEsLTQ2MTc3OTcwMywtNDYxNzc5NzAzLC0xMzM2NzYwNjkzLD
-EzNDc5NzU1ODIsLTIxMDY0NDkyNDcsLTk4Mjg2NjI1MCw3NTM3
-MTk3MjYsLTMxNjM3NzkzNiwtMTc1NjI1MzM2OSwyMDYzODQ0Mz
-YsLTExNjc0NDEzMzAsMTIwNDMwNTU4LDE5OTA4Mjg0MDIsLTU1
-ODc0MjY1Ml19
+eyJoaXN0b3J5IjpbLTEwODgzOTA0MzIsMTEzNDkzMTkzOSwtOT
+MyMDg1NTAwLC0yNjQ5NTk0OTQsLTYzNTUwMzIxMiwtNDI2MTg3
+OTg4LC05MDk5MTI1MDEsLTQ2MTc3OTcwMywtNDYxNzc5NzAzLC
+0xMzM2NzYwNjkzLDEzNDc5NzU1ODIsLTIxMDY0NDkyNDcsLTk4
+Mjg2NjI1MCw3NTM3MTk3MjYsLTMxNjM3NzkzNiwtMTc1NjI1Mz
+M2OSwyMDYzODQ0MzYsLTExNjc0NDEzMzAsMTIwNDMwNTU4LDE5
+OTA4Mjg0MDJdfQ==
 -->
