@@ -139,6 +139,7 @@ Ingot
 				- [ ] Bestiary
 				- [ ] Progression Path
 				- [ ] NPCs
+				- [ ] Rarity Explained
 		- [ ] Amethyst Staff
 	- [ ] Environment
 		- [ ] Copper Ore
@@ -217,11 +218,11 @@ Ingot
 ### Tier 14
 ![tier14-img](img/tiers_template/tier14.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTg0OTM0MTg0LDExMzQ5MzE5MzksLTkzMj
-A4NTUwMCwtMjY0OTU5NDk0LC02MzU1MDMyMTIsLTQyNjE4Nzk4
-OCwtOTA5OTEyNTAxLC00NjE3Nzk3MDMsLTQ2MTc3OTcwMywtMT
-MzNjc2MDY5MywxMzQ3OTc1NTgyLC0yMTA2NDQ5MjQ3LC05ODI4
-NjYyNTAsNzUzNzE5NzI2LC0zMTYzNzc5MzYsLTE3NTYyNTMzNj
-ksMjA2Mzg0NDM2LC0xMTY3NDQxMzMwLDEyMDQzMDU1OCwxOTkw
-ODI4NDAyXX0=
+eyJoaXN0b3J5IjpbMTA1NjEzMzg4MiwxMTM0OTMxOTM5LC05Mz
+IwODU1MDAsLTI2NDk1OTQ5NCwtNjM1NTAzMjEyLC00MjYxODc5
+ODgsLTkwOTkxMjUwMSwtNDYxNzc5NzAzLC00NjE3Nzk3MDMsLT
+EzMzY3NjA2OTMsMTM0Nzk3NTU4MiwtMjEwNjQ0OTI0NywtOTgy
+ODY2MjUwLDc1MzcxOTcyNiwtMzE2Mzc3OTM2LC0xNzU2MjUzMz
+Y5LDIwNjM4NDQzNiwtMTE2NzQ0MTMzMCwxMjA0MzA1NTgsMTk5
+MDgyODQwMl19
 -->
