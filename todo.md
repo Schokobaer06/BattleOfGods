@@ -93,8 +93,10 @@ Ingot
 >Weapons
 >>Bombs
 >>Boomerangs
->Daggers
->Javelins
+>>Daggers
+>>Javelins
+>>Spiky Balls
+>>Others
 >
 >Ammo/Buffs/Potions
 >Armor
@@ -203,7 +205,7 @@ Ingot
 ### Tier 14
 ![tier14-img](img/tiers_template/tier14.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTM0Mjg0Mzc2MywtMjY0OTU5NDk0LC02Mz
+eyJoaXN0b3J5IjpbLTkzMjA4NTUwMCwtMjY0OTU5NDk0LC02Mz
 U1MDMyMTIsLTQyNjE4Nzk4OCwtOTA5OTEyNTAxLC00NjE3Nzk3
 MDMsLTQ2MTc3OTcwMywtMTMzNjc2MDY5MywxMzQ3OTc1NTgyLC
 0yMTA2NDQ5MjQ3LC05ODI4NjYyNTAsNzUzNzE5NzI2LC0zMTYz
