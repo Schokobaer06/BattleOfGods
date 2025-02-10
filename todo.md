@@ -4,7 +4,6 @@
 >[Layouts](#layouts)
 >>[Ore](#ore)
 >>[Class Setup](#class-setups)
->>
 >>[Mechanics](#mechanics)
 >
 >[Pre Hardmode](#pre-hardmode)
@@ -225,7 +224,7 @@ Ingot
 ### Tier 14
 ![tier14-img](img/tiers_template/tier14.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTY1NzAzOTQ4MiwtMTE5MTk4MTMxNiw2OT
+eyJoaXN0b3J5IjpbMTcwMjU4MTEzMiwtMTE5MTk4MTMxNiw2OT
 EzOTg0NzEsNTMxMzcxNTkxLDEwNTYxMzM4ODIsMTEzNDkzMTkz
 OSwtOTMyMDg1NTAwLC0yNjQ5NTk0OTQsLTYzNTUwMzIxMiwtND
 I2MTg3OTg4LC05MDk5MTI1MDEsLTQ2MTc3OTcwMywtNDYxNzc5
