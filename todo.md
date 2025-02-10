@@ -6,7 +6,6 @@
 >>[Class Setup](#class-setups)
 >>
 >>[Mechanics](#mechanics)
->>>[Rarity](#rarity)
 >
 >[Pre Hardmode](#pre-hardmode)
 >>[Tier 1](#tier-1)
@@ -128,6 +127,9 @@ Ingot
 >Accessories
 ### Mechanics
 #### Rarity
+#### NPC
+#### Revengangce Mode
+#### Eternity Mode
 ## Pre-Hardmode
 ### Tier 1
 ![tier1-img](img/tiers_template/tier1.png)
@@ -223,11 +225,11 @@ Ingot
 ### Tier 14
 ![tier14-img](img/tiers_template/tier14.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExOTE5ODEzMTYsNjkxMzk4NDcxLDUzMT
-M3MTU5MSwxMDU2MTMzODgyLDExMzQ5MzE5MzksLTkzMjA4NTUw
-MCwtMjY0OTU5NDk0LC02MzU1MDMyMTIsLTQyNjE4Nzk4OCwtOT
-A5OTEyNTAxLC00NjE3Nzk3MDMsLTQ2MTc3OTcwMywtMTMzNjc2
-MDY5MywxMzQ3OTc1NTgyLC0yMTA2NDQ5MjQ3LC05ODI4NjYyNT
-AsNzUzNzE5NzI2LC0zMTYzNzc5MzYsLTE3NTYyNTMzNjksMjA2
-Mzg0NDM2XX0=
+eyJoaXN0b3J5IjpbMTY1NzAzOTQ4MiwtMTE5MTk4MTMxNiw2OT
+EzOTg0NzEsNTMxMzcxNTkxLDEwNTYxMzM4ODIsMTEzNDkzMTkz
+OSwtOTMyMDg1NTAwLC0yNjQ5NTk0OTQsLTYzNTUwMzIxMiwtND
+I2MTg3OTg4LC05MDk5MTI1MDEsLTQ2MTc3OTcwMywtNDYxNzc5
+NzAzLC0xMzM2NzYwNjkzLDEzNDc5NzU1ODIsLTIxMDY0NDkyND
+csLTk4Mjg2NjI1MCw3NTM3MTk3MjYsLTMxNjM3NzkzNiwtMTc1
+NjI1MzM2OV19
 -->
