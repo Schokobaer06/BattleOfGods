@@ -64,6 +64,18 @@
           "src/main/resources/assets/battleofgods/blockstates/wooden_workbench.json"
         ]
       }
+    },
+    {
+      "name": "RecipeWoodenWorkbench",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "recipe_wooden_workbench",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/battleofgods/recipes/recipe_wooden_workbench.json"
+        ]
+      }
     }
   ],
   "variable_elements": [],

@@ -2,7 +2,7 @@
   "mappings": {
     "default": {
       "map": {
-        "0": "wooden_workbench"
+        "2": "wooden_workbench"
       },
       "name": "default"
     }

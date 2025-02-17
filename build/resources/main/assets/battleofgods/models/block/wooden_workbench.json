@@ -3,7 +3,7 @@
   "textures": {
     "all": "battleofgods:block/wooden_workbench",
     "particle": "battleofgods:block/wooden_workbench",
-    "0": "battleofgods:block/wooden_workbench"
+    "2": "battleofgods:block/wooden_workbench"
   },
   "render_type": "solid"
 }
