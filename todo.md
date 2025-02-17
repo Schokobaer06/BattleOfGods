@@ -146,6 +146,7 @@ Ingot
 				- [ ] Progression Path
 				- [ ] NPCs
 				- [ ] Rarity Explained
+				- [ ] Difficulty
 		- [ ] Amethyst Staff [`Ma`](#magic)
 	- [ ] Environment
 		- [ ] Copper Ore
@@ -224,11 +225,11 @@ Ingot
 ### Tier 14
 ![tier14-img](img/tiers_template/tier14.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTcwMjU4MTEzMiwtMTE5MTk4MTMxNiw2OT
-EzOTg0NzEsNTMxMzcxNTkxLDEwNTYxMzM4ODIsMTEzNDkzMTkz
-OSwtOTMyMDg1NTAwLC0yNjQ5NTk0OTQsLTYzNTUwMzIxMiwtND
-I2MTg3OTg4LC05MDk5MTI1MDEsLTQ2MTc3OTcwMywtNDYxNzc5
-NzAzLC0xMzM2NzYwNjkzLDEzNDc5NzU1ODIsLTIxMDY0NDkyND
-csLTk4Mjg2NjI1MCw3NTM3MTk3MjYsLTMxNjM3NzkzNiwtMTc1
-NjI1MzM2OV19
+eyJoaXN0b3J5IjpbLTIyNjYyMjkyNCwxNzAyNTgxMTMyLC0xMT
+kxOTgxMzE2LDY5MTM5ODQ3MSw1MzEzNzE1OTEsMTA1NjEzMzg4
+MiwxMTM0OTMxOTM5LC05MzIwODU1MDAsLTI2NDk1OTQ5NCwtNj
+M1NTAzMjEyLC00MjYxODc5ODgsLTkwOTkxMjUwMSwtNDYxNzc5
+NzAzLC00NjE3Nzk3MDMsLTEzMzY3NjA2OTMsMTM0Nzk3NTU4Mi
+wtMjEwNjQ0OTI0NywtOTgyODY2MjUwLDc1MzcxOTcyNiwtMzE2
+Mzc3OTM2XX0=
 -->
