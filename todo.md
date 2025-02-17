@@ -127,9 +127,9 @@ Ingot
 ### Mechanics
 #### Rarity
 #### NPC
-#### Normal Mode
-#### Revengangce Mode
-#### Eternity Mode
+#### Modes
+>##### Revengangce Mode
+>##### Eternity Mode
 #### Progression
 ## Pre-Hardmode
 ### Tier 1
@@ -227,11 +227,11 @@ Ingot
 ### Tier 14
 ![tier14-img](img/tiers_template/tier14.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTY0MjM5MTAyMSwxNzAyNTgxMTMyLC0xMT
-kxOTgxMzE2LDY5MTM5ODQ3MSw1MzEzNzE1OTEsMTA1NjEzMzg4
-MiwxMTM0OTMxOTM5LC05MzIwODU1MDAsLTI2NDk1OTQ5NCwtNj
-M1NTAzMjEyLC00MjYxODc5ODgsLTkwOTkxMjUwMSwtNDYxNzc5
-NzAzLC00NjE3Nzk3MDMsLTEzMzY3NjA2OTMsMTM0Nzk3NTU4Mi
-wtMjEwNjQ0OTI0NywtOTgyODY2MjUwLDc1MzcxOTcyNiwtMzE2
-Mzc3OTM2XX0=
+eyJoaXN0b3J5IjpbLTEyNjAwMjM2NDksLTY0MjM5MTAyMSwxNz
+AyNTgxMTMyLC0xMTkxOTgxMzE2LDY5MTM5ODQ3MSw1MzEzNzE1
+OTEsMTA1NjEzMzg4MiwxMTM0OTMxOTM5LC05MzIwODU1MDAsLT
+I2NDk1OTQ5NCwtNjM1NTAzMjEyLC00MjYxODc5ODgsLTkwOTkx
+MjUwMSwtNDYxNzc5NzAzLC00NjE3Nzk3MDMsLTEzMzY3NjA2OT
+MsMTM0Nzk3NTU4MiwtMjEwNjQ0OTI0NywtOTgyODY2MjUwLDc1
+MzcxOTcyNl19
 -->
