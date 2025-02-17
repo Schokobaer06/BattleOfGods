@@ -28,6 +28,7 @@ import java.util.AbstractMap;
 
 import com.schokobaer.battleofgods.init.BattleofgodsModTabs;
 import com.schokobaer.battleofgods.init.BattleofgodsModItems;
+import com.schokobaer.battleofgods.init.BattleofgodsModBlocks;
 
 @Mod("battleofgods")
 public class BattleofgodsMod {
@@ -39,6 +40,8 @@ public class BattleofgodsMod {
 		// End of user code block mod constructor
 		MinecraftForge.EVENT_BUS.register(this);
 		IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
+
+		BattleofgodsModBlocks.REGISTRY.register(bus);
 
 		BattleofgodsModItems.REGISTRY.register(bus);
 
