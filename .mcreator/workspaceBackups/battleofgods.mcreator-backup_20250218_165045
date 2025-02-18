@@ -105,7 +105,7 @@
       "name": "GuiCrafting",
       "type": "gui",
       "compiles": true,
-      "locked_code": false,
+      "locked_code": true,
       "registry_name": "gui_crafting",
       "metadata": {
         "files": [
@@ -121,7 +121,6 @@
     "BLOCKS:minecraft:mineable/axe": [
       "~CUSTOM:WoodenWorkbench"
     ],
-    "ITEMS:forge:ingots/iron": [],
     "ITEMS:minecraft:swords": [
       "~CUSTOM:CopperBroadsword",
       "~CUSTOM:CopperShortsword"

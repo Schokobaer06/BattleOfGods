@@ -89,8 +89,8 @@ public class CustomRecipe {
         }
     }
     public ItemStack getOutput() {
-	    return this.output;
-	}
+    return this.output;
+}
 
     
 	/*

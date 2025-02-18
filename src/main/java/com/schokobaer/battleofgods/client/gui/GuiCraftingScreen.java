@@ -1,92 +1,76 @@
 package com.schokobaer.battleofgods.client.gui;
 
+import com.schokobaer.battleofgods.world.inventory.GuiCraftingMenu;
+import com.schokobaer.battleofgods.CustomRecipe;
+import com.mojang.blaze3d.systems.RenderSystem;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.Button;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.level.Level;
-import com.schokobaer.battleofgods.world.inventory.GuiCraftingMenu;
-import com.schokobaer.battleofgods.CustomRecipe;
-import java.util.List;
-import net.minecraft.world.level.block.entity.BlockEntity;
 
+import java.util.List;
+import java.util.ArrayList;
 
 public class GuiCraftingScreen extends AbstractContainerScreen<GuiCraftingMenu> {
-    private final Level world;
-    private final int x, y, z;
-    private ItemStack selectedItem = ItemStack.EMPTY;
-    private Button craftButton;
-    private List<CustomRecipe> craftableRecipes;
+    private final Minecraft minecraft;
+    private List<Button> recipeButtons = new ArrayList<>();
+    private final List<CustomRecipe> availableRecipes = new ArrayList<>();
 
-    private static final ResourceLocation texture = new ResourceLocation("battleofgods:textures/screens/gui_crafting.png");
-
-    public GuiCraftingScreen(GuiCraftingMenu container, Inventory inventory, Component text) {
-        super(container, inventory, text);
-        this.world = container.world;
-        this.x = container.x;
-        this.y = container.y;
-        this.z = container.z;
+    public GuiCraftingScreen(GuiCraftingMenu menu, Inventory inventory, Component title) {
+        super(menu, inventory, title);
+        this.minecraft = Minecraft.getInstance();
     }
 
     @Override
     protected void init() {
         super.init();
-        craftableRecipes = CustomRecipe.getCraftableRecipes(this.menu.entity, this.menu.boundBlockEntity.getBlockState().getBlock().asItem());
-        int buttonY = this.topPos + 10;
-
-        for (CustomRecipe recipe : craftableRecipes) {
-            ItemStack output = recipe.getOutput();
-			this.addRenderableWidget(Button.builder(Component.literal(""), button -> selectItem(output))
-			    .pos(this.leftPos + 10, buttonY)
-			    .size(20, 20)
-			    .build());
-            buttonY += 22;
-        }
-
-        craftButton = this.addRenderableWidget(new Button(this.leftPos + 130, this.topPos + 80, 30, 20, Component.literal("🔨"), button -> craftItem()));
-        updateCraftButton();
+        this.recipeButtons.clear();
+        addRecipeButtons();
     }
 
-    private void selectItem(ItemStack item) {
-        this.selectedItem = item;
-        updateCraftButton();
+    @Override
+    public void render(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
+        this.renderBackground(graphics);
+        super.render(graphics, mouseX, mouseY, partialTick);
+        this.renderTooltip(graphics, mouseX, mouseY);
     }
 
-    private void craftItem() {
-        if (!selectedItem.isEmpty()) {
-            CustomRecipe recipe = craftableRecipes.stream().filter(r -> r.getOutput().equals(selectedItem)).findFirst().orElse(null);
-            if (recipe != null) {
-                CustomRecipe.craftItem(this.menu.entity, recipe);
-                selectedItem = ItemStack.EMPTY;
-                craftableRecipes = CustomRecipe.getCraftableRecipes(this.menu.entity, this.menu.boundBlockEntity.getBlockState().getBlock().asItem());
-                updateCraftButton();
-            }
+    private void addRecipeButtons() {
+        int xOffset = this.width / 2 - 100;
+        int yOffset = this.height / 2 - 50;
+
+        for (int i = 0; i < availableRecipes.size(); i++) {
+            CustomRecipe recipe = availableRecipes.get(i);
+            Component textComponent = recipe.getOutput().getDisplayName();
+
+            Button recipeButton = Button.builder(textComponent, button -> {
+                // Handle button click (craft item)
+            }).pos(xOffset, yOffset + (i * 25)).size(200, 20).build();
+
+            addRenderableWidget(recipeButton);
+            recipeButtons.add(recipeButton);
         }
     }
 
-    private void updateCraftButton() {
-        boolean canCraft = !selectedItem.isEmpty() && CustomRecipe.hasIngredients(this.menu.entity, selectedItem);
-        craftButton.active = canCraft;
-        craftButton.setFGColor(canCraft ? 0x00FF00 : 0xFF0000);
-    }
-    
     @Override
-	protected void renderBg(GuiGraphics guiGraphics, float partialTicks, int mouseX, int mouseY) {
-	    guiGraphics.blit(texture, this.leftPos, this.topPos, 0, 0, this.width, this.height);
+    protected void renderLabels(GuiGraphics graphics, int mouseX, int mouseY) {
+        super.renderLabels(graphics, mouseX, mouseY);
+    }
+
+	@Override
+	protected void renderBg(GuiGraphics graphics, float partialTicks, int mouseX, int mouseY) {
+	    // Hier kannst du dein eigenes Rendering für den Hintergrund implementieren
+	    RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F);
+	    graphics.fill(leftPos, topPos, leftPos + imageWidth, topPos + imageHeight, 0xFF000000); // Schwarzer Hintergrund
+	    //graphics.blit(TEXTURE, this.leftPos, this.topPos, 0, 0, this.imageWidth, this.imageHeight);
 	}
 
 
-    @Override
-    public void render(GuiGraphics guiGraphics, int mouseX, int mouseY, float partialTicks) {
-        this.renderBackground(guiGraphics);
-        super.render(guiGraphics, mouseX, mouseY, partialTicks);
-        this.renderTooltip(guiGraphics, mouseX, mouseY);
+
+    public void setAvailableRecipes(List<CustomRecipe> recipes) {
+        this.availableRecipes.clear();
+        this.availableRecipes.addAll(recipes);
     }
-	public BlockEntity getBoundBlockEntity() {
-	    return boundBlockEntity;
-	}
-    
 }

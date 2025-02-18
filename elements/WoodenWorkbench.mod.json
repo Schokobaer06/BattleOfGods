@@ -178,6 +178,7 @@
     "vanillaToolTier": "NONE",
     "isBonemealable": false,
     "hasInventory": false,
+    "guiBoundTo": "GuiCrafting",
     "openGUIOnRightClick": false,
     "inventorySize": 9,
     "inventoryStackSize": 64,

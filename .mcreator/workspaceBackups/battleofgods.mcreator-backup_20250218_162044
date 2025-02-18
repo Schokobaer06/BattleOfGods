@@ -100,22 +100,27 @@
           "src/main/java/com/schokobaer/battleofgods/CustomRecipeRegistry.java"
         ]
       }
-    }
-  ],
-  "variable_elements": [
+    },
     {
-      "name": "craftable_items",
-      "type": "itemstack",
-      "scope": "player_persistent",
-      "value": "ItemStack.EMPTY"
+      "name": "GuiCrafting",
+      "type": "gui",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "gui_crafting",
+      "metadata": {
+        "files": [
+          "src/main/java/com/schokobaer/battleofgods/world/inventory/GuiCraftingMenu.java",
+          "src/main/java/com/schokobaer/battleofgods/client/gui/GuiCraftingScreen.java"
+        ]
+      }
     }
   ],
+  "variable_elements": [],
   "sound_elements": [],
   "tag_elements": {
     "BLOCKS:minecraft:mineable/axe": [
       "~CUSTOM:WoodenWorkbench"
     ],
-    "ITEMS:forge:ingots/iron": [],
     "ITEMS:minecraft:swords": [
       "~CUSTOM:CopperBroadsword",
       "~CUSTOM:CopperShortsword"
