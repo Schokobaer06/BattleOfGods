@@ -29,21 +29,8 @@ Minecraft Mod based on [*Terraria*](https://terraria.org/) and its mods:
 
 ### Structures
 
-```mermaid
-    gitGraph
-       commit
-       commit
-       branch develop
-       commit
-       commit
-       commit
-       checkout main
-       commit
-       commit
-
-```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTU3NTAxNDA4NSwtMzMzMTYwMDcxLDE4OT
+eyJoaXN0b3J5IjpbLTMzMzE2MDA3MSwtMzMzMTYwMDcxLDE4OT
 g5OTE3NDYsMTI5MTYxMjY0NCwtMzMzMTYwMDcxLC0xMzM1NjQx
 OTQ1LDk1MTA4NjY2MywxNzg5NTA1MDg3LDEwNTA4MTU2OTcsMT
 A1MDgxNTY5NywtMTg5NjQzMzQxOSwxNjA2MDgyMzM0LC0xODE2
