@@ -144,18 +144,23 @@ Adding Libraries to Inheritance
 Reading Input: C:\Users\Josef Peer\OneDrive\Games\Minecraft Java\Mods\Eigene\Battle Of Gods\mcreator (LAPTOP)\BattleOfGods\build\libs\modid-1.0.jar
 Adding input to inheritance map
 Processing entries
-Conflicting propagated mapping for com/schokobaer/battleofgods/item/CopperShortswordItem$1/getUses()I from net/minecraft/world/item/Tier/getUses()I: getUses -> m_6609_
+Conflicting propagated mapping for com/schokobaer/battleofgods/block/WoodenWorkbenchBlock/getVisualShape(Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/BlockGetter;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/phys/shapes/CollisionContext;)Lnet/minecraft/world/phys/shapes/VoxelShape; from net/minecraft/world/level/block/state/BlockBehaviour/getVisualShape(Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/BlockGetter;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/phys/shapes/CollisionContext;)Lnet/minecraft/world/phys/shapes/VoxelShape;: getVisualShape -> m_5909_
+Conflicting propagated mapping for com/schokobaer/battleofgods/block/WoodenWorkbenchBlock/propagatesSkylightDown(Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/BlockGetter;Lnet/minecraft/core/BlockPos;)Z from net/minecraft/world/level/block/Block/propagatesSkylightDown(Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/BlockGetter;Lnet/minecraft/core/BlockPos;)Z: propagatesSkylightDown -> m_7420_
+Conflicting propagated mapping for com/schokobaer/battleofgods/block/WoodenWorkbenchBlock/getLightBlock(Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/BlockGetter;Lnet/minecraft/core/BlockPos;)I from net/minecraft/world/level/block/state/BlockBehaviour/getLightBlock(Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/BlockGetter;Lnet/minecraft/core/BlockPos;)I: getLightBlock -> m_7753_
+Conflicting propagated mapping for com/schokobaer/battleofgods/block/WoodenWorkbenchBlock/getShape(Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/BlockGetter;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/phys/shapes/CollisionContext;)Lnet/minecraft/world/phys/shapes/VoxelShape; from net/minecraft/world/level/block/state/BlockBehaviour/getShape(Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/BlockGetter;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/phys/shapes/CollisionContext;)Lnet/minecraft/world/phys/shapes/VoxelShape;: getShape -> m_5940_
 Conflicting propagated mapping for com/schokobaer/battleofgods/item/CopperBroadswordItem$1/getUses()I from net/minecraft/world/item/Tier/getUses()I: getUses -> m_6609_
-Conflicting propagated mapping for com/schokobaer/battleofgods/item/CopperShortswordItem$1/getSpeed()F from net/minecraft/world/item/Tier/getSpeed()F: getSpeed -> m_6624_
 Conflicting propagated mapping for com/schokobaer/battleofgods/item/CopperBroadswordItem$1/getSpeed()F from net/minecraft/world/item/Tier/getSpeed()F: getSpeed -> m_6624_
-Conflicting propagated mapping for com/schokobaer/battleofgods/item/CopperShortswordItem$1/getRepairIngredient()Lnet/minecraft/world/item/crafting/Ingredient; from net/minecraft/world/item/Tier/getRepairIngredient()Lnet/minecraft/world/item/crafting/Ingredient;: getRepairIngredient -> m_6282_
 Conflicting propagated mapping for com/schokobaer/battleofgods/item/CopperBroadswordItem$1/getRepairIngredient()Lnet/minecraft/world/item/crafting/Ingredient; from net/minecraft/world/item/Tier/getRepairIngredient()Lnet/minecraft/world/item/crafting/Ingredient;: getRepairIngredient -> m_6282_
-Conflicting propagated mapping for com/schokobaer/battleofgods/item/CopperShortswordItem$1/getEnchantmentValue()I from net/minecraft/world/item/Tier/getEnchantmentValue()I: getEnchantmentValue -> m_6601_
 Conflicting propagated mapping for com/schokobaer/battleofgods/item/CopperBroadswordItem$1/getEnchantmentValue()I from net/minecraft/world/item/Tier/getEnchantmentValue()I: getEnchantmentValue -> m_6601_
-Conflicting propagated mapping for com/schokobaer/battleofgods/item/CopperShortswordItem$1/getLevel()I from net/minecraft/world/item/Tier/getLevel()I: getLevel -> m_6604_
 Conflicting propagated mapping for com/schokobaer/battleofgods/item/CopperBroadswordItem$1/getLevel()I from net/minecraft/world/item/Tier/getLevel()I: getLevel -> m_6604_
-Conflicting propagated mapping for com/schokobaer/battleofgods/item/CopperShortswordItem$1/getAttackDamageBonus()F from net/minecraft/world/item/Tier/getAttackDamageBonus()F: getAttackDamageBonus -> m_6631_
 Conflicting propagated mapping for com/schokobaer/battleofgods/item/CopperBroadswordItem$1/getAttackDamageBonus()F from net/minecraft/world/item/Tier/getAttackDamageBonus()F: getAttackDamageBonus -> m_6631_
+Conflicting propagated mapping for com/schokobaer/battleofgods/item/CopperShortswordItem$1/getUses()I from net/minecraft/world/item/Tier/getUses()I: getUses -> m_6609_
+Conflicting propagated mapping for com/schokobaer/battleofgods/item/CopperShortswordItem$1/getSpeed()F from net/minecraft/world/item/Tier/getSpeed()F: getSpeed -> m_6624_
+Conflicting propagated mapping for com/schokobaer/battleofgods/item/CopperShortswordItem$1/getRepairIngredient()Lnet/minecraft/world/item/crafting/Ingredient; from net/minecraft/world/item/Tier/getRepairIngredient()Lnet/minecraft/world/item/crafting/Ingredient;: getRepairIngredient -> m_6282_
+Conflicting propagated mapping for com/schokobaer/battleofgods/item/CopperShortswordItem$1/getEnchantmentValue()I from net/minecraft/world/item/Tier/getEnchantmentValue()I: getEnchantmentValue -> m_6601_
+Conflicting propagated mapping for com/schokobaer/battleofgods/item/CopperShortswordItem$1/getLevel()I from net/minecraft/world/item/Tier/getLevel()I: getLevel -> m_6604_
+Conflicting propagated mapping for com/schokobaer/battleofgods/item/CopperShortswordItem$1/getAttackDamageBonus()F from net/minecraft/world/item/Tier/getAttackDamageBonus()F: getAttackDamageBonus -> m_6631_
+Conflicting propagated mapping for net/minecraft/world/entity/LivingEntity/lambda$addAdditionalSaveData$3(Lnet/minecraft/nbt/CompoundTag;Lnet/minecraft/nbt/Tag;)V from net/minecraft/world/entity/player/Player/lambda$addAdditionalSaveData$3(Lnet/minecraft/nbt/CompoundTag;Lnet/minecraft/nbt/Tag;)V: lambda$addAdditionalSaveData$3 -> m_219754_
 Adding extras
 Sorting
 Writing Output: C:\Users\Josef Peer\OneDrive\Games\Minecraft Java\Mods\Eigene\Battle Of Gods\mcreator (LAPTOP)\BattleOfGods\build\reobfJar\output.jar
@@ -164,22 +169,40 @@ Writing Output: C:\Users\Josef Peer\OneDrive\Games\Minecraft Java\Mods\Eigene\Ba
   META-INF/mods.toml
   assets/
   assets/battleofgods/
+  assets/battleofgods/blockstates/
+  assets/battleofgods/blockstates/wooden_workbench.json
   assets/battleofgods/lang/
   assets/battleofgods/lang/en_us.json
   assets/battleofgods/models/
+  assets/battleofgods/models/block/
+  assets/battleofgods/models/block/wooden_workbench.json
+  assets/battleofgods/models/custom/
+  assets/battleofgods/models/custom/wooden_workbench.json
   assets/battleofgods/models/item/
   assets/battleofgods/models/item/copper_broadsword.json
   assets/battleofgods/models/item/copper_shortsword.json
+  assets/battleofgods/models/item/handheld_broadsword.json
   assets/battleofgods/models/item/item_copper_shortsword.json
+  assets/battleofgods/models/item/wooden_workbench.json
   assets/battleofgods/textures/
+  assets/battleofgods/textures/block/
+  assets/battleofgods/textures/block/wooden_workbench.png
   assets/battleofgods/textures/item/
   assets/battleofgods/textures/item/copper_broadsword.png
   assets/battleofgods/textures/item/copper_shortsword.png
+  assets/battleofgods/textures/screens/
+  assets/battleofgods/textures/screens/gui_crafting.png
   com/
   com/schokobaer/
   com/schokobaer/battleofgods/
   com/schokobaer/battleofgods/BattleofgodsMod.class
+  com/schokobaer/battleofgods/CustomRecipe.class
+  com/schokobaer/battleofgods/CustomRecipeRegistry.class
+  com/schokobaer/battleofgods/block/
+  com/schokobaer/battleofgods/block/WoodenWorkbenchBlock.class
   com/schokobaer/battleofgods/init/
+  com/schokobaer/battleofgods/init/BattleofgodsModBlocks.class
+  com/schokobaer/battleofgods/init/BattleofgodsModBrewingRecipes.class
   com/schokobaer/battleofgods/init/BattleofgodsModItems.class
   com/schokobaer/battleofgods/init/BattleofgodsModTabs.class
   com/schokobaer/battleofgods/item/
@@ -190,13 +213,27 @@ Writing Output: C:\Users\Josef Peer\OneDrive\Games\Minecraft Java\Mods\Eigene\Ba
   com/schokobaer/battleofgods/item/ItemCopperShortswordItem.class
   data/
   data/battleofgods/
+  data/battleofgods/loot_tables/
+  data/battleofgods/loot_tables/blocks/
+  data/battleofgods/loot_tables/blocks/wooden_workbench.json
+  data/battleofgods/recipes/
+  data/battleofgods/recipes/recipe_copper_shortsword.json
+  data/battleofgods/recipes/recipe_wooden_workbench.json
   data/battleofgods/weapon_attributes/
   data/battleofgods/weapon_attributes/broadsword.json
   data/battleofgods/weapon_attributes/copper_broadsword.json
   data/battleofgods/weapon_attributes/copper_shortsword.json
   data/battleofgods/weapon_attributes/shortsword.json
+  data/forge/
+  data/forge/tags/
+  data/forge/tags/items/
+  data/forge/tags/items/ingots/
+  data/forge/tags/items/ingots/iron.json
   data/minecraft/
   data/minecraft/tags/
+  data/minecraft/tags/blocks/
+  data/minecraft/tags/blocks/mineable/
+  data/minecraft/tags/blocks/mineable/axe.json
   data/minecraft/tags/items/
   data/minecraft/tags/items/swords.json
   pack.mcmeta

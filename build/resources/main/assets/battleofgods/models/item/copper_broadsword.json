@@ -1,5 +1,5 @@
 {
-  "parent": "battleofgods:item/handheld_broadsword",
+  "parent": "item/handheld",
   "textures": {
     "layer0": "battleofgods:item/copper_broadsword"
   }

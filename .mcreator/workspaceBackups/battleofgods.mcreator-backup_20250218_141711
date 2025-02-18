@@ -48,11 +48,79 @@
           "src/main/java/com/schokobaer/battleofgods/item/CopperBroadswordItem.java"
         ]
       }
+    },
+    {
+      "name": "WoodenWorkbench",
+      "type": "block",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "wooden_workbench",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/battleofgods/loot_tables/blocks/wooden_workbench.json",
+          "src/main/resources/assets/battleofgods/models/item/wooden_workbench.json",
+          "src/main/resources/assets/battleofgods/models/block/wooden_workbench.json",
+          "src/main/java/com/schokobaer/battleofgods/block/WoodenWorkbenchBlock.java",
+          "src/main/resources/assets/battleofgods/blockstates/wooden_workbench.json"
+        ]
+      }
+    },
+    {
+      "name": "RecipeWoodenWorkbench",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "recipe_wooden_workbench",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/battleofgods/recipes/recipe_wooden_workbench.json"
+        ]
+      }
+    },
+    {
+      "name": "CustomRecipe",
+      "type": "code",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "custom_recipe",
+      "metadata": {
+        "files": [
+          "src/main/java/com/schokobaer/battleofgods/CustomRecipe.java"
+        ]
+      }
+    },
+    {
+      "name": "CustomRecipeRegistry",
+      "type": "code",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "custom_recipe_registry",
+      "metadata": {
+        "files": [
+          "src/main/java/com/schokobaer/battleofgods/CustomRecipeRegistry.java"
+        ]
+      }
+    },
+    {
+      "name": "GuiCrafting",
+      "type": "gui",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "gui_crafting",
+      "metadata": {
+        "files": [
+          "src/main/java/com/schokobaer/battleofgods/world/inventory/GuiCraftingMenu.java",
+          "src/main/java/com/schokobaer/battleofgods/client/gui/GuiCraftingScreen.java"
+        ]
+      }
     }
   ],
   "variable_elements": [],
   "sound_elements": [],
   "tag_elements": {
+    "BLOCKS:minecraft:mineable/axe": [
+      "~CUSTOM:WoodenWorkbench"
+    ],
     "ITEMS:forge:ingots/iron": [],
     "ITEMS:minecraft:swords": [
       "~CUSTOM:CopperBroadsword",
@@ -64,6 +132,7 @@
     "en_us": {
       "item.battleofgods.copper_short_sword": "Copper Short Sword",
       "item.battleofgods.item_copper_shortsword": "Item Copper Shortsword",
+      "block.battleofgods.wooden_workbench": "Workbench",
       "item_group.battleofgods.tier_1": "Tier 1",
       "item.battleofgods.copper_broadsword": "Copper Broadsword",
       "item.battleofgods.copper_shortsword": "Copper Shortsword"
