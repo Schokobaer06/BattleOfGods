@@ -104,7 +104,7 @@
     {
       "name": "GuiCrafting",
       "type": "gui",
-      "compiles": true,
+      "compiles": false,
       "locked_code": true,
       "registry_name": "gui_crafting",
       "metadata": {

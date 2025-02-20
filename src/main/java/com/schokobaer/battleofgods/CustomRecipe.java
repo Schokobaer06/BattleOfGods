@@ -56,7 +56,7 @@ public class CustomRecipe {
         }
         return craftable;
     }
-	private static boolean hasIngredients(net.minecraft.world.entity.player.Player player, CustomRecipe recipe) {
+	public static boolean hasIngredients(net.minecraft.world.entity.player.Player player, CustomRecipe recipe) {
         Map<Item, Integer> inventoryCount = new HashMap<>();
         
         for (ItemStack stack : player.getInventory().items) {
@@ -86,6 +86,11 @@ public class CustomRecipe {
                 amount -= toRemove;
                 if (amount <= 0) return;
             }
+        }
+    }
+    public static void consumeIngredients(net.minecraft.world.entity.player.Player player, CustomRecipe recipe){
+        for (Map.Entry<Item, Integer> entry : recipe.ingredients.entrySet()) {
+            removeItems(player, entry.getKey(), entry.getValue());
         }
     }
     public ItemStack getOutput() {
