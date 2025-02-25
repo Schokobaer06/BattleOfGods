@@ -52,4 +52,6 @@
 
 
 ## Crafting GUI
-.
+**Here is how it should look:<br>**
+![GUI](./gui.png)<br>
+**Here is how it should look in JEI:<br>**
