@@ -1,0 +1,23 @@
+{
+  "type": "battleofgods:default_recipe",
+  "group": "recipe_group",
+  "category": "recipe_category",
+  "items": [
+    {
+      "item": "recipe_name",
+      "count": null
+    },
+    {
+      "tag": "modid:tag",
+      "count": 1
+    },
+    {
+      "item": "recipe_name",
+        "count": 15
+    }
+  ],
+  "output": {
+    "item": "recipe_name",
+    "count": 1
+  }
+}
