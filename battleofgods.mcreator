@@ -110,7 +110,7 @@
     "version": "1.0.0",
     "author": "Josef Peer, MCreator",
     "websiteURL": "https://mcreator.net",
-    "license": "Not specified",
+    "license": "MIT License",
     "serverSideOnly": false,
     "requiredMods": [],
     "dependencies": [],
