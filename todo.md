@@ -132,7 +132,9 @@ Ingot
 >##### Revengeance Mode
 >##### Death Mode
 >##### Eternity Mode
-#### Progression
+### Progression
+```mermaid
+```
 ## Pre-Hardmode
 ### Tier 1
 ![tier1-img](img/tiers_template/tier1.png)
@@ -229,11 +231,11 @@ Ingot
 ### Tier 14
 ![tier14-img](img/tiers_template/tier14.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyOTgyNTgyNDksLTE3MDg1OTUyNTMsLT
-Y0MjM5MTAyMSwxNzAyNTgxMTMyLC0xMTkxOTgxMzE2LDY5MTM5
-ODQ3MSw1MzEzNzE1OTEsMTA1NjEzMzg4MiwxMTM0OTMxOTM5LC
-05MzIwODU1MDAsLTI2NDk1OTQ5NCwtNjM1NTAzMjEyLC00MjYx
-ODc5ODgsLTkwOTkxMjUwMSwtNDYxNzc5NzAzLC00NjE3Nzk3MD
-MsLTEzMzY3NjA2OTMsMTM0Nzk3NTU4MiwtMjEwNjQ0OTI0Nywt
-OTgyODY2MjUwXX0=
+eyJoaXN0b3J5IjpbLTIwNDg4NTYxNDMsLTEyOTgyNTgyNDksLT
+E3MDg1OTUyNTMsLTY0MjM5MTAyMSwxNzAyNTgxMTMyLC0xMTkx
+OTgxMzE2LDY5MTM5ODQ3MSw1MzEzNzE1OTEsMTA1NjEzMzg4Mi
+wxMTM0OTMxOTM5LC05MzIwODU1MDAsLTI2NDk1OTQ5NCwtNjM1
+NTAzMjEyLC00MjYxODc5ODgsLTkwOTkxMjUwMSwtNDYxNzc5Nz
+AzLC00NjE3Nzk3MDMsLTEzMzY3NjA2OTMsMTM0Nzk3NTU4Miwt
+MjEwNjQ0OTI0N119
 -->
