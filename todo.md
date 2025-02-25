@@ -134,7 +134,8 @@ Ingot
 >##### Eternity Mode
 ### Progression
 ```mermaid
-graph TD;
+graph TD
+
 ```
 ## Pre-Hardmode
 ### Tier 1
@@ -232,7 +233,7 @@ graph TD;
 ### Tier 14
 ![tier14-img](img/tiers_template/tier14.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTU3NzEyMjU4MCwtMTI5ODI1ODI0OSwtMT
+eyJoaXN0b3J5IjpbMTc2OTcyOTM1NSwtMTI5ODI1ODI0OSwtMT
 cwODU5NTI1MywtNjQyMzkxMDIxLDE3MDI1ODExMzIsLTExOTE5
 ODEzMTYsNjkxMzk4NDcxLDUzMTM3MTU5MSwxMDU2MTMzODgyLD
 ExMzQ5MzE5MzksLTkzMjA4NTUwMCwtMjY0OTU5NDk0LC02MzU1
