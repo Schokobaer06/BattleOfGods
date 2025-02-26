@@ -165,6 +165,7 @@ direction LR
 end
 
 subgraph prehardmode [Pre-Hardmode]
+direction TB
 	subgraph t1 [Tier 1]
 		start1@{ shape: circle, label: "Start"} --> bi1
 		bi1(**Forest**) -.-> bo1
