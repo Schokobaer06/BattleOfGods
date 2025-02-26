@@ -139,7 +139,7 @@ subgraph legend [Legende]
 	Start
 end
 subgraph prehardmode [Pre-Hardmode]
-	T1
+	T1 ~Start
 	T4
 	end
 subgraph hardmode [Hardmode]
@@ -242,7 +242,7 @@ end
 ### Tier 14
 ![tier14-img](img/tiers_template/tier14.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQ5MzU3ODk4OCwtMTI4NDU3NTQxLDEyND
+eyJoaXN0b3J5IjpbMTE1MTI2MTU1NCwtMTI4NDU3NTQxLDEyND
 M3NTI0NDcsLTYwNzY3OTcwLDE2ODgxOTU2MDUsLTE5MjQ4OTg2
 NzMsLTEyOTgyNTgyNDksLTE3MDg1OTUyNTMsLTY0MjM5MTAyMS
 wxNzAyNTgxMTMyLC0xMTkxOTgxMzE2LDY5MTM5ODQ3MSw1MzEz
