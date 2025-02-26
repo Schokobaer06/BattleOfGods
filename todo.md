@@ -134,14 +134,14 @@ Ingot
 >##### Eternity Mode
 ### Progression
 ```mermaid
-graph TD
-subgraph Lege
-a1-->a2
-end
-subgraph two
+graph LR
+
+subgraph prehardmode [Pre-Hardmode]
 b1-->b2
 end
-
+subgraph legend [Legende]
+a1-->a2
+end
 
 ```
 ## Pre-Hardmode
@@ -240,11 +240,11 @@ end
 ### Tier 14
 ![tier14-img](img/tiers_template/tier14.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTY2NTc1MzYxNiwxMjQzNzUyNDQ3LC02MD
-c2Nzk3MCwxNjg4MTk1NjA1LC0xOTI0ODk4NjczLC0xMjk4MjU4
-MjQ5LC0xNzA4NTk1MjUzLC02NDIzOTEwMjEsMTcwMjU4MTEzMi
-wtMTE5MTk4MTMxNiw2OTEzOTg0NzEsNTMxMzcxNTkxLDEwNTYx
-MzM4ODIsMTEzNDkzMTkzOSwtOTMyMDg1NTAwLC0yNjQ5NTk0OT
-QsLTYzNTUwMzIxMiwtNDI2MTg3OTg4LC05MDk5MTI1MDEsLTQ2
-MTc3OTcwM119
+eyJoaXN0b3J5IjpbLTEyOTEyMzA1MTMsMTI0Mzc1MjQ0NywtNj
+A3Njc5NzAsMTY4ODE5NTYwNSwtMTkyNDg5ODY3MywtMTI5ODI1
+ODI0OSwtMTcwODU5NTI1MywtNjQyMzkxMDIxLDE3MDI1ODExMz
+IsLTExOTE5ODEzMTYsNjkxMzk4NDcxLDUzMTM3MTU5MSwxMDU2
+MTMzODgyLDExMzQ5MzE5MzksLTkzMjA4NTUwMCwtMjY0OTU5ND
+k0LC02MzU1MDMyMTIsLTQyNjE4Nzk4OCwtOTA5OTEyNTAxLC00
+NjE3Nzk3MDNdfQ==
 -->
