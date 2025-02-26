@@ -134,7 +134,7 @@ Ingot
 >##### Death Mode
 >##### Eternity Mode
 ### Progression
-*Textures may be pulled from the wikis of the original terraria mods*
+
 
 ```mermaid
 graph TD
@@ -166,18 +166,38 @@ end
 
 subgraph prehardmode [Pre-Hardmode]
 	subgraph t1 [Tier 1]
-		start1@{ shape: circle, label: "Start"}
-		bi1(**Forest**) --> bo1(**Trojan Squirrel**<br>can be summoned with Squirrel Coat of Arms) --> npc1@{ img: "https://fargosmods.wiki.gg/images/e/e2/Squirrel_%28NPC%29.png", label: "Squirrel",h:10, constraint: "on" }
-		
+		start1@{ shape: circle, label: "Start"} --> bi1
+		bi1(**Forest**) -.-> bo1
+		bo1(**Trojan Squirrel**<br>can be summoned with Squirrel Coat of Arms) --> npc1
+		npc1("Squirrel")
+		start1-->bi2
+		bi2(Caverns)-->bi3
+		bi3(Desert) -->bo2
+		bo2(**Grand Thunderbird**<br> can be summoned with Grand Flare Gun + Storm Flares) --> npc2
+		npc2(Desert Acolyte)
+		bi2-->mis1
+		mis1(Mine **Live Crystals**) --> ev1
+		ev1(**Slime Rain**<br>200HP needed)
+		ev1-.->bo3
+		bo3(**King Slime**<br>can be summoned with Slime Rain OR Slime Crown anywhere)
+		bi2-->mbo1
+		mbo1(Torch God)
+		bo2-->bo3
+		bo3(**Desert Scourge**<br>can be summoned with Desert Medallion)-->ev2 & mbo2
+		ev2(Sandstorm)
+		mbo2(Giant Clam)
+		start1-->bi3
+		bi3(Sunken Sea)-->mbo2 & str1
+		str1(SS Bio-Lab) --> mis2
+		mis1==>bo4
+		bo4(**Eye of Cthulhu**<br>can be summoned with Suspicious Looking Eye<br>spawns naturally each night if:<br>250HP & 10Def needed,4 NPCs must be present)		
 	end
 	subgraph t2 [Tier 2]
 
 	end
 	subgraph t3 [Tier 3]
-
 	end
 	subgraph t4 [Tier 4]
-
 	end
 	t1 ==> t2
 	t2 ==> t3
@@ -228,15 +248,15 @@ end
 %%legend ~~~ prehardmode
 prehardmode ==> hardmode
 hardmode ==> postmoonlord
-class bo0,bo1 boss
-class bi0,bi1 biome
-class mis0 misc
-class ev0 event
-class str0 struct
+class bo0,bo1,bo2,bo3,bo4,bo5,bo6,bo7,bo8,bo9,bo10 boss
+class bi0,bi1,bi2,bi3,bi4,bi5,bi6,bi7,bi8,bi9,bi10 biome
+class mis0,mis1,mis2,mis3,mis4,mis5,mis6,mis7,mis8,mis9,mis10 misc
+class ev0,ev1,ev2,ev3,ev5,ev6,ev7,ev8,ev9,ev10 event
+class str0,str1,str2,str3,str4,str5,str6,str7,str8,str9,str10 struct
 class start0,start1 start
-class mbo0 miniboss
-class npc0,npc1 npc
-class inv0 invisible
+class mbo0,mbo1,mbo2,mbo3,mbo4,mbo5,mbo6,mbo7,mbo8,mbo9,mbo10 miniboss
+class npc0,npc1,npc2,npc3,npc4,npc5,npc6,npc7,npc8,npc9,npc10 npc
+class inv0,inv1,inv2 invisible
 ```
 ## Pre-Hardmode
 ### Tier 1
