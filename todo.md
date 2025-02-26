@@ -5,6 +5,7 @@
 >>[Ore](#ore)
 >>[Class Setup](#class-setups)
 >>[Mechanics](#mechanics)
+>>[Progression](#progression)
 >
 >[Pre Hardmode](#pre-hardmode)
 >>[Tier 1](#tier-1)
@@ -133,24 +134,101 @@ Ingot
 >##### Death Mode
 >##### Eternity Mode
 ### Progression
+*Textures may be pulled from the wikis of the original terraria mods*
+
 ```mermaid
-graph LR
+graph TD
+classDef boss fill:#ff5555,stroke:#aa0000,stroke-width:3px,color:black,rx:40,ry:20;
+classDef biome fill:#008000,stroke:#164e00,stroke-width:3px,color:black,rx:20,ry:40;
+classDef misc fill:#8f8f8f,stroke:#000000,stroke-width:2px,color:black,rx:5,ry:5;
+classDef event fill:#04bdff,stroke:#0069b6,stroke-width:3px,color:black;
+classDef start fill:#fff1cf,stroke:#ffb90f,stroke-width:2px,color:black;
+classDef struct fill:#9541ff,stroke:#51005e,stroke-width:3px,color:black;
+classDef miniboss fill:#ff9900,stroke:#cc6600,stroke-width:3px,color:black,rx:30,ry:15;
+classDef npc fill:#66cc66,stroke:#336633,stroke-width:2px,color:black,rx:10,ry:10;
+
+
 subgraph legend [Legende]
-	Start
+direction TB
+	start0@{ shape: circle, label: "Start"}
+	bo0("Boss")
+	mbo0("Miniboss")
+	bi0("Biome")
+	mis0("Misc")
+	npc0("NPC")
+	ev0("Event")
+	str0("Struct")
+
 end
+class bo0 boss
+class bi0 biome
+class mis0 misc
+class ev0 event
+class str0 struct
+class start0,start1 start
+class mbo0 miniboss
+class npc0 npc
 subgraph prehardmode [Pre-Hardmode]
-	T1
-	T4
+	subgraph t1 [Tier 1]
 	end
+	subgraph t2 [Tier 2]
+
+	end
+	subgraph t3 [Tier 3]
+
+	end
+	subgraph t4 [Tier 4]
+
+	end
+	t1 --> t2
+	t2 --> t3
+	t3 --> t4
+end
 subgraph hardmode [Hardmode]
-	T5
+	subgraph t5 [Tier 5]
+
+	end
+	subgraph t6 [Tier 6]
+
+	end
+	subgraph t7 [Tier 7]
+
+	end
+	subgraph t8 [Tier 8]
+
+	end
+	subgraph t9 [Tier 9]
+
+	end
+	subgraph t10 [Tier 10]
+
+	end
+	t5 --> t6
+	t6 --> t7
+	t7 --> t8
+	t8 --> t9
+	t9 --> t10
 end
 subgraph postmoonlord [PostMoonlord]
-	T11
+	subgraph t11 [Tier 11]
+
+	end
+	subgraph t12 [Tier 12]
+
+	end
+	subgraph t13 [Tier 13]
+
+	end
+	subgraph t14 [Tier 14]
+
+	end
+	t11 --> t12
+	t12 --> t13
+	t13 --> t14
 end
 legend ~~~ prehardmode
-prehardmode --- hardmode
-hardmode --- postmoonlord
+prehardmode --> hardmode
+hardmode --> postmoonlord
 
 ```
 ## Pre-Hardmode
