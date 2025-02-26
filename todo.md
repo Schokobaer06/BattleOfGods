@@ -207,8 +207,8 @@ subgraph prehardmode [Pre-Hardmode]
 		npc8(Tracker)
 		bo4 & mis1-->ev3
 		ev3(**Blood Moon**<br>140HP & EoC already defeated needed)--> mbo3
-		mbo3(Patchwerk)-->npc8
-		npc8(Confused Zombie)
+		mbo3(Patchwerk)-->npc9
+		npc9(Confused Zombie)
 
 
 	end
