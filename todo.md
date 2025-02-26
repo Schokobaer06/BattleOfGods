@@ -201,10 +201,17 @@ subgraph prehardmode [Pre-Hardmode]
 		bo3-->npc6
 		npc6(Cook)
 	end
+	bo4-->t2
 	subgraph t2 [Tier 2]
 		bo4-->npc7 & npc8
 		npc7(Blacksmith)
 		npc8(Tracker)
+		bo4 & mis1-->ev3
+		ev3(**Blood Moon**<br>140HP & EoC already defeated needed)--> mbo3
+		mbo3(Patchwerk)-->npc8
+		npc8(Confused Zombie)
+
+
 	end
 	subgraph t3 [Tier 3]
 	end
