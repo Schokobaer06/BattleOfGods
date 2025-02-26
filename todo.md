@@ -170,7 +170,7 @@ subgraph prehardmode [Pre-Hardmode]
 		bi1(**Forest**) -.-> bo1
 		bo1(**Trojan Squirrel**) --> npc1
 		npc1("Squirrel")
-		start1-->bi2
+		start1==>bi2
 		bi2(Caverns)
 		bi3(Desert) -->bo2
 		bo2(**Grand Thunderbird**) --> npc2
