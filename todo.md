@@ -135,15 +135,15 @@ Ingot
 ### Progression
 ```mermaid
 graph LR
-
-subgraph prehardmode [Pre-Hardmode]
-b1-->b2
-end
 subgraph legend [Legende]
-a1-->a2
+	a1-->a2
+end
+subgraph prehardmode [Pre-Hardmode]
+	T1
+	T4 ~~~ T5
 end
 subgraph hardmode [Hardmode]
-T5
+	T5 -.->
 end
 ```
 ## Pre-Hardmode
@@ -242,11 +242,11 @@ end
 ### Tier 14
 ![tier14-img](img/tiers_template/tier14.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyODQ1NzU0MSwxMjQzNzUyNDQ3LC02MD
-c2Nzk3MCwxNjg4MTk1NjA1LC0xOTI0ODk4NjczLC0xMjk4MjU4
-MjQ5LC0xNzA4NTk1MjUzLC02NDIzOTEwMjEsMTcwMjU4MTEzMi
-wtMTE5MTk4MTMxNiw2OTEzOTg0NzEsNTMxMzcxNTkxLDEwNTYx
-MzM4ODIsMTEzNDkzMTkzOSwtOTMyMDg1NTAwLC0yNjQ5NTk0OT
-QsLTYzNTUwMzIxMiwtNDI2MTg3OTg4LC05MDk5MTI1MDEsLTQ2
-MTc3OTcwM119
+eyJoaXN0b3J5IjpbLTE5NDIxNzk0NDAsLTEyODQ1NzU0MSwxMj
+QzNzUyNDQ3LC02MDc2Nzk3MCwxNjg4MTk1NjA1LC0xOTI0ODk4
+NjczLC0xMjk4MjU4MjQ5LC0xNzA4NTk1MjUzLC02NDIzOTEwMj
+EsMTcwMjU4MTEzMiwtMTE5MTk4MTMxNiw2OTEzOTg0NzEsNTMx
+MzcxNTkxLDEwNTYxMzM4ODIsMTEzNDkzMTkzOSwtOTMyMDg1NT
+AwLC0yNjQ5NTk0OTQsLTYzNTUwMzIxMiwtNDI2MTg3OTg4LC05
+MDk5MTI1MDFdfQ==
 -->
