@@ -138,7 +138,10 @@ graph TD
 subgraph legend [Legende]
     A1---B1
 end
-supgraph prehm
+supgraph prehardmode [Pre-Hardmode]
+A1---B1
+end
+
 
 ```
 ## Pre-Hardmode
@@ -237,7 +240,7 @@ supgraph prehm
 ### Tier 14
 ![tier14-img](img/tiers_template/tier14.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTk3NTMwNzI3MSwtNjA3Njc5NzAsMTY4OD
+eyJoaXN0b3J5IjpbMTI0Mzc1MjQ0NywtNjA3Njc5NzAsMTY4OD
 E5NTYwNSwtMTkyNDg5ODY3MywtMTI5ODI1ODI0OSwtMTcwODU5
 NTI1MywtNjQyMzkxMDIxLDE3MDI1ODExMzIsLTExOTE5ODEzMT
 YsNjkxMzk4NDcxLDUzMTM3MTU5MSwxMDU2MTMzODgyLDExMzQ5
