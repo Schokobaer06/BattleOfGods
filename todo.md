@@ -175,7 +175,7 @@ subgraph prehardmode [Pre-Hardmode]
 		bi3(Desert) -->bo2
 		bo2(**Grand Thunderbird**) --> npc2
 		npc2(Desert Acolyte)
-		bi2-->mis1
+		bi2==>mis1
 		mis1(Mine **Live Crystals**) --> ev1
 		ev1(**Slime Rain**<br>200HP needed)
 		ev1-.->bo3
@@ -226,8 +226,8 @@ subgraph prehardmode [Pre-Hardmode]
 	subgraph t4 [Tier 4]
 	end
 	%%t1 ==> t2
-	t2 ==> t3
-	t3 ==> t4
+	%%t2 ==> t3
+	%%t3 ==> t4
 end
 subgraph hardmode [Hardmode]
 	subgraph t5 [Tier 5]
