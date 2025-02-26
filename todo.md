@@ -139,12 +139,12 @@ graph LR
 subgraph prehardmode [Pre-Hardmode]
 b1-->b2
 end
-subgraph hardmode [Hardmode]
-end
 subgraph legend [Legende]
 a1-->a2
 end
-
+subgraph hardmode [Hardmode]
+T5
+end
 ```
 ## Pre-Hardmode
 ### Tier 1
@@ -242,11 +242,11 @@ end
 ### Tier 14
 ![tier14-img](img/tiers_template/tier14.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDMxNDA1NDE4LDEyNDM3NTI0NDcsLTYwNz
-Y3OTcwLDE2ODgxOTU2MDUsLTE5MjQ4OTg2NzMsLTEyOTgyNTgy
-NDksLTE3MDg1OTUyNTMsLTY0MjM5MTAyMSwxNzAyNTgxMTMyLC
-0xMTkxOTgxMzE2LDY5MTM5ODQ3MSw1MzEzNzE1OTEsMTA1NjEz
-Mzg4MiwxMTM0OTMxOTM5LC05MzIwODU1MDAsLTI2NDk1OTQ5NC
-wtNjM1NTAzMjEyLC00MjYxODc5ODgsLTkwOTkxMjUwMSwtNDYx
-Nzc5NzAzXX0=
+eyJoaXN0b3J5IjpbLTEyODQ1NzU0MSwxMjQzNzUyNDQ3LC02MD
+c2Nzk3MCwxNjg4MTk1NjA1LC0xOTI0ODk4NjczLC0xMjk4MjU4
+MjQ5LC0xNzA4NTk1MjUzLC02NDIzOTEwMjEsMTcwMjU4MTEzMi
+wtMTE5MTk4MTMxNiw2OTEzOTg0NzEsNTMxMzcxNTkxLDEwNTYx
+MzM4ODIsMTEzNDkzMTkzOSwtOTMyMDg1NTAwLC0yNjQ5NTk0OT
+QsLTYzNTUwMzIxMiwtNDI2MTg3OTg4LC05MDk5MTI1MDEsLTQ2
+MTc3OTcwM119
 -->
