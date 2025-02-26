@@ -186,7 +186,7 @@ subgraph prehardmode [Pre-Hardmode]
 		bo3(**Desert Scourge**<br>can be summoned with Desert Medallion)-->ev2 & mbo2
 		ev2(Sandstorm)
 		mbo2(Giant Clam)
-		start1-->bi3
+		start1-->bi3 & bi4
 		bi4(Sunken Sea)-->mbo2 & str1
 		str1(SS Bio-Lab) --> mis2
 		mis1==>bo4
