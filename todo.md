@@ -202,7 +202,9 @@ subgraph prehardmode [Pre-Hardmode]
 		npc6(Cook)
 	end
 	subgraph t2 [Tier 2]
-
+		bo4-->npc7 & npc8
+		npc7(Blacksmith)
+		npc8(Tracker)
 	end
 	subgraph t3 [Tier 3]
 	end
