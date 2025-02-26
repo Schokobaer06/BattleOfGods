@@ -148,7 +148,8 @@ end
 subgraph postmoonlord [PostMoonlord]
 	T11
 end
-legend --- prehardmode
+legend ~~~ prehardmode
+
 ```
 ## Pre-Hardmode
 ### Tier 1
@@ -246,7 +247,7 @@ legend --- prehardmode
 ### Tier 14
 ![tier14-img](img/tiers_template/tier14.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzc4NDczMDU4LDMyODIzMDkzMiwtMTI4ND
+eyJoaXN0b3J5IjpbNTIwOTkzNzI3LDMyODIzMDkzMiwtMTI4ND
 U3NTQxLDEyNDM3NTI0NDcsLTYwNzY3OTcwLDE2ODgxOTU2MDUs
 LTE5MjQ4OTg2NzMsLTEyOTgyNTgyNDksLTE3MDg1OTUyNTMsLT
 Y0MjM5MTAyMSwxNzAyNTgxMTMyLC0xMTkxOTgxMzE2LDY5MTM5
