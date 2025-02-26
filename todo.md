@@ -225,7 +225,7 @@ subgraph prehardmode [Pre-Hardmode]
 	end
 	subgraph t4 [Tier 4]
 	end
-	t1 ==> t2
+	%%t1 ==> t2
 	t2 ==> t3
 	t3 ==> t4
 end
