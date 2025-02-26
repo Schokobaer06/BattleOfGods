@@ -146,18 +146,11 @@ classDef start fill:#fff1cf,stroke:#ffb90f,stroke-width:2px,color:black;
 classDef struct fill:#9541ff,stroke:#51005e,stroke-width:3px,color:black;
 classDef miniboss fill:#ff9900,stroke:#cc6600,stroke-width:3px,color:black,rx:30,ry:15;
 classDef npc fill:#66cc66,stroke:#336633,stroke-width:2px,color:black,rx:10,ry:10;
-<<<<<<< HEAD
 classDef invisible fill:#ffffff,stroke:#ffffff,stroke-width:0px,opacity:0;
 
 
 subgraph legend [Legende]
 direction LR
-=======
-
-
-subgraph legend [Legende]
-direction TB
->>>>>>> 3506b5a43fa7a933aa234d247a3e43a10ef8ceb1
 	start0@{ shape: circle, label: "Start"}
 	bo0("Boss")
 	mbo0("Miniboss")
@@ -166,7 +159,6 @@ direction TB
 	npc0("NPC")
 	ev0("Event")
 	str0("Struct")
-<<<<<<< HEAD
 	inv0-->arrow0@{shape: text, label: "Default Progression"}
 	inv0==>arrow1@{shape: text, label: "Main Progression"}
 	inv0-.->arrow2@{shape: text, label: "Optional Progression"}
@@ -176,20 +168,6 @@ subgraph prehardmode [Pre-Hardmode]
 	subgraph t1 [Tier 1]
 		start1@{ shape: circle, label: "Start"}
 
-=======
-
-end
-class bo0 boss
-class bi0 biome
-class mis0 misc
-class ev0 event
-class str0 struct
-class start0,start1 start
-class mbo0 miniboss
-class npc0 npc
-subgraph prehardmode [Pre-Hardmode]
-	subgraph t1 [Tier 1]
->>>>>>> 3506b5a43fa7a933aa234d247a3e43a10ef8ceb1
 	end
 	subgraph t2 [Tier 2]
 
@@ -200,15 +178,9 @@ subgraph prehardmode [Pre-Hardmode]
 	subgraph t4 [Tier 4]
 
 	end
-<<<<<<< HEAD
 	t1 ==> t2
 	t2 ==> t3
 	t3 ==> t4
-=======
-	t1 --> t2
-	t2 --> t3
-	t3 --> t4
->>>>>>> 3506b5a43fa7a933aa234d247a3e43a10ef8ceb1
 end
 subgraph hardmode [Hardmode]
 	subgraph t5 [Tier 5]
@@ -229,7 +201,6 @@ subgraph hardmode [Hardmode]
 	subgraph t10 [Tier 10]
 
 	end
-<<<<<<< HEAD
 	t5 ==> t6
 	t6 ==> t7
 	t7 ==> t8
@@ -238,34 +209,6 @@ subgraph hardmode [Hardmode]
 end
 subgraph postmoonlord [PostMoonlord]
 	subgraph t11 [Tier 11]
-=======
-	t5 --> t6
-	t6 --> t7
-	t7 --> t8
-	t8 --> t9
-	t9 --> t10
-end
-subgraph postmoonlord [PostMoonlord]
-	subgraph t11 [Tier 11]
-
-	end
-	subgraph t12 [Tier 12]
-
-	end
-	subgraph t13 [Tier 13]
-
-	end
-	subgraph t14 [Tier 14]
-
-	end
-	t11 --> t12
-	t12 --> t13
-	t13 --> t14
-end
-legend ~~~ prehardmode
-prehardmode --> hardmode
-hardmode --> postmoonlord
->>>>>>> 3506b5a43fa7a933aa234d247a3e43a10ef8ceb1
 
 	end
 	subgraph t12 [Tier 12]
