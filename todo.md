@@ -167,7 +167,7 @@ end
 subgraph prehardmode [Pre-Hardmode]
 	subgraph t1 [Tier 1]
 		start1@{ shape: circle, label: "Start"}
-		bi1(**Forest**) --> bo1("`**Trojan Squirrel**<br>can be summoned with <img src='https://fargosmods.wiki.gg/images/4/4c/Squirrel_Coat_of_Arms.png' style='width:30px; height:30px;' /> Squirrel Coat of Arms`")
+		bi1(**Forest**) --> bo1("`**Trojan Squirrel**<br>can be summoned with <img src='https://fargosmods.wiki.gg/images/4/4c/Squirrel_Coat_of_Arms.png'  /> Squirrel Coat of Arms`")
 		
 	end
 	subgraph t2 [Tier 2]
