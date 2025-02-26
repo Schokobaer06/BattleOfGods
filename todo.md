@@ -182,8 +182,8 @@ subgraph prehardmode [Pre-Hardmode]
 		bo3(**King Slime**)
 		bi2-->mbo1
 		mbo1(Torch God)
-		bo2-->bo3
-		bo3(**Desert Scourge**)-->ev2 & mbo2
+		bo2-->bo9
+		bo9(**Desert Scourge**)-->ev2 & mbo2
 		ev2(Sandstorm)
 		mbo2(Giant Clam)
 		start1-->bi3 & bi4
@@ -198,7 +198,7 @@ subgraph prehardmode [Pre-Hardmode]
 		npc4(Angler)
 		mbo2-->npc5
 		npc5(Sea King)
-		bo3-->npc6
+		bo9-->npc6
 		npc6(Cook)
 	end
 	subgraph t2 [Tier 2]
@@ -216,7 +216,6 @@ subgraph prehardmode [Pre-Hardmode]
 		start1-->bi7
 		bi7(Evil Biome) & bo4==>bo6 & bo7
 		bo6(Brain of Cthulu)
-		bo7(Eater of Worlds)
 	end
 	subgraph t3 [Tier 3]
 		bi5-->bo8
