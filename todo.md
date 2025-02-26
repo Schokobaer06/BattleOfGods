@@ -151,7 +151,6 @@ end
 legend ~~~ prehardmode
 prehardmode --- hardmode
 hardmode --- postmoonlord
-linkStyle 0 stroke:#333,stroke-width:2px;
 
 ```
 ## Pre-Hardmode
@@ -250,11 +249,11 @@ linkStyle 0 stroke:#333,stroke-width:2px;
 ### Tier 14
 ![tier14-img](img/tiers_template/tier14.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTQ4MjI2MjQxLDE4ODM1NDEzNDYsMzI4Mj
-MwOTMyLC0xMjg0NTc1NDEsMTI0Mzc1MjQ0NywtNjA3Njc5NzAs
-MTY4ODE5NTYwNSwtMTkyNDg5ODY3MywtMTI5ODI1ODI0OSwtMT
-cwODU5NTI1MywtNjQyMzkxMDIxLDE3MDI1ODExMzIsLTExOTE5
-ODEzMTYsNjkxMzk4NDcxLDUzMTM3MTU5MSwxMDU2MTMzODgyLD
-ExMzQ5MzE5MzksLTkzMjA4NTUwMCwtMjY0OTU5NDk0LC02MzU1
-MDMyMTJdfQ==
+eyJoaXN0b3J5IjpbMTg4MzU0MTM0NiwxODgzNTQxMzQ2LDMyOD
+IzMDkzMiwtMTI4NDU3NTQxLDEyNDM3NTI0NDcsLTYwNzY3OTcw
+LDE2ODgxOTU2MDUsLTE5MjQ4OTg2NzMsLTEyOTgyNTgyNDksLT
+E3MDg1OTUyNTMsLTY0MjM5MTAyMSwxNzAyNTgxMTMyLC0xMTkx
+OTgxMzE2LDY5MTM5ODQ3MSw1MzEzNzE1OTEsMTA1NjEzMzg4Mi
+wxMTM0OTMxOTM5LC05MzIwODU1MDAsLTI2NDk1OTQ5NCwtNjM1
+NTAzMjEyXX0=
 -->
