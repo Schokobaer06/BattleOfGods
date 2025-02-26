@@ -189,9 +189,19 @@ subgraph prehardmode [Pre-Hardmode]
 		start1-->bi3 & bi4
 		bi4(Sunken Sea)-->mbo2 & str1
 		str1(SS Bio-Lab)
-		mis1-.->bo4
-		bi2==>bo4
-		bo4(**Eye of Cthulhu**<br>can be summoned with Suspicious Looking Eye<br>spawns naturally each night if:<br>250HP & 10Def needed,4 NPCs must be present)		
+		mis1==>bo4
+		bo4(**Eye of Cthulhu**<br>can be summoned with Suspicious Looking Eye<br>spawns naturally each night if:<br>250HP & 10Def needed,4 NPCs must be present)	
+		mis1-->npc3
+		npc3(Nurse)
+		start1-->bi5
+		bi5(Ocean)-->npc4
+		npc4(Angler)
+		start1-->npc5 & npc6
+		npc5(Guide)	
+		npc6(Merchant)
+		bi2-->npc7
+		npc7(Demolitionist)
+		npc8(Dye Trader)
 	end
 	subgraph t2 [Tier 2]
 
