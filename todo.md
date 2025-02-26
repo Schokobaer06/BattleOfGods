@@ -167,7 +167,7 @@ end
 subgraph prehardmode [Pre-Hardmode]
 	subgraph t1 [Tier 1]
 		start1@{ shape: circle, label: "Start"}
-
+		bi1("`**Cavern**<br>Dig for Ore`")
 	end
 	subgraph t2 [Tier 2]
 
