@@ -228,14 +228,14 @@ end
 %%legend ~~~ prehardmode
 prehardmode ==> hardmode
 hardmode ==> postmoonlord
-class bo0 boss
+class bo0,bo1 boss
 class bi0,bi1 biome
 class mis0 misc
 class ev0 event
 class str0 struct
 class start0,start1 start
 class mbo0 miniboss
-class npc0 npc
+class npc0,npc1 npc
 class inv0 invisible
 ```
 ## Pre-Hardmode
