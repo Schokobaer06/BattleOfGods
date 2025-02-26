@@ -167,7 +167,8 @@ end
 subgraph prehardmode [Pre-Hardmode]
 	subgraph t1 [Tier 1]
 		start1@{ shape: circle, label: "Start"}
-		bi1("`**Cavern**<br>Dig for Ore`")
+		bi1(**Forest**) --> bo1("`**Trojan Squirrel**<br>can be summoned with <img src='https://fargosmods.wiki.gg/images/4/4c/Squirrel_Coat_of_Arms.png' style='width:30px; height:30px;' /> Squirrel Coat of Arms`")
+		
 	end
 	subgraph t2 [Tier 2]
 
@@ -228,7 +229,7 @@ end
 prehardmode ==> hardmode
 hardmode ==> postmoonlord
 class bo0 boss
-class bi0 biome
+class bi0,bi1 biome
 class mis0 misc
 class ev0 event
 class str0 struct
