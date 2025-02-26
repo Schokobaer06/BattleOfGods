@@ -190,7 +190,7 @@ subgraph prehardmode [Pre-Hardmode]
 		bi4(Sunken Sea)-->mbo2 & str1
 		str1(SS Bio-Lab)
 		mis1==>bo4
-		bo4(**Eye of Cthulhu**<br>250HP & 10Def needed,4 NPCs must be present)	
+		bo4(**Eye of Cthulhu**<br>200HP needed)	
 		mis1-->npc3
 		npc3(Nurse)
 		start1-->bi5
