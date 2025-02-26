@@ -213,6 +213,10 @@ subgraph prehardmode [Pre-Hardmode]
 		bi2-->bi6
 		bi6(Mushroom Biome)-->bo5
 		bo5(**Crabulon**)
+		start1-->bi7
+		bi7(Evil Biome) & bo4==>bo6 & bo7
+		bo6(Brain of Cthulu)
+		bo7(Eater of Worlds)
 
 
 
