@@ -150,7 +150,7 @@ subgraph postmoonlord [PostMoonlord]
 end
 legend ~~~ prehardmode
 prehardmode --- hardmode
-hardmode ---
+hardmode --- postmoonlord
 
 ```
 ## Pre-Hardmode
@@ -249,11 +249,11 @@ hardmode ---
 ### Tier 14
 ![tier14-img](img/tiers_template/tier14.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTAwNzAwOTEyLDMyODIzMDkzMiwtMTI4ND
-U3NTQxLDEyNDM3NTI0NDcsLTYwNzY3OTcwLDE2ODgxOTU2MDUs
-LTE5MjQ4OTg2NzMsLTEyOTgyNTgyNDksLTE3MDg1OTUyNTMsLT
-Y0MjM5MTAyMSwxNzAyNTgxMTMyLC0xMTkxOTgxMzE2LDY5MTM5
-ODQ3MSw1MzEzNzE1OTEsMTA1NjEzMzg4MiwxMTM0OTMxOTM5LC
-05MzIwODU1MDAsLTI2NDk1OTQ5NCwtNjM1NTAzMjEyLC00MjYx
-ODc5ODhdfQ==
+eyJoaXN0b3J5IjpbMTg4MzU0MTM0NiwzMjgyMzA5MzIsLTEyOD
+Q1NzU0MSwxMjQzNzUyNDQ3LC02MDc2Nzk3MCwxNjg4MTk1NjA1
+LC0xOTI0ODk4NjczLC0xMjk4MjU4MjQ5LC0xNzA4NTk1MjUzLC
+02NDIzOTEwMjEsMTcwMjU4MTEzMiwtMTE5MTk4MTMxNiw2OTEz
+OTg0NzEsNTMxMzcxNTkxLDEwNTYxMzM4ODIsMTEzNDkzMTkzOS
+wtOTMyMDg1NTAwLC0yNjQ5NTk0OTQsLTYzNTUwMzIxMiwtNDI2
+MTg3OTg4XX0=
 -->
