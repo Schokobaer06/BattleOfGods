@@ -196,12 +196,10 @@ subgraph prehardmode [Pre-Hardmode]
 		start1-->bi5
 		bi5(Ocean)-->npc4
 		npc4(Angler)
-		start1-->npc5 & npc6
-		npc5(Guide)	
-		npc6(Merchant)
-		bi2-->npc7
-		npc7(Demolitionist)
-		npc8(Dye Trader)
+		mbo2-->npc5
+		npc5(Sea King)
+		bo3-->npc6
+		npc6(Cook)
 	end
 	subgraph t2 [Tier 2]
 
