@@ -222,6 +222,9 @@ subgraph prehardmode [Pre-Hardmode]
 		bi5-->bo8
 		bo8(Queen Jellyfish)-->npc10
 		npc10(Diverman)
+		mis1-->ev5
+		ev5(Goblin Army)-->npc11
+		npc11(Goblin Tinkerer)
 	end
 	subgraph t4 [Tier 4]
 	end
@@ -274,14 +277,14 @@ end
 legend ~~~ prehardmode
 prehardmode ==> hardmode
 hardmode ==> postmoonlord
-class bo0,bo1,bo2,bo3,bo4,bo5,bo6,bo7,bo8,bo9,bo10 boss
-class bi0,bi1,bi2,bi3,bi4,bi5,bi6,bi7,bi8,bi9,bi10 biome
+class bo0,bo1,bo2,bo3,bo4,bo5,bo6,bo7,bo8,bo9,bo10,bo11,bo12,bo13,bo14,bo15,bo16,bo17,bo18,bo19,bo20 boss
+class bi0,bi1,bi2,bi3,bi4,bi5,bi6,bi7,bi8,bi9,bi10,bi11,bi12,bi13,bi14,bi15,bi16,bi17,bi18,bi19,bi20 biome
 class mis0,mis1,mis2,mis3,mis4,mis5,mis6,mis7,mis8,mis9,mis10 misc
 class ev0,ev1,ev2,ev3,ev5,ev6,ev7,ev8,ev9,ev10 event
 class str0,str1,str2,str3,str4,str5,str6,str7,str8,str9,str10 struct
 class start0,start1 start
 class mbo0,mbo1,mbo2,mbo3,mbo4,mbo5,mbo6,mbo7,mbo8,mbo9,mbo10 miniboss
-class npc0,npc1,npc2,npc3,npc4,npc5,npc6,npc7,npc8,npc9,npc10 npc
+class npc0,npc1,npc2,npc3,npc4,npc5,npc6,npc7,npc8,npc9,npc10,npc11,npc12,npc13,npc14,npc15,npc16,npc17,npc18,npc19,npc20 npc
 class inv0,inv1,inv2 invisible
 ```
 ## Pre-Hardmode
