@@ -168,29 +168,29 @@ subgraph prehardmode [Pre-Hardmode]
 	subgraph t1 [Tier 1]
 		start1@{ shape: circle, label: "Start"} --> bi1
 		bi1(**Forest**) -.-> bo1
-		bo1(**Trojan Squirrel**<br>can be summoned with Squirrel Coat of Arms) --> npc1
+		bo1(**Trojan Squirrel**) --> npc1
 		npc1("Squirrel")
 		start1-->bi2
 		bi2(Caverns)
 		bi3(Desert) -->bo2
-		bo2(**Grand Thunderbird**<br> can be summoned with Grand Flare Gun + Storm Flares) --> npc2
+		bo2(**Grand Thunderbird**) --> npc2
 		npc2(Desert Acolyte)
 		bi2-->mis1
 		mis1(Mine **Live Crystals**) --> ev1
 		ev1(**Slime Rain**<br>200HP needed)
 		ev1-.->bo3
-		bo3(**King Slime**<br>can be summoned with Slime Rain OR Slime Crown anywhere)
+		bo3(**King Slime**)
 		bi2-->mbo1
 		mbo1(Torch God)
 		bo2-->bo3
-		bo3(**Desert Scourge**<br>can be summoned with Desert Medallion)-->ev2 & mbo2
+		bo3(**Desert Scourge**)-->ev2 & mbo2
 		ev2(Sandstorm)
 		mbo2(Giant Clam)
 		start1-->bi3 & bi4
 		bi4(Sunken Sea)-->mbo2 & str1
 		str1(SS Bio-Lab)
 		mis1==>bo4
-		bo4(**Eye of Cthulhu**<br>can be summoned with Suspicious Looking Eye<br>spawns naturally each night if:<br>250HP & 10Def needed,4 NPCs must be present)	
+		bo4(**Eye of Cthulhu**<br>250HP & 10Def needed,4 NPCs must be present)	
 		mis1-->npc3
 		npc3(Nurse)
 		start1-->bi5
@@ -202,13 +202,18 @@ subgraph prehardmode [Pre-Hardmode]
 		npc6(Cook)
 	end
 	subgraph t2 [Tier 2]
-		bo4-->npc7 & npc8
+		bo4-->npc7 & npc8 & ev4
 		npc7(Blacksmith)
 		npc8(Tracker)
 		bo4 & mis1-->ev3
-		ev3(**Blood Moon**<br>140HP & EoC already defeated needed)--> mbo3
+		ev3(**Blood Moon**<br>140HP)--> mbo3
 		mbo3(Patchwerk)-->npc9
 		npc9(Confused Zombie)
+		ev4(**Acid Rain**)
+		bi2-->bi6
+		bi6(Mushroom Biome)-->bo5
+		bo5(**Crabulon**)
+
 
 
 	end
