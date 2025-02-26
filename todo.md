@@ -171,7 +171,7 @@ subgraph prehardmode [Pre-Hardmode]
 		bo1(**Trojan Squirrel**<br>can be summoned with Squirrel Coat of Arms) --> npc1
 		npc1("Squirrel")
 		start1-->bi2
-		bi2(Caverns)-->bi3
+		bi2(Caverns)
 		bi3(Desert) -->bo2
 		bo2(**Grand Thunderbird**<br> can be summoned with Grand Flare Gun + Storm Flares) --> npc2
 		npc2(Desert Acolyte)
@@ -187,7 +187,7 @@ subgraph prehardmode [Pre-Hardmode]
 		ev2(Sandstorm)
 		mbo2(Giant Clam)
 		start1-->bi3
-		bi3(Sunken Sea)-->mbo2 & str1
+		bi4(Sunken Sea)-->mbo2 & str1
 		str1(SS Bio-Lab) --> mis2
 		mis1==>bo4
 		bo4(**Eye of Cthulhu**<br>can be summoned with Suspicious Looking Eye<br>spawns naturally each night if:<br>250HP & 10Def needed,4 NPCs must be present)		
