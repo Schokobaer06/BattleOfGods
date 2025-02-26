@@ -188,8 +188,9 @@ subgraph prehardmode [Pre-Hardmode]
 		mbo2(Giant Clam)
 		start1-->bi3 & bi4
 		bi4(Sunken Sea)-->mbo2 & str1
-		str1(SS Bio-Lab) --> mis2
-		mis1==>bo4
+		str1(SS Bio-Lab)
+		mis1-.->bo4
+		bi2==>bo4
 		bo4(**Eye of Cthulhu**<br>can be summoned with Suspicious Looking Eye<br>spawns naturally each night if:<br>250HP & 10Def needed,4 NPCs must be present)		
 	end
 	subgraph t2 [Tier 2]
