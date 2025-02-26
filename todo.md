@@ -137,7 +137,7 @@ Ingot
 
 
 ```mermaid
-graph TD
+graph TB
 classDef boss fill:#ff5555,stroke:#aa0000,stroke-width:3px,color:black,rx:40,ry:20;
 classDef biome fill:#008000,stroke:#164e00,stroke-width:3px,color:black,rx:20,ry:40;
 classDef misc fill:#8f8f8f,stroke:#000000,stroke-width:2px,color:black,rx:5,ry:5;
@@ -217,11 +217,11 @@ subgraph prehardmode [Pre-Hardmode]
 		bi7(Evil Biome) & bo4==>bo6 & bo7
 		bo6(Brain of Cthulu)
 		bo7(Eater of Worlds)
-
-
-
 	end
 	subgraph t3 [Tier 3]
+		bi5-->bo8
+		bo8(Queen Jellyfish)-->npc10
+		npc10(Diverman)
 	end
 	subgraph t4 [Tier 4]
 	end
@@ -271,7 +271,7 @@ subgraph postmoonlord [PostMoonlord]
 	t12 ==> t13
 	t13 ==> t14
 end
-%%legend ~~~ prehardmode
+legend ~~~ prehardmode
 prehardmode ==> hardmode
 hardmode ==> postmoonlord
 class bo0,bo1,bo2,bo3,bo4,bo5,bo6,bo7,bo8,bo9,bo10 boss
