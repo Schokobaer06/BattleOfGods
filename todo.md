@@ -137,6 +137,7 @@ Ingot
 
 
 ```mermaid
+
 graph TB
 classDef boss fill:#ff5555,stroke:#aa0000,stroke-width:3px,color:black,rx:40,ry:20;
 classDef biome fill:#008000,stroke:#164e00,stroke-width:3px,color:black,rx:20,ry:40;
@@ -162,6 +163,7 @@ direction LR
 	inv0-->arrow0@{shape: text, label: "Default Progression"}
 	inv0==>arrow1@{shape: text, label: "Main Progression"}
 	inv0-.->arrow2@{shape: text, label: "Optional Progression"}
+	gate0{Either do A or B}
 end
 
 subgraph prehardmode [Pre-Hardmode]
@@ -189,7 +191,7 @@ direction TB
 		mbo2(Giant Clam)
 		start1-->bi3 & bi4
 		bi4(Sunken Sea)-->mbo2 & str1
-		str1(SS Bio-Lab)
+		str1(SS Bio-Lab) --> mis6(Schematic - Sunken Sea)
 		mis1==>bo4
 		bo4(**Eye of Cthulhu**<br>200HP needed)	
 		mis1-->npc3
@@ -201,32 +203,95 @@ direction TB
 		npc5(Sea King)
 		bo9-->npc6
 		npc6(Cook)
+		start1--> bi9
+		bi9(Space) --> str3 & str6
+		str6(Planetoid Bio Lab) 
+		str3(Flying Island)
 	end
 	subgraph t2 [Tier 2]
 		bo4-->npc7 & npc8 & ev4
+		start1-->bi10
+		bi10(Sulphurus Sea)--> ev4
 		npc7(Blacksmith)
 		npc8(Tracker)
 		bo4 & mis1-->ev3
-		ev3(**Blood Moon**<br>140HP)--> mbo3
+		ev3(**Blood Moon**<br>140HP needed)--> mbo3
 		mbo3(Patchwerk)-->npc9
 		npc9(Confused Zombie)
-		ev4(**Acid Rain**)
+		ev4(**Acid Rain**<br>Level-1)
 		bi2-->bi6
 		bi6(Mushroom Biome)-->bo5
 		bo5(**Crabulon**)
 		start1-->bi7
-		bi7(Evil Biome) & bo4==>bo6 & bo7
-		bo6(Brain of Cthulu)
+		%%bi7(Evil Biome) & bo4==>bo6 & bo7
+		bo4==> bi7
+		bi7(Evil Biome) ==>gate1
+		gate1{OR} <--> bo6 & bo7
+		bo6(**Brain of Cthulu**)
+		bo7(**Eater of Worlds**)
 	end
 	subgraph t3 [Tier 3]
 		bi5-->bo8
-		bo8(Queen Jellyfish)-->npc10
+		bo8(**Queen Jellyfish**)-->npc10
 		npc10(Diverman)
 		mis1-->ev5
 		ev5(Goblin Army)-->npc11
 		npc11(Goblin Tinkerer)
+		gate1-->npc12
+		npc12(Tavernkeep) --> ev6
+		ev6("**Old Ones Army**<br>Level-1")-->mbo4
+		mbo4(Dark Mage)
+		bi2-->str2
+		str2(Blood Chamber) & ev3-->bo10
+		bo10(**Viscount**)
+		bi2-->bi8
+		bi8(Jungle)-->mbo5
+		mbo5(Corpse Bloom)-->npc13
+		npc13(Druid)
+		gate1-->gate2
+		gate2{OR} <--> bo11 & bo12 
+		bo11(**The Perforators**)
+		bo12(**The Hive Mind**)
+		gate2 & str3 --> mis2
+		mis2(Enchanted Aerialite)
+		bi8-->str4
+		str4(Bee Hive) --> bo13
+		bo13(**Queen Bee**) --> npc13
+		npc13(Witch Doctor)
+		start1--> str5
+		gate1 & bo10 ==> bo14
+		bo14(**Skeletron**)
 	end
 	subgraph t4 [Tier 4]
+		bo14 --> mis3 & npc14 & str5
+		npc14(Bandit)
+		str5(Dungeon)-->npc15 & mbo6		
+		npc15(Mechanic)--> mis4
+		mis4(**CodeBreaker**<br>Part1) & str6 --> mis5
+		mis5(Schematic \- Planetoid)
+		bi10--> bi11
+		bi11(Abyss) --> mis3
+		mis3(Ancient Treasure Chests)
+		mbo6(Illusionist)
+		start1--> bi12
+		bi12(Tundra) --> bo15
+		bo15(**Deer Clops**)
+		bi2-->bi13 & bi14
+		bi13(Granite Biome) & bo14 & bo10 --> bo16
+		bo16(**Granite Energy Storm**)
+		bi14(Marble Biome) & bo14 & bo10 --> bo17
+		bo17(**Buried Champion**) --> npc16
+		npc16(Spiritualist)
+		bo3 --> bo18
+		bo18(**Slime God**)
+		str3 --> bo19(**Star Scouter**)
+		npc16 --> bo20
+		bo20(**Deviantt**)
+		bi2 & bo14 --> bi15
+		bi15(Underworld) --> bo21
+		bo21(**Wall of Flesh**)
+
+
 	end
 	%%t1 ==> t2
 	%%t2 ==> t3
@@ -277,10 +342,10 @@ end
 legend ~~~ prehardmode
 prehardmode ==> hardmode
 hardmode ==> postmoonlord
-class bo0,bo1,bo2,bo3,bo4,bo5,bo6,bo7,bo8,bo9,bo10,bo11,bo12,bo13,bo14,bo15,bo16,bo17,bo18,bo19,bo20 boss
+class bo0,bo1,bo2,bo3,bo4,bo5,bo6,bo7,bo8,bo9,bo10,bo11,bo12,bo13,bo14,bo15,bo16,bo17,bo18,bo19,bo20,bo21 boss
 class bi0,bi1,bi2,bi3,bi4,bi5,bi6,bi7,bi8,bi9,bi10,bi11,bi12,bi13,bi14,bi15,bi16,bi17,bi18,bi19,bi20 biome
 class mis0,mis1,mis2,mis3,mis4,mis5,mis6,mis7,mis8,mis9,mis10 misc
-class ev0,ev1,ev2,ev3,ev5,ev6,ev7,ev8,ev9,ev10 event
+class ev0,ev1,ev2,ev3,ev4,ev5,ev6,ev7,ev8,ev9,ev10 event
 class str0,str1,str2,str3,str4,str5,str6,str7,str8,str9,str10 struct
 class start0,start1 start
 class mbo0,mbo1,mbo2,mbo3,mbo4,mbo5,mbo6,mbo7,mbo8,mbo9,mbo10 miniboss
