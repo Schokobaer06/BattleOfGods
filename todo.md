@@ -268,7 +268,7 @@ direction TB
 		str5(Dungeon)-->npc15 & mbo6		
 		npc15(Mechanic)--> mis4
 		mis4(**CodeBreaker**<br>Part1) & str6 --> mis5
-		mis5(Schematic \- Planetoid)
+		mis5(Schematic - Planetoid)
 		bi10--> bi11
 		bi11(Abyss) --> mis3
 		mis3(Ancient Treasure Chests)
