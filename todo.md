@@ -287,8 +287,8 @@ direction TB
 		str3 --> bo19(**Star Scouter**)
 		npc16 --> bo20
 		bo20(**Deviantt**)
-		bi2 & bo14 --> bi15
-		bi15(Underworld) --> bo21
+		bi2 & bo14 ==> bi15
+		bi15(Underworld) ==> bo21
 		bo21(**Wall of Flesh**)
 
 
