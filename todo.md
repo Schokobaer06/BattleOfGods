@@ -135,9 +135,7 @@ Ingot
 >##### Eternity Mode
 ### Progression
 
-
 ```mermaid
-
 graph TB
 classDef boss fill:#ff5555,stroke:#aa0000,stroke-width:3px,color:black,rx:40,ry:20;
 classDef biome fill:#008000,stroke:#164e00,stroke-width:3px,color:black,rx:20,ry:40;
@@ -151,7 +149,7 @@ classDef invisible fill:#ffffff,stroke:#ffffff,stroke-width:0px,opacity:0;
 
 
 subgraph legend [Legende]
-direction LR
+%%direction LR
 	start0@{ shape: circle, label: "Start"}
 	bo0("Boss")
 	mbo0("Miniboss")
@@ -161,139 +159,142 @@ direction LR
 	ev0("Event")
 	str0("Struct")
 	inv0-->arrow0@{shape: text, label: "Default Progression"}
-	inv0==>arrow1@{shape: text, label: "Main Progression"}
-	inv0-.->arrow2@{shape: text, label: "Optional Progression"}
-	gate0{Either do A or B}
+    %%inv0<==>arrow3@{shape: text, label: " optional Boss"}
+	%%inv0==>arrow1@{shape: text, label: "Main Progression"}
+	%%inv0-.->arrow2@{shape: text, label: "Optional Progression"}
+	arrow4@{shape: text, label: "A"}<==> gate0{A or B or Both}<==>arrow5@{shape: text, label: "B"}
 end
 
 subgraph prehardmode [Pre-Hardmode]
 direction TB
+start1@{ shape: circle, label: "Start"} --> bi2 & bi1 & bi3 & bi4 & bi9 & bi5 & bi8 & bi7 & bi6 & bi10 & bi15 & bi12
+bi1(Forest) --> bo1
+bi2 --> str2
+bi2 --> bi13 & bi14
+bi2(Caverns) --> mis1 & mbo1
+
+bi3(Desert) --> bo2
+bi4(Sunken Sea) ----> mbo2
+bi4 --> str1
+bi5(Ocean) ---->  npc5 & bo13
+bi6(Space) ----------> str3 & str5
+bi7(Sulphurus Sea) -------> ev4
+%%bi8 ~~~ bo6
+bi8(Evil Biome) --> gate1
+%%bi8 ~~~ bo7
+bi9(Mushroom Biome) ---> bo8
+bi10(Jungle) --> str4 & mbo5
+bi7 --> bi11
+bi11(Abyss<br>Level 1 & 2) --> mis4
+bi12(Nether) ------> mis7
+
+bi13(Granite Biome) --> bo17
+bi14(Marble Biome) --> bo16
+bi15(Tundra) --> bo20
+%% Goblin Army
+mis1 --> ev5
+%% Evil Bosses
+gate1 --> bo12
+gate1 ---> npc10 
+gate1 <==> bo6
+gate1 ~~~~ gate2
+gate1 <==> bo7
+gate2{OR} <==> bo10
+gate2 <==> bo11
+gate2 --> mis3
+bo9 ---> bo17 
+bo9 ---> bo16
+bo12 --> str6
+
 	subgraph t1 [Tier 1]
-		start1@{ shape: circle, label: "Start"} --> bi1
-		bi1(**Forest**) -.-> bo1
-		bo1(**Trojan Squirrel**) --> npc1
-		npc1("Squirrel")
-		start1==>bi2
-		bi2(Caverns)
-		bi3(Desert) -->bo2
-		bo2(**Grand Thunderbird**) --> npc2
-		npc2(Desert Acolyte)
-		bi2==>mis1
-		mis1(Mine **Live Crystals**) --> ev1
-		ev1(**Slime Rain**<br>200HP needed)
-		ev1-.->bo3
-		bo3(**King Slime**)
-		bi2-->mbo1
-		mbo1(Torch God)
-		bo2-->bo9
-		bo9(**Desert Scourge**)-->ev2 & mbo2
-		ev2(Sandstorm)
-		mbo2(Giant Clam)
-		start1-->bi3 & bi4
-		bi4(Sunken Sea)-->mbo2 & str1
-		str1(SS Bio-Lab) --> mis6(Schematic - Sunken Sea)
-		mis1==>bo4
-		bo4(**Eye of Cthulhu**<br>200HP needed)	
-		mis1-->npc3
-		npc3(Nurse)
-		start1-->bi5
-		bi5(Ocean)-->npc4
-		npc4(Angler)
-		mbo2-->npc5
-		npc5(Sea King)
-		bo9-->npc6
-		npc6(Cook)
-		start1--> bi9
-		bi9(Space) --> str3 & str6
-		str6(Planetoid Bio Lab) 
-		str3(Flying Island)
+        bo1(Trojan Squirrel) --> npc1
+        npc1(Squirrel)
+        mis1(Mining Live Crystals) --> ev1 & bo5 & npc3
+        npc3(Nurse)
+        ev1(Slime Rain) --> bo3
+        bo3(King Slime)
+        mbo1(Torch God)
+        bo2(Grand Thunderbird) --> npc2 & bo4
+        bo4(Desert Scourge) --> ev2
+        ev2(Sandstorm)
+        npc2(Desert Acolyte)
+        bo4 --> mbo2
+        mbo2(Giant Clam) --> npc4
+        npc4(Sea King)
+        str1(SS Bio-Lab) --> mis2
+        mis2(Schem. SS)
+        npc5(Angler)
+        bo5(Eye of Cthulhu)
 	end
-	subgraph t2 [Tier 2]
-		bo4-->npc7 & npc8 & ev4
-		start1-->bi10
-		bi10(Sulphurus Sea)--> ev4
-		npc7(Blacksmith)
-		npc8(Tracker)
-		bo4 & mis1-->ev3
-		ev3(**Blood Moon**<br>140HP needed)--> mbo3
-		mbo3(Patchwerk)-->npc9
-		npc9(Confused Zombie)
-		ev4(**Acid Rain**<br>Level-1)
-		bi2-->bi6
-		bi6(Mushroom Biome)-->bo5
-		bo5(**Crabulon**)
-		start1-->bi7
-		%%bi7(Evil Biome) & bo4==>bo6 & bo7
-		bo4==> bi7
-		bi7(Evil Biome) ==>gate1
-		gate1{OR} <--> bo6 & bo7
-		bo6(**Brain of Cthulu**)
-		bo7(**Eater of Worlds**)
-	end
-	subgraph t3 [Tier 3]
-		bi5-->bo8
-		bo8(**Queen Jellyfish**)-->npc10
-		npc10(Diverman)
-		mis1-->ev5
-		ev5(Goblin Army)-->npc11
-		npc11(Goblin Tinkerer)
-		gate1-->npc12
-		npc12(Tavernkeep) --> ev6
-		ev6("**Old Ones Army**<br>Level-1")-->mbo4
-		mbo4(Dark Mage)
-		bi2-->str2
-		str2(Blood Chamber) & ev3-->bo10
-		bo10(**Viscount**)
-		bi2-->bi8
-		bi8(Jungle)-->mbo5
-		mbo5(Corpse Bloom)-->npc13
-		npc13(Druid)
-		gate1-->gate2
-		gate2{OR} <--> bo11 & bo12 
-		bo11(**The Perforators**)
-		bo12(**The Hive Mind**)
-		gate2 & str3 --> mis2
-		mis2(Enchanted Aerialite)
-		bi8-->str4
-		str4(Bee Hive) --> bo13
-		bo13(**Queen Bee**) --> npc13
-		npc13(Witch Doctor)
-		start1--> str5
-		gate1 & bo10 ==> bo14
-		bo14(**Skeletron**)
-	end
-	subgraph t4 [Tier 4]
-		bo14 --> mis3 & npc14 & str5
-		npc14(Bandit)
-		str5(Dungeon)-->npc15 & mbo6		
-		npc15(Mechanic)--> mis4
-		mis4(**CodeBreaker**<br>Part1) & str6 --> mis5
-		mis5(Schematic - Planetoid)
-		bi10--> bi11
-		bi11(Abyss) --> mis3
-		mis3(Ancient Treasure Chests)
-		mbo6(Illusionist)
-		start1--> bi12
-		bi12(Tundra) --> bo15
-		bo15(**Deer Clops**)
-		bi2-->bi13 & bi14
-		bi13(Granite Biome) & bo14 & bo10 --> bo16
-		bo16(**Granite Energy Storm**)
-		bi14(Marble Biome) & bo14 & bo10 --> bo17
-		bo17(**Buried Champion**) --> npc16
-		npc16(Spiritualist)
-		bo3 --> bo18
-		bo18(**Slime God**)
-		str3 --> bo19(**Star Scouter**)
-		npc16 --> bo20
-		bo20(**Deviantt**)
-		bi2 & bo14 ==> bi15
-		bi15(Underworld) =====> bo21
-		bo21(**Wall of Flesh**)
+    subgraph t2 [Tier 2]
+        bo5 ----> ev3 & npc6 & npc7
+        ev3(Blood Moon) --> mbo3
+        mbo3(Patchwerk) --> npc8
+        npc6(Tracker)
+        npc7(Blacksmith)
+        npc8(Confused Zombie)
+        bo5 --> ev4
+        ev4(Acid Rain<br> Tier 1)
+        gate1{OR}
+        bo6(Brain of Cthulhu) 
+        bo7(Eater of Worlds)
+        bo8(Crabulon)
+    end
+    subgraph t3 [Tier 3]
+        str2(Blood Chamber) & ev3 --> bo9
+        bo9(Viscount)
+        ev5(Goblin Army) --> npc9
+        npc9(Goblin Tinkerer)
+        npc10(Tavernkeep) --> ev6
+        gate2{OR}
 
+        bo6 --> bo10
+        bo10(The Perforators)
+        bo7 --> bo11
+        bo11(Hivemind)
+        str3(Flying Island) ---> mis3
+        mis3(Enchanted Aerialite)
+        ev6(Old One's Army<br>Tier 1) --> mbo4
+        mbo4(Dark Mage)
+        bo9--> bo12
+        bo12(Skeletron)
+        bo13(Queen Jellyfish) --> npc11
+        npc11(Diverman)
+        str4(Bee Hive) --> bo14
+        bo14(Queen Bee) --> npc12
+        npc12(Witch Doctor)
+        mbo5(Corpse Bloom)
 
-	end
-	%%t1 ==> t2
+    end
+    subgraph t4 [Tier 4]
+        bo3 ----------> bo15
+        bo15(Slime God)
+        bo12 --> npc13
+        bo12 --> npc14
+        npc13(Bandit)
+        
+        bo16(Buried Champion) --> npc15
+        bo17(Granite Energy Storm)
+        bo12 --> mis4
+        mis4(Ancient Treasure Chests)
+        
+        npc14(Mechanic) --> mis5
+        mis5(Codebreaker<br>Part 1)
+
+        mis5 & str5(Plan. Bio-Lab) --> mis6
+        mis6(Schem. Plan.)
+        npc15(Spiritualist) --> bo18
+        bo18(Deviantt)
+        str6(Dungeon) --> mbo6
+        mbo6(Illusionist)
+        str3 --> bo19(Star Scouter)
+        bo20(Deer Clops)
+        bo18 --> mis7
+        mis7(Guide Doll) --> bo21
+        bo21(Wall of Flesh)
+    end
+    %%ev6 --> mbo4
+	%%t1 ~~~ t2
 	%%t2 ==> t3
 	%%t3 ==> t4
 end
@@ -352,6 +353,7 @@ class mbo0,mbo1,mbo2,mbo3,mbo4,mbo5,mbo6,mbo7,mbo8,mbo9,mbo10 miniboss
 class npc0,npc1,npc2,npc3,npc4,npc5,npc6,npc7,npc8,npc9,npc10,npc11,npc12,npc13,npc14,npc15,npc16,npc17,npc18,npc19,npc20 npc
 class inv0,inv1,inv2 invisible
 ```
+
 ## Pre-Hardmode
 ### Tier 1
 ![tier1-img](img/tiers_template/tier1.png)
