@@ -368,8 +368,11 @@ class inv0,inv1,inv2 invisible
 				- [ ] Bestiary
 				- [ ] Progression Path
 				- [ ] NPCs
-				- [ ] Rarity Explained
+				- [ ] Rarity 
 				- [ ] Difficulty
+    				- [ ] Codebreaker
+        			- [ ] World
+           			- [ ] Classes
 		- [ ] Amethyst Staff [`Ma`](#magic)
 	- [ ] Environment
 		- [ ] Copper Ore
