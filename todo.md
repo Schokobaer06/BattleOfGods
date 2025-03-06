@@ -373,6 +373,7 @@ class inv0,inv1,inv2 invisible
     				- [ ] Codebreaker
         			- [ ] World
            			- [ ] Classes
+              			- [ ] Credits
 		- [ ] Amethyst Staff [`Ma`](#magic)
 	- [ ] Environment
 		- [ ] Copper Ore
