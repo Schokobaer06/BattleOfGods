@@ -4,7 +4,7 @@
   "definition": {
     "name": "Tier 1",
     "icon": {
-      "value": "CUSTOM:ItemCopperShortsword"
+      "value": "CUSTOM:ItemTier1"
     },
     "showSearch": true
   }

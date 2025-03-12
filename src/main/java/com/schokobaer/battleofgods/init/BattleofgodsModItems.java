@@ -12,17 +12,17 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.BlockItem;
 
-import com.schokobaer.battleofgods.item.ItemCopperShortswordItem;
+import com.schokobaer.battleofgods.item.ItemTier1Item;
 import com.schokobaer.battleofgods.item.CopperShortswordItem;
 import com.schokobaer.battleofgods.item.CopperBroadswordItem;
 import com.schokobaer.battleofgods.BattleofgodsMod;
 
 public class BattleofgodsModItems {
 	public static final DeferredRegister<Item> REGISTRY = DeferredRegister.create(ForgeRegistries.ITEMS, BattleofgodsMod.MODID);
-	public static final RegistryObject<Item> ITEM_COPPER_SHORTSWORD = REGISTRY.register("item_copper_shortsword", () -> new ItemCopperShortswordItem());
 	public static final RegistryObject<Item> COPPER_SHORTSWORD = REGISTRY.register("copper_shortsword", () -> new CopperShortswordItem());
 	public static final RegistryObject<Item> COPPER_BROADSWORD = REGISTRY.register("copper_broadsword", () -> new CopperBroadswordItem());
 	public static final RegistryObject<Item> WOODEN_WORKBENCH = block(BattleofgodsModBlocks.WOODEN_WORKBENCH);
+	public static final RegistryObject<Item> ITEM_TIER_1 = REGISTRY.register("item_tier_1", () -> new ItemTier1Item());
 
 	// Start of user code block custom items
 	// End of user code block custom items

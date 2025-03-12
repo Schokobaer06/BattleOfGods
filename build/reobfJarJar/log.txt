@@ -150,6 +150,7 @@ Conflicting propagated mapping for com/schokobaer/battleofgods/item/CopperBroads
 Conflicting propagated mapping for com/schokobaer/battleofgods/item/CopperBroadswordItem$1/getEnchantmentValue()I from net/minecraft/world/item/Tier/getEnchantmentValue()I: getEnchantmentValue -> m_6601_
 Conflicting propagated mapping for com/schokobaer/battleofgods/item/CopperBroadswordItem$1/getLevel()I from net/minecraft/world/item/Tier/getLevel()I: getLevel -> m_6604_
 Conflicting propagated mapping for com/schokobaer/battleofgods/item/CopperBroadswordItem$1/getAttackDamageBonus()F from net/minecraft/world/item/Tier/getAttackDamageBonus()F: getAttackDamageBonus -> m_6631_
+Conflicting propagated mapping for com/schokobaer/battleofgods/item/CopperBroadswordItem/appendHoverText(Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/level/Level;Ljava/util/List;Lnet/minecraft/world/item/TooltipFlag;)V from net/minecraft/world/item/Item/appendHoverText(Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/level/Level;Ljava/util/List;Lnet/minecraft/world/item/TooltipFlag;)V: appendHoverText -> m_7373_
 Conflicting propagated mapping for com/schokobaer/battleofgods/block/WoodenWorkbenchBlock/getVisualShape(Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/BlockGetter;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/phys/shapes/CollisionContext;)Lnet/minecraft/world/phys/shapes/VoxelShape; from net/minecraft/world/level/block/state/BlockBehaviour/getVisualShape(Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/BlockGetter;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/phys/shapes/CollisionContext;)Lnet/minecraft/world/phys/shapes/VoxelShape;: getVisualShape -> m_5909_
 Conflicting propagated mapping for com/schokobaer/battleofgods/block/WoodenWorkbenchBlock/propagatesSkylightDown(Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/BlockGetter;Lnet/minecraft/core/BlockPos;)Z from net/minecraft/world/level/block/Block/propagatesSkylightDown(Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/BlockGetter;Lnet/minecraft/core/BlockPos;)Z: propagatesSkylightDown -> m_7420_
 Conflicting propagated mapping for com/schokobaer/battleofgods/block/WoodenWorkbenchBlock/getLightBlock(Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/BlockGetter;Lnet/minecraft/core/BlockPos;)I from net/minecraft/world/level/block/state/BlockBehaviour/getLightBlock(Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/BlockGetter;Lnet/minecraft/core/BlockPos;)I: getLightBlock -> m_7753_
@@ -184,7 +185,7 @@ Writing Output: C:\Users\Josef Peer\OneDrive\Games\Minecraft Java\Mods\Eigene\Ba
   assets/battleofgods/models/item/copper_broadsword.json
   assets/battleofgods/models/item/copper_shortsword.json
   assets/battleofgods/models/item/handheld_broadsword.json
-  assets/battleofgods/models/item/item_copper_shortsword.json
+  assets/battleofgods/models/item/item_tier_1.json
   assets/battleofgods/models/item/wooden_workbench.json
   assets/battleofgods/textures/
   assets/battleofgods/textures/block/
@@ -192,8 +193,6 @@ Writing Output: C:\Users\Josef Peer\OneDrive\Games\Minecraft Java\Mods\Eigene\Ba
   assets/battleofgods/textures/item/
   assets/battleofgods/textures/item/copper_broadsword.png
   assets/battleofgods/textures/item/copper_shortsword.png
-  assets/battleofgods/textures/screens/
-  assets/battleofgods/textures/screens/gui_crafting.png
   com/
   com/schokobaer/
   com/schokobaer/battleofgods/
@@ -210,7 +209,7 @@ Writing Output: C:\Users\Josef Peer\OneDrive\Games\Minecraft Java\Mods\Eigene\Ba
   com/schokobaer/battleofgods/item/CopperBroadswordItem.class
   com/schokobaer/battleofgods/item/CopperShortswordItem$1.class
   com/schokobaer/battleofgods/item/CopperShortswordItem.class
-  com/schokobaer/battleofgods/item/ItemCopperShortswordItem.class
+  com/schokobaer/battleofgods/item/ItemTier1Item.class
   data/
   data/battleofgods/
   data/battleofgods/loot_tables/

@@ -8,6 +8,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Item;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.resources.ResourceLocation;
+import org.jetbrains.annotations.NotNull;
 
 public class CopperShortswordItem extends SwordItem {
 	public CopperShortswordItem() {
@@ -54,7 +55,7 @@ public class CopperShortswordItem extends SwordItem {
 	}
 
 	@Override
-	public boolean isRepairable(ItemStack itemstack) {
+	public boolean isRepairable(@NotNull ItemStack itemstack) {
 		return false;
 	}
 }

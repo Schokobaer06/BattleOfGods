@@ -8,7 +8,7 @@
   "items": [
     {
       "item": "recipe_name",
-      "count": null
+      "count": 1
     },
     {
       "tag": "modid:tag",
@@ -27,7 +27,7 @@
 ```
 >`type` - The type of the recipe. This should always be `battleofgods:default_recipe`.<br>
  
->`group` - The group of the recipe. This is used to group recipes together in the recipe book.<br>
+>`group` - The group of the recipe. Says which type of crafting station/gui/etc. will be needed to craft the item.<br>
 >>usable types:<br>`workbench` 
  
 >`category` - The category of the recipe. This is used to group recipes together in the recipe book. Default is `misc`.<br>
@@ -55,3 +55,4 @@
 **Here is how it should look:<br>**
 ![GUI](./gui.png)<br>
 **Here is how it should look in JEI:<br>**
+![GUI](./jei.png)<br>
