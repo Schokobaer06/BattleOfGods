@@ -29,6 +29,7 @@ import java.util.AbstractMap;
 import com.schokobaer.battleofgods.init.BattleofgodsModTabs;
 import com.schokobaer.battleofgods.init.BattleofgodsModItems;
 import com.schokobaer.battleofgods.init.BattleofgodsModBlocks;
+import com.schokobaer.battleofgods.init.InitMechanics;
 
 @Mod("battleofgods")
 public class BattleofgodsMod {
@@ -46,6 +47,8 @@ public class BattleofgodsMod {
 		BattleofgodsModItems.REGISTRY.register(bus);
 
 		BattleofgodsModTabs.REGISTRY.register(bus);
+
+		InitMechanics.RARITIES.register(bus);
 
 		// Start of user code block mod init
 		// End of user code block mod init
