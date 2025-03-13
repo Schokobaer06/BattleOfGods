@@ -1,6 +1,19 @@
 {
   "mod_elements": [
     {
+      "name": "ItemCopperShortsword",
+      "type": "item",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "item_copper_shortsword",
+      "metadata": {
+        "files": [
+          "src/main/java/com/schokobaer/battleofgods/item/ItemCopperShortswordItem.java",
+          "src/main/resources/assets/battleofgods/models/item/item_copper_shortsword.json"
+        ]
+      }
+    },
+    {
       "name": "Tier1",
       "type": "tab",
       "compiles": true,
@@ -14,7 +27,7 @@
       "name": "CopperShortsword",
       "type": "tool",
       "compiles": true,
-      "locked_code": true,
+      "locked_code": false,
       "registry_name": "copper_shortsword",
       "metadata": {
         "files": [
@@ -63,19 +76,6 @@
           "src/main/resources/data/battleofgods/recipes/recipe_wooden_workbench.json"
         ]
       }
-    },
-    {
-      "name": "ItemTier1",
-      "type": "item",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "item_tier_1",
-      "metadata": {
-        "files": [
-          "src/main/java/com/schokobaer/battleofgods/item/ItemTier1Item.java",
-          "src/main/resources/assets/battleofgods/models/item/item_tier_1.json"
-        ]
-      }
     }
   ],
   "variable_elements": [],
@@ -92,12 +92,10 @@
   "tab_element_order": {},
   "language_map": {
     "en_us": {
-      "item.battleofgods.item_tier_1": "Tier 1",
       "item.battleofgods.copper_short_sword": "Copper Short Sword",
+      "item.battleofgods.item_copper_shortsword": "Item Copper Shortsword",
       "block.battleofgods.wooden_workbench": "Workbench",
       "item_group.battleofgods.tier_1": "Tier 1",
-      "item.battleofgods.copper_broadsword.description_1": "",
-      "item.battleofgods.copper_broadsword.description_0": "True Melee",
       "item.battleofgods.copper_broadsword": "Copper Broadsword",
       "item.battleofgods.copper_shortsword": "Copper Shortsword"
     }

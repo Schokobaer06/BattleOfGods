@@ -14,7 +14,7 @@
       "name": "CopperShortsword",
       "type": "tool",
       "compiles": true,
-      "locked_code": true,
+      "locked_code": false,
       "registry_name": "copper_shortsword",
       "metadata": {
         "files": [
@@ -78,7 +78,14 @@
       }
     }
   ],
-  "variable_elements": [],
+  "variable_elements": [
+    {
+      "name": "itemClass",
+      "type": "string",
+      "scope": "global",
+      "value": ""
+    }
+  ],
   "sound_elements": [],
   "tag_elements": {
     "BLOCKS:minecraft:mineable/axe": [

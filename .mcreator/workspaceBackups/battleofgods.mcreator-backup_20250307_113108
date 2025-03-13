@@ -14,7 +14,7 @@
       "name": "CopperShortsword",
       "type": "tool",
       "compiles": true,
-      "locked_code": true,
+      "locked_code": false,
       "registry_name": "copper_shortsword",
       "metadata": {
         "files": [
@@ -27,7 +27,7 @@
       "name": "CopperBroadsword",
       "type": "tool",
       "compiles": true,
-      "locked_code": false,
+      "locked_code": true,
       "registry_name": "copper_broadsword",
       "metadata": {
         "files": [
