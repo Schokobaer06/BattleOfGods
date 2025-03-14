@@ -61,14 +61,15 @@ public class CopperShortswordItem extends SwordItem {
 		}
 		return retval;
 	}
+	/*
 	@Override
 	public Component getName(ItemStack stack) {
 		MutableComponent name = Component.translatable(getDescriptionId(stack));
 
 		// Farbe basierend auf der Rarität anwenden
-		int color = new Rarity(new ResourceLocation("battleofgods", "textures/rarity/rainbow.png")).getArgbColor();
+		int color = new Rarity(new ResourceLocation("battleofgods", "textures/rarity/rainbow.png"),0.5f).getArgbColor();
 		return name.withStyle(Style.EMPTY.withColor(color));
-	}
+	}*/
 	@Override
 	public boolean isRepairable(@NotNull ItemStack itemstack) {
 		return false;
@@ -77,6 +78,6 @@ public class CopperShortswordItem extends SwordItem {
 	@Override
 	public void appendHoverText(ItemStack itemstack, Level level, List<Component> list, TooltipFlag flag) {
 		super.appendHoverText(itemstack, level, list, flag);
-		list.add(Component.literal("Rarity: ").setStyle(Style.EMPTY.withColor(rarity.getArgbColor())));
+		//list.add(Component.literal("Legendary").setStyle(Style.EMPTY.withColor(rarity.getArgbColor())));
 	}
 }

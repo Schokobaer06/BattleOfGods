@@ -22,13 +22,17 @@ import java.util.Optional;
 public class RarityColorHandler {
     private static final Map<ResourceLocation, TextureAtlasSprite> TEXTURE_CACHE = new HashMap<>();
     private static float animationProgress = 0;
+    private static int tickCounter = 0;
 
     @SubscribeEvent
     public static void onClientTick(TickEvent.ClientTickEvent event) {
         if (event.phase == TickEvent.ClientTickEvent.Phase.END) {
-            animationProgress += 0.05f;
-            if (animationProgress > 1.0f) {
-                animationProgress = 0; // Zurücksetzen, um Überlauf zu vermeiden
+            tickCounter++;
+            if (tickCounter % 2 == 0) {
+                animationProgress += 0.05f;
+                if (animationProgress > 1.0f) {
+                    animationProgress = 0; // Zurücksetzen, um Überlauf zu vermeiden
+                }
             }
         }
     }
@@ -42,8 +46,8 @@ public class RarityColorHandler {
                         if (optionalResource.isPresent()) {
                             Resource resource = optionalResource.get();
                             NativeImage image = NativeImage.read(resource.open());
-                            System.out.println("Texture loaded: " + resource);
-                            System.out.println("Texture size: x: " + image.getWidth() + " y: " + image.getHeight());
+                            //System.out.println("Texture loaded: " + resource);
+                            //System.out.println("Texture size: x: " + image.getWidth() + " y: " + image.getHeight());
 
                             float progress = (animationProgress * rarity.getAnimationSpeed()) % 1.0f;
                             int x = (int) (progress * (image.getWidth() - 1)); // -1, um Überlauf zu vermeiden

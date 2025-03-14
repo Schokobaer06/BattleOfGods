@@ -43,13 +43,18 @@ public class Rarity {
      *
      */
     public Rarity (ResourceLocation texture, float animationSpeed){
+        this.animationSpeed = animationSpeed;
+        if (animationSpeed <= 0 || animationSpeed > 100){
+            System.out.println("Error: animationSpeed must be between 0 and 100\nSetting animationSpeed to 1");
+            animationSpeed = 1;
+        }
         this.color = Either.right(texture);
         this.isAnimated = true;
-        this.animationSpeed = animationSpeed;
+
     }
 
     /**
-     * Get the color of the rarity
+     *
      * @return Either the hex color or the ResourceLocation
      */
     public Either<Integer, ResourceLocation> getColor(){
