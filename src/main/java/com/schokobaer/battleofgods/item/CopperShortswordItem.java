@@ -66,7 +66,7 @@ public class CopperShortswordItem extends SwordItem {
 		MutableComponent name = Component.translatable(getDescriptionId(stack));
 
 		// Farbe basierend auf der Rarität anwenden
-		int color = rarity.getArgbColor();
+		int color = new Rarity(new ResourceLocation("battleofgods", "textures/rarity/rainbow.png")).getArgbColor();
 		return name.withStyle(Style.EMPTY.withColor(color));
 	}
 	@Override

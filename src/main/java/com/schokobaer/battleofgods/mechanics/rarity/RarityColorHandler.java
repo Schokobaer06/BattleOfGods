@@ -1,20 +1,23 @@
 package com.schokobaer.battleofgods.mechanics.rarity;
 
+import com.mojang.blaze3d.platform.NativeImage;
 import com.schokobaer.battleofgods.BattleofgodsMod;
+import cpw.mods.modlauncher.api.ITransformationService;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.texture.TextureAtlasSprite;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.packs.resources.Resource;
 import net.minecraft.world.inventory.InventoryMenu;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
-
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Optional;
 
-@OnlyIn(Dist.CLIENT) // Only run on the client
+@OnlyIn(Dist.CLIENT)
 @Mod.EventBusSubscriber(modid = BattleofgodsMod.MODID, value = Dist.CLIENT, bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class RarityColorHandler {
     private static final Map<ResourceLocation, TextureAtlasSprite> TEXTURE_CACHE = new HashMap<>();
@@ -22,70 +25,46 @@ public class RarityColorHandler {
 
     @SubscribeEvent
     public static void onClientTick(TickEvent.ClientTickEvent event) {
-        if (event.phase == TickEvent.ClientTickEvent.Phase.END){
+        if (event.phase == TickEvent.ClientTickEvent.Phase.END) {
+            animationProgress += 0.05f;
             if (animationProgress > 1.0f) {
                 animationProgress = 0; // Zurücksetzen, um Überlauf zu vermeiden
             }
-            else
-                animationProgress += 0.05f;
         }
     }
 
-    /**
-     * @return int ARGB color of the rarity
-     */
-        /*
-        public static int getColor(Rarity rarity){
-            return rarity.getColor().map(
-                //hex
-                hex ->  hex,
-                //animated
-                    // Load texture from cache or atlas
-                    textureLocation -> {
-                    TextureAtlasSprite sprite = TEXTURE_CACHE.computeIfAbsent(
-                            textureLocation,
-                            loc -> Minecraft.getInstance().getTextureAtlas(InventoryMenu.BLOCK_ATLAS).apply(loc)
-                    );
-                    // Calculate current position in Color Gradient
-                    float progress = (animationProgress * rarity.getAnimationSpeed()) % 1.0f;
-                    int x = (int) (progress * sprite.contents().width());
-                    int y = (int) (progress * sprite.contents().height());
-                    // Get color from current position
-                    return sprite.getPixelRGBA(0,x, y);
-                }
-            );
-        }*/
     public static int getColor(Rarity rarity) {
         return rarity.getColor().map(
                 hex -> hex,
                 textureLocation -> {
-                    // Debug: Überprüfen, ob die Textur geladen wird
-                    System.out.println("Loading texture: " + textureLocation);
+                    try {
+                        Optional<Resource> optionalResource = Minecraft.getInstance().getResourceManager().getResource(textureLocation);
+                        if (optionalResource.isPresent()) {
+                            Resource resource = optionalResource.get();
+                            NativeImage image = NativeImage.read(resource.open());
+                            System.out.println("Texture loaded: " + resource);
+                            System.out.println("Texture size: x: " + image.getWidth() + " y: " + image.getHeight());
 
-                    TextureAtlasSprite sprite = TEXTURE_CACHE.computeIfAbsent(
-                            textureLocation,
-                            loc -> {
-                                TextureAtlasSprite loadedSprite = Minecraft.getInstance()
-                                        .getTextureAtlas(InventoryMenu.BLOCK_ATLAS)
-                                        .apply(loc);
-                                System.out.println("Texture loaded: " + loadedSprite);
-                                return loadedSprite;
-                            }
-                    );
+                            float progress = (animationProgress * rarity.getAnimationSpeed()) % 1.0f;
+                            int x = (int) (progress * (image.getWidth() - 1)); // -1, um Überlauf zu vermeiden
+                            int y = (int) (progress * (image.getHeight() - 1));
 
-                    // Debug: Überprüfen der Texturgröße
-                    System.out.println("Texture size: " + sprite.contents().width() + "x" + sprite.contents().height());
+                            //System.out.println("Sampling pixel at: " + x + ", " + y);
+                            //System.out.println("Progress: " + progress + "\nAnimation Progress: " + animationProgress + "\nAnimation Speed: " + rarity.getAnimationSpeed());
 
-                    float progress = (animationProgress * rarity.getAnimationSpeed()) % 1.0f;
-                    int x = (int) (progress * sprite.contents().width());
-                    int y = (int) (progress * sprite.contents().height());
+                            // Extrahiere die Farbe aus der Textur
+                            int color = image.getPixelRGBA(x, y);
+                            //System.out.println("Sampled color (ARGB): " + Integer.toHexString(color));
+                            return color;
+                        } else {
+                            System.out.println("Texture not found: " + textureLocation);
+                            return 0xFF000000;
+                        }
+                    } catch (Exception e) {
+                        System.out.println("Error loading texture: " + textureLocation);
+                        return 0xFF000000;
+                    }
 
-                    // Debug: Überprüfen der Pixelposition
-                    System.out.println("Sampling pixel at: " + x + ", " + y);
-
-                    int color = sprite.getPixelRGBA(1, x, y);
-                    System.out.println("Sampled color: " + Integer.toHexString(color));
-                    return color;
                 }
         );
     }
