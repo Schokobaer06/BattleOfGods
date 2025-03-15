@@ -1,61 +1,78 @@
 package com.schokobaer.battleofgods.mechanics.rarity;
 
 import com.mojang.datafixers.util.Either;
+import com.schokobaer.battleofgods.BattleofgodsMod;
 import net.minecraft.resources.ResourceLocation;
 
 public class Rarity {
     private final Either<Integer, ResourceLocation> color;
     private final boolean isAnimated;
     private final float animationSpeed;
+    private final String displayName;
 
-    // Constructor for hex strings
-    public Rarity(String hexColor) {
-        this.color = Either.left(ColorUtils.hexToInt(hexColor));
-        this.isAnimated = false;
-        this.animationSpeed = 0;
+    public String CheckDisplayName(String name){
+        if (name == null || name.isEmpty()){
+            BattleofgodsMod.LOGGER.error("Error: Rarity name is empty or null\nSetting name to Unknown Rarity");
+            return "Unknown Rarity";
+        }
+        return name;
+    }
+    public float CheckSpeed(float speed){
+        if (speed <= 0 || speed > 100){
+            BattleofgodsMod.LOGGER.error("Error: animationSpeed must be between 0 and 100\nSetting animationSpeed to 1");
+            return 1;
+        }
+        return speed;
     }
     //Constructor for static Colors
-    public Rarity(int hexColor){
+    /**
+     * Rarity with static color
+     * @param displayName Name which will be displayed in game
+     * @param hexColor ARGB-Color of the rarity
+     */
+    public Rarity(String displayName, int hexColor){
         this.color = Either.left(hexColor);
         this.isAnimated = false;
         this.animationSpeed = 0;
+        this.displayName = CheckDisplayName(displayName);
     }
     // Constructor for animated Colors (default speed) is 1
 
     /**
-     * Animated Rarity
+     * Rarity with animated color
+     * @param displayName Name which will be displayed in game
      * @param texture Texture to animate
      *                Texture should be a gradient
-     *                Animation speed is default (1)
+     *                Texture should be 32x32 for best compatibility
+     *                Animation speed is set to default (1)
      */
-    public Rarity(ResourceLocation texture){
+    public Rarity(String displayName, ResourceLocation texture){
         this.color = Either.right(texture);
         this.isAnimated = true;
         this.animationSpeed = 1;
+        this.displayName = CheckDisplayName(displayName);
     }
     //Constructor for animated Colors (customizable speed)
 
     /**
-     * Animated Rarity
-     * @param texture Texture to animate
-     *                Texture should be a gradient
+     * Rarity with animated color
+     *@param displayName Name which will be displayed in game
+     *@param texture Texture to animate
+     *               Texture should be a gradient
+     *               Texture should be 32x32 for best compatibility
      * @param animationSpeed Speed of the animation
-     *
+     *              animationSpeed should be 0 < animationSpeed <= 100
      */
-    public Rarity (ResourceLocation texture, float animationSpeed){
-        this.animationSpeed = animationSpeed;
-        if (animationSpeed <= 0 || animationSpeed > 100){
-            System.out.println("Error: animationSpeed must be between 0 and 100\nSetting animationSpeed to 1");
-            animationSpeed = 1;
-        }
+    public Rarity (String displayName, ResourceLocation texture, float animationSpeed){
+        this.animationSpeed = CheckSpeed(animationSpeed);
+        this.displayName = CheckDisplayName(displayName);
         this.color = Either.right(texture);
         this.isAnimated = true;
 
     }
 
     /**
-     *
-     * @return Either the hex color or the ResourceLocation
+     * @return Either the hex code or the ResourceLocation
      */
     public Either<Integer, ResourceLocation> getColor(){
         return this.color;
@@ -63,7 +80,7 @@ public class Rarity {
 
     /**
      * Get the color of the rarity
-     * @return the ARGB-Color of the rarity for display
+     * @return Either the static hex color or animated hex color of the given ResourceLocation
      */
     public int getArgbColor(){
         return RarityColorHandler.getColor(this);
@@ -74,5 +91,8 @@ public class Rarity {
     }
     public boolean isAnimated(){
         return this.isAnimated;
+    }
+    public String getDisplayName(){
+        return this.displayName;
     }
 }

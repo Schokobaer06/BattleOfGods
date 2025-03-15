@@ -61,11 +61,11 @@ public class RarityColorHandler {
                             //System.out.println("Sampled color (ARGB): " + Integer.toHexString(color));
                             return color;
                         } else {
-                            System.out.println("Texture not found: " + textureLocation);
+                            BattleofgodsMod.LOGGER.error("Texture not found: {}", textureLocation);
                             return 0xFF000000;
                         }
                     } catch (Exception e) {
-                        System.out.println("Error loading texture: " + textureLocation);
+                        BattleofgodsMod.LOGGER.error("Error loading texture: {}", textureLocation, e);
                         return 0xFF000000;
                     }
 

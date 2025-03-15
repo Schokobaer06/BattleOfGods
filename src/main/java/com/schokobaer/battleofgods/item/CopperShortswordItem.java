@@ -1,6 +1,7 @@
 
 package com.schokobaer.battleofgods.item;
 
+import com.schokobaer.battleofgods.init.InitMechanics;
 import com.schokobaer.battleofgods.mechanics.rarity.Rarity;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
@@ -17,8 +18,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.List;
 
 public class CopperShortswordItem extends SwordItem {
-	private final Rarity rarity;
-	public CopperShortswordItem() {
+		public CopperShortswordItem() {
 		super(new Tier() {
 			public int getUses() {
 				return 100;
@@ -44,7 +44,6 @@ public class CopperShortswordItem extends SwordItem {
 				return Ingredient.of(ItemTags.create(new ResourceLocation("minecraft:ingots/copper")));
 			}
 		}, 3, -1f, new Item.Properties());
-		this.rarity = new Rarity(0xFFA500);
 	}
 
 	@Override
@@ -78,6 +77,8 @@ public class CopperShortswordItem extends SwordItem {
 	@Override
 	public void appendHoverText(ItemStack itemstack, Level level, List<Component> list, TooltipFlag flag) {
 		super.appendHoverText(itemstack, level, list, flag);
-		//list.add(Component.literal("Legendary").setStyle(Style.EMPTY.withColor(rarity.getArgbColor())));
+		list.add(Component.literal(InitMechanics.RAINBOW.get().getDisplayName()).withStyle(Style.EMPTY.withColor(InitMechanics.RAINBOW.get().getArgbColor())));
+		list.add(Component.literal(InitMechanics.FIERY_RED.get().getDisplayName()).withStyle(Style.EMPTY.withColor(InitMechanics.FIERY_RED.get().getArgbColor())));
+		list.add(Component.literal(InitMechanics.TEAL.get().getDisplayName()).withStyle(Style.EMPTY.withColor(InitMechanics.TEAL.get().getArgbColor())));
 	}
 }
