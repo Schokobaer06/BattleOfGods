@@ -28,7 +28,7 @@ public class Rarity  {
     /**
      * Rarity with static color
      * @param displayName Name which will be displayed in game
-     * @param hexColor ARGB-Color of the rarity
+     * @param hexColor RGB-Color of the rarity
      */
     public Rarity(String displayName, Integer hexColor){
         if (hexColor == null) {
