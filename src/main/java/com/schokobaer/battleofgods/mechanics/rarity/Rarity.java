@@ -47,7 +47,7 @@ public class Rarity  {
      * @param displayName Name which will be displayed in game
      * @param texture Texture to animate
      *                Texture should be a gradient
-     *                Texture should be 32x32 for best compatibility
+     *                Texture should be 32x32 for best compatibility, else animationSpeed should be adjusted
      *                Animation speed is set to default (1)
      */
     public Rarity(String displayName, ResourceLocation texture){
@@ -66,7 +66,7 @@ public class Rarity  {
      *@param displayName Name which will be displayed in game
      *@param texture Texture to animate
      *               Texture should be a gradient
-     *               Texture should be 32x32 for best compatibility
+     *               Texture should be 32x32 for best compatibility, else animationSpeed should be adjusted
      * @param animationSpeed Speed of the animation
      *              animationSpeed should be 0 < animationSpeed <= 1
      */

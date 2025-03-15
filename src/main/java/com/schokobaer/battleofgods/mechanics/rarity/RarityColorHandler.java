@@ -16,13 +16,18 @@ import java.util.Optional;
 @Mod.EventBusSubscriber(modid = BattleofgodsMod.MODID, value = Dist.CLIENT, bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class RarityColorHandler {
     private static float animationProgress = 0;
+    private static int tickCounter = 0; // Counter to track ticks
 
     @SubscribeEvent
     public static void onClientTick(TickEvent.ClientTickEvent event) {
         if (event.phase == TickEvent.ClientTickEvent.Phase.END) {
-            animationProgress += 0.005f; // Increment by a small fixed amount
-            if (animationProgress > 1.0f) {
-                animationProgress = 0; // Reset to 0 to cycle
+            tickCounter++;
+            if (tickCounter >= 2) { // Update every 2nd tick
+                animationProgress += 0.003f; // Increment by a small fixed amount
+                if (animationProgress > 1.0f) {
+                    animationProgress = 0; // Reset to 0 to cycle
+                }
+                tickCounter = 0; // Reset the counter
             }
         }
     }

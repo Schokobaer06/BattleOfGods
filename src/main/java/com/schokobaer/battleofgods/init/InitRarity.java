@@ -85,7 +85,7 @@ public class InitRarity {
     public static final RegistryObject<Rarity> RAINBOW = RARITIES.register("rainbow",
         () -> new Rarity("Revengeance Mode",
             new ResourceLocation("battleofgods:textures/rarity/rainbow.png"),
-            1f));
+            0.25f));
 
     public static final RegistryObject<Rarity> FIERY_RED = RARITIES.register("fiery_red",
             () -> new Rarity("Death Mode",
@@ -94,6 +94,6 @@ public class InitRarity {
     public static final RegistryObject<Rarity> TEAL = RARITIES.register("teal",
             () -> new Rarity("Eternity Mode",
                     new ResourceLocation("battleofgods:textures/rarity/teal.png"),
-                    0.7f));
+                    0.5f));
 
 }

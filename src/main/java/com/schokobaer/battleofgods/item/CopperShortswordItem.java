@@ -68,8 +68,8 @@ public class CopperShortswordItem extends SwordItem {
 		super.appendHoverText(itemstack, level, list, flag);
 
 		list.add(Component.literal(InitRarity.RAINBOW.get().getDisplayName()).withStyle(Style.EMPTY.withColor(InitRarity.RAINBOW.get().getArgbColor())));
-		//list.add(Component.literal(InitRarity.FIERY_RED.get().getDisplayName()).withStyle(Style.EMPTY.withColor(InitRarity.FIERY_RED.get().getArgbColor())));
-		//list.add(Component.literal(InitRarity.TEAL.get().getDisplayName()).withStyle(Style.EMPTY.withColor(InitRarity.TEAL.get().getArgbColor())));
+		list.add(Component.literal(InitRarity.FIERY_RED.get().getDisplayName()).withStyle(Style.EMPTY.withColor(InitRarity.FIERY_RED.get().getArgbColor())));
+		list.add(Component.literal(InitRarity.TEAL.get().getDisplayName()).withStyle(Style.EMPTY.withColor(InitRarity.TEAL.get().getArgbColor())));
 
 		//list.add(Component.literal("Legendary").withStyle(Style.EMPTY.withColor(new Rarity("Legendary", new ResourceLocation("battleofgods:textures/rarity/rainbow.png")).getArgbColor())));
 		//list.add(Component.literal(InitRarity.GRAY.get().getDisplayName()).withStyle(Style.EMPTY.withColor(InitRarity.GRAY.get().getArgbColor())));
