@@ -1,18 +1,15 @@
 
 package com.schokobaer.battleofgods.item;
 
-import com.schokobaer.battleofgods.init.InitMechanics;
+import com.schokobaer.battleofgods.init.InitRarity;
 import com.schokobaer.battleofgods.mechanics.rarity.Rarity;
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.network.chat.Style;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.Level;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
@@ -60,15 +57,7 @@ public class CopperShortswordItem extends SwordItem {
 		}
 		return retval;
 	}
-	/*
-	@Override
-	public Component getName(ItemStack stack) {
-		MutableComponent name = Component.translatable(getDescriptionId(stack));
 
-		// Farbe basierend auf der Rarität anwenden
-		int color = new Rarity(new ResourceLocation("battleofgods", "textures/rarity/rainbow.png"),0.5f).getArgbColor();
-		return name.withStyle(Style.EMPTY.withColor(color));
-	}*/
 	@Override
 	public boolean isRepairable(@NotNull ItemStack itemstack) {
 		return false;
@@ -77,8 +66,13 @@ public class CopperShortswordItem extends SwordItem {
 	@Override
 	public void appendHoverText(ItemStack itemstack, Level level, List<Component> list, TooltipFlag flag) {
 		super.appendHoverText(itemstack, level, list, flag);
-		list.add(Component.literal(InitMechanics.RAINBOW.get().getDisplayName()).withStyle(Style.EMPTY.withColor(InitMechanics.RAINBOW.get().getArgbColor())));
-		list.add(Component.literal(InitMechanics.FIERY_RED.get().getDisplayName()).withStyle(Style.EMPTY.withColor(InitMechanics.FIERY_RED.get().getArgbColor())));
-		list.add(Component.literal(InitMechanics.TEAL.get().getDisplayName()).withStyle(Style.EMPTY.withColor(InitMechanics.TEAL.get().getArgbColor())));
+
+		list.add(Component.literal(InitRarity.RAINBOW.get().getDisplayName()).withStyle(Style.EMPTY.withColor(InitRarity.RAINBOW.get().getArgbColor())));
+		//list.add(Component.literal(InitRarity.FIERY_RED.get().getDisplayName()).withStyle(Style.EMPTY.withColor(InitRarity.FIERY_RED.get().getArgbColor())));
+		//list.add(Component.literal(InitRarity.TEAL.get().getDisplayName()).withStyle(Style.EMPTY.withColor(InitRarity.TEAL.get().getArgbColor())));
+
+		//list.add(Component.literal("Legendary").withStyle(Style.EMPTY.withColor(new Rarity("Legendary", new ResourceLocation("battleofgods:textures/rarity/rainbow.png")).getArgbColor())));
+		//list.add(Component.literal(InitRarity.GRAY.get().getDisplayName()).withStyle(Style.EMPTY.withColor(InitRarity.GRAY.get().getArgbColor())));
+
 	}
 }

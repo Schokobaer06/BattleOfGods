@@ -3,6 +3,7 @@ package com.schokobaer.battleofgods;
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.LogManager;
 
+import net.minecraftforge.registries.RegistryBuilder;
 import net.minecraftforge.network.simple.SimpleChannel;
 import net.minecraftforge.network.NetworkRegistry;
 import net.minecraftforge.network.NetworkEvent;
@@ -26,6 +27,8 @@ import java.util.Collection;
 import java.util.ArrayList;
 import java.util.AbstractMap;
 
+import com.schokobaer.battleofgods.mechanics.rarity.Rarity;
+import com.schokobaer.battleofgods.init.InitRarity;
 import com.schokobaer.battleofgods.init.BattleofgodsModTabs;
 import com.schokobaer.battleofgods.init.BattleofgodsModItems;
 import com.schokobaer.battleofgods.init.BattleofgodsModBlocks;
@@ -40,14 +43,12 @@ public class BattleofgodsMod {
 		// End of user code block mod constructor
 		MinecraftForge.EVENT_BUS.register(this);
 		IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
-
 		BattleofgodsModBlocks.REGISTRY.register(bus);
-
 		BattleofgodsModItems.REGISTRY.register(bus);
-
 		BattleofgodsModTabs.REGISTRY.register(bus);
-
 		// Start of user code block mod init
+		InitRarity.RARITIES.makeRegistry(() -> new RegistryBuilder<Rarity>().setName(InitRarity.RARITY_KEY.location()));
+		InitRarity.RARITIES.register(bus);
 		// End of user code block mod init
 	}
 

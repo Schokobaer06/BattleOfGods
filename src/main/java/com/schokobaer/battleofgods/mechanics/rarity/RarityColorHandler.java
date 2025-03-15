@@ -2,42 +2,32 @@ package com.schokobaer.battleofgods.mechanics.rarity;
 
 import com.mojang.blaze3d.platform.NativeImage;
 import com.schokobaer.battleofgods.BattleofgodsMod;
-import cpw.mods.modlauncher.api.ITransformationService;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.renderer.texture.TextureAtlasSprite;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.resources.Resource;
-import net.minecraft.world.inventory.InventoryMenu;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Optional;
 
 @OnlyIn(Dist.CLIENT)
 @Mod.EventBusSubscriber(modid = BattleofgodsMod.MODID, value = Dist.CLIENT, bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class RarityColorHandler {
-    private static final Map<ResourceLocation, TextureAtlasSprite> TEXTURE_CACHE = new HashMap<>();
     private static float animationProgress = 0;
-    private static int tickCounter = 0;
 
     @SubscribeEvent
     public static void onClientTick(TickEvent.ClientTickEvent event) {
         if (event.phase == TickEvent.ClientTickEvent.Phase.END) {
-            tickCounter++;
-            if (tickCounter % 2 == 0) {
-                animationProgress += 0.05f;
-                if (animationProgress > 1.0f) {
-                    animationProgress = 0; // Zurücksetzen, um Überlauf zu vermeiden
-                }
+            animationProgress += 0.005f; // Increment by a small fixed amount
+            if (animationProgress > 1.0f) {
+                animationProgress = 0; // Reset to 0 to cycle
             }
         }
     }
 
-    public static int getColor(Rarity rarity) {
+    public static Integer getColor(Rarity rarity) {
         return rarity.getColor().map(
                 hex -> hex,
                 textureLocation -> {
@@ -46,20 +36,12 @@ public class RarityColorHandler {
                         if (optionalResource.isPresent()) {
                             Resource resource = optionalResource.get();
                             NativeImage image = NativeImage.read(resource.open());
-                            //System.out.println("Texture loaded: " + resource);
-                            //System.out.println("Texture size: x: " + image.getWidth() + " y: " + image.getHeight());
 
-                            float progress = (animationProgress * rarity.getAnimationSpeed()) % 1.0f;
-                            int x = (int) (progress * (image.getWidth() - 1)); // -1, um Überlauf zu vermeiden
-                            int y = (int) (progress * (image.getHeight() - 1));
+                            float progress = (animationProgress * rarity.getAnimationSpeed() * image.getWidth()) % 1.0f;
+                            int x = (int) (progress * image.getWidth());
+                            int y = image.getHeight() / 2;
 
-                            //System.out.println("Sampling pixel at: " + x + ", " + y);
-                            //System.out.println("Progress: " + progress + "\nAnimation Progress: " + animationProgress + "\nAnimation Speed: " + rarity.getAnimationSpeed());
-
-                            // Extrahiere die Farbe aus der Textur
-                            int color = image.getPixelRGBA(x, y);
-                            //System.out.println("Sampled color (ARGB): " + Integer.toHexString(color));
-                            return color;
+                            return image.getPixelRGBA(x, y);
                         } else {
                             BattleofgodsMod.LOGGER.error("Texture not found: {}", textureLocation);
                             return 0xFF000000;
@@ -68,7 +50,6 @@ public class RarityColorHandler {
                         BattleofgodsMod.LOGGER.error("Error loading texture: {}", textureLocation, e);
                         return 0xFF000000;
                     }
-
                 }
         );
     }
