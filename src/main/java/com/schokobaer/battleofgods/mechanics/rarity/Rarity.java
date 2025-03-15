@@ -18,7 +18,7 @@ public class Rarity  {
         return name;
     }
     public float CheckSpeed(float speed){
-        if (speed <= 0.0f || speed > 1.0f){
+        if (speed <= 0.0f || speed > 2.0f){
             BattleofgodsMod.LOGGER.error("Error: animationSpeed must be between 0 and 100\nSetting animationSpeed to 1");
             return 1;
         }
@@ -34,14 +34,12 @@ public class Rarity  {
         if (hexColor == null) {
             throw new IllegalArgumentException("Texture cannot be null");
         }
-        //this.color = Either.left(hexColor);
         this.color = Either.left(hexColor);
         this.isAnimated = false;
         this.animationSpeed = 0;
         this.displayName = CheckDisplayName(displayName);
     }
-    // Constructor for animated Colors (default speed) is 1
-
+    // Constructor for animated Colors with default speed
     /**
      * Rarity with animated color
      * @param displayName Name which will be displayed in game
@@ -68,7 +66,7 @@ public class Rarity  {
      *               Texture should be a gradient
      *               Texture should be 32x32 for best compatibility, else animationSpeed should be adjusted
      * @param animationSpeed Speed of the animation
-     *              animationSpeed should be 0 < animationSpeed <= 1
+     *              animationSpeed should be 0 < animationSpeed <= 2
      */
     public Rarity (String displayName, ResourceLocation texture, float animationSpeed){
         if (texture == null) {
