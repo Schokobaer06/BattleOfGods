@@ -10,10 +10,7 @@
     "blockingModelName": "Normal blocking",
     "name": "Copper Broadsword",
     "specialInformation": {
-      "fixedValue": [
-        "True Melee",
-        ""
-      ]
+      "fixedValue": []
     },
     "creativeTabs": [
       {
