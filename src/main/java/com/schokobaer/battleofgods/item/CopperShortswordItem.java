@@ -1,8 +1,7 @@
 
 package com.schokobaer.battleofgods.item;
 
-import com.schokobaer.battleofgods.init.InitRarity;
-import com.schokobaer.battleofgods.mechanics.rarity.Rarity;
+import com.schokobaer.battleofgods.init.*;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.Style;
 import net.minecraft.world.item.*;
@@ -18,7 +17,7 @@ public class CopperShortswordItem extends SwordItem {
 		public CopperShortswordItem() {
 		super(new Tier() {
 			public int getUses() {
-				return 100;
+				return 0;
 			}
 
 			public float getSpeed() {
