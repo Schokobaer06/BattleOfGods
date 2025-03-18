@@ -50,6 +50,10 @@ public class ItemSubClass extends ItemClass {
     public TagKey<Item> getTag() {
         return tag;
     }
+    public ItemSubClass getSubclass() {
+        return this;
+    }
+
     @Override
     public Component getName(ItemStack stack) {
         Component name = super.getName(stack);

@@ -1,13 +1,9 @@
 package com.schokobaer.battleofgods.item.tier1;
 
-import com.schokobaer.battleofgods.init.InitItemClass;
 import com.schokobaer.battleofgods.init.InitRarity;
-import com.schokobaer.battleofgods.mechanics.item.Broadsword;
+import com.schokobaer.battleofgods.mechanics.item.subClass.Broadsword;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.crafting.Ingredient;
 

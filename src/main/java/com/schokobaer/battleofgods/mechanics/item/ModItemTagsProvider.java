@@ -1,8 +1,11 @@
 package com.schokobaer.battleofgods.mechanics.item;// ModItemTagsProvider.java
 import com.schokobaer.battleofgods.init.InitItemClass;
+import com.schokobaer.battleofgods.init.InitItemSubClass;
+import com.schokobaer.battleofgods.init.InitItems;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
+import net.minecraft.world.item.Item;
 import net.minecraftforge.common.data.BlockTagsProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.RegistryObject;
@@ -20,16 +23,15 @@ public class ModItemTagsProvider extends ItemTagsProvider {
         for (RegistryObject<ItemClass> itemClass : InitItemClass.ITEM_CLASSES.getEntries()) {
             tag(itemClass.get().getTag()).add(itemClass.get());
         }
-        /*
+
         // Automatische Generierung für ItemSubclass-Tags
-        for (RegistryObject<ItemSubClass> subclass : InitItemSubClass.SUBCLASSES.getEntries()) {
-            tag(subclass.get().getTag()).add(InitItems.ITEMS.getEntries().stream()
-                    .filter(item -> item.get() instanceof CustomItem)
-                    .map(item -> (CustomItem) item.get())
-                    .filter(item -> item.getSubclass().equals(subclass.get()))
+        for (RegistryObject<ItemSubClass> subClass : InitItemSubClass.ITEM_SUBCLASSES.getEntries()) {
+            tag(subClass.get().getTag())
+                    .add(InitItems.ITEMS.getEntries().stream()
+                    .filter(item -> item.get() instanceof ItemSubClass)
+                    .map(item -> (ItemSubClass) item.get())
+                    .filter(item -> item.getSubclass().equals(subClass.get()))
                     .toArray(Item[]::new));
         }
-
-         */
     }
 }
