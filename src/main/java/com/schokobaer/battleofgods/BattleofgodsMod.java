@@ -47,6 +47,8 @@ public class BattleofgodsMod {
 		InitRarity.RARITIES.makeRegistry(() -> new RegistryBuilder<Rarity>().setName(InitRarity.RARITY_KEY.location()));
 		InitRarity.RARITIES.register(bus);
 		InitItemClass.ITEM_CLASSES.register(bus);
+		InitItemSubClass.ITEM_SUBCLASSES.register(bus);
+		InitItems.ITEMS.register(bus);
 		// End of user code block mod init
 	}
 

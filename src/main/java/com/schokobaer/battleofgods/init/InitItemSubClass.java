@@ -14,7 +14,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
 public class InitItemSubClass {
-    public static final DeferredRegister<ItemSubClass> ITEM_SUBCLASSES = DeferredRegister.create((ResourceLocation) ForgeRegistries.ITEMS, BattleofgodsMod.MODID);
+    public static final DeferredRegister<ItemSubClass> ITEM_SUBCLASSES = DeferredRegister.create(ForgeRegistries.ITEMS.getRegistryName(), BattleofgodsMod.MODID);
 
     public static final RegistryObject<ItemSubClass> BROADSWORD = registerItemSubClass(new Item.Properties(), "broadsword", InitItemClass.MELEE.get());
 

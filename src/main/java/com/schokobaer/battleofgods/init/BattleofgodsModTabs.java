@@ -19,7 +19,7 @@ public class BattleofgodsModTabs {
 	public static final RegistryObject<CreativeModeTab> TIER_1 = REGISTRY.register("tier_1",
 			() -> CreativeModeTab.builder().title(Component.translatable("item_group.battleofgods.tier_1")).icon(() -> new ItemStack(BattleofgodsModItems.ITEM_TIER_1.get())).displayItems((parameters, tabData) -> {
 				tabData.accept(BattleofgodsModItems.COPPER_SHORTSWORD.get());
-				tabData.accept(BattleofgodsModItems.COPPER_BROADSWORD.get());
+				//tabData.accept(BattleofgodsModItems.COPPER_BROADSWORD.get());
 				tabData.accept(BattleofgodsModBlocks.WOODEN_WORKBENCH.get().asItem());
 			}).withSearchBar().build());
 }
