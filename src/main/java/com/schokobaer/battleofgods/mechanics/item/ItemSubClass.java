@@ -18,6 +18,7 @@ public class ItemSubClass extends ItemClass {
     private final String displayName;
     private final ItemClass itemClass;
     private Rarity rarity;
+    //private TagKey<Item> tag;
     /**
      *The SubClass all items belong to<br>
      * Every ItemSubClass belongs to an ItemClass<br>
@@ -27,7 +28,7 @@ public class ItemSubClass extends ItemClass {
      * @param name       Name of the SubClass
      */
     public ItemSubClass(Properties properties, ItemClass itemClass, @NotBlank String name) {
-        super(properties, itemClass.getName());
+        super(properties, itemClass.getName(), itemClass.getTag());
         this.itemClass = itemClass;
         this.displayName = name;
     }

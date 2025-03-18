@@ -16,21 +16,27 @@ import java.util.List;
 
 public class ItemClass extends Item {
     private final String name;
-    public static final TagKey<Item> ITEM_CLASS_TAG = TagKey.create(Registries.ITEM, new ResourceLocation("battleofgods", "main_item_classes"));
+    private final TagKey<Item> tag;
+
     /**
      *The Main ItemClass where every Item belongs to<br>
      * For example: Melee, Ranged, Magic, Summoning, etc.
-     * @param properties The properties of the item
+     * @param properties The properties of the itemClass
      * @param name Name of the ItemClass
      */
-    public ItemClass(Properties properties, @NotBlank String name) {
+    public ItemClass(Properties properties, @NotBlank String name, @NotBlank TagKey<Item> tag) {
         super(properties);
         this.name = name;
+        this.tag = tag;
     }
 
     public String getName() {
         return name;
     }
+    public TagKey<Item> getTag() {
+        return tag;
+    }
+
     @Override
     public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltip, TooltipFlag flag) {
         super.appendHoverText(stack, level, tooltip, flag);
