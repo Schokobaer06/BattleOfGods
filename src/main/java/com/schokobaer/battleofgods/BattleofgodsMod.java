@@ -3,13 +3,8 @@ package com.schokobaer.battleofgods;
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.LogManager;
 
-import com.schokobaer.battleofgods.init.InitItemClass;
-import com.schokobaer.battleofgods.init.InitItemSubClass;
 import com.schokobaer.battleofgods.init.InitItems;
-import com.schokobaer.battleofgods.init.BattleofgodsModBlocks;
-import com.schokobaer.battleofgods.init.BattleofgodsModItems;
-import com.schokobaer.battleofgods.init.BattleofgodsModTabs;
-import com.schokobaer.battleofgods.init.InitRarity;
+import com.schokobaer.battleofgods.init.*;
 
 import net.minecraftforge.registries.RegistryBuilder;
 import net.minecraftforge.network.simple.SimpleChannel;

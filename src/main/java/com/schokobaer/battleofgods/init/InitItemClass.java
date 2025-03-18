@@ -2,8 +2,6 @@ package com.schokobaer.battleofgods.init;
 
 import com.schokobaer.battleofgods.BattleofgodsMod;
 import com.schokobaer.battleofgods.mechanics.item.ItemClass;
-import com.schokobaer.battleofgods.mechanics.item.ItemClassTags;
-import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.registries.*;
 

@@ -6,10 +6,9 @@ import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.registries.RegistryObject;
 
-import java.util.Locale;
 
 public class ItemSubClassTags {
     public static TagKey<Item> create(String name, RegistryObject<ItemClass> itemClass) {
-        return TagKey.create(Registries.ITEM, new ResourceLocation("battleofgods",itemClass.get().getName() + "/" + name));
+        return TagKey.create(Registries.ITEM, new ResourceLocation("battleofgods",itemClass.get().getName().toLowerCase() + "/" + name.toLowerCase()));
     }
 }
