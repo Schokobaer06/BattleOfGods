@@ -7,7 +7,7 @@ import net.minecraft.world.item.Item;
 
 public class ItemClassTags {
     public static TagKey<Item> create(String name) {
-        return TagKey.create(Registries.ITEM, new ResourceLocation("battleofgods","class/" + name));
+        return TagKey.create(Registries.ITEM, new ResourceLocation("battleofgods", name));
     }
 }
 
