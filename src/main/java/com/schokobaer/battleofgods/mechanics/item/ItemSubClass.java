@@ -50,12 +50,19 @@ public class ItemSubClass extends ItemClass {
     public TagKey<Item> getTag() {
         return tag;
     }
+    @Override
+    public Component getName(ItemStack stack) {
+        Component name = super.getName(stack);
+        if (rarity != null)
+            return name.copy().withStyle(Style.EMPTY.withBold(true).withColor(rarity.getArgbColor()));
+        return name;
+    }
 
     @Override
     public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltip, TooltipFlag flag) {
         super.appendHoverText(stack, level, tooltip, flag);
         if (this.rarity != null)
-            tooltip.add(Component.literal(this.rarity.getDisplayName()).setStyle(Style.EMPTY.withBold(true).withColor(rarity.getArgbColor())));
+            tooltip.add(Component.literal(this.rarity.getDisplayName()).setStyle(Style.EMPTY.withBold(true).withColor(rarity.getArgbColor()).withItalic(true)));
 
     }
 }
