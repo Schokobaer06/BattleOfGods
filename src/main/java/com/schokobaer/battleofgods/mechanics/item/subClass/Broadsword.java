@@ -15,7 +15,7 @@ public class Broadsword extends ItemSubClass {
     protected SwordItem swordItem;
 
     public Broadsword(Properties properties, Tier tier, int attackDamageModifier, float attackSpeedModifier, RegistryObject<Rarity> rarity, RegistryObject<ItemClass> itemClass) {
-        super(properties,itemClass, "Broadsword");
+        super(properties,itemClass, "broadsword");
 
         this.swordItem = new SwordItem(tier, attackDamageModifier, attackSpeedModifier, properties);
         this.setRarity(rarity);

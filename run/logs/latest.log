@@ -1,135 +1,77 @@
-[18März2025 16:12:01.363] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher running: args [--launchTarget, forgeclientuserdev, --version, MOD_DEV, --assetIndex, 5, --assetsDir, C:\Users\Josef Peer\.gradle\caches\forge_gradle\assets, --gameDir, ., --fml.forgeVersion, 47.3.0, --fml.mcVersion, 1.20.1, --fml.forgeGroup, net.minecraftforge, --fml.mcpVersion, 20230612.114412]
-[18März2025 16:12:01.371] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher 10.0.9+10.0.9+main.dcd20f30 starting: java version 17.0.14 by Eclipse Adoptium; OS Windows 11 arch amd64 version 10.0
-[18März2025 16:12:01.573] [main/INFO] [net.minecraftforge.fml.loading.ImmediateWindowHandler/]: Loading ImmediateWindowProvider fmlearlywindow
-[18März2025 16:12:01.704] [main/INFO] [EARLYDISPLAY/]: Trying GL version 4.6
-[18März2025 16:12:01.945] [main/INFO] [EARLYDISPLAY/]: Requested GL version 4.6 got version 4.6
-[18März2025 16:12:02.185] [main/INFO] [mixin/]: SpongePowered MIXIN Subsystem Version=0.8.5 Source=union:/C:/Users/Josef%20Peer/.gradle/caches/modules-2/files-2.1/org.spongepowered/mixin/0.8.5/9d1c0c3a304ae6697ecd477218fa61b850bf57fc/mixin-0.8.5.jar%23129!/ Service=ModLauncher Env=CLIENT
-[18März2025 16:12:02.202] [pool-2-thread-1/INFO] [EARLYDISPLAY/]: GL info: Intel(R) Iris(R) Plus Graphics GL version 4.6.0 - Build 30.0.100.9805, Intel
-[18März2025 16:12:02.803] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\Josef Peer\.gradle\caches\modules-2\files-2.1\net.minecraftforge\javafmllanguage\1.20.1-47.3.0\d7ebc62120f202109e300e084ca1a31a7b946a62\javafmllanguage-1.20.1-47.3.0.jar is missing mods.toml file
-[18März2025 16:12:02.811] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\Josef Peer\.gradle\caches\modules-2\files-2.1\net.minecraftforge\lowcodelanguage\1.20.1-47.3.0\1bf3e845ea0ce750096da8c71c8364b188ab74d4\lowcodelanguage-1.20.1-47.3.0.jar is missing mods.toml file
-[18März2025 16:12:02.818] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\Josef Peer\.gradle\caches\modules-2\files-2.1\net.minecraftforge\mclanguage\1.20.1-47.3.0\6093682e943ddccbabf70539319d7f2fe64db2e7\mclanguage-1.20.1-47.3.0.jar is missing mods.toml file
-[18März2025 16:12:02.825] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\Josef Peer\.gradle\caches\modules-2\files-2.1\net.minecraftforge\fmlcore\1.20.1-47.3.0\3b6be96aba3e323f3c918e8ef6a96312d82d76ad\fmlcore-1.20.1-47.3.0.jar is missing mods.toml file
-[18März2025 16:12:03.338] [main/INFO] [net.minecraftforge.fml.loading.moddiscovery.JarInJarDependencyLocator/]: Found 3 dependencies adding them to mods collection
-[18März2025 16:12:05.588] [main/INFO] [mixin/]: Compatibility level set to JAVA_17
-[18März2025 16:12:05.615] [main/INFO] [cpw.mods.modlauncher.LaunchServiceHandler/MODLAUNCHER]: Launching target 'forgeclientuserdev' with arguments [--version, MOD_DEV, --gameDir, ., --assetsDir, C:\Users\Josef Peer\.gradle\caches\forge_gradle\assets, --assetIndex, 5]
-[18März2025 16:12:06.373] [main/INFO] [mixin/]: Remapping refMap geckolib.refmap.json using C:\Users\Josef Peer\OneDrive\Games\Minecraft Java\Mods\Eigene\Battle Of Gods\mcreator (LAPTOP)\BattleOfGods/build/createSrgToMcp/output.srg
-[18März2025 16:12:06.376] [main/INFO] [mixin/]: Remapping refMap jeed-common-refmap.json using C:\Users\Josef Peer\OneDrive\Games\Minecraft Java\Mods\Eigene\Battle Of Gods\mcreator (LAPTOP)\BattleOfGods/build/createSrgToMcp/output.srg
-[18März2025 16:12:06.383] [main/INFO] [mixin/]: Remapping refMap player-animation-lib-minecraft_common-refmap.json using C:\Users\Josef Peer\OneDrive\Games\Minecraft Java\Mods\Eigene\Battle Of Gods\mcreator (LAPTOP)\BattleOfGods/build/createSrgToMcp/output.srg
-[18März2025 16:12:06.387] [main/INFO] [mixin/]: Remapping refMap bettercombat-common-common-refmap.json using C:\Users\Josef Peer\OneDrive\Games\Minecraft Java\Mods\Eigene\Battle Of Gods\mcreator (LAPTOP)\BattleOfGods/build/createSrgToMcp/output.srg
-[18März2025 16:12:06.389] [main/INFO] [mixin/]: Remapping refMap patchouli.refmap.json using C:\Users\Josef Peer\OneDrive\Games\Minecraft Java\Mods\Eigene\Battle Of Gods\mcreator (LAPTOP)\BattleOfGods/build/createSrgToMcp/output.srg
-[18März2025 16:12:06.931] [main/INFO] [MixinExtras|Service/]: Initializing MixinExtras via com.llamalad7.mixinextras.service.MixinExtrasServiceImpl(version=0.2.0).
-[18März2025 16:12:09.894] [main/WARN] [mixin/]: @Inject(@At("INVOKE_ASSIGN")) Shift.BY=3 on jeed-common.mixins.json:EffectsRenderingInventoryScreenMixin::handler$zzc000$captureEffect exceeds the maximum allowed value: 0. Increase the value of maxShiftBy to suppress this warning.
-[18März2025 16:12:14.932] [Datafixer Bootstrap/INFO] [com.mojang.datafixers.DataFixerBuilder/]: 188 Datafixer optimizations took 426 milliseconds
-[18März2025 16:12:18.154] [Render thread/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/Josef%20Peer/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.20.1-47.3.0_mapped_official_1.20.1/forge-1.20.1-47.3.0_mapped_official_1.20.1-recomp.jar%23191!/assets/.mcassetsroot' uses unexpected schema
-[18März2025 16:12:18.155] [Render thread/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/Josef%20Peer/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.20.1-47.3.0_mapped_official_1.20.1/forge-1.20.1-47.3.0_mapped_official_1.20.1-recomp.jar%23191!/data/.mcassetsroot' uses unexpected schema
-[18März2025 16:12:18.193] [Render thread/INFO] [com.mojang.authlib.yggdrasil.YggdrasilAuthenticationService/]: Environment: authHost='https://authserver.mojang.com', accountsHost='https://api.mojang.com', sessionHost='https://sessionserver.mojang.com', servicesHost='https://api.minecraftservices.com', name='PROD'
-[18März2025 16:12:18.204] [Render thread/INFO] [net.minecraft.client.Minecraft/]: Setting user: Dev
-[18März2025 16:12:18.418] [Render thread/INFO] [net.minecraft.client.Minecraft/]: Backend library: LWJGL version 3.3.1 build 7
-[18März2025 16:12:18.934] [modloading-worker-0/INFO] [net.minecraftforge.common.ForgeMod/FORGEMOD]: Forge mod loading, version 47.3.0, for MC 1.20.1 with MCP 20230612.114412
-[18März2025 16:12:18.934] [modloading-worker-0/INFO] [net.minecraftforge.common.MinecraftForge/FORGE]: MinecraftForge v47.3.0 Initialized
-[18März2025 16:12:19.403] [modloading-worker-0/INFO] [mezz.jei.library.load.PluginCaller/]: Sending ConfigManager...
-[18März2025 16:12:19.412] [modloading-worker-0/INFO] [mezz.jei.library.load.PluginCaller/]: Sending ConfigManager took 7.725 ms
-[18März2025 16:12:19.673] [Render thread/ERROR] [net.minecraftforge.fml.javafmlmod.FMLModContainer/]: Exception caught during firing event: Non [a-z0-9/._-] character in path of location: battleofgods:melee/Broadsword
-	Index: 7
-	Listeners:
-		0: NORMAL
-		1: ASM: net.minecraftforge.registries.DeferredRegister$EventDispatcher@6f790cc2 handleEvent(Lnet/minecraftforge/registries/RegisterEvent;)V
-		2: ASM: net.minecraftforge.registries.DeferredRegister$EventDispatcher@4f14816 handleEvent(Lnet/minecraftforge/registries/RegisterEvent;)V
-		3: ASM: net.minecraftforge.registries.DeferredRegister$EventDispatcher@5e9918fb handleEvent(Lnet/minecraftforge/registries/RegisterEvent;)V
-		4: ASM: net.minecraftforge.registries.DeferredRegister$EventDispatcher@777e8a7 handleEvent(Lnet/minecraftforge/registries/RegisterEvent;)V
-		5: ASM: net.minecraftforge.registries.DeferredRegister$EventDispatcher@673576d9 handleEvent(Lnet/minecraftforge/registries/RegisterEvent;)V
-		6: ASM: net.minecraftforge.registries.DeferredRegister$EventDispatcher@1f18d6c5 handleEvent(Lnet/minecraftforge/registries/RegisterEvent;)V
-		7: ASM: net.minecraftforge.registries.DeferredRegister$EventDispatcher@493bb2ce handleEvent(Lnet/minecraftforge/registries/RegisterEvent;)V
-net.minecraft.ResourceLocationException: Non [a-z0-9/._-] character in path of location: battleofgods:melee/Broadsword
-	at TRANSFORMER/minecraft@1.20.1/net.minecraft.resources.ResourceLocation.assertValidPath(ResourceLocation.java:236)
-	at TRANSFORMER/minecraft@1.20.1/net.minecraft.resources.ResourceLocation.<init>(ResourceLocation.java:38)
-	at TRANSFORMER/battleofgods@1.0.0/com.schokobaer.battleofgods.mechanics.item.ItemSubClassTags.create(ItemSubClassTags.java:13)
-	at TRANSFORMER/battleofgods@1.0.0/com.schokobaer.battleofgods.mechanics.item.ItemSubClass.<init>(ItemSubClass.java:37)
-	at TRANSFORMER/battleofgods@1.0.0/com.schokobaer.battleofgods.mechanics.item.subClass.Broadsword.<init>(Broadsword.java:18)
-	at TRANSFORMER/battleofgods@1.0.0/com.schokobaer.battleofgods.item.tier1.ItemCopperBroadsword.<init>(ItemCopperBroadsword.java:13)
-	at TRANSFORMER/battleofgods@1.0.0/com.schokobaer.battleofgods.init.InitItems.lambda$static$0(InitItems.java:12)
-	at TRANSFORMER/forge@47.3.0/net.minecraftforge.registries.DeferredRegister.lambda$addEntries$1(DeferredRegister.java:386)
-	at TRANSFORMER/forge@47.3.0/net.minecraftforge.registries.RegisterEvent.register(RegisterEvent.java:59)
-	at TRANSFORMER/forge@47.3.0/net.minecraftforge.registries.DeferredRegister.addEntries(DeferredRegister.java:386)
-	at TRANSFORMER/forge@47.3.0/net.minecraftforge.registries.DeferredRegister$EventDispatcher.handleEvent(DeferredRegister.java:328)
-	at TRANSFORMER/forge@47.3.0/net.minecraftforge.registries.__EventDispatcher_handleEvent_RegisterEvent.invoke(.dynamic)
-	at MC-BOOTSTRAP/net.minecraftforge.eventbus/net.minecraftforge.eventbus.ASMEventHandler.invoke(ASMEventHandler.java:73)
-	at MC-BOOTSTRAP/net.minecraftforge.eventbus/net.minecraftforge.eventbus.EventBus.post(EventBus.java:315)
-	at MC-BOOTSTRAP/net.minecraftforge.eventbus/net.minecraftforge.eventbus.EventBus.post(EventBus.java:296)
-	at LAYER PLUGIN/javafmllanguage@1.20.1-47.3.0/net.minecraftforge.fml.javafmlmod.FMLModContainer.acceptEvent(FMLModContainer.java:114)
-	at LAYER PLUGIN/fmlcore@1.20.1-47.3.0/net.minecraftforge.fml.ModLoader.lambda$postEventWithWrapInModOrder$33(ModLoader.java:346)
-	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
-	at LAYER PLUGIN/fmlcore@1.20.1-47.3.0/net.minecraftforge.fml.ModList.forEachModInOrder(ModList.java:227)
-	at LAYER PLUGIN/fmlcore@1.20.1-47.3.0/net.minecraftforge.fml.ModLoader.postEventWithWrapInModOrder(ModLoader.java:344)
-	at LAYER PLUGIN/fmlcore@1.20.1-47.3.0/net.minecraftforge.fml.ModLoader.postEventWrapContainerInModOrder(ModLoader.java:337)
-	at TRANSFORMER/forge@47.3.0/net.minecraftforge.registries.GameData.postRegisterEvents(GameData.java:331)
-	at TRANSFORMER/forge@47.3.0/net.minecraftforge.common.ForgeStatesProvider.lambda$new$4(ForgeStatesProvider.java:25)
-	at LAYER PLUGIN/fmlcore@1.20.1-47.3.0/net.minecraftforge.fml.ModLoader.handleInlineTransition(ModLoader.java:217)
-	at LAYER PLUGIN/fmlcore@1.20.1-47.3.0/net.minecraftforge.fml.ModLoader.lambda$dispatchAndHandleError$19(ModLoader.java:209)
-	at java.base/java.util.Optional.ifPresent(Optional.java:178)
-	at LAYER PLUGIN/fmlcore@1.20.1-47.3.0/net.minecraftforge.fml.ModLoader.dispatchAndHandleError(ModLoader.java:209)
-	at LAYER PLUGIN/fmlcore@1.20.1-47.3.0/net.minecraftforge.fml.ModLoader.lambda$gatherAndInitializeMods$13(ModLoader.java:183)
-	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
-	at LAYER PLUGIN/fmlcore@1.20.1-47.3.0/net.minecraftforge.fml.ModLoader.gatherAndInitializeMods(ModLoader.java:183)
-	at TRANSFORMER/forge@47.3.0/net.minecraftforge.client.loading.ClientModLoader.lambda$begin$1(ClientModLoader.java:69)
-	at TRANSFORMER/forge@47.3.0/net.minecraftforge.client.loading.ClientModLoader.lambda$createRunnableWithCatch$4(ClientModLoader.java:89)
-	at TRANSFORMER/forge@47.3.0/net.minecraftforge.client.loading.ClientModLoader.begin(ClientModLoader.java:69)
-	at TRANSFORMER/minecraft@1.20.1/net.minecraft.client.Minecraft.<init>(Minecraft.java:459)
-	at TRANSFORMER/minecraft@1.20.1/net.minecraft.client.main.Main.main(Main.java:182)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
-	at MC-BOOTSTRAP/fmlloader@1.20.1-47.3.0/net.minecraftforge.fml.loading.targets.CommonLaunchHandler.runTarget(CommonLaunchHandler.java:111)
-	at MC-BOOTSTRAP/fmlloader@1.20.1-47.3.0/net.minecraftforge.fml.loading.targets.CommonLaunchHandler.clientService(CommonLaunchHandler.java:99)
-	at MC-BOOTSTRAP/fmlloader@1.20.1-47.3.0/net.minecraftforge.fml.loading.targets.ForgeClientUserdevLaunchHandler.devService(ForgeClientUserdevLaunchHandler.java:19)
-	at MC-BOOTSTRAP/fmlloader@1.20.1-47.3.0/net.minecraftforge.fml.loading.targets.CommonDevLaunchHandler.lambda$makeService$7(CommonDevLaunchHandler.java:135)
-	at MC-BOOTSTRAP/cpw.mods.modlauncher@10.0.9/cpw.mods.modlauncher.LaunchServiceHandlerDecorator.launch(LaunchServiceHandlerDecorator.java:30)
-	at MC-BOOTSTRAP/cpw.mods.modlauncher@10.0.9/cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:53)
-	at MC-BOOTSTRAP/cpw.mods.modlauncher@10.0.9/cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:71)
-	at MC-BOOTSTRAP/cpw.mods.modlauncher@10.0.9/cpw.mods.modlauncher.Launcher.run(Launcher.java:108)
-	at MC-BOOTSTRAP/cpw.mods.modlauncher@10.0.9/cpw.mods.modlauncher.Launcher.main(Launcher.java:78)
-	at MC-BOOTSTRAP/cpw.mods.modlauncher@10.0.9/cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:26)
-	at MC-BOOTSTRAP/cpw.mods.modlauncher@10.0.9/cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:23)
-	at cpw.mods.bootstraplauncher@1.1.2/cpw.mods.bootstraplauncher.BootstrapLauncher.main(BootstrapLauncher.java:141)
-
-[18März2025 16:12:19.677] [Render thread/ERROR] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Caught exception during event RegisterEvent dispatch for modid battleofgods
-net.minecraft.ResourceLocationException: Non [a-z0-9/._-] character in path of location: battleofgods:melee/Broadsword
+[18März2025 16:34:35.491] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher running: args [--launchTarget, forgeclientuserdev, --version, MOD_DEV, --assetIndex, 5, --assetsDir, C:\Users\Josef Peer\.gradle\caches\forge_gradle\assets, --gameDir, ., --fml.forgeVersion, 47.3.0, --fml.mcVersion, 1.20.1, --fml.forgeGroup, net.minecraftforge, --fml.mcpVersion, 20230612.114412]
+[18März2025 16:34:35.512] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher 10.0.9+10.0.9+main.dcd20f30 starting: java version 17.0.14 by Eclipse Adoptium; OS Windows 11 arch amd64 version 10.0
+[18März2025 16:34:35.846] [main/INFO] [net.minecraftforge.fml.loading.ImmediateWindowHandler/]: Loading ImmediateWindowProvider fmlearlywindow
+[18März2025 16:34:36.018] [main/INFO] [EARLYDISPLAY/]: Trying GL version 4.6
+[18März2025 16:34:36.261] [main/INFO] [EARLYDISPLAY/]: Requested GL version 4.6 got version 4.6
+[18März2025 16:34:36.551] [main/INFO] [mixin/]: SpongePowered MIXIN Subsystem Version=0.8.5 Source=union:/C:/Users/Josef%20Peer/.gradle/caches/modules-2/files-2.1/org.spongepowered/mixin/0.8.5/9d1c0c3a304ae6697ecd477218fa61b850bf57fc/mixin-0.8.5.jar%23129!/ Service=ModLauncher Env=CLIENT
+[18März2025 16:34:36.566] [pool-2-thread-1/INFO] [EARLYDISPLAY/]: GL info: Intel(R) Iris(R) Plus Graphics GL version 4.6.0 - Build 30.0.100.9805, Intel
+[18März2025 16:34:37.128] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\Josef Peer\.gradle\caches\modules-2\files-2.1\net.minecraftforge\javafmllanguage\1.20.1-47.3.0\d7ebc62120f202109e300e084ca1a31a7b946a62\javafmllanguage-1.20.1-47.3.0.jar is missing mods.toml file
+[18März2025 16:34:37.132] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\Josef Peer\.gradle\caches\modules-2\files-2.1\net.minecraftforge\lowcodelanguage\1.20.1-47.3.0\1bf3e845ea0ce750096da8c71c8364b188ab74d4\lowcodelanguage-1.20.1-47.3.0.jar is missing mods.toml file
+[18März2025 16:34:37.136] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\Josef Peer\.gradle\caches\modules-2\files-2.1\net.minecraftforge\mclanguage\1.20.1-47.3.0\6093682e943ddccbabf70539319d7f2fe64db2e7\mclanguage-1.20.1-47.3.0.jar is missing mods.toml file
+[18März2025 16:34:37.145] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\Josef Peer\.gradle\caches\modules-2\files-2.1\net.minecraftforge\fmlcore\1.20.1-47.3.0\3b6be96aba3e323f3c918e8ef6a96312d82d76ad\fmlcore-1.20.1-47.3.0.jar is missing mods.toml file
+[18März2025 16:34:37.653] [main/INFO] [net.minecraftforge.fml.loading.moddiscovery.JarInJarDependencyLocator/]: Found 3 dependencies adding them to mods collection
+[18März2025 16:34:41.451] [main/INFO] [mixin/]: Compatibility level set to JAVA_17
+[18März2025 16:34:41.483] [main/INFO] [cpw.mods.modlauncher.LaunchServiceHandler/MODLAUNCHER]: Launching target 'forgeclientuserdev' with arguments [--version, MOD_DEV, --gameDir, ., --assetsDir, C:\Users\Josef Peer\.gradle\caches\forge_gradle\assets, --assetIndex, 5]
+[18März2025 16:34:42.549] [main/INFO] [mixin/]: Remapping refMap geckolib.refmap.json using C:\Users\Josef Peer\OneDrive\Games\Minecraft Java\Mods\Eigene\Battle Of Gods\mcreator (LAPTOP)\BattleOfGods/build/createSrgToMcp/output.srg
+[18März2025 16:34:42.554] [main/INFO] [mixin/]: Remapping refMap jeed-common-refmap.json using C:\Users\Josef Peer\OneDrive\Games\Minecraft Java\Mods\Eigene\Battle Of Gods\mcreator (LAPTOP)\BattleOfGods/build/createSrgToMcp/output.srg
+[18März2025 16:34:42.572] [main/INFO] [mixin/]: Remapping refMap player-animation-lib-minecraft_common-refmap.json using C:\Users\Josef Peer\OneDrive\Games\Minecraft Java\Mods\Eigene\Battle Of Gods\mcreator (LAPTOP)\BattleOfGods/build/createSrgToMcp/output.srg
+[18März2025 16:34:42.587] [main/INFO] [mixin/]: Remapping refMap bettercombat-common-common-refmap.json using C:\Users\Josef Peer\OneDrive\Games\Minecraft Java\Mods\Eigene\Battle Of Gods\mcreator (LAPTOP)\BattleOfGods/build/createSrgToMcp/output.srg
+[18März2025 16:34:42.596] [main/INFO] [mixin/]: Remapping refMap patchouli.refmap.json using C:\Users\Josef Peer\OneDrive\Games\Minecraft Java\Mods\Eigene\Battle Of Gods\mcreator (LAPTOP)\BattleOfGods/build/createSrgToMcp/output.srg
+[18März2025 16:34:43.187] [main/INFO] [MixinExtras|Service/]: Initializing MixinExtras via com.llamalad7.mixinextras.service.MixinExtrasServiceImpl(version=0.2.0).
+[18März2025 16:34:48.028] [main/WARN] [mixin/]: @Inject(@At("INVOKE_ASSIGN")) Shift.BY=3 on jeed-common.mixins.json:EffectsRenderingInventoryScreenMixin::handler$zzc000$captureEffect exceeds the maximum allowed value: 0. Increase the value of maxShiftBy to suppress this warning.
+[18März2025 16:34:53.630] [Datafixer Bootstrap/INFO] [com.mojang.datafixers.DataFixerBuilder/]: 188 Datafixer optimizations took 439 milliseconds
+[18März2025 16:34:58.041] [Render thread/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/Josef%20Peer/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.20.1-47.3.0_mapped_official_1.20.1/forge-1.20.1-47.3.0_mapped_official_1.20.1-recomp.jar%23191!/assets/.mcassetsroot' uses unexpected schema
+[18März2025 16:34:58.042] [Render thread/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/Josef%20Peer/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.20.1-47.3.0_mapped_official_1.20.1/forge-1.20.1-47.3.0_mapped_official_1.20.1-recomp.jar%23191!/data/.mcassetsroot' uses unexpected schema
+[18März2025 16:34:58.081] [Render thread/INFO] [com.mojang.authlib.yggdrasil.YggdrasilAuthenticationService/]: Environment: authHost='https://authserver.mojang.com', accountsHost='https://api.mojang.com', sessionHost='https://sessionserver.mojang.com', servicesHost='https://api.minecraftservices.com', name='PROD'
+[18März2025 16:34:58.093] [Render thread/INFO] [net.minecraft.client.Minecraft/]: Setting user: Dev
+[18März2025 16:34:58.350] [Render thread/INFO] [net.minecraft.client.Minecraft/]: Backend library: LWJGL version 3.3.1 build 7
+[18März2025 16:34:59.027] [modloading-worker-0/INFO] [net.minecraftforge.common.ForgeMod/FORGEMOD]: Forge mod loading, version 47.3.0, for MC 1.20.1 with MCP 20230612.114412
+[18März2025 16:34:59.028] [modloading-worker-0/INFO] [net.minecraftforge.common.MinecraftForge/FORGE]: MinecraftForge v47.3.0 Initialized
+[18März2025 16:34:59.452] [modloading-worker-0/INFO] [mezz.jei.library.load.PluginCaller/]: Sending ConfigManager...
+[18März2025 16:34:59.461] [modloading-worker-0/INFO] [mezz.jei.library.load.PluginCaller/]: Sending ConfigManager took 6.327 ms
+[18März2025 16:35:03.055] [Render thread/INFO] [net.minecraftforge.gametest.ForgeGameTestHooks/]: Enabled Gametest Namespaces: []
+[18März2025 16:35:04.153] [Render thread/INFO] [net.minecraft.server.packs.resources.ReloadableResourceManager/]: Reloading ResourceManager: vanilla, mod_resources
+[18März2025 16:35:04.772] [Worker-Main-1/INFO] [net.minecraft.client.gui.font.providers.UnihexProvider/]: Found unifont_all_no_pua-15.0.06.hex, loading
+[18März2025 16:35:05.043] [Forge Version Check/INFO] [net.minecraftforge.fml.VersionChecker/]: [forge] Starting version check at https://files.minecraftforge.net/net/minecraftforge/forge/promotions_slim.json
+[18März2025 16:35:05.776] [Forge Version Check/INFO] [net.minecraftforge.fml.VersionChecker/]: [forge] Found status: OUTDATED Current: 47.3.0 Target: 47.4.0
+[18März2025 16:35:05.885] [Worker-Main-5/ERROR] [net.minecraft.client.resources.model.ModelManager/]: Failed to load model battleofgods:models/custom/shortswordcopper.json
+net.minecraft.ResourceLocationException: Non [a-z0-9/._-] character in path of location: minecraft:Shortsword
 	at net.minecraft.resources.ResourceLocation.assertValidPath(ResourceLocation.java:236) ~[forge-1.20.1-47.3.0_mapped_official_1.20.1-recomp.jar%23191!/:?]
 	at net.minecraft.resources.ResourceLocation.<init>(ResourceLocation.java:38) ~[forge-1.20.1-47.3.0_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at com.schokobaer.battleofgods.mechanics.item.ItemSubClassTags.create(ItemSubClassTags.java:13) ~[%23196!/:?]
-	at com.schokobaer.battleofgods.mechanics.item.ItemSubClass.<init>(ItemSubClass.java:37) ~[%23196!/:?]
-	at com.schokobaer.battleofgods.mechanics.item.subClass.Broadsword.<init>(Broadsword.java:18) ~[%23196!/:?]
-	at com.schokobaer.battleofgods.item.tier1.ItemCopperBroadsword.<init>(ItemCopperBroadsword.java:13) ~[%23196!/:?]
-	at com.schokobaer.battleofgods.init.InitItems.lambda$static$0(InitItems.java:12) ~[%23196!/:?]
-	at net.minecraftforge.registries.DeferredRegister.lambda$addEntries$1(DeferredRegister.java:386) ~[forge-1.20.1-47.3.0_mapped_official_1.20.1-recomp.jar%23190%23197!/:?]
-	at net.minecraftforge.registries.RegisterEvent.register(RegisterEvent.java:59) ~[forge-1.20.1-47.3.0_mapped_official_1.20.1-recomp.jar%23190%23197!/:?]
-	at net.minecraftforge.registries.DeferredRegister.addEntries(DeferredRegister.java:386) ~[forge-1.20.1-47.3.0_mapped_official_1.20.1-recomp.jar%23190%23197!/:?]
-	at net.minecraftforge.registries.DeferredRegister$EventDispatcher.handleEvent(DeferredRegister.java:328) ~[forge-1.20.1-47.3.0_mapped_official_1.20.1-recomp.jar%23190%23197!/:?]
-	at net.minecraftforge.registries.__EventDispatcher_handleEvent_RegisterEvent.invoke(.dynamic) ~[forge-1.20.1-47.3.0_mapped_official_1.20.1-recomp.jar%23190%23197!/:?]
-	at net.minecraftforge.eventbus.ASMEventHandler.invoke(ASMEventHandler.java:73) ~[eventbus-6.0.5.jar:?]
-	at net.minecraftforge.eventbus.EventBus.post(EventBus.java:315) ~[eventbus-6.0.5.jar:?]
-	at net.minecraftforge.eventbus.EventBus.post(EventBus.java:296) ~[eventbus-6.0.5.jar:?]
-	at net.minecraftforge.fml.javafmlmod.FMLModContainer.acceptEvent(FMLModContainer.java:114) ~[javafmllanguage-1.20.1-47.3.0.jar:?]
-	at net.minecraftforge.fml.ModLoader.lambda$postEventWithWrapInModOrder$33(ModLoader.java:346) ~[fmlcore-1.20.1-47.3.0.jar:?]
-	at java.lang.Iterable.forEach(Iterable.java:75) ~[?:?]
-	at net.minecraftforge.fml.ModList.forEachModInOrder(ModList.java:227) ~[fmlcore-1.20.1-47.3.0.jar:?]
-	at net.minecraftforge.fml.ModLoader.postEventWithWrapInModOrder(ModLoader.java:344) ~[fmlcore-1.20.1-47.3.0.jar:?]
-	at net.minecraftforge.fml.ModLoader.postEventWrapContainerInModOrder(ModLoader.java:337) ~[fmlcore-1.20.1-47.3.0.jar:?]
-	at net.minecraftforge.registries.GameData.postRegisterEvents(GameData.java:331) ~[forge-1.20.1-47.3.0_mapped_official_1.20.1-recomp.jar:?]
-	at net.minecraftforge.common.ForgeStatesProvider.lambda$new$4(ForgeStatesProvider.java:25) ~[forge-1.20.1-47.3.0_mapped_official_1.20.1-recomp.jar:?]
-	at net.minecraftforge.fml.ModLoader.handleInlineTransition(ModLoader.java:217) ~[fmlcore-1.20.1-47.3.0.jar:?]
-	at net.minecraftforge.fml.ModLoader.lambda$dispatchAndHandleError$19(ModLoader.java:209) ~[fmlcore-1.20.1-47.3.0.jar:?]
-	at java.util.Optional.ifPresent(Optional.java:178) ~[?:?]
-	at net.minecraftforge.fml.ModLoader.dispatchAndHandleError(ModLoader.java:209) ~[fmlcore-1.20.1-47.3.0.jar:?]
-	at net.minecraftforge.fml.ModLoader.lambda$gatherAndInitializeMods$13(ModLoader.java:183) ~[fmlcore-1.20.1-47.3.0.jar:?]
-	at java.lang.Iterable.forEach(Iterable.java:75) ~[?:?]
-	at net.minecraftforge.fml.ModLoader.gatherAndInitializeMods(ModLoader.java:183) ~[fmlcore-1.20.1-47.3.0.jar:?]
-	at net.minecraftforge.client.loading.ClientModLoader.lambda$begin$1(ClientModLoader.java:69) ~[forge-1.20.1-47.3.0_mapped_official_1.20.1-recomp.jar:?]
-	at net.minecraftforge.client.loading.ClientModLoader.lambda$createRunnableWithCatch$4(ClientModLoader.java:89) ~[forge-1.20.1-47.3.0_mapped_official_1.20.1-recomp.jar:?]
-	at net.minecraftforge.client.loading.ClientModLoader.begin(ClientModLoader.java:69) ~[forge-1.20.1-47.3.0_mapped_official_1.20.1-recomp.jar:?]
-	at net.minecraft.client.Minecraft.<init>(Minecraft.java:459) ~[forge-1.20.1-47.3.0_mapped_official_1.20.1-recomp.jar:?]
-	at net.minecraft.client.main.Main.main(Main.java:182) ~[forge-1.20.1-47.3.0_mapped_official_1.20.1-recomp.jar:?]
+	at net.minecraft.resources.ResourceLocation.<init>(ResourceLocation.java:42) ~[forge-1.20.1-47.3.0_mapped_official_1.20.1-recomp.jar%23191!/:?]
+	at net.minecraft.resources.ResourceLocation.<init>(ResourceLocation.java:46) ~[forge-1.20.1-47.3.0_mapped_official_1.20.1-recomp.jar%23191!/:?]
+	at net.minecraft.client.renderer.block.model.BlockModel$Deserializer.deserialize(BlockModel.java:321) ~[forge-1.20.1-47.3.0_mapped_official_1.20.1-recomp.jar%23191!/:?]
+	at net.minecraftforge.client.model.ExtendedBlockModelDeserializer.deserialize(ExtendedBlockModelDeserializer.java:53) ~[forge-1.20.1-47.3.0_mapped_official_1.20.1-recomp.jar%23190%23197!/:?]
+	at net.minecraftforge.client.model.ExtendedBlockModelDeserializer.deserialize(ExtendedBlockModelDeserializer.java:38) ~[forge-1.20.1-47.3.0_mapped_official_1.20.1-recomp.jar%23190%23197!/:?]
+	at com.google.gson.internal.bind.TreeTypeAdapter.read(TreeTypeAdapter.java:76) ~[gson-2.10.jar%23131!/:?]
+	at net.minecraft.util.GsonHelper.fromNullableJson(GsonHelper.java:434) ~[forge-1.20.1-47.3.0_mapped_official_1.20.1-recomp.jar%23191!/:?]
+	at net.minecraft.util.GsonHelper.fromJson(GsonHelper.java:441) ~[forge-1.20.1-47.3.0_mapped_official_1.20.1-recomp.jar%23191!/:?]
+	at net.minecraft.util.GsonHelper.fromJson(GsonHelper.java:493) ~[forge-1.20.1-47.3.0_mapped_official_1.20.1-recomp.jar%23191!/:?]
+	at net.minecraft.client.renderer.block.model.BlockModel.fromStream(BlockModel.java:74) ~[forge-1.20.1-47.3.0_mapped_official_1.20.1-recomp.jar%23191!/:?]
+	at net.minecraft.client.resources.model.ModelManager.lambda$loadBlockModels$8(ModelManager.java:110) ~[forge-1.20.1-47.3.0_mapped_official_1.20.1-recomp.jar%23191!/:?]
+	at java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1768) ~[?:?]
+	at java.util.concurrent.CompletableFuture$AsyncSupply.exec(CompletableFuture.java:1760) ~[?:?]
+	at java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373) ~[?:?]
+	at java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1182) ~[?:?]
+	at java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655) ~[?:?]
+	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622) ~[?:?]
+	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165) ~[?:?]
+[18März2025 16:35:08.279] [Worker-Main-3/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Unable to load model: 'battleofgods:misc#inventory' referenced from: battleofgods:misc#inventory: java.io.FileNotFoundException: battleofgods:models/item/misc.json
+[18März2025 16:35:08.279] [Worker-Main-3/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Unable to load model: 'battleofgods:melee#inventory' referenced from: battleofgods:melee#inventory: java.io.FileNotFoundException: battleofgods:models/item/melee.json
+[18März2025 16:35:08.280] [Worker-Main-3/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Unable to load model: 'battleofgods:ranged#inventory' referenced from: battleofgods:ranged#inventory: java.io.FileNotFoundException: battleofgods:models/item/ranged.json
+[18März2025 16:35:08.280] [Worker-Main-3/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Unable to load model: 'battleofgods:magic#inventory' referenced from: battleofgods:magic#inventory: java.io.FileNotFoundException: battleofgods:models/item/magic.json
+[18März2025 16:35:08.280] [Worker-Main-3/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Unable to load model: 'battleofgods:summoning#inventory' referenced from: battleofgods:summoning#inventory: java.io.FileNotFoundException: battleofgods:models/item/summoning.json
+[18März2025 16:35:08.280] [Worker-Main-3/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Unable to load model: 'battleofgods:rogue#inventory' referenced from: battleofgods:rogue#inventory: java.io.FileNotFoundException: battleofgods:models/item/rogue.json
+[18März2025 16:35:08.280] [Worker-Main-3/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Unable to load model: 'battleofgods:healing#inventory' referenced from: battleofgods:healing#inventory: java.io.FileNotFoundException: battleofgods:models/item/healing.json
+[18März2025 16:35:08.280] [Worker-Main-3/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Unable to load model: 'battleofgods:bard#inventory' referenced from: battleofgods:bard#inventory: java.io.FileNotFoundException: battleofgods:models/item/bard.json
+[18März2025 16:35:08.281] [Worker-Main-3/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Unable to load model: 'battleofgods:tool#inventory' referenced from: battleofgods:tool#inventory: java.io.FileNotFoundException: battleofgods:models/item/tool.json
+[18März2025 16:35:08.281] [Worker-Main-3/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Unable to load model: 'battleofgods:broadsword#inventory' referenced from: battleofgods:broadsword#inventory: java.io.FileNotFoundException: battleofgods:models/item/broadsword.json
+[18März2025 16:35:12.542] [Render thread/ERROR] [net.minecraft.client.Minecraft/FATAL]: Reported exception thrown!
+net.minecraft.ReportedException: Rendering overlay
+	at net.minecraft.client.renderer.GameRenderer.render(GameRenderer.java:961) ~[forge-1.20.1-47.3.0_mapped_official_1.20.1-recomp.jar:?]
+	at net.minecraft.client.Minecraft.runTick(Minecraft.java:1146) ~[forge-1.20.1-47.3.0_mapped_official_1.20.1-recomp.jar:?]
+	at net.minecraft.client.Minecraft.run(Minecraft.java:718) ~[forge-1.20.1-47.3.0_mapped_official_1.20.1-recomp.jar:?]
+	at net.minecraft.client.main.Main.main(Main.java:218) ~[forge-1.20.1-47.3.0_mapped_official_1.20.1-recomp.jar:?]
 	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
 	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?]
 	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
@@ -146,95 +88,38 @@ net.minecraft.ResourceLocationException: Non [a-z0-9/._-] character in path of l
 	at cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:26) ~[modlauncher-10.0.9.jar:?]
 	at cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:23) ~[modlauncher-10.0.9.jar:?]
 	at cpw.mods.bootstraplauncher.BootstrapLauncher.main(BootstrapLauncher.java:141) ~[bootstraplauncher-1.1.2.jar:?]
-[18März2025 16:12:19.949] [Render thread/FATAL] [net.minecraftforge.registries.GameData/]: Failed to register some entries, see suppressed exceptions for details
-java.lang.RuntimeException: null
-	at net.minecraftforge.registries.GameData.postRegisterEvents(GameData.java:317) ~[forge-1.20.1-47.3.0_mapped_official_1.20.1-recomp.jar:?]
-	at net.minecraftforge.common.ForgeStatesProvider.lambda$new$4(ForgeStatesProvider.java:25) ~[forge-1.20.1-47.3.0_mapped_official_1.20.1-recomp.jar:?]
-	at net.minecraftforge.fml.ModLoader.handleInlineTransition(ModLoader.java:217) ~[fmlcore-1.20.1-47.3.0.jar:?]
-	at net.minecraftforge.fml.ModLoader.lambda$dispatchAndHandleError$19(ModLoader.java:209) ~[fmlcore-1.20.1-47.3.0.jar:?]
+Caused by: java.lang.IllegalStateException: Some intrusive holders were not registered: [Reference{null=air}] Hint: Did you register all your registry objects? Registry stage: ACTIVE
+	at net.minecraftforge.registries.NamespacedWrapper.freeze(NamespacedWrapper.java:353) ~[forge-1.20.1-47.3.0_mapped_official_1.20.1-recomp.jar%23190%23197!/:?]
+	at net.minecraftforge.registries.GameData.lambda$freezeData$7(GameData.java:248) ~[forge-1.20.1-47.3.0_mapped_official_1.20.1-recomp.jar%23190%23197!/:?]
+	at java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183) ~[?:?]
+	at java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:179) ~[?:?]
+	at java.util.Iterator.forEachRemaining(Iterator.java:133) ~[?:?]
+	at java.util.Spliterators$IteratorSpliterator.forEachRemaining(Spliterators.java:1845) ~[?:?]
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509) ~[?:?]
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499) ~[?:?]
+	at java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150) ~[?:?]
+	at java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173) ~[?:?]
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234) ~[?:?]
+	at java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596) ~[?:?]
+	at net.minecraftforge.registries.GameData.freezeData(GameData.java:248) ~[forge-1.20.1-47.3.0_mapped_official_1.20.1-recomp.jar%23190%23197!/:?]
+	at net.minecraftforge.common.ForgeStatesProvider.lambda$new$5(ForgeStatesProvider.java:26) ~[forge-1.20.1-47.3.0_mapped_official_1.20.1-recomp.jar%23190%23197!/:?]
+	at net.minecraftforge.fml.ModLoader.handleInlineTransition(ModLoader.java:217) ~[fmlcore-1.20.1-47.3.0.jar%23195!/:?]
+	at net.minecraftforge.fml.ModLoader.lambda$dispatchAndHandleError$19(ModLoader.java:209) ~[fmlcore-1.20.1-47.3.0.jar%23195!/:?]
 	at java.util.Optional.ifPresent(Optional.java:178) ~[?:?]
-	at net.minecraftforge.fml.ModLoader.dispatchAndHandleError(ModLoader.java:209) ~[fmlcore-1.20.1-47.3.0.jar:?]
-	at net.minecraftforge.fml.ModLoader.lambda$gatherAndInitializeMods$13(ModLoader.java:183) ~[fmlcore-1.20.1-47.3.0.jar:?]
+	at net.minecraftforge.fml.ModLoader.dispatchAndHandleError(ModLoader.java:209) ~[fmlcore-1.20.1-47.3.0.jar%23195!/:?]
+	at net.minecraftforge.fml.ModLoader.lambda$finishMods$17(ModLoader.java:197) ~[fmlcore-1.20.1-47.3.0.jar%23195!/:?]
 	at java.lang.Iterable.forEach(Iterable.java:75) ~[?:?]
-	at net.minecraftforge.fml.ModLoader.gatherAndInitializeMods(ModLoader.java:183) ~[fmlcore-1.20.1-47.3.0.jar:?]
-	at net.minecraftforge.client.loading.ClientModLoader.lambda$begin$1(ClientModLoader.java:69) ~[forge-1.20.1-47.3.0_mapped_official_1.20.1-recomp.jar:?]
-	at net.minecraftforge.client.loading.ClientModLoader.lambda$createRunnableWithCatch$4(ClientModLoader.java:89) ~[forge-1.20.1-47.3.0_mapped_official_1.20.1-recomp.jar:?]
-	at net.minecraftforge.client.loading.ClientModLoader.begin(ClientModLoader.java:69) ~[forge-1.20.1-47.3.0_mapped_official_1.20.1-recomp.jar:?]
-	at net.minecraft.client.Minecraft.<init>(Minecraft.java:459) ~[forge-1.20.1-47.3.0_mapped_official_1.20.1-recomp.jar:?]
-	at net.minecraft.client.main.Main.main(Main.java:182) ~[forge-1.20.1-47.3.0_mapped_official_1.20.1-recomp.jar:?]
-	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
-	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?]
-	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
-	at java.lang.reflect.Method.invoke(Method.java:569) ~[?:?]
-	at net.minecraftforge.fml.loading.targets.CommonLaunchHandler.runTarget(CommonLaunchHandler.java:111) ~[fmlloader-1.20.1-47.3.0.jar:?]
-	at net.minecraftforge.fml.loading.targets.CommonLaunchHandler.clientService(CommonLaunchHandler.java:99) ~[fmlloader-1.20.1-47.3.0.jar:?]
-	at net.minecraftforge.fml.loading.targets.ForgeClientUserdevLaunchHandler.devService(ForgeClientUserdevLaunchHandler.java:19) ~[fmlloader-1.20.1-47.3.0.jar:?]
-	at net.minecraftforge.fml.loading.targets.CommonDevLaunchHandler.lambda$makeService$7(CommonDevLaunchHandler.java:135) ~[fmlloader-1.20.1-47.3.0.jar:?]
-	at cpw.mods.modlauncher.LaunchServiceHandlerDecorator.launch(LaunchServiceHandlerDecorator.java:30) ~[modlauncher-10.0.9.jar:?]
-	at cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:53) ~[modlauncher-10.0.9.jar:?]
-	at cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:71) ~[modlauncher-10.0.9.jar:?]
-	at cpw.mods.modlauncher.Launcher.run(Launcher.java:108) ~[modlauncher-10.0.9.jar:?]
-	at cpw.mods.modlauncher.Launcher.main(Launcher.java:78) ~[modlauncher-10.0.9.jar:?]
-	at cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:26) ~[modlauncher-10.0.9.jar:?]
-	at cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:23) ~[modlauncher-10.0.9.jar:?]
-	at cpw.mods.bootstraplauncher.BootstrapLauncher.main(BootstrapLauncher.java:141) ~[bootstraplauncher-1.1.2.jar:?]
-	Suppressed: net.minecraftforge.fml.ModLoadingException: Battle Of Gods (battleofgods) encountered an error during the common_setup event phase
-§7net.minecraft.ResourceLocationException: Non [a-z0-9/._-] character in path of location: battleofgods:melee/Broadsword
-		at net.minecraftforge.fml.javafmlmod.FMLModContainer.acceptEvent(FMLModContainer.java:118) ~[javafmllanguage-1.20.1-47.3.0.jar:?]
-		at net.minecraftforge.fml.ModLoader.lambda$postEventWithWrapInModOrder$33(ModLoader.java:346) ~[fmlcore-1.20.1-47.3.0.jar:?]
-		at java.lang.Iterable.forEach(Iterable.java:75) ~[?:?]
-		at net.minecraftforge.fml.ModList.forEachModInOrder(ModList.java:227) ~[fmlcore-1.20.1-47.3.0.jar:?]
-		at net.minecraftforge.fml.ModLoader.postEventWithWrapInModOrder(ModLoader.java:344) ~[fmlcore-1.20.1-47.3.0.jar:?]
-		at net.minecraftforge.fml.ModLoader.postEventWrapContainerInModOrder(ModLoader.java:337) ~[fmlcore-1.20.1-47.3.0.jar:?]
-		at net.minecraftforge.registries.GameData.postRegisterEvents(GameData.java:331) ~[forge-1.20.1-47.3.0_mapped_official_1.20.1-recomp.jar:?]
-		at net.minecraftforge.common.ForgeStatesProvider.lambda$new$4(ForgeStatesProvider.java:25) ~[forge-1.20.1-47.3.0_mapped_official_1.20.1-recomp.jar:?]
-		at net.minecraftforge.fml.ModLoader.handleInlineTransition(ModLoader.java:217) ~[fmlcore-1.20.1-47.3.0.jar:?]
-		at net.minecraftforge.fml.ModLoader.lambda$dispatchAndHandleError$19(ModLoader.java:209) ~[fmlcore-1.20.1-47.3.0.jar:?]
-		at java.util.Optional.ifPresent(Optional.java:178) ~[?:?]
-		at net.minecraftforge.fml.ModLoader.dispatchAndHandleError(ModLoader.java:209) ~[fmlcore-1.20.1-47.3.0.jar:?]
-		at net.minecraftforge.fml.ModLoader.lambda$gatherAndInitializeMods$13(ModLoader.java:183) ~[fmlcore-1.20.1-47.3.0.jar:?]
-		at java.lang.Iterable.forEach(Iterable.java:75) ~[?:?]
-		at net.minecraftforge.fml.ModLoader.gatherAndInitializeMods(ModLoader.java:183) ~[fmlcore-1.20.1-47.3.0.jar:?]
-		at net.minecraftforge.client.loading.ClientModLoader.lambda$begin$1(ClientModLoader.java:69) ~[forge-1.20.1-47.3.0_mapped_official_1.20.1-recomp.jar:?]
-		at net.minecraftforge.client.loading.ClientModLoader.lambda$createRunnableWithCatch$4(ClientModLoader.java:89) ~[forge-1.20.1-47.3.0_mapped_official_1.20.1-recomp.jar:?]
-		at net.minecraftforge.client.loading.ClientModLoader.begin(ClientModLoader.java:69) ~[forge-1.20.1-47.3.0_mapped_official_1.20.1-recomp.jar:?]
-		at net.minecraft.client.Minecraft.<init>(Minecraft.java:459) ~[forge-1.20.1-47.3.0_mapped_official_1.20.1-recomp.jar:?]
-		at net.minecraft.client.main.Main.main(Main.java:182) ~[forge-1.20.1-47.3.0_mapped_official_1.20.1-recomp.jar:?]
-		at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
-		at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?]
-		at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
-		at java.lang.reflect.Method.invoke(Method.java:569) ~[?:?]
-		at net.minecraftforge.fml.loading.targets.CommonLaunchHandler.runTarget(CommonLaunchHandler.java:111) ~[fmlloader-1.20.1-47.3.0.jar:?]
-		at net.minecraftforge.fml.loading.targets.CommonLaunchHandler.clientService(CommonLaunchHandler.java:99) ~[fmlloader-1.20.1-47.3.0.jar:?]
-		at net.minecraftforge.fml.loading.targets.ForgeClientUserdevLaunchHandler.devService(ForgeClientUserdevLaunchHandler.java:19) ~[fmlloader-1.20.1-47.3.0.jar:?]
-		at net.minecraftforge.fml.loading.targets.CommonDevLaunchHandler.lambda$makeService$7(CommonDevLaunchHandler.java:135) ~[fmlloader-1.20.1-47.3.0.jar:?]
-		at cpw.mods.modlauncher.LaunchServiceHandlerDecorator.launch(LaunchServiceHandlerDecorator.java:30) ~[modlauncher-10.0.9.jar:?]
-		at cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:53) ~[modlauncher-10.0.9.jar:?]
-		at cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:71) ~[modlauncher-10.0.9.jar:?]
-		at cpw.mods.modlauncher.Launcher.run(Launcher.java:108) ~[modlauncher-10.0.9.jar:?]
-		at cpw.mods.modlauncher.Launcher.main(Launcher.java:78) ~[modlauncher-10.0.9.jar:?]
-		at cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:26) ~[modlauncher-10.0.9.jar:?]
-		at cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:23) ~[modlauncher-10.0.9.jar:?]
-		at cpw.mods.bootstraplauncher.BootstrapLauncher.main(BootstrapLauncher.java:141) ~[bootstraplauncher-1.1.2.jar:?]
-	Caused by: net.minecraft.ResourceLocationException: Non [a-z0-9/._-] character in path of location: battleofgods:melee/Broadsword
-		at net.minecraft.resources.ResourceLocation.assertValidPath(ResourceLocation.java:236) ~[forge-1.20.1-47.3.0_mapped_official_1.20.1-recomp.jar%23191!/:?]
-		at net.minecraft.resources.ResourceLocation.<init>(ResourceLocation.java:38) ~[forge-1.20.1-47.3.0_mapped_official_1.20.1-recomp.jar%23191!/:?]
-		at com.schokobaer.battleofgods.mechanics.item.ItemSubClassTags.create(ItemSubClassTags.java:13) ~[%23196!/:?]
-		at com.schokobaer.battleofgods.mechanics.item.ItemSubClass.<init>(ItemSubClass.java:37) ~[%23196!/:?]
-		at com.schokobaer.battleofgods.mechanics.item.subClass.Broadsword.<init>(Broadsword.java:18) ~[%23196!/:?]
-		at com.schokobaer.battleofgods.item.tier1.ItemCopperBroadsword.<init>(ItemCopperBroadsword.java:13) ~[%23196!/:?]
-		at com.schokobaer.battleofgods.init.InitItems.lambda$static$0(InitItems.java:12) ~[%23196!/:?]
-		at net.minecraftforge.registries.DeferredRegister.lambda$addEntries$1(DeferredRegister.java:386) ~[forge-1.20.1-47.3.0_mapped_official_1.20.1-recomp.jar%23190%23197!/:?]
-		at net.minecraftforge.registries.RegisterEvent.register(RegisterEvent.java:59) ~[forge-1.20.1-47.3.0_mapped_official_1.20.1-recomp.jar%23190%23197!/:?]
-		at net.minecraftforge.registries.DeferredRegister.addEntries(DeferredRegister.java:386) ~[forge-1.20.1-47.3.0_mapped_official_1.20.1-recomp.jar%23190%23197!/:?]
-		at net.minecraftforge.registries.DeferredRegister$EventDispatcher.handleEvent(DeferredRegister.java:328) ~[forge-1.20.1-47.3.0_mapped_official_1.20.1-recomp.jar%23190%23197!/:?]
-		at net.minecraftforge.registries.__EventDispatcher_handleEvent_RegisterEvent.invoke(.dynamic) ~[forge-1.20.1-47.3.0_mapped_official_1.20.1-recomp.jar%23190%23197!/:?]
-		at net.minecraftforge.eventbus.ASMEventHandler.invoke(ASMEventHandler.java:73) ~[eventbus-6.0.5.jar:?]
-		at net.minecraftforge.eventbus.EventBus.post(EventBus.java:315) ~[eventbus-6.0.5.jar:?]
-		at net.minecraftforge.eventbus.EventBus.post(EventBus.java:296) ~[eventbus-6.0.5.jar:?]
-		at net.minecraftforge.fml.javafmlmod.FMLModContainer.acceptEvent(FMLModContainer.java:114) ~[javafmllanguage-1.20.1-47.3.0.jar:?]
-		... 35 more
-[18März2025 16:12:19.983] [Render thread/FATAL] [net.minecraftforge.registries.GameData/]: Detected errors during registry event dispatch, rolling back to VANILLA state
-[18März2025 16:12:22.474] [Render thread/FATAL] [net.minecraftforge.registries.GameData/]: Detected errors during registry event dispatch, roll back to VANILLA complete
-[18März2025 16:12:23.259] [Render thread/FATAL] [net.minecraftforge.common.ForgeMod/]: Preparing crash report with UUID d7248e36-1fb6-4e5e-96ef-3ce9a6ac80d6
-[18März2025 16:12:23.286] [Render thread/FATAL] [net.minecraftforge.common.ForgeMod/]: Preparing crash report with UUID 9e308fc4-e6db-46da-a442-e5d0f3f2a87d
+	at net.minecraftforge.fml.ModLoader.finishMods(ModLoader.java:197) ~[fmlcore-1.20.1-47.3.0.jar%23195!/:?]
+	at net.minecraftforge.client.loading.ClientModLoader.lambda$finishModLoading$6(ClientModLoader.java:102) ~[forge-1.20.1-47.3.0_mapped_official_1.20.1-recomp.jar%23190%23197!/:?]
+	at net.minecraftforge.client.loading.ClientModLoader.lambda$createRunnableWithCatch$4(ClientModLoader.java:89) ~[forge-1.20.1-47.3.0_mapped_official_1.20.1-recomp.jar%23190%23197!/:?]
+	at net.minecraftforge.client.loading.ClientModLoader.finishModLoading(ClientModLoader.java:102) ~[forge-1.20.1-47.3.0_mapped_official_1.20.1-recomp.jar%23190%23197!/:?]
+	at net.minecraftforge.client.loading.ClientModLoader.lambda$onResourceReload$3(ClientModLoader.java:82) ~[forge-1.20.1-47.3.0_mapped_official_1.20.1-recomp.jar%23190%23197!/:?]
+	at java.util.concurrent.CompletableFuture$UniRun.tryFire(CompletableFuture.java:787) ~[?:?]
+	at java.util.concurrent.CompletableFuture$Completion.exec(CompletableFuture.java:483) ~[?:?]
+	at java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373) ~[?:?]
+	at java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1182) ~[?:?]
+	at java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655) ~[?:?]
+	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622) ~[?:?]
+	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165) ~[?:?]
+[18März2025 16:35:12.615] [Render thread/FATAL] [net.minecraftforge.common.ForgeMod/]: Preparing crash report with UUID e7e0f59f-9be8-4e5a-84f2-2fdea65a8029
+[18März2025 16:35:12.679] [Render thread/FATAL] [net.minecraftforge.common.ForgeMod/]: Preparing crash report with UUID dc71121c-8b09-4859-bceb-8280fb6aca43
