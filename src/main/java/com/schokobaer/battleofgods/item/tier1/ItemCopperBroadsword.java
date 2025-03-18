@@ -1,5 +1,6 @@
 package com.schokobaer.battleofgods.item.tier1;
 
+import com.schokobaer.battleofgods.init.InitItemClass;
 import com.schokobaer.battleofgods.init.InitRarity;
 import com.schokobaer.battleofgods.mechanics.item.subClass.Broadsword;
 import net.minecraft.resources.ResourceLocation;
@@ -33,6 +34,6 @@ public class ItemCopperBroadsword extends Broadsword {
             public Ingredient getRepairIngredient() {
                 return Ingredient.of(ItemTags.create(new ResourceLocation("minecraft:ingots/copper")));
             }
-        }, 3, -1.5f, InitRarity.WHITE.get());
+        }, 3, -1.5f, InitRarity.WHITE, InitItemClass.MELEE);
     }
 }

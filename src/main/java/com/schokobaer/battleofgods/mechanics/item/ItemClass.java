@@ -24,10 +24,10 @@ public class ItemClass extends Item {
      * @param properties The properties of the itemClass
      * @param name Name of the ItemClass
      */
-    public ItemClass(Properties properties, @NotBlank String name, @NotBlank TagKey<Item> tag) {
+    public ItemClass(Properties properties, @NotBlank String name) {
         super(properties);
         this.name = name;
-        this.tag = tag;
+        this.tag = ItemClassTags.create(name);
     }
 
     public String getName() {
