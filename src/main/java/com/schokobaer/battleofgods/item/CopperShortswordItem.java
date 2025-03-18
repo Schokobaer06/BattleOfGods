@@ -1,7 +1,7 @@
 
 package com.schokobaer.battleofgods.item;
 
-import com.schokobaer.battleofgods.init.*;
+import com.schokobaer.battleofgods.init.InitRarity;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.Style;
 import net.minecraft.world.item.*;

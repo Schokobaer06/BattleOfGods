@@ -1,6 +1,6 @@
 package com.schokobaer.battleofgods.mechanics.item;
 
-public class Broadsword extends ItemClass{
+public class Broadsword extends ItemSubClass{
     private final ItemClass itemClass;
     private final String displayName;
 

@@ -1,7 +1,10 @@
 package com.schokobaer.battleofgods.mechanics.item;
 
+import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.Style;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
@@ -13,7 +16,7 @@ import java.util.List;
 
 public class ItemClass extends Item {
     private final String name;
-
+    public static final TagKey<Item> ITEM_CLASS_TAG = TagKey.create(Registries.ITEM, new ResourceLocation("battleofgods", "main_item_classes"));
     /**
      *The Main ItemClass where every Item belongs to<br>
      * For example: Melee, Ranged, Magic, Summoning, etc.
