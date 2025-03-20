@@ -1,8 +1,4 @@
-package com.schokobaer.battleofgods.mechanics;
-
-import org.apache.logging.log4j.core.config.plugins.validation.constraints.NotBlank;
-
-import javax.annotation.Nullable;
+package com.schokobaer.battleofgods.mechanics.tier;
 
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;

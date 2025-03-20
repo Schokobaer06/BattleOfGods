@@ -1,6 +1,12 @@
 package com.schokobaer.battleofgods;
 
-import com.schokobaer.battleofgods.mechanics.Tier;
+import com.schokobaer.battleofgods.mechanics.recipe.RecipeHandler;
+import com.schokobaer.battleofgods.mechanics.tier.Tier;
+import net.minecraft.world.item.crafting.RecipeSerializer;
+import net.minecraft.world.item.crafting.RecipeType;
+import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.registries.RegisterEvent;
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.LogManager;
 
@@ -35,6 +41,7 @@ import java.util.AbstractMap;
 import com.schokobaer.battleofgods.mechanics.rarity.Rarity;
 
 @Mod("battleofgods")
+@Mod.EventBusSubscriber(modid = BattleofgodsMod.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class BattleofgodsMod {
 	public static final Logger LOGGER = LogManager.getLogger(BattleofgodsMod.class);
 	public static final String MODID = "battleofgods";
@@ -92,4 +99,24 @@ public class BattleofgodsMod {
 			workQueue.removeAll(actions);
 		}
 	}
+	@SubscribeEvent
+	public static void onCommonSetup(FMLCommonSetupEvent event) {
+		// Lade die Rezepte
+		RecipeHandler.loadRecipes();
+	}
+
+	@SubscribeEvent
+	public static void registerRecipeTypes(RegisterEvent event) {
+		event.register(ForgeRegistries.Keys.RECIPE_TYPES, helper -> {
+			helper.register(new ResourceLocation("battleofgods:default_recipe"), new RecipeHandler.BattleRecipe.Type());
+		});
+	}
+
+	@SubscribeEvent
+	public static void registerRecipeSerializers(RegisterEvent event) {
+		event.register(ForgeRegistries.Keys.RECIPE_SERIALIZERS, helper -> {
+			helper.register(new ResourceLocation("battleofgods:default_recipe"), RecipeHandler.BattleRecipe.SERIALIZER);
+		});
+	}
+
 }

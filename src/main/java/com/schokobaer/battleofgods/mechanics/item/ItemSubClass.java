@@ -1,10 +1,8 @@
 package com.schokobaer.battleofgods.mechanics.item;
-import com.schokobaer.battleofgods.mechanics.Tier;
+import com.schokobaer.battleofgods.mechanics.tier.Tier;
 import com.schokobaer.battleofgods.mechanics.rarity.Rarity;
-import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.Style;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;

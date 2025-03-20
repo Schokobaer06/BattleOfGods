@@ -3,7 +3,7 @@ import com.schokobaer.battleofgods.init.InitItemClass;
 import com.schokobaer.battleofgods.init.InitItemSubClass;
 import com.schokobaer.battleofgods.init.InitItems;
 import com.schokobaer.battleofgods.init.InitTier;
-import com.schokobaer.battleofgods.mechanics.Tier;
+import com.schokobaer.battleofgods.mechanics.tier.Tier;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
