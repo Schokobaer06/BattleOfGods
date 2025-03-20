@@ -17,7 +17,7 @@ import java.util.List;
 
 public class ItemClass extends Item {
     private final String name;
-    private final TagKey<Item> tag;
+    private TagKey<Item> tag;
 
     /**
      *The Main ItemClass where every Item belongs to<br>
@@ -27,7 +27,6 @@ public class ItemClass extends Item {
     public ItemClass(Properties properties, RegistryObject<ItemClass> itemClass) {
         super(properties);
         this.name = SetName(itemClass);
-        this.tag = ItemClassTags.create(name);
     }
     /**
      *The Main ItemClass where every Item belongs to<br>
@@ -35,10 +34,10 @@ public class ItemClass extends Item {
      * @param properties The properties of the itemClass
      * @param name Name of the ItemClass
      */
-    public ItemClass(Properties properties, String name) {
+    public ItemClass(Properties properties, String name, TagKey<Item> tag) {
         super(properties);
         this.name = name;
-        this.tag = ItemClassTags.create(name);
+        this.tag = tag;
     }
     private String SetName(RegistryObject<ItemClass> itemClass){
         return itemClass.get().getName();

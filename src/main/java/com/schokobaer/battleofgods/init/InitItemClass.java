@@ -2,6 +2,9 @@ package com.schokobaer.battleofgods.init;
 
 import com.schokobaer.battleofgods.BattleofgodsMod;
 import com.schokobaer.battleofgods.mechanics.item.ItemClass;
+import com.schokobaer.battleofgods.mechanics.item.ItemClassTags;
+import com.schokobaer.battleofgods.mechanics.item.ItemSubClassTags;
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.registries.*;
 
@@ -20,6 +23,7 @@ public class InitItemClass {
     public static final RegistryObject<ItemClass> TOOL = registerItemClass(new Item.Properties(), "tool");
 
     public static RegistryObject<ItemClass> registerItemClass(Item.Properties properties, String name) {
-        return ITEM_CLASSES.register(name, () -> new ItemClass(properties, name));
+        TagKey<Item> tag = ItemClassTags.create(name);
+        return ITEM_CLASSES.register(name, () -> new ItemClass(properties, name, tag));
     }
 }

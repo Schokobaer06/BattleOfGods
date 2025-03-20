@@ -19,6 +19,7 @@ public class InitItemSubClass {
     public static final RegistryObject<ItemSubClass> BROADSWORD = registerItemSubClass(new Item.Properties(), "broadsword", InitItemClass.MELEE);
 
     private static RegistryObject<ItemSubClass> registerItemSubClass(Item.Properties properties, String name, RegistryObject<ItemClass> itemClass) {
-        return ITEM_SUBCLASSES.register(name, () -> new Broadsword(properties, name, itemClass));
+        TagKey<Item> tag = ItemSubClassTags.create(name, itemClass);
+        return ITEM_SUBCLASSES.register(name, () -> new Broadsword(properties, name, itemClass, tag));
     }
 }

@@ -3,6 +3,8 @@ package com.schokobaer.battleofgods.mechanics.item.subClass;
 import com.schokobaer.battleofgods.mechanics.item.ItemClass;
 import com.schokobaer.battleofgods.mechanics.item.ItemSubClass;
 
+import net.minecraft.tags.TagKey;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.SwordItem;
 
@@ -17,8 +19,9 @@ public class Broadsword extends ItemSubClass {
         //this.swordItem = new SwordItem(tier, attackDamageModifier, attackSpeedModifier, properties);
         this.setRarity(rarity);
     }*/
-    public Broadsword(Properties properties, String name, RegistryObject<ItemClass> itemClass) {
-        super(properties, itemClass, name);
+    public Broadsword(Properties properties, String name, RegistryObject<ItemClass> itemClass, TagKey<Item> tag) {
+        super(properties, itemClass, name, tag);
+
     }
 
     public void setSwordItem(SwordItem swordItem) {

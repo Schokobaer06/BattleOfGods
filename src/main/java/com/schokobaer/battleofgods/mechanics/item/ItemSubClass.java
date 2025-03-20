@@ -30,11 +30,11 @@ public abstract class ItemSubClass extends ItemClass {
      * @param itemClass  The ItemClass the Item belongs to
      * @param name       Name of the SubClass
      */
-    public ItemSubClass(Properties properties, RegistryObject<ItemClass> itemClass, @NotBlank String name) {
+    public ItemSubClass(Properties properties, RegistryObject<ItemClass> itemClass, @NotBlank String name, TagKey<Item> tag) {
         super(properties, itemClass);
         this.itemClass = itemClass;
         this.displayName = name;
-        this.tag = ItemSubClassTags.create(name, itemClass);;
+        this.tag = tag;
     }
 
     public String GetName() {
