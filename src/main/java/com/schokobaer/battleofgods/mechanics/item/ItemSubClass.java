@@ -31,7 +31,7 @@ public class ItemSubClass extends ItemClass {
      * @param name       Name of the SubClass
      */
     public ItemSubClass(Properties properties, RegistryObject<ItemClass> itemClass, @NotBlank String name) {
-        super(properties, itemClass.get().getName());
+        super(properties, itemClass);
         this.itemClass = itemClass;
         this.displayName = name;
         this.tag = ItemSubClassTags.create(name, itemClass);;

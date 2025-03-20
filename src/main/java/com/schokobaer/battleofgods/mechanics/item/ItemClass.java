@@ -9,6 +9,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
+import net.minecraftforge.registries.RegistryObject;
 import org.apache.logging.log4j.core.config.plugins.validation.constraints.NotBlank;
 
 import javax.annotation.Nullable;
@@ -22,12 +23,25 @@ public class ItemClass extends Item {
      *The Main ItemClass where every Item belongs to<br>
      * For example: Melee, Ranged, Magic, Summoning, etc.
      * @param properties The properties of the itemClass
+     */
+    public ItemClass(Properties properties, RegistryObject<ItemClass> itemClass) {
+        super(properties);
+        this.name = SetName(itemClass);
+        this.tag = ItemClassTags.create(name);
+    }
+    /**
+     *The Main ItemClass where every Item belongs to<br>
+     * For example: Melee, Ranged, Magic, Summoning, etc.
+     * @param properties The properties of the itemClass
      * @param name Name of the ItemClass
      */
-    public ItemClass(Properties properties, @NotBlank String name) {
+    public ItemClass(Properties properties, String name) {
         super(properties);
         this.name = name;
         this.tag = ItemClassTags.create(name);
+    }
+    private String SetName(RegistryObject<ItemClass> itemClass){
+        return itemClass.get().getName();
     }
 
     public String getName() {
@@ -38,7 +52,7 @@ public class ItemClass extends Item {
     }
 
     @Override
-    public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltip, TooltipFlag flag) {
+    public void appendHoverText(ItemStack stack, Level level, List<Component> tooltip, TooltipFlag flag) {
         super.appendHoverText(stack, level, tooltip, flag);
         tooltip.add(Component.literal(this.name).setStyle(Style.EMPTY.withBold(true)));
     }

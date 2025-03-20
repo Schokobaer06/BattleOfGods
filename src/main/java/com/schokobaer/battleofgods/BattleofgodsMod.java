@@ -43,9 +43,7 @@ public class BattleofgodsMod {
 		// End of user code block mod constructor
 		MinecraftForge.EVENT_BUS.register(this);
 		IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
-		BattleofgodsModBlocks.REGISTRY.register(bus);
-		BattleofgodsModItems.REGISTRY.register(bus);
-		BattleofgodsModTabs.REGISTRY.register(bus);
+
 		// Start of user code block mod init
 		InitRarity.RARITIES.makeRegistry(() -> new RegistryBuilder<Rarity>().setName(InitRarity.RARITY_KEY.location()));
 		InitRarity.RARITIES.register(bus);
@@ -53,6 +51,9 @@ public class BattleofgodsMod {
 		InitItemSubClass.ITEM_SUBCLASSES.register(bus);
 		InitItems.ITEMS.register(bus);
 		// End of user code block mod init
+		BattleofgodsModBlocks.REGISTRY.register(bus);
+		BattleofgodsModItems.REGISTRY.register(bus);
+		BattleofgodsModTabs.REGISTRY.register(bus);
 	}
 
 	// Start of user code block mod methods

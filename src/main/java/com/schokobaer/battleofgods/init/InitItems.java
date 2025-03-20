@@ -9,5 +9,5 @@ import net.minecraftforge.registries.RegistryObject;
 
 public class InitItems {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, BattleofgodsMod.MODID);
-    public static final RegistryObject<Item> COPPER_BROADSWORD = ITEMS.register("copper_broadsword", () -> new ItemCopperBroadsword());
+    //public static final RegistryObject<Item> COPPER_BROADSWORD = ITEMS.register("copper_broadsword", () -> new ItemCopperBroadsword());
 }
