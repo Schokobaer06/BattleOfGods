@@ -48,7 +48,8 @@ public class RecipeHandler {
                         try (FileReader reader = new FileReader(path.toFile())) {
                             BattleRecipe recipe = gson.fromJson(reader, BattleRecipe.class);
                             if (recipe != null && recipe.isValid()) {
-                                RECIPES.add(recipe);
+                                //RECIPES.add(recipe);
+                                System.out.println(RECIPES);
                             }
                         } catch (Exception e) {
                             System.err.println("Failed to load recipe: " + path);
