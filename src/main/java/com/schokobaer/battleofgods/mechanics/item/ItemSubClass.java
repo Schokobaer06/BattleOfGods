@@ -17,9 +17,9 @@ import org.apache.logging.log4j.core.config.plugins.validation.constraints.NotBl
 import javax.annotation.Nullable;
 import java.util.List;
 
-public class ItemSubClass extends ItemClass {
+public abstract class ItemSubClass extends ItemClass {
     private final String displayName;
-    private final RegistryObject<ItemClass> itemClass;
+    private RegistryObject<ItemClass> itemClass;
     private RegistryObject<Rarity> rarity;
     private final TagKey<Item> tag;
     /**
@@ -55,6 +55,9 @@ public class ItemSubClass extends ItemClass {
     }
     public ItemSubClass getSubclass() {
         return this;
+    }
+    public void setItemClass(RegistryObject<ItemClass> itemClass){
+        this.itemClass = itemClass;
     }
 
     @Override
