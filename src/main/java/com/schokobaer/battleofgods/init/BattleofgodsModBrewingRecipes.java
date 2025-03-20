@@ -1,6 +1,5 @@
 
 package com.schokobaer.battleofgods.init;
-
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.resources.ResourceLocation;
