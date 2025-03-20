@@ -5,6 +5,7 @@
   "type": "battleofgods:default_recipe",
   "group": "recipe_group",
   "category": "recipe_category",
+  "replace": false,
   "items": [
     {
       "item": "recipe_name",
@@ -32,6 +33,9 @@
  
 >`category` - The category of the recipe. This is used to group recipes together in the recipe book. Default is `misc`.<br>
 >>usable types:<br>`misc`,`accessories`, `armor`, `blocks`, `consumables`, `tools`, `weapons`,`potions`,`boss_summonings`,`pets`<br>
+
+>`replace` - if the recipe should replace the default recipe of the output item. Default is `false`.<br>
+>>usable types:<br>`false`,`true`
  
 >`items` - An array of items required to craft the recipe. Each item should have an `item`/`tag` and `count` property.<br>
 > 

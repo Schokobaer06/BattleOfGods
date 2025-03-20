@@ -5,7 +5,7 @@
   "items": [
     {
       "item": "recipe_name",
-      "count": null
+      "count": 1
     },
     {
       "tag": "modid:tag",
@@ -13,7 +13,7 @@
     },
     {
       "item": "recipe_name",
-        "count": 15
+      "count": 15
     }
   ],
   "output": {
