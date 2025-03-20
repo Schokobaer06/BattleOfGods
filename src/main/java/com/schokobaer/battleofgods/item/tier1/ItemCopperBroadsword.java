@@ -3,6 +3,7 @@ package com.schokobaer.battleofgods.item.tier1;
 import com.schokobaer.battleofgods.init.InitItemClass;
 import com.schokobaer.battleofgods.init.InitItemSubClass;
 import com.schokobaer.battleofgods.init.InitRarity;
+import com.schokobaer.battleofgods.init.InitTier;
 import com.schokobaer.battleofgods.mechanics.item.ItemSubClass;
 import com.schokobaer.battleofgods.mechanics.item.subClass.Broadsword;
 import net.minecraft.resources.ResourceLocation;
@@ -45,5 +46,7 @@ public class ItemCopperBroadsword extends SwordItem {
         broadsword.setRarity(InitRarity.WHITE);
         broadsword.setItemClass(InitItemClass.MELEE);
         broadsword.setSwordItem(this);
+        broadsword.setTier(InitTier.TIER_1);
     }
+
 }

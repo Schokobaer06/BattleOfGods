@@ -2,6 +2,8 @@ package com.schokobaer.battleofgods.mechanics.item;// ModItemTagsProvider.java
 import com.schokobaer.battleofgods.init.InitItemClass;
 import com.schokobaer.battleofgods.init.InitItemSubClass;
 import com.schokobaer.battleofgods.init.InitItems;
+import com.schokobaer.battleofgods.init.InitTier;
+import com.schokobaer.battleofgods.mechanics.Tier;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
@@ -32,6 +34,17 @@ public class ModItemTagsProvider extends ItemTagsProvider {
                     .map(item -> (ItemSubClass) item.get())
                     .filter(item -> item.getSubclass().equals(subClass.get()))
                     .toArray(Item[]::new));
+        }
+
+        // Auto Generierung for Tiers - tags
+
+        for (RegistryObject<Tier> tier : InitTier.TIERS.getEntries()) {
+            tag(tier.get().getTag())
+                    .add(InitItems.ITEMS.getEntries().stream()
+                            .filter(item -> item.get() instanceof ItemSubClass)
+                            .map(item -> (ItemSubClass) item.get())
+                            .filter(item -> item.getTier().equals(tier.get()))
+                            .toArray(Item[]::new));
         }
     }
 }

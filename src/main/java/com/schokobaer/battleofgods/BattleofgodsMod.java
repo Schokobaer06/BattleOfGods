@@ -1,5 +1,6 @@
 package com.schokobaer.battleofgods;
 
+import com.schokobaer.battleofgods.mechanics.Tier;
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.LogManager;
 
@@ -45,6 +46,8 @@ public class BattleofgodsMod {
 		IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
 
 		// Start of user code block mod init
+		InitTier.TIERS.makeRegistry(()-> new RegistryBuilder<Tier>().setName(InitTier.TIER_KEY.location()));
+		InitTier.TIERS.register(bus);
 		InitRarity.RARITIES.makeRegistry(() -> new RegistryBuilder<Rarity>().setName(InitRarity.RARITY_KEY.location()));
 		InitRarity.RARITIES.register(bus);
 		InitItemClass.ITEM_CLASSES.register(bus);
@@ -54,6 +57,8 @@ public class BattleofgodsMod {
 		BattleofgodsModBlocks.REGISTRY.register(bus);
 		BattleofgodsModItems.REGISTRY.register(bus);
 		BattleofgodsModTabs.REGISTRY.register(bus);
+
+
 	}
 
 	// Start of user code block mod methods

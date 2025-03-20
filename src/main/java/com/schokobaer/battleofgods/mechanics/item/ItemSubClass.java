@@ -1,4 +1,5 @@
 package com.schokobaer.battleofgods.mechanics.item;
+import com.schokobaer.battleofgods.mechanics.Tier;
 import com.schokobaer.battleofgods.mechanics.rarity.Rarity;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
@@ -21,6 +22,7 @@ public abstract class ItemSubClass extends ItemClass {
     private final String displayName;
     private RegistryObject<ItemClass> itemClass;
     private RegistryObject<Rarity> rarity;
+    private RegistryObject<Tier> tier;
     private final TagKey<Item> tag;
     /**
      *The SubClass all items belong to<br>
@@ -58,6 +60,12 @@ public abstract class ItemSubClass extends ItemClass {
     }
     public void setItemClass(RegistryObject<ItemClass> itemClass){
         this.itemClass = itemClass;
+    }
+    public Tier getTier(){
+        return tier.get();
+    }
+    public void setTier(RegistryObject<Tier> tier){
+        this.tier = tier;
     }
 
     @Override
