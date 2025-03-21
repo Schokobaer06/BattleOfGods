@@ -1,0 +1,16 @@
+{
+  "type": "battleofgods:default_recipe",
+  "group": "workbench",
+  "category": "weapons",
+  "replace": false,
+  "items": [
+    {
+      "item": "minecraft:copper_ingot",
+      "count": 5
+    }
+  ],
+  "output": {
+    "item": "battleofgods:copper_broadsword",
+    "count": 1
+  }
+}
