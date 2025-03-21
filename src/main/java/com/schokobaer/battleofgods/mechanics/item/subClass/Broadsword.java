@@ -1,7 +1,7 @@
 package com.schokobaer.battleofgods.mechanics.item.subClass;
 
-import com.schokobaer.battleofgods.mechanics.item.ItemClass;
-import com.schokobaer.battleofgods.mechanics.item.ItemSubClass;
+import com.schokobaer.battleofgods.mechanics.item.decapriated.ItemClass;
+import com.schokobaer.battleofgods.mechanics.item.decapriated.ItemSubClass;
 
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;

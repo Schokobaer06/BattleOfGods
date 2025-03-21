@@ -1,15 +1,8 @@
 package com.schokobaer.battleofgods.init;
 
-import com.schokobaer.battleofgods.BattleofgodsMod;
-import com.schokobaer.battleofgods.mechanics.item.ItemClass;
-import com.schokobaer.battleofgods.mechanics.item.ItemClassTags;
-import com.schokobaer.battleofgods.mechanics.item.ItemSubClassTags;
-import net.minecraft.tags.TagKey;
-import net.minecraft.world.item.Item;
-import net.minecraftforge.registries.*;
-
 
 public class InitItemClass {
+    /*
     public static final DeferredRegister<ItemClass> ITEM_CLASSES = DeferredRegister.create(ForgeRegistries.ITEMS.getRegistryName(), BattleofgodsMod.MODID);
     public static final RegistryObject<ItemClass> MISC = registerItemClass(new Item.Properties(), "misc");
     public static final RegistryObject<ItemClass> MELEE = registerItemClass(new Item.Properties(), "melee");
@@ -26,4 +19,5 @@ public class InitItemClass {
         TagKey<Item> tag = ItemClassTags.create(name);
         return ITEM_CLASSES.register(name, () -> new ItemClass(properties, name, tag));
     }
+     */
 }

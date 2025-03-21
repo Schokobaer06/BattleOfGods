@@ -4,15 +4,12 @@ import com.schokobaer.battleofgods.init.InitItemClass;
 import com.schokobaer.battleofgods.init.InitItemSubClass;
 import com.schokobaer.battleofgods.init.InitRarity;
 import com.schokobaer.battleofgods.init.InitTier;
-import com.schokobaer.battleofgods.mechanics.item.ItemSubClass;
 import com.schokobaer.battleofgods.mechanics.item.subClass.Broadsword;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.crafting.Ingredient;
-import net.minecraftforge.registries.RegistryObject;
 
 public class ItemCopperBroadsword extends SwordItem {
     private Broadsword broadsword;
@@ -47,6 +44,7 @@ public class ItemCopperBroadsword extends SwordItem {
         broadsword.setItemClass(InitItemClass.MELEE);
         broadsword.setSwordItem(this);
         broadsword.setTier(InitTier.TIER_1);
+
     }
 
 }

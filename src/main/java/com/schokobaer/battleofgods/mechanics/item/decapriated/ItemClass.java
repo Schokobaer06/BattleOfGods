@@ -1,18 +1,14 @@
-package com.schokobaer.battleofgods.mechanics.item;
+package com.schokobaer.battleofgods.mechanics.item.decapriated;
 
-import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.Style;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.registries.RegistryObject;
-import org.apache.logging.log4j.core.config.plugins.validation.constraints.NotBlank;
 
-import javax.annotation.Nullable;
 import java.util.List;
 
 public class ItemClass extends Item {

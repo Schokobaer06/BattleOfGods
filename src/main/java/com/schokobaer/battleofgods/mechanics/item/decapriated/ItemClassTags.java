@@ -1,4 +1,4 @@
-package com.schokobaer.battleofgods.mechanics.item;
+package com.schokobaer.battleofgods.mechanics.item.decapriated;
 
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;

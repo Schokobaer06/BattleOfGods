@@ -4,7 +4,7 @@
       "name": "Tier1",
       "type": "tab",
       "compiles": true,
-      "locked_code": true,
+      "locked_code": false,
       "registry_name": "tier_1",
       "metadata": {
         "files": []
@@ -27,7 +27,7 @@
       "name": "CopperBroadsword",
       "type": "tool",
       "compiles": true,
-      "locked_code": true,
+      "locked_code": false,
       "registry_name": "copper_broadsword",
       "metadata": {
         "files": [

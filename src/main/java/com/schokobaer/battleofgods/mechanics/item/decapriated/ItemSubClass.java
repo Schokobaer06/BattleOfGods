@@ -1,4 +1,4 @@
-package com.schokobaer.battleofgods.mechanics.item;
+package com.schokobaer.battleofgods.mechanics.item.decapriated;
 import com.schokobaer.battleofgods.mechanics.tier.Tier;
 import com.schokobaer.battleofgods.mechanics.rarity.Rarity;
 import net.minecraft.network.chat.Component;

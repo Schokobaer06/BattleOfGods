@@ -1,7 +1,7 @@
-package com.schokobaer.battleofgods.mechanics.item;// ModItemTagsProvider.java
+package com.schokobaer.battleofgods.mechanics.item.decapriated;// ModItemTagsProvider.java
+import com.schokobaer.battleofgods.init.InitItem;
 import com.schokobaer.battleofgods.init.InitItemClass;
 import com.schokobaer.battleofgods.init.InitItemSubClass;
-import com.schokobaer.battleofgods.init.InitItems;
 import com.schokobaer.battleofgods.init.InitTier;
 import com.schokobaer.battleofgods.mechanics.tier.Tier;
 import net.minecraft.core.HolderLookup;
@@ -13,7 +13,7 @@ import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.RegistryObject;
 
 import java.util.concurrent.CompletableFuture;
-
+/*
 public class ModItemTagsProvider extends ItemTagsProvider {
     public ModItemTagsProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider, BlockTagsProvider blockTagsProvider, ExistingFileHelper existingFileHelper) {
         super(output, lookupProvider, blockTagsProvider.contentsGetter(), "battleofgods", existingFileHelper);
@@ -29,7 +29,7 @@ public class ModItemTagsProvider extends ItemTagsProvider {
         // Automatische Generierung für ItemSubclass-Tags
         for (RegistryObject<ItemSubClass> subClass : InitItemSubClass.ITEM_SUBCLASSES.getEntries()) {
             tag(subClass.get().getTag())
-                    .add(InitItems.ITEMS.getEntries().stream()
+                    .add(InitItem.ITEMS.getEntries().stream()
                     .filter(item -> item.get() instanceof ItemSubClass)
                     .map(item -> (ItemSubClass) item.get())
                     .filter(item -> item.getSubclass().equals(subClass.get()))
@@ -40,7 +40,7 @@ public class ModItemTagsProvider extends ItemTagsProvider {
 
         for (RegistryObject<Tier> tier : InitTier.TIERS.getEntries()) {
             tag(tier.get().getTag())
-                    .add(InitItems.ITEMS.getEntries().stream()
+                    .add(InitItem.ITEMS.getEntries().stream()
                             .filter(item -> item.get() instanceof ItemSubClass)
                             .map(item -> (ItemSubClass) item.get())
                             .filter(item -> item.getTier().equals(tier.get()))
@@ -48,3 +48,5 @@ public class ModItemTagsProvider extends ItemTagsProvider {
         }
     }
 }
+
+ */
