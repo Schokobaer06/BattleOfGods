@@ -8,7 +8,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Item;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.resources.ResourceLocation;
-
+@Deprecated
 public class CopperBroadswordItem extends SwordItem {
 	public CopperBroadswordItem() {
 		super(new Tier() {

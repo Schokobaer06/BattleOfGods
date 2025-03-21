@@ -30,7 +30,7 @@ import java.util.Collection;
 import java.util.ArrayList;
 import java.util.AbstractMap;
 
-@Mod("battleofgods")
+@Mod(BattleofgodsMod.MODID)
 @Mod.EventBusSubscriber(modid = BattleofgodsMod.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class BattleofgodsMod {
 	public static final Logger LOGGER = LogManager.getLogger(BattleofgodsMod.class);

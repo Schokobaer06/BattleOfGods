@@ -5,9 +5,9 @@ import net.minecraft.world.item.Item;
 
 public class Tier {
     private final String name;
-    private final TagKey<Item> tag;
+    private final TagKey<Tier> tag;
 
-    public Tier(String name, TagKey<Item> tag) {
+    public Tier(String name, TagKey<Tier> tag) {
         this.name = name;
         this.tag = tag;
     }
@@ -16,7 +16,7 @@ public class Tier {
         return name;
     }
 
-    public TagKey<Item> getTag() {
+    public TagKey<Tier> getTag() {
         return tag;
     }
 }

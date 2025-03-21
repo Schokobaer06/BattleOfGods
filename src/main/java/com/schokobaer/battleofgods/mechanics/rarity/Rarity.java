@@ -3,12 +3,15 @@ package com.schokobaer.battleofgods.mechanics.rarity;
 import com.mojang.datafixers.util.Either;
 import com.schokobaer.battleofgods.BattleofgodsMod;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.TagKey;
+import net.minecraft.world.item.Item;
 
 public class Rarity  {
     private final Either<Integer, ResourceLocation> color;
     private final boolean isAnimated;
     private final float animationSpeed;
     private final String displayName;
+    private final TagKey<Rarity> tag;
 
     public String CheckDisplayName(String name){
         if (name == null || name.isEmpty()){
@@ -29,8 +32,9 @@ public class Rarity  {
      * Rarity with static color
      * @param displayName Name which will be displayed in game
      * @param hexColor RGB-Color of the rarity
+     * @param tag Tag for the rarity
      */
-    public Rarity(String displayName, Integer hexColor){
+    public Rarity(String displayName, Integer hexColor, TagKey<Rarity> tag){
         if (hexColor == null) {
             throw new IllegalArgumentException("Texture cannot be null");
         }
@@ -38,6 +42,7 @@ public class Rarity  {
         this.isAnimated = false;
         this.animationSpeed = 0;
         this.displayName = CheckDisplayName(displayName);
+        this.tag = tag;
     }
     // Constructor for animated Colors with default speed
     /**
@@ -47,8 +52,9 @@ public class Rarity  {
      *                Texture should be a gradient
      *                Texture should be 32x32 for best compatibility, else animationSpeed should be adjusted
      *                Animation speed is set to default (1)
+     * @param tag Tag for the rarity
      */
-    public Rarity(String displayName, ResourceLocation texture){
+    public Rarity(String displayName, ResourceLocation texture, TagKey<Rarity> tag){
         if (texture == null) {
             throw new IllegalArgumentException("Texture cannot be null");
         }
@@ -56,6 +62,7 @@ public class Rarity  {
         this.isAnimated = true;
         this.animationSpeed = 1;
         this.displayName = CheckDisplayName(displayName);
+        this.tag = tag;
     }
     //Constructor for animated Colors (customizable speed)
 
@@ -67,8 +74,9 @@ public class Rarity  {
      *               Texture should be 32x32 for best compatibility, else animationSpeed should be adjusted
      * @param animationSpeed Speed of the animation
      *              animationSpeed should be 0 < animationSpeed <= 2
+     * @param tag Tag for the rarity
      */
-    public Rarity (String displayName, ResourceLocation texture, float animationSpeed){
+    public Rarity (String displayName, ResourceLocation texture, float animationSpeed, TagKey<Rarity> tag){
         if (texture == null) {
             throw new IllegalArgumentException("Texture cannot be null");
         }
@@ -76,7 +84,7 @@ public class Rarity  {
         this.displayName = CheckDisplayName(displayName);
         this.color = Either.right(texture);
         this.isAnimated = true;
-
+        this.tag = tag;
     }
 
     /**

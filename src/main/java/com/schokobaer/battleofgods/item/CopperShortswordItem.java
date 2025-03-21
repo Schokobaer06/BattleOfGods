@@ -13,6 +13,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
+@Deprecated
 public class CopperShortswordItem extends SwordItem {
 		public CopperShortswordItem() {
 		super(new Tier() {
