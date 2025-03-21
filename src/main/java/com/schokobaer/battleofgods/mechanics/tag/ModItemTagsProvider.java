@@ -1,10 +1,5 @@
 package com.schokobaer.battleofgods.mechanics.tag;// ModItemTagsProvider.java
 
-import com.schokobaer.battleofgods.BattleofgodsMod;
-import com.schokobaer.battleofgods.init.InitItem;
-import com.schokobaer.battleofgods.init.InitMainClass;
-import com.schokobaer.battleofgods.mechanics.item.MainClass;
-import com.schokobaer.battleofgods.mechanics.item.subClass.Broadsword;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.IntrinsicHolderTagsProvider;
@@ -18,7 +13,7 @@ import net.minecraftforge.registries.RegistryObject;
 
 import java.util.Calendar;
 import java.util.concurrent.CompletableFuture;
-
+/*
 public class ModItemTagsProvider extends ItemTagsProvider {
     public ModItemTagsProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider, BlockTagsProvider blockTagsProvider, ExistingFileHelper existingFileHelper) {
         super(output, lookupProvider, blockTagsProvider.contentsGetter(), BattleofgodsMod.MODID, existingFileHelper);
@@ -33,3 +28,4 @@ public class ModItemTagsProvider extends ItemTagsProvider {
     }
 }
 
+*/

@@ -1,8 +1,8 @@
 package com.schokobaer.battleofgods.init.deprecated;
-
+/*
 @Deprecated
 public class InitItemClass {
-    /*
+
     public static final DeferredRegister<ItemClass> ITEM_CLASSES = DeferredRegister.create(ForgeRegistries.ITEMS.getRegistryName(), BattleofgodsMod.MODID);
     public static final RegistryObject<ItemClass> MISC = registerItemClass(new Item.Properties(), "misc");
     public static final RegistryObject<ItemClass> MELEE = registerItemClass(new Item.Properties(), "melee");
@@ -19,5 +19,5 @@ public class InitItemClass {
         TagKey<Item> tag = ItemClassTags.create(name);
         return ITEM_CLASSES.register(name, () -> new ItemClass(properties, name, tag));
     }
-     */
-}
+
+}*/
