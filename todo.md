@@ -125,14 +125,66 @@ Ingot
 >Ammo/Buffs/Potions
 >Armor
 >Accessories
+#### Consumables
+> Types
+>> Ammunition 
+>>> Flares
+>>> Bullets
+>>> Arrows
+>>> Rockets
+>>> Darts
+>>> Other types
+>>> Ammo used by Tools
+>>>
+>>> Ammo Conservation
+>>
+>>Explosives
+>>Consumable Weapons
+>>Consumable Tools
+>> Permament Boosters
+>> Summoning Items
+>> Critters
+>> Potions
+>> Grab bags
+>> Others
+
+
 ### Mechanics
 #### Rarity
+| <div align="center">**Rarity**</div> |  |  |  |  |
+|---|---|---|---|---|
+| **Tier** | **Color** | **Minecraft Rarity** | **Description** | **Color Code** |
+| -1 | <span style="color:#828282">Gray</span> |  | Lowest Tier; Junk Items | <span style="color:#828282">#828282</span> |
+| 0 | <span style="color:#FFFFFF">White</span> |  | Items without Rarity | <span style="color:#FFFFFF">#FFFFFF</span> |
+| 1 | <span style="color:#9696FF">Blue</span> |  | Early Prehardmode items; items in this tier and above will not be destroyed in lava | <span style="color:#9696FF">#9696FF</span> |
+| 2 | <span style="color:#96FF96">Green</span> |  | Midway Pre Hardmode Items | <span style="color:#96FF96">#96FF96</span> |
+| 3 | <span style="color:#FFC896">Orange</span> |  | Late-Stage Prehardmode items | <span style="color:#FFC896">#FFC896</span> |
+| 4 | <span style="color:#FF9696">Light Red</span> |  | Early Hardmode Items | <span style="color:#FF9696">#FF9696</span> |
+| 5 | <span style="color:#FF96FF">Pink</span> |  | Mid-Hardmode(Pre Plantera) items | <span style="color:#FF96FF">#FF96FF</span> |
+| 6 | <span style="color:#D2A0FF">Light Purple</span> |  | Smaller Pre-Plantera tier of rarest items | <span style="color:#D2A0FF">#D2A0FF</span> |
+| 7 | <span style="color:#96FF0A">Lime</span> |  | Items between Plantera & Golem; Underground Jungle | <span style="color:#96FF0A">#96FF0A</span> |
+| 8 | <span style="color:#FFFF0A">Yellow</span> |  | Post Plantera Dungeon | <span style="color:#FFFF0A">#FFFF0A</span> |
+| 9 | <span style="color:#05C8FF">Cyan</span> |  | Items from Lunar Events & Pre Moonlord | <span style="color:#05C8FF">#05C8FF</span> |
+| 10 | <span style="color:#FF2864">Red</span> |  | Items Post Moonlord | <span style="color:#FF2864">#FF2864</span> |
+| 11 | <span style="color:#B428FF">Purple</span> |  | Cyan & Red with high Tier modifiers | <span style="color:#B428FF">#B428FF</span> |
+| 12 | <span style="color:#00FFC8">Turquoise</span> |  | Post Providence items | <span style="color:#00FFC8">#00FFC8</span> |
+| 13 | <span style="color:#00FF00">Pure Green</span> |  | Post Polterghast | <span style="color:#00FF00">#00FF00</span> |
+| 14 | <span style="color:#2B60DE">Dark Blue</span> |  | Post Devourer of Gods | <span style="color:#2B60DE">#2B60DE</span> |
+| 15 | <span style="color:#6C2DC7">Violet</span> |  | Post Yharon Items | <span style="color:#6C2DC7">#6C2DC7</span> |
+| 16 | <span style="color:#FF00FF">Hot Pink</span> |  | Post Calamity items | <span style="color:#FF00FF">#FF00FF</span> |
+| 17 | <span style="color:#A3191A">Calamity Red</span> |  | Violet & Hot Pink with high Tier Modifiers | <span style="color:#A3191A">#A3191A</span> |
+| -2 | Rainbow |  | Revengeance exclusive Items | Animated |
+| -3 | Fiery Red |  | Deathmode Exclusive Items | Animated |
+| -4 | Teal |  | Eternitymode exclusive Items | Animated |
+| -5 | <span style="color:#FFAF00">Amber</span> |  | Quest Items | <span style="color:#FFAF00">#FFAF00</span> |
+| -6 | <span style="color:#CC4723">Dark Orange</span> |  | Draedon's Arsenal | <span style="color:#CC4723">#CC4723</span> |
 #### NPC
 #### Difficulty
 >##### Normal Mode
 >##### Revengeance Mode
 >##### Death Mode
 >##### Eternity Mode
+#### Reforging
 ### Progression
 
 ```mermaid
@@ -384,6 +436,7 @@ class inv0,inv1,inv2 invisible
 		- [ ] Topaz
 	- [ ] Mobs
 		- [ ] Slime
+		- [ ] Wulfrum Enemies
 		- [ ] Squirrel
 		- [ ] NPC
 			- [ ] Guide
@@ -392,6 +445,7 @@ class inv0,inv1,inv2 invisible
 		- [ ] Tin Weapons & Tools
 		- [ ] Copper Weapons & Tools
 		- [ ] Bug Net
+		- [ ] Wulfrum Set
 	- [ ] Mechanics
 		- [ ] NPC
 			- [ ] House System
