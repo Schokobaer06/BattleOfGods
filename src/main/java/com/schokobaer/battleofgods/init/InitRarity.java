@@ -3,10 +3,8 @@ import com.schokobaer.battleofgods.mechanics.rarity.Rarity;
 import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.RegistryBuilder;
 import com.schokobaer.battleofgods.BattleofgodsMod;
 
 import com.schokobaer.battleofgods.BattleofgodsMod;

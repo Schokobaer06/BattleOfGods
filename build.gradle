@@ -1,6 +1,14 @@
+buildscript {
+    repositories {
+        maven { url = 'https://repo.spongepowered.org/repository/maven-public/' }
+    }
+}
 plugins {
     id 'eclipse'
-    id 'net.minecraftforge.gradle' version '[6.0.16,6.2)'
+    id 'idea'
+    id 'maven-publish'
+    id 'net.minecraftforge.gradle' version '[6.0,6.2)'
+    id 'org.spongepowered.mixin' version '0.7.+'
 }
 
 version = '1.0'
@@ -48,6 +56,26 @@ dependencies {
 
 tasks.withType(JavaCompile).configureEach {
     options.encoding = 'UTF-8' // Use the UTF-8 charset for Java compilation
+}
+
+tasks.register('runDataTags') {
+    group = 'mod'
+    description = 'Runs the data generator to generate assets and data.'
+    dependsOn 'runClient'
+    doFirst {
+        // Setze die Argumente für die Data Generation
+        def args = ['--mod', 'battleofgods', '--all', '--output', file('src/generated/resources/')]
+        runClient {
+            args = args
+        }
+    }
+    doLast {
+        javaexec {
+            mainClass = 'net.minecraftforge.data.Main'
+            classpath = sourceSets.main.runtimeClasspath
+            args = ['--mod', 'battleofgods', '--all', '--output', file('src/generated/resources/')]
+        }
+    }
 }
 
 repositories {

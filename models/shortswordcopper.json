@@ -1,6 +1,6 @@
 {
 	"credit": "Made with Blockbench",
-	"parent": "Shortsword",
+	"parent": "shortsword",
 	"textures": {
 		"0": "grip_dark",
 		"1": "blade",
