@@ -6,7 +6,7 @@
         "pose": "bettercombat:pose_two_handed_sword",
         "category": "broadsword",
         "attacks": [
-            {
+              {
                 "hitbox": "VERTICAL_PLANE",
                 "damage_multiplier": 0.8,
                 "angle": 120,
@@ -23,7 +23,7 @@
                 "upswing": 0.5,
                 "animation": "bettercombat:two_handed_slash_vertical_right",
                 "swing_sound": {
-                  "id": "bettercombat:claymore_swing    "
+                  "id": "bettercombat:claymore_swing"
                 }
               },
               {
