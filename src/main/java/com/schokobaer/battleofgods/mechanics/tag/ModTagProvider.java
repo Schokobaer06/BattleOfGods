@@ -1,16 +1,14 @@
 package com.schokobaer.battleofgods.mechanics.tag;// ModItemTagsProvider.java
 
 import com.schokobaer.battleofgods.init.*;
-import com.schokobaer.battleofgods.mechanics.item.AbstractSubClass;
 import com.schokobaer.battleofgods.mechanics.item.MainClass;
-import com.schokobaer.battleofgods.mechanics.item.subClass.Broadsword;
 import com.schokobaer.battleofgods.mechanics.rarity.Rarity;
+import com.schokobaer.battleofgods.mechanics.tier.Tier;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.Registry;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.TagsProvider;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.RegistryObject;
@@ -33,16 +31,31 @@ public class ModTagProvider extends TagsProvider {
         // goes through every registered Item
         for (RegistryObject<Item> registryObject : InitItem.ITEMS.getEntries()) {
             Item item = registryObject.get();
-            assert registryObject.getKey() != null;
-            // goes through every registered SubClass
-            for (RegistryObject<Item> subClass : InitSubClass.SUBCLASSES.getEntries()){
-               Item subClassItem = subClass.get();
-               //Check if item inherits from subclass
-               if (subClassItem.getClass().isAssignableFrom(item.getClass())){
 
-                   tag(TagCreator.getTag(subClass.getId().getPath().toLowerCase())).add(registryObject.getKey());
-               }
+            // goes through every registered MainClass
+            for (RegistryObject<MainClass> mainClass : InitMainClass.MAIN_CLASSES.getEntries()) {
+
+                // goes through every registered SubClass
+                for (RegistryObject<Item> subClass : InitSubClass.SUBCLASSES.getEntries()){
+                   Item subClassItem = subClass.get();
+
+                   //Check if item inherits from subclass
+                   if (subClassItem.getClass().isAssignableFrom(item.getClass())){
+                       tag(TagCreator.getTag(subClass.getId().getPath().toLowerCase()))
+                               .addOptional(registryObject.getId());
+                   }
+                }
             }
+
+            // goes through every registered Rarity
+            for (RegistryObject<Rarity> rarity : InitRarity.RARITIES.getEntries()) {
+
+            }
+            // goes through every registered Tier
+            for (RegistryObject<Tier> tier : InitTier.TIERS.getEntries()) {
+
+            }
+
 
         }
     }
