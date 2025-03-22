@@ -10,6 +10,7 @@ import net.minecraft.core.Registry;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.TagsProvider;
 import net.minecraft.resources.ResourceKey;
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.RegistryObject;
@@ -32,12 +33,14 @@ public class ModTagProvider extends TagsProvider {
         // goes through every registered Item
         for (RegistryObject<Item> registryObject : InitItem.ITEMS.getEntries()) {
             Item item = registryObject.get();
+            assert registryObject.getKey() != null;
             // goes through every registered SubClass
             for (RegistryObject<Item> subClass : InitSubClass.SUBCLASSES.getEntries()){
                Item subClassItem = subClass.get();
                //Check if item inherits from subclass
                if (subClassItem.getClass().isAssignableFrom(item.getClass())){
-                   //TODO: get tags from a list/map generated from TagCreator
+
+                   tag(TagCreator.getTag(subClass.getId().getPath().toLowerCase())).add(registryObject.getKey());
                }
             }
 
