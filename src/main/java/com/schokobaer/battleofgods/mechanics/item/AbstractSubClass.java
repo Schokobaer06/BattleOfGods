@@ -48,7 +48,7 @@ public abstract class AbstractSubClass implements SubClassMethods {
         return this.tier.get();
     }
 
-    public TagKey<Item> getTag() {
+    public TagKey<?> getTag() {
         return this.tag;
     }
     @Override

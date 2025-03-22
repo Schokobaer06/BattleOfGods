@@ -1,11 +1,9 @@
 package com.schokobaer.battleofgods.mechanics.item.subClass;
 
 import com.schokobaer.battleofgods.init.InitMainClass;
-import com.schokobaer.battleofgods.init.InitSubClass;
 import com.schokobaer.battleofgods.mechanics.item.AbstractSubClass;
 
 import com.schokobaer.battleofgods.mechanics.item.SubClassMethods;
-import com.schokobaer.battleofgods.mechanics.item.override.SwordItemOverride;
 import net.minecraft.network.chat.Component;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.*;
@@ -97,6 +95,11 @@ private final AbstractSubClass subclass;
     }
     public AbstractSubClass getSubClassMethods(){
         return subclass;
+    }
+
+    @Override
+    public TagKey<?> getTag(){
+        return subclass.getTag();
     }
 
 

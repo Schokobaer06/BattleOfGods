@@ -37,8 +37,7 @@ public class ModTagProvider extends TagsProvider {
                Item subClassItem = subClass.get();
                //Check if item inherits from subclass
                if (subClassItem.getClass().isAssignableFrom(item.getClass())){
-                   //TODO: add item to subclass tag;
-                   // despite registryobjecttype is item, every subclass inherits from abstractsubclass, which in turn gives every subclass the method getSubClassMethods().getTag()
+                   //TODO: get tags from a list/map generated from TagCreator
                }
             }
 
