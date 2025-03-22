@@ -1,5 +1,5 @@
 package com.schokobaer.battleofgods.mechanics.tag;
-/*
+
 import com.schokobaer.battleofgods.BattleofgodsMod;
 import com.schokobaer.battleofgods.init.InitMainClass;
 import com.schokobaer.battleofgods.init.InitRarity;
@@ -17,11 +17,11 @@ import org.apache.logging.log4j.core.config.plugins.validation.constraints.NotBl
 import static com.schokobaer.battleofgods.init.InitTier.TIER_KEY;
 
 
- */
+
 /**
  * Creates tags for every main class, subclass, tier, rarity
  */
-/*
+
 public class TagCreator {
     public static TagKey<MainClass> createMainClassTag(@NotBlank String name){
         return TagKey.create(InitMainClass.MAIN_CLASSES.getRegistryKey(),new ResourceLocation(BattleofgodsMod.MODID,name.toLowerCase()));
@@ -36,4 +36,3 @@ public class TagCreator {
         return TagKey.create(InitRarity.RARITIES.getRegistryKey(), new ResourceLocation(BattleofgodsMod.MODID, name));
     }
 }
-*/
