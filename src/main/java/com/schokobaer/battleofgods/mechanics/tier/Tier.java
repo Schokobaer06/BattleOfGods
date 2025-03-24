@@ -13,10 +13,10 @@ public class Tier {
     }
 
     public String getName() {
-        return name;
+        return this.name;
     }
 
     public TagKey<Tier> getTag() {
-        return tag;
+        return this.tag;
     }
 }

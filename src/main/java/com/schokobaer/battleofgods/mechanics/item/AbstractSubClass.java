@@ -20,14 +20,16 @@ public abstract class AbstractSubClass implements SubClassMethods {
     private final RegistryObject<MainClass> mainClass;
     private RegistryObject<Rarity> rarity;
     private RegistryObject<Tier> tier;
+    private RegistryObject<Item> subClass;
     private final String name;
     private TagKey<Item> tag;
 
-    protected AbstractSubClass(RegistryObject<MainClass> mainClass, @NotNull RegistryObject<Rarity> rarity, RegistryObject<Tier> tier, String name) {
+    protected AbstractSubClass(RegistryObject<MainClass> mainClass, @NotNull RegistryObject<Rarity> rarity, RegistryObject<Tier> tier, RegistryObject<Item> subClass) {
         this.mainClass = mainClass;
         this.rarity = rarity;
         this.tier = tier;
-        this.name = name;
+        this.subClass = subClass;
+        this.name = subClass.getId().getPath();
     }
     protected AbstractSubClass(String name, RegistryObject<MainClass> mainClass, TagKey<Item> tag) {
         this.tag = tag;
@@ -48,9 +50,14 @@ public abstract class AbstractSubClass implements SubClassMethods {
         return this.tier.get();
     }
 
+    public Item getSubClass(){ return this.subClass.get(); }
+
     public TagKey<?> getTag() {
         return this.tag;
     }
+
+
+
     @Override
     public Component getName(ItemStack stack) {
         Component name = new Item(new Item.Properties(), null).getName(stack);

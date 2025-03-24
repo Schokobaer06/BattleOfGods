@@ -10,7 +10,6 @@ import net.minecraft.core.Registry;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.TagsProvider;
 import net.minecraft.resources.ResourceKey;
-//import net.minecraft.world.item.Item;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.RegistryObject;
 
@@ -38,12 +37,15 @@ public class ModTagProvider extends TagsProvider {
 
                 // goes through every registered SubClass
                 for (RegistryObject<Item> subClass : InitSubClass.SUBCLASSES.getEntries()){
-                   Item subClassItem = subClass.get();
+                   //Item subClassItem = subClass.get();
 
-                   //Check if item inherits from subclass
-                   if (subClassItem.getClass().isAssignableFrom(item.getClass())){
-                       tag(TagCreator.getTag(subClass.getId().getPath().toLowerCase()))
-                               .addOptional(registryObject.getId());
+                   //Check if Item belongs to subClass
+                   if (item.getSubClassMethods().getSubClass() == subClass.get()){
+                       tag(subClass.get().getSubClassMethods().getTag()).addOptional(registryObject.getId());
+                   }
+                   //Check if subClass belongs to mainClass
+                   if (subClass.get().getSubClassMethods().getMainClass() == mainClass.get()){
+                        tag(mainClass.get().getTag()).addOptionalTag(subClass.get().getSubClassMethods().getTag());
                    }
                 }
             }
@@ -51,10 +53,18 @@ public class ModTagProvider extends TagsProvider {
             // goes through every registered Rarity
             for (RegistryObject<Rarity> rarity : InitRarity.RARITIES.getEntries()) {
 
+                //Check if item belongs to rarity
+                if (item.getSubClassMethods().getRarity() == rarity.get()){
+                    tag(rarity.get().getTag()).addOptional(registryObject.getId());
+                }
             }
             // goes through every registered Tier
             for (RegistryObject<Tier> tier : InitTier.TIERS.getEntries()) {
 
+                //Check if item belongs to tier
+                if(item.getSubClassMethods().getTier() == tier.get()){
+                    tag(tier.get().getTag()).addOptional(registryObject.getId());
+                }
             }
 
 

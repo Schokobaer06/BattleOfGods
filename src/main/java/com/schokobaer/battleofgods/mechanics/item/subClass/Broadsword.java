@@ -1,6 +1,7 @@
 package com.schokobaer.battleofgods.mechanics.item.subClass;
 
 import com.schokobaer.battleofgods.init.InitMainClass;
+import com.schokobaer.battleofgods.init.InitSubClass;
 import com.schokobaer.battleofgods.mechanics.item.AbstractSubClass;
 
 import com.schokobaer.battleofgods.mechanics.item.SubClassMethods;
@@ -53,10 +54,10 @@ public class Broadsword extends com.schokobaer.battleofgods.mechanics.item.overr
             public @NotNull Ingredient getRepairIngredient() {
                 return repairMaterial;
             }
-        }, attackDamage, attackSpeed, properties, new AbstractSubClass(InitMainClass.MELEE,rarity,gameTier,"broadsword") {});
+        }, attackDamage, attackSpeed, properties, new AbstractSubClass(InitMainClass.MELEE,rarity,gameTier, InitSubClass.BROADSWORD) {});
     }
     public Broadsword(Tier tier, int attackDamage, float attackSpeed, Properties properties, RegistryObject<com.schokobaer.battleofgods.mechanics.rarity.Rarity> rarity, RegistryObject<com.schokobaer.battleofgods.mechanics.tier.Tier> gameTier) {
-        super(tier, attackDamage, attackSpeed, properties, new AbstractSubClass(InitMainClass.MELEE,rarity,gameTier,"broadsword"){});}
+        super(tier, attackDamage, attackSpeed, properties, new AbstractSubClass(InitMainClass.MELEE,rarity,gameTier, InitSubClass.BROADSWORD){});}
 
     public Broadsword(TagKey<Item> tag){
         super(new Tier() {

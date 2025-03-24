@@ -115,4 +115,8 @@ public class Rarity  {
     public String getDisplayName(){
         return this.displayName;
     }
+
+    public TagKey<Rarity> getTag(){
+        return this.tag;
+    }
 }

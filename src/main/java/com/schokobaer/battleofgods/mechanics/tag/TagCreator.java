@@ -26,33 +26,35 @@ import static com.schokobaer.battleofgods.init.InitTier.TIER_KEY;
  */
 
 public class TagCreator {
-    private static final Map<String, TagKey<?>> tags = new HashMap<>();
+    //private static final Map<String, TagKey<?>> tags = new HashMap<>();
 
     public static TagKey<MainClass> createMainClassTag(@NotBlank String name) {
         TagKey<MainClass> tag = TagKey.create(InitMainClass.MAIN_CLASSES.getRegistryKey(), new ResourceLocation(BattleofgodsMod.MODID, name.toLowerCase()));
-        tags.put(name.toLowerCase(), tag);
+        //tags.put(name.toLowerCase(), tag);
         return tag;
     }
 
     public static TagKey<Item> createSubClassTag(@NotBlank String name, RegistryObject<MainClass> mainClass) {
         TagKey<Item> tag = TagKey.create(InitSubClass.SUBCLASSES.getRegistryKey(), new ResourceLocation(BattleofgodsMod.MODID, mainClass.getId().getPath().toLowerCase() + "/" + name.toLowerCase()));
-        tags.put(name.toLowerCase(), tag);
+        //tags.put(name.toLowerCase(), tag);
         return tag;
     }
 
     public static TagKey<Tier> createTierTag(String name) {
         TagKey<Tier> tag = TagKey.create(InitTier.TIERS.getRegistryKey(), new ResourceLocation(BattleofgodsMod.MODID, name.toLowerCase()));
-        tags.put(name.toLowerCase(), tag);
+        //tags.put(name.toLowerCase(), tag);
         return tag;
     }
 
     public static TagKey<Rarity> createRarityTag(String name) {
         TagKey<Rarity> tag = TagKey.create(InitRarity.RARITIES.getRegistryKey(), new ResourceLocation(BattleofgodsMod.MODID, name.toLowerCase()));
-        tags.put(name.toLowerCase(), tag);
+        //tags.put(name.toLowerCase(), tag);
         return tag;
     }
-
+/*
     public static TagKey<?> getTag(String name) {
         return tags.get(name.toLowerCase());
     }
+
+ */
 }
