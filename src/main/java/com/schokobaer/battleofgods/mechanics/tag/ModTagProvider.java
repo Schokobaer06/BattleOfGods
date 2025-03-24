@@ -40,11 +40,11 @@ public class ModTagProvider extends TagsProvider {
                    //Item subClassItem = subClass.get();
 
                    //Check if Item belongs to subClass
-                   if (item.getSubClassMethods().getSubClass() == subClass.get()){
+                   if (item.getSubClassMethods().getSubClass().equals(subClass.get())){
                        tag(subClass.get().getSubClassMethods().getTag()).addOptional(registryObject.getId());
                    }
                    //Check if subClass belongs to mainClass
-                   if (subClass.get().getSubClassMethods().getMainClass() == mainClass.get()){
+                   if (subClass.get().getSubClassMethods().getMainClass().equals(mainClass.get())){
                         tag(mainClass.get().getTag()).addOptionalTag(subClass.get().getSubClassMethods().getTag());
                    }
                 }
@@ -54,7 +54,7 @@ public class ModTagProvider extends TagsProvider {
             for (RegistryObject<Rarity> rarity : InitRarity.RARITIES.getEntries()) {
 
                 //Check if item belongs to rarity
-                if (item.getSubClassMethods().getRarity() == rarity.get()){
+                if (item.getSubClassMethods().getRarity().equals(rarity.get())){
                     tag(rarity.get().getTag()).addOptional(registryObject.getId());
                 }
             }
@@ -62,7 +62,7 @@ public class ModTagProvider extends TagsProvider {
             for (RegistryObject<Tier> tier : InitTier.TIERS.getEntries()) {
 
                 //Check if item belongs to tier
-                if(item.getSubClassMethods().getTier() == tier.get()){
+                if(item.getSubClassMethods().getTier().equals(tier.get())){
                     tag(tier.get().getTag()).addOptional(registryObject.getId());
                 }
             }

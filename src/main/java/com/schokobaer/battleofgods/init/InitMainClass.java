@@ -14,7 +14,7 @@ import net.minecraftforge.registries.RegistryObject;
 public class InitMainClass {
     public static final ResourceKey<Registry<MainClass>> MAIN_CLASS_KEY = ResourceKey.createRegistryKey(new ResourceLocation(BattleofgodsMod.MODID, "main_classes"));
     public static final DeferredRegister<MainClass> MAIN_CLASSES = DeferredRegister.create(MAIN_CLASS_KEY, BattleofgodsMod.MODID);
-    
+
     public static final RegistryObject<MainClass> MISC = registerMainClass("misc");
     public static final RegistryObject<MainClass> MELEE = registerMainClass("melee");
     public static final RegistryObject<MainClass> RANGED = registerMainClass("ranged");
@@ -25,6 +25,7 @@ public class InitMainClass {
     public static final RegistryObject<MainClass> HEALING = registerMainClass("healing");
     public static final RegistryObject<MainClass> BARD = registerMainClass("bard");
     public static final RegistryObject<MainClass> TOOL = registerMainClass("tool");
+
     public static RegistryObject<MainClass> registerMainClass(String name) {
         TagKey<MainClass> tag = TagCreator.createMainClassTag(name);
         return MAIN_CLASSES.register(name, () -> new MainClass(name, tag));

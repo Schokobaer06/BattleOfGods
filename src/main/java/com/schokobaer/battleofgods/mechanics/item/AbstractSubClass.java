@@ -18,11 +18,11 @@ import java.util.List;
 
 public abstract class AbstractSubClass implements SubClassMethods {
     private final RegistryObject<MainClass> mainClass;
-    private RegistryObject<Rarity> rarity;
-    private RegistryObject<Tier> tier;
-    private RegistryObject<Item> subClass;
+    private RegistryObject<Rarity> rarity = null;
+    private RegistryObject<Tier> tier = null;
+    private RegistryObject<Item> subClass = null;
     private final String name;
-    private TagKey<Item> tag;
+    private TagKey<Item> tag = null;
 
     protected AbstractSubClass(RegistryObject<MainClass> mainClass, @NotNull RegistryObject<Rarity> rarity, RegistryObject<Tier> tier, RegistryObject<Item> subClass) {
         this.mainClass = mainClass;
@@ -35,6 +35,7 @@ public abstract class AbstractSubClass implements SubClassMethods {
         this.tag = tag;
         this.name = name;
         this.mainClass = mainClass;
+
     }
 
 
