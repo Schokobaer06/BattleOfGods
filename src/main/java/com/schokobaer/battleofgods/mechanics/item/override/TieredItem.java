@@ -1,13 +1,14 @@
 package com.schokobaer.battleofgods.mechanics.item.override;
 
+import com.schokobaer.battleofgods.mechanics.item.AbstractSubClass;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Tier;
 
 public class TieredItem extends Item {
     private final Tier tier;
 
-    public TieredItem(Tier p_43308_, Item.Properties p_43309_) {
-        super(p_43309_.defaultDurability(p_43308_.getUses()));
+    public TieredItem(Tier p_43308_, Item.Properties p_43309_, AbstractSubClass subClass) {
+        super(p_43309_.defaultDurability(p_43308_.getUses()), subClass);
         this.tier = p_43308_;
     }
 

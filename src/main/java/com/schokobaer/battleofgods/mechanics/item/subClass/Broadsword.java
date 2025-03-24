@@ -21,9 +21,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
-public class Broadsword extends com.schokobaer.battleofgods.mechanics.item.override.SwordItem implements SubClassMethods {
-private final AbstractSubClass subclass;
-
+public class Broadsword extends com.schokobaer.battleofgods.mechanics.item.override.SwordItem {
     public Broadsword(float attackDamageBonus, int enchantmentValue, Ingredient repairMaterial, int attackDamage, float attackSpeed, Properties properties, RegistryObject<com.schokobaer.battleofgods.mechanics.rarity.Rarity> rarity, RegistryObject<com.schokobaer.battleofgods.mechanics.tier.Tier> gameTier) {
         super(new Tier() {
             @Override
@@ -55,13 +53,10 @@ private final AbstractSubClass subclass;
             public @NotNull Ingredient getRepairIngredient() {
                 return repairMaterial;
             }
-        }, attackDamage, attackSpeed, properties);
-        this.subclass = new AbstractSubClass(InitMainClass.MELEE,rarity,gameTier,"broadsword"){};
+        }, attackDamage, attackSpeed, properties, new AbstractSubClass(InitMainClass.MELEE,rarity,gameTier,"broadsword") {});
     }
     public Broadsword(Tier tier, int attackDamage, float attackSpeed, Properties properties, RegistryObject<com.schokobaer.battleofgods.mechanics.rarity.Rarity> rarity, RegistryObject<com.schokobaer.battleofgods.mechanics.tier.Tier> gameTier) {
-        super(tier, attackDamage, attackSpeed, properties);
-        this.subclass = new AbstractSubClass(InitMainClass.MELEE,rarity,gameTier,"broadsword"){};
-    }
+        super(tier, attackDamage, attackSpeed, properties, new AbstractSubClass(InitMainClass.MELEE,rarity,gameTier,"broadsword"){});}
 
     public Broadsword(TagKey<Item> tag){
         super(new Tier() {
@@ -94,38 +89,10 @@ private final AbstractSubClass subclass;
             public Ingredient getRepairIngredient() {
                 return null;
             }
-        }, 0, 0, new Properties());
-        this.subclass = new AbstractSubClass("broadsword", InitMainClass.MELEE,tag){};
-    }
-    public AbstractSubClass getSubClassMethods(){
-        return subclass;
-    }
-
-    @Override
-    public TagKey<?> getTag(){
-        return subclass.getTag();
+        }, 0, 0, new Properties(), new AbstractSubClass("broadsword", InitMainClass.MELEE,tag){});
     }
 
 
-    @Override
-    public ItemStack getCraftingRemainingItem(ItemStack itemstack) {
-        return subclass.getCraftingRemainingItem(itemstack);
-    }
-    @Override
-    public Component getName(ItemStack stack) {
-        return subclass.getName(stack);
-    }
-
-    @OnlyIn(Dist.CLIENT)
-    @Override
-    public void appendHoverText(ItemStack itemstack, Level level, List<Component> tooltip, TooltipFlag flag) {
-        super.appendHoverText(itemstack, level, tooltip, flag);
-        subclass.appendHoverText(itemstack, level, tooltip, flag);
-    }
-    @Override
-    public boolean isRepairable(@NotNull ItemStack itemstack) {
-        return subclass.isRepairable(itemstack);
-    }
 
     @Override
     public boolean hasCraftingRemainingItem(ItemStack stack) {

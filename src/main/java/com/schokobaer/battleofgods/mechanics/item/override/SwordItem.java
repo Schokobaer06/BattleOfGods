@@ -3,6 +3,7 @@ package com.schokobaer.battleofgods.mechanics.item.override;
 
 import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.Multimap;
+import com.schokobaer.battleofgods.mechanics.item.AbstractSubClass;
 import net.minecraft.core.BlockPos;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -20,8 +21,8 @@ public class SwordItem extends TieredItem implements Vanishable {
     private final float attackDamage;
     private final Multimap<Attribute, AttributeModifier> defaultModifiers;
 
-    public SwordItem(Tier p_43269_, int p_43270_, float p_43271_, Item.Properties p_43272_) {
-        super(p_43269_, p_43272_);
+    public SwordItem(Tier p_43269_, int p_43270_, float p_43271_, Item.Properties p_43272_, AbstractSubClass subClass) {
+        super(p_43269_, p_43272_, subClass);
         this.attackDamage = (float)p_43270_ + p_43269_.getAttackDamageBonus();
         ImmutableMultimap.Builder<Attribute, AttributeModifier> builder = ImmutableMultimap.builder();
         builder.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(BASE_ATTACK_DAMAGE_UUID, "Weapon modifier", (double)this.attackDamage, AttributeModifier.Operation.ADDITION));
