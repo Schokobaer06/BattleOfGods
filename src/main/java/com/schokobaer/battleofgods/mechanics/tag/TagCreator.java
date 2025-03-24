@@ -6,11 +6,11 @@ import com.schokobaer.battleofgods.init.InitRarity;
 import com.schokobaer.battleofgods.init.InitSubClass;
 import com.schokobaer.battleofgods.init.InitTier;
 import com.schokobaer.battleofgods.mechanics.item.MainClass;
+import com.schokobaer.battleofgods.mechanics.item.override.Item;
 import com.schokobaer.battleofgods.mechanics.rarity.Rarity;
 import com.schokobaer.battleofgods.mechanics.tier.Tier;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
-import net.minecraft.world.item.Item;
 import net.minecraftforge.registries.RegistryObject;
 import org.apache.logging.log4j.core.config.plugins.validation.constraints.NotBlank;
 

@@ -4,10 +4,14 @@ import com.schokobaer.battleofgods.init.InitMainClass;
 import com.schokobaer.battleofgods.mechanics.item.AbstractSubClass;
 
 import com.schokobaer.battleofgods.mechanics.item.SubClassMethods;
+import com.schokobaer.battleofgods.mechanics.item.override.Item;
 import net.minecraft.network.chat.Component;
 import net.minecraft.tags.TagKey;
-import net.minecraft.world.item.*;
+//import net.minecraft.world.item.*;
 
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Tier;
+import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.api.distmarker.Dist;
@@ -111,6 +115,7 @@ private final AbstractSubClass subclass;
     public Component getName(ItemStack stack) {
         return subclass.getName(stack);
     }
+
     @OnlyIn(Dist.CLIENT)
     @Override
     public void appendHoverText(ItemStack itemstack, Level level, List<Component> tooltip, TooltipFlag flag) {
