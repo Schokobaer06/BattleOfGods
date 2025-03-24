@@ -17,7 +17,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
-public class Broadsword extends SwordItem implements SubClassMethods {
+public class Broadsword extends com.schokobaer.battleofgods.mechanics.item.override.SwordItem implements SubClassMethods {
 private final AbstractSubClass subclass;
 
     public Broadsword(float attackDamageBonus, int enchantmentValue, Ingredient repairMaterial, int attackDamage, float attackSpeed, Properties properties, RegistryObject<com.schokobaer.battleofgods.mechanics.rarity.Rarity> rarity, RegistryObject<com.schokobaer.battleofgods.mechanics.tier.Tier> gameTier) {
@@ -90,7 +90,7 @@ private final AbstractSubClass subclass;
             public Ingredient getRepairIngredient() {
                 return null;
             }
-        }, 0, 0, new Item.Properties());
+        }, 0, 0, new Properties());
         this.subclass = new AbstractSubClass("broadsword", InitMainClass.MELEE,tag){};
     }
     public AbstractSubClass getSubClassMethods(){
