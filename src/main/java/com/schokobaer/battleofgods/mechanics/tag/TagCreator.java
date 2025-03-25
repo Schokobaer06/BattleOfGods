@@ -35,9 +35,9 @@ public class TagCreator {
     }
 
     public static TagKey<Item> createSubClassTag(@NotBlank String name, RegistryObject<MainClass> mainClass) {
-        TagKey<Item> tag = TagKey.create(InitSubClass.SUBCLASSES.getRegistryKey(), new ResourceLocation(BattleofgodsMod.MODID, mainClass.getId().getPath().toLowerCase() + "/" + name.toLowerCase()));
+        //TagKey<Item> tag = TagKey.create(InitSubClass.SUBCLASSES.getRegistryKey(), new ResourceLocation(BattleofgodsMod.MODID, mainClass.getId().getPath().toLowerCase() + "/" + name.toLowerCase()));
         //tags.put(name.toLowerCase(), tag);
-        return tag;
+        return null;
     }
 
     public static TagKey<Tier> createTierTag(String name) {

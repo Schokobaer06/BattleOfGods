@@ -61,15 +61,15 @@ public class BattleofgodsMod {
 				() -> new RegistryBuilder<Rarity>().setName(InitRarity.RARITY_KEY.location()));
 		InitMainClass.MAIN_CLASSES.makeRegistry(
 				() -> new RegistryBuilder<MainClass>().setName(InitMainClass.MAIN_CLASS_KEY.location()));
-		InitSubClass.SUBCLASSES.makeRegistry(
-				()-> new RegistryBuilder<Item>().setName(InitSubClass.ITEM_KEY.location()));
+		//InitSubClass.SUBCLASSES.makeRegistry(
+		//		()-> new RegistryBuilder<Item>().setName(InitSubClass.ITEM_KEY.location()));
 
 		InitTier.TIERS.register(bus);
 		InitRarity.RARITIES.register(bus);
 		InitMainClass.MAIN_CLASSES.register(bus);
 		InitSubClass.SUBCLASSES.register(bus);
 
-		InitItem.ITEMS.register(bus);
+		//InitItem.ITEMS.register(bus);
 		// End of user code block mod init
 		BattleofgodsModBlocks.REGISTRY.register(bus);
 		BattleofgodsModItems.REGISTRY.register(bus);
@@ -128,6 +128,7 @@ public class BattleofgodsMod {
 			helper.register(new ResourceLocation("battleofgods:default_recipe"), RecipeHandler.BattleRecipe.SERIALIZER);
 		});
 	}
+	/*
 	@SubscribeEvent
 	public void gatherData(GatherDataEvent event) {
 		DataGenerator generator = event.getGenerator();
@@ -138,5 +139,7 @@ public class BattleofgodsMod {
 		// Füge den Tag-Provider für Items hinzu
 		//generator.addProvider(event.includeServer(), new ModTagProvider(output, Registry.ITEM_REGISTRY, lookupProvider, MODID, existingFileHelper));
 	}
+
+	 */
 
 }

@@ -24,12 +24,12 @@ public abstract class AbstractSubClass implements SubClassMethods {
     private final String name;
     private TagKey<Item> tag = null;
 
-    protected AbstractSubClass(RegistryObject<MainClass> mainClass, @NotNull RegistryObject<Rarity> rarity, RegistryObject<Tier> tier, RegistryObject<Item> subClass) {
+    protected AbstractSubClass(RegistryObject<MainClass> mainClass, @NotNull RegistryObject<Rarity> rarity, RegistryObject<Tier> tier, String name) {
         this.mainClass = mainClass;
         this.rarity = rarity;
         this.tier = tier;
-        this.subClass = subClass;
-        this.name = subClass.getId().getPath();
+        //this.subClass = subClass;
+        this.name = name;
     }
     protected AbstractSubClass(String name, RegistryObject<MainClass> mainClass, TagKey<Item> tag) {
         this.tag = tag;

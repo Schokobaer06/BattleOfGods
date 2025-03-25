@@ -1,5 +1,7 @@
 package com.schokobaer.battleofgods.mechanics.tag;// ModItemTagsProvider.java
 
+
+/*
 import com.schokobaer.battleofgods.init.*;
 import com.schokobaer.battleofgods.mechanics.item.MainClass;
 import com.schokobaer.battleofgods.mechanics.item.override.Item;
@@ -15,6 +17,7 @@ import net.minecraftforge.registries.RegistryObject;
 
 import javax.annotation.Nullable;
 import java.util.concurrent.CompletableFuture;
+
 
 public class ModTagProvider extends TagsProvider {
     //private final ResourceKey<?> registryKey;
@@ -73,3 +76,4 @@ public class ModTagProvider extends TagsProvider {
 
 }
 
+*/
