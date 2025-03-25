@@ -1,6 +1,7 @@
 package com.schokobaer.battleofgods.mechanics.item.subClass;
 
 import com.schokobaer.battleofgods.init.InitMainClass;
+import com.schokobaer.battleofgods.init.InitSubClass;
 import com.schokobaer.battleofgods.mechanics.item.AbstractSubClass;
 
 import com.schokobaer.battleofgods.mechanics.item.override.ItemOverride;
@@ -47,10 +48,10 @@ public class Broadsword extends SwordItemOverride {
             public @NotNull Ingredient getRepairIngredient() {
                 return repairMaterial;
             }
-        }, attackDamage-1, attackSpeed-4, properties, new AbstractSubClass(InitMainClass.MELEE, rarity, gameTier, "broadsword") {});
+        }, attackDamage-1, attackSpeed-4, properties, new AbstractSubClass(InitMainClass.MELEE, rarity, gameTier, InitSubClass.BROADSWORD) {});
     }
     public Broadsword(Tier tier, int attackDamage, float attackSpeed, Properties properties, RegistryObject<com.schokobaer.battleofgods.mechanics.rarity.Rarity> rarity, RegistryObject<com.schokobaer.battleofgods.mechanics.tier.Tier> gameTier) {
-        super(tier, attackDamage, attackSpeed, properties, new AbstractSubClass(InitMainClass.MELEE, rarity, gameTier, "broadsword") {});}
+        super(tier, attackDamage, attackSpeed, properties, new AbstractSubClass(InitMainClass.MELEE, rarity, gameTier, InitSubClass.BROADSWORD) {});}
 
     public Broadsword(TagKey<ItemOverride> tag){
         super(new Tier() {

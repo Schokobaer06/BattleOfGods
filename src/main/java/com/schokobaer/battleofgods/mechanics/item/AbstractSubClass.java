@@ -7,7 +7,6 @@ import com.schokobaer.battleofgods.mechanics.tier.Tier;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.Style;
 import net.minecraft.tags.TagKey;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
@@ -26,12 +25,12 @@ public abstract class AbstractSubClass implements SubClassMethods {
     private final String name;
     private TagKey<ItemOverride> tag = null;
 
-    protected AbstractSubClass(RegistryObject<MainClass> mainClass, @NotNull RegistryObject<Rarity> rarity, RegistryObject<Tier> tier, String name) {
+    protected AbstractSubClass(RegistryObject<MainClass> mainClass, @NotNull RegistryObject<Rarity> rarity, RegistryObject<Tier> tier, RegistryObject<ItemOverride> subClass) {
         this.mainClass = mainClass;
         this.rarity = rarity;
         this.tier = tier;
-        //this.subClass = subClass;
-        this.name = name;
+        this.subClass = subClass;
+        this.name = subClass.getId().getPath();
     }
     protected AbstractSubClass(String name, RegistryObject<MainClass> mainClass, TagKey<ItemOverride> tag) {
         this.tag = tag;
@@ -55,7 +54,7 @@ public abstract class AbstractSubClass implements SubClassMethods {
 
     public ItemOverride getSubClass(){ return this.subClass.get(); }
 
-    public TagKey<?> getTag() {
+    public TagKey<ItemOverride> getTag() {
         return this.tag;
     }
 
