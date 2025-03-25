@@ -62,8 +62,8 @@ public abstract class AbstractSubClass implements SubClassMethods {
 
 
     @Override
-    public Component getName(ItemStack stack) {
-        return stack.getHoverName().copy().withStyle(Style.EMPTY.withColor(this.getRarity().getArgbColor()));
+    public Component getName(Component name) {
+        return name.copy().withStyle(Style.EMPTY.withColor(this.getRarity().getArgbColor()));
     }
 
     @OnlyIn(Dist.CLIENT)

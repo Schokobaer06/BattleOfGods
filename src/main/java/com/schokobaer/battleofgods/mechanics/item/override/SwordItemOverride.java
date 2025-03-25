@@ -17,11 +17,11 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 
-public class SwordItem extends TieredItem implements Vanishable {
+public class SwordItemOverride extends TieredItemOverride implements Vanishable {
     private final float attackDamage;
     private final Multimap<Attribute, AttributeModifier> defaultModifiers;
 
-    public SwordItem(Tier p_43269_, int p_43270_, float p_43271_, Item.Properties p_43272_, AbstractSubClass subClass) {
+    public SwordItemOverride(Tier p_43269_, int p_43270_, float p_43271_, Item.Properties p_43272_, AbstractSubClass subClass) {
         super(p_43269_, p_43272_, subClass);
         this.attackDamage = (float)p_43270_ + p_43269_.getAttackDamageBonus();
         ImmutableMultimap.Builder<Attribute, AttributeModifier> builder = ImmutableMultimap.builder();
