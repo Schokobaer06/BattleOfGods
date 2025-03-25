@@ -1,10 +1,10 @@
 package com.schokobaer.battleofgods.mechanics.item.subClass;
 
-import com.schokobaer.battleofgods.init.InitMainClass;
 import com.schokobaer.battleofgods.mechanics.item.AbstractSubClass;
 
 import com.schokobaer.battleofgods.mechanics.item.override.ItemOverride;
 import com.schokobaer.battleofgods.mechanics.item.override.SwordItem;
+import net.minecraft.network.chat.Component;
 import net.minecraft.tags.TagKey;
 
 import net.minecraft.world.item.ItemStack;

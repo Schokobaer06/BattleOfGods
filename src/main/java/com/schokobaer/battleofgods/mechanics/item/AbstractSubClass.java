@@ -7,6 +7,7 @@ import com.schokobaer.battleofgods.mechanics.tier.Tier;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.Style;
 import net.minecraft.tags.TagKey;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
@@ -17,7 +18,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
-public class AbstractSubClass implements SubClassMethods {
+public abstract class AbstractSubClass implements SubClassMethods {
     private final RegistryObject<MainClass> mainClass;
     private RegistryObject<Rarity> rarity = null;
     private RegistryObject<Tier> tier = null;
@@ -62,9 +63,9 @@ public class AbstractSubClass implements SubClassMethods {
 
     @Override
     public Component getName(ItemStack stack) {
-        Component name = new ItemOverride(new ItemOverride.Properties()).getName(stack);
-        return name.copy().withStyle(Style.EMPTY.withColor(this.getRarity().getArgbColor()));
+        return stack.getHoverName().copy().withStyle(Style.EMPTY.withColor(this.getRarity().getArgbColor()));
     }
+
     @OnlyIn(Dist.CLIENT)
     @Override
     public void appendHoverText(ItemStack itemstack, Level level, List<net.minecraft.network.chat.Component> tooltip, TooltipFlag flag) {
