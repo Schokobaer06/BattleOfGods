@@ -1,6 +1,7 @@
 package com.schokobaer.battleofgods.mechanics.item;
 
-import com.schokobaer.battleofgods.mechanics.item.override.Item;
+
+import com.schokobaer.battleofgods.mechanics.item.override.ItemOverride;
 import com.schokobaer.battleofgods.mechanics.rarity.Rarity;
 import com.schokobaer.battleofgods.mechanics.tier.Tier;
 import net.minecraft.network.chat.Component;
@@ -16,13 +17,13 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
-public abstract class AbstractSubClass implements SubClassMethods {
+public class AbstractSubClass implements SubClassMethods {
     private final RegistryObject<MainClass> mainClass;
     private RegistryObject<Rarity> rarity = null;
     private RegistryObject<Tier> tier = null;
-    private RegistryObject<Item> subClass = null;
+    private RegistryObject<ItemOverride> subClass = null;
     private final String name;
-    private TagKey<Item> tag = null;
+    private TagKey<ItemOverride> tag = null;
 
     protected AbstractSubClass(RegistryObject<MainClass> mainClass, @NotNull RegistryObject<Rarity> rarity, RegistryObject<Tier> tier, String name) {
         this.mainClass = mainClass;
@@ -31,7 +32,7 @@ public abstract class AbstractSubClass implements SubClassMethods {
         //this.subClass = subClass;
         this.name = name;
     }
-    protected AbstractSubClass(String name, RegistryObject<MainClass> mainClass, TagKey<Item> tag) {
+    protected AbstractSubClass(String name, RegistryObject<MainClass> mainClass, TagKey<ItemOverride> tag) {
         this.tag = tag;
         this.name = name;
         this.mainClass = mainClass;
@@ -51,7 +52,7 @@ public abstract class AbstractSubClass implements SubClassMethods {
         return this.tier.get();
     }
 
-    public Item getSubClass(){ return this.subClass.get(); }
+    public ItemOverride getSubClass(){ return this.subClass.get(); }
 
     public TagKey<?> getTag() {
         return this.tag;
@@ -61,7 +62,7 @@ public abstract class AbstractSubClass implements SubClassMethods {
 
     @Override
     public Component getName(ItemStack stack) {
-        Component name = new Item(new Item.Properties(), null).getName(stack);
+        Component name = new ItemOverride(new ItemOverride.Properties()).getName(stack);
         return name.copy().withStyle(Style.EMPTY.withColor(this.getRarity().getArgbColor()));
     }
     @OnlyIn(Dist.CLIENT)

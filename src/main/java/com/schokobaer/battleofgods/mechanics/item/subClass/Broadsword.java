@@ -3,7 +3,7 @@ package com.schokobaer.battleofgods.mechanics.item.subClass;
 import com.schokobaer.battleofgods.init.InitMainClass;
 import com.schokobaer.battleofgods.mechanics.item.AbstractSubClass;
 
-import com.schokobaer.battleofgods.mechanics.item.override.Item;
+import com.schokobaer.battleofgods.mechanics.item.override.ItemOverride;
 import com.schokobaer.battleofgods.mechanics.item.override.SwordItem;
 import net.minecraft.tags.TagKey;
 
@@ -51,7 +51,7 @@ public class Broadsword extends SwordItem {
     public Broadsword(Tier tier, int attackDamage, float attackSpeed, Properties properties, RegistryObject<com.schokobaer.battleofgods.mechanics.rarity.Rarity> rarity, RegistryObject<com.schokobaer.battleofgods.mechanics.tier.Tier> gameTier) {
         super(tier, attackDamage, attackSpeed, properties, new AbstractSubClass(null, null, null, null) {});}
 
-    public Broadsword(TagKey<Item> tag){
+    public Broadsword(TagKey<ItemOverride> tag){
         super(new Tier() {
             @Override
             public int getUses() {

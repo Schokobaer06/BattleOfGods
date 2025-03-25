@@ -6,7 +6,7 @@ import com.schokobaer.battleofgods.init.InitRarity;
 import com.schokobaer.battleofgods.init.InitSubClass;
 import com.schokobaer.battleofgods.init.InitTier;
 import com.schokobaer.battleofgods.mechanics.item.MainClass;
-import com.schokobaer.battleofgods.mechanics.item.override.Item;
+import com.schokobaer.battleofgods.mechanics.item.override.ItemOverride;
 import com.schokobaer.battleofgods.mechanics.rarity.Rarity;
 import com.schokobaer.battleofgods.mechanics.tier.Tier;
 import net.minecraft.resources.ResourceLocation;
@@ -34,7 +34,7 @@ public class TagCreator {
         return tag;
     }
 
-    public static TagKey<Item> createSubClassTag(@NotBlank String name, RegistryObject<MainClass> mainClass) {
+    public static TagKey<ItemOverride> createSubClassTag(@NotBlank String name, RegistryObject<MainClass> mainClass) {
         //TagKey<Item> tag = TagKey.create(InitSubClass.SUBCLASSES.getRegistryKey(), new ResourceLocation(BattleofgodsMod.MODID, mainClass.getId().getPath().toLowerCase() + "/" + name.toLowerCase()));
         //tags.put(name.toLowerCase(), tag);
         return null;

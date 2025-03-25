@@ -2,15 +2,10 @@ package com.schokobaer.battleofgods;
 
 import com.schokobaer.battleofgods.init.*;
 import com.schokobaer.battleofgods.mechanics.item.MainClass;
-import com.schokobaer.battleofgods.mechanics.item.override.Item;
+import com.schokobaer.battleofgods.mechanics.item.override.ItemOverride;
 import com.schokobaer.battleofgods.mechanics.rarity.Rarity;
 import com.schokobaer.battleofgods.mechanics.recipe.RecipeHandler;
 import com.schokobaer.battleofgods.mechanics.tier.Tier;
-import net.minecraft.core.HolderLookup;
-import net.minecraft.data.DataGenerator;
-import net.minecraft.data.PackOutput;
-import net.minecraftforge.common.data.ExistingFileHelper;
-import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegisterEvent;
@@ -32,7 +27,6 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.FriendlyByteBuf;
 
-import java.util.concurrent.CompletableFuture;
 import java.util.function.Supplier;
 import java.util.function.Function;
 import java.util.function.BiConsumer;
@@ -61,8 +55,8 @@ public class BattleofgodsMod {
 				() -> new RegistryBuilder<Rarity>().setName(InitRarity.RARITY_KEY.location()));
 		InitMainClass.MAIN_CLASSES.makeRegistry(
 				() -> new RegistryBuilder<MainClass>().setName(InitMainClass.MAIN_CLASS_KEY.location()));
-		//InitSubClass.SUBCLASSES.makeRegistry(
-		//		()-> new RegistryBuilder<Item>().setName(InitSubClass.ITEM_KEY.location()));
+		InitSubClass.SUBCLASSES.makeRegistry(
+				()-> new RegistryBuilder<ItemOverride>().setName(InitSubClass.ITEM_KEY.location()));
 
 		InitTier.TIERS.register(bus);
 		InitRarity.RARITIES.register(bus);

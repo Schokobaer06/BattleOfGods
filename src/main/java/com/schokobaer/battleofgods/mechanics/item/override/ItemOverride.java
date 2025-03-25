@@ -13,11 +13,15 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
-public class Item extends net.minecraft.world.item.Item {
+public class ItemOverride extends net.minecraft.world.item.Item {
     private final AbstractSubClass subClass;
-    public Item(Item.Properties p_41383_, AbstractSubClass subClass) {
+    public ItemOverride(ItemOverride.Properties p_41383_, AbstractSubClass subClass) {
         super(p_41383_);
         this.subClass = subClass;
+    }
+    public ItemOverride(ItemOverride.Properties p_41383_) {
+        super(p_41383_);
+        this.subClass = null;
     }
 
     public AbstractSubClass getSubClassMethods(){
