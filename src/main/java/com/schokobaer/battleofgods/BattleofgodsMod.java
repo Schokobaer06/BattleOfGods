@@ -6,10 +6,9 @@ import com.schokobaer.battleofgods.mechanics.item.override.ItemOverride;
 import com.schokobaer.battleofgods.mechanics.rarity.Rarity;
 import com.schokobaer.battleofgods.mechanics.recipe.RecipeHandler;
 import com.schokobaer.battleofgods.mechanics.tier.Tier;
+import net.minecraft.world.item.Item;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.RegisterEvent;
-import net.minecraftforge.registries.RegistryBuilder;
+import net.minecraftforge.registries.*;
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.LogManager;
 
@@ -55,8 +54,6 @@ public class BattleofgodsMod {
 				() -> new RegistryBuilder<Rarity>().setName(InitRarity.RARITY_KEY.location()));
 		InitMainClass.MAIN_CLASSES.makeRegistry(
 				() -> new RegistryBuilder<MainClass>().setName(InitMainClass.MAIN_CLASS_KEY.location()));
-		InitSubClass.SUBCLASSES.makeRegistry(
-				()-> new RegistryBuilder<ItemOverride>().setName(InitSubClass.ITEM_KEY.location()));
 
 		InitTier.TIERS.register(bus);
 		InitRarity.RARITIES.register(bus);
