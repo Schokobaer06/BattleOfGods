@@ -37,7 +37,7 @@ public class TagCreator {
     }
 
     public static TagKey<ItemOverride> createSubClassTag(@NotBlank String name, RegistryObject<MainClass> mainClass) {
-        TagKey<ItemOverride> tag = TagKey.create(ResourceKey.createRegistryKey(new ResourceLocation(BattleofgodsMod.MODID, "items")), new ResourceLocation(BattleofgodsMod.MODID, mainClass.getId().getPath().toLowerCase() + "/" + name.toLowerCase()));
+        TagKey<ItemOverride> tag = TagKey.create(InitSubClass.ITEM_OVERRIDE, new ResourceLocation(BattleofgodsMod.MODID, mainClass.getId().getPath().toLowerCase() + "/" + name.toLowerCase()));
         //tags.put(name.toLowerCase(), tag);
         return tag;
     }

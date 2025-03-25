@@ -5,8 +5,14 @@ import com.schokobaer.battleofgods.mechanics.item.MainClass;
 import com.schokobaer.battleofgods.mechanics.item.override.ItemOverride;
 import com.schokobaer.battleofgods.mechanics.rarity.Rarity;
 import com.schokobaer.battleofgods.mechanics.recipe.RecipeHandler;
+import com.schokobaer.battleofgods.mechanics.tag.SubClassTagProvider;
 import com.schokobaer.battleofgods.mechanics.tier.Tier;
+import net.minecraft.core.HolderLookup;
+import net.minecraft.data.DataGenerator;
+import net.minecraft.data.PackOutput;
 import net.minecraft.world.item.Item;
+import net.minecraftforge.common.data.ExistingFileHelper;
+import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.registries.*;
 import org.apache.logging.log4j.Logger;
@@ -26,6 +32,7 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.FriendlyByteBuf;
 
+import java.util.concurrent.CompletableFuture;
 import java.util.function.Supplier;
 import java.util.function.Function;
 import java.util.function.BiConsumer;
@@ -119,7 +126,7 @@ public class BattleofgodsMod {
 			helper.register(new ResourceLocation("battleofgods:default_recipe"), RecipeHandler.BattleRecipe.SERIALIZER);
 		});
 	}
-	/*
+
 	@SubscribeEvent
 	public void gatherData(GatherDataEvent event) {
 		DataGenerator generator = event.getGenerator();
@@ -128,9 +135,9 @@ public class BattleofgodsMod {
 		CompletableFuture<HolderLookup.Provider> lookupProvider = event.getLookupProvider();
 
 		// Füge den Tag-Provider für Items hinzu
-		//generator.addProvider(event.includeServer(), new ModTagProvider(output, Registry.ITEM_REGISTRY, lookupProvider, MODID, existingFileHelper));
+		generator.addProvider(event.includeServer(), new SubClassTagProvider(output,InitSubClass.ITEM_OVERRIDE, lookupProvider, MODID, existingFileHelper));
 	}
 
-	 */
+
 
 }
