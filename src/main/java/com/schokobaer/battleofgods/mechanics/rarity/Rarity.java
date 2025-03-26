@@ -4,7 +4,6 @@ import com.mojang.datafixers.util.Either;
 import com.schokobaer.battleofgods.BattleofgodsMod;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
-import net.minecraft.world.item.Item;
 
 public class Rarity  {
     private final Either<Integer, ResourceLocation> color;

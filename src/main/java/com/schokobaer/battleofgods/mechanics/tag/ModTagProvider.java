@@ -1,10 +1,10 @@
 package com.schokobaer.battleofgods.mechanics.tag;// ModItemTagsProvider.java
 
 
-/*
+
 import com.schokobaer.battleofgods.init.*;
 import com.schokobaer.battleofgods.mechanics.item.MainClass;
-import com.schokobaer.battleofgods.mechanics.item.override.Item;
+import com.schokobaer.battleofgods.mechanics.item.override.ItemOverride;
 import com.schokobaer.battleofgods.mechanics.rarity.Rarity;
 import com.schokobaer.battleofgods.mechanics.tier.Tier;
 import net.minecraft.core.HolderLookup;
@@ -12,6 +12,7 @@ import net.minecraft.core.Registry;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.TagsProvider;
 import net.minecraft.resources.ResourceKey;
+import net.minecraft.world.item.Item;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.RegistryObject;
 
@@ -19,6 +20,7 @@ import javax.annotation.Nullable;
 import java.util.concurrent.CompletableFuture;
 
 
+@Deprecated
 public class ModTagProvider extends TagsProvider {
     //private final ResourceKey<?> registryKey;
 
@@ -32,23 +34,23 @@ public class ModTagProvider extends TagsProvider {
     @Override
     protected void addTags(HolderLookup.Provider provider) {
         // goes through every registered Item
-        for (RegistryObject<Item> registryObject : InitItem.ITEMS.getEntries()) {
-            Item item = registryObject.get();
+        for (RegistryObject<net.minecraft.world.item.Item> registryObject : InitItem.ITEMS.getEntries()) {
+            ItemOverride item = (ItemOverride) registryObject.get();
 
             // goes through every registered MainClass
             for (RegistryObject<MainClass> mainClass : InitMainClass.MAIN_CLASSES.getEntries()) {
 
                 // goes through every registered SubClass
                 for (RegistryObject<Item> subClass : InitSubClass.SUBCLASSES.getEntries()){
-                   //Item subClassItem = subClass.get();
+                   ItemOverride subClassItem = (ItemOverride) subClass.get();
 
                    //Check if Item belongs to subClass
                    if (item.getSubClassMethods().getSubClass().equals(subClass.get())){
-                       tag(subClass.get().getSubClassMethods().getTag()).addOptional(registryObject.getId());
+                       tag(subClassItem.getSubClassMethods().getTag()).addOptional(registryObject.getId());
                    }
                    //Check if subClass belongs to mainClass
-                   if (subClass.get().getSubClassMethods().getMainClass().equals(mainClass.get())){
-                        tag(mainClass.get().getTag()).addOptionalTag(subClass.get().getSubClassMethods().getTag());
+                   if (subClassItem.getSubClassMethods().getMainClass().equals(mainClass.get())){
+                        tag(mainClass.get().getTag()).addOptionalTag(subClass.getId());
                    }
                 }
             }
@@ -76,4 +78,3 @@ public class ModTagProvider extends TagsProvider {
 
 }
 
-*/

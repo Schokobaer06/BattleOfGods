@@ -3,13 +3,13 @@ package com.schokobaer.battleofgods.mechanics.rarity;
 import com.mojang.blaze3d.platform.NativeImage;
 import com.schokobaer.battleofgods.BattleofgodsMod;
 import net.minecraft.client.Minecraft;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.resources.Resource;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+
 import java.util.Optional;
 
 @OnlyIn(Dist.CLIENT)

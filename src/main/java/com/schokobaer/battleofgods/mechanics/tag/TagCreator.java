@@ -9,17 +9,10 @@ import com.schokobaer.battleofgods.mechanics.item.MainClass;
 import com.schokobaer.battleofgods.mechanics.item.override.ItemOverride;
 import com.schokobaer.battleofgods.mechanics.rarity.Rarity;
 import com.schokobaer.battleofgods.mechanics.tier.Tier;
-import net.minecraft.core.Registry;
-import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
 import net.minecraftforge.registries.RegistryObject;
 import org.apache.logging.log4j.core.config.plugins.validation.constraints.NotBlank;
-
-import java.util.HashMap;
-import java.util.Map;
-
-import static com.schokobaer.battleofgods.init.InitTier.TIER_KEY;
 
 
 

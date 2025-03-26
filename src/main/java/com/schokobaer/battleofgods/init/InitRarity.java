@@ -1,12 +1,13 @@
 package com.schokobaer.battleofgods.init;
+
+import com.schokobaer.battleofgods.BattleofgodsMod;
 import com.schokobaer.battleofgods.mechanics.rarity.Rarity;
 import com.schokobaer.battleofgods.mechanics.tag.TagCreator;
 import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraftforge.registries.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
-import com.schokobaer.battleofgods.BattleofgodsMod;
+import net.minecraftforge.registries.RegistryObject;
 
 public class InitRarity {
     public static final ResourceKey<Registry<Rarity>> RARITY_KEY =

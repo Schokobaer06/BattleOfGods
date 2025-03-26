@@ -1,13 +1,12 @@
 package com.schokobaer.battleofgods.init;
 
 import com.schokobaer.battleofgods.BattleofgodsMod;
-import com.schokobaer.battleofgods.mechanics.tag.TagCreator;
 import com.schokobaer.battleofgods.mechanics.item.MainClass;
+import com.schokobaer.battleofgods.mechanics.tag.TagCreator;
 import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
-import net.minecraft.world.item.Item;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
 

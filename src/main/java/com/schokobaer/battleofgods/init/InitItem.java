@@ -2,12 +2,7 @@ package com.schokobaer.battleofgods.init;
 
 import com.schokobaer.battleofgods.BattleofgodsMod;
 import com.schokobaer.battleofgods.item.tier1.ItemCopperBroadsword;
-//import net.minecraft.world.item.Item;
-//import com.schokobaer.battleofgods.mechanics.item.override.Item;
 import com.schokobaer.battleofgods.mechanics.item.override.ItemOverride;
-import net.minecraft.core.Registry;
-import net.minecraft.resources.ResourceKey;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;

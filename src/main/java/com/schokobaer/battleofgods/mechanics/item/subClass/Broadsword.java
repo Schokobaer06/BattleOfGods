@@ -3,13 +3,10 @@ package com.schokobaer.battleofgods.mechanics.item.subClass;
 import com.schokobaer.battleofgods.init.InitMainClass;
 import com.schokobaer.battleofgods.init.InitSubClass;
 import com.schokobaer.battleofgods.mechanics.item.AbstractSubClass;
-
 import com.schokobaer.battleofgods.mechanics.item.override.ItemOverride;
 import com.schokobaer.battleofgods.mechanics.item.override.SwordItemOverride;
 import net.minecraft.tags.TagKey;
-
 import net.minecraft.world.item.ItemStack;
-//import net.minecraft.world.item.SwordItemOverride;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraftforge.registries.RegistryObject;

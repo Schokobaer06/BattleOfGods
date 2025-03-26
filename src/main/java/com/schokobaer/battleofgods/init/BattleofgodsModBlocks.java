@@ -4,14 +4,12 @@
  */
 package com.schokobaer.battleofgods.init;
 
-import net.minecraftforge.registries.RegistryObject;
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.DeferredRegister;
-
-import net.minecraft.world.level.block.Block;
-
-import com.schokobaer.battleofgods.block.WoodenWorkbenchBlock;
 import com.schokobaer.battleofgods.BattleofgodsMod;
+import com.schokobaer.battleofgods.block.WoodenWorkbenchBlock;
+import net.minecraft.world.level.block.Block;
+import net.minecraftforge.registries.DeferredRegister;
+import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.registries.RegistryObject;
 
 public class BattleofgodsModBlocks {
 	public static final DeferredRegister<Block> REGISTRY = DeferredRegister.create(ForgeRegistries.BLOCKS, BattleofgodsMod.MODID);

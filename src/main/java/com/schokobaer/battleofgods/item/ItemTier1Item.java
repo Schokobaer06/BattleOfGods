@@ -1,8 +1,8 @@
 
 package com.schokobaer.battleofgods.item;
 
-import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Rarity;
 
 
 public class ItemTier1Item extends Item {
