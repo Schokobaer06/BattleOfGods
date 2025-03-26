@@ -29,20 +29,18 @@ public class SubClassTagProvider extends TagsProvider<ItemOverride> {
     @Override
     protected void addTags(HolderLookup.Provider provider) {
         BattleofgodsMod.LOGGER.info("Gathering data for {}", BattleofgodsMod.MODID);
-        for (RegistryObject<Item> item: InitItem.ITEMS.getEntries()){
+        try{
+            for (RegistryObject<Item> item: InitItem.ITEMS.getEntries()){
 
-            for (RegistryObject<Item> subClass: InitSubClass.SUBCLASSES.getEntries()){
-
- //               if (item.get() instanceof ItemOverride){
-   //                 if (subClass.get() instanceof ItemOverride){
-                        if (subClass.get().equals(((ItemOverride) item.get()).getSubClassMethods().getSubClass())){
-                            tag(((ItemOverride) subClass.get()).getSubClassMethods().getTag()).add(TagEntry.element(item.getId()));
-                            BattleofgodsMod.LOGGER.info("Adding item {} to tag {} for {}", item.getId(), ((ItemOverride) subClass.get()).getSubClassMethods().getTag().toString(), BattleofgodsMod.MODID);
-
-   //                     }
-     //               }
+                for (RegistryObject<Item> subClass: InitSubClass.SUBCLASSES.getEntries()){
+                    if (subClass.get().equals(((ItemOverride) item.get()).getSubClassMethods().getSubClass())){
+                        tag(((ItemOverride) subClass.get()).getSubClassMethods().getTag()).add(TagEntry.element(item.getId()));
+                        BattleofgodsMod.LOGGER.info("Adding item {} to tag {} for {}", item.getId(), ((ItemOverride) subClass.get()).getSubClassMethods().getTag().toString(), BattleofgodsMod.MODID);
+                    }
                 }
             }
+        } catch (Exception e){
+            BattleofgodsMod.LOGGER.error("Error while gathering data for {}", BattleofgodsMod.MODID, e);
         }
     }
 }

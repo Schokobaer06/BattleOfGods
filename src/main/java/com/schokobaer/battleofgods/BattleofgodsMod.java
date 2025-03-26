@@ -2,17 +2,14 @@ package com.schokobaer.battleofgods;
 
 import com.schokobaer.battleofgods.init.*;
 import com.schokobaer.battleofgods.mechanics.item.MainClass;
-import com.schokobaer.battleofgods.mechanics.item.override.ItemOverride;
 import com.schokobaer.battleofgods.mechanics.rarity.Rarity;
 import com.schokobaer.battleofgods.mechanics.recipe.RecipeHandler;
+import com.schokobaer.battleofgods.mechanics.tag.MainClassTagProvider;
+import com.schokobaer.battleofgods.mechanics.tag.RarityTagProvider;
 import com.schokobaer.battleofgods.mechanics.tag.SubClassTagProvider;
+import com.schokobaer.battleofgods.mechanics.tag.TierTagProvider;
 import com.schokobaer.battleofgods.mechanics.tier.Tier;
-import net.minecraft.core.HolderLookup;
-import net.minecraft.data.DataGenerator;
 import net.minecraft.data.DataProvider;
-import net.minecraft.data.PackOutput;
-import net.minecraft.world.item.Item;
-import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.registries.*;
@@ -136,6 +133,7 @@ public class BattleofgodsMod {
 		ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
 		CompletableFuture<HolderLookup.Provider> lookupProvider = event.getLookupProvider();
 */
+		LOGGER.info("Generating subClass tags");
 		event.getGenerator().addProvider(
 				event.includeServer(),
                 (DataProvider.Factory<SubClassTagProvider>) output -> new SubClassTagProvider(
@@ -146,6 +144,38 @@ public class BattleofgodsMod {
                         event.getExistingFileHelper()
                 )
         );
-		// Füge den Tag-Provider für Items hinzu
+		LOGGER.info("Generating mainClass tags");
+		event.getGenerator().addProvider(
+				event.includeServer(),
+				(DataProvider.Factory<MainClassTagProvider>) output -> new MainClassTagProvider(
+						output,
+						InitMainClass.MAIN_CLASS_KEY,
+						event.getLookupProvider(),
+						MODID,
+						event.getExistingFileHelper()
+				)
+		);
+		LOGGER.info("Generating Tier tags");
+		event.getGenerator().addProvider(
+				event.includeServer(),
+				(DataProvider.Factory<TierTagProvider>) output -> new TierTagProvider(
+						output,
+						InitTier.TIER_KEY,
+						event.getLookupProvider(),
+						MODID,
+						event.getExistingFileHelper()
+				)
+		);
+		LOGGER.info("Generating Rarity tags");
+		event.getGenerator().addProvider(
+				event.includeServer(),
+				(DataProvider.Factory<RarityTagProvider>) output -> new RarityTagProvider(
+						output,
+						InitRarity.RARITY_KEY,
+						event.getLookupProvider(),
+						MODID,
+						event.getExistingFileHelper()
+				)
+		);
 	}
 }
