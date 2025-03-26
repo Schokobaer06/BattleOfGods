@@ -1,20 +1,19 @@
 
 package com.schokobaer.battleofgods.init;
 
-import mezz.jei.api.IModPlugin;
-import mezz.jei.api.JeiPlugin;
-import mezz.jei.api.constants.RecipeTypes;
-import mezz.jei.api.recipe.vanilla.IJeiBrewingRecipe;
-import mezz.jei.api.recipe.vanilla.IVanillaRecipeFactory;
-import mezz.jei.api.registration.IRecipeRegistration;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.resources.ResourceLocation;
 
-import java.util.ArrayList;
+import mezz.jei.api.registration.IRecipeRegistration;
+import mezz.jei.api.recipe.vanilla.IVanillaRecipeFactory;
+import mezz.jei.api.recipe.vanilla.IJeiBrewingRecipe;
+import mezz.jei.api.constants.RecipeTypes;
+import mezz.jei.api.JeiPlugin;
+import mezz.jei.api.IModPlugin;
+
 import java.util.List;
-
-
+import java.util.ArrayList;
 
 @JeiPlugin
 public class BattleofgodsModBrewingRecipes implements IModPlugin {

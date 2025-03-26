@@ -119,7 +119,7 @@
         "value": "CUSTOM:Tier1"
       }
     ],
-    "destroyTool": "axe",
+    "destroyTool": "Not specified",
     "customDrop": {
       "value": ""
     },
@@ -178,7 +178,6 @@
     "vanillaToolTier": "NONE",
     "isBonemealable": false,
     "hasInventory": false,
-    "guiBoundTo": "GuiCrafting",
     "openGUIOnRightClick": false,
     "inventorySize": 9,
     "inventoryStackSize": 64,

@@ -1,46 +1,46 @@
 package com.schokobaer.battleofgods;
 
-import com.schokobaer.battleofgods.init.*;
-import com.schokobaer.battleofgods.mechanics.item.MainClass;
-import com.schokobaer.battleofgods.mechanics.rarity.Rarity;
-import com.schokobaer.battleofgods.mechanics.recipe.RecipeHandler;
-import com.schokobaer.battleofgods.mechanics.tag.MainClassTagProvider;
-import com.schokobaer.battleofgods.mechanics.tag.RarityTagProvider;
-import com.schokobaer.battleofgods.mechanics.tag.SubClassTagProvider;
-import com.schokobaer.battleofgods.mechanics.tag.TierTagProvider;
-import com.schokobaer.battleofgods.mechanics.tier.Tier;
-import net.minecraft.data.DataProvider;
-import net.minecraft.network.FriendlyByteBuf;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.data.event.GatherDataEvent;
-import net.minecraftforge.event.TickEvent;
-import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
-import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import net.minecraftforge.fml.util.thread.SidedThreadGroups;
-import net.minecraftforge.network.NetworkEvent;
-import net.minecraftforge.network.NetworkRegistry;
-import net.minecraftforge.network.simple.SimpleChannel;
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.RegisterEvent;
-import net.minecraftforge.registries.RegistryBuilder;
-import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
-import java.util.AbstractMap;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
-import java.util.concurrent.ConcurrentLinkedQueue;
-import java.util.function.BiConsumer;
-import java.util.function.Function;
+import net.minecraftforge.registries.RegistryBuilder;
+import net.minecraftforge.network.simple.SimpleChannel;
+import net.minecraftforge.network.NetworkRegistry;
+import net.minecraftforge.network.NetworkEvent;
+import net.minecraftforge.fml.util.thread.SidedThreadGroups;
+import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.event.TickEvent;
+import net.minecraftforge.common.MinecraftForge;
+
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.network.FriendlyByteBuf;
+
 import java.util.function.Supplier;
+import java.util.function.Function;
+import java.util.function.BiConsumer;
+import java.util.concurrent.ConcurrentLinkedQueue;
+import java.util.List;
+import java.util.Collection;
+import java.util.ArrayList;
+import java.util.AbstractMap;
 
-@Mod(BattleofgodsMod.MODID)
-@Mod.EventBusSubscriber(modid = BattleofgodsMod.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
+import com.schokobaer.battleofgods.mechanics.tier.Tier;
+import com.schokobaer.battleofgods.mechanics.rarity.Rarity;
+import com.schokobaer.battleofgods.mechanics.item.MainClass;
+import com.schokobaer.battleofgods.init.InitTier;
+import com.schokobaer.battleofgods.init.InitSubClass;
+import com.schokobaer.battleofgods.init.InitRarity;
+import com.schokobaer.battleofgods.init.InitMainClass;
+import com.schokobaer.battleofgods.init.InitItem;
+import com.schokobaer.battleofgods.init.BattleofgodsModTabs;
+import com.schokobaer.battleofgods.init.BattleofgodsModMenus;
+import com.schokobaer.battleofgods.init.BattleofgodsModItems;
+import com.schokobaer.battleofgods.init.BattleofgodsModBlocks;
+
+@Mod("battleofgods")
 public class BattleofgodsMod {
 	public static final Logger LOGGER = LogManager.getLogger(BattleofgodsMod.class);
 	public static final String MODID = "battleofgods";
@@ -50,27 +50,20 @@ public class BattleofgodsMod {
 		// End of user code block mod constructor
 		MinecraftForge.EVENT_BUS.register(this);
 		IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
-
+		BattleofgodsModBlocks.REGISTRY.register(bus);
+		BattleofgodsModItems.REGISTRY.register(bus);
+		BattleofgodsModTabs.REGISTRY.register(bus);
+		BattleofgodsModMenus.REGISTRY.register(bus);
 		// Start of user code block mod init
-		InitTier.TIERS.makeRegistry(
-				()-> new RegistryBuilder<Tier>().setName(InitTier.TIER_KEY.location()));
-		InitRarity.RARITIES.makeRegistry(
-				() -> new RegistryBuilder<Rarity>().setName(InitRarity.RARITY_KEY.location()));
-		InitMainClass.MAIN_CLASSES.makeRegistry(
-				() -> new RegistryBuilder<MainClass>().setName(InitMainClass.MAIN_CLASS_KEY.location()));
-
+		InitTier.TIERS.makeRegistry(() -> new RegistryBuilder<Tier>().setName(InitTier.TIER_KEY.location()));
+		InitRarity.RARITIES.makeRegistry(() -> new RegistryBuilder<Rarity>().setName(InitRarity.RARITY_KEY.location()));
+		InitMainClass.MAIN_CLASSES.makeRegistry(() -> new RegistryBuilder<MainClass>().setName(InitMainClass.MAIN_CLASS_KEY.location()));
 		InitTier.TIERS.register(bus);
 		InitRarity.RARITIES.register(bus);
 		InitMainClass.MAIN_CLASSES.register(bus);
 		InitSubClass.SUBCLASSES.register(bus);
-
 		InitItem.ITEMS.register(bus);
 		// End of user code block mod init
-		BattleofgodsModBlocks.REGISTRY.register(bus);
-		BattleofgodsModItems.REGISTRY.register(bus);
-		BattleofgodsModTabs.REGISTRY.register(bus);
-
-
 	}
 
 	// Start of user code block mod methods
@@ -103,78 +96,5 @@ public class BattleofgodsMod {
 			actions.forEach(e -> e.getKey().run());
 			workQueue.removeAll(actions);
 		}
-	}
-	@SubscribeEvent
-	public static void onCommonSetup(FMLCommonSetupEvent event) {
-		// Lade die Rezepte
-		RecipeHandler.loadRecipes();
-	}
-
-	@SubscribeEvent
-	public static void registerRecipeTypes(RegisterEvent event) {
-		event.register(ForgeRegistries.Keys.RECIPE_TYPES, helper -> {
-			helper.register(new ResourceLocation("battleofgods:default_recipe"), new RecipeHandler.BattleRecipe.Type());
-		});
-	}
-
-	@SubscribeEvent
-	public static void registerRecipeSerializers(RegisterEvent event) {
-		event.register(ForgeRegistries.Keys.RECIPE_SERIALIZERS, helper -> {
-			helper.register(new ResourceLocation("battleofgods:default_recipe"), RecipeHandler.BattleRecipe.SERIALIZER);
-		});
-	}
-
-	@SubscribeEvent
-	public void gatherData(GatherDataEvent event) {
-		LOGGER.info("Gathering data");
-/*		DataGenerator generator = event.getGenerator();
-		PackOutput output = generator.getPackOutput();
-		ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
-		CompletableFuture<HolderLookup.Provider> lookupProvider = event.getLookupProvider();
-*/
-		LOGGER.info("Generating subClass tags");
-		event.getGenerator().addProvider(
-				event.includeServer(),
-                (DataProvider.Factory<SubClassTagProvider>) output -> new SubClassTagProvider(
-                        output,
-                        InitSubClass.ITEM_OVERRIDE,
-                        event.getLookupProvider(),
-                        MODID,
-                        event.getExistingFileHelper()
-                )
-        );
-		LOGGER.info("Generating mainClass tags");
-		event.getGenerator().addProvider(
-				event.includeServer(),
-				(DataProvider.Factory<MainClassTagProvider>) output -> new MainClassTagProvider(
-						output,
-						InitMainClass.MAIN_CLASS_KEY,
-						event.getLookupProvider(),
-						MODID,
-						event.getExistingFileHelper()
-				)
-		);
-		LOGGER.info("Generating Tier tags");
-		event.getGenerator().addProvider(
-				event.includeServer(),
-				(DataProvider.Factory<TierTagProvider>) output -> new TierTagProvider(
-						output,
-						InitTier.TIER_KEY,
-						event.getLookupProvider(),
-						MODID,
-						event.getExistingFileHelper()
-				)
-		);
-		LOGGER.info("Generating Rarity tags");
-		event.getGenerator().addProvider(
-				event.includeServer(),
-				(DataProvider.Factory<RarityTagProvider>) output -> new RarityTagProvider(
-						output,
-						InitRarity.RARITY_KEY,
-						event.getLookupProvider(),
-						MODID,
-						event.getExistingFileHelper()
-				)
-		);
 	}
 }

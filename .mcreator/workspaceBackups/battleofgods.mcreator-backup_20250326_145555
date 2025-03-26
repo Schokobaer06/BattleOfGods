@@ -76,24 +76,14 @@
           "src/main/resources/assets/battleofgods/models/item/item_tier_1.json"
         ]
       }
-    },
-    {
-      "name": "GuiTest",
-      "type": "gui",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "gui_test",
-      "metadata": {
-        "files": [
-          "src/main/java/com/schokobaer/battleofgods/world/inventory/GuiTestMenu.java",
-          "src/main/java/com/schokobaer/battleofgods/client/gui/GuiTestScreen.java"
-        ]
-      }
     }
   ],
   "variable_elements": [],
   "sound_elements": [],
   "tag_elements": {
+    "BLOCKS:minecraft:mineable/axe": [
+      "~CUSTOM:WoodenWorkbench"
+    ],
     "ITEMS:minecraft:swords": [
       "~CUSTOM:CopperBroadsword",
       "~CUSTOM:CopperShortsword"

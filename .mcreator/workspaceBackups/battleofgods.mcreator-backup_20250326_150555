@@ -4,7 +4,7 @@
       "name": "Tier1",
       "type": "tab",
       "compiles": true,
-      "locked_code": false,
+      "locked_code": true,
       "registry_name": "tier_1",
       "metadata": {
         "files": []
@@ -27,7 +27,7 @@
       "name": "CopperBroadsword",
       "type": "tool",
       "compiles": true,
-      "locked_code": false,
+      "locked_code": true,
       "registry_name": "copper_broadsword",
       "metadata": {
         "files": [
@@ -81,9 +81,6 @@
   "variable_elements": [],
   "sound_elements": [],
   "tag_elements": {
-    "BLOCKS:minecraft:mineable/axe": [
-      "~CUSTOM:WoodenWorkbench"
-    ],
     "ITEMS:minecraft:swords": [
       "~CUSTOM:CopperBroadsword",
       "~CUSTOM:CopperShortsword"
