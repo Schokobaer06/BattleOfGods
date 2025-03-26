@@ -130,6 +130,7 @@ public class BattleofgodsMod {
 
 	@SubscribeEvent
 	public void gatherData(GatherDataEvent event) {
+		LOGGER.info("Gathering data");
 /*		DataGenerator generator = event.getGenerator();
 		PackOutput output = generator.getPackOutput();
 		ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
@@ -146,9 +147,5 @@ public class BattleofgodsMod {
                 )
         );
 		// Füge den Tag-Provider für Items hinzu
-		//generator.addProvider(event.includeServer(), new SubClassTagProvider(output,InitSubClass.ITEM_OVERRIDE, lookupProvider, MODID, existingFileHelper));
 	}
-
-
-
 }
