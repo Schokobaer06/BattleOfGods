@@ -9,6 +9,6 @@ import net.minecraft.world.item.crafting.Ingredient;
 
 public class ItemCopperBroadsword extends Broadsword {
     public ItemCopperBroadsword() {
-        super(0, 0,Ingredient.of(ItemTags.create(new ResourceLocation("minecraft:ingots/copper"))), 3, 1.6f, new Properties(), InitRarity.WHITE, InitTier.TIER_1);
+        super(0, 0,Ingredient.of(ItemTags.create(new ResourceLocation("minecraft:ingots/copper"))), 5, 1.5f, new Properties(), InitRarity.WHITE, InitTier.TIER_1);
     }
 }

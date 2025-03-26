@@ -1,6 +1,7 @@
 package com.schokobaer.battleofgods.mechanics.item.deprecated;
-import com.schokobaer.battleofgods.mechanics.tier.Tier;
+
 import com.schokobaer.battleofgods.mechanics.rarity.Rarity;
+import com.schokobaer.battleofgods.mechanics.tier.Tier;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.Style;
 import net.minecraft.tags.TagKey;

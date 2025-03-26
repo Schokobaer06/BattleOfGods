@@ -3,26 +3,17 @@ package com.schokobaer.battleofgods.mechanics.item.subClass;
 import com.schokobaer.battleofgods.init.InitMainClass;
 import com.schokobaer.battleofgods.init.InitSubClass;
 import com.schokobaer.battleofgods.mechanics.item.AbstractSubClass;
-
-import com.schokobaer.battleofgods.mechanics.item.SubClassMethods;
-import com.schokobaer.battleofgods.mechanics.item.override.Item;
-import net.minecraft.network.chat.Component;
+import com.schokobaer.battleofgods.mechanics.item.override.ItemOverride;
+import com.schokobaer.battleofgods.mechanics.item.override.SwordItemOverride;
 import net.minecraft.tags.TagKey;
-//import net.minecraft.world.item.*;
-
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Tier;
-import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.crafting.Ingredient;
-import net.minecraft.world.level.Level;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.registries.RegistryObject;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.List;
 
-public class Broadsword extends com.schokobaer.battleofgods.mechanics.item.override.SwordItem {
+public class Broadsword extends SwordItemOverride {
     public Broadsword(float attackDamageBonus, int enchantmentValue, Ingredient repairMaterial, int attackDamage, float attackSpeed, Properties properties, RegistryObject<com.schokobaer.battleofgods.mechanics.rarity.Rarity> rarity, RegistryObject<com.schokobaer.battleofgods.mechanics.tier.Tier> gameTier) {
         super(new Tier() {
             @Override
@@ -32,7 +23,7 @@ public class Broadsword extends com.schokobaer.battleofgods.mechanics.item.overr
 
             @Override
             public float getSpeed() {
-                return 1.6f;
+                return 0;
             }
 
             @Override
@@ -54,12 +45,12 @@ public class Broadsword extends com.schokobaer.battleofgods.mechanics.item.overr
             public @NotNull Ingredient getRepairIngredient() {
                 return repairMaterial;
             }
-        }, attackDamage, attackSpeed, properties, new AbstractSubClass(InitMainClass.MELEE,rarity,gameTier, InitSubClass.BROADSWORD) {});
+        }, attackDamage-1, attackSpeed-4, properties, new AbstractSubClass(InitMainClass.MELEE, rarity, gameTier, InitSubClass.BROADSWORD) {});
     }
     public Broadsword(Tier tier, int attackDamage, float attackSpeed, Properties properties, RegistryObject<com.schokobaer.battleofgods.mechanics.rarity.Rarity> rarity, RegistryObject<com.schokobaer.battleofgods.mechanics.tier.Tier> gameTier) {
-        super(tier, attackDamage, attackSpeed, properties, new AbstractSubClass(InitMainClass.MELEE,rarity,gameTier, InitSubClass.BROADSWORD){});}
+        super(tier, attackDamage, attackSpeed, properties, new AbstractSubClass(InitMainClass.MELEE, rarity, gameTier, InitSubClass.BROADSWORD) {});}
 
-    public Broadsword(TagKey<Item> tag){
+    public Broadsword(TagKey<ItemOverride> tag){
         super(new Tier() {
             @Override
             public int getUses() {
@@ -90,10 +81,14 @@ public class Broadsword extends com.schokobaer.battleofgods.mechanics.item.overr
             public Ingredient getRepairIngredient() {
                 return null;
             }
-        }, 0, 0, new Properties(), new AbstractSubClass("broadsword", InitMainClass.MELEE,tag){});
+        }, 0, 0, new Properties(), new AbstractSubClass("broadsword", InitMainClass.MELEE, tag) {});
     }
-
-
+    /*
+    @Override
+    public Component getName(ItemStack stack) {
+        //Component name = super.getName(stack);
+        return getSubClassMethods().getName(super.getName(stack));
+    }*/
 
     @Override
     public boolean hasCraftingRemainingItem(ItemStack stack) {

@@ -1,8 +1,6 @@
 package com.schokobaer.battleofgods.mechanics.item;
 
-import net.minecraft.data.Main;
 import net.minecraft.tags.TagKey;
-import net.minecraft.world.item.Item;
 
 public class MainClass {
     private final String name;

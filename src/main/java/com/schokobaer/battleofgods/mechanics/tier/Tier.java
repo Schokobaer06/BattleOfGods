@@ -1,7 +1,6 @@
 package com.schokobaer.battleofgods.mechanics.tier;
 
 import net.minecraft.tags.TagKey;
-import net.minecraft.world.item.Item;
 
 public class Tier {
     private final String name;

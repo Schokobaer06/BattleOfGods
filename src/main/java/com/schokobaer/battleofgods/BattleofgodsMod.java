@@ -1,23 +1,9 @@
 package com.schokobaer.battleofgods;
 
-import com.schokobaer.battleofgods.init.*;
-import com.schokobaer.battleofgods.mechanics.item.MainClass;
-import com.schokobaer.battleofgods.mechanics.item.override.Item;
-import com.schokobaer.battleofgods.mechanics.rarity.Rarity;
-import com.schokobaer.battleofgods.mechanics.recipe.RecipeHandler;
-import com.schokobaer.battleofgods.mechanics.tier.Tier;
-import net.minecraft.core.HolderLookup;
-import net.minecraft.data.DataGenerator;
-import net.minecraft.data.PackOutput;
-import net.minecraftforge.common.data.ExistingFileHelper;
-import net.minecraftforge.data.event.GatherDataEvent;
-import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.RegisterEvent;
-import net.minecraftforge.registries.RegistryBuilder;
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.LogManager;
 
+import net.minecraftforge.registries.RegistryBuilder;
 import net.minecraftforge.network.simple.SimpleChannel;
 import net.minecraftforge.network.NetworkRegistry;
 import net.minecraftforge.network.NetworkEvent;
@@ -32,7 +18,6 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.FriendlyByteBuf;
 
-import java.util.concurrent.CompletableFuture;
 import java.util.function.Supplier;
 import java.util.function.Function;
 import java.util.function.BiConsumer;
@@ -42,8 +27,20 @@ import java.util.Collection;
 import java.util.ArrayList;
 import java.util.AbstractMap;
 
-@Mod(BattleofgodsMod.MODID)
-@Mod.EventBusSubscriber(modid = BattleofgodsMod.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
+import com.schokobaer.battleofgods.mechanics.tier.Tier;
+import com.schokobaer.battleofgods.mechanics.rarity.Rarity;
+import com.schokobaer.battleofgods.mechanics.item.MainClass;
+import com.schokobaer.battleofgods.init.InitTier;
+import com.schokobaer.battleofgods.init.InitSubClass;
+import com.schokobaer.battleofgods.init.InitRarity;
+import com.schokobaer.battleofgods.init.InitMainClass;
+import com.schokobaer.battleofgods.init.InitItem;
+import com.schokobaer.battleofgods.init.BattleofgodsModTabs;
+import com.schokobaer.battleofgods.init.BattleofgodsModMenus;
+import com.schokobaer.battleofgods.init.BattleofgodsModItems;
+import com.schokobaer.battleofgods.init.BattleofgodsModBlocks;
+
+@Mod("battleofgods")
 public class BattleofgodsMod {
 	public static final Logger LOGGER = LogManager.getLogger(BattleofgodsMod.class);
 	public static final String MODID = "battleofgods";
@@ -53,29 +50,20 @@ public class BattleofgodsMod {
 		// End of user code block mod constructor
 		MinecraftForge.EVENT_BUS.register(this);
 		IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
-
+		BattleofgodsModBlocks.REGISTRY.register(bus);
+		BattleofgodsModItems.REGISTRY.register(bus);
+		BattleofgodsModTabs.REGISTRY.register(bus);
+		BattleofgodsModMenus.REGISTRY.register(bus);
 		// Start of user code block mod init
-		InitTier.TIERS.makeRegistry(
-				()-> new RegistryBuilder<Tier>().setName(InitTier.TIER_KEY.location()));
-		InitRarity.RARITIES.makeRegistry(
-				() -> new RegistryBuilder<Rarity>().setName(InitRarity.RARITY_KEY.location()));
-		InitMainClass.MAIN_CLASSES.makeRegistry(
-				() -> new RegistryBuilder<MainClass>().setName(InitMainClass.MAIN_CLASS_KEY.location()));
-		InitSubClass.SUBCLASSES.makeRegistry(
-				()-> new RegistryBuilder<Item>().setName(InitSubClass.ITEM_KEY.location()));
-
+		InitTier.TIERS.makeRegistry(() -> new RegistryBuilder<Tier>().setName(InitTier.TIER_KEY.location()));
+		InitRarity.RARITIES.makeRegistry(() -> new RegistryBuilder<Rarity>().setName(InitRarity.RARITY_KEY.location()));
+		InitMainClass.MAIN_CLASSES.makeRegistry(() -> new RegistryBuilder<MainClass>().setName(InitMainClass.MAIN_CLASS_KEY.location()));
 		InitTier.TIERS.register(bus);
 		InitRarity.RARITIES.register(bus);
 		InitMainClass.MAIN_CLASSES.register(bus);
 		InitSubClass.SUBCLASSES.register(bus);
-
 		InitItem.ITEMS.register(bus);
 		// End of user code block mod init
-		BattleofgodsModBlocks.REGISTRY.register(bus);
-		BattleofgodsModItems.REGISTRY.register(bus);
-		BattleofgodsModTabs.REGISTRY.register(bus);
-
-
 	}
 
 	// Start of user code block mod methods
@@ -109,34 +97,4 @@ public class BattleofgodsMod {
 			workQueue.removeAll(actions);
 		}
 	}
-	@SubscribeEvent
-	public static void onCommonSetup(FMLCommonSetupEvent event) {
-		// Lade die Rezepte
-		RecipeHandler.loadRecipes();
-	}
-
-	@SubscribeEvent
-	public static void registerRecipeTypes(RegisterEvent event) {
-		event.register(ForgeRegistries.Keys.RECIPE_TYPES, helper -> {
-			helper.register(new ResourceLocation("battleofgods:default_recipe"), new RecipeHandler.BattleRecipe.Type());
-		});
-	}
-
-	@SubscribeEvent
-	public static void registerRecipeSerializers(RegisterEvent event) {
-		event.register(ForgeRegistries.Keys.RECIPE_SERIALIZERS, helper -> {
-			helper.register(new ResourceLocation("battleofgods:default_recipe"), RecipeHandler.BattleRecipe.SERIALIZER);
-		});
-	}
-	@SubscribeEvent
-	public void gatherData(GatherDataEvent event) {
-		DataGenerator generator = event.getGenerator();
-		PackOutput output = generator.getPackOutput();
-		ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
-		CompletableFuture<HolderLookup.Provider> lookupProvider = event.getLookupProvider();
-
-		// Füge den Tag-Provider für Items hinzu
-		//generator.addProvider(event.includeServer(), new ModTagProvider(output, Registry.ITEM_REGISTRY, lookupProvider, MODID, existingFileHelper));
-	}
-
 }
