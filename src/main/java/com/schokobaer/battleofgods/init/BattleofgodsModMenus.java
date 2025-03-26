@@ -11,9 +11,10 @@ import net.minecraftforge.common.extensions.IForgeMenuType;
 
 import net.minecraft.world.inventory.MenuType;
 
+import com.schokobaer.battleofgods.world.inventory.TestGuiMenu;
 import com.schokobaer.battleofgods.BattleofgodsMod;
 
 public class BattleofgodsModMenus {
 	public static final DeferredRegister<MenuType<?>> REGISTRY = DeferredRegister.create(ForgeRegistries.MENU_TYPES, BattleofgodsMod.MODID);
-	public static final RegistryObject<MenuType<GuiTestMenu>> GUI_TEST = REGISTRY.register("gui_test", () -> IForgeMenuType.create(GuiTestMenu::new));
+	public static final RegistryObject<MenuType<TestGuiMenu>> TEST_GUI = REGISTRY.register("test_gui", () -> IForgeMenuType.create(TestGuiMenu::new));
 }

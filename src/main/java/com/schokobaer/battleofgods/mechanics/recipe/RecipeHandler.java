@@ -1,11 +1,13 @@
 package com.schokobaer.battleofgods.mechanics.recipe;
 
 import com.google.gson.*;
+import com.schokobaer.battleofgods.BattleofgodsMod;
 import net.minecraft.core.RegistryAccess;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.Container;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
@@ -17,43 +19,66 @@ import net.minecraftforge.common.crafting.CraftingHelper;
 import net.minecraftforge.registries.ForgeRegistries;
 
 import java.io.FileReader;
+import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
+
+import static net.minecraft.util.datafix.fixes.BlockEntitySignTextStrictJsonFix.GSON;
 
 public class RecipeHandler {
     public static final List<BattleRecipe> RECIPES = new ArrayList<>();
 
 
     public static void loadRecipes() {
+        //RECIPES.clear();
         Path recipeDir = Paths.get("data/battleofgods/recipes");
-        if (!Files.exists(recipeDir)) return;
 
-        Gson gson = new GsonBuilder()
-                .registerTypeAdapter(BattleRecipe.class, new BattleRecipe.Deserializer())
-                .create();
+        if (!Files.exists(recipeDir)) return;
 
         try (var files = Files.walk(recipeDir)) {
             files.filter(Files::isRegularFile)
                     .filter(path -> path.toString().endsWith(".json"))
                     .forEach(path -> {
                         try (FileReader reader = new FileReader(path.toFile())) {
-                            BattleRecipe recipe = gson.fromJson(reader, BattleRecipe.class);
+                            BattleRecipe recipe = GSON.fromJson(reader, BattleRecipe.class);
                             if (recipe != null && recipe.isValid()) {
                                 RECIPES.add(recipe);
-                                //System.out.println(RECIPES);
                             }
                         } catch (Exception e) {
-                            System.err.println("Failed to load recipe: " + path);
-                            e.printStackTrace();
+                            BattleofgodsMod.LOGGER.error("Fehler beim Laden von Rezept: {}", path, e);
                         }
                     });
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (IOException e) {
+            BattleofgodsMod.LOGGER.error("Rezeptverzeichnis nicht gefunden!", e);
         }
+    }
+
+    public static List<BattleRecipe> getCraftableRecipes(Player player) {
+        return RECIPES.stream()
+                .filter(recipe -> hasRequiredItems(player, recipe))
+                .collect(Collectors.toList());
+    }
+
+    private static boolean hasRequiredItems(Player player, BattleRecipe recipe) {
+        for (BattleRecipe.IngredientEntry entry : recipe.getInputs()) {
+            int required = entry.count();
+            int available = 0;
+
+            for (ItemStack stack : player.getInventory().items) {
+                if (entry.ingredient().test(stack)) {
+                    available += stack.getCount();
+                    if (available >= required) break;
+                }
+            }
+
+            if (available < required) return false;
+        }
+        return true;
     }
 
     public static class BattleRecipe implements Recipe<Container> {
@@ -129,6 +154,10 @@ public class RecipeHandler {
             return Type.INSTANCE;
         }
 
+        public List<IngredientEntry> getInputs() {
+            return this.inputs;
+        }
+
         public static class Type implements RecipeType<BattleRecipe> {
             public static final Type INSTANCE = new Type();
             public Type() {}
@@ -149,16 +178,16 @@ public class RecipeHandler {
                 JsonArray items = obj.getAsJsonArray("items");
                 for (JsonElement item : items) {
                     JsonObject entry = item.getAsJsonObject();
-                    int count = entry.get("count").getAsInt();
-                    if (count <= 0) throw new JsonParseException("Invalid count: " + count);
+                    //int count = entry.get("count").getAsInt();
+                    //if (count <= 0) throw new JsonParseException("Invalid count: " + count);
 
                     if (entry.has("item")) {
                         ItemStack stack = CraftingHelper.getItemStack(entry, true);
-                        inputs.add(new IngredientEntry(Ingredient.of(stack), count));
+                        inputs.add(new IngredientEntry(Ingredient.of(stack), entry.get("count").getAsInt()));
                     } else if (entry.has("tag")) {
                         ResourceLocation tagId = new ResourceLocation(entry.get("tag").getAsString());
                         TagKey<Item> tagKey = TagKey.create(ForgeRegistries.ITEMS.getRegistryKey(), tagId);
-                        inputs.add(new IngredientEntry(Ingredient.of(tagKey), count));
+                        inputs.add(new IngredientEntry(Ingredient.of(tagKey), entry.get("count").getAsInt()));
                     }
                 }
 

@@ -11,12 +11,14 @@ import net.minecraftforge.api.distmarker.Dist;
 
 import net.minecraft.client.gui.screens.MenuScreens;
 
+import com.schokobaer.battleofgods.client.gui.TestGuiScreen;
+
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class BattleofgodsModScreens {
 	@SubscribeEvent
 	public static void clientLoad(FMLClientSetupEvent event) {
 		event.enqueueWork(() -> {
-			MenuScreens.register(BattleofgodsModMenus.GUI_TEST.get(), GuiTestScreen::new);
+			MenuScreens.register(BattleofgodsModMenus.TEST_GUI.get(), TestGuiScreen::new);
 		});
 	}
 }
