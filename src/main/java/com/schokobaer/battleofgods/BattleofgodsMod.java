@@ -9,6 +9,7 @@ import com.schokobaer.battleofgods.mechanics.tag.SubClassTagProvider;
 import com.schokobaer.battleofgods.mechanics.tier.Tier;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
+import net.minecraft.data.DataProvider;
 import net.minecraft.data.PackOutput;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.common.data.ExistingFileHelper;
@@ -129,13 +130,23 @@ public class BattleofgodsMod {
 
 	@SubscribeEvent
 	public void gatherData(GatherDataEvent event) {
-		DataGenerator generator = event.getGenerator();
+/*		DataGenerator generator = event.getGenerator();
 		PackOutput output = generator.getPackOutput();
 		ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
 		CompletableFuture<HolderLookup.Provider> lookupProvider = event.getLookupProvider();
-
+*/
+		event.getGenerator().addProvider(
+				event.includeServer(),
+                (DataProvider.Factory<SubClassTagProvider>) output -> new SubClassTagProvider(
+                        output,
+                        InitSubClass.ITEM_OVERRIDE,
+                        event.getLookupProvider(),
+                        MODID,
+                        event.getExistingFileHelper()
+                )
+        );
 		// Füge den Tag-Provider für Items hinzu
-		generator.addProvider(event.includeServer(), new SubClassTagProvider(output,InitSubClass.ITEM_OVERRIDE, lookupProvider, MODID, existingFileHelper));
+		//generator.addProvider(event.includeServer(), new SubClassTagProvider(output,InitSubClass.ITEM_OVERRIDE, lookupProvider, MODID, existingFileHelper));
 	}
 
 
