@@ -30,8 +30,8 @@ public class WorkbenchMenu extends AbstractContainerMenu implements Supplier<Map
     }
 
     @Override
-    public boolean stillValid(Player p_38874_) {
-        return false;
+    public boolean stillValid(Player player) {
+        return player.isAlive();
     }
 
     @Override
