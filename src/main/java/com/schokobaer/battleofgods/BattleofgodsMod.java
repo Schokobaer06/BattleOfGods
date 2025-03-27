@@ -1,5 +1,15 @@
 package com.schokobaer.battleofgods;
 
+import com.schokobaer.battleofgods.mechanics.recipe.RecipeHandler;
+import com.schokobaer.battleofgods.mechanics.tag.MainClassTagProvider;
+import com.schokobaer.battleofgods.mechanics.tag.RarityTagProvider;
+import com.schokobaer.battleofgods.mechanics.tag.SubClassTagProvider;
+import com.schokobaer.battleofgods.mechanics.tag.TierTagProvider;
+import net.minecraft.data.DataProvider;
+import net.minecraftforge.data.event.GatherDataEvent;
+import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.registries.RegisterEvent;
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.LogManager;
 
@@ -64,6 +74,9 @@ public class BattleofgodsMod {
 		InitSubClass.SUBCLASSES.register(bus);
 		InitItem.ITEMS.register(bus);
 		// End of user code block mod init
+
+
+		//bus.addListener(this::on);
 	}
 
 	// Start of user code block mod methods
@@ -84,6 +97,8 @@ public class BattleofgodsMod {
 			workQueue.add(new AbstractMap.SimpleEntry<>(action, tick));
 	}
 
+
+
 	@SubscribeEvent
 	public void tick(TickEvent.ServerTickEvent event) {
 		if (event.phase == TickEvent.Phase.END) {
@@ -96,5 +111,79 @@ public class BattleofgodsMod {
 			actions.forEach(e -> e.getKey().run());
 			workQueue.removeAll(actions);
 		}
+	}
+	@SubscribeEvent
+	public static void onCommonSetup(FMLCommonSetupEvent event) {
+		// Lade die Rezepte
+		LOGGER.info("Loading recipes");
+		RecipeHandler.loadRecipes();
+	}
+
+	@SubscribeEvent
+	public static void registerRecipeTypes(RegisterEvent event) {
+		event.register(ForgeRegistries.Keys.RECIPE_TYPES, helper -> {
+			helper.register(new ResourceLocation("battleofgods:default_recipe"), new RecipeHandler.BattleRecipe.Type());
+		});
+	}
+
+	@SubscribeEvent
+	public static void registerRecipeSerializers(RegisterEvent event) {
+		event.register(ForgeRegistries.Keys.RECIPE_SERIALIZERS, helper -> {
+			helper.register(new ResourceLocation("battleofgods:default_recipe"), RecipeHandler.BattleRecipe.SERIALIZER);
+		});
+	}
+
+	@SubscribeEvent
+	public void gatherData(GatherDataEvent event) {
+		LOGGER.info("Gathering data");
+/*		DataGenerator generator = event.getGenerator();
+		PackOutput output = generator.getPackOutput();
+		ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
+		CompletableFuture<HolderLookup.Provider> lookupProvider = event.getLookupProvider();
+*/
+		LOGGER.info("Generating subClass tags");
+		event.getGenerator().addProvider(
+				event.includeServer(),
+				(DataProvider.Factory<SubClassTagProvider>) output -> new SubClassTagProvider(
+						output,
+						InitSubClass.ITEM_OVERRIDE,
+						event.getLookupProvider(),
+						MODID,
+						event.getExistingFileHelper()
+				)
+		);
+		LOGGER.info("Generating mainClass tags");
+		event.getGenerator().addProvider(
+				event.includeServer(),
+				(DataProvider.Factory<MainClassTagProvider>) output -> new MainClassTagProvider(
+						output,
+						InitMainClass.MAIN_CLASS_KEY,
+						event.getLookupProvider(),
+						MODID,
+						event.getExistingFileHelper()
+				)
+		);
+		LOGGER.info("Generating Tier tags");
+		event.getGenerator().addProvider(
+				event.includeServer(),
+				(DataProvider.Factory<TierTagProvider>) output -> new TierTagProvider(
+						output,
+						InitTier.TIER_KEY,
+						event.getLookupProvider(),
+						MODID,
+						event.getExistingFileHelper()
+				)
+		);
+		LOGGER.info("Generating Rarity tags");
+		event.getGenerator().addProvider(
+				event.includeServer(),
+				(DataProvider.Factory<RarityTagProvider>) output -> new RarityTagProvider(
+						output,
+						InitRarity.RARITY_KEY,
+						event.getLookupProvider(),
+						MODID,
+						event.getExistingFileHelper()
+				)
+		);
 	}
 }
