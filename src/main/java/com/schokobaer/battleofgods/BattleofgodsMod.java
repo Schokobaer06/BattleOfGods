@@ -7,6 +7,7 @@ import com.schokobaer.battleofgods.mechanics.tag.SubClassTagProvider;
 import com.schokobaer.battleofgods.mechanics.tag.TierTagProvider;
 import net.minecraft.data.DataProvider;
 import net.minecraftforge.data.event.GatherDataEvent;
+import net.minecraftforge.eventbus.api.GenericEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegisterEvent;
@@ -60,10 +61,6 @@ public class BattleofgodsMod {
 		// End of user code block mod constructor
 		MinecraftForge.EVENT_BUS.register(this);
 		IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
-		BattleofgodsModBlocks.REGISTRY.register(bus);
-		BattleofgodsModItems.REGISTRY.register(bus);
-		BattleofgodsModTabs.REGISTRY.register(bus);
-		BattleofgodsModMenus.REGISTRY.register(bus);
 		// Start of user code block mod init
 		InitTier.TIERS.makeRegistry(() -> new RegistryBuilder<Tier>().setName(InitTier.TIER_KEY.location()));
 		InitRarity.RARITIES.makeRegistry(() -> new RegistryBuilder<Rarity>().setName(InitRarity.RARITY_KEY.location()));
@@ -74,9 +71,19 @@ public class BattleofgodsMod {
 		InitSubClass.SUBCLASSES.register(bus);
 		InitItem.ITEMS.register(bus);
 		// End of user code block mod init
+		BattleofgodsModBlocks.REGISTRY.register(bus);
+		BattleofgodsModItems.REGISTRY.register(bus);
+		BattleofgodsModTabs.REGISTRY.register(bus);
+		BattleofgodsModMenus.REGISTRY.register(bus);
 
+		//bus.addGenericListener(FMLCommonSetupEvent.class,(GenericEvent<? extends FMLCommonSetupEvent> event) -> onCommonSetup((FMLCommonSetupEvent) event.getGenericType()));;
+		//bus.addGenericListener(RegisterEvent.class,(GenericEvent<? extends RegisterEvent> event) -> registerRecipeTypes((RegisterEvent) event.getGenericType()));;
+		//bus.addGenericListener(RegisterEvent.class,(GenericEvent<? extends RegisterEvent> event) -> registerRecipeSerializers((RegisterEvent) event.getGenericType()));;
+		bus.addListener(BattleofgodsMod::onCommonSetup);
+		bus.addListener(BattleofgodsMod::registerRecipeTypes);
+		bus.addListener(BattleofgodsMod::registerRecipeSerializers);
+		bus.addListener(this::gatherData);
 
-		//bus.addListener(this::on);
 	}
 
 	// Start of user code block mod methods
@@ -116,11 +123,12 @@ public class BattleofgodsMod {
 	public static void onCommonSetup(FMLCommonSetupEvent event) {
 		// Lade die Rezepte
 		LOGGER.info("Loading recipes");
-		RecipeHandler.loadRecipes();
+		//RecipeHandler.loadRecipes();
 	}
 
 	@SubscribeEvent
 	public static void registerRecipeTypes(RegisterEvent event) {
+		LOGGER.info("Registering recipe types");
 		event.register(ForgeRegistries.Keys.RECIPE_TYPES, helper -> {
 			helper.register(new ResourceLocation("battleofgods:default_recipe"), new RecipeHandler.BattleRecipe.Type());
 		});
@@ -128,6 +136,7 @@ public class BattleofgodsMod {
 
 	@SubscribeEvent
 	public static void registerRecipeSerializers(RegisterEvent event) {
+		LOGGER.info("Registering recipe serializers");
 		event.register(ForgeRegistries.Keys.RECIPE_SERIALIZERS, helper -> {
 			helper.register(new ResourceLocation("battleofgods:default_recipe"), RecipeHandler.BattleRecipe.SERIALIZER);
 		});
@@ -136,11 +145,6 @@ public class BattleofgodsMod {
 	@SubscribeEvent
 	public void gatherData(GatherDataEvent event) {
 		LOGGER.info("Gathering data");
-/*		DataGenerator generator = event.getGenerator();
-		PackOutput output = generator.getPackOutput();
-		ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
-		CompletableFuture<HolderLookup.Provider> lookupProvider = event.getLookupProvider();
-*/
 		LOGGER.info("Generating subClass tags");
 		event.getGenerator().addProvider(
 				event.includeServer(),

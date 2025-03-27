@@ -51,15 +51,14 @@ public class RecipeHandler {
                             BattleRecipe recipe = gson.fromJson(reader, BattleRecipe.class);
                             if (recipe != null && recipe.isValid()) {
                                 RECIPES.add(recipe);
-                                //System.out.println(RECIPES);
+                                BattleofgodsMod.LOGGER.info("Successfully loaded recipe: {}", recipe.getId());
                             }
                         } catch (Exception e) {
-                            System.err.println("Failed to load recipe: " + path);
-                            e.printStackTrace();
+                            BattleofgodsMod.LOGGER.error("Failed to load recipe: {}", path.getFileName(), e);
                         }
                     });
         } catch (Exception e) {
-            e.printStackTrace();
+            BattleofgodsMod.LOGGER.error("Failed to load recipes!", e);
         }
     }
 
