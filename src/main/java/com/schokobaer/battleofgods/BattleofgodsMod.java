@@ -123,12 +123,12 @@ public class BattleofgodsMod {
 	public static void onCommonSetup(FMLCommonSetupEvent event) {
 		// Lade die Rezepte
 		LOGGER.info("Loading recipes");
-		//RecipeHandler.loadRecipes();
+		RecipeHandler.loadRecipes();
 	}
 
 	@SubscribeEvent
 	public static void registerRecipeTypes(RegisterEvent event) {
-		LOGGER.info("Registering recipe types");
+		//LOGGER.info("Registering recipe types");
 		event.register(ForgeRegistries.Keys.RECIPE_TYPES, helper -> {
 			helper.register(new ResourceLocation("battleofgods:default_recipe"), new RecipeHandler.BattleRecipe.Type());
 		});
@@ -136,7 +136,7 @@ public class BattleofgodsMod {
 
 	@SubscribeEvent
 	public static void registerRecipeSerializers(RegisterEvent event) {
-		LOGGER.info("Registering recipe serializers");
+		//LOGGER.info("Registering recipe serializers");
 		event.register(ForgeRegistries.Keys.RECIPE_SERIALIZERS, helper -> {
 			helper.register(new ResourceLocation("battleofgods:default_recipe"), RecipeHandler.BattleRecipe.SERIALIZER);
 		});
