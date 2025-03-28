@@ -1,7 +1,6 @@
 
 package com.schokobaer.battleofgods.world.inventory;
 
-import net.minecraftforge.items.SlotItemHandler;
 import net.minecraftforge.items.ItemStackHandler;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.common.capabilities.ForgeCapabilities;
@@ -42,7 +41,7 @@ public class TestGuiMenu extends AbstractContainerMenu implements Supplier<Map<I
 		super(BattleofgodsModMenus.TEST_GUI.get(), id);
 		this.entity = inv.player;
 		this.world = inv.player.level();
-		this.internal = new ItemStackHandler(2);
+		this.internal = new ItemStackHandler(0);
 		BlockPos pos = null;
 		if (extraData != null) {
 			pos = extraData.readBlockPos();
@@ -77,21 +76,6 @@ public class TestGuiMenu extends AbstractContainerMenu implements Supplier<Map<I
 					});
 			}
 		}
-		this.customSlots.put(0, this.addSlot(new SlotItemHandler(internal, 0, 12, 39) {
-			private final int slot = 0;
-			private int x = TestGuiMenu.this.x;
-			private int y = TestGuiMenu.this.y;
-
-			@Override
-			public boolean mayPlace(ItemStack stack) {
-				return false;
-			}
-		}));
-		this.customSlots.put(1, this.addSlot(new SlotItemHandler(internal, 1, 36, 35) {
-			private final int slot = 1;
-			private int x = TestGuiMenu.this.x;
-			private int y = TestGuiMenu.this.y;
-		}));
 		for (int si = 0; si < 3; ++si)
 			for (int sj = 0; sj < 9; ++sj)
 				this.addSlot(new Slot(inv, sj + (si + 1) * 9, 0 + 8 + sj * 18, 0 + 84 + si * 18));
@@ -119,16 +103,16 @@ public class TestGuiMenu extends AbstractContainerMenu implements Supplier<Map<I
 		if (slot != null && slot.hasItem()) {
 			ItemStack itemstack1 = slot.getItem();
 			itemstack = itemstack1.copy();
-			if (index < 2) {
-				if (!this.moveItemStackTo(itemstack1, 2, this.slots.size(), true))
+			if (index < 0) {
+				if (!this.moveItemStackTo(itemstack1, 0, this.slots.size(), true))
 					return ItemStack.EMPTY;
 				slot.onQuickCraft(itemstack1, itemstack);
-			} else if (!this.moveItemStackTo(itemstack1, 0, 2, false)) {
-				if (index < 2 + 27) {
-					if (!this.moveItemStackTo(itemstack1, 2 + 27, this.slots.size(), true))
+			} else if (!this.moveItemStackTo(itemstack1, 0, 0, false)) {
+				if (index < 0 + 27) {
+					if (!this.moveItemStackTo(itemstack1, 0 + 27, this.slots.size(), true))
 						return ItemStack.EMPTY;
 				} else {
-					if (!this.moveItemStackTo(itemstack1, 2, 2 + 27, false))
+					if (!this.moveItemStackTo(itemstack1, 0, 0 + 27, false))
 						return ItemStack.EMPTY;
 				}
 				return ItemStack.EMPTY;

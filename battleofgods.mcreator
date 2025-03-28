@@ -85,8 +85,8 @@
       "registry_name": "test_gui",
       "metadata": {
         "files": [
-          "src/main/java/com/schokobaer/battleofgods/world/inventory/TestGuiMenu.java",
-          "src/main/java/com/schokobaer/battleofgods/client/gui/TestGuiScreen.java"
+          "src/main/java/com/schokobaer/battleofgods/client/gui/TestGuiScreen.java",
+          "src/main/java/com/schokobaer/battleofgods/world/inventory/TestGuiMenu.java"
         ]
       }
     }

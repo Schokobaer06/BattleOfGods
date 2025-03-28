@@ -6,9 +6,7 @@ import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.chat.Component;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
-import net.minecraft.client.gui.components.PlainTextButton;
 import net.minecraft.client.gui.components.ImageButton;
-import net.minecraft.client.gui.components.Button;
 import net.minecraft.client.gui.GuiGraphics;
 
 import java.util.HashMap;
@@ -22,9 +20,9 @@ public class TestGuiScreen extends AbstractContainerScreen<TestGuiMenu> {
 	private final Level world;
 	private final int x, y, z;
 	private final Player entity;
-	Button button_test_button;
-	Button button_test_button_undecorated;
-	ImageButton imagebutton_gui_test;
+	ImageButton imagebutton_crafting_hammer;
+	ImageButton imagebutton_recipe_button;
+	ImageButton imagebutton_recipe_button1;
 
 	public TestGuiScreen(TestGuiMenu container, Inventory inventory, Component text) {
 		super(container, inventory, text);
@@ -44,8 +42,6 @@ public class TestGuiScreen extends AbstractContainerScreen<TestGuiMenu> {
 		this.renderBackground(guiGraphics);
 		super.render(guiGraphics, mouseX, mouseY, partialTicks);
 		this.renderTooltip(guiGraphics, mouseX, mouseY);
-		if (mouseX > leftPos + 38 && mouseX < leftPos + 62 && mouseY > topPos + 43 && mouseY < topPos + 67)
-			guiGraphics.renderTooltip(font, Component.translatable("gui.battleofgods.test_gui.tooltip_test_tooltip"), mouseX, mouseY);
 	}
 
 	@Override
@@ -54,9 +50,6 @@ public class TestGuiScreen extends AbstractContainerScreen<TestGuiMenu> {
 		RenderSystem.enableBlend();
 		RenderSystem.defaultBlendFunc();
 		guiGraphics.blit(texture, this.leftPos, this.topPos, 0, 0, this.imageWidth, this.imageHeight, this.imageWidth, this.imageHeight);
-
-		guiGraphics.blit(new ResourceLocation("battleofgods:textures/screens/gui_test.png"), this.leftPos + 55, this.topPos + 4, 0, 0, 88, 83, 88, 83);
-
 		RenderSystem.disableBlend();
 	}
 
@@ -71,23 +64,22 @@ public class TestGuiScreen extends AbstractContainerScreen<TestGuiMenu> {
 
 	@Override
 	protected void renderLabels(GuiGraphics guiGraphics, int mouseX, int mouseY) {
-		guiGraphics.drawString(this.font, Component.translatable("gui.battleofgods.test_gui.label_test_text"), 8, 5, -12829636, false);
 	}
 
 	@Override
 	public void init() {
 		super.init();
-		button_test_button = Button.builder(Component.translatable("gui.battleofgods.test_gui.button_test_button"), e -> {
-		}).bounds(this.leftPos + -10, this.topPos + 15, 82, 20).build();
-		guistate.put("button:button_test_button", button_test_button);
-		this.addRenderableWidget(button_test_button);
-		button_test_button_undecorated = new PlainTextButton(this.leftPos + -19, this.topPos + 95, 145, 20, Component.translatable("gui.battleofgods.test_gui.button_test_button_undecorated"), e -> {
-		}, this.font);
-		guistate.put("button:button_test_button_undecorated", button_test_button_undecorated);
-		this.addRenderableWidget(button_test_button_undecorated);
-		imagebutton_gui_test = new ImageButton(this.leftPos + 118, this.topPos + 2, 176, 166, 0, 0, 166, new ResourceLocation("battleofgods:textures/screens/atlas/imagebutton_gui_test.png"), 176, 332, e -> {
+		imagebutton_crafting_hammer = new ImageButton(this.leftPos + 142, this.topPos + 53, 27, 27, 0, 0, 27, new ResourceLocation("battleofgods:textures/screens/atlas/imagebutton_crafting_hammer.png"), 27, 54, e -> {
 		});
-		guistate.put("button:imagebutton_gui_test", imagebutton_gui_test);
-		this.addRenderableWidget(imagebutton_gui_test);
+		guistate.put("button:imagebutton_crafting_hammer", imagebutton_crafting_hammer);
+		this.addRenderableWidget(imagebutton_crafting_hammer);
+		imagebutton_recipe_button = new ImageButton(this.leftPos + 8, this.topPos + 4, 16, 16, 0, 0, 16, new ResourceLocation("battleofgods:textures/screens/atlas/imagebutton_recipe_button.png"), 16, 32, e -> {
+		});
+		guistate.put("button:imagebutton_recipe_button", imagebutton_recipe_button);
+		this.addRenderableWidget(imagebutton_recipe_button);
+		imagebutton_recipe_button1 = new ImageButton(this.leftPos + 8, this.topPos + 66, 16, 16, 0, 0, 16, new ResourceLocation("battleofgods:textures/screens/atlas/imagebutton_recipe_button1.png"), 16, 32, e -> {
+		});
+		guistate.put("button:imagebutton_recipe_button1", imagebutton_recipe_button1);
+		this.addRenderableWidget(imagebutton_recipe_button1);
 	}
 }
