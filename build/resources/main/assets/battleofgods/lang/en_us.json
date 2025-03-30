@@ -1,10 +1,12 @@
 {
   "item.battleofgods.item_tier_1": "Tier 1",
-  "item.battleofgods.copper_short_sword": "Copper Short Sword",
-  "block.battleofgods.wooden_workbench": "Workbench",
+  "gui.battleofgods.test_gui.label_test_text": "test_text",
+  "gui.battleofgods.test_gui.button_test_button": "test_button",
   "item_group.battleofgods.tier_1": "Tier 1",
-  "item.battleofgods.copper_broadsword.description_1": "",
-  "item.battleofgods.copper_broadsword.description_0": "True Melee",
+  "gui.battleofgods.test_gui.button_test_button_undecorated": "test_button_undecorated",
+  "item.battleofgods.copper_shortsword": "Copper Shortsword",
+  "block.battleofgods.wooden_workbench": "Workbench",
+  "gui.battleofgods.test_gui.tooltip_test_tooltip": "test_tooltip",
   "item.battleofgods.copper_broadsword": "Copper Broadsword",
-  "item.battleofgods.copper_shortsword": "Copper Shortsword"
+  "rarity.battleofgods.white": "White"
 }

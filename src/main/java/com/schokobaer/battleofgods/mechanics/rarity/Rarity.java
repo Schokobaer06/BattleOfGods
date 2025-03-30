@@ -5,6 +5,14 @@ import com.schokobaer.battleofgods.BattleofgodsMod;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
 
+import javax.annotation.Nullable;
+
+/**
+ * Class for defining the rarity of an item
+ * The rarity is used to determine the color of the item
+ * The rarity can be static or animated
+ * The rarity can be used to determine the rarity of an item
+ */
 public class Rarity  {
     private final Either<Integer, ResourceLocation> color;
     private final boolean isAnimated;

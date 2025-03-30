@@ -35,28 +35,33 @@ public class RecipeHandler {
 
 
     public static void loadRecipes() {
-        //RECIPES.clear();
+        RECIPES.clear();
         Path recipeDir = Paths.get("data/battleofgods/recipes");
-
         if (!Files.exists(recipeDir)) return;
+
+        Gson gson = new GsonBuilder()
+                .registerTypeAdapter(BattleRecipe.class, new BattleRecipe.Deserializer())
+                .create();
 
         try (var files = Files.walk(recipeDir)) {
             files.filter(Files::isRegularFile)
                     .filter(path -> path.toString().endsWith(".json"))
                     .forEach(path -> {
                         try (FileReader reader = new FileReader(path.toFile())) {
-                            BattleRecipe recipe = GSON.fromJson(reader, BattleRecipe.class);
+                            BattleRecipe recipe = gson.fromJson(reader, BattleRecipe.class);
                             if (recipe != null && recipe.isValid()) {
                                 RECIPES.add(recipe);
+                                BattleofgodsMod.LOGGER.info("Successfully loaded recipe: {}", recipe.getId());
                             }
                         } catch (Exception e) {
-                            BattleofgodsMod.LOGGER.error("Fehler beim Laden von Rezept: {}", path, e);
+                            BattleofgodsMod.LOGGER.error("Failed to load recipe: {}", path.getFileName(), e);
                         }
                     });
-        } catch (IOException e) {
-            BattleofgodsMod.LOGGER.error("Rezeptverzeichnis nicht gefunden!", e);
+        } catch (Exception e) {
+            BattleofgodsMod.LOGGER.error("Failed to load recipes!", e);
         }
     }
+
 
     public static List<BattleRecipe> getCraftableRecipes(Player player) {
         return RECIPES.stream()
