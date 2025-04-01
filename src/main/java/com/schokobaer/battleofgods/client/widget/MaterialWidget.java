@@ -30,8 +30,10 @@ public class MaterialWidget extends AbstractWidget {
         RegistryAccess registryAccess = player.level().registryAccess();
 
         // 1. Rendere Item-Icon
-        ItemStack iconStack = entry.ingredient().getItems()[0];
-        guiGraphics.renderItem(iconStack, getX(), getY());
+        ItemStack[] matchingItems = entry.ingredient().getItems();
+        if(matchingItems.length > 0) {
+            guiGraphics.renderItem(matchingItems[0], getX(), getY());
+        }
 
         // 2. Rendere Text (Anzahl)
         int available = getAvailableCount();
@@ -48,7 +50,8 @@ public class MaterialWidget extends AbstractWidget {
     }
 
     @Override
-    protected void updateWidgetNarration(NarrationElementOutput p_259858_) {
+    protected void updateWidgetNarration(NarrationElementOutput output) {
+        defaultButtonNarrationText(output);
 
     }
     private int getAvailableCount() {

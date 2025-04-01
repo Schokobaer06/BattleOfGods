@@ -53,6 +53,10 @@ public class WorkbenchMenu extends AbstractContainerMenu implements Supplier<Map
         this.selectedRecipe = recipe;
     }
 
+    public RecipeHandler.BattleRecipe getSelectedRecipe() {
+        return selectedRecipe;
+    }
+
     public void craft(Player player) {
         if(selectedRecipe == null) return;
 
