@@ -85,7 +85,7 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
         addRenderableWidget(new ImageButton(
                 leftPos + 200, topPos + 220, 20, 20,
                 0, 0, 20,
-                new ResourceLocation("battleofgods:textures/gui/hammer_button.png"),
+                new ResourceLocation("battleofgods:textures/gui/crafting_hammer.png"),
                 40, 40,
                 button -> craftItem()
         ));
