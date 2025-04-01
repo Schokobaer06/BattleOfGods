@@ -19,22 +19,18 @@ import net.minecraftforge.common.crafting.CraftingHelper;
 import net.minecraftforge.registries.ForgeRegistries;
 
 import java.io.FileReader;
-import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
-
-import static net.minecraft.util.datafix.fixes.BlockEntitySignTextStrictJsonFix.GSON;
 
 public class RecipeHandler {
     public static final List<BattleRecipe> RECIPES = new ArrayList<>();
-
+    private static final Map<ResourceLocation, BattleRecipe> RECIPE_MAP = new HashMap<>();
 
     public static void loadRecipes() {
+        RECIPE_MAP.clear();
         RECIPES.clear();
         Path recipeDir = Paths.get("data/battleofgods/recipes");
         if (!Files.exists(recipeDir)) return;
@@ -57,9 +53,12 @@ public class RecipeHandler {
                             BattleofgodsMod.LOGGER.error("Failed to load recipe: {}", path.getFileName(), e);
                         }
                     });
+
+            RECIPES.forEach(recipe -> RECIPE_MAP.put(recipe.getId(), recipe));
         } catch (Exception e) {
             BattleofgodsMod.LOGGER.error("Failed to load recipes!", e);
         }
+
     }
 
 
@@ -84,6 +83,10 @@ public class RecipeHandler {
             if (available < required) return false;
         }
         return true;
+    }
+
+    public static Optional<BattleRecipe> getRecipeById(ResourceLocation recipeId) {
+        return Optional.ofNullable(RECIPE_MAP.get(recipeId));
     }
 
     public static class BattleRecipe implements Recipe<Container> {

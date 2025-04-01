@@ -1,22 +1,20 @@
 package com.schokobaer.battleofgods.world.inventory;
 
-import com.schokobaer.battleofgods.init.BattleofgodsModBlocks;
 import com.schokobaer.battleofgods.init.InitMenu;
 import com.schokobaer.battleofgods.mechanics.recipe.RecipeHandler;
 import net.minecraft.core.RegistryAccess;
-import net.minecraft.network.FriendlyByteBuf;
-import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.Container;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.ContainerLevelAccess;
-import net.minecraft.world.inventory.MenuType;
 import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
-import org.jetbrains.annotations.Nullable;
 
 import java.util.Map;
+import java.util.Optional;
 import java.util.function.Supplier;
 
 public class WorkbenchMenu extends AbstractContainerMenu implements Supplier<Map<Integer, Slot>> {
@@ -57,15 +55,24 @@ public class WorkbenchMenu extends AbstractContainerMenu implements Supplier<Map
         return selectedRecipe;
     }
 
-    public void craft(Player player) {
-        if(selectedRecipe == null) return;
+    public void craftItem(Player player, ResourceLocation recipeId) {
+        RecipeHandler.BattleRecipe temp = getSelectedRecipe();
+        Optional<RecipeHandler.BattleRecipe> optionalRecipe = RecipeHandler.getRecipeById(recipeId);
+        setSelectedRecipe(optionalRecipe.orElse(null));
+        RecipeHandler.BattleRecipe recipe = getSelectedRecipe();
+        if(recipe == null) return;
+        RegistryAccess registryAccess = player.level().registryAccess();
+        ItemStack result = recipe.assemble((Container) this, registryAccess);
+
 
         access.execute((level, pos) -> {
-            if(hasRequiredItems(player) && selectedRecipe.matches(player.getInventory(), level)) {
+            if(hasRequiredItems(player) && recipe.matches(player.getInventory(), level)) {
                 consumeIngredients(player);
                 giveResult(player);
+                broadcastChanges();
             }
         });
+        setSelectedRecipe(temp);
     }
 
     private boolean hasRequiredItems(Player player) {
@@ -96,7 +103,9 @@ public class WorkbenchMenu extends AbstractContainerMenu implements Supplier<Map
 
     private void giveResult(Player player) {
         RegistryAccess registryAccess = player.level().registryAccess();
-        player.getInventory().add(selectedRecipe.getResultItem(registryAccess));
+        if (!player.getInventory().add(selectedRecipe.getResultItem(registryAccess))) {
+            player.drop(selectedRecipe.getResultItem(registryAccess), false);
+        }
     }
 
     @Override

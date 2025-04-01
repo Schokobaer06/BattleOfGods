@@ -61,4 +61,8 @@ public class RecipeButton extends AbstractWidget {
                 mouseX, mouseY
         );
     }
+    public void onSelect(double mouseX, double mouseY) {
+        onSelect.accept(recipe);
+        playDownSound(Minecraft.getInstance().getSoundManager());
+    }
 }

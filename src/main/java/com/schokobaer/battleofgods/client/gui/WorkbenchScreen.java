@@ -71,9 +71,10 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
                 for(int i = 0; i < visibleRecipes.size(); i++) {
                     int yPos = y + i * 18;
                     addRenderableWidget(new RecipeButton(
-                            x + 5, yPos,
+                            x + 5,
+                            yPos,
                             visibleRecipes.get(i),
-                            recipe -> selectRecipe(recipe)
+                            WorkbenchScreen.this::selectRecipe
                     ));
                 }
             }
@@ -116,7 +117,9 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
     }
 
     private void craftItem() {
+        if (menu.getSelectedRecipe() == null) return;
         BattleofgodsMod.PACKET_HANDLER.sendToServer(new CraftPacket(menu.getSelectedRecipe().getId()));
+        init();
     }
 
 
