@@ -23,6 +23,10 @@ public class CraftPacket {
         buf.writeResourceLocation(recipeId);
     }
 
+    public static CraftPacket decode(FriendlyByteBuf buffer) {
+        return new CraftPacket(buffer.readResourceLocation());
+    }
+
     public void handle(Supplier<NetworkEvent.Context> ctx) {
         /*
         ctx.get().enqueueWork(() -> {

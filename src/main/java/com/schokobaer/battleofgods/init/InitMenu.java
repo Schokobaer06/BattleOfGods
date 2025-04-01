@@ -10,6 +10,6 @@ import net.minecraftforge.registries.RegistryObject;
 
 public class InitMenu {
     public static final DeferredRegister<MenuType<?>> MENUS = DeferredRegister.create(ForgeRegistries.MENU_TYPES, BattleofgodsMod.MODID);
-    public static final RegistryObject<MenuType<WorkbenchMenu>> WORKBENCH = MENUS.register("workbench", () -> IForgeMenuType.create(WorkbenchMenu::new));
+    public static final RegistryObject<MenuType<WorkbenchMenu>> WORKBENCH = MENUS.register("workbench", () -> IForgeMenuType.create(((windowId, inv, data) -> new WorkbenchMenu(windowId, inv))));
 
 }

@@ -1,5 +1,7 @@
 package com.schokobaer.battleofgods;
 
+import com.schokobaer.battleofgods.init.*;
+import com.schokobaer.battleofgods.mechanics.recipe.CraftPacket;
 import com.schokobaer.battleofgods.mechanics.recipe.RecipeHandler;
 import com.schokobaer.battleofgods.mechanics.tag.MainClassTagProvider;
 import com.schokobaer.battleofgods.mechanics.tag.RarityTagProvider;
@@ -41,15 +43,6 @@ import java.util.AbstractMap;
 import com.schokobaer.battleofgods.mechanics.tier.Tier;
 import com.schokobaer.battleofgods.mechanics.rarity.Rarity;
 import com.schokobaer.battleofgods.mechanics.item.MainClass;
-import com.schokobaer.battleofgods.init.InitTier;
-import com.schokobaer.battleofgods.init.InitSubClass;
-import com.schokobaer.battleofgods.init.InitRarity;
-import com.schokobaer.battleofgods.init.InitMainClass;
-import com.schokobaer.battleofgods.init.InitItem;
-import com.schokobaer.battleofgods.init.BattleofgodsModTabs;
-import com.schokobaer.battleofgods.init.BattleofgodsModMenus;
-import com.schokobaer.battleofgods.init.BattleofgodsModItems;
-import com.schokobaer.battleofgods.init.BattleofgodsModBlocks;
 
 @Mod("battleofgods")
 public class BattleofgodsMod {
@@ -76,6 +69,7 @@ public class BattleofgodsMod {
 		BattleofgodsModTabs.REGISTRY.register(bus);
 		BattleofgodsModMenus.REGISTRY.register(bus);
 
+		InitMenu.MENUS.register(bus);
 		//bus.addGenericListener(FMLCommonSetupEvent.class,(GenericEvent<? extends FMLCommonSetupEvent> event) -> onCommonSetup((FMLCommonSetupEvent) event.getGenericType()));;
 		//bus.addGenericListener(RegisterEvent.class,(GenericEvent<? extends RegisterEvent> event) -> registerRecipeTypes((RegisterEvent) event.getGenericType()));;
 		//bus.addGenericListener(RegisterEvent.class,(GenericEvent<? extends RegisterEvent> event) -> registerRecipeSerializers((RegisterEvent) event.getGenericType()));;
@@ -83,6 +77,8 @@ public class BattleofgodsMod {
 		bus.addListener(BattleofgodsMod::registerRecipeTypes);
 		bus.addListener(BattleofgodsMod::registerRecipeSerializers);
 		bus.addListener(this::gatherData);
+
+		addNetworkMessage(CraftPacket.class, CraftPacket::encode, CraftPacket::decode, CraftPacket::handle);
 
 	}
 
