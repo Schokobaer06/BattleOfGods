@@ -27,7 +27,7 @@ public class MaterialWidget extends AbstractWidget {
     @Override
     protected void renderWidget(GuiGraphics guiGraphics, int mouseX, int mouseY, float partialTick) {
         assert Minecraft.getInstance().level != null;
-        RegistryAccess registryAccess = Minecraft.getInstance().level.registryAccess();
+        RegistryAccess registryAccess = player.level().registryAccess();
 
         // 1. Rendere Item-Icon
         ItemStack iconStack = entry.ingredient().getItems()[0];
