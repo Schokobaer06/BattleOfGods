@@ -10,5 +10,6 @@
   "gui.battleofgods.test_gui.tooltip_test_tooltip": "test_tooltip",
   "item.battleofgods.copper_broadsword.description_1": "",
   "item.battleofgods.copper_broadsword.description_0": "True Melee",
-  "item.battleofgods.copper_broadsword": "Copper Broadsword"
+  "item.battleofgods.copper_broadsword": "Copper Broadsword",
+  "container.battleofgods.wooden_workbench": "Workbench"
 }

@@ -1,6 +1,14 @@
 
 package com.schokobaer.battleofgods.block;
 
+import com.schokobaer.battleofgods.world.inventory.WorkbenchMenu;
+import net.minecraft.network.chat.Component;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.SimpleMenuProvider;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.CollisionContext;
@@ -36,5 +44,19 @@ public class WoodenWorkbenchBlock extends Block {
 	public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
 		return Shapes.or(box(11, 0, 3, 13, 8, 5), box(11, 0, 11, 13, 8, 13), box(3, 0, 11, 5, 8, 13), box(3, 0, 3, 5, 8, 5), box(11, 2, 5, 13, 4, 11), box(3, 2, 5, 5, 4, 11), box(5, 2, 11, 11, 4, 13), box(5, 2, 3, 11, 4, 5),
 				box(1, 8, 1, 15, 10, 15));
+	}
+
+	@Override
+	public InteractionResult use(BlockState state, Level level, BlockPos pos,
+								 Player player, InteractionHand hand, BlockHitResult hit) {
+		if (!level.isClientSide) {
+			// 👇 Menu mit Gruppe erstellen
+			player.openMenu(new SimpleMenuProvider(
+					(containerId, inventory, _player) ->
+							new WorkbenchMenu(containerId, inventory),
+					Component.translatable("container.battleofgods.workbench")
+			));
+		}
+		return InteractionResult.sidedSuccess(level.isClientSide);
 	}
 }
