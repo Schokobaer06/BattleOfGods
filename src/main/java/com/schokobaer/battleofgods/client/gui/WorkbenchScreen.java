@@ -28,7 +28,7 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
     private static final ResourceLocation TEXTURE =
             new ResourceLocation("battleofgods:textures/gui/workbench.png");
     private static final ResourceLocation SCROLLER =
-            new ResourceLocation("textures/gui/scroller.png");
+            new ResourceLocation("battleofgods:textures/gui/scroller.png");
 
     private ScrollPanel recipeList;
     private List<RecipeHandler.BattleRecipe> visibleRecipes;
@@ -50,6 +50,8 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
         assert minecraft != null;
         //visibleRecipes = RecipeHandler.getCraftableRecipes(minecraft.player);
         visibleRecipes = RecipeHandler.getCraftableRecipesByGroup(minecraft.player, group);
+
+        // Recipe List
 
         recipeList = new ScrollPanel(minecraft, width / 4, height, 20, height - 18  , 10) {
 
@@ -86,10 +88,12 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
 
         // Craft-Button
         addRenderableWidget(new ImageButton(
-                leftPos + 140, topPos + 140, 20, 20,
-                0, 0, 20,
+                leftPos + 140, topPos + 140, // Position
+                16, 16, // Widget-size auf dem Screen
+                0, 0, // Texture offset (x,y)
+                16, // Sprite height
                 new ResourceLocation("battleofgods:textures/gui/crafting_hammer.png"),
-                32, 32,
+                32, 32, // Texture size
                 button -> craftItem()
         ));
     }
@@ -125,7 +129,7 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
         init();
     }
 
-
+    @Deprecated
     private float getScrollAmount() {
         try {
             Field scrollField = ScrollPanel.class.getDeclaredField("scrollDistance");
@@ -156,50 +160,3 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
         renderTooltip(guiGraphics, mouseX, mouseY);
     }
 }
-    /*
-    private static final ResourceLocation TEXTURE =
-            new ResourceLocation("battleofgods:textures/gui/workbench.png");
-    private static final ResourceLocation SCROLLER =
-            new ResourceLocation("textures/gui/container/creative_inventory/scroller.png");
-
-    private ScrollPanel recipeList;
-    private List<RecipeHandler.BattleRecipe> visibleRecipes;
-    private List<MaterialWidget> materialWidgets = new ArrayList<>();
-
-    public WorkbenchScreen(WorkbenchMenu menu, Inventory inv, Component title) {
-        super(menu, inv, title);
-        this.imageWidth = 256;
-        this.imageHeight = 256;
-    }
-
-    @Override
-    protected void init() {
-        super.init();
-
-    }
-    @Override
-    protected void renderBg(GuiGraphics guiGraphics, float p_97788_, int p_97789_, int p_97790_) {
-
-    }
-
-    @Override
-    public void render(GuiGraphics graphics, int mouseX, int mouseY, float partialTicks) {
-        this.renderBackground(graphics);
-
-        super.render(graphics, mouseX, mouseY, partialTicks);
-
-        this.renderTooltip(graphics, mouseX, mouseY);
-    }
-    @Override
-    protected void renderLabels(GuiGraphics graphics, int mouseX, int mouseY) {
-        super.renderLabels(graphics, mouseX, mouseY);
-    }
-
-    @Override
-    protected <T extends GuiEventListener & Renderable & NarratableEntry> @NotNull T addRenderableWidget(T widget) {
-
-        return super.addRenderableWidget(widget);
-    }
-}
-
-     */
