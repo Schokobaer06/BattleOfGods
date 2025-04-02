@@ -1,0 +1,147 @@
+{
+  "mod_elements": [
+    {
+      "name": "Tier1",
+      "type": "tab",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "tier_1",
+      "metadata": {
+        "files": []
+      }
+    },
+    {
+      "name": "CopperShortsword",
+      "type": "tool",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "copper_shortsword",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/battleofgods/models/item/copper_shortsword.json",
+          "src/main/java/com/schokobaer/battleofgods/item/CopperShortswordItem.java"
+        ]
+      }
+    },
+    {
+      "name": "CopperBroadsword",
+      "type": "tool",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "copper_broadsword",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/battleofgods/models/item/copper_broadsword.json",
+          "src/main/java/com/schokobaer/battleofgods/item/CopperBroadswordItem.java"
+        ]
+      }
+    },
+    {
+      "name": "WoodenWorkbench",
+      "type": "block",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "wooden_workbench",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/battleofgods/loot_tables/blocks/wooden_workbench.json",
+          "src/main/resources/assets/battleofgods/models/item/wooden_workbench.json",
+          "src/main/resources/assets/battleofgods/models/block/wooden_workbench.json",
+          "src/main/java/com/schokobaer/battleofgods/block/WoodenWorkbenchBlock.java",
+          "src/main/resources/assets/battleofgods/blockstates/wooden_workbench.json"
+        ]
+      }
+    },
+    {
+      "name": "RecipeWoodenWorkbench",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "recipe_wooden_workbench",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/battleofgods/recipes/recipe_wooden_workbench.json"
+        ]
+      }
+    },
+    {
+      "name": "ItemTier1",
+      "type": "item",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "item_tier_1",
+      "metadata": {
+        "files": [
+          "src/main/java/com/schokobaer/battleofgods/item/ItemTier1Item.java",
+          "src/main/resources/assets/battleofgods/models/item/item_tier_1.json"
+        ]
+      }
+    },
+    {
+      "name": "TestGui",
+      "type": "gui",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "test_gui",
+      "metadata": {
+        "files": [
+          "src/main/java/com/schokobaer/battleofgods/client/gui/TestGuiScreen.java",
+          "src/main/java/com/schokobaer/battleofgods/world/inventory/TestGuiMenu.java"
+        ]
+      }
+    }
+  ],
+  "variable_elements": [],
+  "sound_elements": [],
+  "tag_elements": {
+    "ITEMS:minecraft:swords": [
+      "~CUSTOM:CopperBroadsword",
+      "~CUSTOM:CopperShortsword"
+    ]
+  },
+  "tab_element_order": {},
+  "language_map": {
+    "en_us": {
+      "item.battleofgods.item_tier_1": "Tier 1",
+      "gui.battleofgods.test_gui.label_test_text": "test_text",
+      "gui.battleofgods.test_gui.button_test_button": "test_button",
+      "item_group.battleofgods.tier_1": "Tier 1",
+      "gui.battleofgods.test_gui.button_test_button_undecorated": "test_button_undecorated",
+      "item.battleofgods.copper_shortsword": "Copper Shortsword",
+      "item.battleofgods.copper_short_sword": "Copper Short Sword",
+      "block.battleofgods.wooden_workbench": "Workbench",
+      "gui.battleofgods.test_gui.tooltip_test_tooltip": "test_tooltip",
+      "item.battleofgods.copper_broadsword.description_1": "",
+      "item.battleofgods.copper_broadsword.description_0": "True Melee",
+      "item.battleofgods.copper_broadsword": "Copper Broadsword"
+    }
+  },
+  "foldersRoot": {
+    "name": "~",
+    "children": []
+  },
+  "workspaceSettings": {
+    "modid": "battleofgods",
+    "modName": "Battle Of Gods",
+    "version": "1.0.0",
+    "author": "Josef Peer, MCreator",
+    "websiteURL": "https://mcreator.net",
+    "license": "MIT License",
+    "serverSideOnly": false,
+    "requiredMods": [],
+    "dependencies": [],
+    "dependants": [],
+    "mcreatorDependencies": [
+      "cosmetic_armory",
+      "patchouli",
+      "geckolib",
+      "jeed",
+      "playeranimator",
+      "jei"
+    ],
+    "currentGenerator": "forge-1.20.1",
+    "credits": "Created using mod maker MCreator - https://mcreator.net/about",
+    "modElementsPackage": "com.schokobaer.battleofgods"
+  },
+  "mcreatorVersion": 202400452410
+}

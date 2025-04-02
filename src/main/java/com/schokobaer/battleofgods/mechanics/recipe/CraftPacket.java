@@ -1,7 +1,9 @@
 package com.schokobaer.battleofgods.mechanics.recipe;
 
+import com.schokobaer.battleofgods.BattleofgodsMod;
 import com.schokobaer.battleofgods.world.inventory.WorkbenchMenu;
 import net.minecraft.network.FriendlyByteBuf;
+import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraftforge.network.NetworkEvent;
@@ -50,7 +52,13 @@ public class CraftPacket {
         ctx.get().enqueueWork(() -> {
             ServerPlayer player = ctx.get().getSender();
             if (player != null && player.containerMenu instanceof WorkbenchMenu menu) {
-                menu.craftItem(player, recipeId);
+                RecipeHandler.getRecipeById(recipeId).ifPresent(recipe -> {
+                    if (recipe.getGroup().equals(menu.getRecipeGroup())) {
+                        menu.craftItem(player,recipeId);
+                    } else {
+                        BattleofgodsMod.LOGGER.error("Recipe group mismatch: {} != {}", recipe.getGroup(), menu.getRecipeGroup());
+                    }
+                });
             }
         });
         ctx.get().setPacketHandled(true);

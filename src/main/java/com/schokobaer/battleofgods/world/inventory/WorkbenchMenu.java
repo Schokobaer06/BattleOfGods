@@ -22,11 +22,13 @@ public class WorkbenchMenu extends AbstractContainerMenu implements Supplier<Map
     public final Player player;
     private RecipeHandler.BattleRecipe selectedRecipe;
     private ContainerLevelAccess access;
+    private final String recipeGroup;
 
     public WorkbenchMenu(int containerId, Inventory inv) {
         super(InitMenu.WORKBENCH.get(), containerId);
         this.world = inv.player.level();
         this.player = inv.player;
+        this.recipeGroup = "workbench";
 
 /*
         for (int si = 0; si < 3; ++si)
@@ -47,6 +49,11 @@ public class WorkbenchMenu extends AbstractContainerMenu implements Supplier<Map
             addSlot(new Slot(inv, col, 8 + col * 18, 200));
         }
     }
+
+    public String getRecipeGroup() {
+        return recipeGroup;
+    }
+
     public void setSelectedRecipe(RecipeHandler.BattleRecipe recipe) {
         this.selectedRecipe = recipe;
     }

@@ -88,6 +88,17 @@ public class RecipeHandler {
     public static Optional<BattleRecipe> getRecipeById(ResourceLocation recipeId) {
         return Optional.ofNullable(RECIPE_MAP.get(recipeId));
     }
+    public static List<BattleRecipe> getRecipesByGroup(String group) {
+        return RECIPES.stream()
+                .filter(r -> r.group.equals(group))
+                .collect(Collectors.toList());
+    }
+
+    public static List<BattleRecipe> getCraftableRecipesByGroup(Player player, String group) {
+        return getRecipesByGroup(group).stream()
+                .filter(r -> hasRequiredItems(player, r))
+                .collect(Collectors.toList());
+    }
 
     public static class BattleRecipe implements Recipe<Container> {
         private final ResourceLocation id;

@@ -28,7 +28,7 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
     private static final ResourceLocation TEXTURE =
             new ResourceLocation("battleofgods:textures/gui/workbench.png");
     private static final ResourceLocation SCROLLER =
-            new ResourceLocation("textures/gui/container/creative_inventory/scroller.png");
+            new ResourceLocation("textures/gui/container/gui/scroller.png");
 
     private ScrollPanel recipeList;
     private List<RecipeHandler.BattleRecipe> visibleRecipes;
@@ -43,10 +43,12 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
     @Override
     protected void init() {
         super.init();
+        String group = menu.getRecipeGroup();
 
         // Rezeptliste initialisieren
         assert minecraft != null;
-        visibleRecipes = RecipeHandler.getCraftableRecipes(minecraft.player);
+        //visibleRecipes = RecipeHandler.getCraftableRecipes(minecraft.player);
+        visibleRecipes = RecipeHandler.getCraftableRecipesByGroup(minecraft.player, group);
 
         recipeList = new ScrollPanel(minecraft, width / 4, height, 20, height - 50, 10) {
 
