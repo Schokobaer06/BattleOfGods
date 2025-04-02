@@ -30,13 +30,6 @@ public class WorkbenchMenu extends AbstractContainerMenu implements Supplier<Map
         this.player = inv.player;
         this.recipeGroup = "workbench";
 
-/*
-        for (int si = 0; si < 3; ++si)
-            for (int sj = 0; sj < 9; ++sj)
-                this.addSlot(new Slot(inv, sj + (si + 1) * 9, 0 + 8 + sj * 18, 0 + 84 + si * 18));
-        for (int si = 0; si < 9; ++si)
-            this.addSlot(new Slot(inv, si, 0 + 8 + si * 18, 0 + 142));
- */
         // Player Inventory (9x3)
         for(int row = 0; row < 3; ++row) {
             for(int col = 0; col < 9; ++col) {
@@ -46,7 +39,7 @@ public class WorkbenchMenu extends AbstractContainerMenu implements Supplier<Map
 
         // Hotbar (9x1)
         for(int col = 0; col < 9; ++col) {
-            addSlot(new Slot(inv, col, 8 + col * 18, 200));
+            addSlot(new Slot(inv, col, 8 + col * 18, 142));
         }
     }
 

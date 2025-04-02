@@ -28,7 +28,7 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
     private static final ResourceLocation TEXTURE =
             new ResourceLocation("battleofgods:textures/gui/workbench.png");
     private static final ResourceLocation SCROLLER =
-            new ResourceLocation("textures/gui/container/gui/scroller.png");
+            new ResourceLocation("textures/gui/scroller.png");
 
     private ScrollPanel recipeList;
     private List<RecipeHandler.BattleRecipe> visibleRecipes;
@@ -36,13 +36,14 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
 
     public WorkbenchScreen(WorkbenchMenu menu, Inventory inv, Component title) {
         super(menu, inv, title);
-        this.imageWidth = 256;
-        this.imageHeight = 256;
+        this.imageWidth = 176;
+        this.imageHeight = 166;
     }
 
     @Override
     protected void init() {
         super.init();
+
         String group = menu.getRecipeGroup();
 
         // Rezeptliste initialisieren
@@ -50,7 +51,7 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
         //visibleRecipes = RecipeHandler.getCraftableRecipes(minecraft.player);
         visibleRecipes = RecipeHandler.getCraftableRecipesByGroup(minecraft.player, group);
 
-        recipeList = new ScrollPanel(minecraft, width / 4, height, 20, height - 50, 10) {
+        recipeList = new ScrollPanel(minecraft, width / 4, height, 20, height - 18  , 10) {
 
             @Override
             public void updateNarration(NarrationElementOutput p_169152_) {
@@ -85,10 +86,10 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
 
         // Craft-Button
         addRenderableWidget(new ImageButton(
-                leftPos + 200, topPos + 220, 20, 20,
+                leftPos + 140, topPos + 140, 20, 20,
                 0, 0, 20,
                 new ResourceLocation("battleofgods:textures/gui/crafting_hammer.png"),
-                40, 40,
+                32, 32,
                 button -> craftItem()
         ));
     }
@@ -109,7 +110,7 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
         int yPos = topPos + 50;
         for(RecipeHandler.BattleRecipe.IngredientEntry entry : menu.getSelectedRecipe().getInputs()) {
             MaterialWidget widget = new MaterialWidget(
-                    leftPos + 180, yPos,
+                    leftPos + 130, yPos,
                     entry, minecraft.player
             );
             materialWidgets.add(widget);
@@ -138,12 +139,14 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
 
     @Override
     protected void renderBg(GuiGraphics guiGraphics, float partialTick, int mouseX, int mouseY) {
-        guiGraphics.blit(TEXTURE, leftPos, topPos, 0, 0, imageWidth, imageHeight);
+        guiGraphics.blit(TEXTURE, leftPos, topPos, 0, 0, imageWidth, imageHeight, imageWidth, imageHeight);
 
         // Scrollbar rendern
         guiGraphics.blit(SCROLLER,
-                leftPos + 120, topPos + 20 + (int)((height - 50) * getScrollAmount()),
-                12, 15, 0, 0, 12, 15, 12, 15);
+                //leftPos + 120, topPos + 20 + (int)((height - 50) * getScrollAmount()),
+                leftPos + 120, topPos + 18,
+                //12, 15, 0, 0, 12, 15, 12, 15);
+                0, 0, 12, 15, 12, 15);
     }
 
     @Override
