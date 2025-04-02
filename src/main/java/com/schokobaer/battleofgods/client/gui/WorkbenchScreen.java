@@ -52,7 +52,7 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
         visibleRecipes = RecipeHandler.getCraftableRecipesByGroup(minecraft.player, group);
 
         // Recipe List
-
+        /*
         recipeList = new ScrollPanel(minecraft, width / 4, height, 20, height - 18  , 10) {
 
             @Override
@@ -85,10 +85,10 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
             }
         };
         addRenderableWidget(recipeList);
-
+        */
         // Craft-Button
         addRenderableWidget(new ImageButton(
-                leftPos + 140, topPos + 140, // Position
+                3*(leftPos + imageWidth)/4, topPos + 64, // Position
                 16, 16, // Widget-size auf dem Screen
                 0, 0, // Texture offset (x,y)
                 16, // Sprite height
@@ -110,7 +110,8 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
 
         if(menu.getSelectedRecipe() == null) return;
 
-        // Neue Material-Widgets erstellen
+        // Neue Material-list
+        /*
         int yPos = topPos + 50;
         for(RecipeHandler.BattleRecipe.IngredientEntry entry : menu.getSelectedRecipe().getInputs()) {
             MaterialWidget widget = new MaterialWidget(
@@ -121,6 +122,7 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
             addRenderableWidget(widget);
             yPos += 25;
         }
+         */
     }
 
     private void craftItem() {
@@ -129,13 +131,13 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
         init();
     }
 
-    @Deprecated
+
     private float getScrollAmount() {
         try {
             Field scrollField = ScrollPanel.class.getDeclaredField("scrollDistance");
             scrollField.setAccessible(true);
             return (float) scrollField.get(recipeList);
-        } catch (NoSuchFieldException | IllegalAccessException e) {
+        } catch (NoSuchFieldException | IllegalAccessException | NullPointerException e) {
             e.printStackTrace();
             return 0;
         }
@@ -145,12 +147,15 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
     protected void renderBg(GuiGraphics guiGraphics, float partialTick, int mouseX, int mouseY) {
         guiGraphics.blit(TEXTURE, leftPos, topPos, 0, 0, imageWidth, imageHeight, imageWidth, imageHeight);
 
-        // Scrollbar rendern
+        // Scrollbar #1 for Recipe List
+        /*
         guiGraphics.blit(SCROLLER,
                 //leftPos + 120, topPos + 20 + (int)((height - 50) * getScrollAmount()),
                 leftPos + 120, topPos + 18,
                 //12, 15, 0, 0, 12, 15, 12, 15);
                 0, 0, 12, 15, 12, 15);
+
+         */
     }
 
     @Override
