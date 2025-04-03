@@ -44,5 +44,6 @@
   "mainclass.battleofgods.rogue": "rogue",
   "mainclass.battleofgods.healing": "healing",
   "mainclass.battleofgods.bard": "bard",
-  "mainclass.battleofgods.tool": "tool"
+  "mainclass.battleofgods.tool": "tool",
+  "gui.battleofgods.craft": "Craft Item"
 }

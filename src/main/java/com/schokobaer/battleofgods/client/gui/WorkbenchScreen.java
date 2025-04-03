@@ -8,15 +8,19 @@ import com.schokobaer.battleofgods.client.widget.RecipeButton;
 import com.schokobaer.battleofgods.mechanics.recipe.CraftPacket;
 import com.schokobaer.battleofgods.mechanics.recipe.RecipeHandler;
 import com.schokobaer.battleofgods.world.inventory.WorkbenchMenu;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.ImageButton;
 import net.minecraft.client.gui.components.Renderable;
+import net.minecraft.client.gui.components.Tooltip;
 import net.minecraft.client.gui.components.events.GuiEventListener;
 import net.minecraft.client.gui.narration.NarratableEntry;
 import net.minecraft.client.gui.narration.NarrationElementOutput;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
+import net.minecraft.client.resources.sounds.SimpleSoundInstance;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraftforge.client.gui.widget.ScrollPanel;
 import org.jetbrains.annotations.NotNull;
@@ -89,15 +93,20 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
         addRenderableWidget(recipeList);
         */
         // Craft-Button
-        addRenderableWidget(new ImageButton(
-                7*(leftPos + imageWidth)/8, topPos + 64, // Position
-                16, 16, // Widget-size auf dem Screen
+        addRenderableWidget(
+                new ImageButton(
+                7*(leftPos + imageWidth)/8, topPos + 48, // Position
+                32, 32, // Widget-size auf dem Screen
                 0, 0, // Texture offset (x,y)
                 32, // Sprite height
                 new ResourceLocation("battleofgods:textures/gui/crafting_hammer.png"),
-                32, 64, // Texture size
-                button -> craftItem()
-        ));
+                32, 32, // Texture size
+                button -> {
+                    Minecraft.getInstance().getSoundManager().play(
+                            SimpleSoundInstance.forUI(SoundEvents.UI_BUTTON_CLICK, 1.0F));
+                    craftItem();
+                }
+        )).setTooltip(Tooltip.create(Component.translatable("gui.battleofgods.craft")));
     }
 
     private void selectRecipe(RecipeHandler.BattleRecipe recipe) {
