@@ -93,9 +93,9 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
                 7*(leftPos + imageWidth)/8, topPos + 64, // Position
                 16, 16, // Widget-size auf dem Screen
                 0, 0, // Texture offset (x,y)
-                16, // Sprite height
+                32, // Sprite height
                 new ResourceLocation("battleofgods:textures/gui/crafting_hammer.png"),
-                32, 32, // Texture size
+                32, 64, // Texture size
                 button -> craftItem()
         ));
     }
