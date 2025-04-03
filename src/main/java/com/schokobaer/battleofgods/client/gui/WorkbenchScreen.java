@@ -28,7 +28,7 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
     private static final ResourceLocation TEXTURE =
             new ResourceLocation("battleofgods:textures/gui/workbench.png");
     private static final ResourceLocation SCROLLER =
-            new ResourceLocation("textures/gui/scroller.png");
+            new ResourceLocation("battleofgods:textures/gui/scroller.png");
 
     private ScrollPanel recipeList;
     private List<RecipeHandler.BattleRecipe> visibleRecipes;
@@ -51,6 +51,8 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
         //visibleRecipes = RecipeHandler.getCraftableRecipes(minecraft.player);
         visibleRecipes = RecipeHandler.getCraftableRecipesByGroup(minecraft.player, group);
 
+        // Recipe List
+        /*
         recipeList = new ScrollPanel(minecraft, width / 4, height, 20, height - 18  , 10) {
 
             @Override
@@ -83,13 +85,15 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
             }
         };
         addRenderableWidget(recipeList);
-
+        */
         // Craft-Button
         addRenderableWidget(new ImageButton(
-                leftPos + 140, topPos + 140, 20, 20,
-                0, 0, 20,
+                3*(leftPos + imageWidth)/4, topPos + 64, // Position
+                16, 16, // Widget-size auf dem Screen
+                0, 0, // Texture offset (x,y)
+                16, // Sprite height
                 new ResourceLocation("battleofgods:textures/gui/crafting_hammer.png"),
-                32, 32,
+                32, 32, // Texture size
                 button -> craftItem()
         ));
     }
@@ -106,7 +110,8 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
 
         if(menu.getSelectedRecipe() == null) return;
 
-        // Neue Material-Widgets erstellen
+        // Neue Material-list
+        /*
         int yPos = topPos + 50;
         for(RecipeHandler.BattleRecipe.IngredientEntry entry : menu.getSelectedRecipe().getInputs()) {
             MaterialWidget widget = new MaterialWidget(
@@ -117,6 +122,7 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
             addRenderableWidget(widget);
             yPos += 25;
         }
+         */
     }
 
     private void craftItem() {
@@ -131,7 +137,7 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
             Field scrollField = ScrollPanel.class.getDeclaredField("scrollDistance");
             scrollField.setAccessible(true);
             return (float) scrollField.get(recipeList);
-        } catch (NoSuchFieldException | IllegalAccessException e) {
+        } catch (NoSuchFieldException | IllegalAccessException | NullPointerException e) {
             e.printStackTrace();
             return 0;
         }
@@ -141,12 +147,15 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
     protected void renderBg(GuiGraphics guiGraphics, float partialTick, int mouseX, int mouseY) {
         guiGraphics.blit(TEXTURE, leftPos, topPos, 0, 0, imageWidth, imageHeight, imageWidth, imageHeight);
 
-        // Scrollbar rendern
+        // Scrollbar #1 for Recipe List
+        /*
         guiGraphics.blit(SCROLLER,
                 //leftPos + 120, topPos + 20 + (int)((height - 50) * getScrollAmount()),
                 leftPos + 120, topPos + 18,
                 //12, 15, 0, 0, 12, 15, 12, 15);
                 0, 0, 12, 15, 12, 15);
+
+         */
     }
 
     @Override
@@ -156,50 +165,3 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
         renderTooltip(guiGraphics, mouseX, mouseY);
     }
 }
-    /*
-    private static final ResourceLocation TEXTURE =
-            new ResourceLocation("battleofgods:textures/gui/workbench.png");
-    private static final ResourceLocation SCROLLER =
-            new ResourceLocation("textures/gui/container/creative_inventory/scroller.png");
-
-    private ScrollPanel recipeList;
-    private List<RecipeHandler.BattleRecipe> visibleRecipes;
-    private List<MaterialWidget> materialWidgets = new ArrayList<>();
-
-    public WorkbenchScreen(WorkbenchMenu menu, Inventory inv, Component title) {
-        super(menu, inv, title);
-        this.imageWidth = 256;
-        this.imageHeight = 256;
-    }
-
-    @Override
-    protected void init() {
-        super.init();
-
-    }
-    @Override
-    protected void renderBg(GuiGraphics guiGraphics, float p_97788_, int p_97789_, int p_97790_) {
-
-    }
-
-    @Override
-    public void render(GuiGraphics graphics, int mouseX, int mouseY, float partialTicks) {
-        this.renderBackground(graphics);
-
-        super.render(graphics, mouseX, mouseY, partialTicks);
-
-        this.renderTooltip(graphics, mouseX, mouseY);
-    }
-    @Override
-    protected void renderLabels(GuiGraphics graphics, int mouseX, int mouseY) {
-        super.renderLabels(graphics, mouseX, mouseY);
-    }
-
-    @Override
-    protected <T extends GuiEventListener & Renderable & NarratableEntry> @NotNull T addRenderableWidget(T widget) {
-
-        return super.addRenderableWidget(widget);
-    }
-}
-
-     */
