@@ -93,20 +93,33 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
         addRenderableWidget(recipeList);
         */
         // Craft-Button
-        addRenderableWidget(
-                new ImageButton(
-                7*(leftPos + imageWidth)/8, topPos + 64, // Position
-                16, 16, // Widget-size auf dem Screen
-                0, 0, // Texture offset (x,y)
-                32, // Sprite height
+
+        addRenderableWidget(new ImageButton(
+                7*(leftPos + imageWidth)/8, topPos + 64,
+                16, 16,
+                0, 0,  // Normal state
+                16,     // xDiff between states
                 new ResourceLocation("battleofgods:textures/gui/crafting_hammer.png"),
-                32, 16, // Texture size
+                32, 16,
                 button -> {
                     Minecraft.getInstance().getSoundManager().play(
                             SimpleSoundInstance.forUI(SoundEvents.UI_BUTTON_CLICK, 1.0F));
                     craftItem();
                 }
-        )).setTooltip(Tooltip.create(Component.translatable("gui.battleofgods.craft")));
+        ) {
+            @Override
+            public void renderWidget(GuiGraphics gui, int mouseX, int mouseY, float partialTick) {
+                int xOffset = this.isHovered() ? 16 : 0; // Hover/Pressed share same texture
+
+                gui.blit(
+                        this.resourceLocation,
+                        this.getX(), this.getY(),
+                        xOffset, 0,
+                        this.width, this.height,
+                        32, 16
+                );
+            }
+        }).setTooltip(Tooltip.create(Component.translatable("gui.battleofgods.tooltip.craft_hammer")));
     }
 
     private void selectRecipe(RecipeHandler.BattleRecipe recipe) {
@@ -180,7 +193,6 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
         renderBackground(guiGraphics);
         super.render(guiGraphics, mouseX, mouseY, partialTick);
         renderTooltip(guiGraphics, mouseX, mouseY);
-
     }
 
     @Override
