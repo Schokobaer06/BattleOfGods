@@ -19,6 +19,7 @@ import net.minecraft.client.gui.narration.NarrationElementOutput;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.client.resources.sounds.SimpleSoundInstance;
 import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.Style;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.entity.player.Inventory;
@@ -43,13 +44,12 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
         super(menu, inv, title);
         this.imageWidth = 176;
         this.imageHeight = 166;
-        this.playerInventoryTitle.getStyle().withColor(0xD3D3D3);
+        //this.playerInventoryTitle.getStyle().withColor(0xD3D3D3);
     }
 
     @Override
     protected void init() {
         super.init();
-
         String group = menu.getRecipeGroup();
 
         // Rezeptliste initialisieren
@@ -95,12 +95,12 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
         // Craft-Button
         addRenderableWidget(
                 new ImageButton(
-                7*(leftPos + imageWidth)/8, topPos + 48, // Position
-                32, 32, // Widget-size auf dem Screen
+                7*(leftPos + imageWidth)/8, topPos + 64, // Position
+                16, 16, // Widget-size auf dem Screen
                 0, 0, // Texture offset (x,y)
                 32, // Sprite height
                 new ResourceLocation("battleofgods:textures/gui/crafting_hammer.png"),
-                32, 32, // Texture size
+                32, 16, // Texture size
                 button -> {
                     Minecraft.getInstance().getSoundManager().play(
                             SimpleSoundInstance.forUI(SoundEvents.UI_BUTTON_CLICK, 1.0F));
@@ -180,5 +180,20 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
         renderBackground(guiGraphics);
         super.render(guiGraphics, mouseX, mouseY, partialTick);
         renderTooltip(guiGraphics, mouseX, mouseY);
+
+    }
+
+    @Override
+    protected void renderLabels(GuiGraphics guiGraphics, int mouseX, int mouseY) {
+        super.renderLabels(guiGraphics, mouseX, mouseY);
+
+        // Draw player inventory title
+        guiGraphics.drawString(
+                this.font,
+                this.playerInventoryTitle,
+                this.inventoryLabelX, this.inventoryLabelY,
+                0x00FFFFFF, // White color (RGB: 255,255,255)
+                false // Don't drop shadow
+        );
     }
 }
