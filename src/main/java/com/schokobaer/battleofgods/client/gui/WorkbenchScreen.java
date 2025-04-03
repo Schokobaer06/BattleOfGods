@@ -1,5 +1,6 @@
 package com.schokobaer.battleofgods.client.gui;
 
+import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.Tesselator;
 import com.schokobaer.battleofgods.BattleofgodsMod;
 import com.schokobaer.battleofgods.client.widget.MaterialWidget;
@@ -145,6 +146,9 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
 
     @Override
     protected void renderBg(GuiGraphics guiGraphics, float partialTick, int mouseX, int mouseY) {
+        RenderSystem.setShaderColor(1, 1, 1, 1);
+        RenderSystem.enableBlend();
+        RenderSystem.defaultBlendFunc();
         guiGraphics.blit(TEXTURE, leftPos, topPos, 0, 0, imageWidth, imageHeight, imageWidth, imageHeight);
 
         // Scrollbar #1 for Recipe List
@@ -156,6 +160,9 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
                 0, 0, 12, 15, 12, 15);
 
          */
+        // Scrollbar #2 for Material List
+
+        RenderSystem.disableBlend();
     }
 
     @Override

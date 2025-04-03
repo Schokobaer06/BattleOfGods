@@ -68,7 +68,13 @@ public abstract class AbstractSubClass implements SubClassMethods {
     @OnlyIn(Dist.CLIENT)
     @Override
     public void appendHoverText(ItemStack itemstack, Level level, List<net.minecraft.network.chat.Component> tooltip, TooltipFlag flag) {
-        tooltip.add(Component.literal(this.getRarity().getDisplayName()).setStyle(Style.EMPTY.withBold(true).withColor(this.getRarity().getArgbColor()).withItalic(true)));
+        //tooltip.add(Component.literal(this.getRarity().getDisplayName()).setStyle(Style.EMPTY.withBold(true).withColor(this.getRarity().getArgbColor()).withItalic(true)));
+        tooltip.add(Component.translatable("rarity.battleofgods." +
+                this.getRarity().getDisplayName().toLowerCase()).setStyle(
+                        Style.EMPTY.withBold(true)
+                                .withColor(this.getRarity().getArgbColor())
+                                .withItalic(true)
+        ));
     }
     @Override
     public boolean hasCraftingRemainingItem(ItemStack stack) {

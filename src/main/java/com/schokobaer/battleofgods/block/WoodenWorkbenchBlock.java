@@ -3,6 +3,7 @@ package com.schokobaer.battleofgods.block;
 
 import com.schokobaer.battleofgods.world.inventory.WorkbenchMenu;
 import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.Style;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.SimpleMenuProvider;
@@ -54,7 +55,7 @@ public class WoodenWorkbenchBlock extends Block {
 			player.openMenu(new SimpleMenuProvider(
 					(containerId, inventory, _player) ->
 							new WorkbenchMenu(containerId, inventory),
-					Component.translatable("container.battleofgods.workbench")
+					Component.translatable("container.battleofgods.workbench").withStyle(Style.EMPTY.withColor(0xD3D3D3))
 			));
 		}
 		return InteractionResult.sidedSuccess(level.isClientSide);
