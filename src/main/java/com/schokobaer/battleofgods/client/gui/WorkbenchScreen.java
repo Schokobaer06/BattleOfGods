@@ -90,7 +90,7 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
         */
         // Craft-Button
         addRenderableWidget(new ImageButton(
-                3*(leftPos + imageWidth)/4, topPos + 64, // Position
+                7*(leftPos + imageWidth)/8, topPos + 64, // Position
                 16, 16, // Widget-size auf dem Screen
                 0, 0, // Texture offset (x,y)
                 16, // Sprite height

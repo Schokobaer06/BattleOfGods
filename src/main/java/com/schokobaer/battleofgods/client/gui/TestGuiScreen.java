@@ -69,7 +69,14 @@ public class TestGuiScreen extends AbstractContainerScreen<TestGuiMenu> {
 	@Override
 	public void init() {
 		super.init();
-		imagebutton_crafting_hammer = new ImageButton(this.leftPos + 142, this.topPos + 53, 27, 27, 0, 0, 27, new ResourceLocation("battleofgods:textures/screens/atlas/imagebutton_crafting_hammer.png"), 27, 54, e -> {
+		imagebutton_crafting_hammer = new ImageButton(
+				this.leftPos + 142, this.topPos + 53,
+				27, 27,
+				0, 0,
+				27,
+				new ResourceLocation("battleofgods:textures/screens/atlas/imagebutton_crafting_hammer.png"),
+				27, 54,
+				e -> {
 		});
 		guistate.put("button:imagebutton_crafting_hammer", imagebutton_crafting_hammer);
 		this.addRenderableWidget(imagebutton_crafting_hammer);
