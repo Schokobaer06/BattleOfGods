@@ -39,6 +39,7 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
         super(menu, inv, title);
         this.imageWidth = 176;
         this.imageHeight = 166;
+        this.playerInventoryTitle.getStyle().withColor(0xD3D3D3);
     }
 
     @Override
