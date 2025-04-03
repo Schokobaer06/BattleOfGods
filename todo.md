@@ -42,11 +42,12 @@ Ingot
 >>Boots
 ### Class Setups
 
-#### All Classes
+#### Misc
 >Weapons
 >Ammo/Buffs/Potions
 >Armor
 >Accessories
+>Other
 #### Melee
 >Weapons
 >> Shortswords
@@ -126,6 +127,8 @@ Ingot
 >Armor
 >Accessories
 #### Consumables
+>Class (Optional)
+>
 > Types
 >> Ammunition 
 >>> Flares
@@ -135,8 +138,6 @@ Ingot
 >>> Darts
 >>> Other types
 >>> Ammo used by Tools
->>>
->>> Ammo Conservation
 >>
 >>Explosives
 >>Consumable Weapons
@@ -147,6 +148,11 @@ Ingot
 >> Potions
 >> Grab bags
 >> Others
+#### Tools
+> Types
+>> Pickaxes
+>> Drills
+>> Other
 
 
 ### Mechanics
@@ -415,23 +421,31 @@ class inv0,inv1,inv2 invisible
 		- [x] Copper Shortsword [`Me`](#melee)
 		- [x] Copper Broadsword  [`Me`](#melee)
 		- [ ] Copper Bow  [`Ra`](#ranged)
-		- [ ] Copper Pickaxe
-		- [ ] Copper Axe
+		- [ ] Copper Pickaxe [`To`](#tools)
+		- [ ] Copper Axe [`To`](#tools)
 		- [ ] Guidebook &#8594; with [Patchouli](https://github.com/VazkiiMods/Patchouli) ([Guide](https://vazkiimods.github.io/Patchouli/docs/patchouli-basics/getting-started/))
 			- [ ] Entries
+    			- [ ] Start
+    			- [ ] Crafting
 				- [ ] Bestiary
 				- [ ] Progression Path
 				- [ ] NPCs
 				- [ ] Rarity 
 				- [ ] Difficulty
-    				- [ ] Codebreaker
-        			- [ ] World
-           			- [ ] Classes
-              			- [ ] Credits
+    			- [ ] World
+                  - [ ] Codebreaker
+       			- [ ] Classes
+      			- [ ] Credits
 		- [ ] Amethyst Staff [`Ma`](#magic)
 	- [ ] Environment
 		- [ ] Copper Ore
 		- [ ] Tin Ore 
+		- [ ] Iron Ore
+		- [ ] Lead Ore
+		- [ ] Silver Ore
+		- [ ] Tungsten Ore
+		- [ ] Gold Ore
+		- [ ] Platinum Ore
 		- [ ] Amethyst
 		- [ ] Topaz
 	- [ ] Mobs
@@ -442,8 +456,20 @@ class inv0,inv1,inv2 invisible
 			- [ ] Guide
 			- [ ] Merchant
 	- [ ] Items
-		- [ ] Tin Weapons & Tools
-		- [ ] Copper Weapons & Tools
+    	- [ ] For Every Ore:
+        	- [ ] Tools
+        	- [ ] Weapons
+        	- [ ] Armor
+        	- [ ] Tags
+      	- [ ] Ores:
+        	- [ ] Copper
+        	- [ ] Tin
+        	- [ ] Iron
+        	- [ ] Lead
+        	- [ ] Silver
+        	- [ ] Tungsten
+        	- [ ] Gold
+        	- [ ] Platinum
 		- [ ] Bug Net
 		- [ ] Wulfrum Set
 	- [ ] Mechanics
