@@ -10,6 +10,7 @@ import com.schokobaer.battleofgods.mechanics.recipe.RecipeHandler;
 import com.schokobaer.battleofgods.world.inventory.WorkbenchMenu;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
+import net.minecraft.client.gui.components.AbstractButton;
 import net.minecraft.client.gui.components.ImageButton;
 import net.minecraft.client.gui.components.Renderable;
 import net.minecraft.client.gui.components.Tooltip;
@@ -22,6 +23,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.Style;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.world.entity.ambient.Bat;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraftforge.client.gui.widget.ScrollPanel;
 import org.jetbrains.annotations.NotNull;
@@ -58,9 +60,19 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
         visibleRecipes = RecipeHandler.getCraftableRecipesByGroup(minecraft.player, group);
 
         // Recipe List
-        /*
-        recipeList = new ScrollPanel(minecraft, width / 4, height, 20, height - 18  , 10) {
 
+        recipeList = new ScrollPanel(minecraft,
+                (imageWidth / 2) - 2,
+                (imageHeight / 2) - (font.lineHeight * 3 + 3),
+                topPos + font.lineHeight + 8, leftPos,
+                3,
+                10,
+                0x80353535,
+                0x80353535,
+                0x7f7f7f,
+                0xD3D3D3,
+                0xffd700
+        ) {
             @Override
             public void updateNarration(NarrationElementOutput p_169152_) {
 
@@ -79,6 +91,57 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
 
             @Override
             protected void drawPanel(GuiGraphics guiGraphics, int x, int y, Tesselator tess, int mouseX, int mouseY) {
+                int buttonHeight = 16;
+                int buttonWidth = 16;
+                int margin = 1;
+
+                /*
+                addRenderableWidget(new AbstractButton(
+                        x,
+                        y,
+                        buttonWidth,
+                        buttonHeight,
+                        Component.literal("b")
+                ) {
+                    @Override
+                    protected void updateWidgetNarration(NarrationElementOutput p_259858_) {
+                        defaultButtonNarrationText(p_259858_);
+                    }
+
+                    @Override
+                    public void onPress() {
+                        BattleofgodsMod.LOGGER.info("Button pressed");
+                    }
+                });*/
+                /*
+                for (int i = 0; i < 10; i++) {
+                    addRenderableWidget(new AbstractButton(
+                            x,
+                            y,
+                            buttonWidth,
+                            buttonHeight,
+                            Component.literal("b" + i)
+                    ){
+                        @Override
+                        protected void updateWidgetNarration(NarrationElementOutput p_259858_) {
+
+                        }
+
+                        @Override
+                        public void onPress() {
+
+                        }
+                    });
+                }*/
+
+
+
+
+
+
+
+
+                /*
                 for(int i = 0; i < visibleRecipes.size(); i++) {
                     int yPos = y + i * 18;
                     addRenderableWidget(new RecipeButton(
@@ -87,11 +150,12 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
                             visibleRecipes.get(i),
                             WorkbenchScreen.this::selectRecipe
                     ));
-                }
+                }*/
             }
         };
         addRenderableWidget(recipeList);
-        */
+        //BattleofgodsMod.LOGGER.info("imageHeight: {} \nimageWidth: {}\nleftPos: {}\ntopPos: {}\n titleLabelY: {}\nInventoryLabelY: {}",imageHeight, imageWidth, leftPos, topPos, titleLabelY, inventoryLabelY);
+
         // Craft-Button
 
         addRenderableWidget(new ImageButton(
