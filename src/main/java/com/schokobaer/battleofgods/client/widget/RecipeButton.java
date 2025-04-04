@@ -6,12 +6,14 @@ import com.schokobaer.battleofgods.mechanics.recipe.RecipeHandler;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.AbstractWidget;
+import net.minecraft.client.gui.components.Tooltip;
 import net.minecraft.client.gui.narration.NarrationElementOutput;
 import net.minecraft.client.renderer.entity.ItemRenderer;
 import net.minecraft.core.RegistryAccess;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.function.Consumer;
 
@@ -46,6 +48,7 @@ public class RecipeButton extends AbstractWidget {
                 getX() + 2,
                 getY() + 2
         );
+        renderTooltip(graphics, x, y);
     }
 
     @Override
@@ -54,6 +57,7 @@ public class RecipeButton extends AbstractWidget {
     }
 
     public void renderTooltip(GuiGraphics guiGraphics, int mouseX, int mouseY) {
+        assert Minecraft.getInstance().level != null;
         RegistryAccess registryAccess = Minecraft.getInstance().level.registryAccess();
         guiGraphics.renderTooltip(
                 Minecraft.getInstance().font,
