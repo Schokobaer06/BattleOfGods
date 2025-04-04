@@ -10,10 +10,7 @@ import com.schokobaer.battleofgods.mechanics.recipe.RecipeHandler;
 import com.schokobaer.battleofgods.world.inventory.WorkbenchMenu;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
-import net.minecraft.client.gui.components.AbstractButton;
-import net.minecraft.client.gui.components.ImageButton;
-import net.minecraft.client.gui.components.Renderable;
-import net.minecraft.client.gui.components.Tooltip;
+import net.minecraft.client.gui.components.*;
 import net.minecraft.client.gui.components.events.GuiEventListener;
 import net.minecraft.client.gui.narration.NarratableEntry;
 import net.minecraft.client.gui.narration.NarrationElementOutput;
@@ -41,6 +38,7 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
     private ScrollPanel recipeList;
     private List<RecipeHandler.BattleRecipe> visibleRecipes;
     private List<MaterialWidget> materialWidgets = new ArrayList<>();
+    private Button buttonTest;
 
     public WorkbenchScreen(WorkbenchMenu menu, Inventory inv, Component title) {
         super(menu, inv, title);
@@ -61,17 +59,27 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
 
         // Recipe List
 
+        int buttonHeight = 16;
+        int buttonWidth = 16;
+        int margin = 1;
+
+
+        buttonTest = Button.builder(
+                Component.literal("b1"),
+                button -> {
+
+                }
+        ).bounds(
+                0,
+                0,
+                buttonWidth, buttonHeight
+        ).build();
+
         recipeList = new ScrollPanel(minecraft,
                 (imageWidth / 2) - 2,
                 (imageHeight / 2) - (font.lineHeight * 3 + 3),
                 topPos + font.lineHeight + 8, leftPos,
-                3,
-                10,
-                0x80353535,
-                0x80353535,
-                0x7f7f7f,
-                0xD3D3D3,
-                0xffd700
+                3
         ) {
             @Override
             public void updateNarration(NarrationElementOutput p_169152_) {
@@ -91,70 +99,16 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
 
             @Override
             protected void drawPanel(GuiGraphics guiGraphics, int x, int y, Tesselator tess, int mouseX, int mouseY) {
-                int buttonHeight = 16;
-                int buttonWidth = 16;
-                int margin = 1;
-
-                /*
-                addRenderableWidget(new AbstractButton(
-                        x,
-                        y,
-                        buttonWidth,
-                        buttonHeight,
-                        Component.literal("b")
-                ) {
-                    @Override
-                    protected void updateWidgetNarration(NarrationElementOutput p_259858_) {
-                        defaultButtonNarrationText(p_259858_);
-                    }
-
-                    @Override
-                    public void onPress() {
-                        BattleofgodsMod.LOGGER.info("Button pressed");
-                    }
-                });*/
-                /*
-                for (int i = 0; i < 10; i++) {
-                    addRenderableWidget(new AbstractButton(
-                            x,
-                            y,
-                            buttonWidth,
-                            buttonHeight,
-                            Component.literal("b" + i)
-                    ){
-                        @Override
-                        protected void updateWidgetNarration(NarrationElementOutput p_259858_) {
-
-                        }
-
-                        @Override
-                        public void onPress() {
-
-                        }
-                    });
-                }*/
 
 
-
-
-
-
-
-
-                /*
-                for(int i = 0; i < visibleRecipes.size(); i++) {
-                    int yPos = y + i * 18;
-                    addRenderableWidget(new RecipeButton(
-                            x + 5,
-                            yPos,
-                            visibleRecipes.get(i),
-                            WorkbenchScreen.this::selectRecipe
-                    ));
-                }*/
+                buttonTest.setX(x);
+                buttonTest.setY(y);
+                buttonTest.render(guiGraphics, mouseX, mouseY, minecraft.getFrameTime());
             }
         };
+
         addRenderableWidget(recipeList);
-        //BattleofgodsMod.LOGGER.info("imageHeight: {} \nimageWidth: {}\nleftPos: {}\ntopPos: {}\n titleLabelY: {}\nInventoryLabelY: {}",imageHeight, imageWidth, leftPos, topPos, titleLabelY, inventoryLabelY);
+        addRenderableWidget(buttonTest);
 
         // Craft-Button
 

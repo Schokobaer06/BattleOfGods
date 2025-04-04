@@ -78,15 +78,15 @@
       }
     },
     {
-      "name": "GuiTest",
+      "name": "TestGui",
       "type": "gui",
       "compiles": true,
       "locked_code": false,
-      "registry_name": "gui_test",
+      "registry_name": "test_gui",
       "metadata": {
         "files": [
-          "src/main/java/com/schokobaer/battleofgods/world/inventory/GuiTestMenu.java",
-          "src/main/java/com/schokobaer/battleofgods/client/gui/GuiTestScreen.java"
+          "src/main/java/com/schokobaer/battleofgods/client/gui/TestGuiScreen.java",
+          "src/main/java/com/schokobaer/battleofgods/world/inventory/TestGuiMenu.java"
         ]
       }
     }
@@ -103,13 +103,17 @@
   "language_map": {
     "en_us": {
       "item.battleofgods.item_tier_1": "Tier 1",
+      "gui.battleofgods.test_gui.label_test_text": "test_text",
+      "gui.battleofgods.test_gui.button_test_button": "test_button",
+      "item_group.battleofgods.tier_1": "Tier 1",
+      "gui.battleofgods.test_gui.button_test_button_undecorated": "test_button_undecorated",
+      "item.battleofgods.copper_shortsword": "Copper Shortsword",
       "item.battleofgods.copper_short_sword": "Copper Short Sword",
       "block.battleofgods.wooden_workbench": "Workbench",
-      "item_group.battleofgods.tier_1": "Tier 1",
+      "gui.battleofgods.test_gui.tooltip_test_tooltip": "test_tooltip",
       "item.battleofgods.copper_broadsword.description_1": "",
       "item.battleofgods.copper_broadsword.description_0": "True Melee",
-      "item.battleofgods.copper_broadsword": "Copper Broadsword",
-      "item.battleofgods.copper_shortsword": "Copper Shortsword"
+      "item.battleofgods.copper_broadsword": "Copper Broadsword"
     }
   },
   "foldersRoot": {
