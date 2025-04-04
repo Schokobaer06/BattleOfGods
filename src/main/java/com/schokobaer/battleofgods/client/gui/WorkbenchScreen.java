@@ -69,11 +69,7 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
                 button -> {
 
                 }
-        ).bounds(
-                0,
-                0,
-                buttonWidth, buttonHeight
-        ).build();
+        ).size(16,16).pos(imageWidth/2, imageHeight/2).build();
 
         recipeList = new ScrollPanel(minecraft,
                 (imageWidth / 2) - 2,
@@ -99,16 +95,11 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
 
             @Override
             protected void drawPanel(GuiGraphics guiGraphics, int x, int y, Tesselator tess, int mouseX, int mouseY) {
-
-
-                buttonTest.setX(x);
-                buttonTest.setY(y);
-                buttonTest.render(guiGraphics, mouseX, mouseY, minecraft.getFrameTime());
             }
+
         };
 
         addRenderableWidget(recipeList);
-        addRenderableWidget(buttonTest);
 
         // Craft-Button
 
