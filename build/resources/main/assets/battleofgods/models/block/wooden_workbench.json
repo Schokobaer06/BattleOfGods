@@ -1,7 +1,8 @@
 {
 	"credit": "Made with Blockbench",
 	"textures": {
-		"2": "battleofgods:block/wooden_workbench"
+		"2": "battleofgods:block/wooden_workbench",
+		"particle": "minecraft:block/stripped_spruce_log"
 	},
 	"elements": [
 		{
