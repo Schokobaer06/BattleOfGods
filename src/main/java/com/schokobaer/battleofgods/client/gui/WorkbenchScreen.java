@@ -38,7 +38,6 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
     private ScrollPanel recipeList;
     private List<RecipeHandler.BattleRecipe> visibleRecipes;
     private List<MaterialWidget> materialWidgets = new ArrayList<>();
-    private Button buttonTest;
 
     public WorkbenchScreen(WorkbenchMenu menu, Inventory inv, Component title) {
         super(menu, inv, title);
@@ -58,18 +57,15 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
         visibleRecipes = RecipeHandler.getCraftableRecipesByGroup(minecraft.player, group);
 
         // Recipe List
-
-        int buttonHeight = 16;
-        int buttonWidth = 16;
-        int margin = 1;
-
-
-        buttonTest = Button.builder(
-                Component.literal("b1"),
-                button -> {
-
-                }
-        ).size(16,16).pos(imageWidth/2, imageHeight/2).build();
+        List<Button> buttons = new ArrayList<Button>();
+        buttons.add(Button.builder(
+            Component.literal("b1"),
+            button  -> {
+                Minecraft.getInstance().getSoundManager().play(
+                        SimpleSoundInstance.forUI(SoundEvents.UI_BUTTON_CLICK, 1.0F));
+                selectRecipe(visibleRecipes.get(0));
+            }
+        ).build());
 
         recipeList = new ScrollPanel(minecraft,
                 (imageWidth / 2) - 2,
@@ -95,6 +91,15 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
 
             @Override
             protected void drawPanel(GuiGraphics guiGraphics, int x, int y, Tesselator tess, int mouseX, int mouseY) {
+            /*
+            guiGraphics.pose().pushPose();
+            guiGraphics.pose().translate(0, -getScrollAmount(), 0);
+            guiGraphics.enableScissor(left, top, left + width, top + height);
+            buttons.get(0).setX(x);
+            buttons.get(0).setY(y);
+            buttons.get(0).render(guiGraphics, mouseX, mouseY, 0);
+            guiGraphics.disableScissor();
+            */
             }
 
         };

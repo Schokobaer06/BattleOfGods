@@ -47,7 +47,7 @@ public class WoodenWorkbenchBlock extends Block {
 	public VoxelShape getVisualShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
 		return Shapes.empty();
 	}
-	public VoxelShape makeShape(){
+	private VoxelShape makeShape(){
 		VoxelShape shape = Shapes.empty();
 		shape = Shapes.join(shape, Shapes.box(0.625, 0, 0.1875, 0.8125, 0.5, 0.375), BooleanOp.OR);
 		shape = Shapes.join(shape, Shapes.box(0.625, 0, 0.625, 0.8125, 0.5, 0.8125), BooleanOp.OR);
@@ -64,18 +64,6 @@ public class WoodenWorkbenchBlock extends Block {
 	}
 	@Override
 	public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
-		/*
-		return Shapes.or(
-				box(11, 0, 3, 13, 8, 5),
-				box(11, 0, 11, 13, 8, 13),
-				box(3, 0, 11, 5, 8, 13),
-				box(3, 0, 3, 5, 8, 5),
-				box(11, 2, 5, 13, 4, 11),
-				box(3, 2, 5, 5, 4, 11),
-				box(5, 2, 11, 11, 4, 13),
-				box(5, 2, 3, 11, 4, 5),
-				box(1, 8, 1, 15, 10, 15));
-		*/
 		return makeShape();
 	}
 
