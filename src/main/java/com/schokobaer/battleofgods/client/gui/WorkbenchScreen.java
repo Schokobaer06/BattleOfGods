@@ -10,9 +10,7 @@ import com.schokobaer.battleofgods.mechanics.recipe.RecipeHandler;
 import com.schokobaer.battleofgods.world.inventory.WorkbenchMenu;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
-import net.minecraft.client.gui.components.ImageButton;
-import net.minecraft.client.gui.components.Renderable;
-import net.minecraft.client.gui.components.Tooltip;
+import net.minecraft.client.gui.components.*;
 import net.minecraft.client.gui.components.events.GuiEventListener;
 import net.minecraft.client.gui.narration.NarratableEntry;
 import net.minecraft.client.gui.narration.NarrationElementOutput;
@@ -22,6 +20,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.Style;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.world.entity.ambient.Bat;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraftforge.client.gui.widget.ScrollPanel;
 import org.jetbrains.annotations.NotNull;
@@ -39,6 +38,7 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
     private ScrollPanel recipeList;
     private List<RecipeHandler.BattleRecipe> visibleRecipes;
     private List<MaterialWidget> materialWidgets = new ArrayList<>();
+    private Button buttonTest;
 
     public WorkbenchScreen(WorkbenchMenu menu, Inventory inv, Component title) {
         super(menu, inv, title);
@@ -59,8 +59,24 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
 
         // Recipe List
 
-        recipeList = new ScrollPanel(minecraft, imageWidth / 2 - 2, (imageHeight / 2) - (inventoryLabelY + titleLabelY), topPos +1, leftPos +1  , 10) {
+        int buttonHeight = 16;
+        int buttonWidth = 16;
+        int margin = 1;
 
+
+        buttonTest = Button.builder(
+                Component.literal("b1"),
+                button -> {
+
+                }
+        ).size(16,16).pos(imageWidth/2, imageHeight/2).build();
+
+        recipeList = new ScrollPanel(minecraft,
+                (imageWidth / 2) - 2,
+                (imageHeight / 2) - (font.lineHeight * 3 + 3),
+                topPos + font.lineHeight + 8, leftPos,
+                3
+        ) {
             @Override
             public void updateNarration(NarrationElementOutput p_169152_) {
 
@@ -79,18 +95,10 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
 
             @Override
             protected void drawPanel(GuiGraphics guiGraphics, int x, int y, Tesselator tess, int mouseX, int mouseY) {
-                /*
-                for(int i = 0; i < visibleRecipes.size(); i++) {
-                    int yPos = y + i * 18;
-                    addRenderableWidget(new RecipeButton(
-                            x + 5,
-                            yPos,
-                            visibleRecipes.get(i),
-                            WorkbenchScreen.this::selectRecipe
-                    ));
-                }*/
             }
+
         };
+
         addRenderableWidget(recipeList);
 
         // Craft-Button

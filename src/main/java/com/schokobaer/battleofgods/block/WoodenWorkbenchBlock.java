@@ -2,6 +2,9 @@
 package com.schokobaer.battleofgods.block;
 
 import com.schokobaer.battleofgods.world.inventory.WorkbenchMenu;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.particle.Particle;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.Style;
 import net.minecraft.world.InteractionHand;
@@ -9,6 +12,7 @@ import net.minecraft.world.InteractionResult;
 import net.minecraft.world.SimpleMenuProvider;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.BooleanOp;
 import net.minecraft.world.phys.shapes.VoxelShape;
@@ -21,6 +25,8 @@ import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.core.BlockPos;
+
+import javax.xml.stream.events.Attribute;
 
 public class WoodenWorkbenchBlock extends Block {
 	public WoodenWorkbenchBlock() {
@@ -41,9 +47,7 @@ public class WoodenWorkbenchBlock extends Block {
 	public VoxelShape getVisualShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
 		return Shapes.empty();
 	}
-
-	@Override
-	public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
+	public VoxelShape makeShape(){
 		VoxelShape shape = Shapes.empty();
 		shape = Shapes.join(shape, Shapes.box(0.625, 0, 0.1875, 0.8125, 0.5, 0.375), BooleanOp.OR);
 		shape = Shapes.join(shape, Shapes.box(0.625, 0, 0.625, 0.8125, 0.5, 0.8125), BooleanOp.OR);
@@ -57,6 +61,22 @@ public class WoodenWorkbenchBlock extends Block {
 		shape = Shapes.join(shape, Shapes.box(0.125, 0.375, 0.125, 0.875, 0.5, 0.875), BooleanOp.OR);
 
 		return shape;
+	}
+	@Override
+	public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
+		/*
+		return Shapes.or(
+				box(11, 0, 3, 13, 8, 5),
+				box(11, 0, 11, 13, 8, 13),
+				box(3, 0, 11, 5, 8, 13),
+				box(3, 0, 3, 5, 8, 5),
+				box(11, 2, 5, 13, 4, 11),
+				box(3, 2, 5, 5, 4, 11),
+				box(5, 2, 11, 11, 4, 13),
+				box(5, 2, 3, 11, 4, 5),
+				box(1, 8, 1, 15, 10, 15));
+		*/
+		return makeShape();
 	}
 
 	@Override
