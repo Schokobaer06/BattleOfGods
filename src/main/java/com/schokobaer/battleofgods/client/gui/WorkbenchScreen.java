@@ -91,15 +91,31 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
             @Override
             protected void drawPanel(GuiGraphics guiGraphics, int x, int y, Tesselator tess, int mouseX, int mouseY) {
 
+                int buttonWidth = 16; // Breite eines Buttons
+                int buttonHeight = 16; // Höhe eines Buttons
+                int buttonSpacing = 2; // Abstand zwischen Buttons
+                int buttonsPerRow = Math.max(1, (width - buttonSpacing) / (buttonWidth + buttonSpacing));
+
+                int rowWidth = buttonsPerRow * (buttonWidth + buttonSpacing) - buttonSpacing;
+                int startX = (width - rowWidth) / 2; // Zentrierte Position
             guiGraphics.pose().pushPose();
             //guiGraphics.pose().translate(0, -getScrollAmount(), 0);
             guiGraphics.enableScissor(left, top, left + width, top + height);
-            for (Button button: buttons) {
-                button.setX((x-width));
-                button.setY(y);
-                button.render(guiGraphics, x, y, 0);
+
+            for (int i = 0; i< buttons.size();i++){
+                int row = i / buttonsPerRow;
+                int col = i % buttonsPerRow;
+
+                int buttonX = (x-width) + (startX + col * (buttonWidth + buttonSpacing));
+                int buttonY = y + (row * (buttonHeight + buttonSpacing));
+
+                buttons.get(i).setX(buttonX);
+                buttons.get(i).setY(buttonY);
+                buttons.get(i).render(guiGraphics, x, y, 0);
 
             }
+
+
             guiGraphics.disableScissor();
 
             }
