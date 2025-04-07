@@ -63,9 +63,8 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
             button  -> {
                 Minecraft.getInstance().getSoundManager().play(
                         SimpleSoundInstance.forUI(SoundEvents.UI_BUTTON_CLICK, 1.0F));
-                selectRecipe(visibleRecipes.get(0));
             }
-        ).build());
+        ).size(16,16).build());
 
         recipeList = new ScrollPanel(minecraft,
                 (imageWidth / 2) - 2,
@@ -85,25 +84,28 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
 
             @Override
             protected int getContentHeight() {
-                return visibleRecipes.size() * 18;
+                return buttons.size() * 18;
             }
 
 
             @Override
             protected void drawPanel(GuiGraphics guiGraphics, int x, int y, Tesselator tess, int mouseX, int mouseY) {
-            /*
+
             guiGraphics.pose().pushPose();
-            guiGraphics.pose().translate(0, -getScrollAmount(), 0);
+            //guiGraphics.pose().translate(0, -getScrollAmount(), 0);
             guiGraphics.enableScissor(left, top, left + width, top + height);
-            buttons.get(0).setX(x);
-            buttons.get(0).setY(y);
-            buttons.get(0).render(guiGraphics, mouseX, mouseY, 0);
+            for (Button button: buttons) {
+                button.setX((x-width));
+                button.setY(y);
+                button.render(guiGraphics, x, y, 0);
+
+            }
             guiGraphics.disableScissor();
-            */
+
             }
 
         };
-
+        buttons.forEach(this::addRenderableWidget);
         addRenderableWidget(recipeList);
 
         // Craft-Button
@@ -118,6 +120,7 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
                 button -> {
                     Minecraft.getInstance().getSoundManager().play(
                             SimpleSoundInstance.forUI(SoundEvents.UI_BUTTON_CLICK, 1.0F));
+                    BattleofgodsMod.LOGGER.info("buttonX: {}\nbuttonY: {}",buttons.get(0).getX(), buttons.get(0).getY());
                     craftItem();
                 }
         ) {
