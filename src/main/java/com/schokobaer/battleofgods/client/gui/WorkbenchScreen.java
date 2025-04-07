@@ -62,8 +62,11 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
                     Minecraft.getInstance().getSoundManager().play(
                             SimpleSoundInstance.forUI(SoundEvents.UI_BUTTON_CLICK, 1.0F));
                             System.out.println("Button b" + finalI + " has been pressed!");
+                    button.setFocused(false);
                 }
             ).size(16,16).build());
+
+
         }
         recipeList = new ScrollPanel(minecraft,
                 (imageWidth / 2) - 2,
@@ -83,45 +86,66 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
 
             @Override
             protected int getContentHeight() {
-                return buttons.size() * 18;
+                int buttonHeight = (!buttons.isEmpty()) ? buttons.get(0).getHeight() : 16; // Höhe eines Buttons
+                int buttonSpacing = 2; // Abstand zwischen Buttons
+                int buttonsPerRow = Math.max(1, (width - buttonSpacing) / (buttonHeight + buttonSpacing));
+                int rowCount = (int) Math.ceil((double) buttons.size() / buttonsPerRow);
+                return rowCount * (buttonHeight + buttonSpacing);
             }
 
 
             @Override
             protected void drawPanel(GuiGraphics guiGraphics, int x, int y, Tesselator tess, int mouseX, int mouseY) {
 
-                int buttonWidth = buttons.get(0).getWidth(); // Breite eines Buttons
-                int buttonHeight = buttons.get(0).getHeight(); // Höhe eines Buttons
+                int buttonWidth = (!buttons.isEmpty()) ? buttons.get(0).getWidth() : 16; // Breite eines Buttons
+                int buttonHeight = (!buttons.isEmpty()) ? buttons.get(0).getHeight() : 16; // Höhe eines Buttons
                 int buttonSpacing = 2; // Abstand zwischen Buttons
                 int buttonsPerRow = Math.max(1, (width - buttonSpacing) / (buttonWidth + buttonSpacing));
 
                 int rowWidth = buttonsPerRow * (buttonWidth + buttonSpacing) - buttonSpacing;
                 int startX = (width - rowWidth) / 2; // Zentrierte Position
-            guiGraphics.pose().pushPose();
-            //guiGraphics.pose().translate(0, -getScrollAmount(), 0);
-            guiGraphics.enableScissor(left, top, left + width, top + height);
+                guiGraphics.pose().pushPose();
+                guiGraphics.enableScissor(left, top, left + width, top + height);
 
-            for (int i = 0; i< buttons.size();i++){
-                Button button = buttons.get(i);
-                int row = i / buttonsPerRow;
-                int col = i % buttonsPerRow;
 
-                int buttonX = (x-width) + (startX + col * (buttonWidth + buttonSpacing));
-                int buttonY = y + (row * (buttonHeight + buttonSpacing));
+                //Adding buttons to the scroll panel
+                for (int i = 0; i < buttons.size(); i++) {
+                    Button button = buttons.get(i);
+                    int row = i / buttonsPerRow;
+                    int col = i % buttonsPerRow;
 
-                button.setX(buttonX);
-                button.setY(buttonY);
-                button.render(guiGraphics, x, y, 0);
+                    int buttonX = (x - width) + (startX + col * (buttonWidth + buttonSpacing));
+                    int buttonY = y + (row * (buttonHeight + buttonSpacing));
 
+                    button.setX(buttonX);
+                    button.setY(buttonY);
+                    assert minecraft != null;
+                    button.render(guiGraphics, x, y, minecraft.getFrameTime());
+                }
+                guiGraphics.disableScissor();
             }
 
+            //making buttons clickable
+            @Override
+            public boolean mouseClicked(double mouseX, double mouseY, int button) {
+                if (!isMouseOver(mouseX, mouseY)) {
+                    return false;
+                }
 
-            guiGraphics.disableScissor();
+                // Buttons prüfen
+                for (Button btn : buttons) {
 
+                    if (mouseX >= btn.getX() &&
+                            mouseX <= btn.getX() + btn.getWidth() &&
+                            mouseY >= btn.getY() &&
+                            mouseY <= btn.getY() + btn.getHeight()) {
+                        btn.onPress();
+                    }
+
+                }
+                return super.mouseClicked(mouseX, mouseY, button);
             }
-
         };
-        //buttons.forEach(this::addRenderableWidget);
         addRenderableWidget(recipeList);
 
         // Craft-Button
@@ -136,7 +160,6 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
                 button -> {
                     Minecraft.getInstance().getSoundManager().play(
                             SimpleSoundInstance.forUI(SoundEvents.UI_BUTTON_CLICK, 1.0F));
-                    //BattleofgodsMod.LOGGER.info("buttonX: {}\nbuttonY: {}",buttons.get(0).getX(), buttons.get(0).getY());
                     craftItem();
                 }
         ) {
