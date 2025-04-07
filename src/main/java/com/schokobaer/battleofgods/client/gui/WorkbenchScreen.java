@@ -71,6 +71,15 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
                 }
         ).size(16,16).pos(imageWidth/2, imageHeight/2).build();
 
+
+
+
+
+
+
+
+
+        /*
         recipeList = new ScrollPanel(minecraft,
                 (imageWidth / 2) - 2,
                 (imageHeight / 2) - (font.lineHeight * 3 + 3),
@@ -100,11 +109,11 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
         };
 
         addRenderableWidget(recipeList);
-
+        */
         // Craft-Button
 
         addRenderableWidget(new ImageButton(
-                7*(leftPos + imageWidth)/8, topPos + 64,
+                leftPos + 150, topPos + 64,
                 16, 16,
                 0, 0,  // Normal state
                 16,     // xDiff between states
