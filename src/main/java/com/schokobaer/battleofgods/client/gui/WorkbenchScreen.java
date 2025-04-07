@@ -58,8 +58,8 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
         visibleRecipes = RecipeHandler.getCraftableRecipesByGroup(minecraft.player, group);
 
         // Recipe List
-        /*
-        recipeList = new ScrollPanel(minecraft, width / 4, height, 20, height - 18  , 10) {
+
+        recipeList = new ScrollPanel(minecraft, imageWidth / 2 - 2, (imageHeight / 2) - (inventoryLabelY + titleLabelY), topPos +1, leftPos +1  , 10) {
 
             @Override
             public void updateNarration(NarrationElementOutput p_169152_) {
@@ -79,6 +79,7 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
 
             @Override
             protected void drawPanel(GuiGraphics guiGraphics, int x, int y, Tesselator tess, int mouseX, int mouseY) {
+                /*
                 for(int i = 0; i < visibleRecipes.size(); i++) {
                     int yPos = y + i * 18;
                     addRenderableWidget(new RecipeButton(
@@ -87,11 +88,11 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
                             visibleRecipes.get(i),
                             WorkbenchScreen.this::selectRecipe
                     ));
-                }
+                }*/
             }
         };
         addRenderableWidget(recipeList);
-        */
+
         // Craft-Button
 
         addRenderableWidget(new ImageButton(
