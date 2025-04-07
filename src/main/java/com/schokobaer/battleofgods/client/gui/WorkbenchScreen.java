@@ -4,26 +4,22 @@ import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.Tesselator;
 import com.schokobaer.battleofgods.BattleofgodsMod;
 import com.schokobaer.battleofgods.client.widget.MaterialWidget;
-import com.schokobaer.battleofgods.client.widget.RecipeButton;
 import com.schokobaer.battleofgods.mechanics.recipe.CraftPacket;
 import com.schokobaer.battleofgods.mechanics.recipe.RecipeHandler;
 import com.schokobaer.battleofgods.world.inventory.WorkbenchMenu;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
-import net.minecraft.client.gui.components.*;
-import net.minecraft.client.gui.components.events.GuiEventListener;
-import net.minecraft.client.gui.narration.NarratableEntry;
+import net.minecraft.client.gui.components.Button;
+import net.minecraft.client.gui.components.ImageButton;
+import net.minecraft.client.gui.components.Tooltip;
 import net.minecraft.client.gui.narration.NarrationElementOutput;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.client.resources.sounds.SimpleSoundInstance;
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.Style;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
-import net.minecraft.world.entity.ambient.Bat;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraftforge.client.gui.widget.ScrollPanel;
-import org.jetbrains.annotations.NotNull;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;
@@ -37,7 +33,7 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
 
     private ScrollPanel recipeList;
     private List<RecipeHandler.BattleRecipe> visibleRecipes;
-    private List<MaterialWidget> materialWidgets = new ArrayList<>();
+    private final List<MaterialWidget> materialWidgets = new ArrayList<>();
 
     public WorkbenchScreen(WorkbenchMenu menu, Inventory inv, Component title) {
         super(menu, inv, title);
@@ -58,7 +54,7 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
 
         // Recipe List
         List<Button> buttons = new ArrayList<>();
-        for (int i = 0; i < 2; i++){
+        for (int i = 1; i <= 12; i++) {
             int finalI = i;
             buttons.add(Button.builder(
                 Component.literal("b" + i),
@@ -125,7 +121,7 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
             }
 
         };
-        buttons.forEach(this::addRenderableWidget);
+        //buttons.forEach(this::addRenderableWidget);
         addRenderableWidget(recipeList);
 
         // Craft-Button
@@ -169,7 +165,8 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
         materialWidgets.forEach(this::removeWidget);
         materialWidgets.clear();
 
-        if(menu.getSelectedRecipe() == null) return;
+        if (menu.getSelectedRecipe() == null) {
+        }
 
         // Neue Material-list
         /*
