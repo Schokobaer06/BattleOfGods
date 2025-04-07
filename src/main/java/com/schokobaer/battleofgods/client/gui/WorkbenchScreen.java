@@ -57,15 +57,18 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
         visibleRecipes = RecipeHandler.getCraftableRecipesByGroup(minecraft.player, group);
 
         // Recipe List
-        List<Button> buttons = new ArrayList<Button>();
-        buttons.add(Button.builder(
-            Component.literal("b1"),
-            button  -> {
-                Minecraft.getInstance().getSoundManager().play(
-                        SimpleSoundInstance.forUI(SoundEvents.UI_BUTTON_CLICK, 1.0F));
-            }
-        ).size(16,16).build());
-
+        List<Button> buttons = new ArrayList<>();
+        for (int i = 0; i < 2; i++){
+            int finalI = i;
+            buttons.add(Button.builder(
+                Component.literal("b" + i),
+                button  -> {
+                    Minecraft.getInstance().getSoundManager().play(
+                            SimpleSoundInstance.forUI(SoundEvents.UI_BUTTON_CLICK, 1.0F));
+                            System.out.println("Button b" + finalI + " has been pressed!");
+                }
+            ).size(16,16).build());
+        }
         recipeList = new ScrollPanel(minecraft,
                 (imageWidth / 2) - 2,
                 (imageHeight / 2) - (font.lineHeight * 3 + 3),
@@ -91,8 +94,8 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
             @Override
             protected void drawPanel(GuiGraphics guiGraphics, int x, int y, Tesselator tess, int mouseX, int mouseY) {
 
-                int buttonWidth = 16; // Breite eines Buttons
-                int buttonHeight = 16; // Höhe eines Buttons
+                int buttonWidth = buttons.get(0).getWidth(); // Breite eines Buttons
+                int buttonHeight = buttons.get(0).getHeight(); // Höhe eines Buttons
                 int buttonSpacing = 2; // Abstand zwischen Buttons
                 int buttonsPerRow = Math.max(1, (width - buttonSpacing) / (buttonWidth + buttonSpacing));
 
@@ -103,15 +106,16 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
             guiGraphics.enableScissor(left, top, left + width, top + height);
 
             for (int i = 0; i< buttons.size();i++){
+                Button button = buttons.get(i);
                 int row = i / buttonsPerRow;
                 int col = i % buttonsPerRow;
 
                 int buttonX = (x-width) + (startX + col * (buttonWidth + buttonSpacing));
                 int buttonY = y + (row * (buttonHeight + buttonSpacing));
 
-                buttons.get(i).setX(buttonX);
-                buttons.get(i).setY(buttonY);
-                buttons.get(i).render(guiGraphics, x, y, 0);
+                button.setX(buttonX);
+                button.setY(buttonY);
+                button.render(guiGraphics, x, y, 0);
 
             }
 
@@ -136,7 +140,7 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
                 button -> {
                     Minecraft.getInstance().getSoundManager().play(
                             SimpleSoundInstance.forUI(SoundEvents.UI_BUTTON_CLICK, 1.0F));
-                    BattleofgodsMod.LOGGER.info("buttonX: {}\nbuttonY: {}",buttons.get(0).getX(), buttons.get(0).getY());
+                    //BattleofgodsMod.LOGGER.info("buttonX: {}\nbuttonY: {}",buttons.get(0).getX(), buttons.get(0).getY());
                     craftItem();
                 }
         ) {
