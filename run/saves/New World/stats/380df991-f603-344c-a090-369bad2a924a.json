@@ -1,17 +1,21 @@
 {
   "stats": {
-    "minecraft:mined": {
-      "minecraft:grass_block": 3,
-      "battleofgods:wooden_workbench": 2
-    },
-    "minecraft:used": {
-      "minecraft:oak_log": 19,
-      "minecraft:diamond_sword": 3,
-      "minecraft:dirt": 1,
-      "battleofgods:wooden_workbench": 17,
-      "minecraft:crafting_table": 1,
-      "minecraft:grass_block": 11,
-      "minecraft:iron_axe": 1
+    "minecraft:custom": {
+      "minecraft:time_since_rest": 121835,
+      "minecraft:play_time": 121835,
+      "minecraft:crouch_one_cm": 1220,
+      "minecraft:sprint_one_cm": 25809,
+      "minecraft:walk_one_cm": 47866,
+      "minecraft:sneak_time": 934,
+      "minecraft:mob_kills": 5,
+      "minecraft:drop": 5,
+      "minecraft:jump": 130,
+      "minecraft:damage_dealt": 522,
+      "minecraft:leave_game": 218,
+      "minecraft:time_since_death": 121835,
+      "minecraft:total_world_time": 247240,
+      "minecraft:interact_with_crafting_table": 8,
+      "minecraft:fly_one_cm": 36108
     },
     "minecraft:killed": {
       "minecraft:slime": 5
@@ -22,22 +26,14 @@
       "minecraft:dirt": 1,
       "minecraft:oak_log": 1
     },
-    "minecraft:custom": {
-      "minecraft:time_since_rest": 119097,
-      "minecraft:play_time": 119097,
-      "minecraft:crouch_one_cm": 1220,
-      "minecraft:sprint_one_cm": 25809,
-      "minecraft:walk_one_cm": 47866,
-      "minecraft:sneak_time": 934,
-      "minecraft:mob_kills": 5,
-      "minecraft:drop": 5,
-      "minecraft:jump": 130,
-      "minecraft:damage_dealt": 522,
-      "minecraft:leave_game": 212,
-      "minecraft:time_since_death": 119097,
-      "minecraft:total_world_time": 243057,
-      "minecraft:interact_with_crafting_table": 8,
-      "minecraft:fly_one_cm": 36108
+    "minecraft:used": {
+      "minecraft:oak_log": 19,
+      "minecraft:diamond_sword": 3,
+      "minecraft:dirt": 1,
+      "battleofgods:wooden_workbench": 17,
+      "minecraft:crafting_table": 1,
+      "minecraft:grass_block": 11,
+      "minecraft:iron_axe": 1
     },
     "minecraft:picked_up": {
       "minecraft:slime_ball": 1,
@@ -45,6 +41,10 @@
       "battleofgods:wooden_workbench": 3,
       "minecraft:oak_log": 1,
       "minecraft:dirt": 2
+    },
+    "minecraft:mined": {
+      "minecraft:grass_block": 3,
+      "battleofgods:wooden_workbench": 2
     }
   },
   "DataVersion": 3465

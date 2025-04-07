@@ -72,7 +72,10 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
                 (imageWidth / 2) - 2,
                 (imageHeight / 2) - (font.lineHeight * 3 + 3),
                 topPos + font.lineHeight + 8, leftPos,
-                3
+                1,
+                3,
+                0x00FFFFFF,
+                0x00FFFFFF
         ) {
             @Override
             public void updateNarration(NarrationElementOutput p_169152_) {
