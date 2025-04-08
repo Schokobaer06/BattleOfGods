@@ -142,11 +142,25 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
                             mouseX <= btn.getX() + btn.getWidth() &&
                             mouseY >= btn.getY() &&
                             mouseY <= btn.getY() + btn.getHeight()) {
-                        btn.onPress();
+                        btn.mouseClicked(mouseX,mouseY,button);
                     }
 
                 }
                 return super.mouseClicked(mouseX, mouseY, button);
+            }
+
+            @Override
+            public boolean isMouseOver(double mouseX, double mouseY) {
+                for (Button btn : buttons) {
+                    if (mouseX >= btn.getX() &&
+                            mouseX <= btn.getX() + btn.getWidth() &&
+                            mouseY >= btn.getY() &&
+                            mouseY <= btn.getY() + btn.getHeight()) {
+                        return btn.isMouseOver(mouseX, mouseY);
+                    }
+                }
+                return false;
+
             }
         };
         addRenderableWidget(recipeList);
