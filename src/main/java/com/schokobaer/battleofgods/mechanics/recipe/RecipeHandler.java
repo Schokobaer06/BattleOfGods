@@ -37,7 +37,7 @@ public class RecipeHandler {
     public static void loadRecipes() {
         RECIPE_MAP.clear();
         RECIPES.clear();
-        Path recipeDir = Paths.get("src/main/resources/data/" + BattleofgodsMod.MODID + "/recipes");
+        Path recipeDir = Paths.get(new ResourceLocation(BattleofgodsMod.MODID, "recipes").getPath());
         if (!Files.exists(recipeDir)) {
             BattleofgodsMod.LOGGER.info("Recipe directory does not exist at path: {}", recipeDir.toAbsolutePath());
             return;
@@ -45,22 +45,7 @@ public class RecipeHandler {
         Gson gson = new GsonBuilder()
                 .registerTypeAdapter(BattleRecipe.class, new BattleRecipe.Deserializer())
                 .create();
-        try (InputStream inputStream = (InputStream) Minecraft.getInstance().getResourceManager().getResource(
-                new ResourceLocation(BattleofgodsMod.MODID, "recipes")).stream();
-             InputStreamReader reader = new InputStreamReader(inputStream)) {
-            JsonObject json = JsonParser.parseReader(reader).getAsJsonObject();
-            for (Map.Entry<String, JsonElement> entry : json.entrySet()) {
-                String recipeName = entry.getKey();
-                JsonElement recipeElement = entry.getValue();
-                BattleRecipe recipe = gson.fromJson(recipeElement, BattleRecipe.class);
-                if (recipe != null && recipe.isValid()) {
-                    RECIPES.add(recipe);
-                    BattleofgodsMod.LOGGER.info("Successfully loaded recipe: {}", recipe.getId());
-                }
-            }
-        } catch (Exception e) {
-            BattleofgodsMod.LOGGER.error("Failed to load recipes from JSON!", e);
-        }
+
         try (var files = Files.walk(recipeDir)) {
             files.filter(Files::isRegularFile)
                     .filter(path -> path.toString().endsWith(".json"))
