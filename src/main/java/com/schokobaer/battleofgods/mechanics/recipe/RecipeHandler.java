@@ -38,7 +38,7 @@ public class RecipeHandler {
         RECIPES.clear();
 
         // Korrekter Pfad für Ressourcen
-        String dataPath = "data/battleofgods/recipes";
+        String path = "recipes";
         BattleofgodsMod.LOGGER.info("Loading recipes from mod resources");
 
         Gson gson = new GsonBuilder()
@@ -48,7 +48,7 @@ public class RecipeHandler {
         try {
             // Lade Ressourcen aus dem ClassLoader
             List<ResourceLocation> recipeResources = Minecraft.getInstance().getResourceManager()
-                    .listResources("recipes", p ->
+                    .listResources(path, p ->
                             p.getNamespace().equals(BattleofgodsMod.MODID) &&
                                     p.getPath().endsWith(".json")
                     )
