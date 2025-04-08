@@ -4,6 +4,7 @@ import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.Tesselator;
 import com.schokobaer.battleofgods.BattleofgodsMod;
 import com.schokobaer.battleofgods.client.widget.MaterialWidget;
+import com.schokobaer.battleofgods.client.widget.RecipeButton;
 import com.schokobaer.battleofgods.mechanics.recipe.CraftPacket;
 import com.schokobaer.battleofgods.mechanics.recipe.RecipeHandler;
 import com.schokobaer.battleofgods.world.inventory.WorkbenchMenu;
@@ -52,22 +53,29 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
         //visibleRecipes = RecipeHandler.getCraftableRecipes(minecraft.player);
         visibleRecipes = RecipeHandler.getCraftableRecipesByGroup(minecraft.player, group);
 
-        // Recipe List
-        List<Button> buttons = new ArrayList<>();
-        for (int i = 1; i <= 12; i++) {
-            int finalI = i;
-            buttons.add(Button.builder(
-                Component.literal("b" + i),
-                button  -> {
+        List<RecipeButton> buttons = new ArrayList<>();
+        visibleRecipes.forEach(recipe -> {
+            buttons.add(new RecipeButton(
+                    0,
+                    0,
+                    recipe,
+                    this::selectRecipe
+            ){
+                @Override
+                public void onClick(double x, double y) {
+                    //onSelect(x,y);
                     Minecraft.getInstance().getSoundManager().play(
                             SimpleSoundInstance.forUI(SoundEvents.UI_BUTTON_CLICK, 1.0F));
-                            System.out.println("Button b" + finalI + " has been pressed!");
-                    button.setFocused(false);
+                    System.out.println("Button clicked: " + recipe.getId());
                 }
-            ).size(16,16).build());
+            });
+        });
+        System.out.println("Recipes: " + visibleRecipes.size());
+        visibleRecipes.forEach(recipe -> {
+            System.out.println("Recipe: " + recipe.getId());
+        });
+        // Recipe List
 
-
-        }
         recipeList = new ScrollPanel(minecraft,
                 (imageWidth / 2) - 2,
                 (imageHeight / 2) - (font.lineHeight * 3 + 3),
@@ -89,7 +97,8 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
 
             @Override
             protected int getContentHeight() {
-                int buttonHeight = (!buttons.isEmpty()) ? buttons.get(0).getHeight() : 16; // Höhe eines Buttons
+                if (buttons.isEmpty()) return 0;
+                int buttonHeight = buttons.get(0).getHeight(); // Höhe eines Buttons
                 int buttonSpacing = 2; // Abstand zwischen Buttons
                 int buttonsPerRow = Math.max(1, (width - buttonSpacing) / (buttonHeight + buttonSpacing));
                 int rowCount = (int) Math.ceil((double) buttons.size() / buttonsPerRow);
@@ -100,8 +109,10 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
             @Override
             protected void drawPanel(GuiGraphics guiGraphics, int x, int y, Tesselator tess, int mouseX, int mouseY) {
 
-                int buttonWidth = (!buttons.isEmpty()) ? buttons.get(0).getWidth() : 16; // Breite eines Buttons
-                int buttonHeight = (!buttons.isEmpty()) ? buttons.get(0).getHeight() : 16; // Höhe eines Buttons
+                if (buttons.isEmpty()) return;
+
+                int buttonWidth = buttons.get(0).getWidth(); // Breite eines Buttons
+                int buttonHeight = buttons.get(0).getHeight(); // Höhe eines Buttons
                 int buttonSpacing = 2; // Abstand zwischen Buttons
                 int buttonsPerRow = Math.max(1, (width - buttonSpacing) / (buttonWidth + buttonSpacing));
 
@@ -113,7 +124,7 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
 
                 //Adding buttons to the scroll panel
                 for (int i = 0; i < buttons.size(); i++) {
-                    Button button = buttons.get(i);
+                    RecipeButton button = buttons.get(i);
                     int row = i / buttonsPerRow;
                     int col = i % buttonsPerRow;
 
@@ -136,7 +147,7 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
                 }
 
                 // Buttons prüfen
-                for (Button btn : buttons) {
+                for (RecipeButton btn : buttons) {
 
                     if (mouseX >= btn.getX() &&
                             mouseX <= btn.getX() + btn.getWidth() &&
@@ -151,7 +162,7 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
 
             @Override
             public boolean isMouseOver(double mouseX, double mouseY) {
-                for (Button btn : buttons) {
+                for (RecipeButton btn : buttons) {
                     if (mouseX >= btn.getX() &&
                             mouseX <= btn.getX() + btn.getWidth() &&
                             mouseY >= btn.getY() &&
@@ -177,7 +188,7 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
                 button -> {
                     Minecraft.getInstance().getSoundManager().play(
                             SimpleSoundInstance.forUI(SoundEvents.UI_BUTTON_CLICK, 1.0F));
-                    craftItem();
+                    //craftItem();
                 }
         ) {
             @Override
@@ -227,18 +238,6 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
         if (menu.getSelectedRecipe() == null) return;
         BattleofgodsMod.PACKET_HANDLER.sendToServer(new CraftPacket(menu.getSelectedRecipe().getId()));
         init();
-    }
-
-
-    private float getScrollAmount() {
-        try {
-            Field scrollField = ScrollPanel.class.getDeclaredField("scrollDistance");
-            scrollField.setAccessible(true);
-            return (float) scrollField.get(recipeList);
-        } catch (NoSuchFieldException | IllegalAccessException | NullPointerException e) {
-            e.printStackTrace();
-            return 0;
-        }
     }
 
     @Override

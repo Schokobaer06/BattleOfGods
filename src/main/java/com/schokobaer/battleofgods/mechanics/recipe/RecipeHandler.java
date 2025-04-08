@@ -2,6 +2,7 @@ package com.schokobaer.battleofgods.mechanics.recipe;
 
 import com.google.gson.*;
 import com.schokobaer.battleofgods.BattleofgodsMod;
+import net.minecraft.client.Minecraft;
 import net.minecraft.core.RegistryAccess;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
@@ -19,10 +20,13 @@ import net.minecraftforge.common.crafting.CraftingHelper;
 import net.minecraftforge.registries.ForgeRegistries;
 
 import java.io.FileReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.*;
+import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
 public class RecipeHandler {
@@ -32,33 +36,48 @@ public class RecipeHandler {
     public static void loadRecipes() {
         RECIPE_MAP.clear();
         RECIPES.clear();
-        Path recipeDir = Paths.get("data/battleofgods/recipes");
-        if (!Files.exists(recipeDir)) return;
+
+        // Korrekter Pfad für Ressourcen
+        String dataPath = "data/battleofgods/recipes";
+        BattleofgodsMod.LOGGER.info("Loading recipes from mod resources");
 
         Gson gson = new GsonBuilder()
                 .registerTypeAdapter(BattleRecipe.class, new BattleRecipe.Deserializer())
                 .create();
 
-        try (var files = Files.walk(recipeDir)) {
-            files.filter(Files::isRegularFile)
-                    .filter(path -> path.toString().endsWith(".json"))
-                    .forEach(path -> {
-                        try (FileReader reader = new FileReader(path.toFile())) {
-                            BattleRecipe recipe = gson.fromJson(reader, BattleRecipe.class);
-                            if (recipe != null && recipe.isValid()) {
-                                RECIPES.add(recipe);
-                                BattleofgodsMod.LOGGER.info("Successfully loaded recipe: {}", recipe.getId());
-                            }
-                        } catch (Exception e) {
-                            BattleofgodsMod.LOGGER.error("Failed to load recipe: {}", path.getFileName(), e);
-                        }
-                    });
+        try {
+            // Lade Ressourcen aus dem ClassLoader
+            List<ResourceLocation> recipeResources = Minecraft.getInstance().getResourceManager()
+                    .listResources("recipes", p ->
+                            p.getNamespace().equals(BattleofgodsMod.MODID) &&
+                                    p.getPath().endsWith(".json")
+                    )
+                    .keySet()
+                    .stream()
+                    .filter(rl -> rl.getNamespace().equals(BattleofgodsMod.MODID))
+                    .toList();
+
+            BattleofgodsMod.LOGGER.info("Recipe resources size: {}", recipeResources.size());
+            recipeResources.forEach(resourceLocation -> {
+                BattleofgodsMod.LOGGER.info("Found recipe resource: {} with Namespace: {} and Path: {}", resourceLocation, resourceLocation.getNamespace(), resourceLocation.getPath());
+            });
+            for (ResourceLocation rl : recipeResources) {
+                try (InputStream stream = Minecraft.getInstance().getResourceManager().open(rl)) {
+                    BattleRecipe recipe = gson.fromJson(new InputStreamReader(stream), BattleRecipe.class);
+                    if (recipe != null && recipe.isValid()) {
+                        RECIPES.add(recipe);
+                        BattleofgodsMod.LOGGER.info("Loaded recipe: {}", rl);
+                    }
+                } catch (Exception e) {
+                    BattleofgodsMod.LOGGER.error("Failed to load recipe: {}", rl, e);
+                }
+            }
 
             RECIPES.forEach(recipe -> RECIPE_MAP.put(recipe.getId(), recipe));
+            BattleofgodsMod.LOGGER.info("Successfully loaded {} recipes", RECIPES.size());
         } catch (Exception e) {
             BattleofgodsMod.LOGGER.error("Failed to load recipes!", e);
         }
-
     }
 
 
@@ -93,6 +112,7 @@ public class RecipeHandler {
                 .filter(r -> r.group.equals(group))
                 .collect(Collectors.toList());
     }
+
 
     public static List<BattleRecipe> getCraftableRecipesByGroup(Player player, String group) {
         return getRecipesByGroup(group).stream()
