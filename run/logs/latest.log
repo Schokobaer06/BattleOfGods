@@ -1,230 +1,61 @@
-[08Apr.2025 15:00:34.325] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher running: args [--launchTarget, forgeclientuserdev, --version, MOD_DEV, --assetIndex, 5, --assetsDir, C:\Users\Josef Peer\.gradle\caches\forge_gradle\assets, --gameDir, ., --fml.forgeVersion, 47.3.0, --fml.mcVersion, 1.20.1, --fml.forgeGroup, net.minecraftforge, --fml.mcpVersion, 20230612.114412]
-[08Apr.2025 15:00:34.339] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher 10.0.9+10.0.9+main.dcd20f30 starting: java version 17.0.14 by Eclipse Adoptium; OS Windows 11 arch amd64 version 10.0
-[08Apr.2025 15:00:34.820] [main/INFO] [net.minecraftforge.fml.loading.ImmediateWindowHandler/]: Loading ImmediateWindowProvider fmlearlywindow
-[08Apr.2025 15:00:35.078] [main/INFO] [EARLYDISPLAY/]: Trying GL version 4.6
-[08Apr.2025 15:00:35.417] [main/INFO] [EARLYDISPLAY/]: Requested GL version 4.6 got version 4.6
-[08Apr.2025 15:00:35.708] [main/INFO] [mixin/]: SpongePowered MIXIN Subsystem Version=0.8.5 Source=union:/C:/Users/Josef%20Peer/.gradle/caches/modules-2/files-2.1/org.spongepowered/mixin/0.8.5/9d1c0c3a304ae6697ecd477218fa61b850bf57fc/mixin-0.8.5.jar%23129!/ Service=ModLauncher Env=CLIENT
-[08Apr.2025 15:00:35.747] [pool-2-thread-1/INFO] [EARLYDISPLAY/]: GL info: Intel(R) Iris(R) Plus Graphics GL version 4.6.0 - Build 30.0.100.9805, Intel
-[08Apr.2025 15:00:36.725] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\Josef Peer\.gradle\caches\modules-2\files-2.1\net.minecraftforge\javafmllanguage\1.20.1-47.3.0\d7ebc62120f202109e300e084ca1a31a7b946a62\javafmllanguage-1.20.1-47.3.0.jar is missing mods.toml file
-[08Apr.2025 15:00:36.740] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\Josef Peer\.gradle\caches\modules-2\files-2.1\net.minecraftforge\lowcodelanguage\1.20.1-47.3.0\1bf3e845ea0ce750096da8c71c8364b188ab74d4\lowcodelanguage-1.20.1-47.3.0.jar is missing mods.toml file
-[08Apr.2025 15:00:36.777] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\Josef Peer\.gradle\caches\modules-2\files-2.1\net.minecraftforge\mclanguage\1.20.1-47.3.0\6093682e943ddccbabf70539319d7f2fe64db2e7\mclanguage-1.20.1-47.3.0.jar is missing mods.toml file
-[08Apr.2025 15:00:36.791] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\Josef Peer\.gradle\caches\modules-2\files-2.1\net.minecraftforge\fmlcore\1.20.1-47.3.0\3b6be96aba3e323f3c918e8ef6a96312d82d76ad\fmlcore-1.20.1-47.3.0.jar is missing mods.toml file
-[08Apr.2025 15:00:37.747] [main/INFO] [net.minecraftforge.fml.loading.moddiscovery.JarInJarDependencyLocator/]: Found 3 dependencies adding them to mods collection
-[08Apr.2025 15:00:42.974] [main/INFO] [mixin/]: Compatibility level set to JAVA_17
-[08Apr.2025 15:00:43.023] [main/INFO] [cpw.mods.modlauncher.LaunchServiceHandler/MODLAUNCHER]: Launching target 'forgeclientuserdev' with arguments [--version, MOD_DEV, --gameDir, ., --assetsDir, C:\Users\Josef Peer\.gradle\caches\forge_gradle\assets, --assetIndex, 5]
-[08Apr.2025 15:00:45.029] [main/INFO] [mixin/]: Remapping refMap geckolib.refmap.json using C:\Users\Josef Peer\OneDrive\Games\Minecraft Java\Mods\Eigene\Battle Of Gods\mcreator (LAPTOP)\BattleOfGods/build/createSrgToMcp/output.srg
-[08Apr.2025 15:00:45.039] [main/INFO] [mixin/]: Remapping refMap jeed-common-refmap.json using C:\Users\Josef Peer\OneDrive\Games\Minecraft Java\Mods\Eigene\Battle Of Gods\mcreator (LAPTOP)\BattleOfGods/build/createSrgToMcp/output.srg
-[08Apr.2025 15:00:45.092] [main/INFO] [mixin/]: Remapping refMap player-animation-lib-minecraft_common-refmap.json using C:\Users\Josef Peer\OneDrive\Games\Minecraft Java\Mods\Eigene\Battle Of Gods\mcreator (LAPTOP)\BattleOfGods/build/createSrgToMcp/output.srg
-[08Apr.2025 15:00:45.112] [main/INFO] [mixin/]: Remapping refMap bettercombat-common-common-refmap.json using C:\Users\Josef Peer\OneDrive\Games\Minecraft Java\Mods\Eigene\Battle Of Gods\mcreator (LAPTOP)\BattleOfGods/build/createSrgToMcp/output.srg
-[08Apr.2025 15:00:45.126] [main/INFO] [mixin/]: Remapping refMap patchouli.refmap.json using C:\Users\Josef Peer\OneDrive\Games\Minecraft Java\Mods\Eigene\Battle Of Gods\mcreator (LAPTOP)\BattleOfGods/build/createSrgToMcp/output.srg
-[08Apr.2025 15:00:46.340] [main/INFO] [MixinExtras|Service/]: Initializing MixinExtras via com.llamalad7.mixinextras.service.MixinExtrasServiceImpl(version=0.2.0).
-[08Apr.2025 15:01:00.632] [main/WARN] [mixin/]: @Inject(@At("INVOKE_ASSIGN")) Shift.BY=3 on jeed-common.mixins.json:EffectsRenderingInventoryScreenMixin::handler$zzc000$captureEffect exceeds the maximum allowed value: 0. Increase the value of maxShiftBy to suppress this warning.
-[08Apr.2025 15:01:19.244] [Datafixer Bootstrap/INFO] [com.mojang.datafixers.DataFixerBuilder/]: 188 Datafixer optimizations took 481 milliseconds
-[08Apr.2025 15:01:29.017] [Render thread/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/Josef%20Peer/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.20.1-47.3.0_mapped_official_1.20.1/forge-1.20.1-47.3.0_mapped_official_1.20.1-recomp.jar%23191!/assets/.mcassetsroot' uses unexpected schema
-[08Apr.2025 15:01:29.018] [Render thread/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/Josef%20Peer/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.20.1-47.3.0_mapped_official_1.20.1/forge-1.20.1-47.3.0_mapped_official_1.20.1-recomp.jar%23191!/data/.mcassetsroot' uses unexpected schema
-[08Apr.2025 15:01:29.131] [Render thread/INFO] [com.mojang.authlib.yggdrasil.YggdrasilAuthenticationService/]: Environment: authHost='https://authserver.mojang.com', accountsHost='https://api.mojang.com', sessionHost='https://sessionserver.mojang.com', servicesHost='https://api.minecraftservices.com', name='PROD'
-[08Apr.2025 15:01:29.149] [Render thread/INFO] [net.minecraft.client.Minecraft/]: Setting user: Dev
-[08Apr.2025 15:01:29.609] [Render thread/INFO] [net.minecraft.client.Minecraft/]: Backend library: LWJGL version 3.3.1 build 7
-[08Apr.2025 15:01:31.416] [modloading-worker-0/INFO] [net.minecraftforge.common.ForgeMod/FORGEMOD]: Forge mod loading, version 47.3.0, for MC 1.20.1 with MCP 20230612.114412
-[08Apr.2025 15:01:31.417] [modloading-worker-0/INFO] [net.minecraftforge.common.MinecraftForge/FORGE]: MinecraftForge v47.3.0 Initialized
-[08Apr.2025 15:01:34.145] [modloading-worker-0/INFO] [mezz.jei.library.load.PluginCaller/]: Sending ConfigManager...
-[08Apr.2025 15:01:34.189] [modloading-worker-0/INFO] [mezz.jei.library.load.PluginCaller/]: Sending ConfigManager took 26.14 ms
-[08Apr.2025 15:01:34.582] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[08Apr.2025 15:01:34.582] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
-[08Apr.2025 15:01:34.601] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[08Apr.2025 15:01:34.601] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
-[08Apr.2025 15:01:34.614] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[08Apr.2025 15:01:34.614] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
-[08Apr.2025 15:01:34.619] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[08Apr.2025 15:01:34.620] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
-[08Apr.2025 15:01:34.623] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[08Apr.2025 15:01:34.623] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
-[08Apr.2025 15:01:34.625] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[08Apr.2025 15:01:34.625] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
-[08Apr.2025 15:01:34.787] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[08Apr.2025 15:01:34.787] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
-[08Apr.2025 15:01:34.799] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[08Apr.2025 15:01:34.799] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
-[08Apr.2025 15:01:34.802] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[08Apr.2025 15:01:34.802] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
-[08Apr.2025 15:01:34.804] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[08Apr.2025 15:01:34.805] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
-[08Apr.2025 15:01:34.807] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[08Apr.2025 15:01:34.808] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
-[08Apr.2025 15:01:34.809] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[08Apr.2025 15:01:34.809] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
-[08Apr.2025 15:01:34.811] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[08Apr.2025 15:01:34.811] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
-[08Apr.2025 15:01:34.820] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[08Apr.2025 15:01:34.820] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
-[08Apr.2025 15:01:34.822] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[08Apr.2025 15:01:34.822] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
-[08Apr.2025 15:01:34.824] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[08Apr.2025 15:01:34.824] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
-[08Apr.2025 15:01:34.826] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[08Apr.2025 15:01:34.827] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
-[08Apr.2025 15:01:34.828] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[08Apr.2025 15:01:34.829] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
-[08Apr.2025 15:01:34.831] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[08Apr.2025 15:01:34.831] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
-[08Apr.2025 15:01:34.833] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[08Apr.2025 15:01:34.834] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
-[08Apr.2025 15:01:34.836] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[08Apr.2025 15:01:34.836] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
-[08Apr.2025 15:01:34.870] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[08Apr.2025 15:01:34.871] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
-[08Apr.2025 15:01:34.875] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[08Apr.2025 15:01:34.878] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
-[08Apr.2025 15:01:34.963] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[08Apr.2025 15:01:34.964] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
-[08Apr.2025 15:01:34.982] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[08Apr.2025 15:01:34.983] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
-[08Apr.2025 15:01:34.989] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[08Apr.2025 15:01:34.989] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
-[08Apr.2025 15:01:34.990] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[08Apr.2025 15:01:34.991] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
-[08Apr.2025 15:01:34.993] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[08Apr.2025 15:01:34.993] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
-[08Apr.2025 15:01:34.994] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[08Apr.2025 15:01:34.994] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
-[08Apr.2025 15:01:34.995] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[08Apr.2025 15:01:34.998] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
-[08Apr.2025 15:01:35.001] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[08Apr.2025 15:01:35.001] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
-[08Apr.2025 15:01:35.005] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[08Apr.2025 15:01:35.005] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
-[08Apr.2025 15:01:35.011] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[08Apr.2025 15:01:35.011] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
-[08Apr.2025 15:01:35.021] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[08Apr.2025 15:01:35.022] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
-[08Apr.2025 15:01:35.023] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[08Apr.2025 15:01:35.023] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
-[08Apr.2025 15:01:35.025] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[08Apr.2025 15:01:35.025] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
-[08Apr.2025 15:01:35.027] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[08Apr.2025 15:01:35.027] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
-[08Apr.2025 15:01:35.029] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[08Apr.2025 15:01:35.029] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
-[08Apr.2025 15:01:35.030] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[08Apr.2025 15:01:35.031] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
-[08Apr.2025 15:01:35.032] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[08Apr.2025 15:01:35.033] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
-[08Apr.2025 15:01:35.036] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[08Apr.2025 15:01:35.036] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
-[08Apr.2025 15:01:35.038] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[08Apr.2025 15:01:35.038] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
-[08Apr.2025 15:01:35.041] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[08Apr.2025 15:01:35.042] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
-[08Apr.2025 15:01:35.043] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[08Apr.2025 15:01:35.043] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
-[08Apr.2025 15:01:35.047] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[08Apr.2025 15:01:35.050] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
-[08Apr.2025 15:01:35.055] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[08Apr.2025 15:01:35.056] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
-[08Apr.2025 15:01:35.058] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[08Apr.2025 15:01:35.059] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
-[08Apr.2025 15:01:35.062] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[08Apr.2025 15:01:35.062] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
-[08Apr.2025 15:01:35.066] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[08Apr.2025 15:01:35.066] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
-[08Apr.2025 15:01:35.071] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[08Apr.2025 15:01:35.071] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
-[08Apr.2025 15:01:35.072] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[08Apr.2025 15:01:35.076] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
-[08Apr.2025 15:01:35.085] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[08Apr.2025 15:01:35.086] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
-[08Apr.2025 15:01:35.088] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[08Apr.2025 15:01:35.088] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
-[08Apr.2025 15:01:35.091] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[08Apr.2025 15:01:35.092] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
-[08Apr.2025 15:01:35.094] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[08Apr.2025 15:01:35.094] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
-[08Apr.2025 15:01:35.098] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[08Apr.2025 15:01:35.099] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
-[08Apr.2025 15:01:35.107] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[08Apr.2025 15:01:35.109] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
-[08Apr.2025 15:01:35.115] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[08Apr.2025 15:01:35.115] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
-[08Apr.2025 15:01:35.119] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[08Apr.2025 15:01:35.119] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
-[08Apr.2025 15:01:35.121] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[08Apr.2025 15:01:35.121] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
-[08Apr.2025 15:01:35.124] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[08Apr.2025 15:01:35.124] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
-[08Apr.2025 15:01:35.127] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[08Apr.2025 15:01:35.127] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
-[08Apr.2025 15:01:35.128] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[08Apr.2025 15:01:35.129] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
-[08Apr.2025 15:01:35.131] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[08Apr.2025 15:01:35.131] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
-[08Apr.2025 15:01:35.132] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[08Apr.2025 15:01:35.133] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
-[08Apr.2025 15:01:35.144] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[08Apr.2025 15:01:35.150] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
-[08Apr.2025 15:01:35.158] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[08Apr.2025 15:01:35.158] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
-[08Apr.2025 15:01:35.161] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[08Apr.2025 15:01:35.161] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
-[08Apr.2025 15:01:35.164] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[08Apr.2025 15:01:35.165] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
-[08Apr.2025 15:01:35.189] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[08Apr.2025 15:01:35.189] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
-[08Apr.2025 15:01:35.193] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[08Apr.2025 15:01:35.193] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
-[08Apr.2025 15:01:35.194] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[08Apr.2025 15:01:35.195] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
-[08Apr.2025 15:01:35.224] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[08Apr.2025 15:01:35.225] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
-[08Apr.2025 15:01:35.226] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[08Apr.2025 15:01:35.226] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
-[08Apr.2025 15:01:35.244] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[08Apr.2025 15:01:35.244] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
-[08Apr.2025 15:01:35.247] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[08Apr.2025 15:01:35.247] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
-[08Apr.2025 15:01:35.249] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[08Apr.2025 15:01:35.249] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
-[08Apr.2025 15:01:38.186] [Render thread/INFO] [net.minecraftforge.gametest.ForgeGameTestHooks/]: Enabled Gametest Namespaces: []
-[08Apr.2025 15:01:40.779] [Render thread/INFO] [net.minecraft.server.packs.resources.ReloadableResourceManager/]: Reloading ResourceManager: vanilla, mod_resources
-[08Apr.2025 15:01:43.655] [Worker-Main-2/INFO] [net.minecraft.client.gui.font.providers.UnihexProvider/]: Found unifont_all_no_pua-15.0.06.hex, loading
-[08Apr.2025 15:01:45.185] [Worker-Main-1/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Loading recipes
-[08Apr.2025 15:01:45.207] [Worker-Main-1/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Loading recipes from: battleofgods:data/battleofgods/recipes with path data/battleofgods/recipes
-[08Apr.2025 15:01:45.208] [Worker-Main-1/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Loaded 0 recipes
-[08Apr.2025 15:01:45.487] [Forge Version Check/INFO] [net.minecraftforge.fml.VersionChecker/]: [forge] Starting version check at https://files.minecraftforge.net/net/minecraftforge/forge/promotions_slim.json
-[08Apr.2025 15:01:50.466] [Forge Version Check/INFO] [net.minecraftforge.fml.VersionChecker/]: [forge] Found status: OUTDATED Current: 47.3.0 Target: 47.4.0
-[08Apr.2025 15:01:52.214] [Worker-Main-6/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Unable to load model: 'battleofgods:broadsword#inventory' referenced from: battleofgods:broadsword#inventory: java.io.FileNotFoundException: battleofgods:models/item/broadsword.json
-[08Apr.2025 15:02:13.083] [Render thread/WARN] [net.minecraft.client.sounds.SoundEngine/]: Missing sound for event: minecraft:item.goat_horn.play
-[08Apr.2025 15:02:13.084] [Render thread/WARN] [net.minecraft.client.sounds.SoundEngine/]: Missing sound for event: minecraft:entity.goat.screaming.horn_break
-[08Apr.2025 15:02:15.662] [Render thread/INFO] [com.mojang.blaze3d.audio.Library/]: OpenAL initialized on device OpenAL Soft on Lautsprecher (Realtek(R) Audio)
-[08Apr.2025 15:02:15.666] [Render thread/INFO] [net.minecraft.client.sounds.SoundEngine/SOUNDS]: Sound engine started
-[08Apr.2025 15:02:16.045] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 1024x1024x2 minecraft:textures/atlas/blocks.png-atlas
-[08Apr.2025 15:02:16.556] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 256x256x2 minecraft:textures/atlas/signs.png-atlas
-[08Apr.2025 15:02:16.580] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x512x2 minecraft:textures/atlas/banner_patterns.png-atlas
-[08Apr.2025 15:02:16.639] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x512x2 minecraft:textures/atlas/shield_patterns.png-atlas
-[08Apr.2025 15:02:16.696] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 1024x1024x2 minecraft:textures/atlas/armor_trims.png-atlas
-[08Apr.2025 15:02:16.932] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 256x256x2 minecraft:textures/atlas/chest.png-atlas
-[08Apr.2025 15:02:16.941] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 128x64x2 minecraft:textures/atlas/decorated_pot.png-atlas
-[08Apr.2025 15:02:16.957] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x256x2 minecraft:textures/atlas/beds.png-atlas
-[08Apr.2025 15:02:16.965] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x256x2 minecraft:textures/atlas/shulker_boxes.png-atlas
-[08Apr.2025 15:02:19.961] [Render thread/WARN] [net.minecraft.client.renderer.ShaderInstance/]: Shader rendertype_entity_translucent_emissive could not find sampler named Sampler2 in the specified shader program.
-[08Apr.2025 15:02:22.147] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 256x256x0 minecraft:textures/atlas/particles.png-atlas
-[08Apr.2025 15:02:22.377] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 256x256x0 minecraft:textures/atlas/paintings.png-atlas
-[08Apr.2025 15:02:22.412] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 128x128x0 minecraft:textures/atlas/mob_effects.png-atlas
-[08Apr.2025 15:02:22.477] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 256x128x0 jei:textures/atlas/gui.png-atlas
-[08Apr.2025 15:02:22.505] [Render thread/INFO] [patchouli/]: BookContentResourceListenerLoader preloaded 0 jsons
-[08Apr.2025 15:02:23.748] [Realms Notification Availability checker #1/INFO] [com.mojang.realmsclient.client.RealmsClient/]: Could not authorize you against Realms server: Invalid session id
-[08Apr.2025 15:05:37.622] [Render thread/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: Injecting existing registry data into this CLIENT instance
-[08Apr.2025 15:05:41.560] [Worker-Main-9/ERROR] [net.minecraft.tags.TagLoader/]: Couldn't load tag minecraft:swords as it is missing following references: battleofgods:copper_shortsword (from main)
-[08Apr.2025 15:05:41.561] [Worker-Main-9/ERROR] [net.minecraft.tags.TagLoader/]: Couldn't load tag minecraft:tools as it is missing following references: #minecraft:swords (from vanilla)
-[08Apr.2025 15:05:41.561] [Worker-Main-9/ERROR] [net.minecraft.tags.TagLoader/]: Couldn't load tag minecraft:breaks_decorated_pots as it is missing following references: #minecraft:tools (from vanilla)
-[08Apr.2025 15:05:41.564] [Worker-Main-9/ERROR] [net.minecraft.tags.TagLoader/]: Couldn't load tag forge:tools as it is missing following references: #minecraft:swords (from )
-[08Apr.2025 15:05:42.869] [Render thread/ERROR] [net.minecraft.world.item.crafting.RecipeManager/]: Parsing error loading recipe battleofgods:recipe_copper_shortsword
+[08Apr.2025 17:01:44.711] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher running: args [--launchTarget, forgeserveruserdev, --gameDir, ., --fml.forgeVersion, 47.3.0, --fml.mcVersion, 1.20.1, --fml.forgeGroup, net.minecraftforge, --fml.mcpVersion, 20230612.114412]
+[08Apr.2025 17:01:44.725] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher 10.0.9+10.0.9+main.dcd20f30 starting: java version 17.0.14 by Eclipse Adoptium; OS Windows 11 arch amd64 version 10.0
+[08Apr.2025 17:01:45.272] [main/INFO] [net.minecraftforge.fml.loading.ImmediateWindowHandler/]: ImmediateWindowProvider not loading because launch target is forgeserveruserdev
+[08Apr.2025 17:01:45.462] [main/INFO] [mixin/]: SpongePowered MIXIN Subsystem Version=0.8.5 Source=union:/C:/Users/Josef%20Peer/.gradle/caches/modules-2/files-2.1/org.spongepowered/mixin/0.8.5/9d1c0c3a304ae6697ecd477218fa61b850bf57fc/mixin-0.8.5.jar%23129!/ Service=ModLauncher Env=SERVER
+[08Apr.2025 17:01:46.341] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\Josef Peer\.gradle\caches\modules-2\files-2.1\net.minecraftforge\javafmllanguage\1.20.1-47.3.0\d7ebc62120f202109e300e084ca1a31a7b946a62\javafmllanguage-1.20.1-47.3.0.jar is missing mods.toml file
+[08Apr.2025 17:01:46.346] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\Josef Peer\.gradle\caches\modules-2\files-2.1\net.minecraftforge\lowcodelanguage\1.20.1-47.3.0\1bf3e845ea0ce750096da8c71c8364b188ab74d4\lowcodelanguage-1.20.1-47.3.0.jar is missing mods.toml file
+[08Apr.2025 17:01:46.354] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\Josef Peer\.gradle\caches\modules-2\files-2.1\net.minecraftforge\mclanguage\1.20.1-47.3.0\6093682e943ddccbabf70539319d7f2fe64db2e7\mclanguage-1.20.1-47.3.0.jar is missing mods.toml file
+[08Apr.2025 17:01:46.359] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\Josef Peer\.gradle\caches\modules-2\files-2.1\net.minecraftforge\fmlcore\1.20.1-47.3.0\3b6be96aba3e323f3c918e8ef6a96312d82d76ad\fmlcore-1.20.1-47.3.0.jar is missing mods.toml file
+[08Apr.2025 17:01:46.993] [main/INFO] [net.minecraftforge.fml.loading.moddiscovery.JarInJarDependencyLocator/]: Found 3 dependencies adding them to mods collection
+[08Apr.2025 17:01:51.704] [main/INFO] [mixin/]: Compatibility level set to JAVA_17
+[08Apr.2025 17:01:51.807] [main/INFO] [cpw.mods.modlauncher.LaunchServiceHandler/MODLAUNCHER]: Launching target 'forgeserveruserdev' with arguments [--gameDir, .]
+[08Apr.2025 17:01:53.937] [main/INFO] [mixin/]: Remapping refMap geckolib.refmap.json using C:\Users\Josef Peer\OneDrive\Games\Minecraft Java\Mods\Eigene\Battle Of Gods\mcreator (LAPTOP)\BattleOfGods/build/createSrgToMcp/output.srg
+[08Apr.2025 17:01:53.940] [main/INFO] [mixin/]: Remapping refMap jeed-common-refmap.json using C:\Users\Josef Peer\OneDrive\Games\Minecraft Java\Mods\Eigene\Battle Of Gods\mcreator (LAPTOP)\BattleOfGods/build/createSrgToMcp/output.srg
+[08Apr.2025 17:01:53.949] [main/INFO] [mixin/]: Remapping refMap player-animation-lib-minecraft_common-refmap.json using C:\Users\Josef Peer\OneDrive\Games\Minecraft Java\Mods\Eigene\Battle Of Gods\mcreator (LAPTOP)\BattleOfGods/build/createSrgToMcp/output.srg
+[08Apr.2025 17:01:53.961] [main/INFO] [mixin/]: Remapping refMap bettercombat-common-common-refmap.json using C:\Users\Josef Peer\OneDrive\Games\Minecraft Java\Mods\Eigene\Battle Of Gods\mcreator (LAPTOP)\BattleOfGods/build/createSrgToMcp/output.srg
+[08Apr.2025 17:01:53.964] [main/INFO] [mixin/]: Remapping refMap patchouli.refmap.json using C:\Users\Josef Peer\OneDrive\Games\Minecraft Java\Mods\Eigene\Battle Of Gods\mcreator (LAPTOP)\BattleOfGods/build/createSrgToMcp/output.srg
+[08Apr.2025 17:02:02.361] [main/INFO] [MixinExtras|Service/]: Initializing MixinExtras via com.llamalad7.mixinextras.service.MixinExtrasServiceImpl(version=0.2.0).
+[08Apr.2025 17:02:19.273] [modloading-worker-0/INFO] [net.minecraftforge.common.ForgeMod/FORGEMOD]: Forge mod loading, version 47.3.0, for MC 1.20.1 with MCP 20230612.114412
+[08Apr.2025 17:02:19.274] [modloading-worker-0/INFO] [net.minecraftforge.common.MinecraftForge/FORGE]: MinecraftForge v47.3.0 Initialized
+[08Apr.2025 17:02:22.469] [Forge Version Check/INFO] [net.minecraftforge.fml.VersionChecker/]: [forge] Starting version check at https://files.minecraftforge.net/net/minecraftforge/forge/promotions_slim.json
+[08Apr.2025 17:02:25.582] [Forge Version Check/INFO] [net.minecraftforge.fml.VersionChecker/]: [forge] Found status: OUTDATED Current: 47.3.0 Target: 47.4.0
+[08Apr.2025 17:02:28.478] [main/INFO] [com.mojang.authlib.yggdrasil.YggdrasilAuthenticationService/]: Environment: authHost='https://authserver.mojang.com', accountsHost='https://api.mojang.com', sessionHost='https://sessionserver.mojang.com', servicesHost='https://api.minecraftservices.com', name='PROD'
+[08Apr.2025 17:02:28.780] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: Injecting existing registry data into this CLIENT instance
+[08Apr.2025 17:02:28.935] [main/WARN] [net.minecraftforge.registries.ForgeRegistry/REGISTRIES]: Registry minecraft:block: Object did not get ID it asked for. Name: geckolib:gecko_habitat Expected: 1003 Got: 1004
+[08Apr.2025 17:02:28.936] [main/WARN] [net.minecraftforge.registries.ForgeRegistry/REGISTRIES]: Registry minecraft:block: Object did not get ID it asked for. Name: geckolib:fertilizer Expected: 1004 Got: 1005
+[08Apr.2025 17:02:28.936] [main/WARN] [net.minecraftforge.registries.ForgeRegistry/REGISTRIES]: Registry minecraft:item: Object did not get ID it asked for. Name: geckolib:gecko_habitat Expected: 1255 Got: 1259
+[08Apr.2025 17:02:28.937] [main/WARN] [net.minecraftforge.registries.ForgeRegistry/REGISTRIES]: Registry minecraft:item: Object did not get ID it asked for. Name: geckolib:fertilizer Expected: 1256 Got: 1260
+[08Apr.2025 17:02:28.937] [main/WARN] [net.minecraftforge.registries.ForgeRegistry/REGISTRIES]: Registry minecraft:item: Object did not get ID it asked for. Name: geckolib:jack_in_the_box Expected: 1257 Got: 1261
+[08Apr.2025 17:02:28.937] [main/WARN] [net.minecraftforge.registries.ForgeRegistry/REGISTRIES]: Registry minecraft:item: Object did not get ID it asked for. Name: geckolib:wolf_armor_helmet Expected: 1258 Got: 1262
+[08Apr.2025 17:02:28.937] [main/WARN] [net.minecraftforge.registries.ForgeRegistry/REGISTRIES]: Registry minecraft:item: Object did not get ID it asked for. Name: geckolib:wolf_armor_chestplate Expected: 1259 Got: 1263
+[08Apr.2025 17:02:28.937] [main/WARN] [net.minecraftforge.registries.ForgeRegistry/REGISTRIES]: Registry minecraft:item: Object did not get ID it asked for. Name: geckolib:wolf_armor_leggings Expected: 1260 Got: 1264
+[08Apr.2025 17:02:28.938] [main/WARN] [net.minecraftforge.registries.ForgeRegistry/REGISTRIES]: Registry minecraft:item: Object did not get ID it asked for. Name: geckolib:wolf_armor_boots Expected: 1261 Got: 1265
+[08Apr.2025 17:02:28.938] [main/WARN] [net.minecraftforge.registries.ForgeRegistry/REGISTRIES]: Registry minecraft:item: Object did not get ID it asked for. Name: geckolib:gecko_armor_helmet Expected: 1262 Got: 1266
+[08Apr.2025 17:02:28.938] [main/WARN] [net.minecraftforge.registries.ForgeRegistry/REGISTRIES]: Registry minecraft:item: Object did not get ID it asked for. Name: geckolib:gecko_armor_chestplate Expected: 1263 Got: 1267
+[08Apr.2025 17:02:28.938] [main/WARN] [net.minecraftforge.registries.ForgeRegistry/REGISTRIES]: Registry minecraft:item: Object did not get ID it asked for. Name: geckolib:gecko_armor_leggings Expected: 1264 Got: 1268
+[08Apr.2025 17:02:28.939] [main/WARN] [net.minecraftforge.registries.ForgeRegistry/REGISTRIES]: Registry minecraft:item: Object did not get ID it asked for. Name: geckolib:gecko_armor_boots Expected: 1265 Got: 1269
+[08Apr.2025 17:02:28.939] [main/WARN] [net.minecraftforge.registries.ForgeRegistry/REGISTRIES]: Registry minecraft:item: Object did not get ID it asked for. Name: geckolib:bat_spawn_egg Expected: 1266 Got: 1270
+[08Apr.2025 17:02:28.940] [main/WARN] [net.minecraftforge.registries.ForgeRegistry/REGISTRIES]: Registry minecraft:item: Object did not get ID it asked for. Name: geckolib:bike_spawn_egg Expected: 1267 Got: 1271
+[08Apr.2025 17:02:28.940] [main/WARN] [net.minecraftforge.registries.ForgeRegistry/REGISTRIES]: Registry minecraft:item: Object did not get ID it asked for. Name: geckolib:race_car_spawn_egg Expected: 1268 Got: 1272
+[08Apr.2025 17:02:28.942] [main/WARN] [net.minecraftforge.registries.ForgeRegistry/REGISTRIES]: Registry minecraft:item: Object did not get ID it asked for. Name: geckolib:parasite_spawn_egg Expected: 1269 Got: 1273
+[08Apr.2025 17:02:28.943] [main/WARN] [net.minecraftforge.registries.ForgeRegistry/REGISTRIES]: Registry minecraft:item: Object did not get ID it asked for. Name: geckolib:mutant_zombie_spawn_egg Expected: 1270 Got: 1274
+[08Apr.2025 17:02:28.943] [main/WARN] [net.minecraftforge.registries.ForgeRegistry/REGISTRIES]: Registry minecraft:item: Object did not get ID it asked for. Name: geckolib:fake_glass_spawn_egg Expected: 1271 Got: 1275
+[08Apr.2025 17:02:28.944] [main/WARN] [net.minecraftforge.registries.ForgeRegistry/REGISTRIES]: Registry minecraft:item: Object did not get ID it asked for. Name: geckolib:cool_kid_spawn_egg Expected: 1272 Got: 1276
+[08Apr.2025 17:02:28.944] [main/WARN] [net.minecraftforge.registries.ForgeRegistry/REGISTRIES]: Registry minecraft:item: Object did not get ID it asked for. Name: geckolib:gremlin_spawn_egg Expected: 1273 Got: 1277
+[08Apr.2025 17:02:31.059] [main/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/Josef%20Peer/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.20.1-47.3.0_mapped_official_1.20.1/forge-1.20.1-47.3.0_mapped_official_1.20.1-recomp.jar%23191!/assets/.mcassetsroot' uses unexpected schema
+[08Apr.2025 17:02:31.060] [main/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/Josef%20Peer/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.20.1-47.3.0_mapped_official_1.20.1/forge-1.20.1-47.3.0_mapped_official_1.20.1-recomp.jar%23191!/data/.mcassetsroot' uses unexpected schema
+[08Apr.2025 17:02:34.275] [Worker-Main-1/ERROR] [net.minecraft.tags.TagLoader/]: Couldn't load tag minecraft:swords as it is missing following references: battleofgods:copper_shortsword (from main)
+[08Apr.2025 17:02:34.276] [Worker-Main-1/ERROR] [net.minecraft.tags.TagLoader/]: Couldn't load tag minecraft:tools as it is missing following references: #minecraft:swords (from vanilla)
+[08Apr.2025 17:02:34.276] [Worker-Main-1/ERROR] [net.minecraft.tags.TagLoader/]: Couldn't load tag minecraft:breaks_decorated_pots as it is missing following references: #minecraft:tools (from vanilla)
+[08Apr.2025 17:02:34.281] [Worker-Main-1/ERROR] [net.minecraft.tags.TagLoader/]: Couldn't load tag forge:tools as it is missing following references: #minecraft:swords (from )
+[08Apr.2025 17:02:36.633] [main/ERROR] [net.minecraft.world.item.crafting.RecipeManager/]: Parsing error loading recipe battleofgods:recipe_copper_shortsword
 com.google.gson.JsonSyntaxException: Unknown item 'battleofgods:copper_shortsword'
 	at net.minecraftforge.common.crafting.CraftingHelper.getItem(CraftingHelper.java:160) ~[forge-1.20.1-47.3.0_mapped_official_1.20.1-recomp.jar:?]
 	at net.minecraftforge.common.crafting.CraftingHelper.getItemStack(CraftingHelper.java:186) ~[forge-1.20.1-47.3.0_mapped_official_1.20.1-recomp.jar:?]
 	at net.minecraftforge.common.crafting.CraftingHelper.getItemStack(CraftingHelper.java:153) ~[forge-1.20.1-47.3.0_mapped_official_1.20.1-recomp.jar:?]
-	at com.schokobaer.battleofgods.mechanics.recipe.RecipeHandler$BattleRecipe$Deserializer.deserialize(RecipeHandler.java:225) ~[main/:?]
-	at com.schokobaer.battleofgods.mechanics.recipe.RecipeHandler$BattleRecipe$Serializer.fromJson(RecipeHandler.java:236) ~[main/:?]
-	at com.schokobaer.battleofgods.mechanics.recipe.RecipeHandler$BattleRecipe$Serializer.fromJson(RecipeHandler.java:232) ~[main/:?]
+	at com.schokobaer.battleofgods.mechanics.recipe.RecipeHandler$BattleRecipe$Deserializer.deserialize(RecipeHandler.java:251) ~[main/:?]
+	at com.schokobaer.battleofgods.mechanics.recipe.RecipeHandler$BattleRecipe$Serializer.fromJson(RecipeHandler.java:261) ~[main/:?]
+	at com.schokobaer.battleofgods.mechanics.recipe.RecipeHandler$BattleRecipe$Serializer.fromJson(RecipeHandler.java:257) ~[main/:?]
 	at net.minecraftforge.common.extensions.IForgeRecipeSerializer.fromJson(IForgeRecipeSerializer.java:23) ~[forge-1.20.1-47.3.0_mapped_official_1.20.1-recomp.jar:?]
 	at net.minecraft.world.item.crafting.RecipeManager.fromJson(RecipeManager.java:171) ~[forge-1.20.1-47.3.0_mapped_official_1.20.1-recomp.jar:?]
 	at net.minecraft.world.item.crafting.RecipeManager.apply(RecipeManager.java:67) ~[forge-1.20.1-47.3.0_mapped_official_1.20.1-recomp.jar:?]
@@ -233,42 +64,16 @@ com.google.gson.JsonSyntaxException: Unknown item 'battleofgods:copper_shortswor
 	at java.util.concurrent.CompletableFuture$UniAccept.tryFire(CompletableFuture.java:718) ~[?:?]
 	at java.util.concurrent.CompletableFuture$Completion.run(CompletableFuture.java:482) ~[?:?]
 	at net.minecraft.server.packs.resources.SimpleReloadInstance.lambda$new$3(SimpleReloadInstance.java:65) ~[forge-1.20.1-47.3.0_mapped_official_1.20.1-recomp.jar:?]
-	at net.minecraft.util.thread.BlockableEventLoop.doRunTask(BlockableEventLoop.java:143) ~[forge-1.20.1-47.3.0_mapped_official_1.20.1-recomp.jar:?]
-	at net.minecraft.util.thread.ReentrantBlockableEventLoop.doRunTask(ReentrantBlockableEventLoop.java:22) ~[forge-1.20.1-47.3.0_mapped_official_1.20.1-recomp.jar:?]
-	at net.minecraft.util.thread.BlockableEventLoop.pollTask(BlockableEventLoop.java:116) ~[forge-1.20.1-47.3.0_mapped_official_1.20.1-recomp.jar:?]
-	at net.minecraft.util.thread.BlockableEventLoop.managedBlock(BlockableEventLoop.java:126) ~[forge-1.20.1-47.3.0_mapped_official_1.20.1-recomp.jar:?]
-	at net.minecraft.client.gui.screens.worldselection.WorldOpenFlows.loadWorldDataBlocking(WorldOpenFlows.java:163) ~[forge-1.20.1-47.3.0_mapped_official_1.20.1-recomp.jar:?]
-	at net.minecraft.client.gui.screens.worldselection.WorldOpenFlows.loadWorldStem(WorldOpenFlows.java:113) ~[forge-1.20.1-47.3.0_mapped_official_1.20.1-recomp.jar:?]
-	at net.minecraft.client.gui.screens.worldselection.WorldOpenFlows.doLoadLevel(WorldOpenFlows.java:181) ~[forge-1.20.1-47.3.0_mapped_official_1.20.1-recomp.jar:?]
-	at net.minecraft.client.gui.screens.worldselection.WorldOpenFlows.doLoadLevel(WorldOpenFlows.java:169) ~[forge-1.20.1-47.3.0_mapped_official_1.20.1-recomp.jar:?]
-	at net.minecraft.client.gui.screens.worldselection.WorldOpenFlows.loadLevel(WorldOpenFlows.java:65) ~[forge-1.20.1-47.3.0_mapped_official_1.20.1-recomp.jar:?]
-	at net.minecraft.client.gui.screens.worldselection.WorldSelectionList$WorldListEntry.loadWorld(WorldSelectionList.java:575) ~[forge-1.20.1-47.3.0_mapped_official_1.20.1-recomp.jar:?]
-	at net.minecraft.client.gui.screens.worldselection.WorldSelectionList$WorldListEntry.joinWorld(WorldSelectionList.java:474) ~[forge-1.20.1-47.3.0_mapped_official_1.20.1-recomp.jar:?]
-	at net.minecraft.client.gui.screens.worldselection.WorldSelectionList$WorldListEntry.mouseClicked(WorldSelectionList.java:413) ~[forge-1.20.1-47.3.0_mapped_official_1.20.1-recomp.jar:?]
-	at net.minecraft.client.gui.components.AbstractSelectionList.mouseClicked(AbstractSelectionList.java:298) ~[forge-1.20.1-47.3.0_mapped_official_1.20.1-recomp.jar:?]
-	at net.minecraft.client.gui.components.events.ContainerEventHandler.mouseClicked(ContainerEventHandler.java:39) ~[forge-1.20.1-47.3.0_mapped_official_1.20.1-recomp.jar:?]
-	at net.minecraft.client.MouseHandler.lambda$onPress$0(MouseHandler.java:92) ~[forge-1.20.1-47.3.0_mapped_official_1.20.1-recomp.jar:?]
-	at net.minecraft.client.gui.screens.Screen.wrapScreenError(Screen.java:437) ~[forge-1.20.1-47.3.0_mapped_official_1.20.1-recomp.jar:?]
-	at net.minecraft.client.MouseHandler.onPress(MouseHandler.java:89) ~[forge-1.20.1-47.3.0_mapped_official_1.20.1-recomp.jar:?]
-	at net.minecraft.client.MouseHandler.lambda$setup$4(MouseHandler.java:189) ~[forge-1.20.1-47.3.0_mapped_official_1.20.1-recomp.jar:?]
-	at net.minecraft.util.thread.BlockableEventLoop.execute(BlockableEventLoop.java:90) ~[forge-1.20.1-47.3.0_mapped_official_1.20.1-recomp.jar:?]
-	at net.minecraft.client.MouseHandler.lambda$setup$5(MouseHandler.java:188) ~[forge-1.20.1-47.3.0_mapped_official_1.20.1-recomp.jar:?]
-	at org.lwjgl.glfw.GLFWMouseButtonCallbackI.callback(GLFWMouseButtonCallbackI.java:43) ~[lwjgl-glfw-3.3.1.jar:build 7]
-	at org.lwjgl.system.JNI.invokeV(Native Method) ~[lwjgl-3.3.1.jar:build 7]
-	at org.lwjgl.glfw.GLFW.glfwPollEvents(GLFW.java:3403) ~[lwjgl-glfw-3.3.1.jar:build 7]
-	at com.mojang.blaze3d.systems.RenderSystem.pollEvents(RenderSystem.java:175) ~[forge-1.20.1-47.3.0_mapped_official_1.20.1-recomp.jar:?]
-	at com.mojang.blaze3d.systems.RenderSystem.flipFrame(RenderSystem.java:184) ~[forge-1.20.1-47.3.0_mapped_official_1.20.1-recomp.jar:?]
-	at com.mojang.blaze3d.platform.Window.updateDisplay(Window.java:274) ~[forge-1.20.1-47.3.0_mapped_official_1.20.1-recomp.jar:?]
-	at net.minecraft.client.Minecraft.runTick(Minecraft.java:1170) ~[forge-1.20.1-47.3.0_mapped_official_1.20.1-recomp.jar:?]
-	at net.minecraft.client.Minecraft.run(Minecraft.java:718) ~[forge-1.20.1-47.3.0_mapped_official_1.20.1-recomp.jar:?]
-	at net.minecraft.client.main.Main.main(Main.java:218) ~[forge-1.20.1-47.3.0_mapped_official_1.20.1-recomp.jar:?]
+	at net.minecraft.Util.blockUntilDone(Util.java:783) ~[forge-1.20.1-47.3.0_mapped_official_1.20.1-recomp.jar:?]
+	at net.minecraft.Util.blockUntilDone(Util.java:772) ~[forge-1.20.1-47.3.0_mapped_official_1.20.1-recomp.jar:?]
+	at net.minecraft.server.Main.main(Main.java:166) ~[forge-1.20.1-47.3.0_mapped_official_1.20.1-recomp.jar:?]
 	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
 	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?]
 	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
 	at java.lang.reflect.Method.invoke(Method.java:569) ~[?:?]
 	at net.minecraftforge.fml.loading.targets.CommonLaunchHandler.runTarget(CommonLaunchHandler.java:111) ~[fmlloader-1.20.1-47.3.0.jar:?]
-	at net.minecraftforge.fml.loading.targets.CommonLaunchHandler.clientService(CommonLaunchHandler.java:99) ~[fmlloader-1.20.1-47.3.0.jar:?]
-	at net.minecraftforge.fml.loading.targets.ForgeClientUserdevLaunchHandler.devService(ForgeClientUserdevLaunchHandler.java:19) ~[fmlloader-1.20.1-47.3.0.jar:?]
+	at net.minecraftforge.fml.loading.targets.CommonLaunchHandler.serverService(CommonLaunchHandler.java:103) ~[fmlloader-1.20.1-47.3.0.jar:?]
+	at net.minecraftforge.fml.loading.targets.ForgeServerUserdevLaunchHandler.devService(ForgeServerUserdevLaunchHandler.java:16) ~[fmlloader-1.20.1-47.3.0.jar:?]
 	at net.minecraftforge.fml.loading.targets.CommonDevLaunchHandler.lambda$makeService$7(CommonDevLaunchHandler.java:135) ~[fmlloader-1.20.1-47.3.0.jar:?]
 	at cpw.mods.modlauncher.LaunchServiceHandlerDecorator.launch(LaunchServiceHandlerDecorator.java:30) ~[modlauncher-10.0.9.jar:?]
 	at cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:53) ~[modlauncher-10.0.9.jar:?]
@@ -278,59 +83,54 @@ com.google.gson.JsonSyntaxException: Unknown item 'battleofgods:copper_shortswor
 	at cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:26) ~[modlauncher-10.0.9.jar:?]
 	at cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:23) ~[modlauncher-10.0.9.jar:?]
 	at cpw.mods.bootstraplauncher.BootstrapLauncher.main(BootstrapLauncher.java:141) ~[bootstraplauncher-1.1.2.jar:?]
-[08Apr.2025 15:05:43.046] [Render thread/INFO] [net.minecraft.world.item.crafting.RecipeManager/]: Loaded 10 recipes
-[08Apr.2025 15:05:43.368] [Render thread/INFO] [net.minecraft.advancements.AdvancementList/]: Loaded 1271 advancements
-[08Apr.2025 15:05:44.135] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Starting integrated minecraft server version 1.20.1
-[08Apr.2025 15:05:44.136] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Generating keypair
-[08Apr.2025 15:05:44.962] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Preparing start region for dimension minecraft:overworld
-[08Apr.2025 15:05:51.341] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 0%
-[08Apr.2025 15:05:51.342] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 0%
-[08Apr.2025 15:05:51.342] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 0%
-[08Apr.2025 15:05:51.342] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 0%
-[08Apr.2025 15:05:51.343] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 0%
-[08Apr.2025 15:05:51.343] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 0%
-[08Apr.2025 15:05:51.343] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 0%
-[08Apr.2025 15:05:51.343] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 0%
-[08Apr.2025 15:05:51.343] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 0%
-[08Apr.2025 15:05:51.343] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 0%
-[08Apr.2025 15:05:51.343] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 0%
-[08Apr.2025 15:05:51.344] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 0%
-[08Apr.2025 15:05:51.344] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 0%
-[08Apr.2025 15:05:51.511] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 0%
-[08Apr.2025 15:05:51.978] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 0%
-[08Apr.2025 15:05:52.477] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 17%
-[08Apr.2025 15:05:52.972] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 42%
-[08Apr.2025 15:05:53.465] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 77%
-[08Apr.2025 15:05:53.938] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Time elapsed: 8975 ms
-[08Apr.2025 15:05:53.949] [Server thread/INFO] [net.minecraftforge.server.permission.PermissionAPI/]: Successfully initialized permission handler forge:default_handler
-[08Apr.2025 15:05:54.168] [Server thread/INFO] [net.bettercombat.logic.WeaponRegistry/]: Encoded Weapon Attribute registry size (with package overhead): 9897 bytes (in 1 string chunks with the size of 10000)
-[08Apr.2025 15:05:54.171] [Server thread/INFO] [patchouli/]: Sending reload packet to clients
-[08Apr.2025 15:05:54.707] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Changing view distance to 5, from 10
-[08Apr.2025 15:05:54.717] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Changing simulation distance to 12, from 0
-[08Apr.2025 15:05:54.996] [Render thread/WARN] [io.netty.util.internal.SystemPropertyUtil/]: Unable to parse the boolean system property 'java.net.preferIPv6Addresses':system - using the default value: false
-[08Apr.2025 15:05:56.012] [Render thread/INFO] [net.minecraft.client.Minecraft/]: Stopping!
-[08Apr.2025 15:05:57.342] [Netty Local Client IO #0/INFO] [net.minecraftforge.network.NetworkHooks/]: Connected to a modded server.
-[08Apr.2025 15:05:58.020] [Server thread/INFO] [net.minecraft.server.players.PlayerList/]: Dev[local:E:7219eae5] logged in with entity id 3 at (-10.026886888611147, -60.0, 46.14602832803322)
-[08Apr.2025 15:05:58.415] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Dev joined the game
-[08Apr.2025 15:05:58.794] [Netty Local Client IO #0/INFO] [net.bettercombat.logic.WeaponRegistry/]: Decoded Weapon Attribute registry in 1 string chunks
-[08Apr.2025 15:05:58.972] [Server thread/ERROR] [net.minecraft.util.thread.ProcessorMailbox/]: Cound not schedule mailbox
-java.util.concurrent.RejectedExecutionException: null
-	at java.util.concurrent.ForkJoinPool.externalPush(ForkJoinPool.java:2179) ~[?:?]
-	at java.util.concurrent.ForkJoinPool.externalSubmit(ForkJoinPool.java:2196) ~[?:?]
-	at java.util.concurrent.ForkJoinPool.execute(ForkJoinPool.java:2664) ~[?:?]
-	at net.minecraft.util.thread.ProcessorMailbox.registerForExecution(ProcessorMailbox.java:127) ~[forge-1.20.1-47.3.0_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.util.thread.ProcessorMailbox.tell(ProcessorMailbox.java:118) ~[forge-1.20.1-47.3.0_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.server.level.ChunkTaskPriorityQueueSorter.onLevelChange(ChunkTaskPriorityQueueSorter.java:91) ~[forge-1.20.1-47.3.0_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.server.level.DistanceManager$PlayerTicketTracker.runAllUpdates(DistanceManager.java:526) ~[forge-1.20.1-47.3.0_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.server.level.DistanceManager.runAllUpdates(DistanceManager.java:112) ~[forge-1.20.1-47.3.0_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.server.level.ServerChunkCache.runDistanceManagerUpdates(ServerChunkCache.java:273) ~[forge-1.20.1-47.3.0_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.server.level.ServerChunkCache$MainThreadExecutor.pollTask(ServerChunkCache.java:545) ~[forge-1.20.1-47.3.0_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.server.level.ServerChunkCache.pollTask(ServerChunkCache.java:269) ~[forge-1.20.1-47.3.0_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.server.MinecraftServer.pollTaskInternal(MinecraftServer.java:758) ~[forge-1.20.1-47.3.0_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.server.MinecraftServer.pollTask(MinecraftServer.java:747) ~[forge-1.20.1-47.3.0_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.util.thread.BlockableEventLoop.runAllTasks(BlockableEventLoop.java:104) ~[forge-1.20.1-47.3.0_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.server.MinecraftServer.waitUntilNextTick(MinecraftServer.java:732) ~[forge-1.20.1-47.3.0_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.server.MinecraftServer.runServer(MinecraftServer.java:665) ~[forge-1.20.1-47.3.0_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at net.minecraft.server.MinecraftServer.lambda$spin$2(MinecraftServer.java:251) ~[forge-1.20.1-47.3.0_mapped_official_1.20.1-recomp.jar%23191!/:?]
-	at java.lang.Thread.run(Thread.java:840) ~[?:?]
-[08Apr.2025 15:05:59.002] [Server thread/WARN] [net.minecraft.server.MinecraftServer/]: Can't keep up! Is the server overloaded? Running 517507331ms or 10350146 ticks behind
+[08Apr.2025 17:02:36.770] [main/INFO] [net.minecraft.world.item.crafting.RecipeManager/]: Loaded 10 recipes
+[08Apr.2025 17:02:37.191] [main/INFO] [net.minecraft.advancements.AdvancementList/]: Loaded 1271 advancements
+[08Apr.2025 17:02:40.069] [Server thread/INFO] [net.minecraft.server.dedicated.DedicatedServer/]: Starting minecraft server version 1.20.1
+[08Apr.2025 17:02:40.079] [Server thread/INFO] [net.minecraft.server.dedicated.DedicatedServer/]: Loading properties
+[08Apr.2025 17:02:40.079] [Server thread/INFO] [net.minecraft.server.dedicated.DedicatedServer/]: Default game type: CREATIVE
+[08Apr.2025 17:02:40.079] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Generating keypair
+[08Apr.2025 17:02:40.451] [Server thread/INFO] [net.minecraft.server.dedicated.DedicatedServer/]: Starting Minecraft server on *:25463
+[08Apr.2025 17:02:40.551] [Server thread/INFO] [net.minecraft.server.network.ServerConnectionListener/]: Using default channel type
+[08Apr.2025 17:02:41.286] [Server thread/WARN] [net.minecraft.server.dedicated.DedicatedServer/]: **** SERVER IS RUNNING IN OFFLINE/INSECURE MODE!
+[08Apr.2025 17:02:41.287] [Server thread/WARN] [net.minecraft.server.dedicated.DedicatedServer/]: The server will make no attempt to authenticate usernames. Beware.
+[08Apr.2025 17:02:41.288] [Server thread/WARN] [net.minecraft.server.dedicated.DedicatedServer/]: While this makes the game possible to play without internet access, it also opens up the ability for hackers to connect with any username they choose.
+[08Apr.2025 17:02:41.288] [Server thread/WARN] [net.minecraft.server.dedicated.DedicatedServer/]: To change this, set "online-mode" to "true" in the server.properties file.
+[08Apr.2025 17:02:41.381] [Server thread/WARN] [net.minecraftforge.common.ForgeConfigSpec/CORE]: Configuration file .\world\serverconfig\jei-server.toml is not correct. Correcting
+[08Apr.2025 17:02:41.392] [Server thread/WARN] [net.minecraftforge.common.ForgeConfigSpec/CORE]: Incorrect key cheat mode was corrected from null to its default, SimpleCommentedConfig:{}. 
+[08Apr.2025 17:02:41.396] [Server thread/WARN] [net.minecraftforge.common.ForgeConfigSpec/CORE]: Incorrect key cheat mode.enableCheatModeForOp was corrected from null to its default, true. 
+[08Apr.2025 17:02:41.401] [Server thread/WARN] [net.minecraftforge.common.ForgeConfigSpec/CORE]: Incorrect key cheat mode.enableCheatModeForCreative was corrected from null to its default, true. 
+[08Apr.2025 17:02:41.402] [Server thread/WARN] [net.minecraftforge.common.ForgeConfigSpec/CORE]: Incorrect key cheat mode.enableCheatModeForGive was corrected from null to its default, false. 
+[08Apr.2025 17:02:41.569] [Server thread/INFO] [net.minecraft.server.dedicated.DedicatedServer/]: Preparing level "world"
+[08Apr.2025 17:02:47.381] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Preparing start region for dimension minecraft:overworld
+[08Apr.2025 17:02:56.923] [Worker-Main-1/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 0%
+[08Apr.2025 17:02:56.931] [Worker-Main-4/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 0%
+[08Apr.2025 17:02:57.016] [Worker-Main-5/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 0%
+[08Apr.2025 17:02:57.028] [Worker-Main-5/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 0%
+[08Apr.2025 17:02:57.038] [Worker-Main-5/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 0%
+[08Apr.2025 17:02:57.137] [Worker-Main-4/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 0%
+[08Apr.2025 17:02:57.246] [Worker-Main-2/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 0%
+[08Apr.2025 17:02:57.255] [Worker-Main-7/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 0%
+[08Apr.2025 17:02:57.284] [Worker-Main-7/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 0%
+[08Apr.2025 17:02:57.308] [Worker-Main-7/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 0%
+[08Apr.2025 17:02:57.320] [Worker-Main-2/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 0%
+[08Apr.2025 17:02:57.335] [Worker-Main-7/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 0%
+[08Apr.2025 17:02:57.354] [Worker-Main-2/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 0%
+[08Apr.2025 17:02:57.361] [Worker-Main-1/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 0%
+[08Apr.2025 17:02:57.364] [Worker-Main-4/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 0%
+[08Apr.2025 17:02:57.382] [Worker-Main-4/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 0%
+[08Apr.2025 17:02:57.383] [Worker-Main-1/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 0%
+[08Apr.2025 17:02:57.384] [Worker-Main-1/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 0%
+[08Apr.2025 17:02:57.385] [Worker-Main-1/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 0%
+[08Apr.2025 17:02:57.386] [Worker-Main-1/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 0%
+[08Apr.2025 17:02:57.387] [Worker-Main-1/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 0%
+[08Apr.2025 17:02:57.884] [Worker-Main-1/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 0%
+[08Apr.2025 17:02:58.382] [Worker-Main-1/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 7%
+[08Apr.2025 17:02:58.883] [Worker-Main-4/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 26%
+[08Apr.2025 17:02:59.382] [Worker-Main-7/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 56%
+[08Apr.2025 17:02:59.882] [Worker-Main-5/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 88%
+[08Apr.2025 17:03:00.136] [Server thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Time elapsed: 12754 ms
+[08Apr.2025 17:03:00.139] [Server thread/INFO] [net.minecraft.server.dedicated.DedicatedServer/]: Done (18.765s)! For help, type "help"
+[08Apr.2025 17:03:00.212] [Server thread/INFO] [net.minecraftforge.gametest.ForgeGameTestHooks/]: Enabled Gametest Namespaces: []
+[08Apr.2025 17:03:00.230] [Server thread/INFO] [net.minecraftforge.server.permission.PermissionAPI/]: Successfully initialized permission handler forge:default_handler
+[08Apr.2025 17:03:00.385] [Server thread/INFO] [net.bettercombat.logic.WeaponRegistry/]: Encoded Weapon Attribute registry size (with package overhead): 9897 bytes (in 1 string chunks with the size of 10000)
+[08Apr.2025 17:03:00.386] [Server thread/INFO] [patchouli/]: Sending reload packet to clients

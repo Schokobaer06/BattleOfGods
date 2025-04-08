@@ -7,9 +7,10 @@ import com.schokobaer.battleofgods.mechanics.tag.MainClassTagProvider;
 import com.schokobaer.battleofgods.mechanics.tag.RarityTagProvider;
 import com.schokobaer.battleofgods.mechanics.tag.SubClassTagProvider;
 import com.schokobaer.battleofgods.mechanics.tag.TierTagProvider;
+import net.minecraft.client.Minecraft;
 import net.minecraft.data.DataProvider;
 import net.minecraftforge.data.event.GatherDataEvent;
-import net.minecraftforge.eventbus.api.GenericEvent;
+import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegisterEvent;
@@ -73,7 +74,7 @@ public class BattleofgodsMod {
 		//bus.addGenericListener(FMLCommonSetupEvent.class,(GenericEvent<? extends FMLCommonSetupEvent> event) -> onCommonSetup((FMLCommonSetupEvent) event.getGenericType()));;
 		//bus.addGenericListener(RegisterEvent.class,(GenericEvent<? extends RegisterEvent> event) -> registerRecipeTypes((RegisterEvent) event.getGenericType()));;
 		//bus.addGenericListener(RegisterEvent.class,(GenericEvent<? extends RegisterEvent> event) -> registerRecipeSerializers((RegisterEvent) event.getGenericType()));;
-		bus.addListener(BattleofgodsMod::onCommonSetup);
+		//bus.addListener(BattleofgodsMod::onServerStarting);
 		bus.addListener(BattleofgodsMod::registerRecipeTypes);
 		bus.addListener(BattleofgodsMod::registerRecipeSerializers);
 		bus.addListener(this::gatherData);
@@ -116,16 +117,20 @@ public class BattleofgodsMod {
 		}
 	}
 	@SubscribeEvent
-	public static void onCommonSetup(FMLCommonSetupEvent event) {
-		// Lade die Rezepte
-		LOGGER.info("Loading recipes");
-		//System.out.println("Loading recipes");
-		RecipeHandler.loadRecipes();
+	public static void onServerStarting(ServerStartingEvent event) {
+		LOGGER.debug("Server loading recipes");
+		RecipeHandler.loadRecipes(event.getServer().getResourceManager());
+
+	}
+	@SubscribeEvent
+	public static void onClientSetup(FMLCommonSetupEvent event) {
+		LOGGER.debug("Client loading recipes");
+		RecipeHandler.loadRecipes(Minecraft.getInstance().getResourceManager());
 	}
 
 	@SubscribeEvent
 	public static void registerRecipeTypes(RegisterEvent event) {
-		LOGGER.info("Registering recipe types");
+		LOGGER.debug("Registering recipe types");
 		event.register(ForgeRegistries.Keys.RECIPE_TYPES, helper -> {
 			helper.register(new ResourceLocation(MODID + 	":default_recipe"), RecipeHandler.BattleRecipe.Type.INSTANCE);
 		});
@@ -133,7 +138,7 @@ public class BattleofgodsMod {
 
 	@SubscribeEvent
 	public static void registerRecipeSerializers(RegisterEvent event) {
-		LOGGER.info("Registering recipe serializers");
+		LOGGER.debug("Registering recipe serializers");
 		event.register(ForgeRegistries.Keys.RECIPE_SERIALIZERS, helper -> {
 			helper.register(new ResourceLocation(MODID + ":default_recipe"), RecipeHandler.BattleRecipe.SERIALIZER);
 		});

@@ -2,15 +2,12 @@ package com.schokobaer.battleofgods.mechanics.recipe;
 
 import com.google.gson.*;
 import com.schokobaer.battleofgods.BattleofgodsMod;
-import net.minecraft.client.Minecraft;
 import net.minecraft.core.RegistryAccess;
-import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.resources.ResourceManager;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.Container;
-import net.minecraft.world.entity.ambient.Bat;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -23,27 +20,22 @@ import net.minecraftforge.common.crafting.CraftingHelper;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.server.ServerLifecycleHooks;
 
-import java.io.FileReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.lang.reflect.Type;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.*;
-import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
 public class RecipeHandler {
     public static final List<BattleRecipe> RECIPES = new ArrayList<>();
     private static final Map<ResourceLocation, BattleRecipe> RECIPE_MAP = new HashMap<>();
 
-    public static void loadRecipes() {
+    public static void loadRecipes(ResourceManager resourceManager) {
         RECIPE_MAP.clear();
         RECIPES.clear();
 
+        BattleofgodsMod.LOGGER.debug("Loading recipes...");
         try {
-            ResourceManager resourceManager = ServerLifecycleHooks.getCurrentServer().getResourceManager();
+            BattleofgodsMod.LOGGER.debug("ResourceManager: {}", resourceManager);
             // Suche nach allen JSON-Dateien im 'recipes'-Ordner des Mods
             Collection<ResourceLocation> resources = resourceManager.listResources(
                     "recipes", // Sucht in 'data/<modid>/recipes/'
@@ -89,7 +81,7 @@ public class RecipeHandler {
                     BattleRecipe recipe = new BattleRecipe(recipeId, group, category, replace, inputs, output);
                     if (recipe.isValid()) {
                         RECIPES.add(recipe);
-                        BattleofgodsMod.LOGGER.info("Loaded recipe: {}", recipeId);
+                        BattleofgodsMod.LOGGER.debug("Loaded recipe: {}", recipeId);
                     }
                 } catch (Exception e) {
                     BattleofgodsMod.LOGGER.error("Failed to load recipe: {}", resource, e);
@@ -130,6 +122,7 @@ public class RecipeHandler {
     public static Optional<BattleRecipe> getRecipeById(ResourceLocation recipeId) {
         return Optional.ofNullable(RECIPE_MAP.get(recipeId));
     }
+
     public static List<BattleRecipe> getRecipesByGroup(String group) {
         return RECIPES.stream()
                 .filter(r -> r.group.equals(group))
@@ -144,13 +137,13 @@ public class RecipeHandler {
     }
 
     public static class BattleRecipe implements Recipe<Container> {
+        public static final Serializer SERIALIZER = new Serializer();
         private final ResourceLocation id;
         private final String group;
         private final String category;
         private final boolean replace;
         private final List<IngredientEntry> inputs;
         private final ItemStack output;
-        public static final Serializer SERIALIZER = new Serializer();
 
         public BattleRecipe(ResourceLocation id, String group, String category, boolean replace, List<IngredientEntry> inputs, ItemStack output) {
             this.id = id;
@@ -222,13 +215,15 @@ public class RecipeHandler {
 
         public static class Type implements RecipeType<BattleRecipe> {
             public static final Type INSTANCE = new Type();
-            public Type() {}
+
+            public Type() {
+            }
         }
 
         public static class Deserializer implements JsonDeserializer<BattleRecipe> {
 
             @Override
-            public BattleRecipe deserialize(JsonElement json, java.lang.reflect.Type type, JsonDeserializationContext context) throws JsonParseException{
+            public BattleRecipe deserialize(JsonElement json, java.lang.reflect.Type type, JsonDeserializationContext context) throws JsonParseException {
                 JsonObject obj = json.getAsJsonObject();
                 // Extrahiere die Felder
                 ResourceLocation id = new ResourceLocation(obj.get("type").getAsString());
@@ -315,7 +310,8 @@ public class RecipeHandler {
             }
         }
 
-        public record IngredientEntry(Ingredient ingredient, int count) {}
+        public record IngredientEntry(Ingredient ingredient, int count) {
+        }
 
 
     }
