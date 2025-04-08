@@ -7,6 +7,7 @@ import net.minecraft.core.RegistryAccess;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.packs.resources.ResourceManager;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.Container;
 import net.minecraft.world.entity.ambient.Bat;
@@ -20,10 +21,12 @@ import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.common.crafting.CraftingHelper;
 import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.server.ServerLifecycleHooks;
 
 import java.io.FileReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.lang.reflect.Type;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -39,25 +42,54 @@ public class RecipeHandler {
         RECIPE_MAP.clear();
         RECIPES.clear();
 
-        // Ressourcen-Pfad korrekt angeben
-        String recipePath = "data/" + BattleofgodsMod.MODID + "/recipes";
-        Gson gson = new GsonBuilder()
-                .registerTypeAdapter(BattleRecipe.class, new BattleRecipe.Deserializer())
-                .create();
-
         try {
-            // Lade Ressourcen aus dem ClassLoader
-            ResourceLocation resourceRoot = new ResourceLocation(BattleofgodsMod.MODID, recipePath);
-            Collection<ResourceLocation> resources = Minecraft.getInstance().getResourceManager()
-                    .listResources(resourceRoot.getPath(), path -> path.getPath().endsWith(".json")).keySet();
+            ResourceManager resourceManager = ServerLifecycleHooks.getCurrentServer().getResourceManager();
+            // Suche nach allen JSON-Dateien im 'recipes'-Ordner des Mods
+            Collection<ResourceLocation> resources = resourceManager.listResources(
+                    "recipes", // Sucht in 'data/<modid>/recipes/'
+                    rl -> rl.getNamespace().equals(BattleofgodsMod.MODID) // Filtere nach der Mod-ID
+                            && rl.getPath().endsWith(".json") // Nur JSON-Dateien
+            ).keySet();
 
-            BattleofgodsMod.LOGGER.info("Loading recipes from: {} with path {}", resourceRoot, resourceRoot.getPath());
+            BattleofgodsMod.LOGGER.info("Found {} recipe resources", resources.size());
+
             for (ResourceLocation resource : resources) {
-                try (InputStream stream = Minecraft.getInstance().getResourceManager().getResource(resource).get().open()) {
-                    BattleRecipe recipe = gson.fromJson(new InputStreamReader(stream), BattleRecipe.class);
-                    if (recipe != null && recipe.isValid()) {
+                try (InputStream stream = resourceManager.getResource(resource).get().open()) {
+                    // Extrahiere die Rezept-ID aus dem Dateipfad
+                    String path = resource.getPath(); // z.B. 'recipes/copper_broadsword.json'
+                    String recipeName = path.substring("recipes/".length(), path.length() - ".json".length());
+                    ResourceLocation recipeId = new ResourceLocation(BattleofgodsMod.MODID, recipeName);
+
+                    // Parse die JSON-Datei manuell
+                    JsonObject json = JsonParser.parseReader(new InputStreamReader(stream)).getAsJsonObject();
+                    String group = json.get("group").getAsString();
+                    String category = json.has("category") ? json.get("category").getAsString() : "misc";
+                    boolean replace = json.has("replace") && json.get("replace").getAsBoolean();
+
+                    // Parse die Zutaten
+                    List<BattleRecipe.IngredientEntry> inputs = new ArrayList<>();
+                    JsonArray items = json.getAsJsonArray("items");
+                    for (JsonElement item : items) {
+                        JsonObject entry = item.getAsJsonObject();
+                        if (entry.has("item")) {
+                            ItemStack stack = CraftingHelper.getItemStack(entry, true);
+                            inputs.add(new BattleRecipe.IngredientEntry(Ingredient.of(stack), entry.get("count").getAsInt()));
+                        } else if (entry.has("tag")) {
+                            ResourceLocation tagId = new ResourceLocation(entry.get("tag").getAsString());
+                            TagKey<Item> tagKey = TagKey.create(ForgeRegistries.ITEMS.getRegistryKey(), tagId);
+                            inputs.add(new BattleRecipe.IngredientEntry(Ingredient.of(tagKey), entry.get("count").getAsInt()));
+                        }
+                    }
+
+                    // Parse das Ausgabe-Item
+                    JsonObject outputObj = json.getAsJsonObject("output");
+                    ItemStack output = CraftingHelper.getItemStack(outputObj, true);
+
+                    // Erstelle das Rezept mit der korrekten ID
+                    BattleRecipe recipe = new BattleRecipe(recipeId, group, category, replace, inputs, output);
+                    if (recipe.isValid()) {
                         RECIPES.add(recipe);
-                        BattleofgodsMod.LOGGER.info("Loaded recipe: {}", recipe.getId());
+                        BattleofgodsMod.LOGGER.info("Loaded recipe: {}", recipeId);
                     }
                 } catch (Exception e) {
                     BattleofgodsMod.LOGGER.error("Failed to load recipe: {}", resource, e);
@@ -130,7 +162,7 @@ public class RecipeHandler {
         }
 
         public boolean isValid() {
-            return output != null && !output.isEmpty() && inputs.stream().allMatch(i -> !i.ingredient().isEmpty());
+            return output != null && !output.isEmpty() && inputs.stream().noneMatch(i -> i.ingredient().isEmpty());
         }
 
         @Override
@@ -194,23 +226,21 @@ public class RecipeHandler {
         }
 
         public static class Deserializer implements JsonDeserializer<BattleRecipe> {
-            @Override
-            public BattleRecipe deserialize(JsonElement json, java.lang.reflect.Type type, JsonDeserializationContext jsonDeserializationContext) throws JsonParseException {
-                JsonObject obj = json.getAsJsonObject();
-                ResourceLocation typeId = new ResourceLocation(obj.get("type").getAsString());
-                if (!typeId.getNamespace().equals("battleofgods")) return null;
 
+            @Override
+            public BattleRecipe deserialize(JsonElement json, java.lang.reflect.Type type, JsonDeserializationContext context) throws JsonParseException{
+                JsonObject obj = json.getAsJsonObject();
+                // Extrahiere die Felder
+                ResourceLocation id = new ResourceLocation(obj.get("type").getAsString());
                 String group = obj.get("group").getAsString();
                 String category = obj.has("category") ? obj.get("category").getAsString() : "misc";
                 boolean replace = obj.has("replace") && obj.get("replace").getAsBoolean();
 
+                // Parse Inputs
                 List<IngredientEntry> inputs = new ArrayList<>();
                 JsonArray items = obj.getAsJsonArray("items");
                 for (JsonElement item : items) {
                     JsonObject entry = item.getAsJsonObject();
-                    //int count = entry.get("count").getAsInt();
-                    //if (count <= 0) throw new JsonParseException("Invalid count: " + count);
-
                     if (entry.has("item")) {
                         ItemStack stack = CraftingHelper.getItemStack(entry, true);
                         inputs.add(new IngredientEntry(Ingredient.of(stack), entry.get("count").getAsInt()));
@@ -221,11 +251,11 @@ public class RecipeHandler {
                     }
                 }
 
+                // Parse Output
                 JsonObject outputObj = obj.getAsJsonObject("output");
                 ItemStack output = CraftingHelper.getItemStack(outputObj, true);
-                if (output.getCount() <= 0) throw new JsonParseException("Invalid output count!");
 
-                return new BattleRecipe(typeId, group, category, replace, inputs, output);
+                return new BattleRecipe(id, group, category, replace, inputs, output);
             }
         }
 
@@ -235,7 +265,12 @@ public class RecipeHandler {
                 // Verwende den Deserializer, um das Rezept aus JSON zu laden
                 BattleRecipe recipe = new Deserializer().deserialize(json, null, null);
                 if (recipe != null) {
-                    return new BattleRecipe(recipeId, recipe.group, recipe.category, recipe.replace, recipe.inputs, recipe.output);
+                    return new BattleRecipe(recipeId,
+                            recipe.group,
+                            recipe.category,
+                            recipe.replace,
+                            recipe.inputs,
+                            recipe.output);
                 }
                 return null;
             }

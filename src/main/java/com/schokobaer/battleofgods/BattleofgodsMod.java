@@ -127,7 +127,7 @@ public class BattleofgodsMod {
 	public static void registerRecipeTypes(RegisterEvent event) {
 		LOGGER.info("Registering recipe types");
 		event.register(ForgeRegistries.Keys.RECIPE_TYPES, helper -> {
-			helper.register(new ResourceLocation("battleofgods:default_recipe"), new RecipeHandler.BattleRecipe.Type());
+			helper.register(new ResourceLocation(MODID + 	":default_recipe"), RecipeHandler.BattleRecipe.Type.INSTANCE);
 		});
 	}
 
@@ -135,7 +135,7 @@ public class BattleofgodsMod {
 	public static void registerRecipeSerializers(RegisterEvent event) {
 		LOGGER.info("Registering recipe serializers");
 		event.register(ForgeRegistries.Keys.RECIPE_SERIALIZERS, helper -> {
-			helper.register(new ResourceLocation("battleofgods:default_recipe"), RecipeHandler.BattleRecipe.SERIALIZER);
+			helper.register(new ResourceLocation(MODID + ":default_recipe"), RecipeHandler.BattleRecipe.SERIALIZER);
 		});
 	}
 
