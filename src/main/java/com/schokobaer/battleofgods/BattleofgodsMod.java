@@ -9,6 +9,8 @@ import com.schokobaer.battleofgods.mechanics.tag.SubClassTagProvider;
 import com.schokobaer.battleofgods.mechanics.tag.TierTagProvider;
 import net.minecraft.client.Minecraft;
 import net.minecraft.data.DataProvider;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
@@ -74,9 +76,10 @@ public class BattleofgodsMod {
 		//bus.addGenericListener(FMLCommonSetupEvent.class,(GenericEvent<? extends FMLCommonSetupEvent> event) -> onCommonSetup((FMLCommonSetupEvent) event.getGenericType()));;
 		//bus.addGenericListener(RegisterEvent.class,(GenericEvent<? extends RegisterEvent> event) -> registerRecipeTypes((RegisterEvent) event.getGenericType()));;
 		//bus.addGenericListener(RegisterEvent.class,(GenericEvent<? extends RegisterEvent> event) -> registerRecipeSerializers((RegisterEvent) event.getGenericType()));;
-		//bus.addListener(BattleofgodsMod::onServerStarting);
 		bus.addListener(BattleofgodsMod::registerRecipeTypes);
 		bus.addListener(BattleofgodsMod::registerRecipeSerializers);
+		//bus.addListener(BattleofgodsMod::onServerStarting);
+		bus.addListener(BattleofgodsMod::onClientSetup);
 		bus.addListener(this::gatherData);
 
 		addNetworkMessage(CraftPacket.class, CraftPacket::encode, CraftPacket::decode, CraftPacket::handle);
@@ -117,12 +120,14 @@ public class BattleofgodsMod {
 		}
 	}
 	@SubscribeEvent
+	@OnlyIn(Dist.DEDICATED_SERVER)
 	public static void onServerStarting(ServerStartingEvent event) {
 		LOGGER.debug("Server loading recipes");
 		RecipeHandler.loadRecipes(event.getServer().getResourceManager());
 
 	}
 	@SubscribeEvent
+	@OnlyIn(Dist.CLIENT)
 	public static void onClientSetup(FMLCommonSetupEvent event) {
 		LOGGER.debug("Client loading recipes");
 		RecipeHandler.loadRecipes(Minecraft.getInstance().getResourceManager());

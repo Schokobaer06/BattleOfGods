@@ -34,7 +34,14 @@ public class RecipeHandler {
         RECIPES.clear();
 
         BattleofgodsMod.LOGGER.debug("Loading recipes...");
+
+        BattleofgodsMod.LOGGER.debug("ResourceManager class: {}", resourceManager.getClass());
+        BattleofgodsMod.LOGGER.debug("Searching in namespace: {}", BattleofgodsMod.MODID);
         try {
+
+            Set<String> namespaces = resourceManager.getNamespaces();
+            BattleofgodsMod.LOGGER.debug("Available namespaces: {}", namespaces);
+
             BattleofgodsMod.LOGGER.debug("ResourceManager: {}", resourceManager);
             // Suche nach allen JSON-Dateien im 'recipes'-Ordner des Mods
             Collection<ResourceLocation> resources = resourceManager.listResources(
