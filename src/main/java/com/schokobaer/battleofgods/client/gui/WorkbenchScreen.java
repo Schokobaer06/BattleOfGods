@@ -10,7 +10,6 @@ import com.schokobaer.battleofgods.mechanics.recipe.RecipeHandler;
 import com.schokobaer.battleofgods.world.inventory.WorkbenchMenu;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
-import net.minecraft.client.gui.components.Button;
 import net.minecraft.client.gui.components.ImageButton;
 import net.minecraft.client.gui.components.Tooltip;
 import net.minecraft.client.gui.narration.NarrationElementOutput;
@@ -22,7 +21,6 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraftforge.client.gui.widget.ScrollPanel;
 
-import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -166,7 +164,10 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
                     if (mouseX >= btn.getX() &&
                             mouseX <= btn.getX() + btn.getWidth() &&
                             mouseY >= btn.getY() &&
-                            mouseY <= btn.getY() + btn.getHeight()) {
+                            mouseY <= btn.getY() + btn.getHeight() &&
+                            mouseX >= left && mouseX <= left + width &&
+                            mouseY >= top && mouseY <= top + height
+                    ) {
                         return btn.isMouseOver(mouseX, mouseY);
                     }
                 }
