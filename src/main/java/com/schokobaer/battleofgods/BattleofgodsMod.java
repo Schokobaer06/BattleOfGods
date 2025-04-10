@@ -9,9 +9,12 @@ import com.schokobaer.battleofgods.mechanics.tag.SubClassTagProvider;
 import com.schokobaer.battleofgods.mechanics.tag.TierTagProvider;
 import net.minecraft.client.Minecraft;
 import net.minecraft.data.DataProvider;
+import net.minecraft.server.packs.resources.ResourceManager;
+import net.minecraft.server.packs.resources.ResourceManagerReloadListener;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.data.event.GatherDataEvent;
+import net.minecraftforge.event.AddReloadListenerEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -79,7 +82,7 @@ public class BattleofgodsMod {
 		bus.addListener(BattleofgodsMod::registerRecipeTypes);
 		bus.addListener(BattleofgodsMod::registerRecipeSerializers);
 		//bus.addListener(BattleofgodsMod::onServerStarting);
-		bus.addListener(BattleofgodsMod::onClientSetup);
+		//bus.addListener(BattleofgodsMod::onClientSetup);
 		bus.addListener(this::gatherData);
 
 		addNetworkMessage(CraftPacket.class, CraftPacket::encode, CraftPacket::decode, CraftPacket::handle);
@@ -119,6 +122,7 @@ public class BattleofgodsMod {
 			workQueue.removeAll(actions);
 		}
 	}
+    /*
 	@SubscribeEvent
 	@OnlyIn(Dist.DEDICATED_SERVER)
 	public static void onServerStarting(ServerStartingEvent event) {
@@ -126,12 +130,21 @@ public class BattleofgodsMod {
 		RecipeHandler.loadRecipes(event.getServer().getResourceManager());
 
 	}
+
 	@SubscribeEvent
 	@OnlyIn(Dist.CLIENT)
 	public static void onClientSetup(FMLCommonSetupEvent event) {
 		LOGGER.debug("Client loading recipes");
 		RecipeHandler.loadRecipes(Minecraft.getInstance().getResourceManager());
-	}
+	}*/
+
+    @SubscribeEvent
+    public void addReloadListeners(AddReloadListenerEvent event){
+        event.addListener((ResourceManagerReloadListener) manager -> {
+            LOGGER.debug("Reloading recipes");
+            RecipeHandler.loadRecipes(manager);
+        });
+    }
 
 	@SubscribeEvent
 	public static void registerRecipeTypes(RegisterEvent event) {

@@ -44,10 +44,9 @@ public class RecipeHandler {
 
             BattleofgodsMod.LOGGER.debug("ResourceManager: {}", resourceManager);
             // Suche nach allen JSON-Dateien im 'recipes'-Ordner des Mods
-            Collection<ResourceLocation> resources = resourceManager.listResources(
-                    "recipes", // Sucht in 'data/<modid>/recipes/'
-                    rl -> rl.getNamespace().equals(BattleofgodsMod.MODID) // Filtere nach der Mod-ID
-                            && rl.getPath().endsWith(".json")// Nur JSON-Dateien
+            Set<ResourceLocation> resources = resourceManager.listResources(
+                    "recipes",
+                    rl -> rl.getNamespace().equals(BattleofgodsMod.MODID) && rl.getPath().endsWith(".json")
             ).keySet();
 
             BattleofgodsMod.LOGGER.info("Found {} recipe resources", resources.size());
