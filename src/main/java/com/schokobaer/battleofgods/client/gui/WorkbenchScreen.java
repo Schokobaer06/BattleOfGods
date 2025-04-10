@@ -10,7 +10,6 @@ import com.schokobaer.battleofgods.mechanics.recipe.RecipeHandler;
 import com.schokobaer.battleofgods.world.inventory.WorkbenchMenu;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
-import net.minecraft.client.gui.components.Button;
 import net.minecraft.client.gui.components.ImageButton;
 import net.minecraft.client.gui.components.Tooltip;
 import net.minecraft.client.gui.narration.NarrationElementOutput;
@@ -22,7 +21,6 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraftforge.client.gui.widget.ScrollPanel;
 
-import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -135,6 +133,8 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
                     button.setY(buttonY);
                     assert minecraft != null;
                     button.render(guiGraphics, x, y, minecraft.getFrameTime());
+                    if (isMouseOverButton(button, mouseX, mouseY))
+                        button.renderTooltip(guiGraphics, mouseX, mouseY);
                 }
                 guiGraphics.disableScissor();
             }
@@ -172,6 +172,13 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
                 }
                 return false;
 
+            }
+
+            public boolean isMouseOverButton(RecipeButton button, double mouseX, double mouseY) {
+                return mouseX >= button.getX() &&
+                        mouseX <= button.getX() + button.getWidth() &&
+                        mouseY >= button.getY() &&
+                        mouseY <= button.getY() + button.getHeight();
             }
         };
         addRenderableWidget(recipeList);
