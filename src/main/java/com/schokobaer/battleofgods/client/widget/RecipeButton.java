@@ -48,7 +48,7 @@ public class RecipeButton extends AbstractWidget {
                 getX() + 2,
                 getY() + 2
         );
-        renderTooltip(graphics, x, y);
+        //renderTooltip(graphics, x, y);
     }
 
     @Override
@@ -65,6 +65,7 @@ public class RecipeButton extends AbstractWidget {
                 mouseX, mouseY
         );
     }
+
     public void onSelect(double mouseX, double mouseY) {
         onSelect.accept(recipe);
         playDownSound(Minecraft.getInstance().getSoundManager());
