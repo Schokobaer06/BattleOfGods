@@ -64,14 +64,14 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
                     //onSelect(x,y);
                     Minecraft.getInstance().getSoundManager().play(
                             SimpleSoundInstance.forUI(SoundEvents.UI_BUTTON_CLICK, 1.0F));
-                    System.out.println("Button clicked: " + recipe.getId());
+                    BattleofgodsMod.LOGGER.debug("Button clicked: {}", recipe.getId());
                 }
 
             });
         });
-        System.out.println("Recipes: " + visibleRecipes.size());
+        BattleofgodsMod.LOGGER.debug("Recipes: {}", visibleRecipes.size());
         visibleRecipes.forEach(recipe -> {
-            System.out.println("Recipe: " + recipe.getId());
+            BattleofgodsMod.LOGGER.debug("Recipe: {}", recipe.getId());
         });
         // Recipe List
 
