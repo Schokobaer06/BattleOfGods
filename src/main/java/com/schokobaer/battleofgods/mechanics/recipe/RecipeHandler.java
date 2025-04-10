@@ -18,7 +18,7 @@ import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.common.crafting.CraftingHelper;
 import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.server.ServerLifecycleHooks;
+import org.jetbrains.annotations.Nullable;
 
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -26,30 +26,22 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 public class RecipeHandler {
-    public static final List<BattleRecipe> RECIPES = new ArrayList<>();
+    private static final List<BattleRecipe> RECIPES = new ArrayList<>();
     private static final Map<ResourceLocation, BattleRecipe> RECIPE_MAP = new HashMap<>();
+
+    // Comparator, sorts by category and then by group
+    private static final Comparator<BattleRecipe> RECIPE_COMPARATOR =
+            Comparator.comparing(BattleRecipe::getCategory)
+                    .thenComparing(BattleRecipe::getGroup);
 
     public static void loadRecipes(ResourceManager resourceManager) {
         RECIPE_MAP.clear();
         RECIPES.clear();
-
-        BattleofgodsMod.LOGGER.debug("Loading recipes...");
-
-        BattleofgodsMod.LOGGER.debug("ResourceManager class: {}", resourceManager.getClass());
-        BattleofgodsMod.LOGGER.debug("Searching in namespace: {}", BattleofgodsMod.MODID);
         try {
 
-            Set<String> namespaces = resourceManager.getNamespaces();
-            BattleofgodsMod.LOGGER.debug("Available namespaces: {}", namespaces);
+            Set<ResourceLocation> resources = getResources(resourceManager);
 
-            BattleofgodsMod.LOGGER.debug("ResourceManager: {}", resourceManager);
-            // Suche nach allen JSON-Dateien im 'recipes'-Ordner des Mods
-            Set<ResourceLocation> resources = resourceManager.listResources(
-                    "recipes",
-                    rl -> rl.getNamespace().equals(BattleofgodsMod.MODID) && rl.getPath().endsWith(".json")
-            ).keySet();
-
-            BattleofgodsMod.LOGGER.info("Found {} recipe resources", resources.size());
+            BattleofgodsMod.LOGGER.debug("Found {} recipe resources", resources.size());
 
             for (ResourceLocation resource : resources) {
                 try (InputStream stream = resourceManager.getResource(resource).get().open()) {
@@ -86,6 +78,11 @@ public class RecipeHandler {
                     // Erstelle das Rezept mit der korrekten ID
                     BattleRecipe recipe = new BattleRecipe(recipeId, group, category, replace, inputs, output);
                     if (recipe.isValid()) {
+                        if (RECIPE_MAP.containsKey(recipeId)) {
+                            BattleofgodsMod.LOGGER.warn("Duplicate recipe ID found: {}", recipeId);
+                        }
+                        if (recipe.isReplace())
+                            RECIPES.removeIf(r -> r.getOutput().getItem().equals(recipe.getOutput().getItem()));
                         RECIPES.add(recipe);
                         BattleofgodsMod.LOGGER.debug("Loaded recipe: {}", recipeId);
                     }
@@ -101,10 +98,46 @@ public class RecipeHandler {
         }
     }
 
+    private static Set<ResourceLocation> getResources(ResourceManager resourceManager) {
+        Set<String> namespaces = resourceManager.getNamespaces();
+        //BattleofgodsMod.LOGGER.debug("Available namespaces: {}", namespaces);
 
+        // Suche nach allen JSON-Dateien im 'recipes'-Ordner des Mods
+        Set<ResourceLocation> resources = new HashSet<>();
+        namespaces.forEach(namespace -> {
+            try {
+                resources.addAll(resourceManager.listResources(
+                        "recipes",
+                        rl -> rl.getNamespace().equals(BattleofgodsMod.MODID) && rl.getPath().endsWith(".json")
+                ).keySet());
+            } catch (Exception e) {
+                BattleofgodsMod.LOGGER.warn("Error listing resources in namespace: {}", namespace, e);
+            }
+        });
+        return resources;
+    }
+
+    /**
+     * Get all craftable recipes for the player
+     *
+     * @param player current player
+     * @return List<BattleRecipe> list of craftable recipes
+     */
     public static List<BattleRecipe> getCraftableRecipes(Player player) {
         return RECIPES.stream()
                 .filter(recipe -> hasRequiredItems(player, recipe))
+                .sorted(RECIPE_COMPARATOR)
+                .collect(Collectors.toList());
+    }
+
+    /**
+     * Get all recipes
+     *
+     * @return List<BattleRecipe> list of all recipes
+     */
+    public static List<BattleRecipe> getAllRecipes() {
+        return RECIPES.stream()
+                .sorted(RECIPE_COMPARATOR)
                 .collect(Collectors.toList());
     }
 
@@ -125,20 +158,40 @@ public class RecipeHandler {
         return true;
     }
 
+    /**
+     * Get a recipe by its ID
+     *
+     * @param recipeId the ID of the recipe
+     * @return Optional<BattleRecipe> the recipe if it exists, otherwise Optional.empty()
+     */
     public static Optional<BattleRecipe> getRecipeById(ResourceLocation recipeId) {
         return Optional.ofNullable(RECIPE_MAP.get(recipeId));
     }
 
+    /**
+     * Get all recipes by their group
+     *
+     * @param group the group of the recipe
+     * @return List<BattleRecipe> list of recipes in the group
+     */
     public static List<BattleRecipe> getRecipesByGroup(String group) {
         return RECIPES.stream()
                 .filter(r -> r.group.equals(group))
+                .sorted(RECIPE_COMPARATOR)
                 .collect(Collectors.toList());
     }
 
-
+    /**
+     * Get all craftable recipes by their group
+     *
+     * @param player current player
+     * @param group  the group of the recipe
+     * @return
+     */
     public static List<BattleRecipe> getCraftableRecipesByGroup(Player player, String group) {
         return getRecipesByGroup(group).stream()
                 .filter(r -> hasRequiredItems(player, r))
+                .sorted(RECIPE_COMPARATOR)
                 .collect(Collectors.toList());
     }
 
@@ -151,6 +204,16 @@ public class RecipeHandler {
         private final List<IngredientEntry> inputs;
         private final ItemStack output;
 
+        /**
+         * Constructor for BattleRecipe
+         *
+         * @param id       the ID of the recipe
+         * @param group    the group of the recipe
+         * @param category the category of the recipe
+         * @param replace  whether to replace the recipe
+         * @param inputs   the inputs of the recipe
+         * @param output   the output of the recipe
+         */
         public BattleRecipe(ResourceLocation id, String group, String category, boolean replace, List<IngredientEntry> inputs, ItemStack output) {
             this.id = id;
             this.group = group;
@@ -217,6 +280,23 @@ public class RecipeHandler {
 
         public List<IngredientEntry> getInputs() {
             return this.inputs;
+        }
+
+        // Getter für Category und Group für die Sortierung
+        public String getCategory() {
+            return category;
+        }
+
+        public String getGroup() {
+            return group;
+        }
+
+        public ItemStack getOutput() {
+            return output;
+        }
+
+        public boolean isReplace() {
+            return replace;
         }
 
         public static class Type implements RecipeType<BattleRecipe> {
@@ -318,7 +398,5 @@ public class RecipeHandler {
 
         public record IngredientEntry(Ingredient ingredient, int count) {
         }
-
-
     }
 }

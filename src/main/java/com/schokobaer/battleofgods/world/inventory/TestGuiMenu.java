@@ -78,9 +78,9 @@ public class TestGuiMenu extends AbstractContainerMenu implements Supplier<Map<I
 		}
 		for (int si = 0; si < 3; ++si)
 			for (int sj = 0; sj < 9; ++sj)
-				this.addSlot(new Slot(inv, sj + (si + 1) * 9, 0 + 8 + sj * 18, 0 + 84 + si * 18));
+				this.addSlot(new Slot(inv, sj + (si + 1) * 9, 8 + sj * 18, 84 + si * 18));
 		for (int si = 0; si < 9; ++si)
-			this.addSlot(new Slot(inv, si, 0 + 8 + si * 18, 0 + 142));
+			this.addSlot(new Slot(inv, si, 8 + si * 18, 142));
 	}
 
 	@Override
@@ -99,7 +99,7 @@ public class TestGuiMenu extends AbstractContainerMenu implements Supplier<Map<I
 	@Override
 	public ItemStack quickMoveStack(Player playerIn, int index) {
 		ItemStack itemstack = ItemStack.EMPTY;
-		Slot slot = (Slot) this.slots.get(index);
+		Slot slot = this.slots.get(index);
 		if (slot != null && slot.hasItem()) {
 			ItemStack itemstack1 = slot.getItem();
 			itemstack = itemstack1.copy();
@@ -108,11 +108,11 @@ public class TestGuiMenu extends AbstractContainerMenu implements Supplier<Map<I
 					return ItemStack.EMPTY;
 				slot.onQuickCraft(itemstack1, itemstack);
 			} else if (!this.moveItemStackTo(itemstack1, 0, 0, false)) {
-				if (index < 0 + 27) {
-					if (!this.moveItemStackTo(itemstack1, 0 + 27, this.slots.size(), true))
+				if (index < 27) {
+					if (!this.moveItemStackTo(itemstack1, 27, this.slots.size(), true))
 						return ItemStack.EMPTY;
 				} else {
-					if (!this.moveItemStackTo(itemstack1, 0, 0 + 27, false))
+					if (!this.moveItemStackTo(itemstack1, 0, 27, false))
 						return ItemStack.EMPTY;
 				}
 				return ItemStack.EMPTY;

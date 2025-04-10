@@ -68,6 +68,7 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
                             SimpleSoundInstance.forUI(SoundEvents.UI_BUTTON_CLICK, 1.0F));
                     System.out.println("Button clicked: " + recipe.getId());
                 }
+
             });
         });
         System.out.println("Recipes: " + visibleRecipes.size());
@@ -130,7 +131,6 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
 
                     int buttonX = (x - width) + (startX + col * (buttonWidth + buttonSpacing));
                     int buttonY = y + (row * (buttonHeight + buttonSpacing));
-
                     button.setX(buttonX);
                     button.setY(buttonY);
                     assert minecraft != null;

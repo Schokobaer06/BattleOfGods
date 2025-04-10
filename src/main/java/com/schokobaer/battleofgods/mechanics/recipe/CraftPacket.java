@@ -11,7 +11,7 @@ import net.minecraftforge.network.NetworkEvent;
 import java.util.function.Supplier;
 
 public class CraftPacket {
-    private ResourceLocation recipeId;
+    private final ResourceLocation recipeId;
 
     public CraftPacket(ResourceLocation recipeId) {
         this.recipeId = recipeId;
