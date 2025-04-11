@@ -166,7 +166,10 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
                     if (mouseX >= btn.getX() &&
                             mouseX <= btn.getX() + btn.getWidth() &&
                             mouseY >= btn.getY() &&
-                            mouseY <= btn.getY() + btn.getHeight()) {
+                            mouseY <= btn.getY() + btn.getHeight() &&
+                            mouseX >= left && mouseX <= left + width &&
+                            mouseY >= top && mouseY <= top + height
+                    ) {
                         return btn.isMouseOver(mouseX, mouseY);
                     }
                 }
