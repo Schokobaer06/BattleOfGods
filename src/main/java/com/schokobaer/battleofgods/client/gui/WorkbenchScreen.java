@@ -56,22 +56,25 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
             buttons.add(new RecipeButton(
                     0,
                     0,
-                    recipe,
-                    this::selectRecipe
+                    recipe
             ){
                 @Override
                 public void onClick(double x, double y) {
-                    //onSelect(x,y);
                     Minecraft.getInstance().getSoundManager().play(
                             SimpleSoundInstance.forUI(SoundEvents.UI_BUTTON_CLICK, 1.0F));
-                    System.out.println("Button clicked: " + recipe.getId());
+                    BattleofgodsMod.LOGGER.debug("Button clicked: {}", recipe.getId());
+
                 }
 
+                @Override
+                public boolean isHoveredOrFocused() {
+                    return super.isHoveredOrFocused();
+                }
             });
         });
-        System.out.println("Recipes: " + visibleRecipes.size());
+        BattleofgodsMod.LOGGER.debug("Recipes: {}", visibleRecipes.size());
         visibleRecipes.forEach(recipe -> {
-            System.out.println("Recipe: " + recipe.getId());
+            BattleofgodsMod.LOGGER.debug("Recipe: {}", recipe.getId());
         });
         // Recipe List
 
@@ -132,10 +135,18 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
                     button.setX(buttonX);
                     button.setY(buttonY);
                     assert minecraft != null;
+
                     button.render(guiGraphics, x, y, minecraft.getFrameTime());
+
                 }
                 guiGraphics.disableScissor();
+
+                buttons.forEach(btn -> {
+                    if (isMouseOver(btn, mouseX, mouseY))
+                        btn.renderTooltip(guiGraphics, mouseX, mouseY);
+                });
             }
+
 
             //making buttons clickable
             @Override
@@ -174,13 +185,20 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
                 return false;
 
             }
-        };
-        addRenderableWidget(recipeList);
 
+            public boolean isMouseOver(RecipeButton button, double mouseX, double mouseY) {
+                return mouseX >= button.getX() &&
+                        mouseX <= button.getX() + button.getWidth() &&
+                        mouseY >= button.getY() &&
+                        mouseY <= button.getY() + button.getHeight() &&
+                        mouseX >= left && mouseX <= left + width &&
+                        mouseY >= top && mouseY <= top + height;
+            }
+        };
         // Craft-Button
 
         addRenderableWidget(new ImageButton(
-                7*(leftPos + imageWidth)/8, topPos + 64,
+                7 * (leftPos + imageWidth) / 8, topPos + 64,
                 16, 16,
                 0, 0,  // Normal state
                 16,     // xDiff between states
@@ -205,6 +223,7 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
                 );
             }
         }).setTooltip(Tooltip.create(Component.translatable("gui.battleofgods.tooltip.craft_hammer")));
+        addRenderableWidget(recipeList);
     }
 
     private void selectRecipe(RecipeHandler.BattleRecipe recipe) {

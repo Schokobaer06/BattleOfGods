@@ -18,7 +18,6 @@ import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.common.crafting.CraftingHelper;
 import net.minecraftforge.registries.ForgeRegistries;
-import org.jetbrains.annotations.Nullable;
 
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -87,7 +86,9 @@ public class RecipeHandler {
                         BattleofgodsMod.LOGGER.debug("Loaded recipe: {}", recipeId);
                     }
                 } catch (Exception e) {
-                    BattleofgodsMod.LOGGER.error("Failed to load recipe: {}", resource, e);
+                    if (!(e instanceof NullPointerException))
+                        BattleofgodsMod.LOGGER.error("Failed to load recipe: {}", resource, e);
+                    BattleofgodsMod.LOGGER.warn("Failed to load recipe: {}", resource);
                 }
             }
 
