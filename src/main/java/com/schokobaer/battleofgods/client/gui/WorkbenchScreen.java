@@ -189,12 +189,10 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
                         mouseY >= top && mouseY <= top + height;
             }
         };
-        addRenderableWidget(recipeList);
-
         // Craft-Button
 
         addRenderableWidget(new ImageButton(
-                7*(leftPos + imageWidth)/8, topPos + 64,
+                7 * (leftPos + imageWidth) / 8, topPos + 64,
                 16, 16,
                 0, 0,  // Normal state
                 16,     // xDiff between states
@@ -219,6 +217,7 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
                 );
             }
         }).setTooltip(Tooltip.create(Component.translatable("gui.battleofgods.tooltip.craft_hammer")));
+        addRenderableWidget(recipeList);
     }
 
     private void selectRecipe(RecipeHandler.BattleRecipe recipe) {
