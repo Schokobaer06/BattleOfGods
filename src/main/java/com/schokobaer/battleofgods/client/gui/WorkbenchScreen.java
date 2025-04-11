@@ -56,17 +56,20 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
             buttons.add(new RecipeButton(
                     0,
                     0,
-                    recipe,
-                    this::selectRecipe
+                    recipe
             ){
                 @Override
                 public void onClick(double x, double y) {
-                    //onSelect(x,y);
                     Minecraft.getInstance().getSoundManager().play(
                             SimpleSoundInstance.forUI(SoundEvents.UI_BUTTON_CLICK, 1.0F));
                     BattleofgodsMod.LOGGER.debug("Button clicked: {}", recipe.getId());
+
                 }
 
+                @Override
+                public boolean isHoveredOrFocused() {
+                    return super.isHoveredOrFocused();
+                }
             });
         });
         BattleofgodsMod.LOGGER.debug("Recipes: {}", visibleRecipes.size());
@@ -132,7 +135,9 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
                     button.setX(buttonX);
                     button.setY(buttonY);
                     assert minecraft != null;
+
                     button.render(guiGraphics, x, y, minecraft.getFrameTime());
+
                 }
                 guiGraphics.disableScissor();
 
@@ -141,6 +146,7 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
                         btn.renderTooltip(guiGraphics, mouseX, mouseY);
                 });
             }
+
 
             //making buttons clickable
             @Override
