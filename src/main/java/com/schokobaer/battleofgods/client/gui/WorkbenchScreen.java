@@ -27,8 +27,6 @@ import java.util.List;
 public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
     private static final ResourceLocation TEXTURE =
             new ResourceLocation("battleofgods:textures/gui/workbench.png");
-    private static final ResourceLocation SCROLLER =
-            new ResourceLocation("battleofgods:textures/gui/scroller.png");
 
     private ScrollPanel recipeList;
     private List<RecipeHandler.BattleRecipe> visibleRecipes;
@@ -63,12 +61,6 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
                     Minecraft.getInstance().getSoundManager().play(
                             SimpleSoundInstance.forUI(SoundEvents.UI_BUTTON_CLICK, 1.0F));
                     BattleofgodsMod.LOGGER.debug("Button clicked: {}", recipe.getId());
-
-                }
-
-                @Override
-                public boolean isHoveredOrFocused() {
-                    return super.isHoveredOrFocused();
                 }
             });
         });
@@ -138,6 +130,7 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
 
                     button.render(guiGraphics, x, y, minecraft.getFrameTime());
 
+                    button.isHovered = isMouseOver(button, mouseX, mouseY);
                 }
                 guiGraphics.disableScissor();
 
@@ -154,14 +147,15 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
                 if (!isMouseOver(mouseX, mouseY)) {
                     return false;
                 }
-
                 // Buttons prüfen
                 for (RecipeButton btn : buttons) {
 
+                    btn.isFocused = false;
                     if (mouseX >= btn.getX() &&
                             mouseX <= btn.getX() + btn.getWidth() &&
                             mouseY >= btn.getY() &&
                             mouseY <= btn.getY() + btn.getHeight()) {
+                        btn.isFocused = true;
                         btn.mouseClicked(mouseX,mouseY,button);
                     }
 
@@ -179,9 +173,11 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
                             mouseX >= left && mouseX <= left + width &&
                             mouseY >= top && mouseY <= top + height
                     ) {
-                        return btn.isMouseOver(mouseX, mouseY);
+                        return true;
                     }
+
                 }
+
                 return false;
 
             }

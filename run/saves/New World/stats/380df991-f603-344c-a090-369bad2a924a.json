@@ -12,16 +12,9 @@
       "minecraft:redstone": 1,
       "minecraft:dirt": 2
     },
-    "minecraft:dropped": {
-      "battleofgods:copper_broadsword": 1,
-      "battleofgods:wooden_workbench": 1,
-      "minecraft:dirt": 1,
-      "minecraft:oak_log": 1,
-      "minecraft:copper_ingot": 256
-    },
     "minecraft:custom": {
-      "minecraft:time_since_rest": 137009,
-      "minecraft:play_time": 137009,
+      "minecraft:time_since_rest": 142850,
+      "minecraft:play_time": 142850,
       "minecraft:crouch_one_cm": 1220,
       "minecraft:sprint_one_cm": 25809,
       "minecraft:walk_one_cm": 51431,
@@ -30,15 +23,11 @@
       "minecraft:drop": 9,
       "minecraft:jump": 141,
       "minecraft:damage_dealt": 522,
-      "minecraft:leave_game": 245,
-      "minecraft:time_since_death": 137009,
-      "minecraft:total_world_time": 285176,
+      "minecraft:leave_game": 252,
+      "minecraft:time_since_death": 142850,
+      "minecraft:total_world_time": 295895,
       "minecraft:interact_with_crafting_table": 8,
       "minecraft:fly_one_cm": 36827
-    },
-    "minecraft:mined": {
-      "minecraft:grass_block": 3,
-      "battleofgods:wooden_workbench": 2
     },
     "minecraft:used": {
       "minecraft:piston": 2,
@@ -53,6 +42,17 @@
       "minecraft:iron_axe": 1,
       "minecraft:redstone": 8,
       "minecraft:diamond_sword": 3
+    },
+    "minecraft:dropped": {
+      "battleofgods:copper_broadsword": 1,
+      "battleofgods:wooden_workbench": 1,
+      "minecraft:dirt": 1,
+      "minecraft:oak_log": 1,
+      "minecraft:copper_ingot": 256
+    },
+    "minecraft:mined": {
+      "minecraft:grass_block": 3,
+      "battleofgods:wooden_workbench": 2
     }
   },
   "DataVersion": 3465

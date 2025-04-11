@@ -15,7 +15,8 @@ public class RecipeButton extends AbstractWidget {
             new ResourceLocation("battleofgods:textures/gui/recipe_button.png");
 
     private final RecipeHandler.BattleRecipe recipe;
-
+    public Boolean isFocused = false;
+    public Boolean isHovered = false;
 
     public RecipeButton(int x, int y, RecipeHandler.BattleRecipe recipe) {
         super(x, y, 18, 18, Component.empty());
@@ -37,8 +38,9 @@ public class RecipeButton extends AbstractWidget {
                 xOffset, 0,
                 this.width, this.height,
                 36, 18);
+
         // 2. Render item
-        graphics.renderItem(resultItem, getX() + 2, getY() + 2);
+        graphics.renderItem(resultItem, getX() + 1, getY() + 1);
         graphics.renderItemDecorations(
                 Minecraft.getInstance().font,
                 resultItem,
@@ -66,10 +68,19 @@ public class RecipeButton extends AbstractWidget {
         return recipe;
     }
 
+
     @Override
-    public boolean isMouseOver(double mouseX, double mouseY) {
-        return mouseX >= this.getX() && mouseX < this.getX() + this.width &&
-                mouseY >= this.getY() && mouseY < this.getY() + this.height;
+    public boolean isHoveredOrFocused() {
+        return isHovered || isFocused;
     }
 
+    @Override
+    public boolean isFocused() {
+        return isFocused;
+    }
+
+    @Override
+    public boolean isHovered() {
+        return isHovered;
+    }
 }
