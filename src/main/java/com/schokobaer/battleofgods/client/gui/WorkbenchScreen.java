@@ -133,10 +133,13 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
                     button.setY(buttonY);
                     assert minecraft != null;
                     button.render(guiGraphics, x, y, minecraft.getFrameTime());
-                    if (isMouseOverButton(button, mouseX, mouseY))
-                        button.renderTooltip(guiGraphics, mouseX, mouseY);
                 }
                 guiGraphics.disableScissor();
+
+                buttons.forEach(btn -> {
+                    if (isMouseOver(btn, mouseX, mouseY))
+                        btn.renderTooltip(guiGraphics, mouseX, mouseY);
+                });
             }
 
             //making buttons clickable
@@ -177,11 +180,13 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
 
             }
 
-            public boolean isMouseOverButton(RecipeButton button, double mouseX, double mouseY) {
+            public boolean isMouseOver(RecipeButton button, double mouseX, double mouseY) {
                 return mouseX >= button.getX() &&
                         mouseX <= button.getX() + button.getWidth() &&
                         mouseY >= button.getY() &&
-                        mouseY <= button.getY() + button.getHeight();
+                        mouseY <= button.getY() + button.getHeight() &&
+                        mouseX >= left && mouseX <= left + width &&
+                        mouseY >= top && mouseY <= top + height;
             }
         };
         addRenderableWidget(recipeList);
