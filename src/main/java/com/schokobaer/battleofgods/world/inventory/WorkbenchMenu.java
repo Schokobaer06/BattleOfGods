@@ -23,6 +23,7 @@ public class WorkbenchMenu extends AbstractContainerMenu implements Supplier<Map
     private RecipeHandler.BattleRecipe selectedRecipe;
     private ContainerLevelAccess access;
     private final String recipeGroup;
+    private ResourceLocation backgroundLocation = null;
 
     public WorkbenchMenu(int containerId, Inventory inv) {
         super(InitMenu.WORKBENCH.get(), containerId);
@@ -139,5 +140,13 @@ public class WorkbenchMenu extends AbstractContainerMenu implements Supplier<Map
     @Override
     public Map<Integer, Slot> get() {
         return Map.of();
+    }
+
+    public ResourceLocation getBackgroundTexture() {
+        return backgroundLocation;
+    }
+
+    public void setBackgroundTexture(ResourceLocation texture) {
+        this.backgroundLocation = texture;
     }
 }

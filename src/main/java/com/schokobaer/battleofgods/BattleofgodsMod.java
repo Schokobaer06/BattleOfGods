@@ -52,6 +52,13 @@ public class BattleofgodsMod {
     private static final Collection<AbstractMap.SimpleEntry<Runnable, Integer>> workQueue = new ConcurrentLinkedQueue<>();
     private static int messageID = 0;
 
+
+    private static final Boolean debug = true;
+
+    public static Boolean isDebug() {
+        return debug;
+    }
+
     public BattleofgodsMod() {
         // Start of user code block mod constructor
         // End of user code block mod constructor
