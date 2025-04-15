@@ -13,8 +13,8 @@ import net.minecraftforge.registries.RegistryObject;
 import org.jetbrains.annotations.NotNull;
 
 
-public class Broadsword extends SwordItemOverride {
-    public Broadsword(float attackDamageBonus, int enchantmentValue, Ingredient repairMaterial, int attackDamage, float attackSpeed, Properties properties, RegistryObject<com.schokobaer.battleofgods.mechanics.rarity.Rarity> rarity, RegistryObject<com.schokobaer.battleofgods.mechanics.tier.Tier> gameTier) {
+public class Shortsword extends SwordItemOverride {
+    public Shortsword(float attackDamageBonus, int enchantmentValue, Ingredient repairMaterial, int attackDamage, float attackSpeed, Properties properties, RegistryObject<com.schokobaer.battleofgods.mechanics.rarity.Rarity> rarity, RegistryObject<com.schokobaer.battleofgods.mechanics.tier.Tier> gameTier) {
         super(new Tier() {
             @Override
             public int getUses() {
@@ -45,12 +45,12 @@ public class Broadsword extends SwordItemOverride {
             public @NotNull Ingredient getRepairIngredient() {
                 return repairMaterial;
             }
-        }, attackDamage-1, attackSpeed-4, properties, new AbstractSubClass(InitMainClass.MELEE, rarity, gameTier, InitSubClass.BROADSWORD) {});
+        }, attackDamage-1, attackSpeed-4, properties, new AbstractSubClass(InitMainClass.MELEE, rarity, gameTier, InitSubClass.SHORTSWORD) {});
     }
-    public Broadsword(Tier tier, int attackDamage, float attackSpeed, Properties properties, RegistryObject<com.schokobaer.battleofgods.mechanics.rarity.Rarity> rarity, RegistryObject<com.schokobaer.battleofgods.mechanics.tier.Tier> gameTier) {
-        super(tier, attackDamage, attackSpeed, properties, new AbstractSubClass(InitMainClass.MELEE, rarity, gameTier, InitSubClass.BROADSWORD) {});}
+    public Shortsword(Tier tier, int attackDamage, float attackSpeed, Properties properties, RegistryObject<com.schokobaer.battleofgods.mechanics.rarity.Rarity> rarity, RegistryObject<com.schokobaer.battleofgods.mechanics.tier.Tier> gameTier) {
+        super(tier, attackDamage, attackSpeed, properties, new AbstractSubClass(InitMainClass.MELEE, rarity, gameTier, InitSubClass.SHORTSWORD) {});}
 
-    public Broadsword(TagKey<ItemOverride> tag){
+    public Shortsword(TagKey<ItemOverride> tag){
         super(new Tier() {
             @Override
             public int getUses() {
@@ -81,7 +81,7 @@ public class Broadsword extends SwordItemOverride {
             public Ingredient getRepairIngredient() {
                 return null;
             }
-        }, 0, 0, new Properties(), new AbstractSubClass("broadsword", InitMainClass.MELEE, tag) {});
+        }, 0, 0, new Properties(), new AbstractSubClass("shortsword", InitMainClass.MELEE, tag) {});
     }
 
     @Override

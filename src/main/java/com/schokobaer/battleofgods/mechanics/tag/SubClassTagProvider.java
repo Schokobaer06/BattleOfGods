@@ -35,7 +35,7 @@ public class SubClassTagProvider extends TagsProvider<ItemOverride> {
                 for (RegistryObject<Item> subClass: InitSubClass.SUBCLASSES.getEntries()){
                     if (subClass.get().equals(((ItemOverride) item.get()).getSubClassMethods().getSubClass())){
                         tag(((ItemOverride) subClass.get()).getSubClassMethods().getTag()).add(TagEntry.element(item.getId()));
-                        BattleofgodsMod.LOGGER.info("Adding item {} to tag {} for {}", item.getId(), ((ItemOverride) subClass.get()).getSubClassMethods().getTag().toString(), BattleofgodsMod.MODID);
+                        BattleofgodsMod.LOGGER.debug("Adding item {} to tag {} for {}", item.getId(), ((ItemOverride) subClass.get()).getSubClassMethods().getTag().toString(), BattleofgodsMod.MODID);
                     }
                 }
             }
