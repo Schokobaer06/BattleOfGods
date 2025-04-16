@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "battleofgods:copper_broadsword",
+      "required": false
+    },
+    {
+      "id": "battleofgods:copper_shortsword",
+      "required": false
+    }
+  ]
+}

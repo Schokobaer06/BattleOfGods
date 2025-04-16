@@ -2,7 +2,6 @@ package com.schokobaer.battleofgods.item.tier1;
 
 import com.schokobaer.battleofgods.init.InitRarity;
 import com.schokobaer.battleofgods.init.InitTier;
-import com.schokobaer.battleofgods.mechanics.item.subClass.Broadsword;
 import com.schokobaer.battleofgods.mechanics.item.subClass.Shortsword;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;

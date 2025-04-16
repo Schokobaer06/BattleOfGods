@@ -2,6 +2,7 @@ package com.schokobaer.battleofgods;
 
 import com.schokobaer.battleofgods.init.*;
 import com.schokobaer.battleofgods.mechanics.item.MainClass;
+import com.schokobaer.battleofgods.mechanics.item.override.ItemOverride;
 import com.schokobaer.battleofgods.mechanics.rarity.Rarity;
 import com.schokobaer.battleofgods.mechanics.recipe.CraftPacket;
 import com.schokobaer.battleofgods.mechanics.recipe.RecipeHandler;
@@ -10,10 +11,13 @@ import com.schokobaer.battleofgods.mechanics.tag.RarityTagProvider;
 import com.schokobaer.battleofgods.mechanics.tag.SubClassTagProvider;
 import com.schokobaer.battleofgods.mechanics.tag.TierTagProvider;
 import com.schokobaer.battleofgods.mechanics.tier.Tier;
+import net.minecraft.core.Registry;
 import net.minecraft.data.DataProvider;
 import net.minecraft.network.FriendlyByteBuf;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.resources.ResourceManagerReloadListener;
+import net.minecraft.world.item.Item;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.event.AddReloadListenerEvent;
@@ -27,6 +31,7 @@ import net.minecraftforge.network.NetworkEvent;
 import net.minecraftforge.network.NetworkRegistry;
 import net.minecraftforge.network.simple.SimpleChannel;
 import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.registries.NewRegistryEvent;
 import net.minecraftforge.registries.RegisterEvent;
 import net.minecraftforge.registries.RegistryBuilder;
 import org.apache.logging.log4j.LogManager;
@@ -65,9 +70,15 @@ public class BattleofgodsMod {
         MinecraftForge.EVENT_BUS.register(this);
         IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
         // Start of user code block mod init
-        InitTier.TIERS.makeRegistry(() -> new RegistryBuilder<Tier>().setName(InitTier.TIER_KEY.location()));
-        InitRarity.RARITIES.makeRegistry(() -> new RegistryBuilder<Rarity>().setName(InitRarity.RARITY_KEY.location()));
-        InitMainClass.MAIN_CLASSES.makeRegistry(() -> new RegistryBuilder<MainClass>().setName(InitMainClass.MAIN_CLASS_KEY.location()));
+        InitTier.TIERS.makeRegistry(() -> new RegistryBuilder<Tier>()
+                .setName(InitTier.TIER_KEY.location())
+                .hasTags());
+        InitRarity.RARITIES.makeRegistry(() -> new RegistryBuilder<Rarity>()
+                .setName(InitRarity.RARITY_KEY.location())
+                .hasTags());
+        InitMainClass.MAIN_CLASSES.makeRegistry(() -> new RegistryBuilder<MainClass>()
+                .setName(InitMainClass.MAIN_CLASS_KEY.location())
+                .hasTags());
         InitTier.TIERS.register(bus);
         InitRarity.RARITIES.register(bus);
         InitMainClass.MAIN_CLASSES.register(bus);
@@ -80,13 +91,8 @@ public class BattleofgodsMod {
         BattleofgodsModMenus.REGISTRY.register(bus);
 
         InitMenu.MENUS.register(bus);
-        //bus.addGenericListener(FMLCommonSetupEvent.class,(GenericEvent<? extends FMLCommonSetupEvent> event) -> onCommonSetup((FMLCommonSetupEvent) event.getGenericType()));;
-        //bus.addGenericListener(RegisterEvent.class,(GenericEvent<? extends RegisterEvent> event) -> registerRecipeTypes((RegisterEvent) event.getGenericType()));;
-        //bus.addGenericListener(RegisterEvent.class,(GenericEvent<? extends RegisterEvent> event) -> registerRecipeSerializers((RegisterEvent) event.getGenericType()));;
         bus.addListener(BattleofgodsMod::registerRecipeTypes);
         bus.addListener(BattleofgodsMod::registerRecipeSerializers);
-        //bus.addListener(BattleofgodsMod::onServerStarting);
-        //bus.addListener(BattleofgodsMod::onClientSetup);
         bus.addListener(this::gatherData);
 
         addNetworkMessage(CraftPacket.class, CraftPacket::encode, CraftPacket::decode, CraftPacket::handle);
@@ -105,30 +111,17 @@ public class BattleofgodsMod {
 
     @SubscribeEvent
     public static void registerRecipeTypes(RegisterEvent event) {
-        LOGGER.debug("Registering recipe types");
+        if (isDebug())
+            LOGGER.debug("Registering recipe types");
         event.register(ForgeRegistries.Keys.RECIPE_TYPES, helper -> {
             helper.register(new ResourceLocation(MODID + ":default_recipe"), RecipeHandler.BattleRecipe.Type.INSTANCE);
         });
     }
-    /*
-	@SubscribeEvent
-	@OnlyIn(Dist.DEDICATED_SERVER)
-	public static void onServerStarting(ServerStartingEvent event) {
-		LOGGER.debug("Server loading recipes");
-		RecipeHandler.loadRecipes(event.getServer().getResourceManager());
-
-	}
-
-	@SubscribeEvent
-	@OnlyIn(Dist.CLIENT)
-	public static void onClientSetup(FMLCommonSetupEvent event) {
-		LOGGER.debug("Client loading recipes");
-		RecipeHandler.loadRecipes(Minecraft.getInstance().getResourceManager());
-	}*/
 
     @SubscribeEvent
     public static void registerRecipeSerializers(RegisterEvent event) {
-        LOGGER.debug("Registering recipe serializers");
+        if (isDebug())
+            LOGGER.debug("Registering recipe serializers");
         event.register(ForgeRegistries.Keys.RECIPE_SERIALIZERS, helper -> {
             helper.register(new ResourceLocation(MODID + ":default_recipe"), RecipeHandler.BattleRecipe.SERIALIZER);
         });
@@ -151,7 +144,8 @@ public class BattleofgodsMod {
     @SubscribeEvent
     public void addReloadListeners(AddReloadListenerEvent event) {
         event.addListener((ResourceManagerReloadListener) manager -> {
-            LOGGER.debug("Reloading recipes");
+            if (isDebug())
+                LOGGER.debug("Reloading recipes");
             RecipeHandler.loadRecipes(manager);
         });
     }
@@ -164,7 +158,7 @@ public class BattleofgodsMod {
                 event.includeServer(),
                 (DataProvider.Factory<SubClassTagProvider>) output -> new SubClassTagProvider(
                         output,
-                        InitSubClass.ITEM_OVERRIDE,
+                        (ResourceKey<? extends Registry<ItemOverride>>) (Object) ForgeRegistries.ITEMS.getRegistryKey(),
                         event.getLookupProvider(),
                         MODID,
                         event.getExistingFileHelper()

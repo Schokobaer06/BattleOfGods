@@ -28,11 +28,13 @@ public class RarityTagProvider extends TagsProvider<Rarity> {
 
     @Override
     protected void addTags(HolderLookup.Provider provider) {
+        BattleofgodsMod.LOGGER.info("Gathering rarity data for {}", BattleofgodsMod.MODID);
         try {
             for (RegistryObject<Item> item : InitItem.ITEMS.getEntries()) {
                 for (RegistryObject<Rarity> rarity : InitRarity.RARITIES.getEntries()) {
                     if(((ItemOverride) item.get()).getSubClassMethods().getRarity().equals(rarity.get())) {
-                        tag(rarity.get().getTag()).add(TagEntry.element(item.getId()));
+                        tag(rarity.get().getTag()).addOptional(TagEntry.element(item.getId()).getId());
+                        BattleofgodsMod.LOGGER.debug("Adding item {} to tag {} for {}", item.getId(), rarity.get().getTag().toString(), BattleofgodsMod.MODID);
                     }
                 }
             }

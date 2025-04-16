@@ -1,6 +1,7 @@
 package com.schokobaer.battleofgods.mechanics.tag;
 
 import com.schokobaer.battleofgods.BattleofgodsMod;
+import com.schokobaer.battleofgods.init.InitItem;
 import com.schokobaer.battleofgods.init.InitMainClass;
 import com.schokobaer.battleofgods.init.InitSubClass;
 import com.schokobaer.battleofgods.mechanics.item.MainClass;
@@ -28,12 +29,14 @@ public class MainClassTagProvider extends TagsProvider<MainClass> {
 
     @Override
     protected void addTags(HolderLookup.Provider provider) {
-        try {
-            for (RegistryObject<Item> subClass : InitSubClass.SUBCLASSES.getEntries()) {
+        BattleofgodsMod.LOGGER.info("Gathering main class data for {}", BattleofgodsMod.MODID);
+        try{
+            for (RegistryObject<Item> item: InitItem.ITEMS.getEntries()){
 
-                for (RegistryObject<MainClass> mainClass : InitMainClass.MAIN_CLASSES.getEntries()) {
-                    if (((ItemOverride) subClass.get()).getSubClassMethods().getMainClass().equals(mainClass.get())){
-                        tag(mainClass.get().getTag()).addOptionalTag(TagEntry.element(subClass.getId()).getId());
+                for (RegistryObject<MainClass> mainClass: InitMainClass.MAIN_CLASSES.getEntries()){
+                    if (mainClass.get().equals(((ItemOverride) item.get()).getSubClassMethods().getMainClass())){
+                        tag(mainClass.get().getTag()).addOptional(TagEntry.element(item.getId()).getId());
+                        BattleofgodsMod.LOGGER.debug("Adding item {} to tag {} for {}", item.getId(), mainClass.get().getTag().toString(), BattleofgodsMod.MODID);
                     }
                 }
             }

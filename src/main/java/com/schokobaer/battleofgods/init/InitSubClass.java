@@ -15,7 +15,7 @@ import net.minecraftforge.registries.RegistryObject;
 
 public class InitSubClass {
 
-    public static final ResourceKey<? extends Registry<ItemOverride>> ITEM_OVERRIDE = ResourceKey.createRegistryKey(new ResourceLocation(BattleofgodsMod.MODID, "items"));
+    //public static final ResourceKey<? extends Registry<ItemOverride>> ITEM_OVERRIDE = ResourceKey.createRegistryKey(new ResourceLocation(BattleofgodsMod.MODID, "items"));
 
     public static final DeferredRegister<Item> SUBCLASSES= DeferredRegister.create(ForgeRegistries.ITEMS, BattleofgodsMod.MODID);
 
