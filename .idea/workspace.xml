@@ -5,9 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="de627db8-e6d5-443c-af3d-75b8dc14416f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/mechanics/modifier/Modifier.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/mechanics/modifier/modifiers/ModifierCriticalHit.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/init/InitModifiers.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/mechanics/handler/DamageHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/mechanics/handler/TooltipHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/mechanics/modifier/ModifierRegistry.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mcreator/workspaceBackups/battleofgods.mcreator-backup_20250326_205207" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/BattleofgodsMod.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/BattleofgodsMod.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/mechanics/modifier/Modifier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/mechanics/modifier/Modifier.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/mechanics/modifier/modifiers/ModifierCriticalHit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/mechanics/modifier/modifiers/ModifierCriticalHitChance.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

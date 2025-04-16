@@ -84,6 +84,8 @@ public class BattleofgodsMod {
         InitMainClass.MAIN_CLASSES.register(bus);
         InitSubClass.SUBCLASSES.register(bus);
         InitItem.ITEMS.register(bus);
+
+        InitModifiers.MODIFIERS.register(bus);
         // End of user code block mod init
         BattleofgodsModBlocks.REGISTRY.register(bus);
         BattleofgodsModItems.REGISTRY.register(bus);
