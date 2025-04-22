@@ -238,8 +238,11 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
         materialWidgets.forEach(this::removeWidget);
         materialWidgets.clear();
         if (menu.getSelectedRecipe() == null) return;
+
         int x = leftPos + 90;
         int y = topPos + font.lineHeight + 8;
+        int xCount = 0;
+        int widgetsPerRow = 3;
         try {
             for (RecipeHandler.BattleRecipe.IngredientEntry entry : menu.getSelectedRecipe().getInputs()) {
                 if (BattleofgodsMod.isDebug())
@@ -252,6 +255,17 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
                 );
                 materialWidgets.add(widget);
                 addRenderableOnly(widget);
+
+                if (xCount < widgetsPerRow) {
+                    xCount++;
+                    x += 20;
+                }
+                else {
+                    xCount = 0;
+                    x = leftPos + 90;
+                    y += 20;
+                }
+
             }
         } catch (Exception e) {
             BattleofgodsMod.LOGGER.error("Error while updating material display: {}", e.getMessage());

@@ -7,6 +7,30 @@
     {
       "item": "minecraft:copper_ingot",
       "count": 5
+    },
+    {
+      "item": "minecraft:copper_ingot",
+      "count": 5
+    },
+    {
+      "item": "minecraft:iron_ingot",
+      "count": 5
+    },
+    {
+      "item": "minecraft:diamond",
+      "count": 5
+    },
+    {
+      "item": "minecraft:gold_ingot",
+      "count": 5
+    },
+    {
+      "item": "minecraft:netherite_ingot",
+      "count": 5
+    },
+    {
+      "item": "minecraft:emerald",
+      "count": 5
     }
   ],
   "output": {

@@ -1,13 +1,16 @@
 package com.schokobaer.battleofgods.client.widget;
 
+import com.mojang.blaze3d.vertex.PoseStack;
 import com.schokobaer.battleofgods.mechanics.recipe.RecipeHandler;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.AbstractWidget;
+import net.minecraft.client.gui.components.Tooltip;
 import net.minecraft.client.gui.narration.NarrationElementOutput;
 import net.minecraft.core.RegistryAccess;
 import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.Style;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 
@@ -32,27 +35,45 @@ public class MaterialWidget extends AbstractWidget {
         // 1. Rendere Item-Icon
         ItemStack[] matchingItems = entry.ingredient().getItems();
         if(matchingItems.length > 0) {
-            guiGraphics.renderItem(matchingItems[0], getX(), getY());
+            guiGraphics.renderFakeItem(matchingItems[0], getX(), getY());
+
+
+            // 2. Rendere Text (Anzahl)
+            int available = getAvailableCount();
+            int required = entry.count();
+            ChatFormatting color = (available >= required) ? ChatFormatting.GREEN : ChatFormatting.RED;
+            PoseStack poseStack = guiGraphics.pose();
+            poseStack.pushPose();
+            poseStack.translate(getX() + ITEM_SIZE - 8, getY() + ITEM_SIZE -5, 200); // Position neben dem Item
+            poseStack.scale(0.7f, 0.7f, 1);
+            guiGraphics.drawString(
+                    Minecraft.getInstance().font,
+                    Component.literal(String.valueOf(available)).withStyle(color)
+                            .append(Component.literal("/").withStyle(ChatFormatting.WHITE)
+                            .append(Component.literal(String.valueOf(required)).withStyle(ChatFormatting.WHITE))),
+                    0, 0,
+                    0xFFFFFF,
+                    false
+            );
+
+            poseStack.popPose();
+
+            // 3. Rendere Tooltip
+            if (isMouseOver(mouseX, mouseY)) {
+                guiGraphics.renderTooltip(Minecraft.getInstance().font, matchingItems[0], mouseX, mouseY);
+            }
         }
+    }
 
-        // 2. Rendere Text (Anzahl)
-        int available = getAvailableCount();
-        int required = entry.count();
-        ChatFormatting color = (available >= required) ? ChatFormatting.WHITE : ChatFormatting.RED;
-
-        guiGraphics.drawString(
-                Minecraft.getInstance().font,
-                Component.literal(available + "/" + required).withStyle(color),
-                getX() + ITEM_SIZE + 5, getY() + 5,
-                0xFFFFFF,
-                false
-        );
+    @Override
+    public boolean isMouseOver(double mouseX, double mouseY) {
+        return mouseX >= getX() && mouseX <= getX() + ITEM_SIZE
+                && mouseY >= getY() && mouseY <= getY() + ITEM_SIZE;
     }
 
     @Override
     protected void updateWidgetNarration(NarrationElementOutput output) {
         defaultButtonNarrationText(output);
-
     }
     private int getAvailableCount() {
         int count = 0;
