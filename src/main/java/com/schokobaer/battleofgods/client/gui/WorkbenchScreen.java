@@ -29,6 +29,7 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
     ;
 
     private ScrollPanel recipeList;
+    private ScrollPanel materialList;
     private List<RecipeHandler.BattleRecipe> visibleRecipes;
     private final List<MaterialWidget> materialWidgets = new ArrayList<>();
     private final Boolean debug = BattleofgodsMod.isDebug();
@@ -234,44 +235,26 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
     }
 
     private void updateMaterialDisplay() {
-        /*
-        // Alte Widgets entfernen
         materialWidgets.forEach(this::removeWidget);
         materialWidgets.clear();
-
-
-        ScrollPanel materialList = new ScrollPanel(
-                minecraft,
-                (imageWidth / 2) - 2,
-                (imageHeight / 2) - (font.lineHeight * 3 + 3),
-                topPos + font.lineHeight + 8, leftPos + 90,
-                1,
-                3
-        ) {
-            @Override
-            protected int getContentHeight() {
-                return 0;
+        if (menu.getSelectedRecipe() == null) return;
+        int x = leftPos + 90;
+        int y = topPos + font.lineHeight + 8;
+        try {
+            for (RecipeHandler.BattleRecipe.IngredientEntry entry : menu.getSelectedRecipe().getInputs()) {
+                if (BattleofgodsMod.isDebug())
+                    BattleofgodsMod.LOGGER.debug("Material: {}", entry.ingredient());
+                assert minecraft != null;
+                MaterialWidget widget = new MaterialWidget(
+                        x, y,
+                        entry,
+                        minecraft.player
+                );
+                materialWidgets.add(widget);
             }
-
-            @Override
-            protected void drawPanel(GuiGraphics guiGraphics, int entryRight, int relativeY, Tesselator tess, int mouseX, int mouseY) {
-
-            }
-
-            @Override
-            public NarrationPriority narrationPriority() {
-                return NarrationPriority.NONE;
-            }
-
-            @Override
-            public void updateNarration(NarrationElementOutput p_169152_) {
-
-            }
-        };
-
-        addRenderableWidget(materialList);
-
-         */
+        } catch (Exception e) {
+            BattleofgodsMod.LOGGER.error("Error while updating material display: {}", e.getMessage());
+        }
     }
 
     private void craftItem() {
@@ -294,6 +277,7 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
         renderBackground(guiGraphics);
         super.render(guiGraphics, mouseX, mouseY, partialTick);
         renderTooltip(guiGraphics, mouseX, mouseY);
+
     }
 
     @Override
