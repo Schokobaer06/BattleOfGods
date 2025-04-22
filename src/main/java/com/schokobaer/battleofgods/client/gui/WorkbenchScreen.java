@@ -251,6 +251,7 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
                         minecraft.player
                 );
                 materialWidgets.add(widget);
+                addRenderableOnly(widget);
             }
         } catch (Exception e) {
             BattleofgodsMod.LOGGER.error("Error while updating material display: {}", e.getMessage());
@@ -276,6 +277,7 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
     public void render(GuiGraphics guiGraphics, int mouseX, int mouseY, float partialTick) {
         renderBackground(guiGraphics);
         super.render(guiGraphics, mouseX, mouseY, partialTick);
+        //materialWidgets.forEach(this::addRenderableOnly);
         renderTooltip(guiGraphics, mouseX, mouseY);
 
     }

@@ -29,25 +29,6 @@ public class CraftPacket {
     }
 
     public void handle(Supplier<NetworkEvent.Context> ctx) {
-        /*
-        ctx.get().enqueueWork(() -> {
-            ServerPlayer player = ctx.get().getSender();
-            RecipeHandler.BattleRecipe recipe = RecipeHandler.RECIPES.stream()
-                    .filter(r -> r.getId().equals(recipeId))
-                    .findFirst()
-                    .orElse(null);
-
-            if (recipe != null) {
-                player.level().getRecipeManager().byKey(recipeId)
-                        .ifPresent(r -> {
-                            player.awardRecipes(java.util.Collections.singleton(r));
-                            player.getInventory().add(r.getResultItem(player.level().registryAccess()));
-                        });
-            }
-        });
-        ctx.get().setPacketHandled(true);
-
-         */
         ctx.get().enqueueWork(() -> {
             ServerPlayer player = ctx.get().getSender();
             if (player != null && player.containerMenu instanceof WorkbenchMenu menu) {
