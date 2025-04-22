@@ -8,7 +8,6 @@ import com.schokobaer.battleofgods.client.widget.RecipeButton;
 import com.schokobaer.battleofgods.mechanics.recipe.CraftPacket;
 import com.schokobaer.battleofgods.mechanics.recipe.RecipeHandler;
 import com.schokobaer.battleofgods.world.inventory.WorkbenchMenu;
-import me.shedaniel.clothconfig2.api.ScissorsHandler;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.ImageButton;
@@ -243,6 +242,7 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
                 );
             }
         }).setTooltip(Tooltip.create(Component.translatable("gui.battleofgods.tooltip.craft_hammer")));
+
         addRenderableWidget(recipeList);
     }
 
@@ -256,36 +256,17 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
         materialWidgets.clear();
         if (menu.getSelectedRecipe() == null) return;
 
-        int x = leftPos + 90;
-        int y = topPos + font.lineHeight + 8;
-        int xCount = 0;
-        int widgetsPerRow = 3;
+        menu.getSelectedRecipe().getInputs().forEach(recipe -> {
+            assert minecraft != null;
+            materialWidgets.add(new MaterialWidget(
+                    0, 0,
+                    recipe,
+                    minecraft.player
+            ));
+        });
         try {
-            /*
-            for (RecipeHandler.BattleRecipe.IngredientEntry entry : menu.getSelectedRecipe().getInputs()) {
-                if (BattleofgodsMod.isDebug())
-                    BattleofgodsMod.LOGGER.debug("Material: {}", (Object) entry.ingredient().getItems());
-                assert minecraft != null;
-                MaterialWidget widget = new MaterialWidget(
-                        x, y,
-                        entry,
-                        minecraft.player
-                );
-                materialWidgets.add(widget);
-                addRenderableOnly(widget);
 
-                if (xCount < widgetsPerRow) {
-                    xCount++;
-                    x += 20;
-                }
-                else {
-                    xCount = 0;
-                    x = leftPos + 90;
-                    y += 20;
-                }
 
-            }
-             */
 
             ScrollPanel materialList = new ScrollPanel(
                     minecraft,
@@ -307,15 +288,70 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
 
                 @Override
                 protected int getContentHeight() {
-                    return 0;
+                    if (children().isEmpty()) return 0;
+                    int mwHeight = children().get(0).getHeight(); // Höhe eines Buttons
+                    int mwSpacing = 5; // Abstand zwischen Buttons
+                    int widgetsPerRow = Math.max(1, (width - mwSpacing) / (mwHeight + mwSpacing));
+                    int rowCount = (int) Math.ceil((double) children().size() / widgetsPerRow);
+                    return rowCount * (mwHeight + mwSpacing);
                 }
 
                 @Override
                 protected void drawPanel(GuiGraphics guiGraphics, int x, int y, Tesselator tess, int mouseX, int mouseY) {
+                    if (children().isEmpty()) return;
+
+                    int mwWidth = children().get(0).getWidth();
+                    int mwHeight = children().get(0).getHeight();
+                    int mwSpacing = 5;
+                    int widgetsPerRow = Math.max(1, (width - mwSpacing) / (mwWidth + mwSpacing));
+
+                    int rowWidth = widgetsPerRow * (mwWidth + mwSpacing) - mwSpacing;
+                    int startX = (width - rowWidth) / 2; // Zentrierte Position
+
                     guiGraphics.enableScissor(left, top, left + width, top + height);
+
+                    for( int i = 0; i < children().size(); i++) {
+                        MaterialWidget widget = children().get(i);
+                        int row = i / widgetsPerRow;
+                        int col = i % widgetsPerRow;
+
+                        int widgetX = (x - width) + (startX + col * (mwWidth + mwSpacing));
+                        int widgetY = y + (row * (mwHeight + mwSpacing));
+                        widget.setX(widgetX);
+                        widget.setY(widgetY);
+                        assert minecraft != null;
+                        widget.render(guiGraphics, x, y, minecraft.getFrameTime());
+                    }
                     guiGraphics.disableScissor();
                 }
+
+                public boolean isMouseOver(MaterialWidget btn, double mouseX, double mouseY) {
+                    return mouseX >= btn.getX() &&
+                                mouseX <= btn.getX() + btn.getWidth() &&
+                                mouseY >= btn.getY() &&
+                                mouseY <= btn.getY() + btn.getHeight() &&
+                                mouseX >= left && mouseX <= left + width &&
+                                mouseY >= top && mouseY <= top + height;
+
+                }
+
+                @Override
+                public List<MaterialWidget> children() {
+                    return materialWidgets;
+                }
+
+                @Override
+                public Optional<GuiEventListener> getChildAt(double mouseX, double mouseY) {
+                    for (MaterialWidget btn : children()) {
+                        if (isMouseOver(btn, mouseX, mouseY)) {
+                            return Optional.of(btn);
+                        }
+                    }
+                    return Optional.empty();
+                }
             };
+
+
             removeWidget(materialList);
             addRenderableOnly(materialList);
 
