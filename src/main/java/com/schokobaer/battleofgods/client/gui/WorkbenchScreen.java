@@ -243,7 +243,7 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
         try {
             for (RecipeHandler.BattleRecipe.IngredientEntry entry : menu.getSelectedRecipe().getInputs()) {
                 if (BattleofgodsMod.isDebug())
-                    BattleofgodsMod.LOGGER.debug("Material: {}", entry.ingredient());
+                    BattleofgodsMod.LOGGER.debug("Material: {}", (Object) entry.ingredient().getItems());
                 assert minecraft != null;
                 MaterialWidget widget = new MaterialWidget(
                         x, y,
