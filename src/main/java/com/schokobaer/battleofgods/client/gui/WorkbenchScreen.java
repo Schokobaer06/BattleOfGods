@@ -141,11 +141,6 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
                     button.isHovered = isMouseOver(button, mouseX, mouseY);
                 }
                 guiGraphics.disableScissor();
-/*
-                children().forEach(btn -> {
-                    if (isMouseOver(btn, mouseX, mouseY))
-                        btn.renderTooltip(guiGraphics, mouseX, mouseY);
-                });*/
             }
 
 
@@ -226,6 +221,7 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
                 button -> {
                     Minecraft.getInstance().getSoundManager().play(
                             SimpleSoundInstance.forUI(SoundEvents.UI_BUTTON_CLICK, 1.0F));
+                    //TODO: crafting
                     //craftItem();
                 }
         ) {
@@ -317,6 +313,7 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
 
                         int widgetX = (x - width) + (startX + col * (mwWidth + mwSpacing));
                         int widgetY = y + (row * (mwHeight + mwSpacing));
+                        //TODO: fix widget position
                         widget.setX(widgetX);
                         widget.setY(widgetY);
                         assert minecraft != null;
