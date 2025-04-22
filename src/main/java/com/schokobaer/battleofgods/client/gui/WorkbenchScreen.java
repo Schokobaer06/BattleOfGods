@@ -234,28 +234,11 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
     }
 
     private void updateMaterialDisplay() {
+        /*
         // Alte Widgets entfernen
         materialWidgets.forEach(this::removeWidget);
         materialWidgets.clear();
 
-        if (menu.getSelectedRecipe() == null) {
-            return;
-        }
-
-        // Neue Material-list
-        /*
-        int yPos = topPos + 50;
-        for(RecipeHandler.BattleRecipe.IngredientEntry entry : menu.getSelectedRecipe().getInputs()) {
-            assert minecraft != null;
-            MaterialWidget widget = new MaterialWidget(
-                    leftPos + 130, yPos,
-                    entry, minecraft.player
-            );
-            materialWidgets.add(widget);
-            addRenderableWidget(widget);
-            yPos += 25;
-        }
-        */
 
         ScrollPanel materialList = new ScrollPanel(
                 minecraft,
@@ -287,6 +270,8 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
         };
 
         addRenderableWidget(materialList);
+
+         */
     }
 
     private void craftItem() {

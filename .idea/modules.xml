@@ -4,8 +4,6 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/BattleOfGods.main.iml" filepath="$PROJECT_DIR$/.idea/modules/BattleOfGods.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/BattleOfGods.test.iml" filepath="$PROJECT_DIR$/.idea/modules/BattleOfGods.test.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.schokobaer.battleofgods.BattleOfGods.main.iml" filepath="$PROJECT_DIR$/.idea/modules/com.schokobaer.battleofgods.BattleOfGods.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.schokobaer.battleofgods.BattleOfGods.test.iml" filepath="$PROJECT_DIR$/.idea/modules/com.schokobaer.battleofgods.BattleOfGods.test.iml" />
     </modules>
   </component>
 </project>
