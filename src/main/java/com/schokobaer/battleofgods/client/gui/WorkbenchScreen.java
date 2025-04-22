@@ -62,9 +62,9 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
                 public void onClick(double x, double y) {
                     Minecraft.getInstance().getSoundManager().play(
                             SimpleSoundInstance.forUI(SoundEvents.UI_BUTTON_CLICK, 1.0F));
+                    selectRecipe(recipe);
                     if (debug)
                         BattleofgodsMod.LOGGER.debug("Button clicked: {}", recipe.getId());
-
                 }
             });
         });
@@ -239,12 +239,14 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
         materialWidgets.clear();
 
         if (menu.getSelectedRecipe() == null) {
+            return;
         }
 
         // Neue Material-list
         /*
         int yPos = topPos + 50;
         for(RecipeHandler.BattleRecipe.IngredientEntry entry : menu.getSelectedRecipe().getInputs()) {
+            assert minecraft != null;
             MaterialWidget widget = new MaterialWidget(
                     leftPos + 130, yPos,
                     entry, minecraft.player
@@ -253,7 +255,38 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
             addRenderableWidget(widget);
             yPos += 25;
         }
-         */
+        */
+
+        ScrollPanel materialList = new ScrollPanel(
+                minecraft,
+                (imageWidth / 2) - 2,
+                (imageHeight / 2) - (font.lineHeight * 3 + 3),
+                topPos + font.lineHeight + 8, leftPos + 90,
+                1,
+                3
+        ) {
+            @Override
+            protected int getContentHeight() {
+                return 0;
+            }
+
+            @Override
+            protected void drawPanel(GuiGraphics guiGraphics, int entryRight, int relativeY, Tesselator tess, int mouseX, int mouseY) {
+
+            }
+
+            @Override
+            public NarrationPriority narrationPriority() {
+                return NarrationPriority.NONE;
+            }
+
+            @Override
+            public void updateNarration(NarrationElementOutput p_169152_) {
+
+            }
+        };
+
+        addRenderableWidget(materialList);
     }
 
     private void craftItem() {
@@ -268,18 +301,6 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
         RenderSystem.enableBlend();
         RenderSystem.defaultBlendFunc();
         guiGraphics.blit(TEXTURE, leftPos, topPos, 0, 0, imageWidth, imageHeight, imageWidth, imageHeight);
-
-        // Scrollbar #1 for Recipe List
-        /*
-        guiGraphics.blit(SCROLLER,
-                //leftPos + 120, topPos + 20 + (int)((height - 50) * getScrollAmount()),
-                leftPos + 120, topPos + 18,
-                //12, 15, 0, 0, 12, 15, 12, 15);
-                0, 0, 12, 15, 12, 15);
-
-         */
-        // Scrollbar #2 for Material List
-
         RenderSystem.disableBlend();
     }
 
