@@ -1,6 +1,6 @@
 
 package com.schokobaer.battleofgods.init;
-
+/*
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.resources.ResourceLocation;
@@ -33,3 +33,4 @@ public class BattleofgodsModBrewingRecipes implements IModPlugin {
 		registration.addRecipes(RecipeTypes.BREWING, brewingRecipes);
 	}
 }
+*/

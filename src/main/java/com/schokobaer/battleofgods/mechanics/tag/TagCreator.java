@@ -11,6 +11,7 @@ import com.schokobaer.battleofgods.mechanics.rarity.Rarity;
 import com.schokobaer.battleofgods.mechanics.tier.Tier;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
+import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import org.apache.logging.log4j.core.config.plugins.validation.constraints.NotBlank;
 
@@ -30,7 +31,7 @@ public class TagCreator {
     }
 
     public static TagKey<ItemOverride> createSubClassTag(@NotBlank String name, RegistryObject<MainClass> mainClass) {
-        TagKey<ItemOverride> tag = TagKey.create(InitSubClass.ITEM_OVERRIDE, new ResourceLocation(BattleofgodsMod.MODID, mainClass.getId().getPath().toLowerCase() + "/" + name.toLowerCase()));
+        TagKey<ItemOverride> tag = TagKey.create((net.minecraft.resources.ResourceKey<? extends net.minecraft.core.Registry<ItemOverride>>) (Object) ForgeRegistries.ITEMS.getRegistryKey(), new ResourceLocation(BattleofgodsMod.MODID, name.toLowerCase()));
         //tags.put(name.toLowerCase(), tag);
         return tag;
     }
@@ -46,10 +47,4 @@ public class TagCreator {
         //tags.put(name.toLowerCase(), tag);
         return tag;
     }
-/*
-    public static TagKey<?> getTag(String name) {
-        return tags.get(name.toLowerCase());
-    }
-
- */
 }

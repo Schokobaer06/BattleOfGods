@@ -47,9 +47,25 @@ minecraft {
                 }
             }
         }
+        data {
+            workingDirectory project.file('run')
+            args '--mod', 'battleofgods', '--all', '--output', file('src/generated/resources/').absolutePath, '--existing', file('src/main/resources/').absolutePath
+            mods {
+                battleofgods {
+                    source sourceSets.main
+                }
+            }
+        }
     }
 }
 
+sourceSets {
+    main {
+        resources {
+            srcDirs += 'src/generated/resources'
+        }
+    }
+}
 
 
 dependencies {
@@ -79,7 +95,7 @@ tasks.register('runDataTags') {
         }
     }
 }
-
+/*
 repositories {
     maven { url 'https://api.modrinth.com/maven' } // Better Combat
     maven { url "https://maven.shedaniel.me/" } // Cloth Config
@@ -92,3 +108,4 @@ dependencies {
 
 apply from: 'mcreator.gradle'
 
+*/

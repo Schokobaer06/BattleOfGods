@@ -83,12 +83,6 @@ public class Broadsword extends SwordItemOverride {
             }
         }, 0, 0, new Properties(), new AbstractSubClass("broadsword", InitMainClass.MELEE, tag) {});
     }
-    /*
-    @Override
-    public Component getName(ItemStack stack) {
-        //Component name = super.getName(stack);
-        return getSubClassMethods().getName(super.getName(stack));
-    }*/
 
     @Override
     public boolean hasCraftingRemainingItem(ItemStack stack) {
