@@ -34,6 +34,7 @@ public class CraftPacket {
             if (player != null && player.containerMenu instanceof WorkbenchMenu menu) {
                 RecipeHandler.getRecipeById(recipeId).ifPresent(recipe -> {
                     if (recipe.getGroup().equals(menu.getRecipeGroup())) {
+                        if (BattleofgodsMod.isDebug()) BattleofgodsMod.LOGGER.debug("CraftPacket - handle has been called: Crafting item: {}", recipeId);
                         menu.craftItem(player,recipeId);
                     } else {
                         BattleofgodsMod.LOGGER.error("Recipe group mismatch: {} != {}", recipe.getGroup(), menu.getRecipeGroup());

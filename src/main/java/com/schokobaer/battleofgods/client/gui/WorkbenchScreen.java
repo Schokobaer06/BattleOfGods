@@ -221,8 +221,7 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
                 button -> {
                     Minecraft.getInstance().getSoundManager().play(
                             SimpleSoundInstance.forUI(SoundEvents.UI_BUTTON_CLICK, 1.0F));
-                    //TODO: crafting
-                    //craftItem();
+                    craftItem();
                 }
         ) {
             @Override
@@ -354,6 +353,7 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
     private void craftItem() {
         if (menu.getSelectedRecipe() == null) return;
         BattleofgodsMod.PACKET_HANDLER.sendToServer(new CraftPacket(menu.getSelectedRecipe().getId()));
+        if (debug) BattleofgodsMod.LOGGER.debug("WorkbenchScreen - craftItem has been called with recipe {}", menu.getSelectedRecipe().getId());
         init();
     }
 
