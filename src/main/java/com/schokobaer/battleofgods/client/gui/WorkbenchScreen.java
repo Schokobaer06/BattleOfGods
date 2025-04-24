@@ -349,6 +349,11 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
                     }
                     return Optional.empty();
                 }
+
+                @Override
+                protected void drawBackground(GuiGraphics guiGraphics, Tesselator tess, float partialTick) {
+                    super.drawBackground(guiGraphics, tess, partialTick);
+                }
             };
         } catch (Exception e) {
             BattleofgodsMod.LOGGER.error("Error while updating material display: {}", e.getMessage());

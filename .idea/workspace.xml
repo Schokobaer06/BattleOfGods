@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="381b8277-727e-4d80-9354-c3576b313f95" name="Changes" comment="Crafting works now; fixed return Air">
+    <list default="true" id="381b8277-727e-4d80-9354-c3576b313f95" name="Changes" comment=".">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/client/gui/WorkbenchScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/client/gui/WorkbenchScreen.java" afterDir="false" />
     </list>
@@ -142,7 +142,15 @@
       <option name="project" value="LOCAL" />
       <updated>1745493735024</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary=".">
+      <option name="closed" value="true" />
+      <created>1745495073351</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1745495073351</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -161,10 +169,10 @@
     <MESSAGE value="materialwidgets created (not rendered)" />
     <MESSAGE value="materialwidgets are rendering" />
     <MESSAGE value="fixed Tooltip rendering Error" />
-    <MESSAGE value="." />
     <MESSAGE value="refactor WorkbenchScreen: remove commented tooltip rendering code and add TODOs for crafting and widget positioning" />
     <MESSAGE value="tag support &amp; correct material rendering" />
     <MESSAGE value="Crafting works now; fixed return Air" />
-    <option name="LAST_COMMIT_MESSAGE" value="Crafting works now; fixed return Air" />
+    <MESSAGE value="." />
+    <option name="LAST_COMMIT_MESSAGE" value="." />
   </component>
 </project>
