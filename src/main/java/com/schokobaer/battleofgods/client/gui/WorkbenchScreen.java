@@ -122,7 +122,7 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
                 int startX = (width - rowWidth) / 2; // Zentrierte Position
                 guiGraphics.pose().pushPose();
                 guiGraphics.enableScissor(left, top, left + width, top + height);
-
+                BattleofgodsMod.LOGGER.debug("Scrollpanel width + height: {}x{}", width, height);
 
                 //Adding buttons to the scroll panel
                 for (int i = 0; i < children().size(); i++) {
@@ -207,6 +207,12 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
                     }
                 }
                 return Optional.empty();
+            }
+
+            @Override
+            protected void drawBackground(GuiGraphics guiGraphics, Tesselator tess, float partialTick) {
+                super.drawBackground(guiGraphics, tess, partialTick);
+
             }
         };
         // Craft-Button
