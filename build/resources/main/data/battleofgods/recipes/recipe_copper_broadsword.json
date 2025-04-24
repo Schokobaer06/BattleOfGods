@@ -7,6 +7,10 @@
     {
       "item": "minecraft:copper_ingot",
       "count": 7
+    },
+    {
+      "tag": "minecraft:swords",
+      "count": 1
     }
   ],
   "output": {

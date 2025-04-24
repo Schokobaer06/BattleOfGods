@@ -31,7 +31,7 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
     ;
 
     private ScrollPanel recipeList;
-    private List<RecipeHandler.BattleRecipe> visibleRecipes;
+    private ScrollPanel materialList = null;
     private final List<MaterialWidget> materialWidgets = new ArrayList<>();
     private final Boolean debug = BattleofgodsMod.isDebug();
 
@@ -51,7 +51,7 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
 
         // Rezeptliste initialisieren
         assert minecraft != null;
-        visibleRecipes = RecipeHandler.getCraftableRecipesByGroup(minecraft.player, group);
+        List<RecipeHandler.BattleRecipe> visibleRecipes = RecipeHandler.getCraftableRecipesByGroup(minecraft.player, group);
 
         List<RecipeButton> buttons = new ArrayList<>();
         visibleRecipes.forEach(recipe -> {
@@ -100,7 +100,7 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
             @Override
             protected int getContentHeight() {
                 if (children().isEmpty()) return 0;
-                int buttonHeight = children().get(0).getHeight(); // Höhe eines Buttons
+                int buttonHeight = 16; // Höhe eines Buttons
                 int buttonSpacing = 2; // Abstand zwischen Buttons
                 int buttonsPerRow = Math.max(1, (width - buttonSpacing) / (buttonHeight + buttonSpacing));
                 int rowCount = (int) Math.ceil((double) children().size() / buttonsPerRow);
@@ -113,8 +113,8 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
 
                 if (children().isEmpty()) return;
 
-                int buttonWidth = children().get(0).getWidth(); // Breite eines Buttons
-                int buttonHeight = children().get(0).getHeight(); // Höhe eines Buttons
+                int buttonWidth = 18; // Breite eines Buttons
+                int buttonHeight = 18; // Höhe eines Buttons
                 int buttonSpacing = 2; // Abstand zwischen Buttons
                 int buttonsPerRow = Math.max(1, (width - buttonSpacing) / (buttonWidth + buttonSpacing));
 
@@ -249,6 +249,8 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
 
     private void updateMaterialDisplay() {
         materialWidgets.forEach(this::removeWidget);
+        removeWidget(materialList);
+
         materialWidgets.clear();
         if (menu.getSelectedRecipe() == null) return;
 
@@ -261,10 +263,7 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
             ));
         });
         try {
-
-
-
-            ScrollPanel materialList = new ScrollPanel(
+            materialList = new ScrollPanel(
                     minecraft,
                     (imageWidth / 2) - 2,
                     (imageHeight / 2) - (font.lineHeight * 3 + 3)- 10,
@@ -285,7 +284,7 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
                 @Override
                 protected int getContentHeight() {
                     if (children().isEmpty()) return 0;
-                    int mwHeight = children().get(0).getHeight(); // Höhe eines Buttons
+                    int mwHeight = 16; // Höhe eines Buttons
                     int mwSpacing = 5; // Abstand zwischen Buttons
                     int widgetsPerRow = Math.max(1, (width - mwSpacing) / (mwHeight + mwSpacing));
                     int rowCount = (int) Math.ceil((double) children().size() / widgetsPerRow);
@@ -296,8 +295,8 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
                 protected void drawPanel(GuiGraphics guiGraphics, int x, int y, Tesselator tess, int mouseX, int mouseY) {
                     if (children().isEmpty()) return;
 
-                    int mwWidth = children().get(0).getWidth();
-                    int mwHeight = children().get(0).getHeight();
+                    int mwWidth = 16;
+                    int mwHeight = 16;
                     int mwSpacing = 5;
                     int widgetsPerRow = Math.max(1, (width - mwSpacing) / (mwWidth + mwSpacing));
 
@@ -313,7 +312,7 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
 
                         int widgetX = (x - width) + (startX + col * (mwWidth + mwSpacing));
                         int widgetY = y + (row * (mwHeight + mwSpacing));
-                        //TODO: fix widget position
+
                         widget.setX(widgetX);
                         widget.setY(widgetY);
                         assert minecraft != null;
@@ -331,7 +330,6 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
                                 mouseY >= top && mouseY <= top + height;
 
                 }
-
                 @Override
                 public List<MaterialWidget> children() {
                     return materialWidgets;
@@ -347,14 +345,10 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
                     return Optional.empty();
                 }
             };
-
-
-            removeWidget(materialList);
-            addRenderableOnly(materialList);
-
         } catch (Exception e) {
             BattleofgodsMod.LOGGER.error("Error while updating material display: {}", e.getMessage());
         }
+        if (materialList != null ) addRenderableWidget(materialList);
     }
 
     private void craftItem() {
@@ -376,7 +370,6 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
     public void render(GuiGraphics guiGraphics, int mouseX, int mouseY, float partialTick) {
         renderBackground(guiGraphics);
         super.render(guiGraphics, mouseX, mouseY, partialTick);
-        //materialWidgets.forEach(this::addRenderableOnly);
         renderTooltip(guiGraphics, mouseX, mouseY);
 
     }
@@ -403,6 +396,14 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
                 button.renderTooltip(graphics, mouseX, mouseY);
             }
         });
+        if (materialList != null) {
+            materialList.getChildAt(mouseX, mouseY).ifPresent(child -> {
+                if (child instanceof MaterialWidget widget && widget.isMouseOver(mouseX, mouseY)) {
+
+                    widget.renderTooltip(graphics, mouseX, mouseY);
+                }
+            });
+        }
         super.renderTooltip(graphics,mouseX,mouseY);
     }
 }

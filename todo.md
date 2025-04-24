@@ -1,0 +1,24 @@
+- [ ] Workbenchscreen
+  - [x] Correct Material rendering
+  - [x] Correct Tag Material rendering
+  - [ ] Texture Update
+  - [ ] Crafting
+- [ ] JEI Compat
+- [ ] Attributes
+  - [ ] Critical Hit Chance
+- [ ] Melee Armor Subclass
+- [ ] Copper Armor
+  - [ ] Copper Helmet
+  - [ ] Copper Chestplate
+  - [ ] Copper Leggings
+  - [ ] Copper Boots
+- Tin Full Set
+  - [ ] Tin Ore
+  - [ ] Tin Ingot
+  - [ ] Tin Helmet
+  - [ ] Tin Chestplate
+  - [ ] Tin Leggings
+  - [ ] Tin Boots
+  - [ ] Tin & Copper Tag
+  - [ ] Recipes
+- [ ] Wulfrum Stuff
