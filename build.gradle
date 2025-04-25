@@ -95,7 +95,7 @@ tasks.register('runDataTags') {
         }
     }
 }
-/*
+
 repositories {
     maven { url 'https://api.modrinth.com/maven' } // Better Combat
     maven { url "https://maven.shedaniel.me/" } // Cloth Config
@@ -108,4 +108,3 @@ dependencies {
 
 apply from: 'mcreator.gradle'
 
-*/

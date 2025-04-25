@@ -146,11 +146,10 @@ public class RecipeHandler {
         for (BattleRecipe.IngredientEntry entry : recipe.getInputs()) {
             int required = entry.count();
             int available = 0;
-
             for (ItemStack stack : player.getInventory().items) {
                 if (entry.ingredient().test(stack)) {
                     available += stack.getCount();
-                    if (available >= required) break;
+                    //if (available >= required) break;
                 }
             }
 

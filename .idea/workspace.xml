@@ -4,7 +4,73 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="de627db8-e6d5-443c-af3d-75b8dc14416f" name="Changes" comment="." />
+    <list default="true" id="381b8277-727e-4d80-9354-c3576b313f95" name="Changes" comment=".">
+      <change beforePath="$PROJECT_DIR$/.gradle/8.8/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.8/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/checksums/sha1-checksums.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.8/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.8/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.8/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.8/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.8/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/client/gui/WorkbenchScreen$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/client/gui/WorkbenchScreen$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/client/gui/WorkbenchScreen$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/client/gui/WorkbenchScreen$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/client/gui/WorkbenchScreen$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/client/gui/WorkbenchScreen$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/client/gui/WorkbenchScreen$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/client/gui/WorkbenchScreen$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/client/gui/WorkbenchScreen.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/client/gui/WorkbenchScreen.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/logs/2025-04-24-1.log.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/logs/2025-04-24-10.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/2025-04-24-10.log.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/logs/2025-04-24-11.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/2025-04-24-11.log.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/logs/2025-04-24-12.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/2025-04-24-12.log.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/logs/2025-04-24-13.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/2025-04-24-13.log.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/logs/2025-04-24-14.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/2025-04-24-14.log.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/logs/2025-04-24-15.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/2025-04-24-15.log.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/logs/2025-04-24-16.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/2025-04-24-16.log.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/logs/2025-04-24-17.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/2025-04-24-17.log.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/logs/2025-04-24-18.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/2025-04-24-18.log.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/logs/2025-04-24-19.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/2025-04-24-19.log.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/logs/2025-04-24-2.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/2025-04-24-2.log.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/logs/2025-04-24-20.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/2025-04-24-20.log.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/logs/2025-04-24-21.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/2025-04-24-21.log.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/logs/2025-04-24-22.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/2025-04-24-22.log.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/logs/2025-04-24-23.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/2025-04-24-23.log.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/logs/2025-04-24-24.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/2025-04-24-24.log.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/logs/2025-04-24-3.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/2025-04-24-3.log.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/logs/2025-04-24-4.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/2025-04-24-4.log.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/logs/2025-04-24-5.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/2025-04-24-5.log.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/logs/2025-04-24-6.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/2025-04-24-6.log.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/logs/2025-04-24-7.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/2025-04-24-7.log.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/logs/2025-04-24-8.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/2025-04-24-8.log.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/logs/2025-04-24-9.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/2025-04-24-9.log.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/logs/debug-1.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/debug-1.log.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/logs/debug-2.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/debug-2.log.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/logs/debug-3.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/debug-3.log.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/logs/debug-4.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/debug-4.log.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/logs/debug-5.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/debug-5.log.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/logs/debug.log" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/debug.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/logs/latest.log" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/latest.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/saves/New World/DIM-1/data/raids.dat" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/New World/DIM-1/data/raids.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/saves/New World/DIM1/data/raids_end.dat" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/New World/DIM1/data/raids_end.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/saves/New World/data/raids.dat" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/New World/data/raids.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/saves/New World/entities/r.0.0.mca" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/New World/entities/r.0.0.mca" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/saves/New World/level.dat" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/New World/level.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/saves/New World/level.dat_old" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/New World/level.dat_old" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/saves/New World/playerdata/380df991-f603-344c-a090-369bad2a924a.dat" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/New World/playerdata/380df991-f603-344c-a090-369bad2a924a.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/saves/New World/playerdata/380df991-f603-344c-a090-369bad2a924a.dat_old" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/New World/playerdata/380df991-f603-344c-a090-369bad2a924a.dat_old" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/saves/New World/region/r.-1.-1.mca" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/New World/region/r.-1.-1.mca" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/saves/New World/region/r.-1.0.mca" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/New World/region/r.-1.0.mca" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/saves/New World/region/r.0.-1.mca" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/New World/region/r.0.-1.mca" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/saves/New World/region/r.0.0.mca" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/New World/region/r.0.0.mca" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/saves/New World/session.lock" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/New World/session.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/saves/New World/stats/380df991-f603-344c-a090-369bad2a924a.json" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/New World/stats/380df991-f603-344c-a090-369bad2a924a.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/usercache.json" beforeDir="false" afterPath="$PROJECT_DIR$/run/usercache.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/client/gui/WorkbenchScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/client/gui/WorkbenchScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/mods.toml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/mods.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/battleofgods/textures/gui/scrollpanels/recipeList.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/battleofgods/textures/gui/scrollpanels/recipelist.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/battleofgods/textures/gui/scrollpanels/recipeList.xcf" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/battleofgods/textures/gui/scrollpanels/recipeList.xcf" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,13 +80,6 @@
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
     </projectState>
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-      </list>
-    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -41,7 +100,7 @@
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 2
 }</component>
-  <component name="ProjectId" id="2vmOYhLsATLOWPr6VIq9dxDdV7W" />
+  <component name="ProjectId" id="2w4doKBONpxxJLhW2WZwMCDOFga" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -49,67 +108,157 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;Gradle.BattleOfGods [createMcpToSrg].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.C:/Users/Josef/OneDrive/Games/Minecraft Java/Mods/Eigene/Battle Of Gods/mcreator (PC)/BattleOfGods [createMcpToSrg].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.C:/Users/Josef Peer/OneDrive/Games/Minecraft Java/Mods/Eigene/Battle Of Gods/mcreator (LAPTOP)/BattleOfGods [createMcpToSrg].executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;1.20.1__mcreator&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.fileTypes&quot;
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RecentsManager">
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.schokobaer.battleofgods.mechanics.item.subClass" />
-    </key>
-  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="de627db8-e6d5-443c-af3d-75b8dc14416f" name="Changes" comment="" />
-      <created>1744746832890</created>
+      <changelist id="381b8277-727e-4d80-9354-c3576b313f95" name="Changes" comment="" />
+      <created>1745304955408</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1744746832890</updated>
+      <updated>1745304955408</updated>
     </task>
-    <task id="LOCAL-00001" summary=".">
+    <task id="LOCAL-00001" summary="updated recipe button texture">
       <option name="closed" value="true" />
-      <created>1744747109964</created>
+      <created>1745307173336</created>
       <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1744747109964</updated>
+      <updated>1745307173336</updated>
     </task>
-    <task id="LOCAL-00002" summary="added new subclass Shortsword">
+    <task id="LOCAL-00002" summary=".">
       <option name="closed" value="true" />
-      <created>1744747919211</created>
+      <created>1745312726067</created>
       <option name="number" value="00002" />
       <option name="presentableId" value="LOCAL-00002" />
       <option name="project" value="LOCAL" />
-      <updated>1744747919211</updated>
+      <updated>1745312726067</updated>
     </task>
-    <task id="LOCAL-00003" summary="added Modifiers">
+    <task id="LOCAL-00003" summary="materialwidgets created (not rendered)">
       <option name="closed" value="true" />
-      <created>1744833015931</created>
+      <created>1745313523247</created>
       <option name="number" value="00003" />
       <option name="presentableId" value="LOCAL-00003" />
       <option name="project" value="LOCAL" />
-      <updated>1744833015931</updated>
+      <updated>1745313523247</updated>
     </task>
-    <task id="LOCAL-00004" summary=".">
+    <task id="LOCAL-00004" summary="materialwidgets are rendering">
       <option name="closed" value="true" />
-      <created>1745602680163</created>
+      <created>1745314009895</created>
       <option name="number" value="00004" />
       <option name="presentableId" value="LOCAL-00004" />
       <option name="project" value="LOCAL" />
-      <updated>1745602680163</updated>
+      <updated>1745314009895</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="materialwidgets are rendering">
+      <option name="closed" value="true" />
+      <created>1745323873609</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1745323873609</updated>
+    </task>
+    <task id="LOCAL-00006" summary="fixed Tooltip rendering Error">
+      <option name="closed" value="true" />
+      <created>1745331215163</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1745331215163</updated>
+    </task>
+    <task id="LOCAL-00007" summary=".">
+      <option name="closed" value="true" />
+      <created>1745334301558</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1745334301558</updated>
+    </task>
+    <task id="LOCAL-00008" summary="refactor WorkbenchScreen: remove commented tooltip rendering code and add TODOs for crafting and widget positioning">
+      <option name="closed" value="true" />
+      <created>1745334388489</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1745334388489</updated>
+    </task>
+    <task id="LOCAL-00009" summary="tag support &amp; correct material rendering">
+      <option name="closed" value="true" />
+      <created>1745485745849</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1745485745850</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Crafting works now; fixed return Air">
+      <option name="closed" value="true" />
+      <created>1745493735024</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1745493735024</updated>
+    </task>
+    <task id="LOCAL-00011" summary=".">
+      <option name="closed" value="true" />
+      <created>1745495073351</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1745495073351</updated>
+    </task>
+    <task id="LOCAL-00012" summary=".">
+      <option name="closed" value="true" />
+      <created>1745495148671</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1745495148671</updated>
+    </task>
+    <task id="LOCAL-00013" summary=".">
+      <option name="closed" value="true" />
+      <created>1745506619513</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1745506619513</updated>
+    </task>
+    <task id="LOCAL-00014" summary=".">
+      <option name="closed" value="true" />
+      <created>1745563276142</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1745563276142</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added new subclass Shortsword" />
-    <MESSAGE value="added Modifiers" />
+    <MESSAGE value="updated recipe button texture" />
+    <MESSAGE value="materialwidgets created (not rendered)" />
+    <MESSAGE value="materialwidgets are rendering" />
+    <MESSAGE value="fixed Tooltip rendering Error" />
+    <MESSAGE value="refactor WorkbenchScreen: remove commented tooltip rendering code and add TODOs for crafting and widget positioning" />
+    <MESSAGE value="tag support &amp; correct material rendering" />
+    <MESSAGE value="Crafting works now; fixed return Air" />
     <MESSAGE value="." />
     <option name="LAST_COMMIT_MESSAGE" value="." />
   </component>

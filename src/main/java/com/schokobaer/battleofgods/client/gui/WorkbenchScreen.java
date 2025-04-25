@@ -12,6 +12,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.ImageButton;
 import net.minecraft.client.gui.components.Tooltip;
+import net.minecraft.client.gui.components.events.GuiEventListener;
 import net.minecraft.client.gui.narration.NarrationElementOutput;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.client.resources.sounds.SimpleSoundInstance;
@@ -23,13 +24,14 @@ import net.minecraftforge.client.gui.widget.ScrollPanel;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
     private static ResourceLocation TEXTURE = new ResourceLocation("battleofgods:textures/gui/workbench.png");
     ;
 
     private ScrollPanel recipeList;
-    private List<RecipeHandler.BattleRecipe> visibleRecipes;
+    private ScrollPanel materialList = null;
     private final List<MaterialWidget> materialWidgets = new ArrayList<>();
     private final Boolean debug = BattleofgodsMod.isDebug();
 
@@ -49,7 +51,7 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
 
         // Rezeptliste initialisieren
         assert minecraft != null;
-        visibleRecipes = RecipeHandler.getCraftableRecipesByGroup(minecraft.player, group);
+        List<RecipeHandler.BattleRecipe> visibleRecipes = RecipeHandler.getCraftableRecipesByGroup(minecraft.player, group);
 
         List<RecipeButton> buttons = new ArrayList<>();
         visibleRecipes.forEach(recipe -> {
@@ -62,9 +64,9 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
                 public void onClick(double x, double y) {
                     Minecraft.getInstance().getSoundManager().play(
                             SimpleSoundInstance.forUI(SoundEvents.UI_BUTTON_CLICK, 1.0F));
+                    selectRecipe(recipe);
                     if (debug)
                         BattleofgodsMod.LOGGER.debug("Button clicked: {}", recipe.getId());
-
                 }
             });
         });
@@ -97,11 +99,11 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
 
             @Override
             protected int getContentHeight() {
-                if (buttons.isEmpty()) return 0;
-                int buttonHeight = buttons.get(0).getHeight(); // Höhe eines Buttons
+                if (children().isEmpty()) return 0;
+                int buttonHeight = 16; // Höhe eines Buttons
                 int buttonSpacing = 2; // Abstand zwischen Buttons
                 int buttonsPerRow = Math.max(1, (width - buttonSpacing) / (buttonHeight + buttonSpacing));
-                int rowCount = (int) Math.ceil((double) buttons.size() / buttonsPerRow);
+                int rowCount = (int) Math.ceil((double) children().size() / buttonsPerRow);
                 return rowCount * (buttonHeight + buttonSpacing);
             }
 
@@ -109,10 +111,10 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
             @Override
             protected void drawPanel(GuiGraphics guiGraphics, int x, int y, Tesselator tess, int mouseX, int mouseY) {
 
-                if (buttons.isEmpty()) return;
+                if (children().isEmpty()) return;
 
-                int buttonWidth = buttons.get(0).getWidth(); // Breite eines Buttons
-                int buttonHeight = buttons.get(0).getHeight(); // Höhe eines Buttons
+                int buttonWidth = 18; // Breite eines Buttons
+                int buttonHeight = 18; // Höhe eines Buttons
                 int buttonSpacing = 2; // Abstand zwischen Buttons
                 int buttonsPerRow = Math.max(1, (width - buttonSpacing) / (buttonWidth + buttonSpacing));
 
@@ -120,11 +122,11 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
                 int startX = (width - rowWidth) / 2; // Zentrierte Position
                 guiGraphics.pose().pushPose();
                 guiGraphics.enableScissor(left, top, left + width, top + height);
-
+                BattleofgodsMod.LOGGER.debug("Scrollpanel width + height: {}x{}", width, height);
 
                 //Adding buttons to the scroll panel
-                for (int i = 0; i < buttons.size(); i++) {
-                    RecipeButton button = buttons.get(i);
+                for (int i = 0; i < children().size(); i++) {
+                    RecipeButton button = children().get(i);
                     int row = i / buttonsPerRow;
                     int col = i % buttonsPerRow;
 
@@ -139,11 +141,6 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
                     button.isHovered = isMouseOver(button, mouseX, mouseY);
                 }
                 guiGraphics.disableScissor();
-
-                buttons.forEach(btn -> {
-                    if (isMouseOver(btn, mouseX, mouseY))
-                        btn.renderTooltip(guiGraphics, mouseX, mouseY);
-                });
             }
 
 
@@ -154,7 +151,7 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
                     return false;
                 }
                 // Buttons prüfen
-                for (RecipeButton btn : buttons) {
+                for (RecipeButton btn : children()) {
 
                     btn.isFocused = false;
                     if (mouseX >= btn.getX() &&
@@ -171,7 +168,7 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
 
             @Override
             public boolean isMouseOver(double mouseX, double mouseY) {
-                for (RecipeButton btn : buttons) {
+                for (RecipeButton btn : children()) {
                     if (mouseX >= btn.getX() &&
                             mouseX <= btn.getX() + btn.getWidth() &&
                             mouseY >= btn.getY() &&
@@ -196,6 +193,32 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
                         mouseX >= left && mouseX <= left + width &&
                         mouseY >= top && mouseY <= top + height;
             }
+
+            @Override
+            public List<RecipeButton> children() {
+                return buttons;
+            }
+
+            @Override
+            public Optional<GuiEventListener> getChildAt(double mouseX, double mouseY) {
+                for (RecipeButton btn : children()) {
+                    if (isMouseOver(btn, mouseX, mouseY)) {
+                        return Optional.of(btn);
+                    }
+                }
+                return Optional.empty();
+            }
+
+            @Override
+            protected void drawBackground(GuiGraphics guiGraphics, Tesselator tess, float partialTick) {
+                guiGraphics.blit(
+                        new ResourceLocation("battleofgods:textures/gui/scrollpanels/recipelist.png"),
+                        left, top,
+                        0, 0,
+                        width, height,
+                        86,53
+                );
+            }
         };
         // Craft-Button
 
@@ -209,7 +232,7 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
                 button -> {
                     Minecraft.getInstance().getSoundManager().play(
                             SimpleSoundInstance.forUI(SoundEvents.UI_BUTTON_CLICK, 1.0F));
-                    //craftItem();
+                    craftItem();
                 }
         ) {
             @Override
@@ -225,6 +248,7 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
                 );
             }
         }).setTooltip(Tooltip.create(Component.translatable("gui.battleofgods.tooltip.craft_hammer")));
+
         addRenderableWidget(recipeList);
     }
 
@@ -234,31 +258,118 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
     }
 
     private void updateMaterialDisplay() {
-        // Alte Widgets entfernen
         materialWidgets.forEach(this::removeWidget);
+        removeWidget(materialList);
+
         materialWidgets.clear();
+        if (menu.getSelectedRecipe() == null) return;
 
-        if (menu.getSelectedRecipe() == null) {
-        }
+        menu.getSelectedRecipe().getInputs().forEach(recipe -> {
+            assert minecraft != null;
+            materialWidgets.add(new MaterialWidget(
+                    0, 0,
+                    recipe,
+                    minecraft.player
+            ));
+        });
+        try {
+            materialList = new ScrollPanel(
+                    minecraft,
+                    (imageWidth / 2) - 2,
+                    (imageHeight / 2) - (font.lineHeight * 3 + 3)- 10,
+                    topPos + font.lineHeight + 8, leftPos + 90,
+                    1,
+                    3
+            ) {
+                @Override
+                public void updateNarration(NarrationElementOutput p_169152_) {
 
-        // Neue Material-list
-        /*
-        int yPos = topPos + 50;
-        for(RecipeHandler.BattleRecipe.IngredientEntry entry : menu.getSelectedRecipe().getInputs()) {
-            MaterialWidget widget = new MaterialWidget(
-                    leftPos + 130, yPos,
-                    entry, minecraft.player
-            );
-            materialWidgets.add(widget);
-            addRenderableWidget(widget);
-            yPos += 25;
+                }
+
+                @Override
+                public NarrationPriority narrationPriority() {
+                    return NarrationPriority.NONE;
+                }
+
+                @Override
+                protected int getContentHeight() {
+                    if (children().isEmpty()) return 0;
+                    int mwHeight = 16; // Höhe eines Buttons
+                    int mwSpacing = 5; // Abstand zwischen Buttons
+                    int widgetsPerRow = Math.max(1, (width - mwSpacing) / (mwHeight + mwSpacing));
+                    int rowCount = (int) Math.ceil((double) children().size() / widgetsPerRow);
+                    return rowCount * (mwHeight + mwSpacing);
+                }
+
+                @Override
+                protected void drawPanel(GuiGraphics guiGraphics, int x, int y, Tesselator tess, int mouseX, int mouseY) {
+                    if (children().isEmpty()) return;
+
+                    int mwWidth = 16;
+                    int mwHeight = 16;
+                    int mwSpacing = 5;
+                    int widgetsPerRow = Math.max(1, (width - mwSpacing) / (mwWidth + mwSpacing));
+
+                    int rowWidth = widgetsPerRow * (mwWidth + mwSpacing) - mwSpacing;
+                    int startX = (width - rowWidth) / 2; // Zentrierte Position
+
+                    guiGraphics.enableScissor(left, top, left + width, top + height);
+
+                    for( int i = 0; i < children().size(); i++) {
+                        MaterialWidget widget = children().get(i);
+                        int row = i / widgetsPerRow;
+                        int col = i % widgetsPerRow;
+
+                        int widgetX = (x - width) + (startX + col * (mwWidth + mwSpacing));
+                        int widgetY = y + (row * (mwHeight + mwSpacing));
+
+                        widget.setX(widgetX);
+                        widget.setY(widgetY);
+                        assert minecraft != null;
+                        widget.render(guiGraphics, x, y, minecraft.getFrameTime());
+                    }
+                    guiGraphics.disableScissor();
+                }
+
+                public boolean isMouseOver(MaterialWidget btn, double mouseX, double mouseY) {
+                    return mouseX >= btn.getX() &&
+                                mouseX <= btn.getX() + btn.getWidth() &&
+                                mouseY >= btn.getY() &&
+                                mouseY <= btn.getY() + btn.getHeight() &&
+                                mouseX >= left && mouseX <= left + width &&
+                                mouseY >= top && mouseY <= top + height;
+
+                }
+                @Override
+                public List<MaterialWidget> children() {
+                    return materialWidgets;
+                }
+
+                @Override
+                public Optional<GuiEventListener> getChildAt(double mouseX, double mouseY) {
+                    for (MaterialWidget btn : children()) {
+                        if (isMouseOver(btn, mouseX, mouseY)) {
+                            return Optional.of(btn);
+                        }
+                    }
+                    return Optional.empty();
+                }
+
+                @Override
+                protected void drawBackground(GuiGraphics guiGraphics, Tesselator tess, float partialTick) {
+                    super.drawBackground(guiGraphics, tess, partialTick);
+                }
+            };
+        } catch (Exception e) {
+            BattleofgodsMod.LOGGER.error("Error while updating material display: {}", e.getMessage());
         }
-         */
+        if (materialList != null ) addRenderableWidget(materialList);
     }
 
     private void craftItem() {
         if (menu.getSelectedRecipe() == null) return;
         BattleofgodsMod.PACKET_HANDLER.sendToServer(new CraftPacket(menu.getSelectedRecipe().getId()));
+        if (debug) BattleofgodsMod.LOGGER.debug("WorkbenchScreen - craftItem has been called with recipe {}", menu.getSelectedRecipe().getId());
         init();
     }
 
@@ -268,18 +379,6 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
         RenderSystem.enableBlend();
         RenderSystem.defaultBlendFunc();
         guiGraphics.blit(TEXTURE, leftPos, topPos, 0, 0, imageWidth, imageHeight, imageWidth, imageHeight);
-
-        // Scrollbar #1 for Recipe List
-        /*
-        guiGraphics.blit(SCROLLER,
-                //leftPos + 120, topPos + 20 + (int)((height - 50) * getScrollAmount()),
-                leftPos + 120, topPos + 18,
-                //12, 15, 0, 0, 12, 15, 12, 15);
-                0, 0, 12, 15, 12, 15);
-
-         */
-        // Scrollbar #2 for Material List
-
         RenderSystem.disableBlend();
     }
 
@@ -288,6 +387,7 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
         renderBackground(guiGraphics);
         super.render(guiGraphics, mouseX, mouseY, partialTick);
         renderTooltip(guiGraphics, mouseX, mouseY);
+
     }
 
     @Override
@@ -302,5 +402,24 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
                 0x00FFFFFF, // White color (RGB: 255,255,255)
                 false // Don't drop shadow
         );
+    }
+
+    @Override
+    protected void renderTooltip(GuiGraphics graphics, int mouseX, int mouseY) {
+        recipeList.getChildAt(mouseX, mouseY).ifPresent(child -> {
+            if (child instanceof RecipeButton button && button.isMouseOver(mouseX, mouseY)) {
+                //if (debug) BattleofgodsMod.LOGGER.debug("Render tooltip for button: {}", button.getRecipe().getId());
+                button.renderTooltip(graphics, mouseX, mouseY);
+            }
+        });
+        if (materialList != null) {
+            materialList.getChildAt(mouseX, mouseY).ifPresent(child -> {
+                if (child instanceof MaterialWidget widget && widget.isMouseOver(mouseX, mouseY)) {
+
+                    widget.renderTooltip(graphics, mouseX, mouseY);
+                }
+            });
+        }
+        super.renderTooltip(graphics,mouseX,mouseY);
     }
 }

@@ -1,0 +1,75 @@
+- [ ] Workbenchscreen
+  - [x] Correct Material rendering
+  - [x] Correct Tag Material rendering
+  - [ ] Texture Update
+  - [x] Crafting
+    - [x] return Air
+- [ ] JEI Compat
+- [ ] Attributes
+  - [ ] Critical Hit Chance
+- [ ] Melee Armor Subclass
+- [ ] Copper Full Set
+  - [ ] Copper Bow
+  - [ ] Copper Helmet
+  - [ ] Copper Chestplate
+  - [ ] Copper Leggings
+  - [ ] Copper Boots
+  - [ ] Copper Pickaxe
+- Tin Full Set
+  - [ ] Tin Ore
+  - [ ] Tin Ingot
+  - [ ] Tin Helmet
+  - [ ] Tin Chestplate
+  - [ ] Tin Leggings
+  - [ ] Tin Boots
+  - [ ] Tin Pickaxe
+  - [ ] Tin & Copper Tag
+  - [ ] Recipes
+- [ ] Wulfrum Stuff
+  - [ ] Wulfrum Entities
+    - [ ] Wulfrum Rover
+    - [ ] Wulfrum Gyrator
+    - [ ] Wulfrum Hovercraft
+    - [ ] Wulfrum Drone
+    - [ ] Wulfrum Amplifier
+  - [ ] Wulfrum Items
+    - [ ] Wulfrum Armor
+    - [ ] Wulfrum Drill
+    - [ ] Treasure Pinger
+    - [ ] Scaffold Kit
+    - [ ] Acrobatics Pack
+  - [ ] Wulfrum Weapons
+    - [ ] Screwdriver
+    - [ ] Blunderbuss
+    - [ ] Prosthesis
+    - [ ] Knife
+    - [ ] Controller
+  - 
+- [ ] Iron Full Set
+  - [ ] Iron Armor Override
+  - [ ] Iron Broadsword/Shortsword
+  - [ ] Iron Pickaxe
+  - [ ] Iron Bow
+  - [ ] Recipes
+- [ ] Lead Full Set
+  - [ ] Lead Ore
+  - [ ] Lead Ingot
+  - [ ] Lead Helmet
+  - [ ] Lead Chestplate
+  - [ ] Lead Leggings
+  - [ ] Lead Boots
+  - [ ] Lead Pickaxe
+  - [ ] Lead & Iron Tag
+  - [ ] Recipes
+- [ ] Squirrel
+- [ ] NPCS
+  - [ ] Guide
+  - [ ] Merchant
+  - [ ] Squirrel with Hat
+- [ ] Trojan Squirrel
+  - [ ] TrSq Boss Summon
+  - [ ]TrSq Boss
+  - [ ] TrSq Boss AI
+  - [ ] TrSq Boss Treasure Bag
+    - [ ] Bag
+    - [ ] Drops

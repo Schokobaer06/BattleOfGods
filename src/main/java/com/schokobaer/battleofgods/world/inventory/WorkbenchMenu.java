@@ -1,5 +1,6 @@
 package com.schokobaer.battleofgods.world.inventory;
 
+import com.schokobaer.battleofgods.BattleofgodsMod;
 import com.schokobaer.battleofgods.init.InitMenu;
 import com.schokobaer.battleofgods.mechanics.recipe.RecipeHandler;
 import net.minecraft.core.RegistryAccess;
@@ -30,6 +31,7 @@ public class WorkbenchMenu extends AbstractContainerMenu implements Supplier<Map
         this.world = inv.player.level();
         this.player = inv.player;
         this.recipeGroup = "workbench";
+        this.access = ContainerLevelAccess.create(world, inv.player.blockPosition());
 
         for (int col = 0; col < 3; ++col)
             for (int row = 0; row < 9; ++row)
@@ -51,23 +53,32 @@ public class WorkbenchMenu extends AbstractContainerMenu implements Supplier<Map
     }
 
     public void craftItem(Player player, ResourceLocation recipeId) {
-        RecipeHandler.BattleRecipe temp = getSelectedRecipe();
+        if (BattleofgodsMod.isDebug()) BattleofgodsMod.LOGGER.debug("WorkbenchMenu - craftItem has been called: Crafting Item: {}", recipeId);
+        //RecipeHandler.BattleRecipe temp = getSelectedRecipe();
         Optional<RecipeHandler.BattleRecipe> optionalRecipe = RecipeHandler.getRecipeById(recipeId);
         setSelectedRecipe(optionalRecipe.orElse(null));
+        if (BattleofgodsMod.isDebug()) BattleofgodsMod.LOGGER.debug(" WorkbenchMenu - optionalRecipe: {}\nselectedRecipe: {}", optionalRecipe.get().getId(), selectedRecipe.getId());
         RecipeHandler.BattleRecipe recipe = getSelectedRecipe();
+        if (BattleofgodsMod.isDebug()) BattleofgodsMod.LOGGER.debug(" WorkbenchMenu - recipe (Check 1): {}", recipe);
         if(recipe == null) return;
+        if (BattleofgodsMod.isDebug()) BattleofgodsMod.LOGGER.debug(" WorkbenchMenu - recipe (Check 2): {}", recipe);
         RegistryAccess registryAccess = player.level().registryAccess();
-        ItemStack result = recipe.assemble((Container) this, registryAccess);
+        if (BattleofgodsMod.isDebug()) BattleofgodsMod.LOGGER.debug("WorkbenchMenu - registryAccess: {}", registryAccess);
+        //ItemStack result = recipe.assemble((Container) this, registryAccess);
+        if (BattleofgodsMod.isDebug()) BattleofgodsMod.LOGGER.debug("WorkbenchMenu - TEST");
+        //if (BattleofgodsMod.isDebug()) BattleofgodsMod.LOGGER.debug("WorkbenchMenu - Result: {}", result);
 
 
         access.execute((level, pos) -> {
+            if (BattleofgodsMod.isDebug()) BattleofgodsMod.LOGGER.debug("WorkbenchMenu - access.execute has been called: level: {}, pos: {}", level, pos);
             if(hasRequiredItems(player) && recipe.matches(player.getInventory(), level)) {
+                if (BattleofgodsMod.isDebug()) BattleofgodsMod.LOGGER.debug("WorkbenchMenu - hasRequiredItems: true");
                 consumeIngredients(player);
                 giveResult(player);
                 broadcastChanges();
             }
         });
-        setSelectedRecipe(temp);
+        //setSelectedRecipe(temp);
     }
 
     private boolean hasRequiredItems(Player player) {
@@ -97,9 +108,24 @@ public class WorkbenchMenu extends AbstractContainerMenu implements Supplier<Map
     }
 
     private void giveResult(Player player) {
+        if (BattleofgodsMod.isDebug()) BattleofgodsMod.LOGGER.debug("WorkbenchMenu - giveResult has been called: giving result: {}", selectedRecipe.getResultItem(player.level().registryAccess()));
         RegistryAccess registryAccess = player.level().registryAccess();
-        if (!player.getInventory().add(selectedRecipe.getResultItem(registryAccess))) {
-            player.drop(selectedRecipe.getResultItem(registryAccess), false);
+        ItemStack result = selectedRecipe.getResultItem(registryAccess).copy();
+        ItemStack carried = player.containerMenu.getCarried();
+
+        if (carried.isEmpty()) {
+            // Maus ist leer, setze das Resultat auf die Maus
+            player.containerMenu.setCarried(result.copy());
+        } else if (ItemStack.isSameItemSameTags(carried, result)) {
+            // Gleiches Item auf der Maus, erhöhe die Anzahl
+            int newCount = Math.min(carried.getCount() + result.getCount(), carried.getMaxStackSize());
+            carried.setCount(newCount);
+            player.containerMenu.setCarried(carried);
+        } else {
+            // Anderes Item auf der Maus, droppe das Resultat
+            if (!player.getInventory().add(result)) {
+                player.drop(result, false);
+            }
         }
     }
 

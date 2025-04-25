@@ -22,7 +22,7 @@ public class BattleofgodsModItems {
 	//public static final RegistryObject<Item> COPPER_SHORTSWORD = REGISTRY.register("copper_shortsword", () -> new CopperShortswordItem());
 	//public static final RegistryObject<Item> COPPER_BROADSWORD = REGISTRY.register("copper_broadsword", () -> new CopperBroadswordItem());
 	public static final RegistryObject<Item> WOODEN_WORKBENCH = block(BattleofgodsModBlocks.WOODEN_WORKBENCH);
-	public static final RegistryObject<Item> ITEM_TIER_1 = REGISTRY.register("item_tier_1", () -> new ItemTier1Item());
+	public static final RegistryObject<Item> ITEM_TIER_1 = REGISTRY.register("item_tier_1", ItemTier1Item::new);
 
 	// Start of user code block custom items
 	// End of user code block custom items
