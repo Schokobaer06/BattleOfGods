@@ -352,7 +352,13 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
 
                 @Override
                 protected void drawBackground(GuiGraphics guiGraphics, Tesselator tess, float partialTick) {
-                    super.drawBackground(guiGraphics, tess, partialTick);
+                    guiGraphics.blit(
+                            new ResourceLocation("battleofgods:textures/gui/scrollpanels/recipeList.png"),
+                            left, top,
+                            0, 0,
+                            width, height,
+                            86,53
+                    );
                 }
             };
         } catch (Exception e) {
