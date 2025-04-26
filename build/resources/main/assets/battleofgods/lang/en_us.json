@@ -1,7 +1,5 @@
 {
-  "item.battleofgods.item_tier_1": "Tier 1",
-  "item_group.battleofgods.tier_1": "Tier 1",
-  "gui.battleofgods.test_gui.button_test_button_undecorated": "test_button_undecorated",
+  "itemGroup.battleofgods.tier_1": "Tier 1",
   "item.battleofgods.copper_shortsword": "Copper Shortsword",
   "block.battleofgods.wooden_workbench": "Workbench",
   "item.battleofgods.copper_broadsword": "Copper Broadsword",
@@ -39,5 +37,6 @@
   "mainclass.battleofgods.healing": "healing",
   "mainclass.battleofgods.bard": "bard",
   "mainclass.battleofgods.tool": "tool",
-  "gui.battleofgods.tooltip.craft_hammer": "Craft Item"
+  "gui.battleofgods.tooltip.craft_hammer": "Craft",
+  "gui.battleofgods.tooltip.craft_hammer.empty": "Craft Item"
 }

@@ -28,7 +28,6 @@ import java.util.Optional;
 
 public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
     private static ResourceLocation TEXTURE = new ResourceLocation("battleofgods:textures/gui/workbench.png");
-    ;
 
     private ScrollPanel recipeList;
     private ScrollPanel materialList = null;
@@ -222,6 +221,12 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
         };
         // Craft-Button
 
+        Component craftButtonTooltip = (menu.getSelectedRecipe() != null) ?
+                Component.translatable("gui.battleofgods.tooltip.craft_hammer")
+                        .append(Component.literal(" " + menu.getSelectedRecipe()
+                                .getResultItem(Minecraft.getInstance().player.level().registryAccess())
+                                .copy().getDisplayName())) :
+                Component.translatable("gui.battleofgods.tooltip.craft_hammer.empty");
         addRenderableWidget(new ImageButton(
                 7 * (leftPos + imageWidth) / 8, topPos + 64,
                 16, 16,
@@ -247,7 +252,7 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
                         32, 16
                 );
             }
-        }).setTooltip(Tooltip.create(Component.translatable("gui.battleofgods.tooltip.craft_hammer")));
+        }).setTooltip(Tooltip.create(craftButtonTooltip));
 
         addRenderableWidget(recipeList);
     }
@@ -329,6 +334,16 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
                         widget.render(guiGraphics, x, y, minecraft.getFrameTime());
                     }
                     guiGraphics.disableScissor();
+                }
+
+                @Override
+                public boolean mouseClicked(double mouseX, double mouseY, int button) {
+                    return false;
+                }
+
+                @Override
+                protected boolean clickPanel(double mouseX, double mouseY, int button) {
+                    return super.clickPanel(mouseX, mouseY, button);
                 }
 
                 public boolean isMouseOver(MaterialWidget btn, double mouseX, double mouseY) {

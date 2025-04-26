@@ -1,6 +1,5 @@
 package com.schokobaer.battleofgods.init;
 
-import com.schokobaer.battleofgods.client.gui.TestGuiScreen;
 import com.schokobaer.battleofgods.client.gui.WorkbenchScreen;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraftforge.api.distmarker.Dist;
