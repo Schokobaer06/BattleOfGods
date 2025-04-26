@@ -1,10 +1,12 @@
-- [ ] Workbenchscreen
+- [ ] WorkbenchScreen
   - [x] Correct Material rendering
   - [x] Correct Tag Material rendering
   - [ ] Texture Update
   - [x] Crafting
     - [x] return Air
-- [ ] JEI Compat
+- [ ] JEI compat
+- [ ] Mechanics
+  - [ ] Critical Hit
 - [ ] Attributes
   - [ ] Critical Hit Chance
 - [ ] Melee Armor Subclass
@@ -15,7 +17,8 @@
   - [ ] Copper Leggings
   - [ ] Copper Boots
   - [ ] Copper Pickaxe
-- Tin Full Set
+  - [ ] Copper Recipes (Shortsword & Broadsword have to be crafted at anvil)
+- [ ] Tin Full Set
   - [ ] Tin Ore
   - [ ] Tin Ingot
   - [ ] Tin Helmet
@@ -44,12 +47,12 @@
     - [ ] Prosthesis
     - [ ] Knife
     - [ ] Controller
-  - 
 - [ ] Iron Full Set
   - [ ] Iron Armor Override
   - [ ] Iron Broadsword/Shortsword
   - [ ] Iron Pickaxe
   - [ ] Iron Bow
+  - [ ] Anvil
   - [ ] Recipes
 - [ ] Lead Full Set
   - [ ] Lead Ore
@@ -59,9 +62,50 @@
   - [ ] Lead Leggings
   - [ ] Lead Boots
   - [ ] Lead Pickaxe
+  - [ ] Anvil
   - [ ] Lead & Iron Tag
   - [ ] Recipes
-- [ ] Squirrel
+- [ ] Items
+  - [ ] Cloth
+  - [ ] Fallen Star
+- [ ] Generation
+  - [ ] Normal Chests in Surface Caves
+  - [ ] Normal Chests in Underground Caves 
+  - [ ] Gems
+    - [ ] Amethyst
+    - [ ] Topaz 
+    - [ ] Sapphire
+    - [ ] Emerald
+    - [ ] Ruby
+    - [ ] Diamond
+    - [ ] Amber
+  - [ ] Living Trees
+    - [ ] Living Wooden Chest 
+- [ ] Weapons
+  - [ ] Wooden Sword [Melee]
+  - [ ] Wooden Bow [Ranged]
+  - [ ] Wand of Sparking [Magic]
+  - [ ] Amethyst Staff [Magic]
+  - [ ] Topaz Staff [Magic]
+  - [ ] Abigails Flower [Summon]
+  - [ ] Finch Staff [Summon]
+  - [ ] Wulfrum Screwdriver [Melee]
+  - [ ] Wulfrum Blunderbuss [Ranged] (Needs Money System already in place)
+  - [ ] Wulfrum Prosthesis [Magic]
+  - [ ] Wulfrum Knife [Rogue]
+  - [ ] Wulfrum Controller [Summon]
+  - [ ] Iron Francisca / Lead Tomahawk [Rogue]
+  - [ ] Stone throwing Spear [Rogue]
+  - [ ] Gauze [Healing]
+  - [ ] Recovery Wand [Healing]
+  - [ ] Wooden Baton [Healing]
+  - [ ] Palm Cross [Healing]
+  - [ ] Drum Mallet [Bard]
+  - [ ] Tambourine [Bard]
+  - [ ] Wooden Whistle [Bard]
+  - [ ] Harmonica [Bard]
+- [ ] Animals
+  - [ ] Squirrel
 - [ ] NPCS
   - [ ] Guide
   - [ ] Merchant
@@ -73,3 +117,4 @@
   - [ ] TrSq Boss Treasure Bag
     - [ ] Bag
     - [ ] Drops
+      - [ ] Squirrel Squire Staff
