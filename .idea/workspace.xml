@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="381b8277-727e-4d80-9354-c3576b313f95" name="Changes" comment="refactor: clean up item registration and improve tooltip handling">
+    <list default="true" id="381b8277-727e-4d80-9354-c3576b313f95" name="Changes" comment="zwischen-save before fixing WorkbenchScreen">
       <change beforePath="$PROJECT_DIR$/.gradle/8.8/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/checksums/checksums.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.8/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/checksums/sha1-checksums.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.8/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.8/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.8/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/fileHashes/fileHashes.bin" afterDir="false" />
@@ -14,145 +13,17 @@
       <change beforePath="$PROJECT_DIR$/.gradle/8.8/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/BattleOfGods.main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/BattleOfGods.main.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/BattleOfGods.test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/BattleOfGods.test.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/BattleofgodsMod.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/block/WoodenWorkbenchBlock.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/client/gui/TestGuiScreen.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/client/gui/WorkbenchScreen$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/client/gui/WorkbenchScreen$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/client/gui/WorkbenchScreen$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/client/gui/WorkbenchScreen$4.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/client/gui/WorkbenchScreen.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/client/widget/MaterialWidget.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/client/widget/RecipeButton.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/init/BattleofgodsModBlocks.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/init/BattleofgodsModItems.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/init/BattleofgodsModMenus.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/init/BattleofgodsModScreens.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/init/BattleofgodsModTabs.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/init/InitItem.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/init/InitMainClass.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/init/InitMenu.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/init/InitNetworkPackage.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/init/InitRarity.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/init/InitScreen.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/init/InitSubClass.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/init/InitTier.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/item/CopperBroadswordItem$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/item/CopperBroadswordItem.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/item/CopperShortswordItem$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/item/CopperShortswordItem.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/item/ItemTier1Item.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/item/tier1/ItemCopperBroadsword.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/item/tier1/ItemCopperShortsword.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/mechanics/item/AbstractSubClass.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/mechanics/item/MainClass.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/mechanics/item/SubClassMethods.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/mechanics/item/deprecated/ItemClass.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/mechanics/item/deprecated/ItemClassTags.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/mechanics/item/deprecated/ItemSubClass.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/mechanics/item/deprecated/ItemSubClassTags.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/mechanics/item/override/ItemOverride.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/mechanics/item/override/SwordItemOverride.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/mechanics/item/override/TieredItemOverride.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/mechanics/item/subClass/Broadsword$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/mechanics/item/subClass/Broadsword$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/mechanics/item/subClass/Broadsword$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/mechanics/item/subClass/Broadsword$4.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/mechanics/item/subClass/Broadsword$5.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/mechanics/item/subClass/Broadsword.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/mechanics/item/subClass/Shortsword$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/mechanics/item/subClass/Shortsword$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/mechanics/item/subClass/Shortsword$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/mechanics/item/subClass/Shortsword$4.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/mechanics/item/subClass/Shortsword$5.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/mechanics/item/subClass/Shortsword.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/mechanics/rarity/Rarity.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/mechanics/rarity/RarityColorHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/mechanics/recipe/CraftPacket.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/mechanics/recipe/RecipeHandler$BattleRecipe$Deserializer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/mechanics/recipe/RecipeHandler$BattleRecipe$IngredientEntry.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/mechanics/recipe/RecipeHandler$BattleRecipe$Serializer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/mechanics/recipe/RecipeHandler$BattleRecipe$Type.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/mechanics/recipe/RecipeHandler$BattleRecipe.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/mechanics/recipe/RecipeHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/mechanics/tag/ItemTagProvider.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/mechanics/tag/MainClassTagProvider.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/mechanics/tag/ModTagProvider.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/mechanics/tag/RarityTagProvider.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/mechanics/tag/SubClassTagProvider.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/mechanics/tag/TagCreator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/mechanics/tag/TierTagProvider.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/mechanics/tier/Tier.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/world/inventory/TestGuiMenu.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/world/inventory/WorkbenchMenu.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classpath/runClient_minecraftClasspath.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/createMcpToSrg/output.tsrg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/createSrgToMcp/output.srg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/downloadMCMeta/version.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/downloadMcpConfig/output.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/extractSrg/output.srg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/.cache/18646ed90a9257afafb0375227fdc6ee65c5822b" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/.cache/844c66990088fffc1e2a54f755e92f2ffb4752b3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/.cache/ad4ad235f07edd63d1628dbb8d932c569215537e" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/.cache/dff4ee946bb0ce8d3253314e15a2ee17e4e22b00" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/META-INF/mods.toml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/battleofgods/blockstates/wooden_workbench.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/battleofgods/lang/en_us.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/battleofgods/models/block/wooden_workbench.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/battleofgods/models/custom/shortswordcopper.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/battleofgods/models/custom/wooden_workbench.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/battleofgods/models/item/copper_broadsword.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/battleofgods/models/item/copper_shortsword.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/battleofgods/models/item/handheld_broadsword.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/battleofgods/models/item/item_tier_1.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/battleofgods/models/item/wooden_workbench.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/battleofgods/textures/block/wooden_workbench.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/battleofgods/textures/gui/crafting_hammer.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/battleofgods/textures/gui/crafting_hammer.xcf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/battleofgods/textures/gui/recipe_button.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/battleofgods/textures/gui/recipe_button_old.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/battleofgods/textures/gui/scrollpanels/materialList.xcf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/battleofgods/textures/gui/scrollpanels/recipeList.xcf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/battleofgods/textures/gui/scrollpanels/recipeList2.xcf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/battleofgods/textures/gui/scrollpanels/recipelist.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/battleofgods/textures/gui/scrollpanels/recipelist.png.disabled" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/battleofgods/textures/gui/workbench.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/battleofgods/textures/gui/workbench.xcf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/battleofgods/textures/item/copper_broadsword.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/battleofgods/textures/item/copper_shortsword.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/battleofgods/textures/rarity/fiery_red.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/battleofgods/textures/rarity/rainbow.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/battleofgods/textures/rarity/teal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/battleofgods/textures/screens/atlas/imagebutton_crafting_hammer.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/battleofgods/textures/screens/atlas/imagebutton_gui_test.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/battleofgods/textures/screens/atlas/imagebutton_recipe_button.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/battleofgods/textures/screens/atlas/imagebutton_recipe_button1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/battleofgods/textures/screens/crafting_hammer.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/battleofgods/textures/screens/gui_test.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/battleofgods/textures/screens/hammer.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/battleofgods/textures/screens/recipe_button.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/battleofgods/textures/screens/test_gui.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/battleofgods/textures/screens/workbench.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/data/battleofgods/loot_tables/blocks/wooden_workbench.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/data/battleofgods/recipes/recipe_copper_broadsword.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/data/battleofgods/recipes/recipe_copper_shortsword.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/data/battleofgods/recipes/recipe_wooden_workbench.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/data/battleofgods/tags/battleofgods/main_classes/melee.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/data/battleofgods/tags/battleofgods/rarities/white.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/data/battleofgods/tags/battleofgods/tiers/tier_1.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/data/battleofgods/tags/items/broadsword.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/data/battleofgods/tags/items/shortsword.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/data/battleofgods/weapon_attributes/broadsword.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/data/battleofgods/weapon_attributes/copper_broadsword.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/data/battleofgods/weapon_attributes/copper_shortsword.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/data/battleofgods/weapon_attributes/shortsword.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/data/minecraft/tags/items/swords.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/pack.mcmeta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/logs/2025-04-26-1.log.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/logs/2025-04-26-2.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/2025-04-26-2.log.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/client/gui/WorkbenchScreen$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/client/gui/WorkbenchScreen$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/client/gui/WorkbenchScreen$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/client/gui/WorkbenchScreen$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/client/gui/WorkbenchScreen$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/client/gui/WorkbenchScreen$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/client/gui/WorkbenchScreen$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/client/gui/WorkbenchScreen$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/client/gui/WorkbenchScreen.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/client/gui/WorkbenchScreen.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/client/widget/MaterialWidget.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/client/widget/MaterialWidget.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/battleofgods/recipes/recipe_copper_broadsword.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/data/battleofgods/recipes/recipe_copper_broadsword.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/logs/2025-04-27-1.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/2025-04-27-1.log.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/logs/2025-04-27-2.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/2025-04-27-2.log.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/logs/2025-04-27-3.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/2025-04-27-3.log.gz" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run/logs/debug-1.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/debug-1.log.gz" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run/logs/debug-2.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/debug-2.log.gz" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run/logs/debug-3.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/debug-3.log.gz" afterDir="false" />
@@ -160,7 +31,6 @@
       <change beforePath="$PROJECT_DIR$/run/logs/debug-5.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/debug-5.log.gz" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run/logs/debug.log" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/debug.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run/logs/latest.log" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/latest.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/options.txt" beforeDir="false" afterPath="$PROJECT_DIR$/run/options.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run/saves/New World/DIM-1/data/raids.dat" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/New World/DIM-1/data/raids.dat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run/saves/New World/DIM1/data/raids_end.dat" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/New World/DIM1/data/raids_end.dat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run/saves/New World/data/raids.dat" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/New World/data/raids.dat" afterDir="false" />
@@ -178,9 +48,7 @@
       <change beforePath="$PROJECT_DIR$/run/saves/New World/stats/380df991-f603-344c-a090-369bad2a924a.json" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/New World/stats/380df991-f603-344c-a090-369bad2a924a.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run/usercache.json" beforeDir="false" afterPath="$PROJECT_DIR$/run/usercache.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/client/gui/WorkbenchScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/client/gui/WorkbenchScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/client/widget/MaterialWidget.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/client/widget/MaterialWidget.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/world/inventory/WorkbenchMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/world/inventory/WorkbenchMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/battleofgods/lang/en_us.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/battleofgods/lang/en_us.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/data/battleofgods/recipes/recipe_copper_broadsword.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/data/battleofgods/recipes/recipe_copper_broadsword.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/todo.md" beforeDir="false" afterPath="$PROJECT_DIR$/todo.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -385,7 +253,39 @@
       <option name="project" value="LOCAL" />
       <updated>1745661716774</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="zwischen-save before fixing WorkbenchScreen">
+      <option name="closed" value="true" />
+      <created>1745780495196</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1745780495196</updated>
+    </task>
+    <task id="LOCAL-00020" summary="fix of incorrect Counting">
+      <option name="closed" value="true" />
+      <created>1745781601341</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1745781601341</updated>
+    </task>
+    <task id="LOCAL-00021" summary="fix of highlight visual bug">
+      <option name="closed" value="true" />
+      <created>1745781656868</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1745781656868</updated>
+    </task>
+    <task id="LOCAL-00022" summary="fix of highlight visual bug">
+      <option name="closed" value="true" />
+      <created>1745781679393</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1745781679393</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -412,6 +312,9 @@
     <MESSAGE value="updated Textures" />
     <MESSAGE value="updated Textures; materilalList not finished yet" />
     <MESSAGE value="refactor: clean up item registration and improve tooltip handling" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor: clean up item registration and improve tooltip handling" />
+    <MESSAGE value="zwischen-save before fixing WorkbenchScreen" />
+    <MESSAGE value="fix of incorrect Counting" />
+    <MESSAGE value="fix of highlight visual bug" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix of highlight visual bug" />
   </component>
 </project>

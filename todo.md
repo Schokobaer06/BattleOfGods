@@ -3,9 +3,10 @@
   - [x] Correct Tag Material rendering
   - [ ] Texture Update
   - [ ] Correct Crafting
-    - [ ] Correct Visual Scrolling Bug
-    - [ ] Correct Incorrect Count Display
-    - [ ] Correct Non Focusing on hitting CraftButton
+    - [x] Correct Visual Scrolling Bug
+    - [x] Correct Incorrect Count Display
+    - [x] Correct Non Focusing on hitting CraftButton
+    - [ ] ImageButton Sound Fix
   - [x] Crafting
     - [x] return Air
 - [ ] JEI compat

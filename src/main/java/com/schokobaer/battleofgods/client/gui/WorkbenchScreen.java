@@ -13,6 +13,7 @@ import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.ImageButton;
 import net.minecraft.client.gui.components.Tooltip;
 import net.minecraft.client.gui.components.events.GuiEventListener;
+import net.minecraft.client.gui.narration.NarratedElementType;
 import net.minecraft.client.gui.narration.NarrationElementOutput;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.client.resources.sounds.SimpleSoundInstance;
@@ -97,6 +98,14 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
             }
 
             @Override
+            public boolean mouseScrolled(double mouseX, double mouseY, double scroll) {
+                if (getContentHeight() <= height) {
+                    return false; // Kein Scrollen erlauben
+                }
+                return super.mouseScrolled(mouseX, mouseY, scroll);
+            }
+
+            @Override
             public NarrationPriority narrationPriority() {
                 return NarrationPriority.NONE;
             }
@@ -110,6 +119,7 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
                 int rowCount = (int) Math.ceil((double) children().size() / buttonsPerRow);
                 return rowCount * (buttonHeight + buttonSpacing);
             }
+
 
 
             @Override
@@ -144,8 +154,9 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
 
                     button.isHovered = isMouseOver(button, mouseX, mouseY);
 
+
                     //System.out.println("ButtonHover " + button.getRecipe().getId() + ": " + button.isHovered);
-                    System.out.println("ButtonFocus " + button.getRecipe().getId() + ": " + button.isFocused);
+                    //System.out.println("ButtonFocus " + button.getRecipe().getId() + ": " + button.isFocused);
                 }
                 guiGraphics.disableScissor();
             }
@@ -286,10 +297,18 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
                 protected int getContentHeight() {
                     if (children().isEmpty()) return 0;
                     int mwHeight = 16; // Höhe eines Buttons
-                    int mwSpacing = 5; // Abstand zwischen Buttons
+                    int mwSpacing = 10; // Abstand zwischen Buttons
                     int widgetsPerRow = Math.max(1, (width - mwSpacing) / (mwHeight + mwSpacing));
                     int rowCount = (int) Math.ceil((double) children().size() / widgetsPerRow);
                     return rowCount * (mwHeight + mwSpacing);
+                }
+
+                @Override
+                public boolean mouseScrolled(double mouseX, double mouseY, double scroll) {
+                    if (getContentHeight() <= height) {
+                        return false; // Kein Scrollen erlauben
+                    }
+                    return super.mouseScrolled(mouseX, mouseY, scroll);
                 }
 
                 @Override
@@ -298,7 +317,7 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
 
                     int mwWidth = 16;
                     int mwHeight = 16;
-                    int mwSpacing = 5;
+                    int mwSpacing = 10;
                     int widgetsPerRow = Math.max(1, (width - mwSpacing) / (mwWidth + mwSpacing));
 
                     int rowWidth = widgetsPerRow * (mwWidth + mwSpacing) - mwSpacing;
@@ -381,6 +400,7 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
     @Override
     public void render(GuiGraphics guiGraphics, int mouseX, int mouseY, float partialTick) {
         renderBackground(guiGraphics);
+
         addRenderableWidget(new ImageButton(
                 7 * (leftPos + imageWidth) / 8, topPos + 64,
                 16, 16,

@@ -6,19 +6,35 @@
   "items": [
     {
       "item": "minecraft:copper_ingot",
-      "count": 99
+      "count": 7
     },
     {
       "item": "minecraft:copper_ingot",
-      "count": 65
+      "count": 7
     },
     {
       "item": "minecraft:copper_ingot",
-      "count": 64
+      "count": 7
     },
     {
       "item": "minecraft:copper_ingot",
-      "count": 63
+      "count": 7
+    },
+    {
+      "item": "minecraft:copper_ingot",
+      "count": 7
+    },
+    {
+      "item": "minecraft:copper_ingot",
+      "count": 7
+    },
+    {
+      "item": "minecraft:copper_ingot",
+      "count": 7
+    },
+    {
+      "item": "minecraft:copper_ingot",
+      "count": 7
     }
   ],
   "output": {
