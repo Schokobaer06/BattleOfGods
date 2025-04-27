@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="381b8277-727e-4d80-9354-c3576b313f95" name="Changes" comment="zwischen-save before fixing WorkbenchScreen">
+    <list default="true" id="381b8277-727e-4d80-9354-c3576b313f95" name="Changes" comment="fixed visual scrolling bug">
       <change beforePath="$PROJECT_DIR$/.gradle/8.8/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/checksums/checksums.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.8/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.8/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/executionHistory/executionHistory.lock" afterDir="false" />
@@ -14,16 +14,24 @@
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/client/gui/WorkbenchScreen$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/client/gui/WorkbenchScreen$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/client/gui/WorkbenchScreen$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/client/gui/WorkbenchScreen$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/client/gui/WorkbenchScreen$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/client/gui/WorkbenchScreen$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/client/gui/WorkbenchScreen$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/client/gui/WorkbenchScreen$4.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/client/gui/WorkbenchScreen.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/client/gui/WorkbenchScreen.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/client/widget/MaterialWidget.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/client/widget/MaterialWidget.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/data/battleofgods/recipes/recipe_copper_broadsword.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/data/battleofgods/recipes/recipe_copper_broadsword.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run/logs/2025-04-27-1.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/2025-04-27-1.log.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/logs/2025-04-27-10.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/2025-04-27-10.log.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/logs/2025-04-27-11.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/2025-04-27-11.log.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/logs/2025-04-27-12.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/2025-04-27-12.log.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/logs/2025-04-27-13.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/2025-04-27-13.log.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/logs/2025-04-27-14.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/2025-04-27-14.log.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/logs/2025-04-27-15.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/2025-04-27-15.log.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/logs/2025-04-27-16.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/2025-04-27-16.log.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/logs/2025-04-27-17.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/2025-04-27-17.log.gz" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run/logs/2025-04-27-2.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/2025-04-27-2.log.gz" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run/logs/2025-04-27-3.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/2025-04-27-3.log.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/logs/2025-04-27-4.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/2025-04-27-4.log.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/logs/2025-04-27-5.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/2025-04-27-5.log.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/logs/2025-04-27-6.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/2025-04-27-6.log.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/logs/2025-04-27-7.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/2025-04-27-7.log.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/logs/2025-04-27-8.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/2025-04-27-8.log.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/logs/2025-04-27-9.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/2025-04-27-9.log.gz" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run/logs/debug-1.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/debug-1.log.gz" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run/logs/debug-2.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/debug-2.log.gz" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run/logs/debug-3.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/debug-3.log.gz" afterDir="false" />
@@ -34,7 +42,6 @@
       <change beforePath="$PROJECT_DIR$/run/saves/New World/DIM-1/data/raids.dat" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/New World/DIM-1/data/raids.dat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run/saves/New World/DIM1/data/raids_end.dat" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/New World/DIM1/data/raids_end.dat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run/saves/New World/data/raids.dat" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/New World/data/raids.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/saves/New World/entities/r.-1.0.mca" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/New World/entities/r.-1.0.mca" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run/saves/New World/entities/r.0.0.mca" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/New World/entities/r.0.0.mca" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run/saves/New World/level.dat" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/New World/level.dat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run/saves/New World/level.dat_old" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/New World/level.dat_old" afterDir="false" />
@@ -48,8 +55,6 @@
       <change beforePath="$PROJECT_DIR$/run/saves/New World/stats/380df991-f603-344c-a090-369bad2a924a.json" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/New World/stats/380df991-f603-344c-a090-369bad2a924a.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run/usercache.json" beforeDir="false" afterPath="$PROJECT_DIR$/run/usercache.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/client/gui/WorkbenchScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/client/gui/WorkbenchScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/battleofgods/recipes/recipe_copper_broadsword.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/data/battleofgods/recipes/recipe_copper_broadsword.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo.md" beforeDir="false" afterPath="$PROJECT_DIR$/todo.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -285,7 +290,23 @@
       <option name="project" value="LOCAL" />
       <updated>1745781679393</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="fixed visual scrolling bug">
+      <option name="closed" value="true" />
+      <created>1745783450934</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1745783450934</updated>
+    </task>
+    <task id="LOCAL-00024" summary="fixed visual scrolling bug">
+      <option name="closed" value="true" />
+      <created>1745783467510</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1745783467510</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -315,6 +336,7 @@
     <MESSAGE value="zwischen-save before fixing WorkbenchScreen" />
     <MESSAGE value="fix of incorrect Counting" />
     <MESSAGE value="fix of highlight visual bug" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix of highlight visual bug" />
+    <MESSAGE value="fixed visual scrolling bug" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed visual scrolling bug" />
   </component>
 </project>
