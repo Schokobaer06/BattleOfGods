@@ -87,7 +87,7 @@ public class MaterialWidget extends AbstractWidget {
         for (ItemStack stack : player.getInventory().items) {
             if (entry.ingredient().test(stack)) {
                 count += stack.getCount();
-                if (count >= entry.count()) break;
+                //if (count >= entry.count()) break;
             }
         }
         return count;
