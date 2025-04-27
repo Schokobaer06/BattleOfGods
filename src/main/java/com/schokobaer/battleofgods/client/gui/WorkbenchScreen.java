@@ -239,6 +239,12 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
 
     private void selectRecipe(RecipeHandler.BattleRecipe recipe) {
         menu.setSelectedRecipe(recipe);
+        recipeList.children().forEach(
+        btn -> {
+            if (btn instanceof RecipeButton button) {
+                button.isFocused = button.getRecipe().getId().equals(recipe.getId());
+            }
+        });
         updateMaterialDisplay();
     }
 
@@ -360,7 +366,7 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
         if (menu.getSelectedRecipe() == null) return;
         BattleofgodsMod.PACKET_HANDLER.sendToServer(new CraftPacket(menu.getSelectedRecipe().getId()));
         if (debug) BattleofgodsMod.LOGGER.debug("WorkbenchScreen - craftItem has been called with recipe {}", menu.getSelectedRecipe().getId());
-        init();
+        //init();
     }
 
     @Override
