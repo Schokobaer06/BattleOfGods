@@ -37,6 +37,5 @@
   "mainclass.battleofgods.healing": "healing",
   "mainclass.battleofgods.bard": "bard",
   "mainclass.battleofgods.tool": "tool",
-  "gui.battleofgods.tooltip.craft_hammer": "Craft",
-  "gui.battleofgods.tooltip.craft_hammer.empty": "Craft Item"
+  "gui.battleofgods.tooltip.craft_hammer": "Craft Item"
 }

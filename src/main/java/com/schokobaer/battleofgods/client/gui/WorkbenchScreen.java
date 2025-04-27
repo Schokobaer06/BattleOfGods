@@ -16,9 +16,11 @@ import net.minecraft.client.gui.components.events.GuiEventListener;
 import net.minecraft.client.gui.narration.NarrationElementOutput;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.client.resources.sounds.SimpleSoundInstance;
+import net.minecraft.client.resources.sounds.SoundInstance;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraftforge.client.gui.widget.ScrollPanel;
 
@@ -27,7 +29,9 @@ import java.util.List;
 import java.util.Optional;
 
 public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
-    private static ResourceLocation TEXTURE = new ResourceLocation("battleofgods:textures/gui/workbench.png");
+    private static ResourceLocation TEXTURE_GUI_BG = null;
+    private static ResourceLocation TEXTURE_RECIPELIST_BG = null;
+    private static ResourceLocation TEXTURE_MATERIALLIST_BG = null;
 
     private ScrollPanel recipeList;
     private ScrollPanel materialList = null;
@@ -39,8 +43,9 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
         this.imageWidth = 176;
         this.imageHeight = 166;
 
-        if (menu.getBackgroundTexture() != null)
-            TEXTURE = menu.getBackgroundTexture();
+        TEXTURE_GUI_BG = menu.getGUIBackgroundTexture();
+        TEXTURE_RECIPELIST_BG = menu.getRecipeListBackgroundLocation();
+        TEXTURE_MATERIALLIST_BG = menu.getMaterialListBackgroundLocation();
     }
 
     @Override
@@ -121,7 +126,7 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
                 int startX = (width - rowWidth) / 2; // Zentrierte Position
                 guiGraphics.pose().pushPose();
                 guiGraphics.enableScissor(left, top, left + width, top + height);
-                BattleofgodsMod.LOGGER.debug("Scrollpanel width + height: {}x{}", width, height);
+                //BattleofgodsMod.LOGGER.debug("Scrollpanel width + height: {}x{}", width, height);
 
                 //Adding buttons to the scroll panel
                 for (int i = 0; i < children().size(); i++) {
@@ -138,6 +143,9 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
                     button.render(guiGraphics, x, y, minecraft.getFrameTime());
 
                     button.isHovered = isMouseOver(button, mouseX, mouseY);
+
+                    //System.out.println("ButtonHover " + button.getRecipe().getId() + ": " + button.isHovered);
+                    System.out.println("ButtonFocus " + button.getRecipe().getId() + ": " + button.isFocused);
                 }
                 guiGraphics.disableScissor();
             }
@@ -210,49 +218,21 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
 
             @Override
             protected void drawBackground(GuiGraphics guiGraphics, Tesselator tess, float partialTick) {
+                //super.drawBackground(guiGraphics, tess, partialTick);
+                RenderSystem.enableBlend();
+                RenderSystem.defaultBlendFunc();
                 guiGraphics.blit(
-                        new ResourceLocation("battleofgods:textures/gui/scrollpanels/recipelist.png"),
+                        TEXTURE_RECIPELIST_BG,
                         left, top,
                         0, 0,
-                        width, height,
+                        width,
+                        height,
                         86,53
                 );
+                RenderSystem.disableBlend();
             }
         };
         // Craft-Button
-
-        Component craftButtonTooltip = (menu.getSelectedRecipe() != null) ?
-                Component.translatable("gui.battleofgods.tooltip.craft_hammer")
-                        .append(Component.literal(" " + menu.getSelectedRecipe()
-                                .getResultItem(Minecraft.getInstance().player.level().registryAccess())
-                                .copy().getDisplayName())) :
-                Component.translatable("gui.battleofgods.tooltip.craft_hammer.empty");
-        addRenderableWidget(new ImageButton(
-                7 * (leftPos + imageWidth) / 8, topPos + 64,
-                16, 16,
-                0, 0,  // Normal state
-                16,     // xDiff between states
-                new ResourceLocation("battleofgods:textures/gui/crafting_hammer.png"),
-                32, 16,
-                button -> {
-                    Minecraft.getInstance().getSoundManager().play(
-                            SimpleSoundInstance.forUI(SoundEvents.UI_BUTTON_CLICK, 1.0F));
-                    craftItem();
-                }
-        ) {
-            @Override
-            public void renderWidget(GuiGraphics gui, int mouseX, int mouseY, float partialTick) {
-                int xOffset = this.isHovered() ? 16 : 0; // Hover/Pressed share same texture
-
-                gui.blit(
-                        this.resourceLocation,
-                        this.getX(), this.getY(),
-                        xOffset, 0,
-                        this.width, this.height,
-                        32, 16
-                );
-            }
-        }).setTooltip(Tooltip.create(craftButtonTooltip));
 
         addRenderableWidget(recipeList);
     }
@@ -341,11 +321,6 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
                     return false;
                 }
 
-                @Override
-                protected boolean clickPanel(double mouseX, double mouseY, int button) {
-                    return super.clickPanel(mouseX, mouseY, button);
-                }
-
                 public boolean isMouseOver(MaterialWidget btn, double mouseX, double mouseY) {
                     return mouseX >= btn.getX() &&
                                 mouseX <= btn.getX() + btn.getWidth() &&
@@ -393,13 +368,40 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
         RenderSystem.setShaderColor(1, 1, 1, 1);
         RenderSystem.enableBlend();
         RenderSystem.defaultBlendFunc();
-        guiGraphics.blit(TEXTURE, leftPos, topPos, 0, 0, imageWidth, imageHeight, imageWidth, imageHeight);
+        guiGraphics.blit(TEXTURE_GUI_BG, leftPos, topPos, 0, 0, imageWidth, imageHeight, imageWidth, imageHeight);
         RenderSystem.disableBlend();
     }
 
     @Override
     public void render(GuiGraphics guiGraphics, int mouseX, int mouseY, float partialTick) {
         renderBackground(guiGraphics);
+        addRenderableWidget(new ImageButton(
+                7 * (leftPos + imageWidth) / 8, topPos + 64,
+                16, 16,
+                0, 0,  // Normal state
+                16,     // xDiff between states
+                new ResourceLocation("battleofgods:textures/gui/crafting_hammer.png"),
+                32, 16,
+                button -> {
+                    Minecraft.getInstance().getSoundManager().play(
+                            SimpleSoundInstance.forUI(SoundEvents.UI_BUTTON_CLICK, 1.0F));
+                    craftItem();
+                }
+        ) {
+            @Override
+            public void renderWidget(GuiGraphics gui, int mouseX, int mouseY, float partialTick) {
+                int xOffset = this.isHovered() ? 16 : 0; // Hover/Pressed share same texture
+
+                gui.blit(
+                        this.resourceLocation,
+                        this.getX(), this.getY(),
+                        xOffset, 0,
+                        this.width, this.height,
+                        32, 16
+                );
+            }
+        }).setTooltip(Tooltip.create(Component.translatable("gui.battleofgods.tooltip.craft_hammer")));
+
         super.render(guiGraphics, mouseX, mouseY, partialTick);
         renderTooltip(guiGraphics, mouseX, mouseY);
 

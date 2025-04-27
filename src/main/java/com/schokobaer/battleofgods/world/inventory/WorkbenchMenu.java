@@ -24,7 +24,9 @@ public class WorkbenchMenu extends AbstractContainerMenu implements Supplier<Map
     private RecipeHandler.BattleRecipe selectedRecipe;
     private ContainerLevelAccess access;
     private final String recipeGroup;
-    private ResourceLocation backgroundLocation = null;
+    private ResourceLocation backgroundLocation = new ResourceLocation("battleofgods:textures/gui/workbench.png");
+    private ResourceLocation recipeListLocation = new ResourceLocation("battleofgods:textures/gui/scrollpanels/recipelist.png");
+    private ResourceLocation materialListLocation = new ResourceLocation("battleofgods:textures/gui/scrollpanels/materiallist.png");
 
     public WorkbenchMenu(int containerId, Inventory inv) {
         super(InitMenu.WORKBENCH.get(), containerId);
@@ -168,11 +170,23 @@ public class WorkbenchMenu extends AbstractContainerMenu implements Supplier<Map
         return Map.of();
     }
 
-    public ResourceLocation getBackgroundTexture() {
+    public ResourceLocation getGUIBackgroundTexture() {
         return backgroundLocation;
     }
+    public ResourceLocation getRecipeListBackgroundLocation() {
+        return recipeListLocation;
+    }
+    public ResourceLocation getMaterialListBackgroundLocation() {
+        return materialListLocation;
+    }
 
-    public void setBackgroundTexture(ResourceLocation texture) {
+    public void setGUIBackgroundTexture(ResourceLocation texture) {
         this.backgroundLocation = texture;
+    }
+    public void setRecipeListBackgroundTexture(ResourceLocation texture) {
+        this.recipeListLocation = texture;
+    }
+    public void setMaterialListBackgroundTextur(ResourceLocation texture) {
+        this.materialListLocation = texture;
     }
 }

@@ -81,6 +81,7 @@ public class MaterialWidget extends AbstractWidget {
     protected void updateWidgetNarration(NarrationElementOutput output) {
         defaultButtonNarrationText(output);
     }
+
     private int getAvailableCount() {
         int count = 0;
         for (ItemStack stack : player.getInventory().items) {

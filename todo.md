@@ -2,6 +2,10 @@
   - [x] Correct Material rendering
   - [x] Correct Tag Material rendering
   - [ ] Texture Update
+  - [ ] Correct Crafting
+    - [ ] Correct Visual Scrolling Bug
+    - [ ] Correct Incorrect Count Display
+    - [ ] Correct Non Focusing on hitting CraftButton
   - [x] Crafting
     - [x] return Air
 - [ ] JEI compat
