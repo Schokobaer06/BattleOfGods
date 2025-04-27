@@ -1,14 +1,14 @@
 - [ ] WorkbenchScreen
-  - [x] Correct Material rendering
-  - [x] Correct Tag Material rendering
+  - [X] Correct Material rendering
+  - [X] Correct Tag Material rendering
   - [ ] Texture Update
-  - [ ] Correct Crafting
-    - [x] Correct Visual Scrolling Bug
-    - [x] Correct Incorrect Count Display
-    - [x] Correct Non Focusing on hitting CraftButton
-    - [ ] ImageButton Sound Fix
-  - [x] Crafting
-    - [x] return Air
+  - [X] Correct Crafting
+    - [X] Correct Visual Scrolling Bug
+    - [X] Correct Incorrect Count Display
+    - [X] Correct Non Focusing on hitting CraftButton
+    - [X] ImageButton Sound Fix
+  - [X] Crafting
+    - [X] return Air
 - [ ] JEI compat
 - [ ] Attributes
   - [ ] Critical Hit
@@ -73,17 +73,17 @@
   - [ ] Fallen Star
 - [ ] Generation
   - [ ] Normal Chests in Surface Caves
-  - [ ] Normal Chests in Underground Caves 
+  - [ ] Normal Chests in Underground Caves
   - [ ] Gems
     - [ ] Amethyst
-    - [ ] Topaz 
+    - [ ] Topaz
     - [ ] Sapphire
     - [ ] Emerald
     - [ ] Ruby
     - [ ] Diamond
     - [ ] Amber
   - [ ] Living Trees
-    - [ ] Living Wooden Chest 
+    - [ ] Living Wooden Chest
 - [ ] Weapons
   - [ ] Wooden Sword [Melee]
   - [ ] Wooden Bow [Ranged]

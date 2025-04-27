@@ -83,7 +83,7 @@ public class WorkbenchMenu extends AbstractContainerMenu implements Supplier<Map
         //setSelectedRecipe(temp);
     }
 
-    private boolean hasRequiredItems(Player player) {
+    public boolean hasRequiredItems(Player player) {
         for(RecipeHandler.BattleRecipe.IngredientEntry entry : selectedRecipe.getInputs()) {
             int count = 0;
             for(ItemStack stack : player.getInventory().items) {
@@ -189,4 +189,6 @@ public class WorkbenchMenu extends AbstractContainerMenu implements Supplier<Map
     public void setMaterialListBackgroundTextur(ResourceLocation texture) {
         this.materialListLocation = texture;
     }
+
+
 }

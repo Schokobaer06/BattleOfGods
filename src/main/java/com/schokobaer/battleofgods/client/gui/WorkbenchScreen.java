@@ -18,6 +18,7 @@ import net.minecraft.client.gui.narration.NarrationElementOutput;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.client.resources.sounds.SimpleSoundInstance;
 import net.minecraft.client.resources.sounds.SoundInstance;
+import net.minecraft.client.sounds.SoundManager;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
@@ -409,9 +410,29 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
                 new ResourceLocation("battleofgods:textures/gui/crafting_hammer.png"),
                 32, 16,
                 button -> {
-                    Minecraft.getInstance().getSoundManager().play(
-                            SimpleSoundInstance.forUI(SoundEvents.UI_BUTTON_CLICK, 1.0F));
-                    craftItem();
+                    assert minecraft != null;
+                    if (menu.getSelectedRecipe() == null) {
+                        minecraft.getSoundManager().play(SimpleSoundInstance.forUI(
+                                SoundEvents.NOTE_BLOCK_DIDGERIDOO, // Typischer "Fehler"-Sound
+                                0.5F  // Leiser
+                        ));
+                    }
+                    if (menu.getSelectedRecipe() != null)
+                        if (menu.hasRequiredItems(minecraft.player)){
+                            Minecraft.getInstance().getSoundManager().play(SimpleSoundInstance.forUI(
+                                    SoundEvents.IRON_TRAPDOOR_CLOSE, 0.9F, 0.6F // Metall-Klang
+                            ));
+                            Minecraft.getInstance().getSoundManager().play(SimpleSoundInstance.forUI(
+                                    SoundEvents.WOOD_HIT, 0.5F, 0.8F // Holz-Resonanz (leiser)
+                            ));
+                            craftItem();
+                        }
+                    else {
+                        minecraft.getSoundManager().play(SimpleSoundInstance.forUI(
+                                SoundEvents.NOTE_BLOCK_DIDGERIDOO, // Typischer "Fehler"-Sound
+                                0.5F  // Leiser
+                        ));
+                    }
                 }
         ) {
             @Override
@@ -426,12 +447,16 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
                         32, 16
                 );
             }
+
+            @Override
+            public void playDownSound(SoundManager p_93665_) {
+            }
         }).setTooltip(Tooltip.create(Component.translatable("gui.battleofgods.tooltip.craft_hammer")));
 
         super.render(guiGraphics, mouseX, mouseY, partialTick);
         renderTooltip(guiGraphics, mouseX, mouseY);
-
     }
+
 
     @Override
     protected void renderLabels(GuiGraphics guiGraphics, int mouseX, int mouseY) {
