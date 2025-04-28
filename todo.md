@@ -115,7 +115,7 @@
   - [ ] Squirrel with Hat
 - [ ] Trojan Squirrel
   - [ ] TrSq Boss Summon
-  - [ ]TrSq Boss
+  - [ ] TrSq Boss
   - [ ] TrSq Boss AI
   - [ ] TrSq Boss Treasure Bag
     - [ ] Bag
