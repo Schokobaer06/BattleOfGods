@@ -9,8 +9,8 @@ GITHUB_REPOSITORY = os.getenv("GITHUB_REPOSITORY")  # Format: owner/repo
 GITHUB_TOKEN      = os.getenv("MY_GITHUB_TOKEN")  # aus Actions Secret
 OWNER, REPO       = GITHUB_REPOSITORY.split("/")
 API_URL           = f"https://api.github.com/repos/{OWNER}/{REPO}"
-HEADERS           = {
-    "Authorization": f"Bearer {GITHUB_TOKEN}",
+HEADERS = {
+    "Authorization": f"token {GITHUB_TOKEN}",
     "Accept":        "application/vnd.github+json"
 }
 
