@@ -1,7 +1,7 @@
-- [ ] WorkbenchScreen
+- [x] WorkbenchScreen
   - [X] Correct Material rendering
   - [X] Correct Tag Material rendering
-  - [ ] Texture Update
+  - [x] Texture Update
   - [X] Correct Crafting
     - [X] Correct Visual Scrolling Bug
     - [X] Correct Incorrect Count Display

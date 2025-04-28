@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="381b8277-727e-4d80-9354-c3576b313f95" name="Changes" comment="fixed Sound Problem" />
+    <list default="true" id="381b8277-727e-4d80-9354-c3576b313f95" name="Changes" comment="now able to change recipeGroup">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/compat/jei/JEIPlugin.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/compat/jei/category/WorkbenchCategory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,6 +19,13 @@
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
     </projectState>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -35,6 +47,9 @@
   &quot;associatedIndex&quot;: 2
 }</component>
   <component name="ProjectId" id="2w4doKBONpxxJLhW2WZwMCDOFga" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -271,15 +286,31 @@
       <option name="project" value="LOCAL" />
       <updated>1745785424477</updated>
     </task>
-    <task id="LOCAL-00027" summary="fixed Sound Problem">
+    <task id="LOCAL-00027" summary="added background to materialList">
       <option name="closed" value="true" />
-      <created>1745785516539</created>
+      <created>1745822199757</created>
       <option name="number" value="00027" />
       <option name="presentableId" value="LOCAL-00027" />
       <option name="project" value="LOCAL" />
-      <updated>1745785516539</updated>
+      <updated>1745822199757</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="added background to materialList">
+      <option name="closed" value="true" />
+      <created>1745824834207</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1745824834207</updated>
+    </task>
+    <task id="LOCAL-00029" summary="now able to change recipeGroup">
+      <option name="closed" value="true" />
+      <created>1745826186162</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1745826186162</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -311,6 +342,8 @@
     <MESSAGE value="fixed visual scrolling bug" />
     <MESSAGE value="." />
     <MESSAGE value="fixed Sound Problem" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed Sound Problem" />
+    <MESSAGE value="added background to materialList" />
+    <MESSAGE value="now able to change recipeGroup" />
+    <option name="LAST_COMMIT_MESSAGE" value="now able to change recipeGroup" />
   </component>
 </project>
