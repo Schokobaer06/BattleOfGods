@@ -17,17 +17,22 @@ jobs:
   sync:
     runs-on: ubuntu-latest
 
+    # make sure you give the token the right scopes
+    permissions:
+      contents: read
+      issues: write
+      repository-projects: write
+
     env:
       GITHUB_REPOSITORY: ${{ github.repository }}
-      # kein eigenes Secret mehr nötig
+      # ← this is the missing piece
+      GITHUB_TOKEN:       ${{ secrets.GITHUB_TOKEN }}
 
     steps:
       - uses: actions/checkout@v4
-
       - uses: actions/setup-python@v5
         with:
           python-version: '3.x'
-
       - run: pip install requests
-
       - run: python sync_todo_to_issues.py
+
