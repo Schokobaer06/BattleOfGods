@@ -1,20 +1,24 @@
 // WorkbenchCategory.java
 package com.schokobaer.battleofgods.compat.jei.category;
 
+import com.mojang.blaze3d.systems.RenderSystem;
 import com.schokobaer.battleofgods.init.BattleofgodsModBlocks;
 import com.schokobaer.battleofgods.init.BattleofgodsModItems;
 import mezz.jei.api.constants.VanillaTypes;
 import mezz.jei.api.gui.builder.IRecipeLayoutBuilder;
 import mezz.jei.api.gui.drawable.IDrawable;
+import mezz.jei.api.gui.ingredient.IRecipeSlotsView;
 import mezz.jei.api.helpers.IGuiHelper;
 import mezz.jei.api.recipe.IFocusGroup;
 import mezz.jei.api.recipe.RecipeIngredientRole;
 import mezz.jei.api.recipe.RecipeType;
 import mezz.jei.api.recipe.category.IRecipeCategory;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import com.schokobaer.battleofgods.BattleofgodsMod;
 import com.schokobaer.battleofgods.mechanics.recipe.RecipeHandler.BattleRecipe;
+import org.jetbrains.annotations.Nullable;
 
 public class WorkbenchCategory implements IRecipeCategory<BattleRecipe> {
     public static final RecipeType<BattleRecipe> TYPE = RecipeType.create(
@@ -27,15 +31,15 @@ public class WorkbenchCategory implements IRecipeCategory<BattleRecipe> {
     private final IDrawable icon;
 
     public WorkbenchCategory(IGuiHelper guiHelper) {
-        this.background = guiHelper.createDrawable(
-                new ResourceLocation(BattleofgodsMod.MODID, "textures/gui/workbench.png"),
-                8, 15, 160, 60
-        );
+        this.background =  guiHelper.drawableBuilder(new ResourceLocation(BattleofgodsMod.MODID, "textures/gui/workbench.png"),
+                8, 15, 160, 60).setTextureSize(176,166).build();
+
         this.icon = guiHelper.createDrawableIngredient(
                 VanillaTypes.ITEM_STACK,
                 BattleofgodsModItems.WOODEN_WORKBENCH.get().asItem().getDefaultInstance()
         );
     }
+
 
     @Override
     public RecipeType<BattleRecipe> getRecipeType() {
@@ -58,11 +62,24 @@ public class WorkbenchCategory implements IRecipeCategory<BattleRecipe> {
     }
 
     @Override
+    public @Nullable ResourceLocation getRegistryName(BattleRecipe recipe) {
+        return recipe.getId();
+    }
+
+    @Override
+    public void draw(BattleRecipe recipe, IRecipeSlotsView recipeSlotsView, GuiGraphics guiGraphics, double mouseX, double mouseY) {
+        RenderSystem.enableBlend();
+        RenderSystem.defaultBlendFunc();
+        IRecipeCategory.super.draw(recipe, recipeSlotsView, guiGraphics, mouseX, mouseY);
+        RenderSystem.disableBlend();
+    }
+
+    @Override
     public void setRecipe(IRecipeLayoutBuilder builder, BattleRecipe recipe, IFocusGroup focuses) {
         // Inputs
         for (int i = 0; i < recipe.getInputs().size(); i++) {
             var entry = recipe.getInputs().get(i);
-            builder.addSlot(RecipeIngredientRole.INPUT, (i % 3) * 18 + 1, (i / 3) * 18 + 1)
+            builder.addSlot(RecipeIngredientRole.INPUT, (i % 6) * 18 + 1, (i / 6) * 18 + 1)
                     .addIngredients(entry.ingredient())
                     .addTooltipCallback((recipeSlotView, tooltip) ->
                             tooltip.add(Component.literal(entry.count() + "x"))
@@ -70,7 +87,14 @@ public class WorkbenchCategory implements IRecipeCategory<BattleRecipe> {
         }
 
         // Output
-        builder.addSlot(RecipeIngredientRole.OUTPUT, 120, 19)
+        if (recipe.getOutput().getCount() > 1)
+            builder.addSlot(RecipeIngredientRole.OUTPUT, 120, 19)
+                    .addItemStack(recipe.getOutput())
+                    .addTooltipCallback((recipeSlotView, tooltip) ->
+                            tooltip.add(Component.literal(recipe.getOutput().getCount() + "x"))
+                    );
+        else
+            builder.addSlot(RecipeIngredientRole.OUTPUT, 120, 19)
                 .addItemStack(recipe.getOutput());
     }
 }
