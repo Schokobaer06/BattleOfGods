@@ -11,14 +11,13 @@ jobs:
   sync:
     runs-on: ubuntu-latest
 
-    # Wichtig: env muss auf Job-Level stehen
+    # Achtung: Hier muss dein eigenes Secret als MY_GITHUB_TOKEN heißen
     env:
       MY_GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
       GITHUB_REPOSITORY: ${{ github.repository }}
-      # PROJECT_ID: ${{ secrets.PROJECT_ID }}   # nur wenn du Project-Integration verwendest
 
     steps:
-      - name: Checkout
+      - name: Checkout code
         uses: actions/checkout@v4
 
       - name: Setup Python
@@ -26,11 +25,6 @@ jobs:
         with:
           python-version: '3.x'
 
-      - name: Debug
-        run: |
-          # nur die Länge ausgeben – nicht den Inhalt
-          echo "MY_GITHUB_TOKEN length: ${#MY_GITHUB_TOKEN}"
-      
       - name: Install Requests
         run: pip install requests
 
