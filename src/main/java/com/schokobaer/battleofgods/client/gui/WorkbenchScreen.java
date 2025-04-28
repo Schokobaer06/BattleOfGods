@@ -373,7 +373,18 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
 
                 @Override
                 protected void drawBackground(GuiGraphics guiGraphics, Tesselator tess, float partialTick) {
-                    super.drawBackground(guiGraphics, tess, partialTick);
+                    //super.drawBackground(guiGraphics, tess, partialTick);
+                    RenderSystem.enableBlend();
+                    RenderSystem.defaultBlendFunc();
+                    guiGraphics.blit(
+                            TEXTURE_MATERIALLIST_BG,
+                            left, top,
+                            0, 0,
+                            width,
+                            height,
+                            86,43
+                    );
+                    RenderSystem.disableBlend();
                 }
             };
         } catch (Exception e) {
