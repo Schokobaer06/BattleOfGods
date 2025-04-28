@@ -12,6 +12,7 @@ Minecraft Mod based on [*Terraria*](https://terraria.org/) and its mods:
  - [*Thorium Mod*](https://steamcommunity.com/sharedfiles/filedetails/?id=2909886416)
  - [*Calamity Fables*](https://steamcommunity.com/sharedfiles/filedetails/?id=3449156562)
  - [*Ragnarok*](https://steamcommunity.com/sharedfiles/filedetails/?id=3114886209)
+ - [*Calamity's Vanities*](https://steamcommunity.com/sharedfiles/filedetails/?id=2824688804)
 ### Progression
 
 ### Classes
