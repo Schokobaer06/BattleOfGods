@@ -4,7 +4,7 @@ name: Sync TODO → Issues
 permissions:
   contents: read        # zum Checkout & Lesen von Dateien
   issues: write         # zum Erstellen/Aktualisieren von Issues
-  projects: write       # zum Befüllen deines Kanban-Boards (falls genutzt)
+  repository-projects: write       # zum Befüllen deines Kanban-Boards (falls genutzt)
 
 on:
   push:
