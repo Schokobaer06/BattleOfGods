@@ -6,7 +6,7 @@ import requests
 # GitHub-Konfiguration aus Umgebungsvariablen
 # Nutze dein eigenes Secret namens MY_GITHUB_TOKEN, nicht das automatische
 GITHUB_REPOSITORY = os.getenv("GITHUB_REPOSITORY")  # Format: owner/repo
-GITHUB_TOKEN = os.getenv("ACTIONS_RUNTIME_TOKEN")  # aus Actions Secret
+GITHUB_TOKEN = os.environ["GITHUB_TOKEN"]  # aus Actions Secret
 OWNER, REPO       = GITHUB_REPOSITORY.split("/")
 API_URL           = f"https://api.github.com/repos/{OWNER}/{REPO}"
 HEADERS = {
