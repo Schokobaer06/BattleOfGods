@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="381b8277-727e-4d80-9354-c3576b313f95" name="Changes" comment="Update todo list to mark JEI compatibility as complete">
-      <change beforePath="$PROJECT_DIR$/.github/workflows/sync_todo.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/sync_todo.yml" afterDir="false" />
+    <list default="true" id="381b8277-727e-4d80-9354-c3576b313f95" name="Changes" comment="Update sync_todo.yml to allow standard token permissions and simplify script steps">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sync_todo_to_issues.py" beforeDir="false" afterPath="$PROJECT_DIR$/sync_todo_to_issues.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,7 +69,7 @@
     "git-widget-placeholder": "1.20.1__mcreator",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "project.structure.last.edited": "SDKs",
+    "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "com.github.blarc.ai.commits.intellij.plugin.settings.AppSettingsConfigurable"
@@ -444,7 +444,15 @@
       <option name="project" value="LOCAL" />
       <updated>1745862595208</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="Update sync_todo.yml to allow standard token permissions and simplify script steps">
+      <option name="closed" value="true" />
+      <created>1745862767538</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1745862767538</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -459,7 +467,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="removed Modifiers" />
     <MESSAGE value="updated Textures" />
     <MESSAGE value="updated Textures; materilalList not finished yet" />
     <MESSAGE value="refactor: clean up item registration and improve tooltip handling" />
@@ -484,6 +491,7 @@
     <MESSAGE value="Fix formatting in todo list and update last commit message" />
     <MESSAGE value="Update GitHub token usage in sync scripts and fix formatting in workspace" />
     <MESSAGE value="Update todo list to mark JEI compatibility as complete" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update todo list to mark JEI compatibility as complete" />
+    <MESSAGE value="Update sync_todo.yml to allow standard token permissions and simplify script steps" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update sync_todo.yml to allow standard token permissions and simplify script steps" />
   </component>
 </project>
