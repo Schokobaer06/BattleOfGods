@@ -1,0 +1,30 @@
+name: Sync TODO → Issues
+
+on:
+  push:
+    branches:
+      - '1.20.1_mcreator'
+    paths:
+      - 'todo.md'
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Install Requests
+        run: pip install requests
+
+      - name: Sync TODO.md to Issues
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+        run: python sync_todo_to_issues.py
