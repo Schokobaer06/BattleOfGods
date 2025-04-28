@@ -5,12 +5,13 @@ This mod is **experimental** and in an **early alpha stage**.
 ## Description
 Minecraft Mod based on [*Terraria*](https://terraria.org/) and its mods:
 
- - [*Calamity Mod*](https://steamcommunity.com/sharedfiles/filedetails/?id=2824688072&searchtext=calamity)
+ - [*Calamity Mod*](https://steamcommunity.com/sharedfiles/filedetails/?id=2824688072)
  - [*Fargo's Mutant Mod*](https://steamcommunity.com/sharedfiles/filedetails/?id=2570931073)
- - [*Fargo's Souls Mod*](https://steamcommunity.com/sharedfiles/filedetails/?id=2815540735&searchtext=Fargo)
+ - [*Fargo's Souls Mod*](https://steamcommunity.com/sharedfiles/filedetails/?id=2815540735)
  - [*Fargo's Souls Mod DLC*](https://steamcommunity.com/sharedfiles/filedetails/?id=3044249615)
- - [*Thorium Mod*](https://steamcommunity.com/sharedfiles/filedetails/?id=2909886416&searchtext=thorium)
-
+ - [*Thorium Mod*](https://steamcommunity.com/sharedfiles/filedetails/?id=2909886416)
+ - [*Calamity Fables*](https://steamcommunity.com/sharedfiles/filedetails/?id=3449156562)
+ - [*Ragnarok*](https://steamcommunity.com/sharedfiles/filedetails/?id=3114886209)
 ### Progression
 
 ### Classes
