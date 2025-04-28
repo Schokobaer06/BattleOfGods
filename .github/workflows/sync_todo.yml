@@ -13,7 +13,7 @@ jobs:
 
     # Achtung: Hier muss dein eigenes Secret als MY_GITHUB_TOKEN heißen
     env:
-      MY_GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
+      MY_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       GITHUB_REPOSITORY: ${{ github.repository }}
 
     steps:
