@@ -25,6 +25,6 @@ jobs:
 
       - name: Sync TODO.md to Issues
         env:
-          GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_REPOSITORY: ${{ github.repository }}
         run: python sync_todo_to_issues.py
