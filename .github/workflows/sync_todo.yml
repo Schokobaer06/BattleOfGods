@@ -1,5 +1,11 @@
 name: Sync TODO → Issues
 
+# Erlaube dem Standard-Token, Issues (und Projects) zu schreiben
+permissions:
+  contents: read        # zum Checkout & Lesen von Dateien
+  issues: write         # zum Erstellen/Aktualisieren von Issues
+  projects: write       # zum Befüllen deines Kanban-Boards (falls genutzt)
+
 on:
   push:
     branches:
@@ -11,22 +17,17 @@ jobs:
   sync:
     runs-on: ubuntu-latest
 
-    # Achtung: Hier muss dein eigenes Secret als MY_GITHUB_TOKEN heißen
     env:
-      MY_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       GITHUB_REPOSITORY: ${{ github.repository }}
+      # kein eigenes Secret mehr nötig
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Setup Python
-        uses: actions/setup-python@v5
+      - uses: actions/setup-python@v5
         with:
           python-version: '3.x'
 
-      - name: Install Requests
-        run: pip install requests
+      - run: pip install requests
 
-      - name: Run sync script
-        run: python sync_todo_to_issues.py
+      - run: python sync_todo_to_issues.py
