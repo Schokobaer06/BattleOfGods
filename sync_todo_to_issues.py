@@ -40,17 +40,25 @@ def get_existing_issues():
     return issues
 
 def create_issue(title, status, body):
-    payload = {"title": title, "body": body, "labels": [status]}
+    payload = {
+        'title': title,
+        'body': body,
+        'labels': ['features', status]  # fügt 'features' zusätzlich zu 'status' hinzu
+    }
     r = requests.post(f"{API_URL}/issues", headers=HEADERS, json=payload)
     r.raise_for_status()
     return r.json()
 
 def update_issue(issue_number, status):
-    state   = "closed" if status == "Done" else "open"
-    payload = {"state": state, "labels": [status]}
+    state = 'closed' if status == 'Done' else 'open'
+    payload = {
+        'state': state,
+        'labels': ['features', status]
+    }
     r = requests.patch(f"{API_URL}/issues/{issue_number}", headers=HEADERS, json=payload)
     r.raise_for_status()
     return r.json()
+
 
 def update_issue_body(issue_number, new_body):
     r = requests.patch(f"{API_URL}/issues/{issue_number}", headers=HEADERS, json={"body": new_body})
