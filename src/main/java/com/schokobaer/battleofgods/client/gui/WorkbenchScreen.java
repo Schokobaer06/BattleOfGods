@@ -418,7 +418,7 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
                 16, 16,
                 0, 0,  // Normal state
                 16,     // xDiff between states
-                new ResourceLocation("battleofgods:textures/gui/crafting_hammer.png"),
+                new ResourceLocation("battleofgods:textures/gui/crafting_hammer/workbench.png"),
                 32, 16,
                 button -> {
                     assert minecraft != null;

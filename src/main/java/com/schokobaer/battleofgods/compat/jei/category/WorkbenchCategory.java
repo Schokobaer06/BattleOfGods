@@ -31,7 +31,7 @@ public class WorkbenchCategory implements IRecipeCategory<BattleRecipe> {
     private final IDrawable icon;
 
     public WorkbenchCategory(IGuiHelper guiHelper) {
-        this.background =  guiHelper.drawableBuilder(new ResourceLocation(BattleofgodsMod.MODID, "textures/gui/workbench.png"),
+        this.background =  guiHelper.drawableBuilder(new ResourceLocation(BattleofgodsMod.MODID, "textures/gui/crafting_station/workbench.png"),
                 8, 15, 160, 60).setTextureSize(176,166).build();
 
         this.icon = guiHelper.createDrawableIngredient(
@@ -59,11 +59,6 @@ public class WorkbenchCategory implements IRecipeCategory<BattleRecipe> {
     @Override
     public IDrawable getIcon() {
         return icon;
-    }
-
-    @Override
-    public @Nullable ResourceLocation getRegistryName(BattleRecipe recipe) {
-        return recipe.getId();
     }
 
     @Override

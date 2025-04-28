@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="381b8277-727e-4d80-9354-c3576b313f95" name="Changes" comment="JEI compat works, but not angepasst">
+    <list default="true" id="381b8277-727e-4d80-9354-c3576b313f95" name="Changes" comment="implemented jei compat full">
       <change beforePath="$PROJECT_DIR$/.gradle/8.8/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/checksums/checksums.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.8/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.8/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/executionHistory/executionHistory.lock" afterDir="false" />
@@ -13,9 +13,21 @@
       <change beforePath="$PROJECT_DIR$/.gradle/8.8/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/BattleOfGods.main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/BattleOfGods.main.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/BattleOfGods.test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/BattleOfGods.test.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/client/gui/WorkbenchScreen$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/client/gui/WorkbenchScreen$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/client/gui/WorkbenchScreen$5.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/client/gui/WorkbenchScreen.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/client/gui/WorkbenchScreen.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/world/inventory/WorkbenchMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/world/inventory/WorkbenchMenu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/battleofgods/textures/gui/crafting_hammer.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/battleofgods/textures/gui/scrollpanels/materialList.xcf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/battleofgods/textures/gui/scrollpanels/materiallist.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/battleofgods/textures/gui/scrollpanels/recipeList.xcf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/battleofgods/textures/gui/scrollpanels/recipeList2.xcf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/battleofgods/textures/gui/scrollpanels/recipelist.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/battleofgods/textures/gui/scrollpanels/recipelist.png.disabled" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/battleofgods/textures/gui/workbench.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/battleofgods/recipes/recipe_copper_broadsword.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/data/battleofgods/recipes/recipe_copper_broadsword.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/config/jei/recipe-category-sort-order.ini" beforeDir="false" afterPath="$PROJECT_DIR$/run/config/jei/recipe-category-sort-order.ini" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run/logs/2025-04-28-1.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/2025-04-28-1.log.gz" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run/logs/2025-04-28-2.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/2025-04-28-2.log.gz" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run/logs/2025-04-28-3.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/2025-04-28-3.log.gz" afterDir="false" />
@@ -28,11 +40,9 @@
       <change beforePath="$PROJECT_DIR$/run/logs/debug-5.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/debug-5.log.gz" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run/logs/debug.log" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/debug.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run/logs/latest.log" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/latest.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/options.txt" beforeDir="false" afterPath="$PROJECT_DIR$/run/options.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run/saves/New World/DIM-1/data/raids.dat" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/New World/DIM-1/data/raids.dat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run/saves/New World/DIM1/data/raids_end.dat" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/New World/DIM1/data/raids_end.dat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run/saves/New World/data/raids.dat" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/New World/data/raids.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/saves/New World/entities/r.-1.0.mca" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/New World/entities/r.-1.0.mca" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run/saves/New World/entities/r.0.0.mca" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/New World/entities/r.0.0.mca" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run/saves/New World/level.dat" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/New World/level.dat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run/saves/New World/level.dat_old" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/New World/level.dat_old" afterDir="false" />
@@ -45,9 +55,17 @@
       <change beforePath="$PROJECT_DIR$/run/saves/New World/session.lock" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/New World/session.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run/saves/New World/stats/380df991-f603-344c-a090-369bad2a924a.json" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/New World/stats/380df991-f603-344c-a090-369bad2a924a.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run/usercache.json" beforeDir="false" afterPath="$PROJECT_DIR$/run/usercache.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/client/gui/WorkbenchScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/client/gui/WorkbenchScreen.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/compat/jei/category/WorkbenchCategory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/compat/jei/category/WorkbenchCategory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/battleofgods/textures/gui/workbench.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/battleofgods/textures/gui/workbench.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/battleofgods/recipes/recipe_copper_broadsword.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/data/battleofgods/recipes/recipe_copper_broadsword.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/world/inventory/WorkbenchMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/world/inventory/WorkbenchMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/battleofgods/textures/gui/crafting_hammer.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/battleofgods/textures/gui/crafting_hammer/workbench.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/battleofgods/textures/gui/scrollpanels/materialList.xcf" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/battleofgods/textures/gui/scrollpanel/materialList.xcf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/battleofgods/textures/gui/scrollpanels/materiallist.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/battleofgods/textures/gui/scrollpanel/material_list/workbench.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/battleofgods/textures/gui/scrollpanels/recipeList.xcf" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/battleofgods/textures/gui/scrollpanel/recipeList.xcf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/battleofgods/textures/gui/scrollpanels/recipeList2.xcf" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/battleofgods/textures/gui/scrollpanel/recipeList2.xcf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/battleofgods/textures/gui/scrollpanels/recipelist.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/battleofgods/textures/gui/scrollpanel/recipe_list/workbench.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/battleofgods/textures/gui/scrollpanels/recipelist.png.disabled" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/battleofgods/textures/gui/scrollpanel/recipelist.png.disabled" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/battleofgods/textures/gui/workbench.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/battleofgods/textures/gui/crafting_station/workbench.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -116,6 +134,14 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;settings.sync&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Josef\OneDrive\Games\Minecraft Java\Mods\Eigene\Battle Of Gods\mcreator (PC)\BattleOfGods\src\main\resources\assets\battleofgods\textures\gui\crafting_hammer" />
+      <recent name="C:\Users\Josef\OneDrive\Games\Minecraft Java\Mods\Eigene\Battle Of Gods\mcreator (PC)\BattleOfGods\src\main\resources\assets\battleofgods\textures\gui\workbench" />
+      <recent name="C:\Users\Josef\OneDrive\Games\Minecraft Java\Mods\Eigene\Battle Of Gods\mcreator (PC)\BattleOfGods\src\main\resources\assets\battleofgods\textures\gui\scrollpanel\recipe_list" />
+      <recent name="C:\Users\Josef\OneDrive\Games\Minecraft Java\Mods\Eigene\Battle Of Gods\mcreator (PC)\BattleOfGods\src\main\resources\assets\battleofgods\textures\gui\scrollpanels\material_list" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -405,7 +431,31 @@
       <option name="project" value="LOCAL" />
       <updated>1745853608469</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="implemented jei compat full">
+      <option name="closed" value="true" />
+      <created>1745858518690</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1745858518690</updated>
+    </task>
+    <task id="LOCAL-00037" summary="implemented jei compat full">
+      <option name="closed" value="true" />
+      <created>1745858529056</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1745858529056</updated>
+    </task>
+    <task id="LOCAL-00038" summary="implemented jei compat full">
+      <option name="closed" value="true" />
+      <created>1745858532776</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1745858532776</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -420,7 +470,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="updated recipe button texture" />
     <MESSAGE value="materialwidgets created (not rendered)" />
     <MESSAGE value="materialwidgets are rendering" />
     <MESSAGE value="fixed Tooltip rendering Error" />
@@ -445,6 +494,7 @@
     <MESSAGE value="mark JEI compatibility as incomplete in todo list" />
     <MESSAGE value="updated gitignore and python" />
     <MESSAGE value="JEI compat works, but not angepasst" />
-    <option name="LAST_COMMIT_MESSAGE" value="JEI compat works, but not angepasst" />
+    <MESSAGE value="implemented jei compat full" />
+    <option name="LAST_COMMIT_MESSAGE" value="implemented jei compat full" />
   </component>
 </project>
