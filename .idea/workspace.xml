@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="381b8277-727e-4d80-9354-c3576b313f95" name="Changes" comment="mark JEI compatibility as complete in todo list">
-      <change beforePath="$PROJECT_DIR$/.github/workflows/sync_todo.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/sync_todo.yml" afterDir="false" />
+    <list default="true" id="381b8277-727e-4d80-9354-c3576b313f95" name="Changes" comment="mark JEI compatibility as incomplete in todo list">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/compat/jei/JEIPlugin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/compat/jei/JEIPlugin.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sync_todo_to_issues.py" beforeDir="false" afterPath="$PROJECT_DIR$/sync_todo_to_issues.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -332,7 +333,23 @@
       <option name="project" value="LOCAL" />
       <updated>1745851554771</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="Update sync_todo workflow to use custom GITHUB_TOKEN and enhance labeling.">
+      <option name="closed" value="true" />
+      <created>1745852515767</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1745852515767</updated>
+    </task>
+    <task id="LOCAL-00033" summary="mark JEI compatibility as incomplete in todo list">
+      <option name="closed" value="true" />
+      <created>1745852647494</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1745852647494</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -368,6 +385,8 @@
     <MESSAGE value="now able to change recipeGroup" />
     <MESSAGE value="add sync_todo workflow and script; update .gitignore and project files" />
     <MESSAGE value="mark JEI compatibility as complete in todo list" />
-    <option name="LAST_COMMIT_MESSAGE" value="mark JEI compatibility as complete in todo list" />
+    <MESSAGE value="Update sync_todo workflow to use custom GITHUB_TOKEN and enhance labeling." />
+    <MESSAGE value="mark JEI compatibility as incomplete in todo list" />
+    <option name="LAST_COMMIT_MESSAGE" value="mark JEI compatibility as incomplete in todo list" />
   </component>
 </project>
