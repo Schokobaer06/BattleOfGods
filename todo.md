@@ -9,7 +9,7 @@
     - [X] ImageButton Sound Fix
   - [X] Crafting
     - [X] return Air
-- [ ] JEI compat
+- [x] JEI compat
 - [ ] Attributes
   - [ ] Critical Hit
 - [ ] Melee Armor Subclass
