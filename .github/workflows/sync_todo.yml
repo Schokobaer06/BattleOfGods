@@ -11,6 +11,12 @@ jobs:
   sync:
     runs-on: ubuntu-latest
 
+    # Wichtig: env muss auf Job-Level stehen
+    env:
+      MY_GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
+      GITHUB_REPOSITORY: ${{ github.repository }}
+      # PROJECT_ID: ${{ secrets.PROJECT_ID }}   # nur wenn du Project-Integration verwendest
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -20,11 +26,13 @@ jobs:
         with:
           python-version: '3.x'
 
+      - name: Debug
+        run: |
+          # nur die Länge ausgeben – nicht den Inhalt
+          echo "MY_GITHUB_TOKEN length: ${#MY_GITHUB_TOKEN}"
+      
       - name: Install Requests
         run: pip install requests
 
-      - name: Sync TODO.md to Issues
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GITHUB_REPOSITORY: ${{ github.repository }}
+      - name: Run sync script
         run: python sync_todo_to_issues.py
