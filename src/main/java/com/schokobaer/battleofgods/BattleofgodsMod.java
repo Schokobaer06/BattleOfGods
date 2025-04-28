@@ -144,6 +144,8 @@ public class BattleofgodsMod {
         }
     }
 
+
+
     @SubscribeEvent
     public void addReloadListeners(AddReloadListenerEvent event) {
         event.addListener((ResourceManagerReloadListener) manager -> {
