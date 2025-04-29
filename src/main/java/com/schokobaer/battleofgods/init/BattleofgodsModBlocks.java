@@ -15,7 +15,7 @@ import com.schokobaer.battleofgods.BattleofgodsMod;
 
 public class BattleofgodsModBlocks {
 	public static final DeferredRegister<Block> REGISTRY = DeferredRegister.create(ForgeRegistries.BLOCKS, BattleofgodsMod.MODID);
-	public static final RegistryObject<Block> WOODEN_WORKBENCH = REGISTRY.register("wooden_workbench", () -> new WoodenWorkbenchBlock());
+	public static final RegistryObject<Block> WOODEN_WORKBENCH = REGISTRY.register("wooden_workbench", WoodenWorkbenchBlock::new);
 	// Start of user code block custom blocks
 	// End of user code block custom blocks
 }

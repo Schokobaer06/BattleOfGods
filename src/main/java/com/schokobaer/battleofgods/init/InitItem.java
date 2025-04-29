@@ -11,6 +11,9 @@ import net.minecraftforge.registries.RegistryObject;
 
 public class InitItem {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, BattleofgodsMod.MODID);
+
+    // Tier 1
+    //Melee
     public static final RegistryObject<ItemOverride> COPPER_BROADSWORD = ITEMS.register("copper_broadsword", ItemCopperBroadsword::new);
     public static final RegistryObject<ItemOverride> COPPER_SHORTSWORD = ITEMS.register("copper_shortsword", ItemCopperShortsword::new);
 }

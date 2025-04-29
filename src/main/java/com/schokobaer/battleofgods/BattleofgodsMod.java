@@ -85,6 +85,8 @@ public class BattleofgodsMod {
         InitSubClass.SUBCLASSES.register(bus);
         InitItem.ITEMS.register(bus);
 
+        InitAttributes.ATTRIBUTES.register(bus);
+
         // End of user code block mod init
         BattleofgodsModBlocks.REGISTRY.register(bus);
         BattleofgodsModItems.REGISTRY.register(bus);
@@ -98,6 +100,9 @@ public class BattleofgodsMod {
 
         addNetworkMessage(CraftPacket.class, CraftPacket::encode, CraftPacket::decode, CraftPacket::handle);
 
+
+
+        if (isDebug()) LOGGER.debug("Critical Hit Handler registered? {}", InitAttributes.CRITICAL_HIT_CHANCE.isPresent());
     }
 
     public static <T> void addNetworkMessage(Class<T> messageType, BiConsumer<T, FriendlyByteBuf> encoder, Function<FriendlyByteBuf, T> decoder, BiConsumer<T, Supplier<NetworkEvent.Context>> messageConsumer) {
