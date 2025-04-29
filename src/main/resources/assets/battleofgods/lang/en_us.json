@@ -41,11 +41,11 @@
   "attribute.battleofgods.generic.critical_hit": "Critical Hit Chance",
   "tooltip.battleofgods.critical_hit": "critical hit chance",
   "tooltip.battleofgods.damage": "damage",
-  "tooltip.battleofgods.weapon_speed_insanely_fast": "Insanely Fast Speed",
-  "tooltip.battleofgods.weapon_speed_very_fast": "Very Fast Speed",
-  "tooltip.battleofgods.weapon_speed_fast": "Fast Speed",
-  "tooltip.battleofgods.weapon_speed_average": "Average Speed",
-  "tooltip.battleofgods.weapon_speed_slow": "Slow Speed",
-  "tooltip.battleofgods.weapon_speed_very_slow": "Very Slow Speed",
-  "tooltip.battleofgods.weapon_speed_extremely_slow": "Extremely Slow Speed"
+  "tooltip.battleofgods.weapon_speed_insanely_fast": "Insanely fast speed",
+  "tooltip.battleofgods.weapon_speed_very_fast": "Very fast speed",
+  "tooltip.battleofgods.weapon_speed_fast": "Fast speed",
+  "tooltip.battleofgods.weapon_speed_average": "Average speed",
+  "tooltip.battleofgods.weapon_speed_slow": "Slow speed",
+  "tooltip.battleofgods.weapon_speed_very_slow": "Very slow speed",
+  "tooltip.battleofgods.weapon_speed_extremely_slow": "Extremely slow speed"
 }

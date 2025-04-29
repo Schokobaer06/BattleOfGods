@@ -14,6 +14,10 @@
   - [x] Critical Hit
 - [ ] Weapons Stats
   - [ ] Knockback
+  - [x] Speed
+  - [x] Damage
+- [ ] JEI Klickbare Area + Weiterleitung Prompt:
+> `wie kann ich machen, dass wenn ich in jei auf ein output item klicke, dass, wenn ich im workbenchscreen bin, dass automatisch das selectedRecipe gesetzt wird`
 - [ ] Melee Armor Subclass
 - [ ] Copper Full Set
   - [ ] Copper Bow
