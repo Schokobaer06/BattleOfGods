@@ -6,6 +6,8 @@ import net.bettercombat.utils.MathHelper;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
@@ -13,6 +15,9 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
 import java.util.Objects;
+
+import static com.schokobaer.battleofgods.BattleofgodsMod.LOGGER;
+import static com.schokobaer.battleofgods.BattleofgodsMod.isDebug;
 
 // CriticalHitHandler.java
 @Mod.EventBusSubscriber(modid = BattleofgodsMod.MODID)
@@ -25,23 +30,28 @@ public class CriticalHitHandler {
             // Critical-Hit-Chance berechnen
             //double baseCrit = InitAttributes.CRITICAL_HIT_CHANCE.get().getDefaultValue();
             try {
-                weaponCrit = (long) weapon.getAttributeModifiers(Objects.requireNonNull(player.getMainHandItem().getEquipmentSlot()))
+                weaponCrit = weapon.getAttributeModifiers(EquipmentSlot.MAINHAND)
                         .get(InitAttributes.CRITICAL_HIT_CHANCE.get())
-                        .size();
+                        .stream().mapToDouble(AttributeModifier::getAmount)
+                        .sum();
             } catch (
-                    NullPointerException e) {
+                    Exception e) {
                 // Wenn kein Attribut gefunden wird, Standardwert verwenden
                 weaponCrit = InitAttributes.CRITICAL_HIT_CHANCE.get().getDefaultValue();
             }
-            if (BattleofgodsMod.isDebug()) BattleofgodsMod.LOGGER.debug(
+            if (weaponCrit < 0) {
+                weaponCrit = InitAttributes.CRITICAL_HIT_CHANCE.get().getDefaultValue();
+            }
+            if (isDebug()) LOGGER.debug(
                     "Weapon Crit: " + weaponCrit +
                             " | Base Crit: " + InitAttributes.CRITICAL_HIT_CHANCE.get().getDefaultValue() +
-                            " | Total Crit: " + (weaponCrit + InitAttributes.CRITICAL_HIT_CHANCE.get().getDefaultValue())
+                            " | Total Crit: " + MathHelper.clamp((float) weaponCrit, 0.0F, 1.0F)
             );
             double totalCrit = MathHelper.clamp((float) weaponCrit, 0.0F, 1.0F);
 
             // Zufälliger Check
             if (player.getRandom().nextDouble() < totalCrit) {
+                if (isDebug()) LOGGER.debug("Critical Hit!");
                 // Schaden verdoppeln
                 event.setAmount(event.getAmount() * 2);
 

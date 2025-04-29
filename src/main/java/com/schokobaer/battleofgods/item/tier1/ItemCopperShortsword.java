@@ -1,5 +1,6 @@
 package com.schokobaer.battleofgods.item.tier1;
 
+import com.google.common.collect.LinkedHashMultimap;
 import com.google.common.collect.Multimap;
 import com.schokobaer.battleofgods.init.InitAttributes;
 import com.schokobaer.battleofgods.init.InitRarity;
@@ -23,12 +24,14 @@ public class ItemCopperShortsword extends Shortsword {
 
     @Override
     public Multimap<Attribute, AttributeModifier> getAttributeModifiers(EquipmentSlot slot, ItemStack stack) {
-        Multimap<Attribute, AttributeModifier> modifiers = super.getAttributeModifiers(slot, stack);
+        Multimap<Attribute, AttributeModifier> modifiers = LinkedHashMultimap.create(); // Veränderbare Multimap
+        modifiers.putAll(super.getAttributeModifiers(slot, stack)); // Basis-Modifier
+
         if (slot == EquipmentSlot.MAINHAND) {
             modifiers.put(
                     InitAttributes.CRITICAL_HIT_CHANCE.get(),
                     new AttributeModifier(
-                            UUID.fromString("1a2b3c4d-5e6f-7g8h-9i0j-1k2l3m4n5o6p"), // Feste UUID
+                            UUID.fromString("f9d64db9-c48b-459d-9105-7a817a15c763"),
                             "weapon_crit_bonus",
                             0.16,
                             AttributeModifier.Operation.ADDITION
@@ -37,5 +40,5 @@ public class ItemCopperShortsword extends Shortsword {
         }
         return modifiers;
     }
-
 }
+

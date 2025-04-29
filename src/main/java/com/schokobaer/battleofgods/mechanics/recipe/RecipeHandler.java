@@ -88,7 +88,7 @@ public class RecipeHandler {
                 } catch (Exception e) {
                     if (!(e instanceof NullPointerException))
                         BattleofgodsMod.LOGGER.error("Failed to load recipe: {}", resource, e);
-                    BattleofgodsMod.LOGGER.warn("Failed to load recipe: {}", resource);
+                    //BattleofgodsMod.LOGGER.warn("Failed to load recipe: {}", resource);
                 }
             }
 

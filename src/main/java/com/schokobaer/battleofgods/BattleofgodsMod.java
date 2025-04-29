@@ -99,10 +99,6 @@ public class BattleofgodsMod {
         bus.addListener(this::gatherData);
 
         addNetworkMessage(CraftPacket.class, CraftPacket::encode, CraftPacket::decode, CraftPacket::handle);
-
-
-
-        if (isDebug()) LOGGER.debug("Critical Hit Handler registered? {}", InitAttributes.CRITICAL_HIT_CHANCE.isPresent());
     }
 
     public static <T> void addNetworkMessage(Class<T> messageType, BiConsumer<T, FriendlyByteBuf> encoder, Function<FriendlyByteBuf, T> decoder, BiConsumer<T, Supplier<NetworkEvent.Context>> messageConsumer) {
