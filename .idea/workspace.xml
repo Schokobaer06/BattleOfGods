@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="ANALYZE_INJECTED_CODE" value="false" />
+    <option name="SCOPE_TYPE" value="3" />
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="381b8277-727e-4d80-9354-c3576b313f95" name="Changes" comment="CriticalHits werden korrekt zugeteilt">
+    <list default="true" id="381b8277-727e-4d80-9354-c3576b313f95" name="Changes" comment="CriticalHits funktionieren, tooltips + particles noch nicht">
       <change beforePath="$PROJECT_DIR$/.gradle/8.8/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/checksums/checksums.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.8/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.8/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/executionHistory/executionHistory.lock" afterDir="false" />
@@ -21,6 +25,7 @@
       <change beforePath="$PROJECT_DIR$/run/logs/debug-5.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/debug-5.log.gz" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run/logs/debug.log" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/debug.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run/logs/latest.log" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/latest.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/options.txt" beforeDir="false" afterPath="$PROJECT_DIR$/run/options.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run/saves/New World/DIM-1/data/raids.dat" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/New World/DIM-1/data/raids.dat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run/saves/New World/DIM1/data/raids_end.dat" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/New World/DIM1/data/raids_end.dat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run/saves/New World/data/raids.dat" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/New World/data/raids.dat" afterDir="false" />
@@ -103,6 +108,7 @@
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;com.github.blarc.ai.commits.intellij.plugin.settings.AppSettingsConfigurable&quot;
   }
 }</component>
@@ -122,14 +128,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1745304955408</updated>
-    </task>
-    <task id="LOCAL-00003" summary="materialwidgets created (not rendered)">
-      <option name="closed" value="true" />
-      <created>1745313523247</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1745313523247</updated>
     </task>
     <task id="LOCAL-00004" summary="materialwidgets are rendering">
       <option name="closed" value="true" />
@@ -515,7 +513,15 @@
       <option name="project" value="LOCAL" />
       <updated>1745920970472</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="CriticalHits funktionieren, tooltips + particles noch nicht">
+      <option name="closed" value="true" />
+      <created>1745925424738</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1745925424739</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -530,7 +536,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="zwischen-save before fixing WorkbenchScreen" />
     <MESSAGE value="fix of incorrect Counting" />
     <MESSAGE value="fix of highlight visual bug" />
     <MESSAGE value="fixed visual scrolling bug" />
@@ -555,6 +560,7 @@
     <MESSAGE value="." />
     <MESSAGE value="added critical Hit Attribute + Handler + Tooltip + added to copper shortsword; not tested" />
     <MESSAGE value="CriticalHits werden korrekt zugeteilt" />
-    <option name="LAST_COMMIT_MESSAGE" value="CriticalHits werden korrekt zugeteilt" />
+    <MESSAGE value="CriticalHits funktionieren, tooltips + particles noch nicht" />
+    <option name="LAST_COMMIT_MESSAGE" value="CriticalHits funktionieren, tooltips + particles noch nicht" />
   </component>
 </project>

@@ -48,18 +48,18 @@ public class CriticalHitHandler {
         double totalCritChance = cachedCritChance.getOrDefault(playerId, 0.0);
 
         if (isDebug()) {
-            LOGGER.debug("Total Crit Chance: {} Damage: {}",totalCritChance, event.getAmount());
+            LOGGER.debug("Total Crit Chance: {} Damage: {}", totalCritChance, event.getAmount());
         }
 
         if (player.getRandom().nextDouble() < totalCritChance) {
-            if (isDebug()) LOGGER.debug("Critical Hit!: {}", event.getAmount()*2);
+            if (isDebug()) LOGGER.debug("Critical Hit!: {}", event.getAmount() * 2);
             applyCriticalHitEffects(player, event);
         }
     }
 
     private static boolean shouldUpdateCache(UUID playerId, long currentTime) {
         return !cachedCritChance.containsKey(playerId) ||
-                (currentTime - lastUpdate.getOrDefault(playerId, 0L)) > 1000; // Aktualisierung alle 1 Sekunde
+                (currentTime - lastUpdate.getOrDefault(playerId, 0L)) > 500; // Aktualisierung alle 1 Sekunde
     }
 
     private static double calculateTotalCritChance(Player player) {
@@ -91,23 +91,30 @@ public class CriticalHitHandler {
     }
 
     private static void applyCriticalHitEffects(Player player, LivingHurtEvent event) {
-        event.setAmount(event.getAmount() * 2); // Schaden verdoppeln
+        // Schaden verdoppeln
+        event.setAmount(event.getAmount() * 2);
 
+        // Nur auf der Client-Seite Partikel und Sounds erzeugen
+        if (!player.level().isClientSide) {
+            return;
+        }
+
+        // Partikel erzeugen
         player.level().addParticle(
                 ParticleTypes.CRIT,
-                event.getEntity().getX(),
-                event.getEntity().getY() + 1.0,
-                event.getEntity().getZ(),
-                0, 0, 0
+                event.getEntity().getX() + player.getRandom().nextGaussian() * 0.5,
+                event.getEntity().getY() + event.getEntity().getBbHeight() / 2.0 + player.getRandom().nextGaussian() * 0.5,
+                event.getEntity().getZ() + player.getRandom().nextGaussian() * 0.5,
+                0.0, 0.0, 0.0
         );
-
+        // Sound abspielen
         player.level().playSound(
-                null,
-                player.blockPosition(),
-                SoundEvents.PLAYER_ATTACK_CRIT,
-                SoundSource.PLAYERS,
-                1.0F,
-                1.0F
+                player, // Kein spezifischer Spieler
+                player.blockPosition(), // Position des Spielers
+                SoundEvents.PLAYER_ATTACK_CRIT, // Soundtyp
+                SoundSource.PLAYERS, // Soundquelle
+                1.0F, // Lautstärke
+                1.0F // Tonhöhe
         );
     }
 }
