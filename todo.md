@@ -9,7 +9,7 @@
     - [X] ImageButton Sound Fix
   - [X] Crafting
     - [X] return Air
-- [ ] JEI compat
+- [x] JEI compat
 - [ ] Attributes
   - [ ] Critical Hit
 - [ ] Melee Armor Subclass
@@ -115,7 +115,7 @@
   - [ ] Squirrel with Hat
 - [ ] Trojan Squirrel
   - [ ] TrSq Boss Summon
-  - [ ]TrSq Boss
+  - [ ] TrSq Boss
   - [ ] TrSq Boss AI
   - [ ] TrSq Boss Treasure Bag
     - [ ] Bag

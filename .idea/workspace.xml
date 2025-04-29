@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="381b8277-727e-4d80-9354-c3576b313f95" name="Changes" comment="added JEI; have to be implemeted in Main Mod File">
-      <change beforePath="$PROJECT_DIR$/.gradle/8.8/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="381b8277-727e-4d80-9354-c3576b313f95" name="Changes" comment="." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -40,6 +37,9 @@
     &quot;accountId&quot;: &quot;59e9c4d8-fc59-4173-8cab-33daed83c36d&quot;
   }
 }</component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 2
@@ -52,21 +52,34 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Gradle.BattleOfGods [createMcpToSrg].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.C:/Users/Josef Peer/OneDrive/Games/Minecraft Java/Mods/Eigene/Battle Of Gods/mcreator (LAPTOP)/BattleOfGods [createMcpToSrg].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.C:/Users/Josef/OneDrive/Games/Minecraft Java/Mods/Eigene/Battle Of Gods/mcreator (PC)/BattleOfGods [createMcpToSrg].executor&quot;: &quot;Run&quot;,
-    &quot;JavaClassFindUsagesOptions.isFieldsUsages&quot;: &quot;true&quot;,
-    &quot;JavaClassFindUsagesOptions.isMethodsUsages&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;1.20.1__mcreator&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
+    "Gradle.BattleOfGods [createMcpToSrg].executor": "Run",
+    "Gradle.C:/Users/Josef Peer/OneDrive/Games/Minecraft Java/Mods/Eigene/Battle Of Gods/mcreator (LAPTOP)/BattleOfGods [createMcpToSrg].executor": "Run",
+    "Gradle.C:/Users/Josef/OneDrive/Games/Minecraft Java/Mods/Eigene/Battle Of Gods/mcreator (PC)/BattleOfGods [createMcpToSrg].executor": "Run",
+    "Gradle.Download Sources.executor": "Run",
+    "JavaClassFindUsagesOptions.isFieldsUsages": "true",
+    "JavaClassFindUsagesOptions.isMethodsUsages": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "1.20.1__mcreator",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "com.github.blarc.ai.commits.intellij.plugin.settings.AppSettingsConfigurable"
   }
-}</component>
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Josef\OneDrive\Games\Minecraft Java\Mods\Eigene\Battle Of Gods\mcreator (PC)\BattleOfGods\src\main\resources\assets\battleofgods\textures\gui\crafting_hammer" />
+      <recent name="C:\Users\Josef\OneDrive\Games\Minecraft Java\Mods\Eigene\Battle Of Gods\mcreator (PC)\BattleOfGods\src\main\resources\assets\battleofgods\textures\gui\workbench" />
+      <recent name="C:\Users\Josef\OneDrive\Games\Minecraft Java\Mods\Eigene\Battle Of Gods\mcreator (PC)\BattleOfGods\src\main\resources\assets\battleofgods\textures\gui\scrollpanel\recipe_list" />
+      <recent name="C:\Users\Josef\OneDrive\Games\Minecraft Java\Mods\Eigene\Battle Of Gods\mcreator (PC)\BattleOfGods\src\main\resources\assets\battleofgods\textures\gui\scrollpanels\material_list" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -308,15 +321,167 @@
       <option name="project" value="LOCAL" />
       <updated>1745826186162</updated>
     </task>
-    <task id="LOCAL-00030" summary="added JEI; have to be implemeted in Main Mod File">
+    <task id="LOCAL-00030" summary="add sync_todo workflow and script; update .gitignore and project files">
       <option name="closed" value="true" />
-      <created>1745832100039</created>
+      <created>1745851277716</created>
       <option name="number" value="00030" />
       <option name="presentableId" value="LOCAL-00030" />
       <option name="project" value="LOCAL" />
-      <updated>1745832100039</updated>
+      <updated>1745851277716</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="mark JEI compatibility as complete in todo list">
+      <option name="closed" value="true" />
+      <created>1745851554771</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1745851554771</updated>
+    </task>
+    <task id="LOCAL-00032" summary="Update sync_todo workflow to use custom GITHUB_TOKEN and enhance labeling.">
+      <option name="closed" value="true" />
+      <created>1745852515767</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1745852515767</updated>
+    </task>
+    <task id="LOCAL-00033" summary="mark JEI compatibility as incomplete in todo list">
+      <option name="closed" value="true" />
+      <created>1745852647494</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1745852647494</updated>
+    </task>
+    <task id="LOCAL-00034" summary="updated gitignore and python">
+      <option name="closed" value="true" />
+      <created>1745853230443</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1745853230443</updated>
+    </task>
+    <task id="LOCAL-00035" summary="JEI compat works, but not angepasst">
+      <option name="closed" value="true" />
+      <created>1745853608469</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1745853608469</updated>
+    </task>
+    <task id="LOCAL-00036" summary="implemented jei compat full">
+      <option name="closed" value="true" />
+      <created>1745858518690</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1745858518690</updated>
+    </task>
+    <task id="LOCAL-00037" summary="implemented jei compat full">
+      <option name="closed" value="true" />
+      <created>1745858529056</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1745858529056</updated>
+    </task>
+    <task id="LOCAL-00038" summary="implemented jei compat full">
+      <option name="closed" value="true" />
+      <created>1745858532776</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1745858532776</updated>
+    </task>
+    <task id="LOCAL-00039" summary="update textures and optimize recipe data for workbench functionality">
+      <option name="closed" value="true" />
+      <created>1745859898539</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1745859898539</updated>
+    </task>
+    <task id="LOCAL-00040" summary="Update todo list to mark JEI compatibility as complete.">
+      <option name="closed" value="true" />
+      <created>1745859936847</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1745859936847</updated>
+    </task>
+    <task id="LOCAL-00041" summary="Add method to retrieve recipes by ingredient in RecipeHandler">
+      <option name="closed" value="true" />
+      <created>1745860364828</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1745860364828</updated>
+    </task>
+    <task id="LOCAL-00042" summary="Fix formatting in todo list and update last commit message">
+      <option name="closed" value="true" />
+      <created>1745860629611</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1745860629611</updated>
+    </task>
+    <task id="LOCAL-00043" summary="Update GitHub token usage in sync scripts and fix formatting in workspace">
+      <option name="closed" value="true" />
+      <created>1745862502032</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1745862502032</updated>
+    </task>
+    <task id="LOCAL-00044" summary="Update todo list to mark JEI compatibility as complete">
+      <option name="closed" value="true" />
+      <created>1745862595208</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1745862595208</updated>
+    </task>
+    <task id="LOCAL-00045" summary="Update sync_todo.yml to allow standard token permissions and simplify script steps">
+      <option name="closed" value="true" />
+      <created>1745862767538</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1745862767538</updated>
+    </task>
+    <task id="LOCAL-00046" summary="Update sync_todo_to_issues.py to use ACTIONS_RUNTIME_TOKEN and fix todo list formatting">
+      <option name="closed" value="true" />
+      <created>1745863108452</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1745863108452</updated>
+    </task>
+    <task id="LOCAL-00047" summary=".">
+      <option name="closed" value="true" />
+      <created>1745863190141</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1745863190141</updated>
+    </task>
+    <task id="LOCAL-00048" summary=".">
+      <option name="closed" value="true" />
+      <created>1745863400182</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1745863400182</updated>
+    </task>
+    <task id="LOCAL-00049" summary=".">
+      <option name="closed" value="true" />
+      <created>1745863579292</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1745863579292</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -331,26 +496,31 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="updated recipe button texture" />
-    <MESSAGE value="materialwidgets created (not rendered)" />
-    <MESSAGE value="materialwidgets are rendering" />
-    <MESSAGE value="fixed Tooltip rendering Error" />
-    <MESSAGE value="refactor WorkbenchScreen: remove commented tooltip rendering code and add TODOs for crafting and widget positioning" />
-    <MESSAGE value="tag support &amp; correct material rendering" />
-    <MESSAGE value="Crafting works now; fixed return Air" />
-    <MESSAGE value="removed Modifiers" />
-    <MESSAGE value="updated Textures" />
     <MESSAGE value="updated Textures; materilalList not finished yet" />
     <MESSAGE value="refactor: clean up item registration and improve tooltip handling" />
     <MESSAGE value="zwischen-save before fixing WorkbenchScreen" />
     <MESSAGE value="fix of incorrect Counting" />
     <MESSAGE value="fix of highlight visual bug" />
     <MESSAGE value="fixed visual scrolling bug" />
-    <MESSAGE value="." />
     <MESSAGE value="fixed Sound Problem" />
     <MESSAGE value="added background to materialList" />
     <MESSAGE value="now able to change recipeGroup" />
-    <MESSAGE value="added JEI; have to be implemeted in Main Mod File" />
-    <option name="LAST_COMMIT_MESSAGE" value="added JEI; have to be implemeted in Main Mod File" />
+    <MESSAGE value="add sync_todo workflow and script; update .gitignore and project files" />
+    <MESSAGE value="mark JEI compatibility as complete in todo list" />
+    <MESSAGE value="Update sync_todo workflow to use custom GITHUB_TOKEN and enhance labeling." />
+    <MESSAGE value="mark JEI compatibility as incomplete in todo list" />
+    <MESSAGE value="updated gitignore and python" />
+    <MESSAGE value="JEI compat works, but not angepasst" />
+    <MESSAGE value="implemented jei compat full" />
+    <MESSAGE value="update textures and optimize recipe data for workbench functionality" />
+    <MESSAGE value="Update todo list to mark JEI compatibility as complete." />
+    <MESSAGE value="Add method to retrieve recipes by ingredient in RecipeHandler" />
+    <MESSAGE value="Fix formatting in todo list and update last commit message" />
+    <MESSAGE value="Update GitHub token usage in sync scripts and fix formatting in workspace" />
+    <MESSAGE value="Update todo list to mark JEI compatibility as complete" />
+    <MESSAGE value="Update sync_todo.yml to allow standard token permissions and simplify script steps" />
+    <MESSAGE value="Update sync_todo_to_issues.py to use ACTIONS_RUNTIME_TOKEN and fix todo list formatting" />
+    <MESSAGE value="." />
+    <option name="LAST_COMMIT_MESSAGE" value="." />
   </component>
 </project>

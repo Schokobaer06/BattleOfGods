@@ -2,15 +2,14 @@
 package com.schokobaer.battleofgods.compat.jei;
 
 import com.schokobaer.battleofgods.compat.jei.category.WorkbenchCategory;
-import com.schokobaer.battleofgods.world.inventory.WorkbenchMenu;
+import com.schokobaer.battleofgods.init.BattleofgodsModItems;
+import com.schokobaer.battleofgods.mechanics.recipe.RecipeHandler;
 import mezz.jei.api.IModPlugin;
 import mezz.jei.api.JeiPlugin;
-import mezz.jei.api.registration.IRecipeCategoryRegistration;
-import mezz.jei.api.registration.IRecipeRegistration;
+import mezz.jei.api.registration.*;
 import net.minecraft.resources.ResourceLocation;
 import com.schokobaer.battleofgods.BattleofgodsMod;
-import com.schokobaer.battleofgods.mechanics.recipe.RecipeHandler;
-import net.minecraft.client.Minecraft;
+import net.minecraft.world.item.ItemStack;
 
 @JeiPlugin
 public class JEIPlugin implements IModPlugin {
@@ -19,19 +18,27 @@ public class JEIPlugin implements IModPlugin {
         return new ResourceLocation(BattleofgodsMod.MODID, "jei_plugin");
     }
 
+    // 1. Registriere die Rezeptkategorie
     @Override
     public void registerCategories(IRecipeCategoryRegistration registration) {
         registration.addRecipeCategories(new WorkbenchCategory(registration.getJeiHelpers().getGuiHelper()));
     }
 
+    // 2. Registriere die Rezepte
     @Override
     public void registerRecipes(IRecipeRegistration registration) {
-        var level = Minecraft.getInstance().level;
-        if (level != null) {
-            registration.addRecipes(
-                    WorkbenchCategory.TYPE,
-                    RecipeHandler.getRecipesByGroup("workbench")
-            );
-        }
+        registration.addRecipes(
+                WorkbenchCategory.TYPE,
+                RecipeHandler.getRecipesByGroup("workbench")
+        );
+    }
+
+    // 3. Registriere den Workbench-Block als Katalysator
+    @Override
+    public void registerRecipeCatalysts(IRecipeCatalystRegistration registration) {
+        registration.addRecipeCatalyst(
+                new ItemStack(BattleofgodsModItems.WOODEN_WORKBENCH.get()), // Ersetze mit deinem Block
+                WorkbenchCategory.TYPE
+        );
     }
 }

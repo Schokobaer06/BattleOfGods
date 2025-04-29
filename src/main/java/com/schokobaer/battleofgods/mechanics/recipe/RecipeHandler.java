@@ -195,6 +195,16 @@ public class RecipeHandler {
                 .collect(Collectors.toList());
     }
 
+    public static List<RecipeHandler.BattleRecipe> getRecipesByIngredient(Ingredient ingredient) {
+        return getAllRecipes().stream()
+                .filter(recipe -> recipe.getInputs().stream()
+                        .anyMatch(entry -> entry.ingredient().equals(ingredient)))
+                .sorted(RECIPE_COMPARATOR)
+                .collect(Collectors.toList());
+    }
+
+
+
     public static class BattleRecipe implements Recipe<Container> {
         public static final Serializer SERIALIZER = new Serializer();
         private final ResourceLocation id;

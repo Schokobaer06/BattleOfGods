@@ -24,9 +24,9 @@ public class WorkbenchMenu extends AbstractContainerMenu implements Supplier<Map
     private RecipeHandler.BattleRecipe selectedRecipe;
     private ContainerLevelAccess access;
     private String recipeGroup;
-    private ResourceLocation backgroundLocation = new ResourceLocation("battleofgods:textures/gui/workbench.png");
-    private ResourceLocation recipeListLocation = new ResourceLocation("battleofgods:textures/gui/scrollpanels/recipelist.png");
-    private ResourceLocation materialListLocation = new ResourceLocation("battleofgods:textures/gui/scrollpanels/materiallist.png");
+    private ResourceLocation backgroundLocation = new ResourceLocation("battleofgods:textures/gui/crafting_station/workbench.png");
+    private ResourceLocation recipeListLocation = new ResourceLocation("battleofgods:textures/gui/scrollpanel/recipe_list/workbench.png");
+    private ResourceLocation materialListLocation = new ResourceLocation("battleofgods:textures/gui/scrollpanel/material_list/workbench.png");
 
     public WorkbenchMenu(int containerId, Inventory inv) {
         super(InitMenu.WORKBENCH.get(), containerId);
