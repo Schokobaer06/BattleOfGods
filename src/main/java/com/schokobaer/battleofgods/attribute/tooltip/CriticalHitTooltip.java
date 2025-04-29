@@ -15,33 +15,40 @@ import net.minecraftforge.event.entity.player.ItemTooltipEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
-/*
+import java.util.Objects;
+
+
 // CritTooltip.java
 @Mod.EventBusSubscriber(modid = BattleofgodsMod.MODID)
 
 public class CriticalHitTooltip {
+
     @SubscribeEvent
     public static void onItemTooltip(ItemTooltipEvent event) {
         ItemStack stack = event.getItemStack();
+        // Standardwert (4%)
+        double DEFAULT_CRIT_CHANCE = InitAttributes.CRITICAL_HIT_CHANCE.get().getDefaultValue();
 
-        double weaponCrit;
         if (stack.getItem() instanceof Item) {
+            // Entferne das Standard-Tooltip für Critical Hit Chance
+            event.getToolTip().removeIf(component ->
+                    component.getString().contains((CharSequence) Component.translatable("attribute.battleofgods.generic.critical_hit")));
+
+            double weaponCrit;
             try {
-                weaponCrit = stack.getAttributeModifiers(EquipmentSlot.MAINHAND)
+                weaponCrit = stack.getAttributeModifiers(Objects.requireNonNull(stack.getEquipmentSlot()))
                         .get(InitAttributes.CRITICAL_HIT_CHANCE.get())
                         .stream()
                         .mapToDouble(AttributeModifier::getAmount)
                         .sum();
-            } catch (NullPointerException e) {
-                // Wenn kein Attribut gefunden wird, Standardwert verwenden
-                weaponCrit = InitAttributes.CRITICAL_HIT_CHANCE.get().getDefaultValue();
+            } catch (Exception e) {
+                weaponCrit = DEFAULT_CRIT_CHANCE;
             }
-                double bonus = weaponCrit - InitAttributes.CRITICAL_HIT_CHANCE.get().getDefaultValue();
 
-            if (BattleofgodsMod.isDebug())
-                BattleofgodsMod.LOGGER.debug("Tooltip Weapon Crit: {} | Base Crit: {} | Total Crit: {} | Bonus: {}",
-                        weaponCrit, InitAttributes.CRITICAL_HIT_CHANCE.get().getDefaultValue(),
-                        MathHelper.clamp((float) weaponCrit, 0.0F, 1.0F), bonus);
+            //double defaultCrit = InitAttributes.CRITICAL_HIT_CHANCE.get().getDefaultValue();
+            //double totalCrit = weaponCrit;
+            double bonus = weaponCrit - DEFAULT_CRIT_CHANCE;
+
             if (bonus > 0) {
                 event.getToolTip().add(Component.literal("+")
                         .append(Component.literal(String.format("%.0f%%", bonus * 100)))
@@ -51,4 +58,3 @@ public class CriticalHitTooltip {
         }
     }
 }
-*/

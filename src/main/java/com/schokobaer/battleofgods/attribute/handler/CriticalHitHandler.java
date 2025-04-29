@@ -2,7 +2,6 @@ package com.schokobaer.battleofgods.attribute.handler;
 
 import com.schokobaer.battleofgods.BattleofgodsMod;
 import com.schokobaer.battleofgods.init.InitAttributes;
-import net.bettercombat.utils.MathHelper;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
@@ -14,66 +13,101 @@ import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
-import java.util.Objects;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.UUID;
 
 import static com.schokobaer.battleofgods.BattleofgodsMod.LOGGER;
 import static com.schokobaer.battleofgods.BattleofgodsMod.isDebug;
 
-// CriticalHitHandler.java
 @Mod.EventBusSubscriber(modid = BattleofgodsMod.MODID)
 public class CriticalHitHandler {
+    private static Double DEFAULT_CRIT_CHANCE = 0.0; // Standardwert (4%)
+    private static final Map<UUID, Double> cachedCritChance = new HashMap<>();
+    private static final Map<UUID, Long> lastUpdate = new HashMap<>();
+
     @SubscribeEvent
     public static void onLivingHurt(LivingHurtEvent event) {
-        if (event.getSource().getEntity() instanceof Player player) {
-            ItemStack weapon = player.getMainHandItem();
-            double weaponCrit;
-            // Critical-Hit-Chance berechnen
-            //double baseCrit = InitAttributes.CRITICAL_HIT_CHANCE.get().getDefaultValue();
-            try {
-                weaponCrit = weapon.getAttributeModifiers(EquipmentSlot.MAINHAND)
-                        .get(InitAttributes.CRITICAL_HIT_CHANCE.get())
-                        .stream().mapToDouble(AttributeModifier::getAmount)
-                        .sum();
-            } catch (
-                    Exception e) {
-                // Wenn kein Attribut gefunden wird, Standardwert verwenden
-                weaponCrit = InitAttributes.CRITICAL_HIT_CHANCE.get().getDefaultValue();
-            }
-            if (weaponCrit < 0) {
-                weaponCrit = InitAttributes.CRITICAL_HIT_CHANCE.get().getDefaultValue();
-            }
-            if (isDebug()) LOGGER.debug(
-                    "Weapon Crit: " + weaponCrit +
-                            " | Base Crit: " + InitAttributes.CRITICAL_HIT_CHANCE.get().getDefaultValue() +
-                            " | Total Crit: " + MathHelper.clamp((float) weaponCrit, 0.0F, 1.0F)
-            );
-            double totalCrit = MathHelper.clamp((float) weaponCrit, 0.0F, 1.0F);
+        DEFAULT_CRIT_CHANCE = InitAttributes.CRITICAL_HIT_CHANCE.get().getDefaultValue();
 
-            // Zufälliger Check
-            if (player.getRandom().nextDouble() < totalCrit) {
-                if (isDebug()) LOGGER.debug("Critical Hit!");
-                // Schaden verdoppeln
-                event.setAmount(event.getAmount() * 2);
 
-                // Partikel-Effekt
-                player.level().addParticle(
-                        ParticleTypes.CRIT,
-                        event.getEntity().getX(),
-                        event.getEntity().getY() + 1.0,
-                        event.getEntity().getZ(),
-                        0, 0, 0
-                );
-
-                // Sound
-                player.level().playSound(
-                        null,
-                        player.blockPosition(),
-                        SoundEvents.PLAYER_ATTACK_CRIT,
-                        SoundSource.PLAYERS,
-                        1.0F,
-                        1.0F
-                );
-            }
+        if (!(event.getSource().getEntity() instanceof Player player)) {
+            return;
         }
+
+        UUID playerId = player.getUUID();
+        long currentTime = System.currentTimeMillis();
+
+        // Aktualisiere Cache nur, wenn nötig
+        if (shouldUpdateCache(playerId, currentTime)) {
+            double totalCritChance = calculateTotalCritChance(player);
+            cachedCritChance.put(playerId, totalCritChance);
+            lastUpdate.put(playerId, currentTime);
+        }
+
+        double totalCritChance = cachedCritChance.getOrDefault(playerId, 0.0);
+
+        if (isDebug()) {
+            LOGGER.debug("Total Crit Chance: {} Damage: {}",totalCritChance, event.getAmount());
+        }
+
+        if (player.getRandom().nextDouble() < totalCritChance) {
+            if (isDebug()) LOGGER.debug("Critical Hit!: {}", event.getAmount()*2);
+            applyCriticalHitEffects(player, event);
+        }
+    }
+
+    private static boolean shouldUpdateCache(UUID playerId, long currentTime) {
+        return !cachedCritChance.containsKey(playerId) ||
+                (currentTime - lastUpdate.getOrDefault(playerId, 0L)) > 1000; // Aktualisierung alle 1 Sekunde
+    }
+
+    private static double calculateTotalCritChance(Player player) {
+        ItemStack mainHandItem = player.getMainHandItem();
+        ItemStack offHandItem = player.getOffhandItem();
+
+        double mainHandCrit = getCritChance(mainHandItem, EquipmentSlot.MAINHAND);
+        double offHandCrit = getCritChance(offHandItem, EquipmentSlot.OFFHAND);
+
+        return Math.min(mainHandCrit + offHandCrit, 1.0);
+    }
+
+    private static double getCritChance(ItemStack item, EquipmentSlot slot) {
+        if (item.isEmpty()) {
+            return 0.0;
+        }
+
+        double critChance = 0.0;
+        var modifiers = item.getAttributeModifiers(slot).get(InitAttributes.CRITICAL_HIT_CHANCE.get());
+        if (modifiers.isEmpty()) {
+            return DEFAULT_CRIT_CHANCE; // Standardwert, wenn das Attribut nicht existiert
+        }
+
+        for (AttributeModifier modifier : modifiers) {
+            critChance += modifier.getAmount();
+        }
+
+        return critChance;
+    }
+
+    private static void applyCriticalHitEffects(Player player, LivingHurtEvent event) {
+        event.setAmount(event.getAmount() * 2); // Schaden verdoppeln
+
+        player.level().addParticle(
+                ParticleTypes.CRIT,
+                event.getEntity().getX(),
+                event.getEntity().getY() + 1.0,
+                event.getEntity().getZ(),
+                0, 0, 0
+        );
+
+        player.level().playSound(
+                null,
+                player.blockPosition(),
+                SoundEvents.PLAYER_ATTACK_CRIT,
+                SoundSource.PLAYERS,
+                1.0F,
+                1.0F
+        );
     }
 }
