@@ -10,8 +10,8 @@
   - [X] Crafting
     - [X] return Air
 - [x] JEI compat
-- [ ] Attributes
-  - [ ] Critical Hit
+- [x] Attributes
+  - [x] Critical Hit
 - [ ] Melee Armor Subclass
 - [ ] Copper Full Set
   - [ ] Copper Bow

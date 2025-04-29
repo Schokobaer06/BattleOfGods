@@ -3,6 +3,7 @@ package com.schokobaer.battleofgods.attribute.handler;
 import com.schokobaer.battleofgods.BattleofgodsMod;
 import com.schokobaer.battleofgods.init.InitAttributes;
 import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -91,30 +92,33 @@ public class CriticalHitHandler {
     }
 
     private static void applyCriticalHitEffects(Player player, LivingHurtEvent event) {
-        // Schaden verdoppeln
+        // 1. Schaden verdoppeln
         event.setAmount(event.getAmount() * 2);
 
-        // Nur auf der Client-Seite Partikel und Sounds erzeugen
-        if (!player.level().isClientSide) {
-            return;
-        }
+        // 2. Effekte nur auf dem Server auslösen
+        if (player.level() instanceof ServerLevel serverLevel) {
+            // 3. Partikel an alle Clients senden
+            serverLevel.sendParticles(
+                    ParticleTypes.CRIT,
+                    event.getEntity().getX(),
+                    event.getEntity().getY() + event.getEntity().getBbHeight() * 0.75,
+                    event.getEntity().getZ(),
+                    20,
+                    0.3, 0.5, 0.3,
+                    0.8
+            );
 
-        // Partikel erzeugen
-        player.level().addParticle(
-                ParticleTypes.CRIT,
-                event.getEntity().getX() + player.getRandom().nextGaussian() * 0.5,
-                event.getEntity().getY() + event.getEntity().getBbHeight() / 2.0 + player.getRandom().nextGaussian() * 0.5,
-                event.getEntity().getZ() + player.getRandom().nextGaussian() * 0.5,
-                0.0, 0.0, 0.0
-        );
-        // Sound abspielen
-        player.level().playSound(
-                player, // Kein spezifischer Spieler
-                player.blockPosition(), // Position des Spielers
-                SoundEvents.PLAYER_ATTACK_CRIT, // Soundtyp
-                SoundSource.PLAYERS, // Soundquelle
-                1.0F, // Lautstärke
-                1.0F // Tonhöhe
-        );
+            // Für lauteren Sound:
+            serverLevel.playSound(
+                    null,
+                    event.getEntity().getX(),
+                    event.getEntity().getY(),
+                    event.getEntity().getZ(),
+                    SoundEvents.PLAYER_ATTACK_CRIT,
+                    SoundSource.PLAYERS,
+                    1.5F, // Lautstärke erhöht
+                    0.9F + player.getRandom().nextFloat() * 0.2F // Zufällige Tonhöhe
+            );
+        }
     }
 }
