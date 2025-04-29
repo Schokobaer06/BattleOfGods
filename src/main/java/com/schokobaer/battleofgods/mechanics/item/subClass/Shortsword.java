@@ -1,16 +1,23 @@
 package com.schokobaer.battleofgods.mechanics.item.subClass;
 
+import com.schokobaer.battleofgods.BattleofgodsMod;
 import com.schokobaer.battleofgods.init.InitMainClass;
 import com.schokobaer.battleofgods.init.InitSubClass;
 import com.schokobaer.battleofgods.mechanics.item.AbstractSubClass;
 import com.schokobaer.battleofgods.mechanics.item.override.ItemOverride;
 import com.schokobaer.battleofgods.mechanics.item.override.SwordItemOverride;
+import net.minecraft.ChatFormatting;
+import net.minecraft.network.chat.Component;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Tier;
+import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.level.Level;
 import net.minecraftforge.registries.RegistryObject;
 import org.jetbrains.annotations.NotNull;
+
+import java.util.List;
 
 
 public class Shortsword extends SwordItemOverride {
@@ -87,6 +94,24 @@ public class Shortsword extends SwordItemOverride {
     @Override
     public boolean hasCraftingRemainingItem(ItemStack stack) {
         return super.hasCraftingRemainingItem(stack);
+    }
+
+    @Override
+    public void appendHoverText(ItemStack itemstack, Level level, List<Component> tooltip, TooltipFlag flag) {
+        super.appendHoverText(itemstack, level, tooltip, flag);
+
+        for (int i = 0; i < tooltip.size(); i++)
+            if (tooltip.get(i).getString().contains(Component.translatable("tooltip.battleofgods.damage").getString())) {
+                if (itemstack.getItem() instanceof SwordItemOverride swordItem) {
+                    BattleofgodsMod.LOGGER.debug("Tooltip contains damage");
+                    float damage = swordItem.getDamage()+1;
+                    String damageText = (damage % 1 == 0) ? String.valueOf((int) damage) : String.valueOf(damage);
+                    tooltip.set(i,
+                            Component.literal(damageText + " true " + this.getSubClassMethods().getMainClass().getName() + " ")
+                                    .append(Component.translatable("tooltip.battleofgods.damage"))
+                                    .withStyle(ChatFormatting.DARK_GREEN));
+                }
+            }
     }
 
 }

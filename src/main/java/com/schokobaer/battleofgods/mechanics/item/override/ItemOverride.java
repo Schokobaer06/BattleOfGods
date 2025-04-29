@@ -16,8 +16,8 @@ import java.util.List;
 
 public class ItemOverride extends net.minecraft.world.item.Item {
     private final AbstractSubClass subClass;
-    public ItemOverride(ItemOverride.Properties p_41383_, AbstractSubClass subClass) {
-        super(p_41383_);
+    public ItemOverride(ItemOverride.Properties properties, AbstractSubClass subClass) {
+        super(properties);
         this.subClass = subClass;
     }
 

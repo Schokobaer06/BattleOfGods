@@ -28,3 +28,4 @@ forge*changelog.txt
 .venv
 workspace.xml
 /build/
+/.gradle/

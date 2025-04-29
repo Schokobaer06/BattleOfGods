@@ -1,12 +1,18 @@
 package com.schokobaer.battleofgods.mechanics.item;
 
 
+import com.schokobaer.battleofgods.BattleofgodsMod;
 import com.schokobaer.battleofgods.mechanics.item.override.ItemOverride;
+import com.schokobaer.battleofgods.mechanics.item.override.SwordItemOverride;
 import com.schokobaer.battleofgods.mechanics.rarity.Rarity;
 import com.schokobaer.battleofgods.mechanics.tier.Tier;
+import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.Style;
 import net.minecraft.tags.TagKey;
+import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.ai.attributes.AttributeModifier;
+import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
@@ -75,7 +81,45 @@ public abstract class AbstractSubClass implements SubClassMethods {
                                 .withColor(this.getRarity().getColor())
                                 .withItalic(true)
         ));
+        //Damage
+        if (itemstack.getItem() instanceof SwordItemOverride swordItem) {
+            float damage = swordItem.getDamage()+1;
+            String damageText = (damage % 1 == 0) ? String.valueOf((int) damage) : String.valueOf(damage);
+            tooltip.add(Component.literal(damageText + " " + this.getMainClass().getName() + " ")
+                    .append(Component.translatable("tooltip.battleofgods.damage"))
+                    .withStyle(ChatFormatting.DARK_GREEN));
+        }
+        //Speed
+        // Get the attack speed attribute (default to 4.0 if missing)
+        double attackSpeed = itemstack.getAttributeModifiers(EquipmentSlot.MAINHAND)
+                .get(Attributes.ATTACK_SPEED).stream()
+                .mapToDouble(AttributeModifier::getAmount)
+                .sum() + 4; // +4.0 because attack speed is offset in Minecraft
+
+        //Convert to Terraria useTime
+        String speedText = getSpeed(attackSpeed);
+
+        tooltip.add(Component.translatable("tooltip.battleofgods." + speedText).withStyle(ChatFormatting.DARK_GREEN));
+
+        //Knockback
     }
+
+    private static @NotNull String getSpeed(double attackSpeed) {
+        int useTime = (int) Math.round(20.0 / attackSpeed);
+
+        // Determine speed description
+        String speedText;
+        if (useTime <= 5) speedText = "weapon_speed_insanely_fast";
+        else if (useTime <= 10) speedText = "weapon_speed_very_fast";
+        else if (useTime <= 15) speedText = "weapon_speed_fast";
+        else if (useTime <= 20) speedText = "weapon_speed_average";
+        else if (useTime <= 25) speedText = "weapon_speed_slow";
+        else if (useTime <= 30) speedText = "weapon_speed_very_slow";
+        else speedText = "weapon_speed_extremely_slow";
+        return speedText;
+    }
+
+
     @Override
     public boolean hasCraftingRemainingItem(ItemStack stack) {
         return true;

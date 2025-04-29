@@ -39,5 +39,13 @@
   "mainclass.battleofgods.tool": "tool",
   "gui.battleofgods.tooltip.craft_hammer": "Craft Item",
   "attribute.battleofgods.generic.critical_hit": "Critical Hit Chance",
-  "tooltip.battleofgods.critical_hit": "critical hit chance"
+  "tooltip.battleofgods.critical_hit": "critical hit chance",
+  "tooltip.battleofgods.damage": "damage",
+  "tooltip.battleofgods.weapon_speed_insanely_fast": "Insanely Fast",
+  "tooltip.battleofgods.weapon_speed_very_fast": "Very Fast",
+  "tooltip.battleofgods.weapon_speed_fast": "Fast",
+  "tooltip.battleofgods.weapon_speed_average": "Average",
+  "tooltip.battleofgods.weapon_speed_slow": "Slow",
+  "tooltip.battleofgods.weapon_speed_very_slow": "Very Slow",
+  "tooltip.battleofgods.weapon_speed_extremely_slow": "Extremely Slow"
 }

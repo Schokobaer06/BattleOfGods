@@ -8,7 +8,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="381b8277-727e-4d80-9354-c3576b313f95" name="Changes" comment="deleted BattleOfGods mcreator registry files">
+    <list default="true" id="381b8277-727e-4d80-9354-c3576b313f95" name="Changes" comment="changed Rarity getARGBColor to getColor">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.8/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/checksums/checksums.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.8/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.8/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/executionHistory/executionHistory.lock" afterDir="false" />
@@ -18,12 +19,22 @@
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/item/CopperShortswordItem.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/mechanics/item/AbstractSubClass.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/mechanics/item/AbstractSubClass.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/mechanics/item/deprecated/ItemSubClass.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/mechanics/item/override/ItemOverride.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/mechanics/item/override/ItemOverride.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/mechanics/rarity/Rarity.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/mechanics/rarity/Rarity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/mechanics/rarity/RarityColorHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/mechanics/rarity/RarityColorHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/mechanics/item/override/TieredItemOverride.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/mechanics/item/override/TieredItemOverride.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/mechanics/item/subClass/Broadsword$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/mechanics/item/subClass/Broadsword$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/mechanics/item/subClass/Broadsword$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/mechanics/item/subClass/Broadsword$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/mechanics/item/subClass/Broadsword$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/mechanics/item/subClass/Broadsword$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/mechanics/item/subClass/Broadsword$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/mechanics/item/subClass/Broadsword$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/mechanics/item/subClass/Broadsword$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/mechanics/item/subClass/Broadsword$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/mechanics/item/subClass/Broadsword.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/mechanics/item/subClass/Broadsword.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/mechanics/item/subClass/Shortsword$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/mechanics/item/subClass/Shortsword$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/mechanics/item/subClass/Shortsword$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/mechanics/item/subClass/Shortsword$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/mechanics/item/subClass/Shortsword$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/mechanics/item/subClass/Shortsword$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/mechanics/item/subClass/Shortsword$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/mechanics/item/subClass/Shortsword$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/mechanics/item/subClass/Shortsword$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/mechanics/item/subClass/Shortsword$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/mechanics/item/subClass/Shortsword.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/schokobaer/battleofgods/mechanics/item/subClass/Shortsword.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/battleofgods/lang/en_us.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/assets/battleofgods/lang/en_us.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run/logs/debug-1.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/debug-1.log.gz" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run/logs/debug-2.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/debug-2.log.gz" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run/logs/debug-3.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/debug-3.log.gz" afterDir="false" />
@@ -43,13 +54,15 @@
       <change beforePath="$PROJECT_DIR$/run/saves/New World/region/r.-1.0.mca" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/New World/region/r.-1.0.mca" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run/saves/New World/region/r.0.-1.mca" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/New World/region/r.0.-1.mca" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run/saves/New World/region/r.0.0.mca" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/New World/region/r.0.0.mca" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/saves/New World/session.lock" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/New World/session.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run/saves/New World/stats/380df991-f603-344c-a090-369bad2a924a.json" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/New World/stats/380df991-f603-344c-a090-369bad2a924a.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run/usercache.json" beforeDir="false" afterPath="$PROJECT_DIR$/run/usercache.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/init/InitRarity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/init/InitRarity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/mechanics/item/AbstractSubClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/mechanics/item/AbstractSubClass.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/mechanics/item/override/ItemOverride.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/mechanics/item/override/ItemOverride.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/mechanics/rarity/Rarity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/mechanics/rarity/Rarity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/mechanics/rarity/RarityColorHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/mechanics/rarity/RarityColorHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/mechanics/item/override/TieredItemOverride.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/mechanics/item/override/TieredItemOverride.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/mechanics/item/subClass/Broadsword.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/mechanics/item/subClass/Broadsword.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/mechanics/item/subClass/Shortsword.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/mechanics/item/subClass/Shortsword.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/battleofgods/lang/en_us.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/battleofgods/lang/en_us.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -135,14 +148,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1745304955408</updated>
-    </task>
-    <task id="LOCAL-00006" summary="fixed Tooltip rendering Error">
-      <option name="closed" value="true" />
-      <created>1745331215163</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1745331215163</updated>
     </task>
     <task id="LOCAL-00007" summary=".">
       <option name="closed" value="true" />
@@ -528,7 +533,15 @@
       <option name="project" value="LOCAL" />
       <updated>1745954886880</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="changed Rarity getARGBColor to getColor">
+      <option name="closed" value="true" />
+      <created>1745956594878</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1745956594878</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -543,7 +556,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fixed visual scrolling bug" />
     <MESSAGE value="fixed Sound Problem" />
     <MESSAGE value="added background to materialList" />
     <MESSAGE value="now able to change recipeGroup" />
@@ -568,6 +580,7 @@
     <MESSAGE value="CriticalHits funktionieren, tooltips + particles noch nicht" />
     <MESSAGE value="CriticalHits + tooltips funktionieren,particles + sound noch nicht" />
     <MESSAGE value="deleted BattleOfGods mcreator registry files" />
-    <option name="LAST_COMMIT_MESSAGE" value="deleted BattleOfGods mcreator registry files" />
+    <MESSAGE value="changed Rarity getARGBColor to getColor" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed Rarity getARGBColor to getColor" />
   </component>
 </project>
