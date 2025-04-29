@@ -58,10 +58,10 @@ public class BattleofgodsMod {
     private static int messageID = 0;
 
 
-    private static final Boolean debug = true;
+    //private static final Boolean debug = true;
 
     public static Boolean isDebug() {
-        return debug;
+        return true;
     }
 
     public BattleofgodsMod() {
@@ -87,11 +87,11 @@ public class BattleofgodsMod {
 
         InitAttributes.ATTRIBUTES.register(bus);
 
+        InitBlocks.BLOCKS.register(bus);
+
+        InitTabs.CREATIVE_MODE_TABS.register(bus);
+
         // End of user code block mod init
-        BattleofgodsModBlocks.REGISTRY.register(bus);
-        BattleofgodsModItems.REGISTRY.register(bus);
-        BattleofgodsModTabs.REGISTRY.register(bus);
-        BattleofgodsModMenus.REGISTRY.register(bus);
 
         InitMenu.MENUS.register(bus);
         bus.addListener(BattleofgodsMod::registerRecipeTypes);

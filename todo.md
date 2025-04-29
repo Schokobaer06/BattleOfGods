@@ -12,6 +12,8 @@
 - [x] JEI compat
 - [x] Attributes
   - [x] Critical Hit
+- [ ] Weapons Stats
+  - [ ] Knockback
 - [ ] Melee Armor Subclass
 - [ ] Copper Full Set
   - [ ] Copper Bow
