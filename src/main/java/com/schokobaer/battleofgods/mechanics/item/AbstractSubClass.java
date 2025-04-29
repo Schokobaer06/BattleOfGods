@@ -62,17 +62,17 @@ public abstract class AbstractSubClass implements SubClassMethods {
 
     @Override
     public Component getName(Component name) {
-        return name.copy().withStyle(Style.EMPTY.withColor(this.getRarity().getArgbColor()));
+        return name.copy().withStyle(Style.EMPTY.withColor(this.getRarity().getColor()));
     }
 
     @OnlyIn(Dist.CLIENT)
     @Override
     public void appendHoverText(ItemStack itemstack, Level level, List<net.minecraft.network.chat.Component> tooltip, TooltipFlag flag) {
-        //tooltip.add(Component.literal(this.getRarity().getDisplayName()).setStyle(Style.EMPTY.withBold(true).withColor(this.getRarity().getArgbColor()).withItalic(true)));
+        //Rarity
         tooltip.add(Component.translatable("rarity.battleofgods." +
                 this.getRarity().getDisplayName().toLowerCase()).setStyle(
                         Style.EMPTY.withBold(true)
-                                .withColor(this.getRarity().getArgbColor())
+                                .withColor(this.getRarity().getColor())
                                 .withItalic(true)
         ));
     }

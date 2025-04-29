@@ -5,8 +5,6 @@ import com.schokobaer.battleofgods.BattleofgodsMod;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
 
-import javax.annotation.Nullable;
-
 /**
  * Class for defining the rarity of an item
  * The rarity is used to determine the color of the item
@@ -97,7 +95,7 @@ public class Rarity  {
     /**
      * @return Either the hex code or the ResourceLocation
      */
-    public Either<Integer, ResourceLocation> getColor(){
+    public Either<Integer, ResourceLocation> getEitherIntegerResourceLocation(){
         if (this.color == null) {
             BattleofgodsMod.LOGGER.error("Error: color is null in Rarity object");
             return Either.left(0xFF000000); // Standardfarbe zurückgeben, wenn null
@@ -109,7 +107,7 @@ public class Rarity  {
      * Get the color of the rarity
      * @return Either the static hex color or animated hex color of the given ResourceLocation
      */
-    public Integer getArgbColor(){
+    public Integer getColor(){
         return RarityColorHandler.getColor(this);
     }
 

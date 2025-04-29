@@ -3,6 +3,7 @@ package com.schokobaer.battleofgods.mechanics.item.override;
 
 import com.schokobaer.battleofgods.mechanics.item.AbstractSubClass;
 import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.Style;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
@@ -25,12 +26,12 @@ public class ItemOverride extends net.minecraft.world.item.Item {
     }
     @Override
     public Component getName(ItemStack stack) {
-        //Component name = super.getName(stack);
         return getSubClassMethods().getName(super.getName(stack));
     }
     @OnlyIn(Dist.CLIENT)
     @Override
     public void appendHoverText(ItemStack itemstack, Level level, List<Component> tooltip, TooltipFlag flag) {
+        super.appendHoverText(itemstack, level, tooltip, flag);
         getSubClassMethods().appendHoverText(itemstack, level, tooltip, flag);
     }
 

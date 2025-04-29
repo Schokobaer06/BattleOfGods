@@ -33,7 +33,7 @@ public class RarityColorHandler {
     }
 
     public static Integer getColor(Rarity rarity) {
-        return rarity.getColor().map(
+        return rarity.getEitherIntegerResourceLocation().map(
                 hex -> hex,
                 textureLocation -> {
                     try {
