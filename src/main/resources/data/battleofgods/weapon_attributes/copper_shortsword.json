@@ -1,3 +1,4 @@
 {
-    "parent": "battleofgods:shortsword"
+    "parent": "battleofgods:shortsword",
+    "attack_range": 1
 }

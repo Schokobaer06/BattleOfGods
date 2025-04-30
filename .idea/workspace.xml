@@ -9,6 +9,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="381b8277-727e-4d80-9354-c3576b313f95" name="Changes" comment="update .gitignore and todo; add invincibility frames task">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/item/tier1/ItemCopperBroadsword.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/item/tier1/ItemCopperBroadsword.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/item/tier1/ItemCopperShortsword.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/item/tier1/ItemCopperShortsword.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/data/battleofgods/recipes/recipe_copper_broadsword.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/data/battleofgods/recipes/recipe_copper_broadsword.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/data/battleofgods/weapon_attributes/copper_broadsword.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/data/battleofgods/weapon_attributes/copper_broadsword.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/data/battleofgods/weapon_attributes/copper_shortsword.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/data/battleofgods/weapon_attributes/copper_shortsword.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/todo.md" beforeDir="false" afterPath="$PROJECT_DIR$/todo.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -95,14 +101,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1745304955408</updated>
-    </task>
-    <task id="LOCAL-00009" summary="tag support &amp; correct material rendering">
-      <option name="closed" value="true" />
-      <created>1745485745849</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1745485745850</updated>
     </task>
     <task id="LOCAL-00010" summary="Crafting works now; fixed return Air">
       <option name="closed" value="true" />
@@ -488,7 +486,15 @@
       <option name="project" value="LOCAL" />
       <updated>1745996618353</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="update .gitignore and todo; add invincibility frames task">
+      <option name="closed" value="true" />
+      <created>1745997553709</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1745997553709</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

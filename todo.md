@@ -114,6 +114,7 @@
   - [ ] Wooden Whistle [Bard]
   - [ ] Harmonica [Bard]
 - [ ] Invincibility Frames
+- [ ] Defense
 - [ ] Animals
   - [ ] Squirrel
 - [ ] NPCS
