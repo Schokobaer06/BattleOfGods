@@ -19,6 +19,7 @@
   },
   "minecraft:adventure/kill_all_mobs": {
     "criteria": {
+      "minecraft:vindicator": "2025-04-30 13:04:35 +0200",
       "minecraft:slime": "2025-02-02 14:25:54 +0100"
     },
     "done": false
@@ -524,6 +525,12 @@
   "minecraft:recipes/decorations/chest": {
     "criteria": {
       "has_lots_of_items": "2025-04-24 12:49:23 +0200"
+    },
+    "done": true
+  },
+  "minecraft:adventure/voluntary_exile": {
+    "criteria": {
+      "voluntary_exile": "2025-04-30 13:04:34 +0200"
     },
     "done": true
   },

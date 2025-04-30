@@ -12,6 +12,7 @@ import net.minecraft.tags.ItemTags;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
+import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
 
@@ -34,6 +35,15 @@ public class ItemCopperShortsword extends Shortsword {
                             UUID.fromString("f9d64db9-c48b-459d-9105-7a817a15c763"),
                             "weapon_crit_bonus",
                             0.16,
+                            AttributeModifier.Operation.ADDITION
+                    )
+            );
+            modifiers.put(
+                    Attributes.ATTACK_KNOCKBACK,
+                    new AttributeModifier(
+                            UUID.fromString("123e4567-e89b-12d3-a456-426614174000"), // Eindeutige UUID
+                            "weapon_knockback_bonus",
+                            1.0, // Knockback-Wert
                             AttributeModifier.Operation.ADDITION
                     )
             );

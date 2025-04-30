@@ -47,5 +47,14 @@
   "tooltip.battleofgods.weapon_speed_average": "Average speed",
   "tooltip.battleofgods.weapon_speed_slow": "Slow speed",
   "tooltip.battleofgods.weapon_speed_very_slow": "Very slow speed",
-  "tooltip.battleofgods.weapon_speed_extremely_slow": "Extremely slow speed"
+  "tooltip.battleofgods.weapon_speed_extremely_slow": "Extremely slow speed",
+  "tooltip.battleofgods.weapon_knockback_no_knockback": "No knockback",
+  "tooltip.battleofgods.weapon_knockback_extremely_weak": "Extremely weak knockback",
+  "tooltip.battleofgods.weapon_knockback_very_weak": "Very weak knockback",
+  "tooltip.battleofgods.weapon_knockback_weak": "Weak knockback",
+  "tooltip.battleofgods.weapon_knockback_average": "Average knockback",
+  "tooltip.battleofgods.weapon_knockback_strong": "Strong knockback",
+  "tooltip.battleofgods.weapon_knockback_very_strong": "Very strong knockback",
+  "tooltip.battleofgods.weapon_knockback_extremely_strong": "Extremely strong knockback",
+  "tooltip.battleofgods.weapon_knockback_insanely_strong": "Insanely strong knockback"
 }

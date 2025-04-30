@@ -1,7 +1,6 @@
 package com.schokobaer.battleofgods.mechanics.item;
 
 
-import com.schokobaer.battleofgods.BattleofgodsMod;
 import com.schokobaer.battleofgods.mechanics.item.override.ItemOverride;
 import com.schokobaer.battleofgods.mechanics.item.override.SwordItemOverride;
 import com.schokobaer.battleofgods.mechanics.rarity.Rarity;
@@ -102,7 +101,34 @@ public abstract class AbstractSubClass implements SubClassMethods {
         tooltip.add(Component.translatable("tooltip.battleofgods." + speedText).withStyle(ChatFormatting.DARK_GREEN));
 
         //Knockback
+        // Get attack knockback attribute (default to 0 if missing)
+        double mcKnockback = itemstack.getAttributeModifiers(EquipmentSlot.MAINHAND)
+                .get(Attributes.ATTACK_KNOCKBACK).stream()
+                .mapToDouble(AttributeModifier::getAmount)
+                .sum();
 
+        // Convert to Terraria Knockback
+        String kbText = getKnockback(mcKnockback);
+
+        tooltip.add(Component.translatable("tooltip.battleofgods." + kbText).withStyle(ChatFormatting.DARK_GREEN));
+
+    }
+
+    private static @NotNull String getKnockback(double mcKnockback) {
+        double knockback = (mcKnockback * 3.5) + 0.5;
+
+        // Determine knockback description
+        String kbText;
+        if (knockback <= 1.0) kbText = "weapon_knockback_no_knockback";
+        else if (knockback <= 2.0) kbText = "weapon_knockback_extremely_weak";
+        else if (knockback <= 3.0) kbText = "weapon_knockback_very_weak";
+        else if (knockback <= 4.5) kbText = "weapon_knockback_weak";
+        else if (knockback <= 6.0) kbText = "weapon_knockback_average";
+        else if (knockback <= 7.5) kbText = "weapon_knockback_strong";
+        else if (knockback <= 9.0) kbText = "weapon_knockback_very_strong";
+        else if (knockback <= 10.5) kbText = "weapon_knockback_extremely_strong";
+        else kbText = "weapon_knockback_insanely_strong";
+        return kbText;
     }
 
     private static @NotNull String getSpeed(double attackSpeed) {

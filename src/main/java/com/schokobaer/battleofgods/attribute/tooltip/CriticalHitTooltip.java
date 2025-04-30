@@ -28,9 +28,7 @@ public class CriticalHitTooltip {
     @SubscribeEvent
     public static void onItemTooltip(ItemTooltipEvent event) {
         ItemStack stack = event.getItemStack();
-        event.getToolTip().removeIf(component -> component.getString().contains(
-                Component.translatable("attribute.battleofgods.generic.critical_hit").getString()
-        ));
+
         if (!stack.isEmpty() && stack.getAttributeModifiers(EquipmentSlot.MAINHAND).containsKey(InitAttributes.CRITICAL_HIT_CHANCE.get())) {
             long currentTime = System.currentTimeMillis();
             long lastUpdateTime = lastUpdateTimes.getOrDefault(stack, 0L);
