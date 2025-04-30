@@ -89,5 +89,8 @@ public class WorkbenchCategory implements IRecipeCategory<BattleRecipe> {
         else
             builder.addSlot(RecipeIngredientRole.OUTPUT, 120, 19)
                 .addItemStack(recipe.getOutput());
+
+
+        builder.moveRecipeTransferButton(120, 45);
     }
 }

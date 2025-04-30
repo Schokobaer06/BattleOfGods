@@ -11,7 +11,6 @@ import com.schokobaer.battleofgods.mechanics.tag.RarityTagProvider;
 import com.schokobaer.battleofgods.mechanics.tag.SubClassTagProvider;
 import com.schokobaer.battleofgods.mechanics.tag.TierTagProvider;
 import com.schokobaer.battleofgods.mechanics.tier.Tier;
-import com.schokobaer.battleofgods.network.packet.SelectedRecipePacket;
 import net.minecraft.core.Registry;
 import net.minecraft.data.DataProvider;
 import net.minecraft.network.FriendlyByteBuf;
@@ -55,12 +54,6 @@ public class BattleofgodsMod {
     // End of user code block mod methods
     private static final String PROTOCOL_VERSION = "1";
     public static final SimpleChannel PACKET_HANDLER = NetworkRegistry.newSimpleChannel(new ResourceLocation(MODID, MODID), () -> PROTOCOL_VERSION, PROTOCOL_VERSION::equals, PROTOCOL_VERSION::equals);
-    public static final SimpleChannel CHANNEL = NetworkRegistry.ChannelBuilder
-            .named(new ResourceLocation(MODID, "main"))
-            .networkProtocolVersion(() -> "1.0")
-            .clientAcceptedVersions(s -> true)
-            .serverAcceptedVersions(s -> true)
-            .simpleChannel();
     private static final Collection<AbstractMap.SimpleEntry<Runnable, Integer>> workQueue = new ConcurrentLinkedQueue<>();
     private static int messageID = 0;
 
@@ -112,13 +105,6 @@ public class BattleofgodsMod {
         if (isDebug())
             LOGGER.debug("Registering network message: {}", messageType.getName());
         PACKET_HANDLER.registerMessage(messageID, messageType, encoder, decoder, messageConsumer);
-        CHANNEL.registerMessage(
-                0, // Packet-ID
-                SelectedRecipePacket.class,
-                SelectedRecipePacket::encode,
-                SelectedRecipePacket::decode,
-                SelectedRecipePacket::handle
-        );
         messageID++;
     }
 
