@@ -172,12 +172,12 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
                 // Buttons prüfen
                 for (RecipeButton btn : children()) {
 
-                    btn.isFocused = false;
+                    //btn.isFocused = false;
                     if (mouseX >= btn.getX() &&
                             mouseX <= btn.getX() + btn.getWidth() &&
                             mouseY >= btn.getY() &&
                             mouseY <= btn.getY() + btn.getHeight()) {
-                        btn.isFocused = true;
+                        //btn.isFocused = true;
                         btn.mouseClicked(mouseX,mouseY,button);
                     }
 
@@ -244,15 +244,24 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
                 RenderSystem.disableBlend();
             }
         };
-        // Craft-Button
 
+        if (menu.getSelectedRecipe() !=null) {
+            recipeList.children().forEach(
+                    btn -> {
+                        if (btn instanceof RecipeButton button) {
+                            button.isFocused = button.getRecipe().getId().equals(menu.getSelectedRecipe().getId());
+                        }
+                    });
+            updateMaterialDisplay();
+        }
         addRenderableWidget(recipeList);
     }
 
     private void selectRecipe(RecipeHandler.BattleRecipe recipe) {
         menu.setSelectedRecipe(recipe);
+        if (debug) BattleofgodsMod.LOGGER.debug("WorkbenchScreen - selectRecipe has been called with recipe {}", recipe.getId());
         recipeList.children().forEach(
-        btn -> {
+                btn -> {
             if (btn instanceof RecipeButton button) {
                 button.isFocused = button.getRecipe().getId().equals(recipe.getId());
             }
