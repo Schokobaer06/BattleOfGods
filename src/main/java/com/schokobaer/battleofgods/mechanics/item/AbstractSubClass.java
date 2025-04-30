@@ -102,6 +102,7 @@ public abstract class AbstractSubClass implements SubClassMethods {
         tooltip.add(Component.translatable("tooltip.battleofgods." + speedText).withStyle(ChatFormatting.DARK_GREEN));
 
         //Knockback
+
     }
 
     private static @NotNull String getSpeed(double attackSpeed) {

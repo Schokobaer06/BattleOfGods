@@ -113,6 +113,7 @@
   - [ ] Tambourine [Bard]
   - [ ] Wooden Whistle [Bard]
   - [ ] Harmonica [Bard]
+- [ ] Invincibility Frames
 - [ ] Animals
   - [ ] Squirrel
 - [ ] NPCS
@@ -127,3 +128,6 @@
     - [ ] Bag
     - [ ] Drops
       - [ ] Squirrel Squire Staff
+- [ ] Logo
+- [ ] Mod Icon
+- [ ] Custom Main Menu
