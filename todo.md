@@ -12,8 +12,8 @@
 - [x] JEI compat
 - [x] Attributes
   - [x] Critical Hit
-- [ ] Weapons Stats
-  - [ ] Knockback
+- [x] Weapons Stats
+  - [x] Knockback
   - [x] Speed
   - [x] Damage
 - [ ] JEI Klickbare Area + Weiterleitung Prompt:
@@ -121,6 +121,12 @@
   - [ ] Guide
   - [ ] Merchant
   - [ ] Squirrel with Hat
+- [ ] Boss
+  - [ ] Events
+    - [ ] BossAliveEvent
+    - [ ] BossSpawnEvent
+  - [ ] Boss AI
+  - [ ] Boss Entity Subclass
 - [ ] Trojan Squirrel
   - [ ] TrSq Boss Summon
   - [ ] TrSq Boss
