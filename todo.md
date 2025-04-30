@@ -156,6 +156,16 @@ Ingot
 
 
 ### Mechanics
+#### Tags
+> c:player_workstations
+> minecraft:swords
+> armors/boots, leggings,helmet, chestplates
+> mainClass, Tier, Rarity, subClass (subclass nested)
+> ingots + nested
+> items + nested
+> ore_rates + nested
+> ores + nested
+>
 #### Rarity
 | <div align="center">**Rarity**</div> |  |  |  |  |
 |---|---|---|---|---|
