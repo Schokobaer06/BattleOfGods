@@ -165,7 +165,8 @@ Ingot
 > items + nested
 > ore_rates + nested
 > ores + nested
->
+> bosses
+> 
 #### Rarity
 | <div align="center">**Rarity**</div> |  |  |  |  |
 |---|---|---|---|---|
