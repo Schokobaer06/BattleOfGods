@@ -103,7 +103,6 @@ public class Shortsword extends SwordItemOverride {
         for (int i = 0; i < tooltip.size(); i++)
             if (tooltip.get(i).getString().contains(Component.translatable("tooltip.battleofgods.damage").getString())) {
                 if (itemstack.getItem() instanceof SwordItemOverride swordItem) {
-                    BattleofgodsMod.LOGGER.debug("Tooltip contains damage");
                     float damage = swordItem.getDamage()+1;
                     String damageText = (damage % 1 == 0) ? String.valueOf((int) damage) : String.valueOf(damage);
                     tooltip.set(i,
