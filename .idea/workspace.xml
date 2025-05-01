@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="55347841-98cd-4f86-9608-4bb232a43c91" name="Changes" comment="new gradle installation">
+    <list default="true" id="55347841-98cd-4f86-9608-4bb232a43c91" name="Changes" comment="Add wooden armor model and update workspace configuration">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/test models/armor/wooden/wooden_armor.bbmodel" beforeDir="false" afterPath="$PROJECT_DIR$/models/test models/armor/wooden/wooden_armor.bbmodel" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,12 +76,21 @@
       <option name="project" value="LOCAL" />
       <updated>1746112411411</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Add wooden armor model and update workspace configuration">
+      <option name="closed" value="true" />
+      <created>1746116407242</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1746116407242</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Update workspace configuration and clean up task messages" />
     <MESSAGE value="new gradle installation" />
-    <option name="LAST_COMMIT_MESSAGE" value="new gradle installation" />
+    <MESSAGE value="Add wooden armor model and update workspace configuration" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add wooden armor model and update workspace configuration" />
   </component>
 </project>
