@@ -1,33 +1,10 @@
 {
   "mod_elements": [
     {
-      "name": "Tier1",
-      "type": "tab",
-      "compiles": true,
-      "locked_code": true,
-      "registry_name": "tier_1",
-      "metadata": {
-        "files": []
-      }
-    },
-    {
-      "name": "CopperShortsword",
-      "type": "tool",
-      "compiles": true,
-      "locked_code": true,
-      "registry_name": "copper_shortsword",
-      "metadata": {
-        "files": [
-          "src/main/resources/assets/battleofgods/models/item/copper_shortsword.json",
-          "src/main/java/com/schokobaer/battleofgods/item/CopperShortswordItem.java"
-        ]
-      }
-    },
-    {
       "name": "CopperBroadsword",
       "type": "tool",
-      "compiles": true,
-      "locked_code": true,
+      "compiles": false,
+      "locked_code": false,
       "registry_name": "copper_broadsword",
       "metadata": {
         "files": [
@@ -89,14 +66,29 @@
           "src/main/java/com/schokobaer/battleofgods/world/inventory/TestGuiMenu.java"
         ]
       }
+    },
+    {
+      "name": "ArmorTest",
+      "type": "armor",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "armor_test",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/battleofgods/models/item/armor_test_helmet.json",
+          "src/main/resources/assets/battleofgods/models/item/armor_test_leggings.json",
+          "src/main/java/com/schokobaer/battleofgods/item/ArmorTestItem.java",
+          "src/main/resources/assets/battleofgods/models/item/armor_test_chestplate.json",
+          "src/main/resources/assets/battleofgods/models/item/armor_test_boots.json"
+        ]
+      }
     }
   ],
   "variable_elements": [],
   "sound_elements": [],
   "tag_elements": {
     "ITEMS:minecraft:swords": [
-      "~CUSTOM:CopperBroadsword",
-      "~CUSTOM:CopperShortsword"
+      "~CUSTOM:CopperBroadsword"
     ]
   },
   "tab_element_order": {},
@@ -105,11 +97,13 @@
       "item.battleofgods.item_tier_1": "Tier 1",
       "gui.battleofgods.test_gui.label_test_text": "test_text",
       "gui.battleofgods.test_gui.button_test_button": "test_button",
-      "item_group.battleofgods.tier_1": "Tier 1",
+      "item.battleofgods.armor_test_leggings": "Test Leggings",
       "gui.battleofgods.test_gui.button_test_button_undecorated": "test_button_undecorated",
-      "item.battleofgods.copper_shortsword": "Copper Shortsword",
       "item.battleofgods.copper_short_sword": "Copper Short Sword",
+      "item.battleofgods.armor_test_chestplate": "Test Chestplate",
       "block.battleofgods.wooden_workbench": "Workbench",
+      "item.battleofgods.armor_test_helmet": "Test Helmet",
+      "item.battleofgods.armor_test_boots": "Test Boots",
       "gui.battleofgods.test_gui.tooltip_test_tooltip": "test_tooltip",
       "item.battleofgods.copper_broadsword.description_1": "",
       "item.battleofgods.copper_broadsword.description_0": "True Melee",
