@@ -8,10 +8,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="381b8277-727e-4d80-9354-c3576b313f95" name="Changes" comment="jei funktioniert">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/battleofgods/weapon_attributes/copper_shortsword.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/data/battleofgods/weapon_attributes/copper_shortsword.json" afterDir="false" />
-    </list>
+    <list default="true" id="381b8277-727e-4d80-9354-c3576b313f95" name="Changes" comment="Update .gitignore and clean up copper shortsword JSON formatting" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -96,14 +93,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1745304955408</updated>
-    </task>
-    <task id="LOCAL-00013" summary=".">
-      <option name="closed" value="true" />
-      <created>1745506619513</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1745506619513</updated>
     </task>
     <task id="LOCAL-00014" summary=".">
       <option name="closed" value="true" />
@@ -489,7 +478,15 @@
       <option name="project" value="LOCAL" />
       <updated>1746052754986</updated>
     </task>
-    <option name="localTasksCounter" value="62" />
+    <task id="LOCAL-00062" summary="Update .gitignore and clean up copper shortsword JSON formatting">
+      <option name="closed" value="true" />
+      <created>1746111873660</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1746111873660</updated>
+    </task>
+    <option name="localTasksCounter" value="63" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -504,7 +501,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Update sync_todo workflow to use custom GITHUB_TOKEN and enhance labeling." />
     <MESSAGE value="mark JEI compatibility as incomplete in todo list" />
     <MESSAGE value="updated gitignore and python" />
     <MESSAGE value="JEI compat works, but not angepasst" />
@@ -529,6 +525,7 @@
     <MESSAGE value="Update copper weapon attributes and crafting recipe" />
     <MESSAGE value="removed debug logging from damage tooltip in Broadsword and Shortsword" />
     <MESSAGE value="jei funktioniert" />
-    <option name="LAST_COMMIT_MESSAGE" value="jei funktioniert" />
+    <MESSAGE value="Update .gitignore and clean up copper shortsword JSON formatting" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update .gitignore and clean up copper shortsword JSON formatting" />
   </component>
 </project>
