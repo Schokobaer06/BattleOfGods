@@ -1,11 +1,10 @@
-package com.schokobaer.battleofgods.mechanics.tag;
+package com.schokobaer.battleofgods.tag;
 
 import com.schokobaer.battleofgods.BattleofgodsMod;
 import com.schokobaer.battleofgods.init.InitItem;
 import com.schokobaer.battleofgods.init.InitMainClass;
-import com.schokobaer.battleofgods.init.InitSubClass;
-import com.schokobaer.battleofgods.mechanics.item.MainClass;
-import com.schokobaer.battleofgods.mechanics.item.override.ItemOverride;
+import com.schokobaer.battleofgods.subClass.MainClass;
+import com.schokobaer.battleofgods.override.ItemOverride;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.Registry;
 import net.minecraft.data.PackOutput;

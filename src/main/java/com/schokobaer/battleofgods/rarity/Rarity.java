@@ -1,4 +1,4 @@
-package com.schokobaer.battleofgods.mechanics.rarity;
+package com.schokobaer.battleofgods.rarity;
 
 import com.mojang.datafixers.util.Either;
 import com.schokobaer.battleofgods.BattleofgodsMod;

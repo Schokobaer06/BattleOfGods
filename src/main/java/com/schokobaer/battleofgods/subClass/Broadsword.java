@@ -1,15 +1,13 @@
-package com.schokobaer.battleofgods.mechanics.item.subClass;
+package com.schokobaer.battleofgods.subClass;
 
-import com.schokobaer.battleofgods.BattleofgodsMod;
 import com.schokobaer.battleofgods.init.InitMainClass;
 import com.schokobaer.battleofgods.init.InitSubClass;
-import com.schokobaer.battleofgods.mechanics.item.AbstractSubClass;
-import com.schokobaer.battleofgods.mechanics.item.override.ItemOverride;
-import com.schokobaer.battleofgods.mechanics.item.override.SwordItemOverride;
+import com.schokobaer.battleofgods.override.ItemOverride;
+import com.schokobaer.battleofgods.override.SwordItemOverride;
+import com.schokobaer.battleofgods.rarity.Rarity;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.tags.TagKey;
-import net.minecraft.world.entity.ambient.Bat;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.TooltipFlag;
@@ -22,7 +20,7 @@ import java.util.List;
 
 
 public class Broadsword extends SwordItemOverride {
-    public Broadsword(float attackDamageBonus, int enchantmentValue, Ingredient repairMaterial, int attackDamage, float attackSpeed, Properties properties, RegistryObject<com.schokobaer.battleofgods.mechanics.rarity.Rarity> rarity, RegistryObject<com.schokobaer.battleofgods.mechanics.tier.Tier> gameTier) {
+    public Broadsword(float attackDamageBonus, int enchantmentValue, Ingredient repairMaterial, int attackDamage, float attackSpeed, Properties properties, RegistryObject<Rarity> rarity, RegistryObject<com.schokobaer.battleofgods.tier.Tier> gameTier) {
         super(new Tier() {
             @Override
             public int getUses() {
@@ -55,7 +53,7 @@ public class Broadsword extends SwordItemOverride {
             }
         }, attackDamage-1, attackSpeed-4, properties, new AbstractSubClass(InitMainClass.MELEE, rarity, gameTier, InitSubClass.BROADSWORD) {});
     }
-    public Broadsword(Tier tier, int attackDamage, float attackSpeed, Properties properties, RegistryObject<com.schokobaer.battleofgods.mechanics.rarity.Rarity> rarity, RegistryObject<com.schokobaer.battleofgods.mechanics.tier.Tier> gameTier) {
+    public Broadsword(Tier tier, int attackDamage, float attackSpeed, Properties properties, RegistryObject<Rarity> rarity, RegistryObject<com.schokobaer.battleofgods.tier.Tier> gameTier) {
         super(tier, attackDamage, attackSpeed, properties, new AbstractSubClass(InitMainClass.MELEE, rarity, gameTier, InitSubClass.BROADSWORD) {});}
 
     public Broadsword(TagKey<ItemOverride> tag){

@@ -1,10 +1,10 @@
-package com.schokobaer.battleofgods.mechanics.tag;
+package com.schokobaer.battleofgods.tag;
 
 import com.schokobaer.battleofgods.BattleofgodsMod;
 import com.schokobaer.battleofgods.init.InitItem;
 import com.schokobaer.battleofgods.init.InitRarity;
-import com.schokobaer.battleofgods.mechanics.item.override.ItemOverride;
-import com.schokobaer.battleofgods.mechanics.rarity.Rarity;
+import com.schokobaer.battleofgods.override.ItemOverride;
+import com.schokobaer.battleofgods.rarity.Rarity;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.Registry;
 import net.minecraft.data.PackOutput;

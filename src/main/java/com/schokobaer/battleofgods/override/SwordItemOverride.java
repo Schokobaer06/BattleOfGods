@@ -1,9 +1,9 @@
-package com.schokobaer.battleofgods.mechanics.item.override;
+package com.schokobaer.battleofgods.override;
 
 
 import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.Multimap;
-import com.schokobaer.battleofgods.mechanics.item.AbstractSubClass;
+import com.schokobaer.battleofgods.subClass.AbstractSubClass;
 import net.minecraft.core.BlockPos;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.entity.EquipmentSlot;

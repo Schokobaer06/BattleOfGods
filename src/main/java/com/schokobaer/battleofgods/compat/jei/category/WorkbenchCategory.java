@@ -16,7 +16,7 @@ import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import com.schokobaer.battleofgods.BattleofgodsMod;
-import com.schokobaer.battleofgods.mechanics.recipe.RecipeHandler.BattleRecipe;
+import com.schokobaer.battleofgods.recipe.RecipeHandler.BattleRecipe;
 
 public class WorkbenchCategory implements IRecipeCategory<BattleRecipe> {
     public static final RecipeType<BattleRecipe> TYPE = RecipeType.create(

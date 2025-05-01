@@ -1,9 +1,8 @@
-package com.schokobaer.battleofgods.mechanics.item.override;
+package com.schokobaer.battleofgods.override;
 
 
-import com.schokobaer.battleofgods.mechanics.item.AbstractSubClass;
+import com.schokobaer.battleofgods.subClass.AbstractSubClass;
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.Style;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;

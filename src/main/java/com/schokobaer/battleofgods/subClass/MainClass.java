@@ -1,4 +1,4 @@
-package com.schokobaer.battleofgods.mechanics.item;
+package com.schokobaer.battleofgods.subClass;
 
 import net.minecraft.tags.TagKey;
 

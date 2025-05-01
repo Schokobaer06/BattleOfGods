@@ -1,4 +1,4 @@
-package com.schokobaer.battleofgods.mechanics.recipe;
+package com.schokobaer.battleofgods.recipe;
 
 import com.schokobaer.battleofgods.BattleofgodsMod;
 import com.schokobaer.battleofgods.world.inventory.WorkbenchMenu;

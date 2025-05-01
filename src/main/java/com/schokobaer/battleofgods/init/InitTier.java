@@ -1,14 +1,14 @@
 package com.schokobaer.battleofgods.init;
 
 import com.schokobaer.battleofgods.BattleofgodsMod;
-import com.schokobaer.battleofgods.mechanics.tier.Tier;
+import com.schokobaer.battleofgods.tier.Tier;
 import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
 
-import static com.schokobaer.battleofgods.mechanics.tag.TagCreator.createTierTag;
+import static com.schokobaer.battleofgods.tag.TagCreator.createTierTag;
 
 public class InitTier {
     public static final ResourceKey<Registry<Tier>> TIER_KEY =

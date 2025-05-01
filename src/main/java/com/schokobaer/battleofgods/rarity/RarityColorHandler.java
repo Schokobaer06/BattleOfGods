@@ -1,4 +1,4 @@
-package com.schokobaer.battleofgods.mechanics.rarity;
+package com.schokobaer.battleofgods.rarity;
 
 import com.mojang.blaze3d.platform.NativeImage;
 import com.schokobaer.battleofgods.BattleofgodsMod;

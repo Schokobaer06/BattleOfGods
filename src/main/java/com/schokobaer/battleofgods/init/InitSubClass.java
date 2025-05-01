@@ -1,13 +1,10 @@
 package com.schokobaer.battleofgods.init;
 
 import com.schokobaer.battleofgods.BattleofgodsMod;
-import com.schokobaer.battleofgods.mechanics.item.override.ItemOverride;
-import com.schokobaer.battleofgods.mechanics.item.subClass.Broadsword;
-import com.schokobaer.battleofgods.mechanics.item.subClass.Shortsword;
-import com.schokobaer.battleofgods.mechanics.tag.TagCreator;
-import net.minecraft.core.Registry;
-import net.minecraft.resources.ResourceKey;
-import net.minecraft.resources.ResourceLocation;
+import com.schokobaer.battleofgods.override.ItemOverride;
+import com.schokobaer.battleofgods.subClass.Broadsword;
+import com.schokobaer.battleofgods.subClass.Shortsword;
+import com.schokobaer.battleofgods.tag.TagCreator;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;

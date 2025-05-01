@@ -4,7 +4,7 @@ package com.schokobaer.battleofgods.compat.jei;
 import com.schokobaer.battleofgods.compat.jei.category.WorkbenchCategory;
 import com.schokobaer.battleofgods.handler.WorkbenchRecipeTransferHandler;
 import com.schokobaer.battleofgods.init.InitBlocks;
-import com.schokobaer.battleofgods.mechanics.recipe.RecipeHandler;
+import com.schokobaer.battleofgods.recipe.RecipeHandler;
 import mezz.jei.api.IModPlugin;
 import mezz.jei.api.JeiPlugin;
 import mezz.jei.api.recipe.RecipeType;

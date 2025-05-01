@@ -1,11 +1,10 @@
-package com.schokobaer.battleofgods.mechanics.item.subClass;
+package com.schokobaer.battleofgods.subClass;
 
-import com.schokobaer.battleofgods.BattleofgodsMod;
 import com.schokobaer.battleofgods.init.InitMainClass;
 import com.schokobaer.battleofgods.init.InitSubClass;
-import com.schokobaer.battleofgods.mechanics.item.AbstractSubClass;
-import com.schokobaer.battleofgods.mechanics.item.override.ItemOverride;
-import com.schokobaer.battleofgods.mechanics.item.override.SwordItemOverride;
+import com.schokobaer.battleofgods.override.ItemOverride;
+import com.schokobaer.battleofgods.override.SwordItemOverride;
+import com.schokobaer.battleofgods.rarity.Rarity;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.tags.TagKey;
@@ -21,7 +20,7 @@ import java.util.List;
 
 
 public class Shortsword extends SwordItemOverride {
-    public Shortsword(float attackDamageBonus, int enchantmentValue, Ingredient repairMaterial, int attackDamage, float attackSpeed, Properties properties, RegistryObject<com.schokobaer.battleofgods.mechanics.rarity.Rarity> rarity, RegistryObject<com.schokobaer.battleofgods.mechanics.tier.Tier> gameTier) {
+    public Shortsword(float attackDamageBonus, int enchantmentValue, Ingredient repairMaterial, int attackDamage, float attackSpeed, Properties properties, RegistryObject<Rarity> rarity, RegistryObject<com.schokobaer.battleofgods.tier.Tier> gameTier) {
         super(new Tier() {
             @Override
             public int getUses() {
@@ -54,7 +53,7 @@ public class Shortsword extends SwordItemOverride {
             }
         }, attackDamage-1, attackSpeed-4, properties, new AbstractSubClass(InitMainClass.MELEE, rarity, gameTier, InitSubClass.SHORTSWORD) {});
     }
-    public Shortsword(Tier tier, int attackDamage, float attackSpeed, Properties properties, RegistryObject<com.schokobaer.battleofgods.mechanics.rarity.Rarity> rarity, RegistryObject<com.schokobaer.battleofgods.mechanics.tier.Tier> gameTier) {
+    public Shortsword(Tier tier, int attackDamage, float attackSpeed, Properties properties, RegistryObject<Rarity> rarity, RegistryObject<com.schokobaer.battleofgods.tier.Tier> gameTier) {
         super(tier, attackDamage, attackSpeed, properties, new AbstractSubClass(InitMainClass.MELEE, rarity, gameTier, InitSubClass.SHORTSWORD) {});}
 
     public Shortsword(TagKey<ItemOverride> tag){

@@ -1,4 +1,4 @@
-package com.schokobaer.battleofgods.mechanics.tier;
+package com.schokobaer.battleofgods.tier;
 
 import net.minecraft.tags.TagKey;
 

@@ -1,12 +1,12 @@
-package com.schokobaer.battleofgods.mechanics.tag;// ModItemTagsProvider.java
+package com.schokobaer.battleofgods.tag;// ModItemTagsProvider.java
 
 
 
 import com.schokobaer.battleofgods.init.*;
-import com.schokobaer.battleofgods.mechanics.item.MainClass;
-import com.schokobaer.battleofgods.mechanics.item.override.ItemOverride;
-import com.schokobaer.battleofgods.mechanics.rarity.Rarity;
-import com.schokobaer.battleofgods.mechanics.tier.Tier;
+import com.schokobaer.battleofgods.subClass.MainClass;
+import com.schokobaer.battleofgods.override.ItemOverride;
+import com.schokobaer.battleofgods.rarity.Rarity;
+import com.schokobaer.battleofgods.tier.Tier;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.Registry;
 import net.minecraft.data.PackOutput;

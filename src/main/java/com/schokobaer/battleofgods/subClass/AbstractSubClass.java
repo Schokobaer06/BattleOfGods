@@ -1,10 +1,10 @@
-package com.schokobaer.battleofgods.mechanics.item;
+package com.schokobaer.battleofgods.subClass;
 
 
-import com.schokobaer.battleofgods.mechanics.item.override.ItemOverride;
-import com.schokobaer.battleofgods.mechanics.item.override.SwordItemOverride;
-import com.schokobaer.battleofgods.mechanics.rarity.Rarity;
-import com.schokobaer.battleofgods.mechanics.tier.Tier;
+import com.schokobaer.battleofgods.override.ItemOverride;
+import com.schokobaer.battleofgods.override.SwordItemOverride;
+import com.schokobaer.battleofgods.rarity.Rarity;
+import com.schokobaer.battleofgods.tier.Tier;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.Style;
