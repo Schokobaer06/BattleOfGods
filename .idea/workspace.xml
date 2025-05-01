@@ -1,14 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="AnalysisUIOptions">
-    <option name="ANALYZE_INJECTED_CODE" value="false" />
-    <option name="SCOPE_TYPE" value="3" />
-  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="381b8277-727e-4d80-9354-c3576b313f95" name="Changes" comment="Update .gitignore and clean up copper shortsword JSON formatting" />
+    <list default="true" id="55347841-98cd-4f86-9608-4bb232a43c91" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.gradle/8.8/checksums/checksums-Josefs-LAPTOP.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.8/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.8/checksums/md5-checksums-Josefs-LAPTOP.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.8/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/checksums/md5-checksums.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.8/checksums/sha1-checksums-Josefs-LAPTOP.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.8/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/checksums/sha1-checksums.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.8/executionHistory/executionHistory-Josefs-LAPTOP.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.8/executionHistory/executionHistory-Josefs-LAPTOP.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.8/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.8/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.8/expanded/expanded.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.8/fileHashes/fileHashes-Josefs-LAPTOP.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.8/fileHashes/fileHashes-Josefs-LAPTOP.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.8/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.8/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.8/fileHashes/resourceHashesCache-Josefs-LAPTOP.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.8/fileHashes/resourceHashesCache.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup-Josefs-LAPTOP.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles-Josefs-LAPTOP.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/file-system-Josefs-LAPTOP.probe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/discord.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/discord.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/BattleOfGods.main.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/BattleOfGods.test.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,13 +48,6 @@
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
     </projectState>
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-      </list>
-    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -41,491 +64,35 @@
     &quot;accountId&quot;: &quot;59e9c4d8-fc59-4173-8cab-33daed83c36d&quot;
   }
 }</component>
-  <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
-  </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 2
 }</component>
-  <component name="ProjectId" id="2w4doKBONpxxJLhW2WZwMCDOFga" />
-  <component name="ProjectLevelVcsManager">
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
+  <component name="ProjectId" id="2wV1hnyecRVAo8DSD7SSrzmszXb" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
-    &quot;Gradle.BattleOfGods [createMcpToSrg].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.C:/Users/Josef Peer/OneDrive/Games/Minecraft Java/Mods/Eigene/Battle Of Gods/mcreator (LAPTOP)/BattleOfGods [createMcpToSrg].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.C:/Users/Josef/OneDrive/Games/Minecraft Java/Mods/Eigene/Battle Of Gods/mcreator (PC)/BattleOfGods [createMcpToSrg].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.Download Sources.executor&quot;: &quot;Run&quot;,
-    &quot;JavaClassFindUsagesOptions.isFieldsUsages&quot;: &quot;true&quot;,
-    &quot;JavaClassFindUsagesOptions.isMethodsUsages&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;1.20.1__mcreator&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.github.blarc.ai.commits.intellij.plugin.settings.AppSettingsConfigurable&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Gradle.BattleOfGods [createMcpToSrg].executor": "Run",
+    "Gradle.C:/Users/Josef/OneDrive/Games/Minecraft Java/Mods/Eigene/Battle Of Gods/mcreator (PC)/BattleOfGods [createMcpToSrg].executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "1.20.1__mcreator",
+    "ignore.virus.scanning.warn.message": "true",
+    "settings.editor.selected.configurable": "preferences.fileTypes"
   }
-}</component>
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Josef\OneDrive\Games\Minecraft Java\Mods\Eigene\Battle Of Gods\mcreator (PC)\BattleOfGods\src\main\resources\assets\battleofgods\textures\gui\crafting_hammer" />
-      <recent name="C:\Users\Josef\OneDrive\Games\Minecraft Java\Mods\Eigene\Battle Of Gods\mcreator (PC)\BattleOfGods\src\main\resources\assets\battleofgods\textures\gui\workbench" />
-      <recent name="C:\Users\Josef\OneDrive\Games\Minecraft Java\Mods\Eigene\Battle Of Gods\mcreator (PC)\BattleOfGods\src\main\resources\assets\battleofgods\textures\gui\scrollpanel\recipe_list" />
-      <recent name="C:\Users\Josef\OneDrive\Games\Minecraft Java\Mods\Eigene\Battle Of Gods\mcreator (PC)\BattleOfGods\src\main\resources\assets\battleofgods\textures\gui\scrollpanels\material_list" />
-    </key>
-  </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+}]]></component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="381b8277-727e-4d80-9354-c3576b313f95" name="Changes" comment="" />
-      <created>1745304955408</created>
+      <changelist id="55347841-98cd-4f86-9608-4bb232a43c91" name="Changes" comment="" />
+      <created>1746112049725</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1745304955408</updated>
+      <updated>1746112049725</updated>
     </task>
-    <task id="LOCAL-00014" summary=".">
-      <option name="closed" value="true" />
-      <created>1745563276142</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1745563276142</updated>
-    </task>
-    <task id="LOCAL-00015" summary="removed Modifiers">
-      <option name="closed" value="true" />
-      <created>1745603062372</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1745603062372</updated>
-    </task>
-    <task id="LOCAL-00016" summary="updated Textures">
-      <option name="closed" value="true" />
-      <created>1745656903254</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1745656903254</updated>
-    </task>
-    <task id="LOCAL-00017" summary="updated Textures; materilalList not finished yet">
-      <option name="closed" value="true" />
-      <created>1745658042407</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1745658042407</updated>
-    </task>
-    <task id="LOCAL-00018" summary="refactor: clean up item registration and improve tooltip handling">
-      <option name="closed" value="true" />
-      <created>1745661716774</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1745661716774</updated>
-    </task>
-    <task id="LOCAL-00019" summary="zwischen-save before fixing WorkbenchScreen">
-      <option name="closed" value="true" />
-      <created>1745780495196</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1745780495196</updated>
-    </task>
-    <task id="LOCAL-00020" summary="fix of incorrect Counting">
-      <option name="closed" value="true" />
-      <created>1745781601341</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1745781601341</updated>
-    </task>
-    <task id="LOCAL-00021" summary="fix of highlight visual bug">
-      <option name="closed" value="true" />
-      <created>1745781656868</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1745781656868</updated>
-    </task>
-    <task id="LOCAL-00022" summary="fix of highlight visual bug">
-      <option name="closed" value="true" />
-      <created>1745781679393</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1745781679393</updated>
-    </task>
-    <task id="LOCAL-00023" summary="fixed visual scrolling bug">
-      <option name="closed" value="true" />
-      <created>1745783450934</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1745783450934</updated>
-    </task>
-    <task id="LOCAL-00024" summary="fixed visual scrolling bug">
-      <option name="closed" value="true" />
-      <created>1745783467510</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1745783467510</updated>
-    </task>
-    <task id="LOCAL-00025" summary=".">
-      <option name="closed" value="true" />
-      <created>1745783655549</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1745783655549</updated>
-    </task>
-    <task id="LOCAL-00026" summary="fixed Sound Problem">
-      <option name="closed" value="true" />
-      <created>1745785424477</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1745785424477</updated>
-    </task>
-    <task id="LOCAL-00027" summary="added background to materialList">
-      <option name="closed" value="true" />
-      <created>1745822199757</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1745822199757</updated>
-    </task>
-    <task id="LOCAL-00028" summary="added background to materialList">
-      <option name="closed" value="true" />
-      <created>1745824834207</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1745824834207</updated>
-    </task>
-    <task id="LOCAL-00029" summary="now able to change recipeGroup">
-      <option name="closed" value="true" />
-      <created>1745826186162</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1745826186162</updated>
-    </task>
-    <task id="LOCAL-00030" summary="add sync_todo workflow and script; update .gitignore and project files">
-      <option name="closed" value="true" />
-      <created>1745851277716</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1745851277716</updated>
-    </task>
-    <task id="LOCAL-00031" summary="mark JEI compatibility as complete in todo list">
-      <option name="closed" value="true" />
-      <created>1745851554771</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1745851554771</updated>
-    </task>
-    <task id="LOCAL-00032" summary="Update sync_todo workflow to use custom GITHUB_TOKEN and enhance labeling.">
-      <option name="closed" value="true" />
-      <created>1745852515767</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1745852515767</updated>
-    </task>
-    <task id="LOCAL-00033" summary="mark JEI compatibility as incomplete in todo list">
-      <option name="closed" value="true" />
-      <created>1745852647494</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1745852647494</updated>
-    </task>
-    <task id="LOCAL-00034" summary="updated gitignore and python">
-      <option name="closed" value="true" />
-      <created>1745853230443</created>
-      <option name="number" value="00034" />
-      <option name="presentableId" value="LOCAL-00034" />
-      <option name="project" value="LOCAL" />
-      <updated>1745853230443</updated>
-    </task>
-    <task id="LOCAL-00035" summary="JEI compat works, but not angepasst">
-      <option name="closed" value="true" />
-      <created>1745853608469</created>
-      <option name="number" value="00035" />
-      <option name="presentableId" value="LOCAL-00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1745853608469</updated>
-    </task>
-    <task id="LOCAL-00036" summary="implemented jei compat full">
-      <option name="closed" value="true" />
-      <created>1745858518690</created>
-      <option name="number" value="00036" />
-      <option name="presentableId" value="LOCAL-00036" />
-      <option name="project" value="LOCAL" />
-      <updated>1745858518690</updated>
-    </task>
-    <task id="LOCAL-00037" summary="implemented jei compat full">
-      <option name="closed" value="true" />
-      <created>1745858529056</created>
-      <option name="number" value="00037" />
-      <option name="presentableId" value="LOCAL-00037" />
-      <option name="project" value="LOCAL" />
-      <updated>1745858529056</updated>
-    </task>
-    <task id="LOCAL-00038" summary="implemented jei compat full">
-      <option name="closed" value="true" />
-      <created>1745858532776</created>
-      <option name="number" value="00038" />
-      <option name="presentableId" value="LOCAL-00038" />
-      <option name="project" value="LOCAL" />
-      <updated>1745858532776</updated>
-    </task>
-    <task id="LOCAL-00039" summary="update textures and optimize recipe data for workbench functionality">
-      <option name="closed" value="true" />
-      <created>1745859898539</created>
-      <option name="number" value="00039" />
-      <option name="presentableId" value="LOCAL-00039" />
-      <option name="project" value="LOCAL" />
-      <updated>1745859898539</updated>
-    </task>
-    <task id="LOCAL-00040" summary="Update todo list to mark JEI compatibility as complete.">
-      <option name="closed" value="true" />
-      <created>1745859936847</created>
-      <option name="number" value="00040" />
-      <option name="presentableId" value="LOCAL-00040" />
-      <option name="project" value="LOCAL" />
-      <updated>1745859936847</updated>
-    </task>
-    <task id="LOCAL-00041" summary="Add method to retrieve recipes by ingredient in RecipeHandler">
-      <option name="closed" value="true" />
-      <created>1745860364828</created>
-      <option name="number" value="00041" />
-      <option name="presentableId" value="LOCAL-00041" />
-      <option name="project" value="LOCAL" />
-      <updated>1745860364828</updated>
-    </task>
-    <task id="LOCAL-00042" summary="Fix formatting in todo list and update last commit message">
-      <option name="closed" value="true" />
-      <created>1745860629611</created>
-      <option name="number" value="00042" />
-      <option name="presentableId" value="LOCAL-00042" />
-      <option name="project" value="LOCAL" />
-      <updated>1745860629611</updated>
-    </task>
-    <task id="LOCAL-00043" summary="Update GitHub token usage in sync scripts and fix formatting in workspace">
-      <option name="closed" value="true" />
-      <created>1745862502032</created>
-      <option name="number" value="00043" />
-      <option name="presentableId" value="LOCAL-00043" />
-      <option name="project" value="LOCAL" />
-      <updated>1745862502032</updated>
-    </task>
-    <task id="LOCAL-00044" summary="Update todo list to mark JEI compatibility as complete">
-      <option name="closed" value="true" />
-      <created>1745862595208</created>
-      <option name="number" value="00044" />
-      <option name="presentableId" value="LOCAL-00044" />
-      <option name="project" value="LOCAL" />
-      <updated>1745862595208</updated>
-    </task>
-    <task id="LOCAL-00045" summary="Update sync_todo.yml to allow standard token permissions and simplify script steps">
-      <option name="closed" value="true" />
-      <created>1745862767538</created>
-      <option name="number" value="00045" />
-      <option name="presentableId" value="LOCAL-00045" />
-      <option name="project" value="LOCAL" />
-      <updated>1745862767538</updated>
-    </task>
-    <task id="LOCAL-00046" summary="Update sync_todo_to_issues.py to use ACTIONS_RUNTIME_TOKEN and fix todo list formatting">
-      <option name="closed" value="true" />
-      <created>1745863108452</created>
-      <option name="number" value="00046" />
-      <option name="presentableId" value="LOCAL-00046" />
-      <option name="project" value="LOCAL" />
-      <updated>1745863108452</updated>
-    </task>
-    <task id="LOCAL-00047" summary=".">
-      <option name="closed" value="true" />
-      <created>1745863190141</created>
-      <option name="number" value="00047" />
-      <option name="presentableId" value="LOCAL-00047" />
-      <option name="project" value="LOCAL" />
-      <updated>1745863190141</updated>
-    </task>
-    <task id="LOCAL-00048" summary=".">
-      <option name="closed" value="true" />
-      <created>1745863400182</created>
-      <option name="number" value="00048" />
-      <option name="presentableId" value="LOCAL-00048" />
-      <option name="project" value="LOCAL" />
-      <updated>1745863400182</updated>
-    </task>
-    <task id="LOCAL-00049" summary=".">
-      <option name="closed" value="true" />
-      <created>1745863579292</created>
-      <option name="number" value="00049" />
-      <option name="presentableId" value="LOCAL-00049" />
-      <option name="project" value="LOCAL" />
-      <updated>1745863579292</updated>
-    </task>
-    <task id="LOCAL-00050" summary="added critical Hit Attribute + Handler + Tooltip + added to copper shortsword; not tested">
-      <option name="closed" value="true" />
-      <created>1745915490223</created>
-      <option name="number" value="00050" />
-      <option name="presentableId" value="LOCAL-00050" />
-      <option name="project" value="LOCAL" />
-      <updated>1745915490223</updated>
-    </task>
-    <task id="LOCAL-00051" summary="CriticalHits werden korrekt zugeteilt">
-      <option name="closed" value="true" />
-      <created>1745920970472</created>
-      <option name="number" value="00051" />
-      <option name="presentableId" value="LOCAL-00051" />
-      <option name="project" value="LOCAL" />
-      <updated>1745920970472</updated>
-    </task>
-    <task id="LOCAL-00052" summary="CriticalHits funktionieren, tooltips + particles noch nicht">
-      <option name="closed" value="true" />
-      <created>1745925424738</created>
-      <option name="number" value="00052" />
-      <option name="presentableId" value="LOCAL-00052" />
-      <option name="project" value="LOCAL" />
-      <updated>1745925424739</updated>
-    </task>
-    <task id="LOCAL-00053" summary="CriticalHits + tooltips funktionieren,particles + sound noch nicht">
-      <option name="closed" value="true" />
-      <created>1745934970516</created>
-      <option name="number" value="00053" />
-      <option name="presentableId" value="LOCAL-00053" />
-      <option name="project" value="LOCAL" />
-      <updated>1745934970517</updated>
-    </task>
-    <task id="LOCAL-00054" summary="deleted BattleOfGods mcreator registry files">
-      <option name="closed" value="true" />
-      <created>1745954886880</created>
-      <option name="number" value="00054" />
-      <option name="presentableId" value="LOCAL-00054" />
-      <option name="project" value="LOCAL" />
-      <updated>1745954886880</updated>
-    </task>
-    <task id="LOCAL-00055" summary="changed Rarity getARGBColor to getColor">
-      <option name="closed" value="true" />
-      <created>1745956594878</created>
-      <option name="number" value="00055" />
-      <option name="presentableId" value="LOCAL-00055" />
-      <option name="project" value="LOCAL" />
-      <updated>1745956594878</updated>
-    </task>
-    <task id="LOCAL-00056" summary="added Damage + Speed Tooltip to all Items">
-      <option name="closed" value="true" />
-      <created>1745961740990</created>
-      <option name="number" value="00056" />
-      <option name="presentableId" value="LOCAL-00056" />
-      <option name="project" value="LOCAL" />
-      <updated>1745961740990</updated>
-    </task>
-    <task id="LOCAL-00057" summary="update .gitignore and todo; add invincibility frames task">
-      <option name="closed" value="true" />
-      <created>1745996618353</created>
-      <option name="number" value="00057" />
-      <option name="presentableId" value="LOCAL-00057" />
-      <option name="project" value="LOCAL" />
-      <updated>1745996618353</updated>
-    </task>
-    <task id="LOCAL-00058" summary="update .gitignore and todo; add invincibility frames task">
-      <option name="closed" value="true" />
-      <created>1745997553709</created>
-      <option name="number" value="00058" />
-      <option name="presentableId" value="LOCAL-00058" />
-      <option name="project" value="LOCAL" />
-      <updated>1745997553709</updated>
-    </task>
-    <task id="LOCAL-00059" summary="Update copper weapon attributes and crafting recipe">
-      <option name="closed" value="true" />
-      <created>1746003825794</created>
-      <option name="number" value="00059" />
-      <option name="presentableId" value="LOCAL-00059" />
-      <option name="project" value="LOCAL" />
-      <updated>1746003825794</updated>
-    </task>
-    <task id="LOCAL-00060" summary="removed debug logging from damage tooltip in Broadsword and Shortsword">
-      <option name="closed" value="true" />
-      <created>1746050708708</created>
-      <option name="number" value="00060" />
-      <option name="presentableId" value="LOCAL-00060" />
-      <option name="project" value="LOCAL" />
-      <updated>1746050708709</updated>
-    </task>
-    <task id="LOCAL-00061" summary="jei funktioniert">
-      <option name="closed" value="true" />
-      <created>1746052754986</created>
-      <option name="number" value="00061" />
-      <option name="presentableId" value="LOCAL-00061" />
-      <option name="project" value="LOCAL" />
-      <updated>1746052754986</updated>
-    </task>
-    <task id="LOCAL-00062" summary="Update .gitignore and clean up copper shortsword JSON formatting">
-      <option name="closed" value="true" />
-      <created>1746111873660</created>
-      <option name="number" value="00062" />
-      <option name="presentableId" value="LOCAL-00062" />
-      <option name="project" value="LOCAL" />
-      <updated>1746111873660</updated>
-    </task>
-    <option name="localTasksCounter" value="63" />
     <servers />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="mark JEI compatibility as incomplete in todo list" />
-    <MESSAGE value="updated gitignore and python" />
-    <MESSAGE value="JEI compat works, but not angepasst" />
-    <MESSAGE value="implemented jei compat full" />
-    <MESSAGE value="update textures and optimize recipe data for workbench functionality" />
-    <MESSAGE value="Update todo list to mark JEI compatibility as complete." />
-    <MESSAGE value="Add method to retrieve recipes by ingredient in RecipeHandler" />
-    <MESSAGE value="Fix formatting in todo list and update last commit message" />
-    <MESSAGE value="Update GitHub token usage in sync scripts and fix formatting in workspace" />
-    <MESSAGE value="Update todo list to mark JEI compatibility as complete" />
-    <MESSAGE value="Update sync_todo.yml to allow standard token permissions and simplify script steps" />
-    <MESSAGE value="Update sync_todo_to_issues.py to use ACTIONS_RUNTIME_TOKEN and fix todo list formatting" />
-    <MESSAGE value="." />
-    <MESSAGE value="added critical Hit Attribute + Handler + Tooltip + added to copper shortsword; not tested" />
-    <MESSAGE value="CriticalHits werden korrekt zugeteilt" />
-    <MESSAGE value="CriticalHits funktionieren, tooltips + particles noch nicht" />
-    <MESSAGE value="CriticalHits + tooltips funktionieren,particles + sound noch nicht" />
-    <MESSAGE value="deleted BattleOfGods mcreator registry files" />
-    <MESSAGE value="changed Rarity getARGBColor to getColor" />
-    <MESSAGE value="added Damage + Speed Tooltip to all Items" />
-    <MESSAGE value="update .gitignore and todo; add invincibility frames task" />
-    <MESSAGE value="Update copper weapon attributes and crafting recipe" />
-    <MESSAGE value="removed debug logging from damage tooltip in Broadsword and Shortsword" />
-    <MESSAGE value="jei funktioniert" />
-    <MESSAGE value="Update .gitignore and clean up copper shortsword JSON formatting" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update .gitignore and clean up copper shortsword JSON formatting" />
   </component>
 </project>
