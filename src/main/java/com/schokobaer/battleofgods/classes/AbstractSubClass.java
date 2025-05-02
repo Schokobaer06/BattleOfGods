@@ -12,7 +12,6 @@ import net.minecraft.tags.TagKey;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
-import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
@@ -112,13 +111,6 @@ public abstract class AbstractSubClass implements SubClassMethods {
         String kbText = getKnockback(mcKnockback);
 
         tooltip.add(Component.translatable("tooltip.battleofgods." + kbText).withStyle(ChatFormatting.DARK_GREEN));
-
-        // Defense if Armor
-
-        if (itemstack.getItem() instanceof ArmorItem armorItem) {
-            if (tooltip.size() > 1)
-                tooltip.add(1, Component.literal(armorItem.getDefense() + " ").append(Component.translatable("tooltip.battleofgods.armor")).withStyle(ChatFormatting.DARK_GREEN));
-        }
     }
 
     private static @NotNull String getKnockback(double mcKnockback) {

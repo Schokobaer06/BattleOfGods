@@ -25,6 +25,8 @@ public class InitMainClass {
     public static final RegistryObject<MainClass> BARD = registerMainClass("bard");
     public static final RegistryObject<MainClass> TOOL = registerMainClass("tool");
 
+    public static final RegistryObject<MainClass> ARMOR = registerMainClass("armor");
+
     public static RegistryObject<MainClass> registerMainClass(String name) {
         TagKey<MainClass> tag = TagCreator.createMainClassTag(name);
         return MAIN_CLASSES.register(name, () -> new MainClass(name, tag));

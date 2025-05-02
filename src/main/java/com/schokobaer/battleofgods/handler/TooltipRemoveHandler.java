@@ -15,7 +15,7 @@ import net.minecraftforge.fml.common.Mod;
 public class TooltipRemoveHandler {
     @SubscribeEvent
     public static void onItemTooltip(ItemTooltipEvent event) {
-        if (!(event.getItemStack().getItem() instanceof ItemOverride || event.getItemStack().getItem() instanceof TerrariaArmorItem))
+        if (!(event.getItemStack().getItem() instanceof ItemOverride && event.getItemStack().getItem() instanceof TerrariaArmorItem))
             return;
         //Critical Hit Chance
         event.getToolTip().removeIf(component -> component.contains(
