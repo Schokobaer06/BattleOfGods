@@ -1,6 +1,7 @@
-package com.schokobaer.battleofgods.recipe;
+package com.schokobaer.battleofgods.network;
 
 import com.schokobaer.battleofgods.BattleofgodsMod;
+import com.schokobaer.battleofgods.handler.RecipeHandler;
 import com.schokobaer.battleofgods.world.inventory.WorkbenchMenu;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;

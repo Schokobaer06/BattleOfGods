@@ -2,6 +2,8 @@
 package com.schokobaer.battleofgods.compat.jei.category;
 
 import com.mojang.blaze3d.systems.RenderSystem;
+import com.schokobaer.battleofgods.BattleofgodsMod;
+import com.schokobaer.battleofgods.handler.RecipeHandler.BattleRecipe;
 import com.schokobaer.battleofgods.init.InitBlocks;
 import mezz.jei.api.constants.VanillaTypes;
 import mezz.jei.api.gui.builder.IRecipeLayoutBuilder;
@@ -15,8 +17,6 @@ import mezz.jei.api.recipe.category.IRecipeCategory;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
-import com.schokobaer.battleofgods.BattleofgodsMod;
-import com.schokobaer.battleofgods.recipe.RecipeHandler.BattleRecipe;
 
 public class WorkbenchCategory implements IRecipeCategory<BattleRecipe> {
     public static final RecipeType<BattleRecipe> TYPE = RecipeType.create(
@@ -29,8 +29,8 @@ public class WorkbenchCategory implements IRecipeCategory<BattleRecipe> {
     private final IDrawable icon;
 
     public WorkbenchCategory(IGuiHelper guiHelper) {
-        this.background =  guiHelper.drawableBuilder(new ResourceLocation(BattleofgodsMod.MODID, "textures/gui/crafting_station/workbench.png"),
-                8, 15, 160, 60).setTextureSize(176,166).build();
+        this.background = guiHelper.drawableBuilder(new ResourceLocation(BattleofgodsMod.MODID, "textures/gui/crafting_station/workbench.png"),
+                8, 15, 160, 60).setTextureSize(176, 166).build();
 
         this.icon = guiHelper.createDrawableIngredient(
                 VanillaTypes.ITEM_STACK,
@@ -88,7 +88,7 @@ public class WorkbenchCategory implements IRecipeCategory<BattleRecipe> {
                     );
         else
             builder.addSlot(RecipeIngredientRole.OUTPUT, 120, 19)
-                .addItemStack(recipe.getOutput());
+                    .addItemStack(recipe.getOutput());
 
 
         builder.moveRecipeTransferButton(120, 45);

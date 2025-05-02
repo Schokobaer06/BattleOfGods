@@ -1,6 +1,6 @@
 package com.schokobaer.battleofgods.client.widget;
 
-import com.schokobaer.battleofgods.recipe.RecipeHandler;
+import com.schokobaer.battleofgods.handler.RecipeHandler;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.AbstractWidget;

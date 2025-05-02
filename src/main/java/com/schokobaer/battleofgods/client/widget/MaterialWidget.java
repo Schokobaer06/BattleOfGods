@@ -1,7 +1,7 @@
 package com.schokobaer.battleofgods.client.widget;
 
 import com.mojang.blaze3d.vertex.PoseStack;
-import com.schokobaer.battleofgods.recipe.RecipeHandler;
+import com.schokobaer.battleofgods.handler.RecipeHandler;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;

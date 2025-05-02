@@ -1,16 +1,19 @@
 // JEIPlugin.java
 package com.schokobaer.battleofgods.compat.jei;
 
+import com.schokobaer.battleofgods.BattleofgodsMod;
 import com.schokobaer.battleofgods.compat.jei.category.WorkbenchCategory;
+import com.schokobaer.battleofgods.handler.RecipeHandler;
 import com.schokobaer.battleofgods.handler.WorkbenchRecipeTransferHandler;
 import com.schokobaer.battleofgods.init.InitBlocks;
-import com.schokobaer.battleofgods.recipe.RecipeHandler;
 import mezz.jei.api.IModPlugin;
 import mezz.jei.api.JeiPlugin;
 import mezz.jei.api.recipe.RecipeType;
-import mezz.jei.api.registration.*;
+import mezz.jei.api.registration.IRecipeCatalystRegistration;
+import mezz.jei.api.registration.IRecipeCategoryRegistration;
+import mezz.jei.api.registration.IRecipeRegistration;
+import mezz.jei.api.registration.IRecipeTransferRegistration;
 import net.minecraft.resources.ResourceLocation;
-import com.schokobaer.battleofgods.BattleofgodsMod;
 import net.minecraft.world.item.ItemStack;
 
 @JeiPlugin

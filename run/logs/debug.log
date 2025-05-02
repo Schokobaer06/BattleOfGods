@@ -555,7 +555,7 @@
 [02Mai2025 10:28:54.146] [modloading-worker-0/DEBUG] [io.netty.util.internal.PlatformDependent0/]: sun.misc.Unsafe.copyMemory: available
 [02Mai2025 10:28:54.147] [modloading-worker-0/DEBUG] [io.netty.util.internal.PlatformDependent0/]: sun.misc.Unsafe.storeFence: available
 [02Mai2025 10:28:54.149] [modloading-worker-0/DEBUG] [io.netty.util.internal.PlatformDependent0/]: java.nio.Buffer.address: available
-[02Mai2025 10:28:54.156] [modloading-worker-0/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering network message: com.schokobaer.battleofgods.recipe.CraftPacket
+[02Mai2025 10:28:54.156] [modloading-worker-0/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering network message: com.schokobaer.battleofgods.network.CraftPacket
 [02Mai2025 10:28:54.156] [modloading-worker-0/DEBUG] [net.minecraftforge.fml.javafmlmod.AutomaticEventSubscriber/LOADING]: Attempting to inject @EventBusSubscriber classes into the eventbus for battleofgods
 [02Mai2025 10:28:54.156] [modloading-worker-0/DEBUG] [net.minecraftforge.fml.javafmlmod.AutomaticEventSubscriber/LOADING]: Auto-subscribing com.schokobaer.battleofgods.attribute.handler.CriticalHitHandler to FORGE
 [02Mai2025 10:28:54.152] [modloading-worker-0/DEBUG] [io.netty.util.internal.PlatformDependent0/]: direct buffer constructor: unavailable
@@ -1209,7 +1209,7 @@ java.lang.IllegalAccessException: class io.netty.util.internal.PlatformDependent
 [02Mai2025 10:29:44.700] [Render thread/DEBUG] [net.minecraftforge.common.ForgeI18n/CORE]: Loading I18N data entries: 7048
 [02Mai2025 10:29:44.858] [Render thread/WARN] [net.minecraft.client.sounds.SoundEngine/]: Missing sound for event: minecraft:item.goat_horn.play
 [02Mai2025 10:29:44.859] [Render thread/WARN] [net.minecraft.client.sounds.SoundEngine/]: Missing sound for event: minecraft:entity.goat.screaming.horn_break
-[02Mai2025 10:29:45.312] [Render thread/INFO] [com.mojang.blaze3d.audio.Library/]: OpenAL initialized on device OpenAL Soft on Kopfhörer (soundcore Q20i)
+[02Mai2025 10:29:45.312] [Render thread/INFO] [com.mojang.blaze3d.audio.Library/]: OpenAL initialized on device OpenAL Soft on Kopfhï¿½rer (soundcore Q20i)
 [02Mai2025 10:29:45.315] [Render thread/INFO] [net.minecraft.client.sounds.SoundEngine/SOUNDS]: Sound engine started
 [02Mai2025 10:29:45.735] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 1024x1024x2 minecraft:textures/atlas/blocks.png-atlas
 [02Mai2025 10:29:46.291] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 256x256x2 minecraft:textures/atlas/signs.png-atlas

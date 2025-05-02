@@ -1,11 +1,11 @@
 package com.schokobaer.battleofgods;
 
 import com.schokobaer.battleofgods.classes.MainClass;
+import com.schokobaer.battleofgods.handler.RecipeHandler;
 import com.schokobaer.battleofgods.init.*;
+import com.schokobaer.battleofgods.network.CraftPacket;
 import com.schokobaer.battleofgods.override.ItemOverride;
 import com.schokobaer.battleofgods.rarity.Rarity;
-import com.schokobaer.battleofgods.recipe.CraftPacket;
-import com.schokobaer.battleofgods.recipe.RecipeHandler;
 import com.schokobaer.battleofgods.tag.MainClassTagProvider;
 import com.schokobaer.battleofgods.tag.RarityTagProvider;
 import com.schokobaer.battleofgods.tag.SubClassTagProvider;
@@ -58,10 +58,6 @@ public class BattleofgodsMod {
 
     //private static final Boolean debug = true;
 
-    public static Boolean isDebug() {
-        return true;
-    }
-
     public BattleofgodsMod() {
         // Start of user code block mod constructor
         // End of user code block mod constructor
@@ -97,6 +93,10 @@ public class BattleofgodsMod {
         bus.addListener(this::gatherData);
 
         addNetworkMessage(CraftPacket.class, CraftPacket::encode, CraftPacket::decode, CraftPacket::handle);
+    }
+
+    public static Boolean isDebug() {
+        return true;
     }
 
     public static <T> void addNetworkMessage(Class<T> messageType, BiConsumer<T, FriendlyByteBuf> encoder, Function<FriendlyByteBuf, T> decoder, BiConsumer<T, Supplier<NetworkEvent.Context>> messageConsumer) {
@@ -142,7 +142,6 @@ public class BattleofgodsMod {
             workQueue.removeAll(actions);
         }
     }
-
 
 
     @SubscribeEvent

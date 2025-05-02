@@ -5,8 +5,8 @@ import com.mojang.blaze3d.vertex.Tesselator;
 import com.schokobaer.battleofgods.BattleofgodsMod;
 import com.schokobaer.battleofgods.client.widget.MaterialWidget;
 import com.schokobaer.battleofgods.client.widget.RecipeButton;
-import com.schokobaer.battleofgods.recipe.CraftPacket;
-import com.schokobaer.battleofgods.recipe.RecipeHandler;
+import com.schokobaer.battleofgods.handler.RecipeHandler;
+import com.schokobaer.battleofgods.network.CraftPacket;
 import com.schokobaer.battleofgods.world.inventory.WorkbenchMenu;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
@@ -31,11 +31,10 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
     private static ResourceLocation TEXTURE_GUI_BG = null;
     private static ResourceLocation TEXTURE_RECIPELIST_BG = null;
     private static ResourceLocation TEXTURE_MATERIALLIST_BG = null;
-
-    private ScrollPanel recipeList;
-    private ScrollPanel materialList = null;
     private final List<MaterialWidget> materialWidgets = new ArrayList<>();
     private final Boolean debug = BattleofgodsMod.isDebug();
+    private ScrollPanel recipeList;
+    private ScrollPanel materialList = null;
 
     public WorkbenchScreen(WorkbenchMenu menu, Inventory inv, Component title) {
         super(menu, inv, title);
@@ -119,7 +118,6 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
             }
 
 
-
             @Override
             protected void drawPanel(GuiGraphics guiGraphics, int x, int y, Tesselator tess, int mouseX, int mouseY) {
 
@@ -175,7 +173,7 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
                             mouseY >= btn.getY() &&
                             mouseY <= btn.getY() + btn.getHeight()) {
                         //btn.isFocused = true;
-                        btn.mouseClicked(mouseX,mouseY,button);
+                        btn.mouseClicked(mouseX, mouseY, button);
                     }
 
                 }
@@ -236,13 +234,13 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
                         0, 0,
                         width,
                         height,
-                        86,53
+                        86, 53
                 );
                 RenderSystem.disableBlend();
             }
         };
 
-        if (menu.getSelectedRecipe() !=null) {
+        if (menu.getSelectedRecipe() != null) {
             recipeList.children().forEach(
                     btn -> {
                         if (btn instanceof RecipeButton button) {
@@ -256,13 +254,14 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
 
     private void selectRecipe(RecipeHandler.BattleRecipe recipe) {
         menu.setSelectedRecipe(recipe);
-        if (debug) BattleofgodsMod.LOGGER.debug("WorkbenchScreen - selectRecipe has been called with recipe {}", recipe.getId());
+        if (debug)
+            BattleofgodsMod.LOGGER.debug("WorkbenchScreen - selectRecipe has been called with recipe {}", recipe.getId());
         recipeList.children().forEach(
                 btn -> {
-            if (btn instanceof RecipeButton button) {
-                button.isFocused = button.getRecipe().getId().equals(recipe.getId());
-            }
-        });
+                    if (btn instanceof RecipeButton button) {
+                        button.isFocused = button.getRecipe().getId().equals(recipe.getId());
+                    }
+                });
         updateMaterialDisplay();
     }
 
@@ -285,7 +284,7 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
             materialList = new ScrollPanel(
                     minecraft,
                     (imageWidth / 2) - 2,
-                    (imageHeight / 2) - (font.lineHeight * 3 + 3)- 10,
+                    (imageHeight / 2) - (font.lineHeight * 3 + 3) - 10,
                     topPos + font.lineHeight + 8, leftPos + 90,
                     1,
                     3
@@ -332,7 +331,7 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
 
                     guiGraphics.enableScissor(left, top, left + width, top + height);
 
-                    for( int i = 0; i < children().size(); i++) {
+                    for (int i = 0; i < children().size(); i++) {
                         MaterialWidget widget = children().get(i);
                         int row = i / widgetsPerRow;
                         int col = i % widgetsPerRow;
@@ -355,13 +354,14 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
 
                 public boolean isMouseOver(MaterialWidget btn, double mouseX, double mouseY) {
                     return mouseX >= btn.getX() &&
-                                mouseX <= btn.getX() + btn.getWidth() &&
-                                mouseY >= btn.getY() &&
-                                mouseY <= btn.getY() + btn.getHeight() &&
-                                mouseX >= left && mouseX <= left + width &&
-                                mouseY >= top && mouseY <= top + height;
+                            mouseX <= btn.getX() + btn.getWidth() &&
+                            mouseY >= btn.getY() &&
+                            mouseY <= btn.getY() + btn.getHeight() &&
+                            mouseX >= left && mouseX <= left + width &&
+                            mouseY >= top && mouseY <= top + height;
 
                 }
+
                 @Override
                 public List<MaterialWidget> children() {
                     return materialWidgets;
@@ -388,7 +388,7 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
                             0, 0,
                             width,
                             height,
-                            86,43
+                            86, 43
                     );
                     RenderSystem.disableBlend();
                 }
@@ -396,13 +396,14 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
         } catch (Exception e) {
             BattleofgodsMod.LOGGER.error("Error while updating material display: {}", e.getMessage());
         }
-        if (materialList != null ) addRenderableWidget(materialList);
+        if (materialList != null) addRenderableWidget(materialList);
     }
 
     private void craftItem() {
         if (menu.getSelectedRecipe() == null) return;
         BattleofgodsMod.PACKET_HANDLER.sendToServer(new CraftPacket(menu.getSelectedRecipe().getId()));
-        if (debug) BattleofgodsMod.LOGGER.debug("WorkbenchScreen - craftItem has been called with recipe {}", menu.getSelectedRecipe().getId());
+        if (debug)
+            BattleofgodsMod.LOGGER.debug("WorkbenchScreen - craftItem has been called with recipe {}", menu.getSelectedRecipe().getId());
         //init();
     }
 
@@ -435,7 +436,7 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
                         ));
                     }
                     if (menu.getSelectedRecipe() != null)
-                        if (menu.hasRequiredItems(minecraft.player)){
+                        if (menu.hasRequiredItems(minecraft.player)) {
                             Minecraft.getInstance().getSoundManager().play(SimpleSoundInstance.forUI(
                                     SoundEvents.IRON_TRAPDOOR_CLOSE, 0.9F, 0.6F // Metall-Klang
                             ));
@@ -443,13 +444,12 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
                                     SoundEvents.WOOD_HIT, 0.5F, 0.8F // Holz-Resonanz (leiser)
                             ));
                             craftItem();
+                        } else {
+                            minecraft.getSoundManager().play(SimpleSoundInstance.forUI(
+                                    SoundEvents.NOTE_BLOCK_DIDGERIDOO, // Typischer "Fehler"-Sound
+                                    0.5F  // Leiser
+                            ));
                         }
-                    else {
-                        minecraft.getSoundManager().play(SimpleSoundInstance.forUI(
-                                SoundEvents.NOTE_BLOCK_DIDGERIDOO, // Typischer "Fehler"-Sound
-                                0.5F  // Leiser
-                        ));
-                    }
                 }
         ) {
             @Override
@@ -505,6 +505,6 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
                 }
             });
         }
-        super.renderTooltip(graphics,mouseX,mouseY);
+        super.renderTooltip(graphics, mouseX, mouseY);
     }
 }

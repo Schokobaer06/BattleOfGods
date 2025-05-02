@@ -1,8 +1,8 @@
 package com.schokobaer.battleofgods.world.inventory;
 
 import com.schokobaer.battleofgods.BattleofgodsMod;
+import com.schokobaer.battleofgods.handler.RecipeHandler;
 import com.schokobaer.battleofgods.init.InitMenu;
-import com.schokobaer.battleofgods.recipe.RecipeHandler;
 import net.minecraft.core.RegistryAccess;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
@@ -45,35 +45,44 @@ public class WorkbenchMenu extends AbstractContainerMenu implements Supplier<Map
         return recipeGroup;
     }
 
-    public void setSelectedRecipe(RecipeHandler.BattleRecipe recipe) {
-        this.selectedRecipe = recipe;
-        if (BattleofgodsMod.isDebug()) BattleofgodsMod.LOGGER.debug("WorkbenchMenu - selectRecipe has been called with recipe {}", recipe.getId());
+    public void setRecipeGroup(String recipeGroup) {
+        this.recipeGroup = recipeGroup;
     }
 
     public RecipeHandler.BattleRecipe getSelectedRecipe() {
         return selectedRecipe;
     }
 
+    public void setSelectedRecipe(RecipeHandler.BattleRecipe recipe) {
+        this.selectedRecipe = recipe;
+        if (BattleofgodsMod.isDebug())
+            BattleofgodsMod.LOGGER.debug("WorkbenchMenu - selectRecipe has been called with recipe {}", recipe.getId());
+    }
+
     public void craftItem(Player player, ResourceLocation recipeId) {
-        if (BattleofgodsMod.isDebug()) BattleofgodsMod.LOGGER.debug("WorkbenchMenu - craftItem has been called: Crafting Item: {}", recipeId);
+        if (BattleofgodsMod.isDebug())
+            BattleofgodsMod.LOGGER.debug("WorkbenchMenu - craftItem has been called: Crafting Item: {}", recipeId);
         //RecipeHandler.BattleRecipe temp = getSelectedRecipe();
         Optional<RecipeHandler.BattleRecipe> optionalRecipe = RecipeHandler.getRecipeById(recipeId);
         setSelectedRecipe(optionalRecipe.orElse(null));
-        if (BattleofgodsMod.isDebug()) BattleofgodsMod.LOGGER.debug(" WorkbenchMenu - optionalRecipe: {}\nselectedRecipe: {}", optionalRecipe.get().getId(), selectedRecipe.getId());
+        if (BattleofgodsMod.isDebug())
+            BattleofgodsMod.LOGGER.debug(" WorkbenchMenu - optionalRecipe: {}\nselectedRecipe: {}", optionalRecipe.get().getId(), selectedRecipe.getId());
         RecipeHandler.BattleRecipe recipe = getSelectedRecipe();
         if (BattleofgodsMod.isDebug()) BattleofgodsMod.LOGGER.debug(" WorkbenchMenu - recipe (Check 1): {}", recipe);
-        if(recipe == null) return;
+        if (recipe == null) return;
         if (BattleofgodsMod.isDebug()) BattleofgodsMod.LOGGER.debug(" WorkbenchMenu - recipe (Check 2): {}", recipe);
         RegistryAccess registryAccess = player.level().registryAccess();
-        if (BattleofgodsMod.isDebug()) BattleofgodsMod.LOGGER.debug("WorkbenchMenu - registryAccess: {}", registryAccess);
+        if (BattleofgodsMod.isDebug())
+            BattleofgodsMod.LOGGER.debug("WorkbenchMenu - registryAccess: {}", registryAccess);
         //ItemStack result = recipe.assemble((Container) this, registryAccess);
         if (BattleofgodsMod.isDebug()) BattleofgodsMod.LOGGER.debug("WorkbenchMenu - TEST");
         //if (BattleofgodsMod.isDebug()) BattleofgodsMod.LOGGER.debug("WorkbenchMenu - Result: {}", result);
 
 
         access.execute((level, pos) -> {
-            if (BattleofgodsMod.isDebug()) BattleofgodsMod.LOGGER.debug("WorkbenchMenu - access.execute has been called: level: {}, pos: {}", level, pos);
-            if(hasRequiredItems(player) && recipe.matches(player.getInventory(), level)) {
+            if (BattleofgodsMod.isDebug())
+                BattleofgodsMod.LOGGER.debug("WorkbenchMenu - access.execute has been called: level: {}, pos: {}", level, pos);
+            if (hasRequiredItems(player) && recipe.matches(player.getInventory(), level)) {
                 if (BattleofgodsMod.isDebug()) BattleofgodsMod.LOGGER.debug("WorkbenchMenu - hasRequiredItems: true");
                 consumeIngredients(player);
                 giveResult(player);
@@ -84,33 +93,34 @@ public class WorkbenchMenu extends AbstractContainerMenu implements Supplier<Map
     }
 
     public boolean hasRequiredItems(Player player) {
-        for(RecipeHandler.BattleRecipe.IngredientEntry entry : selectedRecipe.getInputs()) {
+        for (RecipeHandler.BattleRecipe.IngredientEntry entry : selectedRecipe.getInputs()) {
             int count = 0;
-            for(ItemStack stack : player.getInventory().items) {
-                if(entry.ingredient().test(stack)) count += stack.getCount();
-                if(count >= entry.count()) break;
+            for (ItemStack stack : player.getInventory().items) {
+                if (entry.ingredient().test(stack)) count += stack.getCount();
+                if (count >= entry.count()) break;
             }
-            if(count < entry.count()) return false;
+            if (count < entry.count()) return false;
         }
         return true;
     }
 
     private void consumeIngredients(Player player) {
-        for(RecipeHandler.BattleRecipe.IngredientEntry entry : selectedRecipe.getInputs()) {
+        for (RecipeHandler.BattleRecipe.IngredientEntry entry : selectedRecipe.getInputs()) {
             int remaining = entry.count();
-            for(ItemStack stack : player.getInventory().items) {
-                if(entry.ingredient().test(stack)) {
+            for (ItemStack stack : player.getInventory().items) {
+                if (entry.ingredient().test(stack)) {
                     int remove = Math.min(remaining, stack.getCount());
                     stack.shrink(remove);
                     remaining -= remove;
-                    if(remaining <= 0) break;
+                    if (remaining <= 0) break;
                 }
             }
         }
     }
 
     private void giveResult(Player player) {
-        if (BattleofgodsMod.isDebug()) BattleofgodsMod.LOGGER.debug("WorkbenchMenu - giveResult has been called: giving result: {}", selectedRecipe.getResultItem(player.level().registryAccess()));
+        if (BattleofgodsMod.isDebug())
+            BattleofgodsMod.LOGGER.debug("WorkbenchMenu - giveResult has been called: giving result: {}", selectedRecipe.getResultItem(player.level().registryAccess()));
         RegistryAccess registryAccess = player.level().registryAccess();
         ItemStack result = selectedRecipe.getResultItem(registryAccess).copy();
         ItemStack carried = player.containerMenu.getCarried();
@@ -136,7 +146,6 @@ public class WorkbenchMenu extends AbstractContainerMenu implements Supplier<Map
         //return stillValid(access, player, BattleofgodsModBlocks.WOODEN_WORKBENCH.get());
         return player.isAlive();
     }
-
 
     @Override
     public ItemStack quickMoveStack(Player player, int index) {
@@ -173,25 +182,25 @@ public class WorkbenchMenu extends AbstractContainerMenu implements Supplier<Map
     public ResourceLocation getGUIBackgroundTexture() {
         return backgroundLocation;
     }
-    public ResourceLocation getRecipeListBackgroundLocation() {
-        return recipeListLocation;
-    }
-    public ResourceLocation getMaterialListBackgroundLocation() {
-        return materialListLocation;
-    }
 
     public void setGUIBackgroundTexture(ResourceLocation texture) {
         this.backgroundLocation = texture;
     }
+
+    public ResourceLocation getRecipeListBackgroundLocation() {
+        return recipeListLocation;
+    }
+
+    public ResourceLocation getMaterialListBackgroundLocation() {
+        return materialListLocation;
+    }
+
     public void setRecipeListBackgroundTexture(ResourceLocation texture) {
         this.recipeListLocation = texture;
     }
+
     public void setMaterialListBackgroundTextur(ResourceLocation texture) {
         this.materialListLocation = texture;
-    }
-
-    public void setRecipeGroup(String recipeGroup) {
-        this.recipeGroup = recipeGroup;
     }
 
 

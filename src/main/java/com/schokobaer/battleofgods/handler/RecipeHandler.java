@@ -1,4 +1,4 @@
-package com.schokobaer.battleofgods.recipe;
+package com.schokobaer.battleofgods.handler;
 
 import com.google.gson.*;
 import com.schokobaer.battleofgods.BattleofgodsMod;
