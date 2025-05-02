@@ -4,12 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="55347841-98cd-4f86-9608-4bb232a43c91" name="Changes" comment="added Armor">
+    <list default="true" id="55347841-98cd-4f86-9608-4bb232a43c91" name="Changes" comment="add armor item attributes and tooltip enhancements for improved functionality">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/armor/tier1/WoodArmor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/armor/TerrariaArmorItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/armor/TerrariaArmorItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/classes/AbstractSubClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/classes/AbstractSubClass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/handler/TooltipRemoveHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/handler/TooltipRemoveHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/init/InitMainClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/init/InitMainClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/test models/armor/wooden/wooden_armor.bbmodel" beforeDir="false" afterPath="$PROJECT_DIR$/models/test models/armor/wooden/wooden_armor.bbmodel" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,6 +73,9 @@
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Josef\OneDrive\Games\Minecraft Java\Mods\Eigene\Battle Of Gods\mcreator (PC)\BattleOfGods\run\mods" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Josef Peer\OneDrive\Games\Minecraft Java\Mods\Eigene\Battle Of Gods\mcreator (LAPTOP)\BattleOfGods\src\main\resources\assets\battleofgods\geo" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.schokobaer.battleofgods.armor" />
@@ -148,7 +149,15 @@
       <option name="project" value="LOCAL" />
       <updated>1746175113020</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="add armor item attributes and tooltip enhancements for improved functionality">
+      <option name="closed" value="true" />
+      <created>1746180827675</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1746180827675</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -174,7 +183,8 @@
     <MESSAGE value="add armor item override and material interface for enhanced armor functionality" />
     <MESSAGE value="add armor set management and tooltip enhancements for improved armor functionality" />
     <MESSAGE value="added Armor" />
-    <option name="LAST_COMMIT_MESSAGE" value="added Armor" />
+    <MESSAGE value="add armor item attributes and tooltip enhancements for improved functionality" />
+    <option name="LAST_COMMIT_MESSAGE" value="add armor item attributes and tooltip enhancements for improved functionality" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
