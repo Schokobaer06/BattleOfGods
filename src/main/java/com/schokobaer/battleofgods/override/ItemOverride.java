@@ -43,4 +43,13 @@ public class ItemOverride extends net.minecraft.world.item.Item {
         return getSubClassMethods().getCraftingRemainingItem(stack);
     }
 
+    @Override
+    public boolean isFireResistant() {
+        return true;
+    }
+
+    @Override
+    public boolean isDamageable(ItemStack stack) {
+        return false;
+    }
 }
