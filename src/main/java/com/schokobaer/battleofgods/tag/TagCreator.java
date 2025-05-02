@@ -30,7 +30,7 @@ public class TagCreator {
     }
 
     public static TagKey<ItemOverride> createSubClassTag(@NotBlank String name, RegistryObject<MainClass> mainClass) {
-        TagKey<ItemOverride> tag = TagKey.create((net.minecraft.resources.ResourceKey<? extends net.minecraft.core.Registry<ItemOverride>>) ForgeRegistries.ITEMS.getRegistryKey(), new ResourceLocation(BattleofgodsMod.MODID, name.toLowerCase()));
+        TagKey<ItemOverride> tag = TagKey.create((net.minecraft.resources.ResourceKey<? extends net.minecraft.core.Registry<ItemOverride>>) (Object) ForgeRegistries.ITEMS.getRegistryKey(), new ResourceLocation(BattleofgodsMod.MODID, name.toLowerCase()));
         //tags.put(name.toLowerCase(), tag);
         return tag;
     }

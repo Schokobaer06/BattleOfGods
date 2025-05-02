@@ -162,7 +162,7 @@ public class BattleofgodsMod {
                 event.includeServer(),
                 (DataProvider.Factory<SubClassTagProvider>) output -> new SubClassTagProvider(
                         output,
-                        (ResourceKey<? extends Registry<ItemOverride>>) ForgeRegistries.ITEMS.getRegistryKey(),
+                        (ResourceKey<? extends Registry<ItemOverride>>) (Object) ForgeRegistries.ITEMS.getRegistryKey(),
                         event.getLookupProvider(),
                         MODID,
                         event.getExistingFileHelper()

@@ -4,32 +4,45 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="55347841-98cd-4f86-9608-4bb232a43c91" name="Changes" comment="add armor item override and material interface for enhanced armor functionality">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/armor/ArmorSetManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/armor/TerrariaArmorItem.java" afterDir="false" />
+    <list default="true" id="55347841-98cd-4f86-9608-4bb232a43c91" name="Changes" comment="add armor set management and tooltip enhancements for improved armor functionality">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/handler/ArmorSetBonusHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.8/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.8/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/checksums/md5-checksums.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.8/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/checksums/sha1-checksums.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.8/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.8/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.8/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.8/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.8/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/crash-reports/crash-2025-04-30_13.12.50-fml.txt" beforeDir="false" afterPath="$PROJECT_DIR$/run/crash-reports/crash-2025-04-30_13.12.50-fml.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/logs/debug-1.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/debug-1.log.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/logs/debug-2.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/debug-2.log.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/logs/debug-3.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/debug-3.log.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/logs/debug-4.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/debug-4.log.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/logs/debug-5.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/debug-5.log.gz" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run/logs/debug.log" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/debug.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/logs/latest.log" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/latest.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/saves/New World/DIM-1/data/raids.dat" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/New World/DIM-1/data/raids.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/saves/New World/DIM1/data/raids_end.dat" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/New World/DIM1/data/raids_end.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/saves/New World/data/raids.dat" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/New World/data/raids.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/saves/New World/entities/r.-1.0.mca" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/New World/entities/r.-1.0.mca" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/saves/New World/level.dat" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/New World/level.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/saves/New World/level.dat_old" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/New World/level.dat_old" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/saves/New World/playerdata/380df991-f603-344c-a090-369bad2a924a.dat" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/New World/playerdata/380df991-f603-344c-a090-369bad2a924a.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/saves/New World/playerdata/380df991-f603-344c-a090-369bad2a924a.dat_old" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/New World/playerdata/380df991-f603-344c-a090-369bad2a924a.dat_old" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/saves/New World/region/r.-1.-1.mca" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/New World/region/r.-1.-1.mca" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/saves/New World/region/r.-1.0.mca" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/New World/region/r.-1.0.mca" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/saves/New World/region/r.0.-1.mca" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/New World/region/r.0.-1.mca" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/saves/New World/region/r.0.0.mca" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/New World/region/r.0.0.mca" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/saves/New World/session.lock" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/New World/session.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/saves/New World/stats/380df991-f603-344c-a090-369bad2a924a.json" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/New World/stats/380df991-f603-344c-a090-369bad2a924a.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/usercache.json" beforeDir="false" afterPath="$PROJECT_DIR$/run/usercache.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/BattleofgodsMod.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/BattleofgodsMod.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/attribute/tooltip/TooltipRemover.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/handler/TooltipRemoveHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/init/InitMainClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/init/InitMainClass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/init/InitSubClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/init/InitSubClass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/item/tier1/ItemCopperBroadsword.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/item/tier1/ItemCopperBroadsword.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/item/tier1/ItemCopperShortsword.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/item/tier1/ItemCopperShortsword.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/override/ArmorItemOverride.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/override/ArmorMaterialOverride.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/override/ItemOverride.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/override/ItemOverride.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/override/SwordItemOverride.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/override/SwordItemOverride.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/override/TieredItemOverride.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/override/TieredItemOverride.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/subClass/AbstractSubClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/classes/AbstractSubClass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/subClass/Broadsword.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/classes/subClass/Broadsword.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/subClass/MainClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/classes/MainClass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/subClass/Shortsword.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/classes/subClass/Shortsword.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/subClass/SubClassMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/classes/SubClassMethods.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/tag/MainClassTagProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/tag/MainClassTagProvider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/tag/ModTagProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/tag/ModTagProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/tag/ModTagProvider.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/tag/TagCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/tag/TagCreator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/battleofgods/lang/en_us.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/battleofgods/lang/en_us.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,7 +102,7 @@
     "git-widget-placeholder": "1.20.1__mcreator",
     "ignore.virus.scanning.warn.message": "true",
     "last_opened_file_path": "C:/Users/Josef/OneDrive/Games/Minecraft Java/Mods/Eigene/Battle Of Gods/mcreator (PC)/BattleOfGods/run/mods",
-    "settings.editor.selected.configurable": "com.github.blarc.ai.commits.intellij.plugin.settings.AppSettingsConfigurable"
+    "settings.editor.selected.configurable": "project.propVCSSupport.CommitDialog"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -152,12 +165,30 @@
       <option name="project" value="LOCAL" />
       <updated>1746170391622</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="add armor set management and tooltip enhancements for improved armor functionality">
+      <option name="closed" value="true" />
+      <created>1746173425797</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1746173425797</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT_PROFILE" value="Project Default" />
-    <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="SHOW_DIRTY_RECURSIVELY" value="true" />
     <MESSAGE value="Update workspace configuration and clean up task messages" />
@@ -166,7 +197,8 @@
     <MESSAGE value="wooden armor model" />
     <MESSAGE value="." />
     <MESSAGE value="add armor item override and material interface for enhanced armor functionality" />
-    <option name="LAST_COMMIT_MESSAGE" value="add armor item override and material interface for enhanced armor functionality" />
+    <MESSAGE value="add armor set management and tooltip enhancements for improved armor functionality" />
+    <option name="LAST_COMMIT_MESSAGE" value="add armor set management and tooltip enhancements for improved armor functionality" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
