@@ -1,7 +1,7 @@
 package com.schokobaer.battleofgods.init;
 
 import com.schokobaer.battleofgods.BattleofgodsMod;
-import com.schokobaer.battleofgods.mechanics.recipe.CraftPacket;
+import com.schokobaer.battleofgods.recipe.CraftPacket;
 
 public class InitNetworkPackage {
     private static int id = 0;

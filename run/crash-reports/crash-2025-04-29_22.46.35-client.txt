@@ -10,7 +10,7 @@ java.lang.IndexOutOfBoundsException: Index 3 out of bounds for length 3
 	at jdk.internal.util.Preconditions.checkIndex(Preconditions.java:266) ~[?:?] {}
 	at java.util.Objects.checkIndex(Objects.java:361) ~[?:?] {re:mixin}
 	at java.util.ArrayList.get(ArrayList.java:427) ~[?:?] {}
-	at com.schokobaer.battleofgods.mechanics.item.subClass.Broadsword.appendHoverText(Broadsword.java:105) ~[main/:?] {re:classloading}
+	at com.schokobaer.battleofgods.item.subClass.Broadsword.appendHoverText(Broadsword.java:105) ~[main/:?] {re:classloading}
 	at net.minecraft.world.item.ItemStack.getTooltipLines(ItemStack.java:631) ~[forge-1.20.1-47.3.0_mapped_official_1.20.1-recomp.jar:?] {re:mixin,xf:fml:forge:itemstack,re:classloading,xf:fml:forge:itemstack,pl:mixin:APP:bettercombat.mixins.json:ItemStackMixin,pl:mixin:A}
 	at net.minecraft.client.Minecraft.lambda$createSearchTrees$10(Minecraft.java:758) ~[forge-1.20.1-47.3.0_mapped_official_1.20.1-recomp.jar:?] {re:mixin,pl:accesstransformer:B,pl:runtimedistcleaner:A,re:classloading,pl:accesstransformer:B,pl:mixin:A,pl:runtimedistcleaner:A}
 	at net.minecraft.client.searchtree.PlainTextSearchTree.create(PlainTextSearchTree.java:25) ~[forge-1.20.1-47.3.0_mapped_official_1.20.1-recomp.jar:?] {re:classloading,pl:runtimedistcleaner:A}
@@ -68,14 +68,14 @@ A detailed walkthrough of the error, its code path and all known details is as f
 Thread: Render thread
 Suspected Mod: 
 	Battle Of Gods (battleofgods), Version: 1.0.0
-		at TRANSFORMER/battleofgods@1.0.0/com.schokobaer.battleofgods.mechanics.item.subClass.Broadsword.appendHoverText(Broadsword.java:105)
+		at TRANSFORMER/battleofgods@1.0.0/com.schokobaer.battleofgods.item.subClass.Broadsword.appendHoverText(Broadsword.java:105)
 Stacktrace:
 	at jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:64) ~[?:?] {}
 	at jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Preconditions.java:70) ~[?:?] {}
 	at jdk.internal.util.Preconditions.checkIndex(Preconditions.java:266) ~[?:?] {}
 	at java.util.Objects.checkIndex(Objects.java:361) ~[?:?] {re:mixin}
 	at java.util.ArrayList.get(ArrayList.java:427) ~[?:?] {}
-	at com.schokobaer.battleofgods.mechanics.item.subClass.Broadsword.appendHoverText(Broadsword.java:105) ~[%23196!/:?] {re:classloading}
+	at com.schokobaer.battleofgods.item.subClass.Broadsword.appendHoverText(Broadsword.java:105) ~[%23196!/:?] {re:classloading}
 	at net.minecraft.world.item.ItemStack.getTooltipLines(ItemStack.java:631) ~[forge-1.20.1-47.3.0_mapped_official_1.20.1-recomp.jar%23191!/:?] {re:mixin,xf:fml:forge:itemstack,re:classloading,xf:fml:forge:itemstack,pl:mixin:APP:bettercombat.mixins.json:ItemStackMixin,pl:mixin:A}
 	at net.minecraft.client.Minecraft.lambda$createSearchTrees$10(Minecraft.java:758) ~[forge-1.20.1-47.3.0_mapped_official_1.20.1-recomp.jar%23191!/:?] {re:mixin,pl:accesstransformer:B,pl:runtimedistcleaner:A,re:classloading,pl:accesstransformer:B,pl:mixin:A,pl:runtimedistcleaner:A}
 	at net.minecraft.client.searchtree.PlainTextSearchTree.create(PlainTextSearchTree.java:25) ~[forge-1.20.1-47.3.0_mapped_official_1.20.1-recomp.jar%23191!/:?] {re:classloading,pl:runtimedistcleaner:A}

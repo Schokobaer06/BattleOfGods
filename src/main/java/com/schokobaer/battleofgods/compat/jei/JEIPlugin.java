@@ -2,10 +2,12 @@
 package com.schokobaer.battleofgods.compat.jei;
 
 import com.schokobaer.battleofgods.compat.jei.category.WorkbenchCategory;
+import com.schokobaer.battleofgods.handler.WorkbenchRecipeTransferHandler;
 import com.schokobaer.battleofgods.init.InitBlocks;
-import com.schokobaer.battleofgods.mechanics.recipe.RecipeHandler;
+import com.schokobaer.battleofgods.recipe.RecipeHandler;
 import mezz.jei.api.IModPlugin;
 import mezz.jei.api.JeiPlugin;
+import mezz.jei.api.recipe.RecipeType;
 import mezz.jei.api.registration.*;
 import net.minecraft.resources.ResourceLocation;
 import com.schokobaer.battleofgods.BattleofgodsMod;
@@ -39,6 +41,17 @@ public class JEIPlugin implements IModPlugin {
         registration.addRecipeCatalyst(
                 new ItemStack(InitBlocks.WOODEN_WORKBENCH.get()), // Ersetze mit deinem Block
                 WorkbenchCategory.TYPE
+        );
+    }
+
+    @Override
+    public void registerRecipeTransferHandlers(IRecipeTransferRegistration registration) {
+        registration.addRecipeTransferHandler(
+                new WorkbenchRecipeTransferHandler(), RecipeType.create(
+                        BattleofgodsMod.MODID,
+                        "workbench",
+                        RecipeHandler.BattleRecipe.class
+                )
         );
     }
 }

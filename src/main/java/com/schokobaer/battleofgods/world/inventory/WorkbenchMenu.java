@@ -2,10 +2,9 @@ package com.schokobaer.battleofgods.world.inventory;
 
 import com.schokobaer.battleofgods.BattleofgodsMod;
 import com.schokobaer.battleofgods.init.InitMenu;
-import com.schokobaer.battleofgods.mechanics.recipe.RecipeHandler;
+import com.schokobaer.battleofgods.recipe.RecipeHandler;
 import net.minecraft.core.RegistryAccess;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.Container;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
@@ -48,6 +47,7 @@ public class WorkbenchMenu extends AbstractContainerMenu implements Supplier<Map
 
     public void setSelectedRecipe(RecipeHandler.BattleRecipe recipe) {
         this.selectedRecipe = recipe;
+        if (BattleofgodsMod.isDebug()) BattleofgodsMod.LOGGER.debug("WorkbenchMenu - selectRecipe has been called with recipe {}", recipe.getId());
     }
 
     public RecipeHandler.BattleRecipe getSelectedRecipe() {

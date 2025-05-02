@@ -16,9 +16,14 @@
   - [x] Knockback
   - [x] Speed
   - [x] Damage
-- [ ] JEI Klickbare Area + Weiterleitung Prompt:
-> `wie kann ich machen, dass wenn ich in jei auf ein output item klicke, dass, wenn ich im workbenchscreen bin, dass automatisch das selectedRecipe gesetzt wird`
+- [x] JEI Klickbare Area
 - [ ] Melee Armor Subclass
+- [ ] Wooden Full Set
+  - [ ] Wooden Bow
+  - [ ] Wooden Armor
+  - [ ] Wooden Pickaxe
+  - [ ] Wooden Sword
+  - [ ] Recipes
 - [ ] Copper Full Set
   - [ ] Copper Bow
   - [ ] Copper Helmet
@@ -37,25 +42,6 @@
   - [ ] Tin Pickaxe
   - [ ] Tin & Copper Tag
   - [ ] Recipes
-- [ ] Wulfrum Stuff
-  - [ ] Wulfrum Entities
-    - [ ] Wulfrum Rover
-    - [ ] Wulfrum Gyrator
-    - [ ] Wulfrum Hovercraft
-    - [ ] Wulfrum Drone
-    - [ ] Wulfrum Amplifier
-  - [ ] Wulfrum Items
-    - [ ] Wulfrum Armor
-    - [ ] Wulfrum Drill
-    - [ ] Treasure Pinger
-    - [ ] Scaffold Kit
-    - [ ] Acrobatics Pack
-  - [ ] Wulfrum Weapons
-    - [ ] Screwdriver
-    - [ ] Blunderbuss
-    - [ ] Prosthesis
-    - [ ] Knife
-    - [ ] Controller
 - [ ] Iron Full Set
   - [ ] Iron Armor Override
   - [ ] Iron Broadsword/Shortsword
@@ -77,6 +63,25 @@
 - [ ] Items
   - [ ] Cloth
   - [ ] Fallen Star
+- - [ ] Wulfrum Stuff
+- [ ] Wulfrum Entities
+  - [ ] Wulfrum Rover
+  - [ ] Wulfrum Gyrator
+  - [ ] Wulfrum Hovercraft
+  - [ ] Wulfrum Drone
+  - [ ] Wulfrum Amplifier
+- [ ] Wulfrum Items
+  - [ ] Wulfrum Armor
+  - [ ] Wulfrum Drill
+  - [ ] Treasure Pinger
+  - [ ] Scaffold Kit
+  - [ ] Acrobatics Pack
+- [ ] Wulfrum Weapons
+  - [ ] Screwdriver
+  - [ ] Blunderbuss
+  - [ ] Prosthesis
+  - [ ] Knife
+  - [ ] Controller
 - [ ] Generation
   - [ ] Normal Chests in Surface Caves
   - [ ] Normal Chests in Underground Caves

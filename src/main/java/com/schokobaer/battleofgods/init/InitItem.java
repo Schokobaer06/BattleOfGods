@@ -3,7 +3,7 @@ package com.schokobaer.battleofgods.init;
 import com.schokobaer.battleofgods.BattleofgodsMod;
 import com.schokobaer.battleofgods.item.tier1.ItemCopperBroadsword;
 import com.schokobaer.battleofgods.item.tier1.ItemCopperShortsword;
-import com.schokobaer.battleofgods.mechanics.item.override.ItemOverride;
+import com.schokobaer.battleofgods.override.ItemOverride;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;

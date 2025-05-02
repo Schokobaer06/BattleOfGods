@@ -5,24 +5,21 @@ import com.mojang.blaze3d.vertex.Tesselator;
 import com.schokobaer.battleofgods.BattleofgodsMod;
 import com.schokobaer.battleofgods.client.widget.MaterialWidget;
 import com.schokobaer.battleofgods.client.widget.RecipeButton;
-import com.schokobaer.battleofgods.mechanics.recipe.CraftPacket;
-import com.schokobaer.battleofgods.mechanics.recipe.RecipeHandler;
+import com.schokobaer.battleofgods.recipe.CraftPacket;
+import com.schokobaer.battleofgods.recipe.RecipeHandler;
 import com.schokobaer.battleofgods.world.inventory.WorkbenchMenu;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.ImageButton;
 import net.minecraft.client.gui.components.Tooltip;
 import net.minecraft.client.gui.components.events.GuiEventListener;
-import net.minecraft.client.gui.narration.NarratedElementType;
 import net.minecraft.client.gui.narration.NarrationElementOutput;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.client.resources.sounds.SimpleSoundInstance;
-import net.minecraft.client.resources.sounds.SoundInstance;
 import net.minecraft.client.sounds.SoundManager;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
-import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraftforge.client.gui.widget.ScrollPanel;
 
@@ -172,12 +169,12 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
                 // Buttons prüfen
                 for (RecipeButton btn : children()) {
 
-                    btn.isFocused = false;
+                    //btn.isFocused = false;
                     if (mouseX >= btn.getX() &&
                             mouseX <= btn.getX() + btn.getWidth() &&
                             mouseY >= btn.getY() &&
                             mouseY <= btn.getY() + btn.getHeight()) {
-                        btn.isFocused = true;
+                        //btn.isFocused = true;
                         btn.mouseClicked(mouseX,mouseY,button);
                     }
 
@@ -244,15 +241,24 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
                 RenderSystem.disableBlend();
             }
         };
-        // Craft-Button
 
+        if (menu.getSelectedRecipe() !=null) {
+            recipeList.children().forEach(
+                    btn -> {
+                        if (btn instanceof RecipeButton button) {
+                            button.isFocused = button.getRecipe().getId().equals(menu.getSelectedRecipe().getId());
+                        }
+                    });
+            updateMaterialDisplay();
+        }
         addRenderableWidget(recipeList);
     }
 
     private void selectRecipe(RecipeHandler.BattleRecipe recipe) {
         menu.setSelectedRecipe(recipe);
+        if (debug) BattleofgodsMod.LOGGER.debug("WorkbenchScreen - selectRecipe has been called with recipe {}", recipe.getId());
         recipeList.children().forEach(
-        btn -> {
+                btn -> {
             if (btn instanceof RecipeButton button) {
                 button.isFocused = button.getRecipe().getId().equals(recipe.getId());
             }

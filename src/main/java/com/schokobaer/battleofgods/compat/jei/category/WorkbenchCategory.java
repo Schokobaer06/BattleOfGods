@@ -16,7 +16,7 @@ import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import com.schokobaer.battleofgods.BattleofgodsMod;
-import com.schokobaer.battleofgods.mechanics.recipe.RecipeHandler.BattleRecipe;
+import com.schokobaer.battleofgods.recipe.RecipeHandler.BattleRecipe;
 
 public class WorkbenchCategory implements IRecipeCategory<BattleRecipe> {
     public static final RecipeType<BattleRecipe> TYPE = RecipeType.create(
@@ -89,5 +89,8 @@ public class WorkbenchCategory implements IRecipeCategory<BattleRecipe> {
         else
             builder.addSlot(RecipeIngredientRole.OUTPUT, 120, 19)
                 .addItemStack(recipe.getOutput());
+
+
+        builder.moveRecipeTransferButton(120, 45);
     }
 }
