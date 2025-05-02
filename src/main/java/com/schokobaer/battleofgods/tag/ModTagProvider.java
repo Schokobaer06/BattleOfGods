@@ -1,9 +1,8 @@
 package com.schokobaer.battleofgods.tag;// ModItemTagsProvider.java
 
 
-
+import com.schokobaer.battleofgods.classes.MainClass;
 import com.schokobaer.battleofgods.init.*;
-import com.schokobaer.battleofgods.subClass.MainClass;
 import com.schokobaer.battleofgods.override.ItemOverride;
 import com.schokobaer.battleofgods.rarity.Rarity;
 import com.schokobaer.battleofgods.tier.Tier;

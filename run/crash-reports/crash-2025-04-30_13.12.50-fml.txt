@@ -45,10 +45,10 @@ Stacktrace:
 Details:
 	Mod File: /C:/Users/Josef Peer/OneDrive/Games/Minecraft Java/Mods/Eigene/Battle Of Gods/mcreator (LAPTOP)/BattleOfGods/build/resources/main/
 	Failure message: Battle Of Gods (battleofgods) has failed to load correctly
-		java.lang.IllegalArgumentException: Method public static void com.schokobaer.battleofgods.attribute.tooltip.TooltipRemover.onItemTooltip(net.minecraftforge.event.entity.player.ItemTooltipEvent) has @SubscribeEvent annotation, but takes an argument that is not a subtype of the base type interface net.minecraftforge.fml.event.IModBusEvent: class net.minecraftforge.event.entity.player.ItemTooltipEvent
+		java.lang.IllegalArgumentException: Method public static void com.schokobaer.battleofgods.handler.TooltipRemoveHandler.onItemTooltip(net.minecraftforge.event.entity.player.ItemTooltipEvent) has @SubscribeEvent annotation, but takes an argument that is not a subtype of the base type interface net.minecraftforge.fml.event.IModBusEvent: class net.minecraftforge.event.entity.player.ItemTooltipEvent
 	Mod Version: 1.0.0
 	Mod Issue URL: NOT PROVIDED
-	Exception message: java.lang.IllegalArgumentException: Method public static void com.schokobaer.battleofgods.attribute.tooltip.TooltipRemover.onItemTooltip(net.minecraftforge.event.entity.player.ItemTooltipEvent) has @SubscribeEvent annotation, but takes an argument that is not a subtype of the base type interface net.minecraftforge.fml.event.IModBusEvent: class net.minecraftforge.event.entity.player.ItemTooltipEvent
+	Exception message: java.lang.IllegalArgumentException: Method public static void com.schokobaer.battleofgods.handler.TooltipRemoveHandler.onItemTooltip(net.minecraftforge.event.entity.player.ItemTooltipEvent) has @SubscribeEvent annotation, but takes an argument that is not a subtype of the base type interface net.minecraftforge.fml.event.IModBusEvent: class net.minecraftforge.event.entity.player.ItemTooltipEvent
 Stacktrace:
 	at net.minecraftforge.eventbus.EventBus.registerListener(EventBus.java:153) ~[eventbus-6.0.5.jar%23115!/:?] {}
 	at net.minecraftforge.eventbus.EventBus.lambda$registerClass$2(EventBus.java:86) ~[eventbus-6.0.5.jar%23115!/:?] {}

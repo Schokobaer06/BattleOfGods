@@ -2,9 +2,9 @@ package com.schokobaer.battleofgods.item.tier1;
 
 import com.google.common.collect.LinkedHashMultimap;
 import com.google.common.collect.Multimap;
+import com.schokobaer.battleofgods.classes.subClass.Broadsword;
 import com.schokobaer.battleofgods.init.InitRarity;
 import com.schokobaer.battleofgods.init.InitTier;
-import com.schokobaer.battleofgods.subClass.Broadsword;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.entity.EquipmentSlot;

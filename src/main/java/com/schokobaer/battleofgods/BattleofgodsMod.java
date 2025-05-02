@@ -1,7 +1,7 @@
 package com.schokobaer.battleofgods;
 
+import com.schokobaer.battleofgods.classes.MainClass;
 import com.schokobaer.battleofgods.init.*;
-import com.schokobaer.battleofgods.subClass.MainClass;
 import com.schokobaer.battleofgods.override.ItemOverride;
 import com.schokobaer.battleofgods.rarity.Rarity;
 import com.schokobaer.battleofgods.recipe.CraftPacket;
@@ -162,7 +162,7 @@ public class BattleofgodsMod {
                 event.includeServer(),
                 (DataProvider.Factory<SubClassTagProvider>) output -> new SubClassTagProvider(
                         output,
-                        (ResourceKey<? extends Registry<ItemOverride>>) (Object) ForgeRegistries.ITEMS.getRegistryKey(),
+                        (ResourceKey<? extends Registry<ItemOverride>>) ForgeRegistries.ITEMS.getRegistryKey(),
                         event.getLookupProvider(),
                         MODID,
                         event.getExistingFileHelper()

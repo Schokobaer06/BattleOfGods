@@ -4,10 +4,32 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="55347841-98cd-4f86-9608-4bb232a43c91" name="Changes" comment="update todo list: mark Weapons Stats and Knockback as complete; add Boss events and AI tasks">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/override/ArmorItemOverride.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/override/ArmorMaterialOverride.java" afterDir="false" />
+    <list default="true" id="55347841-98cd-4f86-9608-4bb232a43c91" name="Changes" comment="add armor item override and material interface for enhanced armor functionality">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/armor/ArmorSetManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/armor/TerrariaArmorItem.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/crash-reports/crash-2025-04-30_13.12.50-fml.txt" beforeDir="false" afterPath="$PROJECT_DIR$/run/crash-reports/crash-2025-04-30_13.12.50-fml.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/logs/debug.log" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/debug.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/BattleofgodsMod.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/BattleofgodsMod.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/attribute/tooltip/TooltipRemover.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/handler/TooltipRemoveHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/init/InitMainClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/init/InitMainClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/init/InitSubClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/init/InitSubClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/item/tier1/ItemCopperBroadsword.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/item/tier1/ItemCopperBroadsword.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/item/tier1/ItemCopperShortsword.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/item/tier1/ItemCopperShortsword.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/override/ArmorItemOverride.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/override/ArmorMaterialOverride.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/override/ItemOverride.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/override/ItemOverride.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/override/SwordItemOverride.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/override/SwordItemOverride.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/override/TieredItemOverride.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/override/TieredItemOverride.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/subClass/AbstractSubClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/classes/AbstractSubClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/subClass/Broadsword.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/classes/subClass/Broadsword.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/subClass/MainClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/classes/MainClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/subClass/Shortsword.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/classes/subClass/Shortsword.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/subClass/SubClassMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/classes/SubClassMethods.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/tag/MainClassTagProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/tag/MainClassTagProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/tag/ModTagProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/tag/ModTagProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/tag/TagCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/tag/TagCreator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/battleofgods/lang/en_us.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/battleofgods/lang/en_us.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,9 +46,9 @@
       <list>
         <option value="package-info" />
         <option value="ForgePacket (1.18+)" />
-        <option value="Class" />
         <option value="Exception" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -67,7 +89,7 @@
     "git-widget-placeholder": "1.20.1__mcreator",
     "ignore.virus.scanning.warn.message": "true",
     "last_opened_file_path": "C:/Users/Josef/OneDrive/Games/Minecraft Java/Mods/Eigene/Battle Of Gods/mcreator (PC)/BattleOfGods/run/mods",
-    "settings.editor.selected.configurable": "vcs.Subversion"
+    "settings.editor.selected.configurable": "com.github.blarc.ai.commits.intellij.plugin.settings.AppSettingsConfigurable"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -75,6 +97,7 @@
       <recent name="C:\Users\Josef\OneDrive\Games\Minecraft Java\Mods\Eigene\Battle Of Gods\mcreator (PC)\BattleOfGods\run\mods" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.schokobaer.battleofgods.armor" />
       <recent name="com.schokobaer.battleofgods.item" />
     </key>
   </component>
@@ -121,7 +144,15 @@
       <option name="project" value="LOCAL" />
       <updated>1746130139139</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="add armor item override and material interface for enhanced armor functionality">
+      <option name="closed" value="true" />
+      <created>1746170391622</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1746170391622</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -134,7 +165,8 @@
     <MESSAGE value="Add wooden armor model and update workspace configuration" />
     <MESSAGE value="wooden armor model" />
     <MESSAGE value="." />
-    <option name="LAST_COMMIT_MESSAGE" value="." />
+    <MESSAGE value="add armor item override and material interface for enhanced armor functionality" />
+    <option name="LAST_COMMIT_MESSAGE" value="add armor item override and material interface for enhanced armor functionality" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />

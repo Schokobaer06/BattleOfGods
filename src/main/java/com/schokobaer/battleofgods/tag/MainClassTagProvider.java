@@ -1,9 +1,9 @@
 package com.schokobaer.battleofgods.tag;
 
 import com.schokobaer.battleofgods.BattleofgodsMod;
+import com.schokobaer.battleofgods.classes.MainClass;
 import com.schokobaer.battleofgods.init.InitItem;
 import com.schokobaer.battleofgods.init.InitMainClass;
-import com.schokobaer.battleofgods.subClass.MainClass;
 import com.schokobaer.battleofgods.override.ItemOverride;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.Registry;

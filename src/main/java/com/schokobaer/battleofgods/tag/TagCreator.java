@@ -1,10 +1,10 @@
 package com.schokobaer.battleofgods.tag;
 
 import com.schokobaer.battleofgods.BattleofgodsMod;
+import com.schokobaer.battleofgods.classes.MainClass;
 import com.schokobaer.battleofgods.init.InitMainClass;
 import com.schokobaer.battleofgods.init.InitRarity;
 import com.schokobaer.battleofgods.init.InitTier;
-import com.schokobaer.battleofgods.subClass.MainClass;
 import com.schokobaer.battleofgods.override.ItemOverride;
 import com.schokobaer.battleofgods.rarity.Rarity;
 import com.schokobaer.battleofgods.tier.Tier;
@@ -30,7 +30,7 @@ public class TagCreator {
     }
 
     public static TagKey<ItemOverride> createSubClassTag(@NotBlank String name, RegistryObject<MainClass> mainClass) {
-        TagKey<ItemOverride> tag = TagKey.create((net.minecraft.resources.ResourceKey<? extends net.minecraft.core.Registry<ItemOverride>>) (Object) ForgeRegistries.ITEMS.getRegistryKey(), new ResourceLocation(BattleofgodsMod.MODID, name.toLowerCase()));
+        TagKey<ItemOverride> tag = TagKey.create((net.minecraft.resources.ResourceKey<? extends net.minecraft.core.Registry<ItemOverride>>) ForgeRegistries.ITEMS.getRegistryKey(), new ResourceLocation(BattleofgodsMod.MODID, name.toLowerCase()));
         //tags.put(name.toLowerCase(), tag);
         return tag;
     }

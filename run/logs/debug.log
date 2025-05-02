@@ -627,7 +627,7 @@ java.lang.IllegalAccessException: class io.netty.util.internal.PlatformDependent
 [01Mai2025 22:23:43.033] [modloading-worker-0/DEBUG] [io.netty.util.internal.CleanerJava9/]: java.nio.ByteBuffer.cleaner(): available
 [01Mai2025 22:23:43.033] [modloading-worker-0/DEBUG] [io.netty.util.internal.PlatformDependent/]: -Dio.netty.noPreferDirect: false
 [01Mai2025 22:23:43.034] [modloading-worker-0/DEBUG] [mezz.jei.common.config.file.ConfigSerializer/]: Loading config file: C:\Users\Josef\OneDrive\Games\Minecraft Java\Mods\Eigene\Battle Of Gods\mcreator (PC)\BattleOfGods\run\config\jei\jei-debug.ini
-[01Mai2025 22:23:43.034] [modloading-worker-0/DEBUG] [net.minecraftforge.fml.javafmlmod.AutomaticEventSubscriber/LOADING]: Auto-subscribing com.schokobaer.battleofgods.attribute.tooltip.TooltipRemover to FORGE
+[01Mai2025 22:23:43.034] [modloading-worker-0/DEBUG] [net.minecraftforge.fml.javafmlmod.AutomaticEventSubscriber/LOADING]: Auto-subscribing com.schokobaer.battleofgods.handler.TooltipRemoveHandler to FORGE
 [01Mai2025 22:23:43.035] [modloading-worker-0/DEBUG] [mezz.jei.common.config.file.ConfigSerializer/]: Saving config file: C:\Users\Josef\OneDrive\Games\Minecraft Java\Mods\Eigene\Battle Of Gods\mcreator (PC)\BattleOfGods\run\config\jei\jei-debug.ini
 [01Mai2025 22:23:43.035] [modloading-worker-0/DEBUG] [net.minecraftforge.fml.javafmlmod.AutomaticEventSubscriber/LOADING]: Auto-subscribing com.schokobaer.battleofgods.init.InitScreen to MOD
 [01Mai2025 22:23:43.036] [modloading-worker-0/DEBUG] [net.minecraftforge.fml.javafmlmod.AutomaticEventSubscriber/LOADING]: Auto-subscribing com.schokobaer.battleofgods.rarity.RarityColorHandler to FORGE

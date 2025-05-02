@@ -1,6 +1,6 @@
 package com.schokobaer.battleofgods.override;
 
-import com.schokobaer.battleofgods.subClass.AbstractSubClass;
+import com.schokobaer.battleofgods.classes.AbstractSubClass;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Tier;
 
