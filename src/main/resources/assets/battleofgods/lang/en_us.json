@@ -1,8 +1,12 @@
 {
   "itemGroup.battleofgods.tier_1": "Tier 1",
   "item.battleofgods.copper_shortsword": "Copper Shortsword",
-  "block.battleofgods.wooden_workbench": "Workbench",
   "item.battleofgods.copper_broadsword": "Copper Broadsword",
+  "item.battleofgods.wood_armor_helmet": "Wood Helmet",
+  "item.battleofgods.wood_armor_chestplate": "Wood Breastplate",
+  "item.battleofgods.wood_armor_leggings": "Wood Greaves",
+  "item.battleofgods.wood_armor_boots": "Wood Boots",
+  "block.battleofgods.wooden_workbench": "Workbench",
   "container.battleofgods.workbench": "Workbench",
   "rarity.battleofgods.gray": "Gray",
   "rarity.battleofgods.white": "White",

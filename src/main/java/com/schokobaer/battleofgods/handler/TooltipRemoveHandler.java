@@ -15,19 +15,21 @@ import net.minecraftforge.fml.common.Mod;
 public class TooltipRemoveHandler {
     @SubscribeEvent
     public static void onItemTooltip(ItemTooltipEvent event) {
-        if (!(event.getItemStack().getItem() instanceof ItemOverride && event.getItemStack().getItem() instanceof TerrariaArmorItem))
-            return;
-        //Critical Hit Chance
-        event.getToolTip().removeIf(component -> component.contains(
-                Component.translatable("attribute.battleofgods.generic.critical_hit")
-        ));
-        //Knockback Chance
-        event.getToolTip().removeIf(component -> component.contains(
-                Component.translatable("attribute.name.generic.attack_knockback")
-        ));
-        //Armor
-        event.getToolTip().removeIf(component -> component.contains(
-                Component.translatable("attribute.name.generic.armor")
-        ));
+        if (event.getItemStack().getItem() instanceof ItemOverride) {
+
+            //Critical Hit Chance
+            event.getToolTip().removeIf(component -> component.contains(
+                    Component.translatable("attribute.battleofgods.generic.critical_hit")
+            ));
+            //Knockback Chance
+            event.getToolTip().removeIf(component -> component.contains(
+                    Component.translatable("attribute.name.generic.attack_knockback")
+            ));
+        }
+        if (event.getItemStack().getItem() instanceof TerrariaArmorItem)
+            //Armor
+            event.getToolTip().removeIf(component -> component.contains(
+                    Component.translatable("attribute.name.generic.armor")
+            ));
     }
 }

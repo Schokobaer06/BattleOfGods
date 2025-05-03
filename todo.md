@@ -1,145 +1,150 @@
 - [x] WorkbenchScreen
-  - [X] Correct Material rendering
-  - [X] Correct Tag Material rendering
-  - [x] Texture Update
-  - [X] Correct Crafting
-    - [X] Correct Visual Scrolling Bug
-    - [X] Correct Incorrect Count Display
-    - [X] Correct Non Focusing on hitting CraftButton
-    - [X] ImageButton Sound Fix
-  - [X] Crafting
-    - [X] return Air
+    - [X] Correct Material rendering
+    - [X] Correct Tag Material rendering
+    - [x] Texture Update
+    - [X] Correct Crafting
+        - [X] Correct Visual Scrolling Bug
+        - [X] Correct Incorrect Count Display
+        - [X] Correct Non Focusing on hitting CraftButton
+        - [X] ImageButton Sound Fix
+    - [X] Crafting
+        - [X] return Air
 - [x] JEI compat
 - [x] Attributes
-  - [x] Critical Hit
+    - [x] Critical Hit
 - [x] Weapons Stats
-  - [x] Knockback
-  - [x] Speed
-  - [x] Damage
+    - [x] Knockback
+    - [x] Speed
+    - [x] Damage
 - [x] JEI Klickbare Area
 - [ ] Melee Armor Subclass
 - [ ] Wooden Full Set
-  - [ ] Wooden Bow
-  - [ ] Wooden Armor
-  - [ ] Wooden Pickaxe
-  - [ ] Wooden Sword
-  - [ ] Recipes
+    - [ ] Wooden Bow
+    - [ ] Wooden Armor
+    - [ ] Wooden Pickaxe
+    - [ ] Wooden Sword
+    - [ ] Recipes
+- [ ] Categories überarbeiten für einfacheren Zugriff
+    - [ ] Rarity
+    - [ ] MainClass
+    - [ ] Tier
 - [ ] Copper Full Set
-  - [ ] Copper Bow
-  - [ ] Copper Helmet
-  - [ ] Copper Chestplate
-  - [ ] Copper Leggings
-  - [ ] Copper Boots
-  - [ ] Copper Pickaxe
-  - [ ] Copper Recipes (Shortsword & Broadsword have to be crafted at anvil)
+    - [ ] Copper Bow
+    - [ ] Copper Helmet
+    - [ ] Copper Chestplate
+    - [ ] Copper Leggings
+    - [ ] Copper Boots
+    - [ ] Copper Pickaxe
+    - [ ] Copper Recipes (Shortsword & Broadsword have to be crafted at anvil)
 - [ ] Tin Full Set
-  - [ ] Tin Ore
-  - [ ] Tin Ingot
-  - [ ] Tin Helmet
-  - [ ] Tin Chestplate
-  - [ ] Tin Leggings
-  - [ ] Tin Boots
-  - [ ] Tin Pickaxe
-  - [ ] Tin & Copper Tag
-  - [ ] Recipes
+    - [ ] Tin Ore
+    - [ ] Tin Ingot
+    - [ ] Tin Helmet
+    - [ ] Tin Chestplate
+    - [ ] Tin Leggings
+    - [ ] Tin Boots
+    - [ ] Tin Pickaxe
+    - [ ] Tin & Copper Tag
+    - [ ] Recipes
 - [ ] Iron Full Set
-  - [ ] Iron Armor Override
-  - [ ] Iron Broadsword/Shortsword
-  - [ ] Iron Pickaxe
-  - [ ] Iron Bow
-  - [ ] Anvil
-  - [ ] Recipes
+    - [ ] Iron Armor Override
+    - [ ] Iron Broadsword/Shortsword
+    - [ ] Iron Pickaxe
+    - [ ] Iron Bow
+    - [ ] Anvil
+    - [ ] Recipes
 - [ ] Lead Full Set
-  - [ ] Lead Ore
-  - [ ] Lead Ingot
-  - [ ] Lead Helmet
-  - [ ] Lead Chestplate
-  - [ ] Lead Leggings
-  - [ ] Lead Boots
-  - [ ] Lead Pickaxe
-  - [ ] Anvil
-  - [ ] Lead & Iron Tag
-  - [ ] Recipes
+    - [ ] Lead Ore
+    - [ ] Lead Ingot
+    - [ ] Lead Helmet
+    - [ ] Lead Chestplate
+    - [ ] Lead Leggings
+    - [ ] Lead Boots
+    - [ ] Lead Pickaxe
+    - [ ] Anvil
+    - [ ] Lead & Iron Tag
+    - [ ] Recipes
 - [ ] Items
-  - [ ] Cloth
-  - [ ] Fallen Star
-- - [ ] Wulfrum Stuff
+    - [ ] Cloth
+    - [ ] Fallen Star
+-
+    - [ ] Wulfrum Stuff
 - [ ] Wulfrum Entities
-  - [ ] Wulfrum Rover
-  - [ ] Wulfrum Gyrator
-  - [ ] Wulfrum Hovercraft
-  - [ ] Wulfrum Drone
-  - [ ] Wulfrum Amplifier
+    - [ ] Wulfrum Rover
+    - [ ] Wulfrum Gyrator
+    - [ ] Wulfrum Hovercraft
+    - [ ] Wulfrum Drone
+    - [ ] Wulfrum Amplifier
 - [ ] Wulfrum Items
-  - [ ] Wulfrum Armor
-  - [ ] Wulfrum Drill
-  - [ ] Treasure Pinger
-  - [ ] Scaffold Kit
-  - [ ] Acrobatics Pack
+    - [ ] Wulfrum Armor
+    - [ ] Wulfrum Drill
+    - [ ] Treasure Pinger
+    - [ ] Scaffold Kit
+    - [ ] Acrobatics Pack
 - [ ] Wulfrum Weapons
-  - [ ] Screwdriver
-  - [ ] Blunderbuss
-  - [ ] Prosthesis
-  - [ ] Knife
-  - [ ] Controller
+    - [ ] Screwdriver
+    - [ ] Blunderbuss
+    - [ ] Prosthesis
+    - [ ] Knife
+    - [ ] Controller
 - [ ] Generation
-  - [ ] Normal Chests in Surface Caves
-  - [ ] Normal Chests in Underground Caves
-  - [ ] Gems
-    - [ ] Amethyst
-    - [ ] Topaz
-    - [ ] Sapphire
-    - [ ] Emerald
-    - [ ] Ruby
-    - [ ] Diamond
-    - [ ] Amber
-  - [ ] Living Trees
-    - [ ] Living Wooden Chest
+    - [ ] Normal Chests in Surface Caves
+    - [ ] Normal Chests in Underground Caves
+    - [ ] Gems
+        - [ ] Amethyst
+        - [ ] Topaz
+        - [ ] Sapphire
+        - [ ] Emerald
+        - [ ] Ruby
+        - [ ] Diamond
+        - [ ] Amber
+    - [ ] Living Trees
+        - [ ] Living Wooden Chest
 - [ ] Weapons
-  - [ ] Wooden Sword [Melee]
-  - [ ] Wooden Bow [Ranged]
-  - [ ] Wand of Sparking [Magic]
-  - [ ] Amethyst Staff [Magic]
-  - [ ] Topaz Staff [Magic]
-  - [ ] Abigails Flower [Summon]
-  - [ ] Finch Staff [Summon]
-  - [ ] Wulfrum Screwdriver [Melee]
-  - [ ] Wulfrum Blunderbuss [Ranged] (Needs Money System already in place)
-  - [ ] Wulfrum Prosthesis [Magic]
-  - [ ] Wulfrum Knife [Rogue]
-  - [ ] Wulfrum Controller [Summon]
-  - [ ] Iron Francisca / Lead Tomahawk [Rogue]
-  - [ ] Stone throwing Spear [Rogue]
-  - [ ] Gauze [Healing]
-  - [ ] Recovery Wand [Healing]
-  - [ ] Wooden Baton [Healing]
-  - [ ] Palm Cross [Healing]
-  - [ ] Drum Mallet [Bard]
-  - [ ] Tambourine [Bard]
-  - [ ] Wooden Whistle [Bard]
-  - [ ] Harmonica [Bard]
+    - [ ] Wooden Sword [Melee]
+    - [ ] Wooden Bow [Ranged]
+    - [ ] Wand of Sparking [Magic]
+    - [ ] Amethyst Staff [Magic]
+    - [ ] Topaz Staff [Magic]
+    - [ ] Abigails Flower [Summon]
+    - [ ] Finch Staff [Summon]
+    - [ ] Wulfrum Screwdriver [Melee]
+    - [ ] Wulfrum Blunderbuss [Ranged] (Needs Money System already in place)
+    - [ ] Wulfrum Prosthesis [Magic]
+    - [ ] Wulfrum Knife [Rogue]
+    - [ ] Wulfrum Controller [Summon]
+    - [ ] Iron Francisca / Lead Tomahawk [Rogue]
+    - [ ] Stone throwing Spear [Rogue]
+    - [ ] Gauze [Healing]
+    - [ ] Recovery Wand [Healing]
+    - [ ] Wooden Baton [Healing]
+    - [ ] Palm Cross [Healing]
+    - [ ] Drum Mallet [Bard]
+    - [ ] Tambourine [Bard]
+    - [ ] Wooden Whistle [Bard]
+    - [ ] Harmonica [Bard]
 - [ ] Invincibility Frames
 - [ ] Defense
 - [ ] Animals
-  - [ ] Squirrel
+    - [ ] Squirrel
 - [ ] NPCS
-  - [ ] Guide
-  - [ ] Merchant
-  - [ ] Squirrel with Hat
+    - [ ] Guide
+    - [ ] Merchant
+    - [ ] Squirrel with Hat
 - [ ] Boss
-  - [ ] Events
-    - [ ] BossAliveEvent
-    - [ ] BossSpawnEvent
-  - [ ] Boss AI
-  - [ ] Boss Entity Subclass
+    - [ ] Events
+        - [ ] BossAliveEvent
+        - [ ] BossSpawnEvent
+    - [ ] Boss AI
+    - [ ] Boss Entity Subclass
 - [ ] Trojan Squirrel
-  - [ ] TrSq Boss Summon
-  - [ ] TrSq Boss
-  - [ ] TrSq Boss AI
-  - [ ] TrSq Boss Treasure Bag
-    - [ ] Bag
-    - [ ] Drops
-      - [ ] Squirrel Squire Staff
+    - [ ] TrSq Boss Summon
+    - [ ] TrSq Boss
+    - [ ] TrSq Boss AI
+    - [ ] TrSq Boss Treasure Bag
+        - [ ] Bag
+        - [ ] Drops
+            - [ ] Squirrel Squire Staff
 - [ ] Logo
 - [ ] Mod Icon
 - [ ] Custom Main Menu

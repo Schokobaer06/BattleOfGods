@@ -73,6 +73,8 @@ public class BattleofgodsMod {
         InitMainClass.MAIN_CLASSES.makeRegistry(() -> new RegistryBuilder<MainClass>()
                 .setName(InitMainClass.MAIN_CLASS_KEY.location())
                 .hasTags());
+
+
         InitTier.TIERS.register(bus);
         InitRarity.RARITIES.register(bus);
         InitMainClass.MAIN_CLASSES.register(bus);
