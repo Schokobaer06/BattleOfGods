@@ -19,6 +19,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.Level;
+import net.minecraftforge.client.extensions.common.IClientItemExtensions;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import org.jetbrains.annotations.NotNull;
@@ -29,8 +30,9 @@ import software.bernie.geckolib.core.animation.AnimatableManager;
 import software.bernie.geckolib.util.GeckoLibUtil;
 
 import java.util.*;
+import java.util.function.Consumer;
 
-public class TerrariaArmorItem extends ArmorItem implements GeoItem {
+public abstract class TerrariaArmorItem extends ArmorItem implements GeoItem {
     private final int defense;
     private final Map<Attribute, AttributeModifier> attributeModifiers = new HashMap<>();
     private final RegistryObject<Rarity> rarity;
@@ -77,7 +79,7 @@ public class TerrariaArmorItem extends ArmorItem implements GeoItem {
 
             @Override
             public int getDefenseForType(Type type1) {
-                return defense[type1.getSlot().getIndex()];
+                return defense[type1.ordinal()];
             }
 
             @Override
@@ -133,6 +135,7 @@ public class TerrariaArmorItem extends ArmorItem implements GeoItem {
     }
 
     // Deaktiviere Minecrafts Standard-Rüstungsberechnung
+    @Deprecated
     @Override
     public int getDefense() {
         return 0;
@@ -225,5 +228,5 @@ public class TerrariaArmorItem extends ArmorItem implements GeoItem {
         return this.cache;
     }
 
-    //public abstract void initializeClient(Consumer<IClientItemExtensions> consumer);
+    public abstract void initializeClient(Consumer<IClientItemExtensions> consumer);
 }

@@ -16,6 +16,6 @@ public class WoodArmorModel extends GeoModel<WoodArmor> {
 
     @Override
     public ResourceLocation getTextureResource(WoodArmor object) {
-        return new ResourceLocation("battleofgods", "textures/item/wood_armor.png");
+        return new ResourceLocation("battleofgods", "textures/armor/wood_armor.png");
     }
 }
