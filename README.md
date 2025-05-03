@@ -3,7 +3,7 @@
 This mod is **experimental** and in an **early alpha stage**.
 
 ## Description
-Minecraft Mod based on [*Terraria*](https://terraria.org/) and its mods:
+Minecraft Mod based on [*Terraria*](https://terraria.org/) and some of its mods:
 
  - [*Calamity Mod*](https://steamcommunity.com/sharedfiles/filedetails/?id=2824688072)
  - [*Fargo's Mutant Mod*](https://steamcommunity.com/sharedfiles/filedetails/?id=2570931073)
