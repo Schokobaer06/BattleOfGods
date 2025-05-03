@@ -4,10 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="55347841-98cd-4f86-9608-4bb232a43c91" name="Changes" comment="add armor item attributes and tooltip enhancements for improved functionality">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/armor/tier1/WoodArmor.java" afterDir="false" />
+    <list default="true" id="55347841-98cd-4f86-9608-4bb232a43c91" name="Changes" comment="refactor: reorganize package structure for CraftPacket and RecipeHandler">
+      <change afterPath="$PROJECT_DIR$/models/test models/armor/wooden/wooden_boots.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/test models/armor/wooden/wooden_chestplate.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/test models/armor/wooden/wooden_chestplate_old.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/test models/armor/wooden/wooden_helmet.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/test models/armor/wooden/wooden_leggings.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/battleofgods/textures/models/armor/wooden_layer_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/battleofgods/textures/models/armor/wooden_layer_2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/models/test models/armor/wooden/wooden_armor.bbmodel" beforeDir="false" afterPath="$PROJECT_DIR$/models/test models/armor/wooden/wooden_armor.bbmodel" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/armor/tier1/WoodArmor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/armor/tier1/WoodenArmor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/battleofgods/geo/wooden_armor.geo.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/battleofgods/geo/wooden_armor.geo.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,6 +39,9 @@
       </list>
     </option>
   </component>
+  <component name="FormatOnSaveOptions">
+    <option name="myRunOnSave" value="true" />
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -45,6 +57,9 @@
     &quot;accountId&quot;: &quot;59e9c4d8-fc59-4173-8cab-33daed83c36d&quot;
   }
 }</component>
+  <component name="OptimizeOnSaveOptions">
+    <option name="myRunOnSave" value="true" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 2
@@ -66,15 +81,18 @@
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;1.20.1__mcreator&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Josef/OneDrive/Games/Minecraft Java/Mods/Eigene/Battle Of Gods/mcreator (PC)/BattleOfGods/run/mods&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.CommitDialog&quot;
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Josef/OneDrive/Games/Minecraft Java/Mods/Eigene/Battle Of Gods/mcreator (PC)/BattleOfGods/src/main/resources/assets/battleofgods/textures/models/armor&quot;,
+    &quot;rearrange.code.on.save&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.Mappings&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Josef\OneDrive\Games\Minecraft Java\Mods\Eigene\Battle Of Gods\mcreator (PC)\BattleOfGods\src\main\resources\assets\battleofgods\textures\models\armor" />
       <recent name="C:\Users\Josef\OneDrive\Games\Minecraft Java\Mods\Eigene\Battle Of Gods\mcreator (PC)\BattleOfGods\run\mods" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Josef\OneDrive\Games\Minecraft Java\Mods\Eigene\Battle Of Gods\mcreator (PC)\BattleOfGods\src\main\resources\assets\battleofgods\geo" />
       <recent name="C:\Users\Josef Peer\OneDrive\Games\Minecraft Java\Mods\Eigene\Battle Of Gods\mcreator (LAPTOP)\BattleOfGods\src\main\resources\assets\battleofgods\geo" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -157,7 +175,15 @@
       <option name="project" value="LOCAL" />
       <updated>1746180827675</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="refactor: reorganize package structure for CraftPacket and RecipeHandler">
+      <option name="closed" value="true" />
+      <created>1746216111655</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1746216111655</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -184,7 +210,8 @@
     <MESSAGE value="add armor set management and tooltip enhancements for improved armor functionality" />
     <MESSAGE value="added Armor" />
     <MESSAGE value="add armor item attributes and tooltip enhancements for improved functionality" />
-    <option name="LAST_COMMIT_MESSAGE" value="add armor item attributes and tooltip enhancements for improved functionality" />
+    <MESSAGE value="refactor: reorganize package structure for CraftPacket and RecipeHandler" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor: reorganize package structure for CraftPacket and RecipeHandler" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />

@@ -5,9 +5,9 @@ import com.schokobaer.battleofgods.init.InitRarity;
 import com.schokobaer.battleofgods.init.InitTier;
 import net.minecraft.world.item.ArmorMaterial;
 
-public class WoodArmor extends TerrariaArmorItem {
+public class WoodenArmor extends TerrariaArmorItem {
 
-    public WoodArmor(ArmorMaterial material, Type type, Properties properties) {
+    public WoodenArmor(ArmorMaterial material, Type type, Properties properties) {
         super(
                 material,
                 type,
