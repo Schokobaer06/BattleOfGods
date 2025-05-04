@@ -30,6 +30,7 @@ import java.util.EnumMap;
 import java.util.List;
 import java.util.UUID;
 
+@Deprecated
 public class ArmorItemOverride extends ItemOverride implements Equipable {
     public static final DispenseItemBehavior DISPENSE_ITEM_BEHAVIOR = new DefaultDispenseItemBehavior() {
         protected ItemStack execute(BlockSource blockSource, ItemStack itemStack) {

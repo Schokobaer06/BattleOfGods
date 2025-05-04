@@ -3,6 +3,7 @@ package com.schokobaer.battleofgods.override;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.item.crafting.Ingredient;
 
+@Deprecated
 public interface ArmorMaterialOverride {
     int getDurabilityForType(ArmorItemOverride.Type type);
 
