@@ -16,10 +16,10 @@ import software.bernie.geckolib.renderer.GeoArmorRenderer;
 import java.util.function.Consumer;
 
 public class WoodArmor extends TerrariaArmorItem {
+    public static final String name = "wood_armor";
 
     public WoodArmor(Type type, Properties properties) {
-        super(new int[]{0, 1, 1, 0},
-                "wood_armor",
+        super("name", new int[]{0, 1, 1, 0},
                 ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("item.armor.equip_generic")),
                 15, type, properties,
                 InitRarity.WHITE, InitTier.TIER_1);

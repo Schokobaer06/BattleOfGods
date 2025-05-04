@@ -50,7 +50,7 @@ public abstract class TerrariaArmorItem extends ArmorItem implements GeoItem {
      * @param rarity     Rarity of the item
      * @param tier       Tier of the item
      */
-    public TerrariaArmorItem(ArmorMaterial material, Type type, Properties properties, RegistryObject<Rarity> rarity, RegistryObject<Tier> tier) {
+    public TerrariaArmorItem(String name, ArmorMaterial material, Type type, Properties properties, RegistryObject<Rarity> rarity, RegistryObject<Tier> tier) {
         super(material, type, properties);
         this.defense = material.getDefenseForType(type);
         this.rarity = rarity;
@@ -60,9 +60,9 @@ public abstract class TerrariaArmorItem extends ArmorItem implements GeoItem {
     /**
      * Abstract ArmorItem class for BattleOfGods-Armor.
      *
+     * @param name             name of the armor
      * @param defense          Defense value for each armor piece (max 4 values)
      *                         {a b c d} = {Boots, Leggings, Chestplate, Helmet}
-     * @param name             name of the armor
      * @param soundEvent       Equip sound
      * @param enchantmentValue Enchantment value when enchanting
      * @param type             Armor type (Helmet, Chestplate, Leggings, Boots)
@@ -70,7 +70,7 @@ public abstract class TerrariaArmorItem extends ArmorItem implements GeoItem {
      * @param rarity           Rarity of the item
      * @param tier             Tier of the item
      */
-    public TerrariaArmorItem(int[] defense, String name, SoundEvent soundEvent, int enchantmentValue, Type type, Properties properties, RegistryObject<Rarity> rarity, RegistryObject<Tier> tier) {
+    public TerrariaArmorItem(String name, int[] defense, SoundEvent soundEvent, int enchantmentValue, Type type, Properties properties, RegistryObject<Rarity> rarity, RegistryObject<Tier> tier) {
         super(new ArmorMaterial() {
             @Override
             public int getDurabilityForType(Type type1) {
@@ -164,6 +164,7 @@ public abstract class TerrariaArmorItem extends ArmorItem implements GeoItem {
         }
         return modifiers;
     }
+
 
     @Override
     public Component getName(ItemStack stack) {
