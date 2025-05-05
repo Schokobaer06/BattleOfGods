@@ -61,5 +61,6 @@
   "tooltip.battleofgods.weapon_knockback_very_strong": "Very strong knockback",
   "tooltip.battleofgods.weapon_knockback_extremely_strong": "Extremely strong knockback",
   "tooltip.battleofgods.weapon_knockback_insanely_strong": "Insanely strong knockback",
-  "tooltip.battleofgods.armor": "defense"
+  "tooltip.battleofgods.armor": "defense",
+  "tooltip.battleofgods.armor_set_bonus": "Set Bonus"
 }

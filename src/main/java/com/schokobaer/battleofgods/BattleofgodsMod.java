@@ -1,6 +1,7 @@
 package com.schokobaer.battleofgods;
 
 import com.schokobaer.battleofgods.classes.MainClass;
+import com.schokobaer.battleofgods.handler.ArmorSetBonusHandler;
 import com.schokobaer.battleofgods.handler.RecipeHandler;
 import com.schokobaer.battleofgods.init.*;
 import com.schokobaer.battleofgods.network.CraftPacket;
@@ -92,6 +93,7 @@ public class BattleofgodsMod {
         InitMenu.MENUS.register(bus);
         bus.addListener(BattleofgodsMod::registerRecipeTypes);
         bus.addListener(BattleofgodsMod::registerRecipeSerializers);
+        bus.addListener(ArmorSetBonusHandler::onCommonSetup);
         bus.addListener(this::gatherData);
 
         addNetworkMessage(CraftPacket.class, CraftPacket::encode, CraftPacket::decode, CraftPacket::handle);
