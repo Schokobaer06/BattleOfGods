@@ -17,8 +17,8 @@
     - [x] Speed
     - [x] Damage
 - [x] JEI Klickbare Area
-- [ ] Melee Armor Subclass
-    - [ ] Setbonus
+- [x] Melee Armor Subclass
+    - [x] Setbonus
 - [ ] Wooden Full Set
     - [ ] Wooden Bow
     - [ ] Wooden Armor
