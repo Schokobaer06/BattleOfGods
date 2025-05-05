@@ -1,6 +1,5 @@
 package com.schokobaer.battleofgods.item;
 
-import com.schokobaer.battleofgods.client.renderer.WoodArmorRenderer;
 import net.minecraft.client.model.HumanoidModel;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
@@ -86,7 +85,7 @@ public class WoodArmorItem extends ArmorItem implements GeoItem {
             public HumanoidModel<?> getHumanoidArmorModel(LivingEntity livingEntity, ItemStack itemStack, EquipmentSlot equipmentSlot, HumanoidModel<?> original) {
                 if (this.renderer == null) {
                     try {
-                        this.renderer = new WoodArmorRenderer();
+                        this.renderer = null;
                     } catch (Exception e) {
                         throw new IllegalStateException("Failed to initialize WoodArmorRenderer", e);
                     }

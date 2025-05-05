@@ -1,5 +1,9 @@
 {
   "stats": {
+    "minecraft:mined": {
+      "battleofgods:wooden_workbench": 2,
+      "minecraft:grass_block": 4
+    },
     "minecraft:dropped": {
       "minecraft:diamond_sword": 2,
       "minecraft:dirt": 1,
@@ -45,25 +49,21 @@
       "battleofgods:wood_armor_helmet": 1
     },
     "minecraft:custom": {
-      "minecraft:time_since_rest": 371715,
-      "minecraft:sprint_one_cm": 53126,
-      "minecraft:walk_one_cm": 150258,
+      "minecraft:time_since_rest": 373489,
+      "minecraft:sprint_one_cm": 55427,
+      "minecraft:walk_one_cm": 159153,
       "minecraft:mob_kills": 12,
       "minecraft:drop": 100,
       "minecraft:damage_dealt": 15572,
       "minecraft:interact_with_crafting_table": 15,
-      "minecraft:fly_one_cm": 71607,
-      "minecraft:play_time": 371715,
-      "minecraft:crouch_one_cm": 10175,
-      "minecraft:sneak_time": 3990,
-      "minecraft:jump": 384,
-      "minecraft:leave_game": 476,
-      "minecraft:time_since_death": 371715,
-      "minecraft:total_world_time": 661394
-    },
-    "minecraft:mined": {
-      "battleofgods:wooden_workbench": 2,
-      "minecraft:grass_block": 4
+      "minecraft:fly_one_cm": 72925,
+      "minecraft:play_time": 373489,
+      "minecraft:crouch_one_cm": 11442,
+      "minecraft:sneak_time": 4305,
+      "minecraft:jump": 395,
+      "minecraft:leave_game": 477,
+      "minecraft:time_since_death": 373489,
+      "minecraft:total_world_time": 663214
     },
     "minecraft:picked_up": {
       "minecraft:sculk_catalyst": 1,

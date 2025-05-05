@@ -1,16 +1,19 @@
 package com.schokobaer.battleofgods.armor.tier1;
 
+import com.schokobaer.battleofgods.BattleofgodsMod;
 import com.schokobaer.battleofgods.armor.TerrariaArmorItem;
-import com.schokobaer.battleofgods.client.renderer.WoodArmorRenderer;
 import com.schokobaer.battleofgods.init.InitRarity;
 import com.schokobaer.battleofgods.init.InitTier;
 import net.minecraft.client.model.HumanoidModel;
+import net.minecraft.client.renderer.MultiBufferSource;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.client.extensions.common.IClientItemExtensions;
 import net.minecraftforge.registries.ForgeRegistries;
+import software.bernie.geckolib.model.GeoModel;
 import software.bernie.geckolib.renderer.GeoArmorRenderer;
 
 import java.util.function.Consumer;
@@ -43,5 +46,33 @@ public class WoodArmor extends TerrariaArmorItem {
                 return this.renderer;
             }
         });
+    }
+
+    public static class WoodArmorModel extends GeoModel<WoodArmor> {
+        @Override
+        public ResourceLocation getAnimationResource(WoodArmor object) {
+            return new ResourceLocation(BattleofgodsMod.MODID, "animations/wood_armor.animation.json");
+        }
+
+        @Override
+        public ResourceLocation getModelResource(WoodArmor object) {
+            return new ResourceLocation(BattleofgodsMod.MODID, "geo/wood_armor.geo.json");
+        }
+
+        @Override
+        public ResourceLocation getTextureResource(WoodArmor object) {
+            return new ResourceLocation(BattleofgodsMod.MODID, "textures/armor/wood_armor.png");
+        }
+    }
+
+    public static class WoodArmorRenderer extends GeoArmorRenderer<WoodArmor> {
+        public WoodArmorRenderer() {
+            super(new WoodArmorModel());
+        }
+
+        @Override
+        public RenderType getRenderType(WoodArmor animatable, ResourceLocation texture, MultiBufferSource bufferSource, float partialTick) {
+            return RenderType.entityTranslucent(getTextureLocation(animatable));
+        }
     }
 }

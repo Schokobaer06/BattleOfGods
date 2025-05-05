@@ -4,7 +4,51 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="55347841-98cd-4f86-9608-4bb232a43c91" name="Changes" comment="refactor WoodArmorRenderer to use getRenderType entityTranslucent" />
+    <list default="true" id="55347841-98cd-4f86-9608-4bb232a43c91" name="Changes" comment="refactor WoodArmorRenderer to use getRenderType entityTranslucent">
+      <change afterPath="$PROJECT_DIR$/models/test models/armor/wooden/wood_armor.geo.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/battleofgods/geo/wood_armor.geo.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/test models/armor/wooden/wood_armor.bbmodel" beforeDir="false" afterPath="$PROJECT_DIR$/models/test models/armor/wooden/wood_armor.bbmodel" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/test models/armor/wooden/wood_armor.png" beforeDir="false" afterPath="$PROJECT_DIR$/models/test models/armor/wooden/wood_armor.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/logs/debug-1.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/debug-1.log.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/logs/debug-2.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/debug-2.log.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/logs/debug-3.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/debug-3.log.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/logs/debug-4.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/debug-4.log.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/logs/debug-5.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/debug-5.log.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/logs/debug.log" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/debug.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/logs/latest.log" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/latest.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/saves/New World/DIM-1/data/raids.dat" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/New World/DIM-1/data/raids.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/saves/New World/DIM1/data/raids_end.dat" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/New World/DIM1/data/raids_end.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/saves/New World/data/raids.dat" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/New World/data/raids.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/saves/New World/entities/r.-1.0.mca" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/New World/entities/r.-1.0.mca" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/saves/New World/level.dat" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/New World/level.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/saves/New World/level.dat_old" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/New World/level.dat_old" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/saves/New World/playerdata/380df991-f603-344c-a090-369bad2a924a.dat" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/New World/playerdata/380df991-f603-344c-a090-369bad2a924a.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/saves/New World/playerdata/380df991-f603-344c-a090-369bad2a924a.dat_old" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/New World/playerdata/380df991-f603-344c-a090-369bad2a924a.dat_old" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/saves/New World/region/r.-1.-1.mca" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/New World/region/r.-1.-1.mca" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/saves/New World/region/r.-1.0.mca" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/New World/region/r.-1.0.mca" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/saves/New World/region/r.0.-1.mca" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/New World/region/r.0.-1.mca" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/saves/New World/region/r.0.0.mca" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/New World/region/r.0.0.mca" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/saves/New World/session.lock" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/New World/session.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/saves/New World/stats/380df991-f603-344c-a090-369bad2a924a.json" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/New World/stats/380df991-f603-344c-a090-369bad2a924a.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/usercache.json" beforeDir="false" afterPath="$PROJECT_DIR$/run/usercache.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/armor/tier1/WoodArmor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/armor/tier1/WoodArmor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/armor/tier1/WoodArmorItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/armor/tier1/WoodArmorItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/armor/tier1/WoodArmorModel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/client/renderer/WoodArmorRenderer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/item/WoodArmorItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/item/WoodArmorItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/battleofgods/geo/wooden_armor.geo.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/battleofgods/models/item/wood_armor_boots.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/battleofgods/models/item/wood_armor_boots.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/battleofgods/models/item/wood_armor_chestplate.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/battleofgods/models/item/wood_armor_chestplate.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/battleofgods/models/item/wood_armor_helmet.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/battleofgods/models/item/wood_armor_helmet.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/battleofgods/models/item/wood_armor_leggings.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/battleofgods/models/item/wood_armor_leggings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/battleofgods/textures/armor/wood_armor.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/battleofgods/textures/armor/wood_armor.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/battleofgods/textures/item/wooden_boots.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/battleofgods/textures/item/wood_boots.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/battleofgods/textures/item/wooden_chestplate.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/battleofgods/textures/item/wood_chestplate.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/battleofgods/textures/item/wooden_helmet.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/battleofgods/textures/item/wood_helmet.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/battleofgods/textures/item/wooden_leggings.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/battleofgods/textures/item/wood_leggings.png" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -70,13 +114,15 @@
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "1.20.1__mcreator",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/Josef/OneDrive/Games/Minecraft Java/Mods/Eigene/Battle Of Gods/mcreator (PC)/BattleOfGods/src/main/resources/assets/battleofgods/textures/models/armor",
+    "last_opened_file_path": "C:/Users/Josef/OneDrive/Games/Minecraft Java/Mods/Eigene/Battle Of Gods/mcreator (PC)/BattleOfGods/src/main/resources/assets/battleofgods/textures/armor",
     "rearrange.code.on.save": "true",
     "settings.editor.selected.configurable": "project.propVCSSupport.Mappings"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Josef\OneDrive\Games\Minecraft Java\Mods\Eigene\Battle Of Gods\mcreator (PC)\BattleOfGods\src\main\resources\assets\battleofgods\textures\armor" />
+      <recent name="C:\Users\Josef\OneDrive\Games\Minecraft Java\Mods\Eigene\Battle Of Gods\mcreator (PC)\BattleOfGods\src\main\resources\assets\battleofgods\geo" />
       <recent name="C:\Users\Josef\OneDrive\Games\Minecraft Java\Mods\Eigene\Battle Of Gods\mcreator (PC)\BattleOfGods\src\main\resources\assets\battleofgods\textures\models\armor" />
       <recent name="C:\Users\Josef\OneDrive\Games\Minecraft Java\Mods\Eigene\Battle Of Gods\mcreator (PC)\BattleOfGods\run\mods" />
     </key>
