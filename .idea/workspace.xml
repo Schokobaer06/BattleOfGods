@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="55347841-98cd-4f86-9608-4bb232a43c91" name="Changes" comment="fully implemented Set Boni + tooltip">
-      <change beforePath="$PROJECT_DIR$/.gradle/8.8/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/checksums/checksums.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.8/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.8/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/client/renderer/WoodArmorRenderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/client/renderer/WoodArmorRenderer.java" afterDir="false" />
-    </list>
+    <list default="true" id="55347841-98cd-4f86-9608-4bb232a43c91" name="Changes" comment="refactor WoodArmorRenderer to use getRenderType entityTranslucent" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -260,7 +254,15 @@
       <option name="project" value="LOCAL" />
       <updated>1746436297646</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="refactor WoodArmorRenderer to use getRenderType entityTranslucent">
+      <option name="closed" value="true" />
+      <created>1746437362741</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1746437362741</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -292,7 +294,8 @@
     <MESSAGE value="." />
     <MESSAGE value="Refactor WoodArmor and add armor set bonus registration logic." />
     <MESSAGE value="fully implemented Set Boni + tooltip" />
-    <option name="LAST_COMMIT_MESSAGE" value="fully implemented Set Boni + tooltip" />
+    <MESSAGE value="refactor WoodArmorRenderer to use getRenderType entityTranslucent" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor WoodArmorRenderer to use getRenderType entityTranslucent" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
