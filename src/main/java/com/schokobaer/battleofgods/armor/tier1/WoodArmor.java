@@ -72,7 +72,7 @@ public class WoodArmor extends TerrariaArmorItem {
 
         @Override
         public RenderType getRenderType(WoodArmor animatable, ResourceLocation texture, MultiBufferSource bufferSource, float partialTick) {
-            return RenderType.entityTranslucent(getTextureLocation(animatable));
+            return RenderType.entityTranslucentCull(getTextureLocation(animatable));
         }
     }
 }
