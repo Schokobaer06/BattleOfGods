@@ -24,10 +24,10 @@ import java.util.List;
 
 public abstract class AbstractSubClass implements SubClassMethods {
     private final RegistryObject<MainClass> mainClass;
+    private final String name;
     private RegistryObject<Rarity> rarity = null;
     private RegistryObject<Tier> tier = null;
     private RegistryObject<ItemOverride> subClass = null;
-    private final String name;
     private TagKey<ItemOverride> tag = null;
 
     protected AbstractSubClass(RegistryObject<MainClass> mainClass, @NotNull RegistryObject<Rarity> rarity, RegistryObject<Tier> tier, RegistryObject<ItemOverride> subClass) {
@@ -37,6 +37,7 @@ public abstract class AbstractSubClass implements SubClassMethods {
         this.subClass = subClass;
         this.name = subClass.getId().getPath();
     }
+
     protected AbstractSubClass(String name, RegistryObject<MainClass> mainClass, TagKey<ItemOverride> tag) {
         this.tag = tag;
         this.name = name;
@@ -44,6 +45,46 @@ public abstract class AbstractSubClass implements SubClassMethods {
 
     }
 
+    private static @NotNull String getKnockback(double mcKnockback) {
+        double knockback = (mcKnockback * 3.5) + 0.5;
+
+        // Determine knockback description
+        String kbText;
+        if (knockback <= 1.0) kbText = "weapon_knockback_no_knockback";
+        else if (knockback <= 2.0) kbText = "weapon_knockback_extremely_weak";
+        else if (knockback <= 3.0) kbText = "weapon_knockback_very_weak";
+        else if (knockback <= 4.5) kbText = "weapon_knockback_weak";
+        else if (knockback <= 6.0) kbText = "weapon_knockback_average";
+        else if (knockback <= 7.5) kbText = "weapon_knockback_strong";
+        else if (knockback <= 9.0) kbText = "weapon_knockback_very_strong";
+        else if (knockback <= 10.5) kbText = "weapon_knockback_extremely_strong";
+        else kbText = "weapon_knockback_insanely_strong";
+        return kbText;
+    }
+
+    private static @NotNull String getSpeed(double attackSpeed) {
+        // Terraria-UseTime aus Minecraft-APS errechnen
+        int useTime = (int) Math.round(20.0 / attackSpeed);
+
+        // Neue Schwellen (UseTime in Terraria-Frames)
+        String speedText;
+        if (useTime <= 5) {
+            speedText = "weapon_speed_insanely_fast";      // ultraschnell
+        } else if (useTime <= 20) {
+            speedText = "weapon_speed_very_fast";          // sehr schnell
+        } else if (useTime <= 25) {
+            speedText = "weapon_speed_fast";               // schnell
+        } else if (useTime <= 30) {
+            speedText = "weapon_speed_average";            // durchschnittlich
+        } else if (useTime <= 35) {
+            speedText = "weapon_speed_slow";               // langsam
+        } else if (useTime <= 40) {
+            speedText = "weapon_speed_very_slow";          // sehr langsam
+        } else {
+            speedText = "weapon_speed_extremely_slow";     // extrem langsam
+        }
+        return speedText;
+    }
 
     public MainClass getMainClass() {
         return this.mainClass.get();
@@ -57,13 +98,13 @@ public abstract class AbstractSubClass implements SubClassMethods {
         return this.tier.get();
     }
 
-    public ItemOverride getSubClass(){ return this.subClass.get(); }
+    public ItemOverride getSubClass() {
+        return this.subClass.get();
+    }
 
     public TagKey<ItemOverride> getTag() {
         return this.tag;
     }
-
-
 
     @Override
     public Component getName(Component name) {
@@ -76,13 +117,13 @@ public abstract class AbstractSubClass implements SubClassMethods {
         //Rarity
         tooltip.add(Component.translatable("rarity.battleofgods." +
                 this.getRarity().getDisplayName().toLowerCase()).setStyle(
-                        Style.EMPTY.withBold(true)
-                                .withColor(this.getRarity().getColor())
-                                .withItalic(true)
+                Style.EMPTY.withBold(true)
+                        .withColor(this.getRarity().getColor())
+                        .withItalic(true)
         ));
         //Damage
         if (itemstack.getItem() instanceof SwordItemOverride swordItem) {
-            float damage = swordItem.getDamage()+1;
+            float damage = swordItem.getDamage() + 1;
             String damageText = (damage % 1 == 0) ? String.valueOf((int) damage) : String.valueOf(damage);
             tooltip.add(Component.literal(damageText + " " + this.getMainClass().getName() + " ")
                     .append(Component.translatable("tooltip.battleofgods.damage"))
@@ -113,47 +154,16 @@ public abstract class AbstractSubClass implements SubClassMethods {
         tooltip.add(Component.translatable("tooltip.battleofgods." + kbText).withStyle(ChatFormatting.DARK_GREEN));
     }
 
-    private static @NotNull String getKnockback(double mcKnockback) {
-        double knockback = (mcKnockback * 3.5) + 0.5;
-
-        // Determine knockback description
-        String kbText;
-        if (knockback <= 1.0) kbText = "weapon_knockback_no_knockback";
-        else if (knockback <= 2.0) kbText = "weapon_knockback_extremely_weak";
-        else if (knockback <= 3.0) kbText = "weapon_knockback_very_weak";
-        else if (knockback <= 4.5) kbText = "weapon_knockback_weak";
-        else if (knockback <= 6.0) kbText = "weapon_knockback_average";
-        else if (knockback <= 7.5) kbText = "weapon_knockback_strong";
-        else if (knockback <= 9.0) kbText = "weapon_knockback_very_strong";
-        else if (knockback <= 10.5) kbText = "weapon_knockback_extremely_strong";
-        else kbText = "weapon_knockback_insanely_strong";
-        return kbText;
-    }
-
-    private static @NotNull String getSpeed(double attackSpeed) {
-        int useTime = (int) Math.round(20.0 / attackSpeed);
-
-        // Determine speed description
-        String speedText;
-        if (useTime <= 5) speedText = "weapon_speed_insanely_fast";
-        else if (useTime <= 10) speedText = "weapon_speed_very_fast";
-        else if (useTime <= 15) speedText = "weapon_speed_fast";
-        else if (useTime <= 20) speedText = "weapon_speed_average";
-        else if (useTime <= 25) speedText = "weapon_speed_slow";
-        else if (useTime <= 30) speedText = "weapon_speed_very_slow";
-        else speedText = "weapon_speed_extremely_slow";
-        return speedText;
-    }
-
-
     @Override
     public boolean hasCraftingRemainingItem(ItemStack stack) {
         return true;
     }
+
     @Override
     public boolean isRepairable(@NotNull ItemStack itemstack) {
         return false;
     }
+
     @Override
     public ItemStack getCraftingRemainingItem(ItemStack itemstack) {
         ItemStack retval = new ItemStack(itemstack.getItem());

@@ -23,8 +23,8 @@
     - [ ] Wooden Bow
     - [x] Wooden Armor
     - [ ] Wooden Pickaxe
-    - [ ] Wooden Sword
-    - [ ] Recipes
+    - [x] Wooden Sword
+        - [ ] Recipes
 - [ ] Plains as Default Spawn
 - [ ] Categories überarbeiten für einfacheren Zugriff
     - [ ] Rarity

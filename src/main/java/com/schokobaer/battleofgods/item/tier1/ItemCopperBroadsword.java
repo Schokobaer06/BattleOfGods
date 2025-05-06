@@ -18,7 +18,7 @@ import java.util.UUID;
 
 public class ItemCopperBroadsword extends Broadsword {
     public ItemCopperBroadsword() {
-        super(0, 0,Ingredient.of(ItemTags.create(new ResourceLocation("minecraft:ingots/copper"))), 9, 1.5f, new Properties(), InitRarity.WHITE, InitTier.TIER_1);
+        super(0, 0, Ingredient.of(ItemTags.create(new ResourceLocation("minecraft:ingots/copper"))), 9, 0.95f, new Properties(), InitRarity.WHITE, InitTier.TIER_1);
     }
 
     @Override

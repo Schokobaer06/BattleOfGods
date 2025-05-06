@@ -19,7 +19,7 @@ import java.util.UUID;
 
 public class ItemCopperShortsword extends Shortsword {
     public ItemCopperShortsword() {
-        super(0, 0, Ingredient.of(ItemTags.create(new ResourceLocation("minecraft:ingots/copper"))), 5, 1.7f, new Properties(), InitRarity.WHITE, InitTier.TIER_1);
+        super(0, 0, Ingredient.of(ItemTags.create(new ResourceLocation("minecraft:ingots/copper"))), 5, 1.54f, new Properties(), InitRarity.WHITE, InitTier.TIER_1);
     }
 
     @Override

@@ -15,7 +15,7 @@ import java.util.UUID;
 
 public class ItemWoodSword extends Broadsword {
     public ItemWoodSword() {
-        super(0, 0, null, 7, 0.87f, new Properties(), InitRarity.WHITE, InitTier.TIER_1);
+        super(0, 0, null, 7, 1f, new Properties(), InitRarity.WHITE, InitTier.TIER_1);
     }
 
     @Override

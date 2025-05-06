@@ -1,3 +1,27 @@
 {
-  "parent": "battleofgods:broadsword"
+  "parent": "battleofgods:broadsword",
+  "attributes": {
+    "attacks": [
+      {
+        "hitbox": "VERTICAL_PLANE",
+        "damage_multiplier": 0.8,
+        "angle": 120,
+        "upswing": 0.5,
+        "animation": "bettercombat:two_handed_slash_vertical_left",
+        "swing_sound": {
+          "id": "bettercombat:sword_slash"
+        }
+      },
+      {
+        "hitbox": "VERTICAL_PLANE",
+        "damage_multiplier": 1,
+        "angle": 120,
+        "upswing": 0.5,
+        "animation": "bettercombat:two_handed_slash_vertical_right",
+        "swing_sound": {
+          "id": "bettercombat:sword_slash"
+        }
+      }
+    ]
+  }
 }
