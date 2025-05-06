@@ -1,0 +1,7 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [],
+  "result": {
+    "item": "minecraft:air"
+  }
+}

@@ -4,6 +4,7 @@ import com.schokobaer.battleofgods.BattleofgodsMod;
 import com.schokobaer.battleofgods.armor.tier1.WoodArmor;
 import com.schokobaer.battleofgods.item.tier1.ItemCopperBroadsword;
 import com.schokobaer.battleofgods.item.tier1.ItemCopperShortsword;
+import com.schokobaer.battleofgods.item.tier1.ItemWoodSword;
 import com.schokobaer.battleofgods.override.ItemOverride;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.BlockItem;
@@ -20,6 +21,7 @@ public class InitItem {
     //Melee
     public static final RegistryObject<ItemOverride> COPPER_BROADSWORD = ITEMS.register("copper_broadsword", ItemCopperBroadsword::new);
     public static final RegistryObject<ItemOverride> COPPER_SHORTSWORD = ITEMS.register("copper_shortsword", ItemCopperShortsword::new);
+    public static final RegistryObject<ItemOverride> WOOD_SWORD = ITEMS.register("wood_sword", ItemWoodSword::new);
     //Blocks
     public static final RegistryObject<Item> WOODEN_WORKBENCH = block(InitBlocks.WOODEN_WORKBENCH);
     //Armor

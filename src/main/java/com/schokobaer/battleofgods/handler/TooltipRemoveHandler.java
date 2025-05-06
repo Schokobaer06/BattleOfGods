@@ -2,8 +2,8 @@ package com.schokobaer.battleofgods.handler;
 
 import com.schokobaer.battleofgods.BattleofgodsMod;
 import com.schokobaer.battleofgods.armor.TerrariaArmorItem;
-import com.schokobaer.battleofgods.override.ItemOverride;
 import net.minecraft.network.chat.Component;
+import net.minecraft.world.item.Item;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.event.entity.player.ItemTooltipEvent;
@@ -15,7 +15,7 @@ import net.minecraftforge.fml.common.Mod;
 public class TooltipRemoveHandler {
     @SubscribeEvent
     public static void onItemTooltip(ItemTooltipEvent event) {
-        if (event.getItemStack().getItem() instanceof ItemOverride) {
+        if (event.getItemStack().getItem() instanceof Item) {
 
             //Critical Hit Chance
             event.getToolTip().removeIf(component -> component.contains(
@@ -25,6 +25,15 @@ public class TooltipRemoveHandler {
             event.getToolTip().removeIf(component -> component.contains(
                     Component.translatable("attribute.name.generic.attack_knockback")
             ));
+            // Damage
+            event.getToolTip().removeIf(component -> component.contains(
+                    Component.translatable("attribute.name.generic.attack_damage")
+            ));
+            // Attack Speed
+            event.getToolTip().removeIf(component -> component.contains(
+                    Component.translatable("attribute.name.generic.attack_speed")
+            ));
+
         }
         if (event.getItemStack().getItem() instanceof TerrariaArmorItem)
             //Armor

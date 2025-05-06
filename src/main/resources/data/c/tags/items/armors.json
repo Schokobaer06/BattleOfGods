@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "battleofgods:wood_helmet",
+    "battleofgods:wood_chestplate",
+    "battleofgods:wood_leggings",
+    "battleofgods:wood_boots"
+  ]
+}
