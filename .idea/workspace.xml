@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="55347841-98cd-4f86-9608-4bb232a43c91" name="Changes" comment="fixed model flackering and model">
-      <change afterPath="$PROJECT_DIR$/models/test models/armor/wooden/wood_armor.gpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/assets/battleofgods/geo/wood_armor.geo.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/battleofgods/geo/wood_armor.geo.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/assets/battleofgods/textures/armor/wood_armor.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/battleofgods/textures/armor/wood_armor.png" afterDir="false" />
     </list>
@@ -76,7 +76,7 @@
     "ignore.virus.scanning.warn.message": "true",
     "last_opened_file_path": "C:/Users/Josef/OneDrive/Games/Minecraft Java/Mods/Eigene/Battle Of Gods/mcreator (PC)/BattleOfGods/src/main/resources/assets/battleofgods/textures/armor",
     "rearrange.code.on.save": "true",
-    "settings.editor.selected.configurable": "project.propVCSSupport.Mappings"
+    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors.User-Defined File Types"
   }
 }]]></component>
   <component name="RecentsManager">
