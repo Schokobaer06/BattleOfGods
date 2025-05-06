@@ -22,9 +22,10 @@
 - [ ] Wooden Full Set
     - [ ] Wooden Bow
     - [x] Wooden Armor
-        - [ ] Wooden Pickaxe
-        - [ ] Wooden Sword
-        - [ ] Recipes
+    - [ ] Wooden Pickaxe
+    - [ ] Wooden Sword
+    - [ ] Recipes
+- [ ] Plains as Default Spawn
 - [ ] Categories überarbeiten für einfacheren Zugriff
     - [ ] Rarity
     - [ ] MainClass
@@ -146,6 +147,9 @@
         - [ ] Bag
         - [ ] Drops
             - [ ] Squirrel Squire Staff
+- [ ] Config
+    - [ ] Spawn Biome
+- [ ] Item Count erhöhen
 - [ ] Logo
 - [ ] Mod Icon
 - [ ] Custom Main Menu
