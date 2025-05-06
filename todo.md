@@ -21,10 +21,10 @@
     - [x] Setbonus
 - [ ] Wooden Full Set
     - [ ] Wooden Bow
-    - [ ] Wooden Armor
-    - [ ] Wooden Pickaxe
-    - [ ] Wooden Sword
-    - [ ] Recipes
+    - [x] Wooden Armor
+        - [ ] Wooden Pickaxe
+        - [ ] Wooden Sword
+        - [ ] Recipes
 - [ ] Categories überarbeiten für einfacheren Zugriff
     - [ ] Rarity
     - [ ] MainClass
