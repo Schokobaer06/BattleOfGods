@@ -1,10 +1,10 @@
 package com.schokobaer.battleofgods.armor;
 
 import com.google.common.collect.Multimap;
-import com.schokobaer.battleofgods.classes.MainClass;
+import com.schokobaer.battleofgods.category.mainClass.MainClass;
+import com.schokobaer.battleofgods.category.rarity.Rarity;
+import com.schokobaer.battleofgods.category.tier.Tier;
 import com.schokobaer.battleofgods.init.InitMainClass;
-import com.schokobaer.battleofgods.rarity.Rarity;
-import com.schokobaer.battleofgods.tier.Tier;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.Style;

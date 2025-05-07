@@ -1,26 +1,11 @@
 package com.schokobaer.battleofgods.tag;
 
-import com.schokobaer.battleofgods.BattleofgodsMod;
-import com.schokobaer.battleofgods.classes.MainClass;
-import com.schokobaer.battleofgods.init.InitMainClass;
-import com.schokobaer.battleofgods.init.InitRarity;
-import com.schokobaer.battleofgods.init.InitTier;
-import com.schokobaer.battleofgods.override.ItemOverride;
-import com.schokobaer.battleofgods.rarity.Rarity;
-import com.schokobaer.battleofgods.tier.Tier;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.tags.TagKey;
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.RegistryObject;
-import org.apache.logging.log4j.core.config.plugins.validation.constraints.NotBlank;
-
-
-
 /**
  * Creates tags for every main class, subclass, tier, rarity
  */
 
 public class TagCreator {
+    /*
     //private static final Map<String, TagKey<?>> tags = new HashMap<>();
 
     public static TagKey<MainClass> createMainClassTag(@NotBlank String name) {
@@ -46,4 +31,5 @@ public class TagCreator {
         //tags.put(name.toLowerCase(), tag);
         return tag;
     }
+     */
 }

@@ -9,13 +9,19 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.event.entity.player.ItemTooltipEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.registries.ForgeRegistries;
+
+import java.util.Objects;
 
 @Mod.EventBusSubscriber(modid = BattleofgodsMod.MODID)
 @OnlyIn(Dist.CLIENT)
 public class TooltipRemoveHandler {
     @SubscribeEvent
     public static void onItemTooltip(ItemTooltipEvent event) {
-        if (event.getItemStack().getItem() instanceof Item) {
+        Item item = event.getItemStack().getItem();
+        if (ForgeRegistries.ITEMS.getKey(item) != null &&
+                Objects.requireNonNull(ForgeRegistries.ITEMS.getKey(item))
+                        .getNamespace().equals(BattleofgodsMod.MODID)) {
 
             //Critical Hit Chance
             event.getToolTip().removeIf(component -> component.contains(

@@ -1,16 +1,15 @@
 package com.schokobaer.battleofgods.init;
 
 import com.schokobaer.battleofgods.BattleofgodsMod;
-import com.schokobaer.battleofgods.classes.MainClass;
-import com.schokobaer.battleofgods.tag.TagCreator;
+import com.schokobaer.battleofgods.category.mainClass.MainClass;
 import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.tags.TagKey;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
 
 public class InitMainClass {
+    //TODO
     public static final ResourceKey<Registry<MainClass>> MAIN_CLASS_KEY = ResourceKey.createRegistryKey(new ResourceLocation(BattleofgodsMod.MODID, "main_classes"));
     public static final DeferredRegister<MainClass> MAIN_CLASSES = DeferredRegister.create(MAIN_CLASS_KEY, BattleofgodsMod.MODID);
 
@@ -28,7 +27,6 @@ public class InitMainClass {
     public static final RegistryObject<MainClass> ARMOR = registerMainClass("armor");
 
     public static RegistryObject<MainClass> registerMainClass(String name) {
-        TagKey<MainClass> tag = TagCreator.createMainClassTag(name);
-        return MAIN_CLASSES.register(name, () -> new MainClass(name, tag));
+        return MAIN_CLASSES.register(name, () -> new MainClass(name));
     }
 }

@@ -1,17 +1,8 @@
 package com.schokobaer.battleofgods.init;
 
-import com.schokobaer.battleofgods.BattleofgodsMod;
-import com.schokobaer.battleofgods.classes.subClass.Broadsword;
-import com.schokobaer.battleofgods.classes.subClass.Shortsword;
-import com.schokobaer.battleofgods.override.ItemOverride;
-import com.schokobaer.battleofgods.tag.TagCreator;
-import net.minecraft.world.item.Item;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.RegistryObject;
-
+/*
 public class InitSubClass {
-
+    //TODO
     //public static final ResourceKey<? extends Registry<ItemOverride>> ITEM_OVERRIDE = ResourceKey.createRegistryKey(new ResourceLocation(BattleofgodsMod.MODID, "items"));
 
     public static final DeferredRegister<Item> SUBCLASSES= DeferredRegister.create(ForgeRegistries.ITEMS, BattleofgodsMod.MODID);
@@ -23,3 +14,4 @@ public class InitSubClass {
 
 
 }
+*/

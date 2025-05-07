@@ -1,21 +1,13 @@
 package com.schokobaer.battleofgods;
 
-import com.schokobaer.battleofgods.classes.MainClass;
+import com.schokobaer.battleofgods.category.mainClass.MainClass;
+import com.schokobaer.battleofgods.category.rarity.Rarity;
+import com.schokobaer.battleofgods.category.tier.Tier;
 import com.schokobaer.battleofgods.handler.ArmorSetBonusHandler;
 import com.schokobaer.battleofgods.handler.RecipeHandler;
 import com.schokobaer.battleofgods.init.*;
 import com.schokobaer.battleofgods.network.CraftPacket;
-import com.schokobaer.battleofgods.override.ItemOverride;
-import com.schokobaer.battleofgods.rarity.Rarity;
-import com.schokobaer.battleofgods.tag.MainClassTagProvider;
-import com.schokobaer.battleofgods.tag.RarityTagProvider;
-import com.schokobaer.battleofgods.tag.SubClassTagProvider;
-import com.schokobaer.battleofgods.tag.TierTagProvider;
-import com.schokobaer.battleofgods.tier.Tier;
-import net.minecraft.core.Registry;
-import net.minecraft.data.DataProvider;
 import net.minecraft.network.FriendlyByteBuf;
-import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.resources.ResourceManagerReloadListener;
 import net.minecraftforge.common.MinecraftForge;
@@ -79,7 +71,6 @@ public class BattleofgodsMod {
         InitTier.TIERS.register(bus);
         InitRarity.RARITIES.register(bus);
         InitMainClass.MAIN_CLASSES.register(bus);
-        InitSubClass.SUBCLASSES.register(bus);
         InitItem.ITEMS.register(bus);
 
         InitAttributes.ATTRIBUTES.register(bus);
@@ -159,6 +150,7 @@ public class BattleofgodsMod {
 
     @SubscribeEvent
     public void gatherData(GatherDataEvent event) {
+        /*
         LOGGER.info("Gathering data");
         LOGGER.info("Generating subClass tags");
         event.getGenerator().addProvider(
@@ -204,5 +196,7 @@ public class BattleofgodsMod {
                         event.getExistingFileHelper()
                 )
         );
+
+         */
     }
 }

@@ -1,42 +1,9 @@
 package com.schokobaer.battleofgods.item.tier1;
 
-import com.google.common.collect.LinkedHashMultimap;
-import com.google.common.collect.Multimap;
-import com.schokobaer.battleofgods.classes.subClass.Broadsword;
-import com.schokobaer.battleofgods.init.InitRarity;
-import com.schokobaer.battleofgods.init.InitTier;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.tags.ItemTags;
-import net.minecraft.world.entity.EquipmentSlot;
-import net.minecraft.world.entity.ai.attributes.Attribute;
-import net.minecraft.world.entity.ai.attributes.AttributeModifier;
-import net.minecraft.world.entity.ai.attributes.Attributes;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.crafting.Ingredient;
-
-import java.util.UUID;
+import com.schokobaer.battleofgods.category.subClass.Broadsword;
 
 public class ItemCopperBroadsword extends Broadsword {
     public ItemCopperBroadsword() {
-        super(0, 0, Ingredient.of(ItemTags.create(new ResourceLocation("minecraft:ingots/copper"))), 9, 0.95f, new Properties(), InitRarity.WHITE, InitTier.TIER_1);
-    }
-
-    @Override
-    public Multimap<Attribute, AttributeModifier> getAttributeModifiers(EquipmentSlot slot, ItemStack stack) {
-        Multimap<Attribute, AttributeModifier> modifiers = LinkedHashMultimap.create(); // Veränderbare Multimap
-        modifiers.putAll(super.getAttributeModifiers(slot, stack)); // Basis-Modifier
-
-        if (slot == EquipmentSlot.MAINHAND) {
-            modifiers.put(
-                    Attributes.ATTACK_KNOCKBACK,
-                    new AttributeModifier(
-                            UUID.fromString("123e4567-e89b-12d3-a456-426614174000"), // Eindeutige UUID
-                            "weapon_knockback_bonus",
-                            1.4, // Knockback-Wert
-                            AttributeModifier.Operation.ADDITION
-                    )
-            );
-        }
-        return modifiers;
+        super(9, 0.95f, 1.4, 15, null, null);
     }
 }
