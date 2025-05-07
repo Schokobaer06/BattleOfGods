@@ -1,5 +1,5 @@
 {
-  "parent": "item/handheld",
+  "parent": "battleofgods:item/broadsword",
   "textures": {
     "layer0": "battleofgods:item/wood_sword"
   }

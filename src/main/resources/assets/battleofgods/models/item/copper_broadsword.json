@@ -1,5 +1,6 @@
 {
-  "parent": "item/handheld",
+  "credit": "Made with Blockbench",
+  "parent": "battleofgods:item/broadsword",
   "textures": {
     "layer0": "battleofgods:item/copper_broadsword"
   }
