@@ -4,6 +4,8 @@ import com.google.common.collect.LinkedHashMultimap;
 import com.google.common.collect.Multimap;
 import com.schokobaer.battleofgods.category.subClass.Shortsword;
 import com.schokobaer.battleofgods.init.InitAttributes;
+import com.schokobaer.battleofgods.init.InitRarity;
+import com.schokobaer.battleofgods.init.InitTier;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
@@ -13,7 +15,7 @@ import java.util.UUID;
 
 public class ItemCopperShortsword extends Shortsword {
     public ItemCopperShortsword() {
-        super(5, 1.54f, 1, 15, null, null);
+        super(5, 1.54f, 1, 15, InitRarity.WHITE, InitTier.TIER_1);
     }
 
     @Override

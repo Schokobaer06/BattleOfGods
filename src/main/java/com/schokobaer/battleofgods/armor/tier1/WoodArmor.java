@@ -1,18 +1,18 @@
 package com.schokobaer.battleofgods.armor.tier1;
 
 import com.schokobaer.battleofgods.BattleofgodsMod;
-import com.schokobaer.battleofgods.category.rarity.Rarities;
 import com.schokobaer.battleofgods.category.subClass.TerrariaArmorItem;
-import com.schokobaer.battleofgods.category.tier.Tiers;
+import com.schokobaer.battleofgods.init.InitRarity;
+import com.schokobaer.battleofgods.init.InitTier;
 import net.minecraft.client.model.HumanoidModel;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.client.extensions.common.IClientItemExtensions;
-import net.minecraftforge.registries.ForgeRegistries;
 import software.bernie.geckolib.model.GeoModel;
 import software.bernie.geckolib.renderer.GeoArmorRenderer;
 
@@ -21,11 +21,11 @@ import java.util.function.Consumer;
 public class WoodArmor extends TerrariaArmorItem {
     public static final String name = "wood_armor";
 
-    public WoodArmor(Type type, Properties properties) {
+    public WoodArmor(Type type) {
         super("name", new int[]{0, 1, 1, 0},
-                ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("item.armor.equip_generic")),
-                15, type, properties,
-                Rarities.WHITE, Tiers.TIER_1);
+                SoundEvents.ARMOR_EQUIP_GENERIC,
+                15, type,
+                InitRarity.GRAY, InitTier.TIER_1);
     }
 
     @Override

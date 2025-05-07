@@ -3,10 +3,10 @@ package com.schokobaer.battleofgods.category;
 
 import com.schokobaer.battleofgods.category.mainClass.MainClass;
 import com.schokobaer.battleofgods.category.mainClass.MainClasses;
-import com.schokobaer.battleofgods.category.rarity.Rarities;
 import com.schokobaer.battleofgods.category.rarity.Rarity;
 import com.schokobaer.battleofgods.category.tier.Tier;
-import com.schokobaer.battleofgods.category.tier.Tiers;
+import com.schokobaer.battleofgods.init.InitRarity;
+import com.schokobaer.battleofgods.init.InitTier;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.Style;
@@ -84,7 +84,7 @@ public abstract class AbstractSubClass {
 
     public Rarity getRarity() {
         if (rarity != null) return rarity;
-        else return Rarities.WHITE;
+        else return InitRarity.WHITE.get();
     }
 
     public void setRarity(Rarity rarity) {
@@ -93,7 +93,7 @@ public abstract class AbstractSubClass {
 
     public Tier getTier() {
         if (tier != null) return tier;
-        else return Tiers.TIER_1;
+        else return InitTier.TIER_1.get();
     }
 
     public void setTier(Tier tier) {

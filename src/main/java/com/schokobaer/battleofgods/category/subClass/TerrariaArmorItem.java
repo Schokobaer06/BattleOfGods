@@ -21,6 +21,7 @@ import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.client.extensions.common.IClientItemExtensions;
 import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.registries.RegistryObject;
 import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib.animatable.GeoItem;
 import software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache;
@@ -47,15 +48,15 @@ public abstract class TerrariaArmorItem extends ArmorItem implements GeoItem, Su
      * @param rarity     Rarity of the item
      * @param tier       Tier of the item
      */
-    public TerrariaArmorItem(String name, ArmorMaterial material, Type type, Properties properties, Rarity rarity, Tier tier) {
+    public TerrariaArmorItem(String name, ArmorMaterial material, Type type, Properties properties, RegistryObject<Rarity> rarity, RegistryObject<Tier> tier) {
         super(material, type, properties);
         this.defense = material.getDefenseForType(type);
         this.subClass = () -> {
             AbstractSubClass sb = new AbstractSubClass() {
             };
             sb.setMainClass(MainClasses.ARMOR);
-            sb.setRarity(rarity);
-            sb.setTier(tier);
+            sb.setRarity(rarity.get());
+            sb.setTier(tier.get());
             return sb;
         };
 
@@ -70,11 +71,10 @@ public abstract class TerrariaArmorItem extends ArmorItem implements GeoItem, Su
      * @param soundEvent       Equip sound
      * @param enchantmentValue Enchantment value when enchanting
      * @param type             Armor type (Helmet, Chestplate, Leggings, Boots)
-     * @param properties       Item properties
      * @param rarity           Rarity of the item
      * @param tier             Tier of the item
      */
-    public TerrariaArmorItem(String name, int[] defense, SoundEvent soundEvent, int enchantmentValue, Type type, Properties properties, Rarity rarity, Tier tier) {
+    public TerrariaArmorItem(String name, int[] defense, SoundEvent soundEvent, int enchantmentValue, Type type, RegistryObject<Rarity> rarity, RegistryObject<Tier> tier) {
         super(new ArmorMaterial() {
             @Override
             public int getDurabilityForType(Type type1) {
@@ -115,14 +115,14 @@ public abstract class TerrariaArmorItem extends ArmorItem implements GeoItem, Su
             public float getKnockbackResistance() {
                 return 0;
             }
-        }, type, properties);
+        }, type, new Properties());
         this.defense = defense[type.getSlot().getIndex()];
         this.subClass = () -> {
             AbstractSubClass sb = new AbstractSubClass() {
             };
             sb.setMainClass(MainClasses.ARMOR);
-            sb.setRarity(rarity);
-            sb.setTier(tier);
+            sb.setRarity(rarity.get());
+            sb.setTier(tier.get());
             return sb;
         };
     }

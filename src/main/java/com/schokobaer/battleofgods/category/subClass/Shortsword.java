@@ -17,6 +17,7 @@ import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.Level;
+import net.minecraftforge.registries.RegistryObject;
 
 import java.util.List;
 import java.util.UUID;
@@ -26,7 +27,7 @@ public abstract class Shortsword extends SwordItem implements SubClassMethods {
     private final double knockback;
     private final Supplier<AbstractSubClass> subClass;
 
-    public Shortsword(int attackDamage, float attackSpeed, double knockback, int enchantmentValue, Rarity rarity, com.schokobaer.battleofgods.category.tier.Tier tier) {
+    public Shortsword(int attackDamage, float attackSpeed, double knockback, int enchantmentValue, RegistryObject<Rarity> rarity, RegistryObject<com.schokobaer.battleofgods.category.tier.Tier> tier) {
         super(new Tier() {
             @Override
             public int getUses() {
@@ -63,21 +64,21 @@ public abstract class Shortsword extends SwordItem implements SubClassMethods {
             AbstractSubClass sb = new AbstractSubClass() {
             };
             sb.setMainClass(MainClasses.MELEE);
-            sb.setRarity(rarity);
-            sb.setTier(tier);
+            sb.setRarity(rarity.get());
+            sb.setTier(tier.get());
             return sb;
         };
     }
 
-    public Shortsword(Tier gameTier, int attackDamage, float attackSpeed, double knockback, Properties properties, Rarity rarity, com.schokobaer.battleofgods.category.tier.Tier tier) {
+    public Shortsword(Tier gameTier, int attackDamage, float attackSpeed, double knockback, Properties properties, RegistryObject<Rarity> rarity, RegistryObject<com.schokobaer.battleofgods.category.tier.Tier> tier) {
         super(gameTier, attackDamage, attackSpeed, properties);
         this.knockback = knockback;
         this.subClass = () -> {
             AbstractSubClass sb = new AbstractSubClass() {
             };
             sb.setMainClass(MainClasses.MELEE);
-            sb.setRarity(rarity);
-            sb.setTier(tier);
+            sb.setRarity(rarity.get());
+            sb.setTier(tier.get());
             return sb;
         };
     }
