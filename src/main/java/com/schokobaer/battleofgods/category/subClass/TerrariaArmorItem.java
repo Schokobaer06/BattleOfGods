@@ -1,13 +1,13 @@
-package com.schokobaer.battleofgods.armor;
+package com.schokobaer.battleofgods.category.subClass;
 
 import com.google.common.collect.Multimap;
-import com.schokobaer.battleofgods.category.mainClass.MainClass;
+import com.schokobaer.battleofgods.category.AbstractSubClass;
+import com.schokobaer.battleofgods.category.SubClassMethods;
+import com.schokobaer.battleofgods.category.mainClass.MainClasses;
 import com.schokobaer.battleofgods.category.rarity.Rarity;
 import com.schokobaer.battleofgods.category.tier.Tier;
-import com.schokobaer.battleofgods.init.InitMainClass;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.Style;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -21,8 +21,6 @@ import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.client.extensions.common.IClientItemExtensions;
 import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.RegistryObject;
-import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib.animatable.GeoItem;
 import software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache;
@@ -31,14 +29,13 @@ import software.bernie.geckolib.util.GeckoLibUtil;
 
 import java.util.*;
 import java.util.function.Consumer;
+import java.util.function.Supplier;
 
-public abstract class TerrariaArmorItem extends ArmorItem implements GeoItem {
+public abstract class TerrariaArmorItem extends ArmorItem implements GeoItem, SubClassMethods {
     private final int defense;
     private final Map<Attribute, AttributeModifier> attributeModifiers = new HashMap<>();
-    private final RegistryObject<Rarity> rarity;
-    private final RegistryObject<Tier> tier;
-    private final RegistryObject<MainClass> mainClass = InitMainClass.ARMOR;
     private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
+    private final Supplier<AbstractSubClass> subClass;
 
 
     /**
@@ -50,11 +47,18 @@ public abstract class TerrariaArmorItem extends ArmorItem implements GeoItem {
      * @param rarity     Rarity of the item
      * @param tier       Tier of the item
      */
-    public TerrariaArmorItem(String name, ArmorMaterial material, Type type, Properties properties, RegistryObject<Rarity> rarity, RegistryObject<Tier> tier) {
+    public TerrariaArmorItem(String name, ArmorMaterial material, Type type, Properties properties, Rarity rarity, Tier tier) {
         super(material, type, properties);
         this.defense = material.getDefenseForType(type);
-        this.rarity = rarity;
-        this.tier = tier;
+        this.subClass = () -> {
+            AbstractSubClass sb = new AbstractSubClass() {
+            };
+            sb.setMainClass(MainClasses.ARMOR);
+            sb.setRarity(rarity);
+            sb.setTier(tier);
+            return sb;
+        };
+
     }
 
     /**
@@ -70,7 +74,7 @@ public abstract class TerrariaArmorItem extends ArmorItem implements GeoItem {
      * @param rarity           Rarity of the item
      * @param tier             Tier of the item
      */
-    public TerrariaArmorItem(String name, int[] defense, SoundEvent soundEvent, int enchantmentValue, Type type, Properties properties, RegistryObject<Rarity> rarity, RegistryObject<Tier> tier) {
+    public TerrariaArmorItem(String name, int[] defense, SoundEvent soundEvent, int enchantmentValue, Type type, Properties properties, Rarity rarity, Tier tier) {
         super(new ArmorMaterial() {
             @Override
             public int getDurabilityForType(Type type1) {
@@ -113,20 +117,14 @@ public abstract class TerrariaArmorItem extends ArmorItem implements GeoItem {
             }
         }, type, properties);
         this.defense = defense[type.getSlot().getIndex()];
-        this.rarity = rarity;
-        this.tier = tier;
-    }
-
-    public Rarity getRarity() {
-        return this.rarity.get();
-    }
-
-    public Tier getTier() {
-        return this.tier.get();
-    }
-
-    public MainClass getMainClass() {
-        return this.mainClass.get();
+        this.subClass = () -> {
+            AbstractSubClass sb = new AbstractSubClass() {
+            };
+            sb.setMainClass(MainClasses.ARMOR);
+            sb.setRarity(rarity);
+            sb.setTier(tier);
+            return sb;
+        };
     }
 
     // Getter für Defense (Terraria-Style)
@@ -168,21 +166,14 @@ public abstract class TerrariaArmorItem extends ArmorItem implements GeoItem {
 
     @Override
     public Component getName(ItemStack stack) {
-        Component name = super.getName(stack);
-        return name.copy().withStyle(Style.EMPTY.withColor(this.getRarity().getColor()));
+        return subClass.get().getName(super.getName(stack));
     }
 
     @Override
     public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltip, TooltipFlag flag) {
         super.appendHoverText(stack, level, tooltip, flag);
+        subClass.get().appendHoverText(stack, level, tooltip, flag);
 
-        //Rarity
-        tooltip.add(Component.translatable("rarity.battleofgods." +
-                this.getRarity().getDisplayName().toLowerCase()).setStyle(
-                Style.EMPTY.withBold(true)
-                        .withColor(this.getRarity().getColor())
-                        .withItalic(true)
-        ));
         //Defense
         if (tooltip.size() > 2)
             tooltip.add(2, Component.literal(getDefenseValue() + " ")
@@ -192,11 +183,6 @@ public abstract class TerrariaArmorItem extends ArmorItem implements GeoItem {
             tooltip.add(Component.literal(this.getDefenseValue() + " ")
                     .append(Component.translatable("tooltip.battleofgods.armor"))
                     .withStyle(ChatFormatting.DARK_GREEN));
-    }
-
-    @Override
-    public boolean isRepairable(@NotNull ItemStack itemstack) {
-        return false;
     }
 
     @Override

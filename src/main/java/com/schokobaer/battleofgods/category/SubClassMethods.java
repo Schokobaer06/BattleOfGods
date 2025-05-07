@@ -16,7 +16,7 @@ public interface SubClassMethods {
 
     Component getName(ItemStack name);
 
-    boolean isDamaged(ItemStack stack);
+    boolean isDamageable(ItemStack stack);
 
     boolean isFireResistant();
 

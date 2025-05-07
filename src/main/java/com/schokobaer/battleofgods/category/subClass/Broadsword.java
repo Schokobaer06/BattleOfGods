@@ -104,7 +104,7 @@ public abstract class Broadsword extends SwordItem implements SubClassMethods {
     }
 
     @Override
-    public boolean isDamaged(ItemStack stack) {
+    public boolean isDamageable(ItemStack stack) {
         return false;
     }
 

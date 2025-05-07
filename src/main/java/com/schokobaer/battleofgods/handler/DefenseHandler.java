@@ -1,6 +1,6 @@
 package com.schokobaer.battleofgods.handler;
 
-import com.schokobaer.battleofgods.armor.TerrariaArmorItem;
+import com.schokobaer.battleofgods.category.subClass.TerrariaArmorItem;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
