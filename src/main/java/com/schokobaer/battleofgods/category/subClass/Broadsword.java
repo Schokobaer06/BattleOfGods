@@ -29,36 +29,39 @@ public abstract class Broadsword extends SwordItem implements SubClassMethods {
 
     public Broadsword(int attackDamage, float attackSpeed, double knockback, int enchantmentValue, RegistryObject<Rarity> rarity, RegistryObject<com.schokobaer.battleofgods.category.tier.Tier> tier) {
         super(new Tier() {
-            @Override
-            public int getUses() {
-                return 0;
-            }
+                  @Override
+                  public int getUses() {
+                      return 0;
+                  }
 
-            @Override
-            public float getSpeed() {
-                return 0;
-            }
+                  @Override
+                  public float getSpeed() {
+                      return 0;
+                  }
 
-            @Override
-            public float getAttackDamageBonus() {
-                return 0;
-            }
+                  @Override
+                  public float getAttackDamageBonus() {
+                      return 0;
+                  }
 
-            @Override
-            public int getLevel() {
-                return 0;
-            }
+                  @Override
+                  public int getLevel() {
+                      return 0;
+                  }
 
-            @Override
-            public int getEnchantmentValue() {
-                return enchantmentValue;
-            }
+                  @Override
+                  public int getEnchantmentValue() {
+                      return enchantmentValue;
+                  }
 
-            @Override
-            public Ingredient getRepairIngredient() {
-                return null;
-            }
-        }, attackDamage - 1, attackSpeed - 4, new Properties());
+                  @Override
+                  public Ingredient getRepairIngredient() {
+                      return null;
+                  }
+              }, attackDamage - 1, attackSpeed - 4,
+                new Properties().durability(0)
+                        .defaultDurability(0)
+                        .setNoRepair());
         this.knockback = knockback;
         this.subClass = () -> {
             AbstractSubClass sb = new AbstractSubClass() {
@@ -114,7 +117,7 @@ public abstract class Broadsword extends SwordItem implements SubClassMethods {
         Multimap<Attribute, AttributeModifier> modifiers = LinkedHashMultimap.create(); // Veränderbare Multimap
         modifiers.putAll(super.getAttributeModifiers(slot, stack)); // Basis-Modifier
 
-        if (slot == EquipmentSlot.MAINHAND) {
+        if (slot == EquipmentSlot.MAINHAND || slot == EquipmentSlot.OFFHAND) {
             modifiers.put(
                     Attributes.ATTACK_KNOCKBACK,
                     new AttributeModifier(

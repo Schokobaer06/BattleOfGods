@@ -24,12 +24,12 @@
     - [x] Wooden Armor
     - [ ] Wooden Pickaxe
     - [x] Wooden Sword
-        - [ ] Recipes
+    - [ ] Recipes
 - [ ] Plains as Default Spawn
-- [ ] Categories überarbeiten für einfacheren Zugriff
-    - [ ] Rarity
-    - [ ] MainClass
-    - [ ] Tier
+- [x] Categories überarbeiten für einfacheren Zugriff
+    - [x] Rarity
+    - [x] MainClass
+    - [x] Tier
 - [ ] Copper Full Set
     - [ ] Copper Bow
     - [ ] Copper Helmet

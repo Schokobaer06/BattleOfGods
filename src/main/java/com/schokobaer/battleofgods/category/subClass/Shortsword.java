@@ -58,7 +58,10 @@ public abstract class Shortsword extends SwordItem implements SubClassMethods {
             public Ingredient getRepairIngredient() {
                 return null;
             }
-        }, attackDamage - 1, attackSpeed - 4, new Properties());
+        }, attackDamage - 1, attackSpeed - 4, new Properties()
+                .durability(0)
+                .defaultDurability(0)
+                .setNoRepair());
         this.knockback = knockback;
         this.subClass = () -> {
             AbstractSubClass sb = new AbstractSubClass() {
