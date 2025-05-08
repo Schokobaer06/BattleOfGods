@@ -198,12 +198,26 @@ public abstract class AbstractSubClass {
         if (itemstack.getItem() instanceof TerrariaBow bowItem) {
             float damage = bowItem.getBaseDamage();
             String damageText = (damage % 1 == 0) ? String.valueOf((int) damage) : String.valueOf(damage);
-            tooltip.add(Component.literal(damageText + " " + this.getMainClass().name() + ") ")
+            tooltip.add(Component.literal(damageText + " " + this.getMainClass().name() + " ")
                     .append(Component.translatable("tooltip.battleofgods.damage"))
                     .withStyle(ChatFormatting.DARK_GREEN));
         }
         //Speed
+        if (itemstack.getItem() instanceof TerrariaBow bowItem) {
+            double useTime = bowItem.getUseDuration(itemstack);
+            String UseTimeText = String.valueOf(useTime);
+            tooltip.add(Component.literal(UseTimeText + " " + this.getMainClass().name() + " ")
+                    .append(Component.literal("speed"))
+                    .withStyle(ChatFormatting.DARK_GREEN));
+        }
         //Knockback
+        if (itemstack.getItem() instanceof TerrariaBow bowItem) {
+            double knockback = bowItem.getKnockback();
+            String UseTimeText = String.valueOf(knockback);
+            tooltip.add(Component.literal(UseTimeText + " " + this.getMainClass().name() + " ")
+                    .append(Component.literal("knockback"))
+                    .withStyle(ChatFormatting.DARK_GREEN));
+        }
     }
 
     public boolean hasCraftingRemainingItem(ItemStack stack) {

@@ -4,7 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="55347841-98cd-4f86-9608-4bb232a43c91" name="Changes" comment="implemented TerrariaBow subclass in workspace.xml" />
+    <list default="true" id="55347841-98cd-4f86-9608-4bb232a43c91" name="Changes" comment="Refactor BattleofgodsMod to BattleOfGods and update references">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/item/tier1/ItemWoodBow.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/battleofgods/models/item/wood_bow.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/battleofgods/models/item/wood_bow_pulling_0.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/battleofgods/models/item/wood_bow_pulling_1.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/battleofgods/models/item/wood_bow_pulling_2.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/category/AbstractSubClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/category/AbstractSubClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/init/InitItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/init/InitItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/battleofgods/lang/en_us.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/battleofgods/lang/en_us.json" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -71,18 +81,18 @@
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "1.20.1__mcreator",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/Josef Peer/OneDrive/Games/Minecraft Java/Mods/Eigene/Battle Of Gods/mcreator (LAPTOP)/BattleOfGods/src/main/resources/assets/battleofgods/textures/item",
+    "last_opened_file_path": "C:/Users/Josef Peer/OneDrive/Games/Minecraft Java/Mods/Eigene/Battle Of Gods/mcreator (LAPTOP)/BattleOfGods/src/main/resources/assets/battleofgods/models/item",
     "rearrange.code.on.save": "true",
     "settings.editor.selected.configurable": "com.github.blarc.ai.commits.intellij.plugin.settings.AppSettingsConfigurable"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Josef Peer\OneDrive\Games\Minecraft Java\Mods\Eigene\Battle Of Gods\mcreator (LAPTOP)\BattleOfGods\src\main\resources\assets\battleofgods\models\item" />
       <recent name="C:\Users\Josef Peer\OneDrive\Games\Minecraft Java\Mods\Eigene\Battle Of Gods\mcreator (LAPTOP)\BattleOfGods\src\main\resources\assets\battleofgods\textures\item" />
       <recent name="C:\Users\Josef\OneDrive\Games\Minecraft Java\Mods\Eigene\Battle Of Gods\mcreator (PC)\BattleOfGods\src\main\resources\assets\battleofgods\textures\armor" />
       <recent name="C:\Users\Josef\OneDrive\Games\Minecraft Java\Mods\Eigene\Battle Of Gods\mcreator (PC)\BattleOfGods\src\main\resources\assets\battleofgods\geo" />
       <recent name="C:\Users\Josef\OneDrive\Games\Minecraft Java\Mods\Eigene\Battle Of Gods\mcreator (PC)\BattleOfGods\src\main\resources\assets\battleofgods\textures\models\armor" />
-      <recent name="C:\Users\Josef\OneDrive\Games\Minecraft Java\Mods\Eigene\Battle Of Gods\mcreator (PC)\BattleOfGods\run\mods" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Josef Peer\OneDrive\Games\Minecraft Java\Mods\Eigene\Battle Of Gods\mcreator (LAPTOP)\BattleOfGods\src\main\resources\data\minecraft\recipes\" />
@@ -357,7 +367,31 @@
       <option name="project" value="LOCAL" />
       <updated>1746685029148</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="Update workspace.xml to reflect the implementation of TerrariaBow subclass.">
+      <option name="closed" value="true" />
+      <created>1746685096277</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1746685096277</updated>
+    </task>
+    <task id="LOCAL-00030" summary="Refactor TerrariaArmorItem to TerrariaArmor and update references">
+      <option name="closed" value="true" />
+      <created>1746685398026</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1746685398026</updated>
+    </task>
+    <task id="LOCAL-00031" summary="Refactor BattleofgodsMod to BattleOfGods and update references">
+      <option name="closed" value="true" />
+      <created>1746685490004</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1746685490004</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -375,9 +409,6 @@
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT_PROFILE" value="Project Default" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="SHOW_DIRTY_RECURSIVELY" value="true" />
-    <MESSAGE value="Update workspace configuration and clean up task messages" />
-    <MESSAGE value="new gradle installation" />
-    <MESSAGE value="Add wooden armor model and update workspace configuration" />
     <MESSAGE value="wooden armor model" />
     <MESSAGE value="add armor item override and material interface for enhanced armor functionality" />
     <MESSAGE value="add armor set management and tooltip enhancements for improved armor functionality" />
@@ -400,7 +431,10 @@
     <MESSAGE value="." />
     <MESSAGE value="implemented TerrariaBow subclass" />
     <MESSAGE value="implemented TerrariaBow subclass in workspace.xml" />
-    <option name="LAST_COMMIT_MESSAGE" value="implemented TerrariaBow subclass in workspace.xml" />
+    <MESSAGE value="Update workspace.xml to reflect the implementation of TerrariaBow subclass." />
+    <MESSAGE value="Refactor TerrariaArmorItem to TerrariaArmor and update references" />
+    <MESSAGE value="Refactor BattleofgodsMod to BattleOfGods and update references" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactor BattleofgodsMod to BattleOfGods and update references" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
