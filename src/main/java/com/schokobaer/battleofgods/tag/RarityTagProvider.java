@@ -22,18 +22,18 @@ public class RarityTagProvider extends TagsProvider<Rarity> {
     @Override
     protected void addTags(HolderLookup.Provider provider) {
         /*
-        BattleofgodsMod.LOGGER.info("Gathering rarity data for {}", BattleofgodsMod.MODID);
+        BattleOfGods.LOGGER.info("Gathering rarity data for {}", BattleOfGods.MODID);
         try {
             for (RegistryObject<Item> item : InitItem.ITEMS.getEntries()) {
                 for (RegistryObject<Rarity> rarity : InitRarity.RARITIES.getEntries()) {
                     if (((ItemOverride) item.get()).getSubClassMethods().getRarity().equals(rarity.get())) {
                         tag(rarity.get().getTag()).addOptional(TagEntry.element(item.getId()).getId());
-                        BattleofgodsMod.LOGGER.debug("Adding item {} to tag {} for {}", item.getId(), rarity.get().getTag().toString(), BattleofgodsMod.MODID);
+                        BattleOfGods.LOGGER.debug("Adding item {} to tag {} for {}", item.getId(), rarity.get().getTag().toString(), BattleOfGods.MODID);
                     }
                 }
             }
         } catch (Exception e) {
-            BattleofgodsMod.LOGGER.error("Error while gathering data for {}", BattleofgodsMod.MODID, e);
+            BattleOfGods.LOGGER.error("Error while gathering data for {}", BattleOfGods.MODID, e);
         }
 
          */

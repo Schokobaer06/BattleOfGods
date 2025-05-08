@@ -1,6 +1,6 @@
 package com.schokobaer.battleofgods.init;
 
-import com.schokobaer.battleofgods.BattleofgodsMod;
+import com.schokobaer.battleofgods.BattleOfGods;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
@@ -9,7 +9,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
 
 public class InitTabs {
-    public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, BattleofgodsMod.MODID);
+    public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, BattleOfGods.MODID);
     public static final RegistryObject<CreativeModeTab> TIER_1 = CREATIVE_MODE_TABS.register("tier_1",
             () -> CreativeModeTab.builder()
                     .title(Component.translatable("itemGroup.battleofgods.tier_1"))

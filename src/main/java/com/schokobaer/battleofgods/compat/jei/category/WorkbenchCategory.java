@@ -2,7 +2,7 @@
 package com.schokobaer.battleofgods.compat.jei.category;
 
 import com.mojang.blaze3d.systems.RenderSystem;
-import com.schokobaer.battleofgods.BattleofgodsMod;
+import com.schokobaer.battleofgods.BattleOfGods;
 import com.schokobaer.battleofgods.handler.RecipeHandler.BattleRecipe;
 import com.schokobaer.battleofgods.init.InitBlocks;
 import mezz.jei.api.constants.VanillaTypes;
@@ -20,7 +20,7 @@ import net.minecraft.resources.ResourceLocation;
 
 public class WorkbenchCategory implements IRecipeCategory<BattleRecipe> {
     public static final RecipeType<BattleRecipe> TYPE = RecipeType.create(
-            BattleofgodsMod.MODID,
+            BattleOfGods.MODID,
             "workbench",
             BattleRecipe.class
     );
@@ -29,7 +29,7 @@ public class WorkbenchCategory implements IRecipeCategory<BattleRecipe> {
     private final IDrawable icon;
 
     public WorkbenchCategory(IGuiHelper guiHelper) {
-        this.background = guiHelper.drawableBuilder(new ResourceLocation(BattleofgodsMod.MODID, "textures/gui/crafting_station/workbench.png"),
+        this.background = guiHelper.drawableBuilder(new ResourceLocation(BattleOfGods.MODID, "textures/gui/crafting_station/workbench.png"),
                 8, 15, 160, 60).setTextureSize(176, 166).build();
 
         this.icon = guiHelper.createDrawableIngredient(

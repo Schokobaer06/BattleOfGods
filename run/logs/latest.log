@@ -117,7 +117,7 @@ com.google.gson.JsonSyntaxException: Missing key, expected to find a JsonObject
 	at cpw.mods.bootstraplauncher.BootstrapLauncher.main(BootstrapLauncher.java:141) ~[bootstraplauncher-1.1.2.jar:?]
 [07Mai2025 13:55:18.945] [Render thread/INFO] [net.minecraft.world.item.crafting.RecipeManager/]: Loaded 10 recipes
 [07Mai2025 13:55:19.342] [Render thread/INFO] [net.minecraft.advancements.AdvancementList/]: Loaded 1271 advancements
-[07Mai2025 13:55:19.656] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Loaded 2 recipes
+[07Mai2025 13:55:19.656] [Render thread/INFO] [com.schokobaer.battleofgods.BattleOfGods/]: Loaded 2 recipes
 [07Mai2025 13:55:21.368] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Starting integrated minecraft server version 1.20.1
 [07Mai2025 13:55:21.370] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Generating keypair
 [07Mai2025 13:55:23.408] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Preparing start region for dimension minecraft:overworld

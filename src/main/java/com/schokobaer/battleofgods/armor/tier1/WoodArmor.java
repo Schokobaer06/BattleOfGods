@@ -1,6 +1,6 @@
 package com.schokobaer.battleofgods.armor.tier1;
 
-import com.schokobaer.battleofgods.BattleofgodsMod;
+import com.schokobaer.battleofgods.BattleOfGods;
 import com.schokobaer.battleofgods.category.subClass.TerrariaArmor;
 import com.schokobaer.battleofgods.init.InitRarity;
 import com.schokobaer.battleofgods.init.InitTier;
@@ -51,17 +51,17 @@ public class WoodArmor extends TerrariaArmor {
     public static class WoodArmorModel extends GeoModel<WoodArmor> {
         @Override
         public ResourceLocation getAnimationResource(WoodArmor object) {
-            return new ResourceLocation(BattleofgodsMod.MODID, "animations/wood_armor.animation.json");
+            return new ResourceLocation(BattleOfGods.MODID, "animations/wood_armor.animation.json");
         }
 
         @Override
         public ResourceLocation getModelResource(WoodArmor object) {
-            return new ResourceLocation(BattleofgodsMod.MODID, "geo/wood_armor.geo.json");
+            return new ResourceLocation(BattleOfGods.MODID, "geo/wood_armor.geo.json");
         }
 
         @Override
         public ResourceLocation getTextureResource(WoodArmor object) {
-            return new ResourceLocation(BattleofgodsMod.MODID, "textures/armor/wood_armor.png");
+            return new ResourceLocation(BattleOfGods.MODID, "textures/armor/wood_armor.png");
         }
     }
 

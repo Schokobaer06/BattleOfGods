@@ -22,18 +22,18 @@ public class TierTagProvider extends TagsProvider<Tier> {
     @Override
     protected void addTags(HolderLookup.Provider provider) {
         /*
-        BattleofgodsMod.LOGGER.info("Gathering tier data for {}", BattleofgodsMod.MODID);
+        BattleOfGods.LOGGER.info("Gathering tier data for {}", BattleOfGods.MODID);
         try {
             for (RegistryObject<Item> item : InitItem.ITEMS.getEntries()) {
                 for (RegistryObject<Tier> tier : InitTier.TIERS.getEntries()) {
                     if (((ItemOverride) item.get()).getSubClassMethods().getTier().equals(tier.get())) {
                         tag(tier.get().getTag()).addOptional(TagEntry.element(item.getId()).getId());
-                        BattleofgodsMod.LOGGER.debug("Adding item {} to tag {} for {}", item.getId(), tier.get().getTag().toString(), BattleofgodsMod.MODID);
+                        BattleOfGods.LOGGER.debug("Adding item {} to tag {} for {}", item.getId(), tier.get().getTag().toString(), BattleOfGods.MODID);
                     }
                 }
             }
         } catch (Exception e) {
-            BattleofgodsMod.LOGGER.error("Error while gathering data for {}", BattleofgodsMod.MODID, e);
+            BattleOfGods.LOGGER.error("Error while gathering data for {}", BattleOfGods.MODID, e);
         }
 
          */

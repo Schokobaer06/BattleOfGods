@@ -1,6 +1,6 @@
 package com.schokobaer.battleofgods.init;
 
-import com.schokobaer.battleofgods.BattleofgodsMod;
+import com.schokobaer.battleofgods.BattleOfGods;
 import com.schokobaer.battleofgods.armor.tier1.WoodArmor;
 import com.schokobaer.battleofgods.item.tier1.ItemCopperBroadsword;
 import com.schokobaer.battleofgods.item.tier1.ItemCopperShortsword;
@@ -14,7 +14,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
 public class InitItem {
-    public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, BattleofgodsMod.MODID);
+    public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, BattleOfGods.MODID);
 
     // Tier 1
     //Melee

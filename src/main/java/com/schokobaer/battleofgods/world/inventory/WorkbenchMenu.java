@@ -1,6 +1,6 @@
 package com.schokobaer.battleofgods.world.inventory;
 
-import com.schokobaer.battleofgods.BattleofgodsMod;
+import com.schokobaer.battleofgods.BattleOfGods;
 import com.schokobaer.battleofgods.handler.RecipeHandler;
 import com.schokobaer.battleofgods.init.InitMenu;
 import net.minecraft.core.RegistryAccess;
@@ -55,35 +55,35 @@ public class WorkbenchMenu extends AbstractContainerMenu implements Supplier<Map
 
     public void setSelectedRecipe(RecipeHandler.BattleRecipe recipe) {
         this.selectedRecipe = recipe;
-        if (BattleofgodsMod.isDebug())
-            BattleofgodsMod.LOGGER.debug("WorkbenchMenu - selectRecipe has been called with recipe {}", recipe.getId());
+        if (BattleOfGods.isDebug())
+            BattleOfGods.LOGGER.debug("WorkbenchMenu - selectRecipe has been called with recipe {}", recipe.getId());
     }
 
     public void craftItem(Player player, ResourceLocation recipeId) {
-        if (BattleofgodsMod.isDebug())
-            BattleofgodsMod.LOGGER.debug("WorkbenchMenu - craftItem has been called: Crafting Item: {}", recipeId);
+        if (BattleOfGods.isDebug())
+            BattleOfGods.LOGGER.debug("WorkbenchMenu - craftItem has been called: Crafting Item: {}", recipeId);
         //RecipeHandler.BattleRecipe temp = getSelectedRecipe();
         Optional<RecipeHandler.BattleRecipe> optionalRecipe = RecipeHandler.getRecipeById(recipeId);
         setSelectedRecipe(optionalRecipe.orElse(null));
-        if (BattleofgodsMod.isDebug())
-            BattleofgodsMod.LOGGER.debug(" WorkbenchMenu - optionalRecipe: {}\nselectedRecipe: {}", optionalRecipe.get().getId(), selectedRecipe.getId());
+        if (BattleOfGods.isDebug())
+            BattleOfGods.LOGGER.debug(" WorkbenchMenu - optionalRecipe: {}\nselectedRecipe: {}", optionalRecipe.get().getId(), selectedRecipe.getId());
         RecipeHandler.BattleRecipe recipe = getSelectedRecipe();
-        if (BattleofgodsMod.isDebug()) BattleofgodsMod.LOGGER.debug(" WorkbenchMenu - recipe (Check 1): {}", recipe);
+        if (BattleOfGods.isDebug()) BattleOfGods.LOGGER.debug(" WorkbenchMenu - recipe (Check 1): {}", recipe);
         if (recipe == null) return;
-        if (BattleofgodsMod.isDebug()) BattleofgodsMod.LOGGER.debug(" WorkbenchMenu - recipe (Check 2): {}", recipe);
+        if (BattleOfGods.isDebug()) BattleOfGods.LOGGER.debug(" WorkbenchMenu - recipe (Check 2): {}", recipe);
         RegistryAccess registryAccess = player.level().registryAccess();
-        if (BattleofgodsMod.isDebug())
-            BattleofgodsMod.LOGGER.debug("WorkbenchMenu - registryAccess: {}", registryAccess);
+        if (BattleOfGods.isDebug())
+            BattleOfGods.LOGGER.debug("WorkbenchMenu - registryAccess: {}", registryAccess);
         //ItemStack result = recipe.assemble((Container) this, registryAccess);
-        if (BattleofgodsMod.isDebug()) BattleofgodsMod.LOGGER.debug("WorkbenchMenu - TEST");
-        //if (BattleofgodsMod.isDebug()) BattleofgodsMod.LOGGER.debug("WorkbenchMenu - Result: {}", result);
+        if (BattleOfGods.isDebug()) BattleOfGods.LOGGER.debug("WorkbenchMenu - TEST");
+        //if (BattleOfGods.isDebug()) BattleOfGods.LOGGER.debug("WorkbenchMenu - Result: {}", result);
 
 
         access.execute((level, pos) -> {
-            if (BattleofgodsMod.isDebug())
-                BattleofgodsMod.LOGGER.debug("WorkbenchMenu - access.execute has been called: level: {}, pos: {}", level, pos);
+            if (BattleOfGods.isDebug())
+                BattleOfGods.LOGGER.debug("WorkbenchMenu - access.execute has been called: level: {}, pos: {}", level, pos);
             if (hasRequiredItems(player) && recipe.matches(player.getInventory(), level)) {
-                if (BattleofgodsMod.isDebug()) BattleofgodsMod.LOGGER.debug("WorkbenchMenu - hasRequiredItems: true");
+                if (BattleOfGods.isDebug()) BattleOfGods.LOGGER.debug("WorkbenchMenu - hasRequiredItems: true");
                 consumeIngredients(player);
                 giveResult(player);
                 broadcastChanges();
@@ -119,8 +119,8 @@ public class WorkbenchMenu extends AbstractContainerMenu implements Supplier<Map
     }
 
     private void giveResult(Player player) {
-        if (BattleofgodsMod.isDebug())
-            BattleofgodsMod.LOGGER.debug("WorkbenchMenu - giveResult has been called: giving result: {}", selectedRecipe.getResultItem(player.level().registryAccess()));
+        if (BattleOfGods.isDebug())
+            BattleOfGods.LOGGER.debug("WorkbenchMenu - giveResult has been called: giving result: {}", selectedRecipe.getResultItem(player.level().registryAccess()));
         RegistryAccess registryAccess = player.level().registryAccess();
         ItemStack result = selectedRecipe.getResultItem(registryAccess).copy();
         ItemStack carried = player.containerMenu.getCarried();

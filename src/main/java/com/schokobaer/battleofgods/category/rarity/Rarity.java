@@ -1,7 +1,7 @@
 package com.schokobaer.battleofgods.category.rarity;
 
 import com.mojang.datafixers.util.Either;
-import com.schokobaer.battleofgods.BattleofgodsMod;
+import com.schokobaer.battleofgods.BattleOfGods;
 import net.minecraft.resources.ResourceLocation;
 
 /**
@@ -75,7 +75,7 @@ public class Rarity {
 
     public String CheckDisplayName(String name) {
         if (name == null || name.isEmpty()) {
-            BattleofgodsMod.LOGGER.error("Error: Rarity name is empty or null\nSetting name to Unknown Rarity");
+            BattleOfGods.LOGGER.error("Error: Rarity name is empty or null\nSetting name to Unknown Rarity");
             return "Unknown Rarity";
         }
         return name;
@@ -84,7 +84,7 @@ public class Rarity {
 
     public float CheckSpeed(float speed) {
         if (speed <= 0.0f || speed > 2.0f) {
-            BattleofgodsMod.LOGGER.error("Error: animationSpeed must be between 0 and 100\nSetting animationSpeed to 1");
+            BattleOfGods.LOGGER.error("Error: animationSpeed must be between 0 and 100\nSetting animationSpeed to 1");
             return 1;
         }
         return speed;
@@ -95,7 +95,7 @@ public class Rarity {
      */
     public Either<Integer, ResourceLocation> getEitherIntegerResourceLocation() {
         if (this.color == null) {
-            BattleofgodsMod.LOGGER.error("Error: color is null in Rarity object");
+            BattleOfGods.LOGGER.error("Error: color is null in Rarity object");
             return Either.left(0xFF000000); // Standardfarbe zurückgeben, wenn null
         }
         return this.color;

@@ -517,7 +517,7 @@
 [07Mai2025 13:53:34.076] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLJavaModLanguageProvider/LOADING]: Loading FMLModContainer from classloader cpw.mods.modlauncher.TransformingClassLoader@54089484 - got cpw.mods.cl.ModuleClassLoader@99a78d7
 [07Mai2025 13:53:34.077] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Creating FMLModContainer instance for lain.mods.cos.init.forge.ForgeCosmeticArmorReworked
 [07Mai2025 13:53:34.079] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLJavaModLanguageProvider/LOADING]: Loading FMLModContainer from classloader cpw.mods.modlauncher.TransformingClassLoader@54089484 - got cpw.mods.cl.ModuleClassLoader@99a78d7
-[07Mai2025 13:53:34.079] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Creating FMLModContainer instance for com.schokobaer.battleofgods.BattleofgodsMod
+[07Mai2025 13:53:34.079] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Creating FMLModContainer instance for com.schokobaer.battleofgods.BattleOfGods
 [07Mai2025 13:53:34.086] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLJavaModLanguageProvider/LOADING]: Loading FMLModContainer from classloader cpw.mods.modlauncher.TransformingClassLoader@54089484 - got cpw.mods.cl.ModuleClassLoader@99a78d7
 [07Mai2025 13:53:34.086] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Creating FMLModContainer instance for vazkii.patchouli.forge.common.ForgeModInitializer
 [07Mai2025 13:53:34.156] [modloading-worker-0/DEBUG] [net.minecraftforge.fml.javafmlmod.AutomaticEventSubscriber/LOADING]: Attempting to inject @EventBusSubscriber classes into the eventbus for mixinextras
@@ -551,7 +551,7 @@
 [07Mai2025 13:53:34.483] [modloading-worker-0/DEBUG] [mixin/]: Mixing client.ClientPlayerInteractionManagerMixin from bettercombat.mixins.json into net.minecraft.client.multiplayer.MultiPlayerGameMode
 [07Mai2025 13:53:34.582] [modloading-worker-0/DEBUG] [mezz.jei.common.config.file.ConfigSerializer/]: Loading config file: C:\Users\Josef Peer\OneDrive\Games\Minecraft Java\Mods\Eigene\Battle Of Gods\mcreator (LAPTOP)\BattleOfGods\run\config\jei\jei-debug.ini
 [07Mai2025 13:53:34.587] [modloading-worker-0/DEBUG] [mezz.jei.common.config.file.ConfigSerializer/]: Saving config file: C:\Users\Josef Peer\OneDrive\Games\Minecraft Java\Mods\Eigene\Battle Of Gods\mcreator (LAPTOP)\BattleOfGods\run\config\jei\jei-debug.ini
-[07Mai2025 13:53:34.591] [modloading-worker-0/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering network message: com.schokobaer.battleofgods.network.CraftPacket
+[07Mai2025 13:53:34.591] [modloading-worker-0/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering network message: com.schokobaer.battleofgods.network.CraftPacket
 [07Mai2025 13:53:34.591] [modloading-worker-0/DEBUG] [net.minecraftforge.fml.javafmlmod.AutomaticEventSubscriber/LOADING]: Attempting to inject @EventBusSubscriber classes into the eventbus for battleofgods
 [07Mai2025 13:53:34.592] [modloading-worker-0/DEBUG] [net.minecraftforge.fml.javafmlmod.AutomaticEventSubscriber/LOADING]: Auto-subscribing com.schokobaer.battleofgods.attribute.handler.CriticalHitHandler to FORGE
 [07Mai2025 13:53:34.604] [modloading-worker-0/DEBUG] [net.minecraftforge.fml.javafmlmod.AutomaticEventSubscriber/LOADING]: Auto-subscribing com.schokobaer.battleofgods.attribute.tooltip.CriticalHitTooltip to FORGE
@@ -676,28 +676,28 @@ java.lang.IllegalAccessException: class io.netty.util.internal.PlatformDependent
 [07Mai2025 13:53:35.092] [Render thread/DEBUG] [net.minecraftforge.common.capabilities.CapabilityManager/CAPABILITIES]: Attempting to automatically register: Lnet/minecraftforge/fluids/capability/IFluidHandlerItem;
 [07Mai2025 13:53:35.092] [Render thread/DEBUG] [net.minecraftforge.common.capabilities.CapabilityManager/CAPABILITIES]: Attempting to automatically register: Lnet/minecraftforge/items/IItemHandler;
 [07Mai2025 13:53:35.096] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Unfreezing vanilla registries
-[07Mai2025 13:53:35.105] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[07Mai2025 13:53:35.106] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
+[07Mai2025 13:53:35.105] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe types
+[07Mai2025 13:53:35.106] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe serializers
 [07Mai2025 13:53:35.110] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Applying holder lookups: minecraft:sound_event
 [07Mai2025 13:53:35.118] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Holder lookups applied: minecraft:sound_event
-[07Mai2025 13:53:35.118] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[07Mai2025 13:53:35.119] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
+[07Mai2025 13:53:35.118] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe types
+[07Mai2025 13:53:35.119] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe serializers
 [07Mai2025 13:53:35.119] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Applying holder lookups: minecraft:fluid
 [07Mai2025 13:53:35.120] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Holder lookups applied: minecraft:fluid
-[07Mai2025 13:53:35.123] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[07Mai2025 13:53:35.124] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
+[07Mai2025 13:53:35.123] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe types
+[07Mai2025 13:53:35.124] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe serializers
 [07Mai2025 13:53:35.124] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Applying holder lookups: minecraft:block
 [07Mai2025 13:53:35.128] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Holder lookups applied: minecraft:block
-[07Mai2025 13:53:35.129] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[07Mai2025 13:53:35.129] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
+[07Mai2025 13:53:35.129] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe types
+[07Mai2025 13:53:35.129] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe serializers
 [07Mai2025 13:53:35.129] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Applying holder lookups: minecraft:attribute
 [07Mai2025 13:53:35.131] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Holder lookups applied: minecraft:attribute
-[07Mai2025 13:53:35.132] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[07Mai2025 13:53:35.132] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
+[07Mai2025 13:53:35.132] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe types
+[07Mai2025 13:53:35.132] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe serializers
 [07Mai2025 13:53:35.132] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Applying holder lookups: minecraft:mob_effect
 [07Mai2025 13:53:35.134] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Holder lookups applied: minecraft:mob_effect
-[07Mai2025 13:53:35.135] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[07Mai2025 13:53:35.135] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
+[07Mai2025 13:53:35.135] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe types
+[07Mai2025 13:53:35.135] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe serializers
 [07Mai2025 13:53:35.135] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Applying holder lookups: minecraft:particle_type
 [07Mai2025 13:53:35.137] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Holder lookups applied: minecraft:particle_type
 [07Mai2025 13:53:35.149] [Render thread/DEBUG] [mixin/]: Mixing BipedEntityModelMixin from playerAnimator-common.mixins.json into net.minecraft.client.model.HumanoidModel
@@ -707,288 +707,288 @@ java.lang.IllegalAccessException: class io.netty.util.internal.PlatformDependent
 [07Mai2025 13:53:35.155] [Render thread/DEBUG] [mixin/]: Renaming synthetic method lambda$renderToBuffer$1(Lcom/mojang/blaze3d/vertex/PoseStack;Lcom/mojang/blaze3d/vertex/VertexConsumer;IIFFFFLnet/minecraft/client/model/geom/ModelPart;)V to md3993e1$lambda$renderToBuffer$1$2 in playerAnimator-common.mixins.json:BipedEntityModelMixin
 [07Mai2025 13:53:35.155] [Render thread/DEBUG] [mixin/]: Renaming synthetic method lambda$renderToBuffer$0(Lcom/mojang/blaze3d/vertex/PoseStack;Lcom/mojang/blaze3d/vertex/VertexConsumer;IIFFFFLnet/minecraft/client/model/geom/ModelPart;)V to md3993e1$lambda$renderToBuffer$0$3 in playerAnimator-common.mixins.json:BipedEntityModelMixin
 [07Mai2025 13:53:35.238] [Render thread/DEBUG] [software.bernie.geckolib.GeckoLib/]: Registered SyncedAnimatable for class software.bernie.example.item.JackInTheBoxItem
-[07Mai2025 13:53:35.307] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[07Mai2025 13:53:35.307] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
+[07Mai2025 13:53:35.307] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe types
+[07Mai2025 13:53:35.307] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe serializers
 [07Mai2025 13:53:35.313] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Applying holder lookups: minecraft:item
 [07Mai2025 13:53:35.318] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Holder lookups applied: minecraft:item
-[07Mai2025 13:53:35.321] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[07Mai2025 13:53:35.321] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
+[07Mai2025 13:53:35.321] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe types
+[07Mai2025 13:53:35.321] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe serializers
 [07Mai2025 13:53:35.321] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Applying holder lookups: minecraft:entity_type
 [07Mai2025 13:53:35.323] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Holder lookups applied: minecraft:entity_type
-[07Mai2025 13:53:35.323] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[07Mai2025 13:53:35.323] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
+[07Mai2025 13:53:35.323] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe types
+[07Mai2025 13:53:35.323] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe serializers
 [07Mai2025 13:53:35.323] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Applying holder lookups: minecraft:sensor_type
 [07Mai2025 13:53:35.325] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Holder lookups applied: minecraft:sensor_type
-[07Mai2025 13:53:35.325] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[07Mai2025 13:53:35.325] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
+[07Mai2025 13:53:35.325] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe types
+[07Mai2025 13:53:35.325] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe serializers
 [07Mai2025 13:53:35.325] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Applying holder lookups: minecraft:memory_module_type
 [07Mai2025 13:53:35.327] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Holder lookups applied: minecraft:memory_module_type
-[07Mai2025 13:53:35.327] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[07Mai2025 13:53:35.327] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
+[07Mai2025 13:53:35.327] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe types
+[07Mai2025 13:53:35.327] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe serializers
 [07Mai2025 13:53:35.327] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Applying holder lookups: minecraft:potion
 [07Mai2025 13:53:35.329] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Holder lookups applied: minecraft:potion
-[07Mai2025 13:53:35.329] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[07Mai2025 13:53:35.329] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
+[07Mai2025 13:53:35.329] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe types
+[07Mai2025 13:53:35.329] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe serializers
 [07Mai2025 13:53:35.330] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Applying holder lookups: minecraft:game_event
 [07Mai2025 13:53:35.343] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Holder lookups applied: minecraft:game_event
-[07Mai2025 13:53:35.344] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[07Mai2025 13:53:35.344] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
+[07Mai2025 13:53:35.344] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe types
+[07Mai2025 13:53:35.344] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe serializers
 [07Mai2025 13:53:35.345] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Applying holder lookups: minecraft:enchantment
 [07Mai2025 13:53:35.346] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Holder lookups applied: minecraft:enchantment
-[07Mai2025 13:53:35.354] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[07Mai2025 13:53:35.355] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
+[07Mai2025 13:53:35.354] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe types
+[07Mai2025 13:53:35.355] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe serializers
 [07Mai2025 13:53:35.355] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Applying holder lookups: minecraft:block_entity_type
 [07Mai2025 13:53:35.356] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Holder lookups applied: minecraft:block_entity_type
-[07Mai2025 13:53:35.357] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[07Mai2025 13:53:35.357] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
+[07Mai2025 13:53:35.357] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe types
+[07Mai2025 13:53:35.357] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe serializers
 [07Mai2025 13:53:35.357] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Applying holder lookups: minecraft:painting_variant
 [07Mai2025 13:53:35.358] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Holder lookups applied: minecraft:painting_variant
-[07Mai2025 13:53:35.359] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[07Mai2025 13:53:35.359] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
+[07Mai2025 13:53:35.359] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe types
+[07Mai2025 13:53:35.359] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe serializers
 [07Mai2025 13:53:35.359] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Applying holder lookups: minecraft:stat_type
 [07Mai2025 13:53:35.360] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Holder lookups applied: minecraft:stat_type
-[07Mai2025 13:53:35.361] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[07Mai2025 13:53:35.361] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
+[07Mai2025 13:53:35.361] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe types
+[07Mai2025 13:53:35.361] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe serializers
 [07Mai2025 13:53:35.361] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Applying holder lookups: minecraft:custom_stat
 [07Mai2025 13:53:35.362] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Holder lookups applied: minecraft:custom_stat
-[07Mai2025 13:53:35.363] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[07Mai2025 13:53:35.363] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
+[07Mai2025 13:53:35.363] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe types
+[07Mai2025 13:53:35.363] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe serializers
 [07Mai2025 13:53:35.363] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Applying holder lookups: minecraft:chunk_status
 [07Mai2025 13:53:35.365] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Holder lookups applied: minecraft:chunk_status
-[07Mai2025 13:53:35.365] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[07Mai2025 13:53:35.365] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
+[07Mai2025 13:53:35.365] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe types
+[07Mai2025 13:53:35.365] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe serializers
 [07Mai2025 13:53:35.365] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Applying holder lookups: minecraft:rule_test
 [07Mai2025 13:53:35.367] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Holder lookups applied: minecraft:rule_test
-[07Mai2025 13:53:35.367] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[07Mai2025 13:53:35.367] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
+[07Mai2025 13:53:35.367] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe types
+[07Mai2025 13:53:35.367] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe serializers
 [07Mai2025 13:53:35.367] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Applying holder lookups: minecraft:rule_block_entity_modifier
 [07Mai2025 13:53:35.369] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Holder lookups applied: minecraft:rule_block_entity_modifier
-[07Mai2025 13:53:35.369] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[07Mai2025 13:53:35.369] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
+[07Mai2025 13:53:35.369] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe types
+[07Mai2025 13:53:35.369] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe serializers
 [07Mai2025 13:53:35.370] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Applying holder lookups: minecraft:pos_rule_test
 [07Mai2025 13:53:35.371] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Holder lookups applied: minecraft:pos_rule_test
-[07Mai2025 13:53:35.402] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[07Mai2025 13:53:35.403] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
+[07Mai2025 13:53:35.402] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe types
+[07Mai2025 13:53:35.403] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe serializers
 [07Mai2025 13:53:35.403] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Applying holder lookups: minecraft:menu
 [07Mai2025 13:53:35.404] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Holder lookups applied: minecraft:menu
-[07Mai2025 13:53:35.406] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[07Mai2025 13:53:35.410] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
+[07Mai2025 13:53:35.406] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe types
+[07Mai2025 13:53:35.410] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe serializers
 [07Mai2025 13:53:35.410] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Applying holder lookups: minecraft:recipe_type
 [07Mai2025 13:53:35.412] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Holder lookups applied: minecraft:recipe_type
-[07Mai2025 13:53:35.458] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[07Mai2025 13:53:35.458] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
+[07Mai2025 13:53:35.458] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe types
+[07Mai2025 13:53:35.458] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe serializers
 [07Mai2025 13:53:35.476] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Applying holder lookups: minecraft:recipe_serializer
 [07Mai2025 13:53:35.477] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Holder lookups applied: minecraft:recipe_serializer
-[07Mai2025 13:53:35.478] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[07Mai2025 13:53:35.478] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
+[07Mai2025 13:53:35.478] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe types
+[07Mai2025 13:53:35.478] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe serializers
 [07Mai2025 13:53:35.478] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Applying holder lookups: minecraft:position_source_type
 [07Mai2025 13:53:35.479] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Holder lookups applied: minecraft:position_source_type
-[07Mai2025 13:53:35.483] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[07Mai2025 13:53:35.484] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
+[07Mai2025 13:53:35.483] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe types
+[07Mai2025 13:53:35.484] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe serializers
 [07Mai2025 13:53:35.484] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Applying holder lookups: minecraft:command_argument_type
 [07Mai2025 13:53:35.485] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Holder lookups applied: minecraft:command_argument_type
-[07Mai2025 13:53:35.486] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[07Mai2025 13:53:35.486] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
+[07Mai2025 13:53:35.486] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe types
+[07Mai2025 13:53:35.486] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe serializers
 [07Mai2025 13:53:35.486] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Applying holder lookups: minecraft:villager_type
 [07Mai2025 13:53:35.487] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Holder lookups applied: minecraft:villager_type
-[07Mai2025 13:53:35.488] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[07Mai2025 13:53:35.488] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
+[07Mai2025 13:53:35.488] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe types
+[07Mai2025 13:53:35.488] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe serializers
 [07Mai2025 13:53:35.488] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Applying holder lookups: minecraft:villager_profession
 [07Mai2025 13:53:35.489] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Holder lookups applied: minecraft:villager_profession
-[07Mai2025 13:53:35.490] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[07Mai2025 13:53:35.490] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
+[07Mai2025 13:53:35.490] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe types
+[07Mai2025 13:53:35.490] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe serializers
 [07Mai2025 13:53:35.490] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Applying holder lookups: minecraft:point_of_interest_type
 [07Mai2025 13:53:35.491] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Holder lookups applied: minecraft:point_of_interest_type
-[07Mai2025 13:53:35.492] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[07Mai2025 13:53:35.492] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
+[07Mai2025 13:53:35.492] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe types
+[07Mai2025 13:53:35.492] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe serializers
 [07Mai2025 13:53:35.492] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Applying holder lookups: minecraft:schedule
 [07Mai2025 13:53:35.493] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Holder lookups applied: minecraft:schedule
-[07Mai2025 13:53:35.494] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[07Mai2025 13:53:35.494] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
+[07Mai2025 13:53:35.494] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe types
+[07Mai2025 13:53:35.494] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe serializers
 [07Mai2025 13:53:35.495] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Applying holder lookups: minecraft:activity
 [07Mai2025 13:53:35.496] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Holder lookups applied: minecraft:activity
-[07Mai2025 13:53:35.496] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[07Mai2025 13:53:35.497] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
+[07Mai2025 13:53:35.496] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe types
+[07Mai2025 13:53:35.497] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe serializers
 [07Mai2025 13:53:35.497] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Applying holder lookups: minecraft:loot_pool_entry_type
 [07Mai2025 13:53:35.498] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Holder lookups applied: minecraft:loot_pool_entry_type
-[07Mai2025 13:53:35.499] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[07Mai2025 13:53:35.499] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
+[07Mai2025 13:53:35.499] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe types
+[07Mai2025 13:53:35.499] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe serializers
 [07Mai2025 13:53:35.499] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Applying holder lookups: minecraft:loot_function_type
 [07Mai2025 13:53:35.500] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Holder lookups applied: minecraft:loot_function_type
-[07Mai2025 13:53:35.507] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[07Mai2025 13:53:35.507] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
+[07Mai2025 13:53:35.507] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe types
+[07Mai2025 13:53:35.507] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe serializers
 [07Mai2025 13:53:35.507] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Applying holder lookups: minecraft:loot_condition_type
 [07Mai2025 13:53:35.509] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Holder lookups applied: minecraft:loot_condition_type
-[07Mai2025 13:53:35.510] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[07Mai2025 13:53:35.510] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
+[07Mai2025 13:53:35.510] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe types
+[07Mai2025 13:53:35.510] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe serializers
 [07Mai2025 13:53:35.510] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Applying holder lookups: minecraft:loot_number_provider_type
 [07Mai2025 13:53:35.511] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Holder lookups applied: minecraft:loot_number_provider_type
-[07Mai2025 13:53:35.511] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[07Mai2025 13:53:35.511] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
+[07Mai2025 13:53:35.511] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe types
+[07Mai2025 13:53:35.511] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe serializers
 [07Mai2025 13:53:35.512] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Applying holder lookups: minecraft:loot_nbt_provider_type
 [07Mai2025 13:53:35.513] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Holder lookups applied: minecraft:loot_nbt_provider_type
-[07Mai2025 13:53:35.513] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[07Mai2025 13:53:35.513] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
+[07Mai2025 13:53:35.513] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe types
+[07Mai2025 13:53:35.513] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe serializers
 [07Mai2025 13:53:35.513] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Applying holder lookups: minecraft:loot_score_provider_type
 [07Mai2025 13:53:35.515] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Holder lookups applied: minecraft:loot_score_provider_type
-[07Mai2025 13:53:35.515] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[07Mai2025 13:53:35.515] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
+[07Mai2025 13:53:35.515] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe types
+[07Mai2025 13:53:35.515] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe serializers
 [07Mai2025 13:53:35.515] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Applying holder lookups: minecraft:float_provider_type
 [07Mai2025 13:53:35.517] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Holder lookups applied: minecraft:float_provider_type
-[07Mai2025 13:53:35.517] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[07Mai2025 13:53:35.517] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
+[07Mai2025 13:53:35.517] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe types
+[07Mai2025 13:53:35.517] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe serializers
 [07Mai2025 13:53:35.517] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Applying holder lookups: minecraft:int_provider_type
 [07Mai2025 13:53:35.519] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Holder lookups applied: minecraft:int_provider_type
-[07Mai2025 13:53:35.519] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[07Mai2025 13:53:35.519] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
+[07Mai2025 13:53:35.519] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe types
+[07Mai2025 13:53:35.519] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe serializers
 [07Mai2025 13:53:35.520] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Applying holder lookups: minecraft:height_provider_type
 [07Mai2025 13:53:35.521] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Holder lookups applied: minecraft:height_provider_type
-[07Mai2025 13:53:35.522] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[07Mai2025 13:53:35.522] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
+[07Mai2025 13:53:35.522] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe types
+[07Mai2025 13:53:35.522] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe serializers
 [07Mai2025 13:53:35.522] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Applying holder lookups: minecraft:block_predicate_type
 [07Mai2025 13:53:35.523] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Holder lookups applied: minecraft:block_predicate_type
-[07Mai2025 13:53:35.523] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[07Mai2025 13:53:35.524] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
+[07Mai2025 13:53:35.523] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe types
+[07Mai2025 13:53:35.524] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe serializers
 [07Mai2025 13:53:35.524] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Applying holder lookups: minecraft:worldgen/carver
 [07Mai2025 13:53:35.525] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Holder lookups applied: minecraft:worldgen/carver
-[07Mai2025 13:53:35.525] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[07Mai2025 13:53:35.526] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
+[07Mai2025 13:53:35.525] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe types
+[07Mai2025 13:53:35.526] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe serializers
 [07Mai2025 13:53:35.526] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Applying holder lookups: minecraft:worldgen/feature
 [07Mai2025 13:53:35.527] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Holder lookups applied: minecraft:worldgen/feature
-[07Mai2025 13:53:35.527] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[07Mai2025 13:53:35.528] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
+[07Mai2025 13:53:35.527] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe types
+[07Mai2025 13:53:35.528] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe serializers
 [07Mai2025 13:53:35.528] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Applying holder lookups: minecraft:worldgen/structure_processor
 [07Mai2025 13:53:35.529] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Holder lookups applied: minecraft:worldgen/structure_processor
-[07Mai2025 13:53:35.529] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[07Mai2025 13:53:35.529] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
+[07Mai2025 13:53:35.529] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe types
+[07Mai2025 13:53:35.529] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe serializers
 [07Mai2025 13:53:35.529] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Applying holder lookups: minecraft:worldgen/structure_placement
 [07Mai2025 13:53:35.530] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Holder lookups applied: minecraft:worldgen/structure_placement
-[07Mai2025 13:53:35.531] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[07Mai2025 13:53:35.531] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
+[07Mai2025 13:53:35.531] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe types
+[07Mai2025 13:53:35.531] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe serializers
 [07Mai2025 13:53:35.531] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Applying holder lookups: minecraft:worldgen/structure_piece
 [07Mai2025 13:53:35.532] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Holder lookups applied: minecraft:worldgen/structure_piece
-[07Mai2025 13:53:35.532] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[07Mai2025 13:53:35.532] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
+[07Mai2025 13:53:35.532] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe types
+[07Mai2025 13:53:35.532] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe serializers
 [07Mai2025 13:53:35.532] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Applying holder lookups: minecraft:worldgen/structure_type
 [07Mai2025 13:53:35.534] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Holder lookups applied: minecraft:worldgen/structure_type
-[07Mai2025 13:53:35.534] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[07Mai2025 13:53:35.534] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
+[07Mai2025 13:53:35.534] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe types
+[07Mai2025 13:53:35.534] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe serializers
 [07Mai2025 13:53:35.534] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Applying holder lookups: minecraft:worldgen/placement_modifier_type
 [07Mai2025 13:53:35.535] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Holder lookups applied: minecraft:worldgen/placement_modifier_type
-[07Mai2025 13:53:35.536] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[07Mai2025 13:53:35.536] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
+[07Mai2025 13:53:35.536] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe types
+[07Mai2025 13:53:35.536] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe serializers
 [07Mai2025 13:53:35.536] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Applying holder lookups: minecraft:worldgen/block_state_provider_type
 [07Mai2025 13:53:35.537] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Holder lookups applied: minecraft:worldgen/block_state_provider_type
-[07Mai2025 13:53:35.537] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[07Mai2025 13:53:35.538] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
+[07Mai2025 13:53:35.537] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe types
+[07Mai2025 13:53:35.538] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe serializers
 [07Mai2025 13:53:35.538] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Applying holder lookups: minecraft:worldgen/foliage_placer_type
 [07Mai2025 13:53:35.538] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Holder lookups applied: minecraft:worldgen/foliage_placer_type
-[07Mai2025 13:53:35.539] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[07Mai2025 13:53:35.539] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
+[07Mai2025 13:53:35.539] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe types
+[07Mai2025 13:53:35.539] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe serializers
 [07Mai2025 13:53:35.539] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Applying holder lookups: minecraft:worldgen/trunk_placer_type
 [07Mai2025 13:53:35.541] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Holder lookups applied: minecraft:worldgen/trunk_placer_type
-[07Mai2025 13:53:35.542] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[07Mai2025 13:53:35.542] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
+[07Mai2025 13:53:35.542] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe types
+[07Mai2025 13:53:35.542] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe serializers
 [07Mai2025 13:53:35.542] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Applying holder lookups: minecraft:worldgen/root_placer_type
 [07Mai2025 13:53:35.543] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Holder lookups applied: minecraft:worldgen/root_placer_type
-[07Mai2025 13:53:35.543] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[07Mai2025 13:53:35.543] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
+[07Mai2025 13:53:35.543] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe types
+[07Mai2025 13:53:35.543] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe serializers
 [07Mai2025 13:53:35.543] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Applying holder lookups: minecraft:worldgen/tree_decorator_type
 [07Mai2025 13:53:35.544] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Holder lookups applied: minecraft:worldgen/tree_decorator_type
-[07Mai2025 13:53:35.545] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[07Mai2025 13:53:35.545] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
+[07Mai2025 13:53:35.545] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe types
+[07Mai2025 13:53:35.545] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe serializers
 [07Mai2025 13:53:35.545] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Applying holder lookups: minecraft:worldgen/feature_size_type
 [07Mai2025 13:53:35.546] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Holder lookups applied: minecraft:worldgen/feature_size_type
-[07Mai2025 13:53:35.546] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[07Mai2025 13:53:35.546] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
+[07Mai2025 13:53:35.546] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe types
+[07Mai2025 13:53:35.546] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe serializers
 [07Mai2025 13:53:35.547] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Applying holder lookups: minecraft:worldgen/biome_source
 [07Mai2025 13:53:35.547] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Holder lookups applied: minecraft:worldgen/biome_source
-[07Mai2025 13:53:35.548] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[07Mai2025 13:53:35.548] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
+[07Mai2025 13:53:35.548] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe types
+[07Mai2025 13:53:35.548] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe serializers
 [07Mai2025 13:53:35.548] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Applying holder lookups: minecraft:worldgen/chunk_generator
 [07Mai2025 13:53:35.548] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Holder lookups applied: minecraft:worldgen/chunk_generator
-[07Mai2025 13:53:35.549] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[07Mai2025 13:53:35.549] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
+[07Mai2025 13:53:35.549] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe types
+[07Mai2025 13:53:35.549] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe serializers
 [07Mai2025 13:53:35.549] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Applying holder lookups: minecraft:worldgen/material_condition
 [07Mai2025 13:53:35.550] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Holder lookups applied: minecraft:worldgen/material_condition
-[07Mai2025 13:53:35.551] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[07Mai2025 13:53:35.551] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
+[07Mai2025 13:53:35.551] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe types
+[07Mai2025 13:53:35.551] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe serializers
 [07Mai2025 13:53:35.551] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Applying holder lookups: minecraft:worldgen/material_rule
 [07Mai2025 13:53:35.552] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Holder lookups applied: minecraft:worldgen/material_rule
-[07Mai2025 13:53:35.552] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[07Mai2025 13:53:35.552] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
+[07Mai2025 13:53:35.552] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe types
+[07Mai2025 13:53:35.552] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe serializers
 [07Mai2025 13:53:35.552] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Applying holder lookups: minecraft:worldgen/density_function_type
 [07Mai2025 13:53:35.553] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Holder lookups applied: minecraft:worldgen/density_function_type
-[07Mai2025 13:53:35.553] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[07Mai2025 13:53:35.554] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
+[07Mai2025 13:53:35.553] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe types
+[07Mai2025 13:53:35.554] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe serializers
 [07Mai2025 13:53:35.554] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Applying holder lookups: minecraft:worldgen/structure_pool_element
 [07Mai2025 13:53:35.554] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Holder lookups applied: minecraft:worldgen/structure_pool_element
-[07Mai2025 13:53:35.555] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[07Mai2025 13:53:35.555] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
+[07Mai2025 13:53:35.555] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe types
+[07Mai2025 13:53:35.555] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe serializers
 [07Mai2025 13:53:35.555] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Applying holder lookups: minecraft:cat_variant
 [07Mai2025 13:53:35.557] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Holder lookups applied: minecraft:cat_variant
-[07Mai2025 13:53:35.557] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[07Mai2025 13:53:35.557] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
+[07Mai2025 13:53:35.557] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe types
+[07Mai2025 13:53:35.557] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe serializers
 [07Mai2025 13:53:35.557] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Applying holder lookups: minecraft:frog_variant
 [07Mai2025 13:53:35.558] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Holder lookups applied: minecraft:frog_variant
-[07Mai2025 13:53:35.559] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[07Mai2025 13:53:35.559] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
+[07Mai2025 13:53:35.559] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe types
+[07Mai2025 13:53:35.559] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe serializers
 [07Mai2025 13:53:35.559] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Applying holder lookups: minecraft:banner_pattern
 [07Mai2025 13:53:35.560] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Holder lookups applied: minecraft:banner_pattern
-[07Mai2025 13:53:35.560] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[07Mai2025 13:53:35.561] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
+[07Mai2025 13:53:35.560] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe types
+[07Mai2025 13:53:35.561] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe serializers
 [07Mai2025 13:53:35.561] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Applying holder lookups: minecraft:instrument
 [07Mai2025 13:53:35.562] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Holder lookups applied: minecraft:instrument
-[07Mai2025 13:53:35.562] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[07Mai2025 13:53:35.562] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
+[07Mai2025 13:53:35.562] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe types
+[07Mai2025 13:53:35.562] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe serializers
 [07Mai2025 13:53:35.562] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Applying holder lookups: minecraft:decorated_pot_patterns
 [07Mai2025 13:53:35.563] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Holder lookups applied: minecraft:decorated_pot_patterns
-[07Mai2025 13:53:35.566] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[07Mai2025 13:53:35.566] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
+[07Mai2025 13:53:35.566] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe types
+[07Mai2025 13:53:35.566] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe serializers
 [07Mai2025 13:53:35.566] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Applying holder lookups: minecraft:creative_mode_tab
 [07Mai2025 13:53:35.567] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Holder lookups applied: minecraft:creative_mode_tab
-[07Mai2025 13:53:35.569] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[07Mai2025 13:53:35.569] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
+[07Mai2025 13:53:35.569] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe types
+[07Mai2025 13:53:35.569] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe serializers
 [07Mai2025 13:53:35.569] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Applying holder lookups: battleofgods:main_classes
 [07Mai2025 13:53:35.570] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Holder lookups applied: battleofgods:main_classes
-[07Mai2025 13:53:35.572] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[07Mai2025 13:53:35.572] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
+[07Mai2025 13:53:35.572] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe types
+[07Mai2025 13:53:35.572] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe serializers
 [07Mai2025 13:53:35.572] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Applying holder lookups: battleofgods:rarities
 [07Mai2025 13:53:35.573] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Holder lookups applied: battleofgods:rarities
-[07Mai2025 13:53:35.574] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[07Mai2025 13:53:35.574] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
+[07Mai2025 13:53:35.574] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe types
+[07Mai2025 13:53:35.574] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe serializers
 [07Mai2025 13:53:35.575] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Applying holder lookups: battleofgods:tiers
 [07Mai2025 13:53:35.575] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Holder lookups applied: battleofgods:tiers
-[07Mai2025 13:53:35.594] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[07Mai2025 13:53:35.595] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
+[07Mai2025 13:53:35.594] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe types
+[07Mai2025 13:53:35.595] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe serializers
 [07Mai2025 13:53:35.595] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Applying holder lookups: forge:biome_modifier_serializers
 [07Mai2025 13:53:35.595] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Holder lookups applied: forge:biome_modifier_serializers
-[07Mai2025 13:53:35.598] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[07Mai2025 13:53:35.598] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
+[07Mai2025 13:53:35.598] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe types
+[07Mai2025 13:53:35.598] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe serializers
 [07Mai2025 13:53:35.598] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Applying holder lookups: forge:display_contexts
 [07Mai2025 13:53:35.599] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Holder lookups applied: forge:display_contexts
-[07Mai2025 13:53:35.599] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[07Mai2025 13:53:35.600] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
+[07Mai2025 13:53:35.599] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe types
+[07Mai2025 13:53:35.600] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe serializers
 [07Mai2025 13:53:35.600] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Applying holder lookups: forge:entity_data_serializers
 [07Mai2025 13:53:35.601] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Holder lookups applied: forge:entity_data_serializers
-[07Mai2025 13:53:35.616] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[07Mai2025 13:53:35.617] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
+[07Mai2025 13:53:35.616] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe types
+[07Mai2025 13:53:35.617] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe serializers
 [07Mai2025 13:53:35.617] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Applying holder lookups: forge:fluid_type
 [07Mai2025 13:53:35.618] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Holder lookups applied: forge:fluid_type
-[07Mai2025 13:53:35.618] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[07Mai2025 13:53:35.618] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
+[07Mai2025 13:53:35.618] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe types
+[07Mai2025 13:53:35.618] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe serializers
 [07Mai2025 13:53:35.618] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Applying holder lookups: forge:global_loot_modifier_serializers
 [07Mai2025 13:53:35.619] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Holder lookups applied: forge:global_loot_modifier_serializers
-[07Mai2025 13:53:35.631] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[07Mai2025 13:53:35.631] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
+[07Mai2025 13:53:35.631] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe types
+[07Mai2025 13:53:35.631] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe serializers
 [07Mai2025 13:53:35.631] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Applying holder lookups: forge:holder_set_type
 [07Mai2025 13:53:35.632] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Holder lookups applied: forge:holder_set_type
-[07Mai2025 13:53:35.634] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[07Mai2025 13:53:35.634] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
+[07Mai2025 13:53:35.634] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe types
+[07Mai2025 13:53:35.634] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe serializers
 [07Mai2025 13:53:35.634] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Applying holder lookups: forge:structure_modifier_serializers
 [07Mai2025 13:53:35.635] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Holder lookups applied: forge:structure_modifier_serializers
-[07Mai2025 13:53:35.636] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe types
-[07Mai2025 13:53:35.636] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registering recipe serializers
+[07Mai2025 13:53:35.636] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe types
+[07Mai2025 13:53:35.636] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registering recipe serializers
 [07Mai2025 13:53:35.636] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Applying holder lookups: minecraft:worldgen/biome
 [07Mai2025 13:53:35.637] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Holder lookups applied: minecraft:worldgen/biome
 [07Mai2025 13:53:35.977] [Render thread/DEBUG] [net.minecraftforge.client.loading.ClientModLoader/CORE]: Generating PackInfo named mod:mixinextras for mod file 
@@ -1051,8 +1051,8 @@ java.lang.IllegalAccessException: class io.netty.util.internal.PlatformDependent
 [07Mai2025 13:53:40.559] [modloading-worker-0/DEBUG] [net.minecraftforge.fml.config.ConfigFileTypeHandler/CONFIG]: Watching TOML config file C:\Users\Josef Peer\OneDrive\Games\Minecraft Java\Mods\Eigene\Battle Of Gods\mcreator (LAPTOP)\BattleOfGods\run\config\cosmeticarmorreworked-common.toml for changes
 [07Mai2025 13:53:40.567] [Thread-3/DEBUG] [net.minecraftforge.fml.config.ConfigFileTypeHandler/CONFIG]: Config file cosmeticarmorreworked-common.toml changed, sending notifies
 [07Mai2025 13:53:40.568] [Thread-3/DEBUG] [net.minecraftforge.fml.config.ConfigFileTypeHandler/CONFIG]: Config file cosmeticarmorreworked-common.toml changed, sending notifies
-[07Mai2025 13:53:40.862] [Worker-Main-4/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registered armor sets: {wood_armor=[wood_armor_boots, wood_armor_leggings, wood_armor_helmet, wood_armor_chestplate]}
-[07Mai2025 13:53:40.867] [Worker-Main-4/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Registered set bonuses: {wood_armor=+1 Armor}
+[07Mai2025 13:53:40.862] [Worker-Main-4/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registered armor sets: {wood_armor=[wood_armor_boots, wood_armor_leggings, wood_armor_helmet, wood_armor_chestplate]}
+[07Mai2025 13:53:40.867] [Worker-Main-4/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Registered set bonuses: {wood_armor=+1 Armor}
 [07Mai2025 13:53:40.907] [Worker-Main-7/INFO] [net.minecraft.client.gui.font.providers.UnihexProvider/]: Found unifont_all_no_pua-15.0.06.hex, loading
 [07Mai2025 13:53:40.915] [Worker-Main-4/DEBUG] [patchouli/]: Instantiating xplat impl: vazkii.patchouli.forge.xplat.ForgeXplatImpl
 [07Mai2025 13:53:41.197] [Forge Version Check/INFO] [net.minecraftforge.fml.VersionChecker/]: [forge] Starting version check at https://files.minecraftforge.net/net/minecraftforge/forge/promotions_slim.json
@@ -1384,11 +1384,11 @@ com.google.gson.JsonSyntaxException: Missing key, expected to find a JsonObject
 	at cpw.mods.bootstraplauncher.BootstrapLauncher.main(BootstrapLauncher.java:141) ~[bootstraplauncher-1.1.2.jar:?]
 [07Mai2025 13:55:18.945] [Render thread/INFO] [net.minecraft.world.item.crafting.RecipeManager/]: Loaded 10 recipes
 [07Mai2025 13:55:19.342] [Render thread/INFO] [net.minecraft.advancements.AdvancementList/]: Loaded 1271 advancements
-[07Mai2025 13:55:19.346] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Reloading recipes
-[07Mai2025 13:55:19.645] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Found 3 recipe resources
-[07Mai2025 13:55:19.649] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Loaded recipe: battleofgods:recipe_copper_shortsword
-[07Mai2025 13:55:19.655] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Loaded recipe: battleofgods:recipe_copper_broadsword
-[07Mai2025 13:55:19.656] [Render thread/INFO] [com.schokobaer.battleofgods.BattleofgodsMod/]: Loaded 2 recipes
+[07Mai2025 13:55:19.346] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Reloading recipes
+[07Mai2025 13:55:19.645] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Found 3 recipe resources
+[07Mai2025 13:55:19.649] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Loaded recipe: battleofgods:recipe_copper_shortsword
+[07Mai2025 13:55:19.655] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Loaded recipe: battleofgods:recipe_copper_broadsword
+[07Mai2025 13:55:19.656] [Render thread/INFO] [com.schokobaer.battleofgods.BattleOfGods/]: Loaded 2 recipes
 [07Mai2025 13:55:21.019] [Render thread/DEBUG] [net.minecraftforge.common.ForgeHooks/WP]: Gathering id map for writing to world save New World
 [07Mai2025 13:55:21.083] [Render thread/DEBUG] [net.minecraftforge.common.ForgeHooks/WP]: ID Map collection complete New World
 [07Mai2025 13:55:21.368] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Starting integrated minecraft server version 1.20.1
@@ -1565,10 +1565,10 @@ com.google.gson.JsonSyntaxException: Missing key, expected to find a JsonObject
 [07Mai2025 13:55:42.554] [Render thread/INFO] [mezz.jei.library.load.PluginCaller/]: Registering fluid subtypes took 5.244 ms
 [07Mai2025 13:55:42.558] [Render thread/INFO] [mezz.jei.library.load.PluginCaller/]: Registering ingredients...
 [07Mai2025 13:55:42.558] [Render thread/DEBUG] [mezz.jei.library.load.PluginCallerTimerRunnable/]: Registering ingredients: jei:minecraft...
-[07Mai2025 13:55:42.837] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Item: wood_armor_helmet, Set Bonus: +1 Armor
-[07Mai2025 13:55:42.839] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Item: wood_armor_chestplate, Set Bonus: +1 Armor
-[07Mai2025 13:55:42.840] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Item: wood_armor_leggings, Set Bonus: +1 Armor
-[07Mai2025 13:55:42.841] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Item: wood_armor_boots, Set Bonus: +1 Armor
+[07Mai2025 13:55:42.837] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Item: wood_armor_helmet, Set Bonus: +1 Armor
+[07Mai2025 13:55:42.839] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Item: wood_armor_chestplate, Set Bonus: +1 Armor
+[07Mai2025 13:55:42.840] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Item: wood_armor_leggings, Set Bonus: +1 Armor
+[07Mai2025 13:55:42.841] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Item: wood_armor_boots, Set Bonus: +1 Armor
 [07Mai2025 13:55:42.891] [Render thread/INFO] [mezz.jei.library.load.PluginCallerTimerRunnable/]: Registering ingredients: jei:minecraft took 332.0 milliseconds
 [07Mai2025 13:55:42.891] [Render thread/DEBUG] [mezz.jei.library.load.PluginCallerTimerRunnable/]: Registering ingredients: jeed:jei_plugin...
 [07Mai2025 13:55:42.908] [Render thread/INFO] [mezz.jei.library.load.PluginCallerTimerRunnable/]: Registering ingredients: jeed:jei_plugin took 17.12 milliseconds
@@ -1717,10 +1717,10 @@ com.google.gson.JsonSyntaxException: Missing key, expected to find a JsonObject
 [07Mai2025 13:55:44.155] [Render thread/INFO] [mezz.jei.core.util.LoggedTimer/]: Building ingredient filter...
 [07Mai2025 13:55:44.222] [Render thread/INFO] [mezz.jei.gui.ingredients.IngredientFilter/]: Adding 1574 ingredients
 [07Mai2025 13:55:44.672] [Render thread/DEBUG] [io.netty.util.internal.ThreadLocalRandom/]: -Dio.netty.initialSeedUniquifier: 0x4d4d073bcbdf658c
-[07Mai2025 13:55:44.838] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Item: wood_armor_helmet, Set Bonus: +1 Armor
-[07Mai2025 13:55:44.839] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Item: wood_armor_chestplate, Set Bonus: +1 Armor
-[07Mai2025 13:55:44.842] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Item: wood_armor_leggings, Set Bonus: +1 Armor
-[07Mai2025 13:55:44.843] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Item: wood_armor_boots, Set Bonus: +1 Armor
+[07Mai2025 13:55:44.838] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Item: wood_armor_helmet, Set Bonus: +1 Armor
+[07Mai2025 13:55:44.839] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Item: wood_armor_chestplate, Set Bonus: +1 Armor
+[07Mai2025 13:55:44.842] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Item: wood_armor_leggings, Set Bonus: +1 Armor
+[07Mai2025 13:55:44.843] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Item: wood_armor_boots, Set Bonus: +1 Armor
 [07Mai2025 13:55:44.859] [Render thread/INFO] [mezz.jei.gui.ingredients.IngredientFilter/]: Added 1574 ingredients
 [07Mai2025 13:55:44.865] [Render thread/INFO] [mezz.jei.core.util.LoggedTimer/]: Building ingredient filter took 709.7 ms
 [07Mai2025 13:55:45.139] [Render thread/INFO] [mezz.jei.library.load.PluginCallerTimerRunnable/]: Registering Runtime: jei:forge_gui took 1.008 seconds
@@ -1949,46 +1949,46 @@ java.io.FileNotFoundException: minecraft:textures/models/armor/name_layer_2.png
 	at cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:26) ~[modlauncher-10.0.9.jar:?]
 	at cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:23) ~[modlauncher-10.0.9.jar:?]
 	at cpw.mods.bootstraplauncher.BootstrapLauncher.main(BootstrapLauncher.java:141) ~[bootstraplauncher-1.1.2.jar:?]
-[07Mai2025 13:57:31.546] [Server thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Total Crit Chance: 0.04 Damage: 5.6
-[07Mai2025 13:57:43.371] [Server thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Total Crit Chance: 0.04 Damage: 5.6
-[07Mai2025 13:57:53.818] [Server thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Total Crit Chance: 0.04 Damage: 9.0
-[07Mai2025 13:58:05.065] [Server thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Total Crit Chance: 0.16 Damage: 5.0
-[07Mai2025 13:58:06.617] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Item: wood_armor_chestplate, Set Bonus: +1 Armor
-[07Mai2025 13:58:06.652] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Item: wood_armor_chestplate, Set Bonus: +1 Armor
-[07Mai2025 13:58:06.672] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Item: wood_armor_chestplate, Set Bonus: +1 Armor
-[07Mai2025 13:58:06.697] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Item: wood_armor_chestplate, Set Bonus: +1 Armor
-[07Mai2025 13:58:06.718] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Item: wood_armor_chestplate, Set Bonus: +1 Armor
-[07Mai2025 13:58:06.746] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Item: wood_armor_chestplate, Set Bonus: +1 Armor
-[07Mai2025 13:58:06.766] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Item: wood_armor_chestplate, Set Bonus: +1 Armor
-[07Mai2025 13:58:06.793] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Item: wood_armor_chestplate, Set Bonus: +1 Armor
-[07Mai2025 13:58:06.817] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Item: wood_armor_chestplate, Set Bonus: +1 Armor
-[07Mai2025 13:58:06.844] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Item: wood_armor_chestplate, Set Bonus: +1 Armor
-[07Mai2025 13:58:06.867] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Item: wood_armor_chestplate, Set Bonus: +1 Armor
-[07Mai2025 13:58:06.896] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Item: wood_armor_chestplate, Set Bonus: +1 Armor
-[07Mai2025 13:58:06.918] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Item: wood_armor_chestplate, Set Bonus: +1 Armor
-[07Mai2025 13:58:06.946] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Item: wood_armor_chestplate, Set Bonus: +1 Armor
-[07Mai2025 13:58:06.967] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Item: wood_armor_chestplate, Set Bonus: +1 Armor
-[07Mai2025 13:58:06.994] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Item: wood_armor_chestplate, Set Bonus: +1 Armor
-[07Mai2025 13:58:07.017] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Item: wood_armor_chestplate, Set Bonus: +1 Armor
-[07Mai2025 13:58:07.044] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Item: wood_armor_chestplate, Set Bonus: +1 Armor
-[07Mai2025 13:58:07.066] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Item: wood_armor_chestplate, Set Bonus: +1 Armor
-[07Mai2025 13:58:07.094] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Item: wood_armor_chestplate, Set Bonus: +1 Armor
-[07Mai2025 13:58:07.116] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Item: wood_armor_chestplate, Set Bonus: +1 Armor
-[07Mai2025 13:58:07.145] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Item: wood_armor_chestplate, Set Bonus: +1 Armor
-[07Mai2025 13:58:07.168] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Item: wood_armor_chestplate, Set Bonus: +1 Armor
-[07Mai2025 13:58:07.196] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Item: wood_armor_chestplate, Set Bonus: +1 Armor
-[07Mai2025 13:58:07.223] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Item: wood_armor_chestplate, Set Bonus: +1 Armor
-[07Mai2025 13:58:07.250] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Item: wood_armor_chestplate, Set Bonus: +1 Armor
-[07Mai2025 13:58:07.271] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Item: wood_armor_chestplate, Set Bonus: +1 Armor
-[07Mai2025 13:58:07.299] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Item: wood_armor_chestplate, Set Bonus: +1 Armor
-[07Mai2025 13:58:07.320] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Item: wood_armor_chestplate, Set Bonus: +1 Armor
-[07Mai2025 13:58:07.347] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Item: wood_armor_chestplate, Set Bonus: +1 Armor
-[07Mai2025 13:58:07.367] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Item: wood_armor_chestplate, Set Bonus: +1 Armor
-[07Mai2025 13:58:07.396] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Item: wood_armor_chestplate, Set Bonus: +1 Armor
-[07Mai2025 13:58:07.419] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Item: wood_armor_chestplate, Set Bonus: +1 Armor
-[07Mai2025 13:58:07.446] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Item: wood_armor_chestplate, Set Bonus: +1 Armor
-[07Mai2025 13:58:07.469] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Item: wood_armor_chestplate, Set Bonus: +1 Armor
-[07Mai2025 13:58:07.497] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleofgodsMod/]: Item: wood_armor_chestplate, Set Bonus: +1 Armor
+[07Mai2025 13:57:31.546] [Server thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Total Crit Chance: 0.04 Damage: 5.6
+[07Mai2025 13:57:43.371] [Server thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Total Crit Chance: 0.04 Damage: 5.6
+[07Mai2025 13:57:53.818] [Server thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Total Crit Chance: 0.04 Damage: 9.0
+[07Mai2025 13:58:05.065] [Server thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Total Crit Chance: 0.16 Damage: 5.0
+[07Mai2025 13:58:06.617] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Item: wood_armor_chestplate, Set Bonus: +1 Armor
+[07Mai2025 13:58:06.652] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Item: wood_armor_chestplate, Set Bonus: +1 Armor
+[07Mai2025 13:58:06.672] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Item: wood_armor_chestplate, Set Bonus: +1 Armor
+[07Mai2025 13:58:06.697] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Item: wood_armor_chestplate, Set Bonus: +1 Armor
+[07Mai2025 13:58:06.718] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Item: wood_armor_chestplate, Set Bonus: +1 Armor
+[07Mai2025 13:58:06.746] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Item: wood_armor_chestplate, Set Bonus: +1 Armor
+[07Mai2025 13:58:06.766] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Item: wood_armor_chestplate, Set Bonus: +1 Armor
+[07Mai2025 13:58:06.793] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Item: wood_armor_chestplate, Set Bonus: +1 Armor
+[07Mai2025 13:58:06.817] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Item: wood_armor_chestplate, Set Bonus: +1 Armor
+[07Mai2025 13:58:06.844] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Item: wood_armor_chestplate, Set Bonus: +1 Armor
+[07Mai2025 13:58:06.867] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Item: wood_armor_chestplate, Set Bonus: +1 Armor
+[07Mai2025 13:58:06.896] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Item: wood_armor_chestplate, Set Bonus: +1 Armor
+[07Mai2025 13:58:06.918] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Item: wood_armor_chestplate, Set Bonus: +1 Armor
+[07Mai2025 13:58:06.946] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Item: wood_armor_chestplate, Set Bonus: +1 Armor
+[07Mai2025 13:58:06.967] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Item: wood_armor_chestplate, Set Bonus: +1 Armor
+[07Mai2025 13:58:06.994] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Item: wood_armor_chestplate, Set Bonus: +1 Armor
+[07Mai2025 13:58:07.017] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Item: wood_armor_chestplate, Set Bonus: +1 Armor
+[07Mai2025 13:58:07.044] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Item: wood_armor_chestplate, Set Bonus: +1 Armor
+[07Mai2025 13:58:07.066] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Item: wood_armor_chestplate, Set Bonus: +1 Armor
+[07Mai2025 13:58:07.094] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Item: wood_armor_chestplate, Set Bonus: +1 Armor
+[07Mai2025 13:58:07.116] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Item: wood_armor_chestplate, Set Bonus: +1 Armor
+[07Mai2025 13:58:07.145] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Item: wood_armor_chestplate, Set Bonus: +1 Armor
+[07Mai2025 13:58:07.168] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Item: wood_armor_chestplate, Set Bonus: +1 Armor
+[07Mai2025 13:58:07.196] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Item: wood_armor_chestplate, Set Bonus: +1 Armor
+[07Mai2025 13:58:07.223] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Item: wood_armor_chestplate, Set Bonus: +1 Armor
+[07Mai2025 13:58:07.250] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Item: wood_armor_chestplate, Set Bonus: +1 Armor
+[07Mai2025 13:58:07.271] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Item: wood_armor_chestplate, Set Bonus: +1 Armor
+[07Mai2025 13:58:07.299] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Item: wood_armor_chestplate, Set Bonus: +1 Armor
+[07Mai2025 13:58:07.320] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Item: wood_armor_chestplate, Set Bonus: +1 Armor
+[07Mai2025 13:58:07.347] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Item: wood_armor_chestplate, Set Bonus: +1 Armor
+[07Mai2025 13:58:07.367] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Item: wood_armor_chestplate, Set Bonus: +1 Armor
+[07Mai2025 13:58:07.396] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Item: wood_armor_chestplate, Set Bonus: +1 Armor
+[07Mai2025 13:58:07.419] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Item: wood_armor_chestplate, Set Bonus: +1 Armor
+[07Mai2025 13:58:07.446] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Item: wood_armor_chestplate, Set Bonus: +1 Armor
+[07Mai2025 13:58:07.469] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Item: wood_armor_chestplate, Set Bonus: +1 Armor
+[07Mai2025 13:58:07.497] [Render thread/DEBUG] [com.schokobaer.battleofgods.BattleOfGods/]: Item: wood_armor_chestplate, Set Bonus: +1 Armor
 [07Mai2025 13:58:21.876] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: [Dev: Teleported Dev to -25.845282, -37.000000, 46.612890]
 [07Mai2025 13:58:22.233] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] Teleported Dev to -25.845282, -37.000000, 46.612890
 [07Mai2025 13:58:26.970] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: [Dev: Set own game mode to Creative Mode]

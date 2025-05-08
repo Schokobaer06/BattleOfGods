@@ -2,7 +2,7 @@ package com.schokobaer.battleofgods.client.gui;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.Tesselator;
-import com.schokobaer.battleofgods.BattleofgodsMod;
+import com.schokobaer.battleofgods.BattleOfGods;
 import com.schokobaer.battleofgods.client.widget.MaterialWidget;
 import com.schokobaer.battleofgods.client.widget.RecipeButton;
 import com.schokobaer.battleofgods.handler.RecipeHandler;
@@ -32,7 +32,7 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
     private static ResourceLocation TEXTURE_RECIPELIST_BG = null;
     private static ResourceLocation TEXTURE_MATERIALLIST_BG = null;
     private final List<MaterialWidget> materialWidgets = new ArrayList<>();
-    private final Boolean debug = BattleofgodsMod.isDebug();
+    private final Boolean debug = BattleOfGods.isDebug();
     private ScrollPanel recipeList;
     private ScrollPanel materialList = null;
 
@@ -68,14 +68,14 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
                             SimpleSoundInstance.forUI(SoundEvents.UI_BUTTON_CLICK, 1.0F));
                     selectRecipe(recipe);
                     if (debug)
-                        BattleofgodsMod.LOGGER.debug("Button clicked: {}", recipe.getId());
+                        BattleOfGods.LOGGER.debug("Button clicked: {}", recipe.getId());
                 }
             });
         });
         if (debug) {
-            BattleofgodsMod.LOGGER.debug("Recipes: {}", visibleRecipes.size());
+            BattleOfGods.LOGGER.debug("Recipes: {}", visibleRecipes.size());
             visibleRecipes.forEach(recipe -> {
-                BattleofgodsMod.LOGGER.debug("Recipe: {}", recipe.getId());
+                BattleOfGods.LOGGER.debug("Recipe: {}", recipe.getId());
             });
         }
         // Recipe List
@@ -132,7 +132,7 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
                 int startX = (width - rowWidth) / 2; // Zentrierte Position
                 guiGraphics.pose().pushPose();
                 guiGraphics.enableScissor(left, top, left + width, top + height);
-                //BattleofgodsMod.LOGGER.debug("Scrollpanel width + height: {}x{}", width, height);
+                //BattleOfGods.LOGGER.debug("Scrollpanel width + height: {}x{}", width, height);
 
                 //Adding buttons to the scroll panel
                 for (int i = 0; i < children().size(); i++) {
@@ -255,7 +255,7 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
     private void selectRecipe(RecipeHandler.BattleRecipe recipe) {
         menu.setSelectedRecipe(recipe);
         if (debug)
-            BattleofgodsMod.LOGGER.debug("WorkbenchScreen - selectRecipe has been called with recipe {}", recipe.getId());
+            BattleOfGods.LOGGER.debug("WorkbenchScreen - selectRecipe has been called with recipe {}", recipe.getId());
         recipeList.children().forEach(
                 btn -> {
                     if (btn instanceof RecipeButton button) {
@@ -394,16 +394,16 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
                 }
             };
         } catch (Exception e) {
-            BattleofgodsMod.LOGGER.error("Error while updating material display: {}", e.getMessage());
+            BattleOfGods.LOGGER.error("Error while updating material display: {}", e.getMessage());
         }
         if (materialList != null) addRenderableWidget(materialList);
     }
 
     private void craftItem() {
         if (menu.getSelectedRecipe() == null) return;
-        BattleofgodsMod.PACKET_HANDLER.sendToServer(new CraftPacket(menu.getSelectedRecipe().getId()));
+        BattleOfGods.PACKET_HANDLER.sendToServer(new CraftPacket(menu.getSelectedRecipe().getId()));
         if (debug)
-            BattleofgodsMod.LOGGER.debug("WorkbenchScreen - craftItem has been called with recipe {}", menu.getSelectedRecipe().getId());
+            BattleOfGods.LOGGER.debug("WorkbenchScreen - craftItem has been called with recipe {}", menu.getSelectedRecipe().getId());
         //init();
     }
 
@@ -493,7 +493,7 @@ public class WorkbenchScreen extends AbstractContainerScreen<WorkbenchMenu> {
     protected void renderTooltip(GuiGraphics graphics, int mouseX, int mouseY) {
         recipeList.getChildAt(mouseX, mouseY).ifPresent(child -> {
             if (child instanceof RecipeButton button && button.isMouseOver(mouseX, mouseY)) {
-                //if (debug) BattleofgodsMod.LOGGER.debug("Render tooltip for button: {}", button.getRecipe().getId());
+                //if (debug) BattleOfGods.LOGGER.debug("Render tooltip for button: {}", button.getRecipe().getId());
                 button.renderTooltip(graphics, mouseX, mouseY);
             }
         });

@@ -1,6 +1,6 @@
 package com.schokobaer.battleofgods.init;
 
-import com.schokobaer.battleofgods.BattleofgodsMod;
+import com.schokobaer.battleofgods.BattleOfGods;
 import com.schokobaer.battleofgods.category.rarity.Rarity;
 import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceKey;
@@ -10,9 +10,9 @@ import net.minecraftforge.registries.RegistryObject;
 
 public class InitRarity {
     public static final ResourceKey<Registry<Rarity>> RARITY_KEY =
-            ResourceKey.createRegistryKey(new ResourceLocation(BattleofgodsMod.MODID, "rarities"));
+            ResourceKey.createRegistryKey(new ResourceLocation(BattleOfGods.MODID, "rarities"));
     public static final DeferredRegister<Rarity> RARITIES =
-            DeferredRegister.create(RARITY_KEY, BattleofgodsMod.MODID);
+            DeferredRegister.create(RARITY_KEY, BattleOfGods.MODID);
 
     // Normal Rarities
     public static final RegistryObject<Rarity> GRAY = RARITIES.register("gray",
