@@ -4,14 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="55347841-98cd-4f86-9608-4bb232a43c91" name="Changes" comment=".">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/category/subClass/TerrariaBow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/category/AbstractSubClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/category/AbstractSubClass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/category/subClass/Broadsword.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/category/subClass/Broadsword.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/category/subClass/Shortsword.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/schokobaer/battleofgods/category/subClass/Shortsword.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo.md" beforeDir="false" afterPath="$PROJECT_DIR$/todo.md" afterDir="false" />
-    </list>
+    <list default="true" id="55347841-98cd-4f86-9608-4bb232a43c91" name="Changes" comment="implemented TerrariaBow subclass" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -348,7 +341,15 @@
       <option name="project" value="LOCAL" />
       <updated>1746619212335</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="implemented TerrariaBow subclass">
+      <option name="closed" value="true" />
+      <created>1746623466973</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1746623466973</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -389,7 +390,8 @@
     <MESSAGE value="moved TerrariaArmorItem to subclass folder &amp; implemented SubClassMethods into TerrariaArmorItem" />
     <MESSAGE value="deleted Tiers.java and Rarities.java because RegistryObject not present crash" />
     <MESSAGE value="." />
-    <option name="LAST_COMMIT_MESSAGE" value="." />
+    <MESSAGE value="implemented TerrariaBow subclass" />
+    <option name="LAST_COMMIT_MESSAGE" value="implemented TerrariaBow subclass" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
