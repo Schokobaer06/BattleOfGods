@@ -27,9 +27,11 @@ public abstract class TerrariaBow extends BowItem implements SubClassMethods {
     private final float velocity;
     private final int useTime;
     private final int knockback;
+    private final boolean autoSwing;
     private final Supplier<AbstractSubClass> subClass;
+    private int autoSwingDelay = 0;
 
-    public TerrariaBow(int baseDamage, float velocity, int useTime, int knockback,
+    public TerrariaBow(int baseDamage, float velocity, int useTime, int knockback, boolean autoSwing,
                        RegistryObject<Rarity> rarity, RegistryObject<Tier> tier) {
         super(new Properties()
                 .durability(0)
@@ -41,6 +43,7 @@ public abstract class TerrariaBow extends BowItem implements SubClassMethods {
         this.velocity = velocity;
         this.useTime = useTime;
         this.knockback = knockback;
+        this.autoSwing = autoSwing;
 
         this.subClass = () -> {
             AbstractSubClass sb = new AbstractSubClass() {
@@ -52,20 +55,45 @@ public abstract class TerrariaBow extends BowItem implements SubClassMethods {
         };
     }
 
+
+    @Override
+    public void onUseTick(Level level, LivingEntity entity, ItemStack stack, int remainingUseDuration) {
+        if (this.autoSwing) {
+            int drawTime = this.getUseDuration(stack) - remainingUseDuration;
+            float drawProgress = getPowerForTime(drawTime);
+
+            // Auto-Schießen, wenn voll gezogen
+            if (drawProgress >= 1.0F && autoSwingDelay <= 0) {
+                this.releaseUsing(stack, level, entity, 0);
+                entity.startUsingItem(entity.getUsedItemHand());
+                autoSwingDelay = 10; // 0.5s Verzögerung zwischen Schüssen
+            }
+
+            if (autoSwingDelay > 0) {
+                autoSwingDelay--;
+            }
+        }
+    }
+
+
     @Override
     public void releaseUsing(ItemStack stack, Level level, LivingEntity entity, int timeLeft) {
         float drawProgress = getPowerForTime(this.getUseDuration(stack) - timeLeft);
-        if (drawProgress < 0.1) return;
+        //if (drawProgress < 0.1) return;
+        if (drawProgress >= 0.1F || this.autoSwing) {
+            // Arrow Handling
+            AbstractArrow arrow = createArrow(level, entity, stack);
+            arrow = customizeArrow(arrow, drawProgress);
 
-        // Arrow Handling
-        AbstractArrow arrow = createArrow(level, entity, stack);
-        arrow = customizeArrow(arrow, drawProgress);
+            arrow.shootFromRotation(entity, entity.getXRot(), entity.getYRot(), 0.0F,
+                    this.velocity * 3.0F * drawProgress, 1.0F);
 
-        arrow.shootFromRotation(entity, entity.getXRot(), entity.getYRot(), 0.0F,
-                this.velocity * 3.0F * drawProgress, 1.0F);
-
-        stack.hurtAndBreak(1, entity, e -> e.broadcastBreakEvent(entity.getUsedItemHand()));
-        level.addFreshEntity(arrow);
+            stack.hurtAndBreak(1, entity, e -> e.broadcastBreakEvent(entity.getUsedItemHand()));
+            level.addFreshEntity(arrow);
+            if (!this.autoSwing) {
+                entity.stopUsingItem();
+            }
+        }
     }
 
     protected AbstractArrow createArrow(Level level, LivingEntity shooter, ItemStack bowStack) {
@@ -75,20 +103,21 @@ public abstract class TerrariaBow extends BowItem implements SubClassMethods {
 
     protected AbstractArrow customizeArrow(AbstractArrow arrow, float drawProgress) {
         // Damage Calculation: Base Damage + Arrow Damage
-        arrow.setBaseDamage(this.baseDamage + arrow.getBaseDamage());
+        arrow.setBaseDamage(this.getBaseDamage() + arrow.getBaseDamage());
 
         // Remove Knockback
-        arrow.setKnockback(0);
+        arrow.setKnockback(this.getKnockback());
 
         // Velocity Multiplier
-        arrow.setDeltaMovement(arrow.getDeltaMovement().scale(this.velocity / 3.0F));
+        //arrow.setDeltaMovement(arrow.getDeltaMovement().scale(this.velocity / 3.0F));
 
         return arrow;
     }
 
     @Override
     public int getUseDuration(ItemStack stack) {
-        return this.useTime; // UseTime in Ticks (20 ticks = 1 second)
+        // Kürzere Nutzungsdauer für AutoSwing
+        return this.autoSwing ? Math.max(10, this.useTime / 2) : this.useTime;
     }
 
     @Override

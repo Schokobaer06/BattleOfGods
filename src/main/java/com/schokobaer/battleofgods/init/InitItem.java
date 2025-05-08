@@ -2,6 +2,8 @@ package com.schokobaer.battleofgods.init;
 
 import com.schokobaer.battleofgods.BattleOfGods;
 import com.schokobaer.battleofgods.armor.tier1.WoodArmor;
+import com.schokobaer.battleofgods.category.subClass.TerrariaArmor;
+import com.schokobaer.battleofgods.category.subClass.TerrariaBow;
 import com.schokobaer.battleofgods.item.tier1.ItemCopperBroadsword;
 import com.schokobaer.battleofgods.item.tier1.ItemCopperShortsword;
 import com.schokobaer.battleofgods.item.tier1.ItemWoodBow;
@@ -24,7 +26,7 @@ public class InitItem {
     public static final RegistryObject<SwordItem> COPPER_SHORTSWORD = ITEMS.register("copper_shortsword", ItemCopperShortsword::new);
     public static final RegistryObject<SwordItem> WOOD_SWORD = ITEMS.register("wood_sword", ItemWoodSword::new);
     //Ranged
-    public static final RegistryObject<ItemWoodBow> WOOD_BOW = ITEMS.register("wood_bow", ItemWoodBow::new);
+    public static final RegistryObject<TerrariaBow> WOOD_BOW = ITEMS.register("wood_bow", ItemWoodBow::new);
     //Magic
     //Summon
     //Throwing
@@ -36,10 +38,10 @@ public class InitItem {
     //Blocks
     public static final RegistryObject<Item> WOODEN_WORKBENCH = block(InitBlocks.WOODEN_WORKBENCH);
     //Armor
-    public static final RegistryObject<WoodArmor> WOOD_ARMOR_HELMET = ITEMS.register("wood_armor_helmet", () -> new WoodArmor(ArmorItem.Type.HELMET));
-    public static final RegistryObject<WoodArmor> WOOD_ARMOR_CHESTPLATE = ITEMS.register("wood_armor_chestplate", () -> new WoodArmor(ArmorItem.Type.CHESTPLATE));
-    public static final RegistryObject<WoodArmor> WOOD_ARMOR_LEGGINGS = ITEMS.register("wood_armor_leggings", () -> new WoodArmor(ArmorItem.Type.LEGGINGS));
-    public static final RegistryObject<WoodArmor> WOOD_ARMOR_BOOTS = ITEMS.register("wood_armor_boots", () -> new WoodArmor(ArmorItem.Type.BOOTS));
+    public static final RegistryObject<TerrariaArmor> WOOD_ARMOR_HELMET = ITEMS.register("wood_armor_helmet", () -> new WoodArmor(ArmorItem.Type.HELMET));
+    public static final RegistryObject<TerrariaArmor> WOOD_ARMOR_CHESTPLATE = ITEMS.register("wood_armor_chestplate", () -> new WoodArmor(ArmorItem.Type.CHESTPLATE));
+    public static final RegistryObject<TerrariaArmor> WOOD_ARMOR_LEGGINGS = ITEMS.register("wood_armor_leggings", () -> new WoodArmor(ArmorItem.Type.LEGGINGS));
+    public static final RegistryObject<TerrariaArmor> WOOD_ARMOR_BOOTS = ITEMS.register("wood_armor_boots", () -> new WoodArmor(ArmorItem.Type.BOOTS));
 
 
     //Methods
