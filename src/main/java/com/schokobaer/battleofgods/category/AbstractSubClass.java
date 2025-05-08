@@ -177,7 +177,7 @@ public abstract class AbstractSubClass {
         //Knockback
         if (itemstack.getItem() instanceof TerrariaBow bowItem) {
             double knockback = bowItem.getKnockback();
-            String knockbackText = String.valueOf(knockback);
+            String knockbackText = getKnockback(knockback, itemstack.getItem());
             tooltip.add(Component.translatable("tooltip.battleofgods." + knockbackText).withStyle(ChatFormatting.DARK_GREEN));
         }
     }
