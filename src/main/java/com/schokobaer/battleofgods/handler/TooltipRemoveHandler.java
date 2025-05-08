@@ -1,7 +1,7 @@
 package com.schokobaer.battleofgods.handler;
 
 import com.schokobaer.battleofgods.BattleofgodsMod;
-import com.schokobaer.battleofgods.category.subClass.TerrariaArmorItem;
+import com.schokobaer.battleofgods.category.subClass.TerrariaArmor;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.api.distmarker.Dist;
@@ -41,7 +41,7 @@ public class TooltipRemoveHandler {
             ));
 
         }
-        if (event.getItemStack().getItem() instanceof TerrariaArmorItem)
+        if (event.getItemStack().getItem() instanceof TerrariaArmor)
             //Armor
             event.getToolTip().removeIf(component -> component.contains(
                     Component.translatable("attribute.name.generic.armor")

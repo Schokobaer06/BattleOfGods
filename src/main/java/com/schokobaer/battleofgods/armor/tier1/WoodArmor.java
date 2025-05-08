@@ -1,7 +1,7 @@
 package com.schokobaer.battleofgods.armor.tier1;
 
 import com.schokobaer.battleofgods.BattleofgodsMod;
-import com.schokobaer.battleofgods.category.subClass.TerrariaArmorItem;
+import com.schokobaer.battleofgods.category.subClass.TerrariaArmor;
 import com.schokobaer.battleofgods.init.InitRarity;
 import com.schokobaer.battleofgods.init.InitTier;
 import net.minecraft.client.model.HumanoidModel;
@@ -18,7 +18,7 @@ import software.bernie.geckolib.renderer.GeoArmorRenderer;
 
 import java.util.function.Consumer;
 
-public class WoodArmor extends TerrariaArmorItem {
+public class WoodArmor extends TerrariaArmor {
     public static final String name = "wood_armor";
 
     public WoodArmor(Type type) {
