@@ -4,6 +4,7 @@ package com.schokobaer.battleofgods.category;
 import com.schokobaer.battleofgods.category.mainClass.MainClass;
 import com.schokobaer.battleofgods.category.mainClass.MainClasses;
 import com.schokobaer.battleofgods.category.rarity.Rarity;
+import com.schokobaer.battleofgods.category.subClass.TerrariaArmor;
 import com.schokobaer.battleofgods.category.subClass.TerrariaBow;
 import com.schokobaer.battleofgods.category.tier.Tier;
 import com.schokobaer.battleofgods.init.InitRarity;
@@ -123,7 +124,7 @@ public abstract class AbstractSubClass {
                         .withItalic(true)
         ));
         //Speed
-        if (!(itemstack.getItem() instanceof TerrariaBow)) {
+        if (!(itemstack.getItem() instanceof TerrariaBow || itemstack.getItem() instanceof TerrariaArmor)) {
             // Get the attack speed attribute (default to 4.0 if missing)
             double attackSpeed = itemstack.getAttributeModifiers(EquipmentSlot.MAINHAND)
                     .get(Attributes.ATTACK_SPEED).stream()
