@@ -9,12 +9,12 @@ import com.schokobaer.battleofgods.category.rarity.Rarity;
 import com.schokobaer.battleofgods.category.tier.Tier;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.EquipmentSlot;
-import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
-import net.minecraft.world.entity.projectile.AbstractArrow;
-import net.minecraft.world.item.*;
+import net.minecraft.world.item.BowItem;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.registries.RegistryObject;
 
@@ -23,6 +23,7 @@ import java.util.UUID;
 import java.util.function.Supplier;
 
 public abstract class TerrariaBow extends BowItem implements SubClassMethods {
+    /// Variablen sind declared, aber wir werden sie vorerst nicht verwenden
     private final int baseDamage;
     private final float velocity;
     private final int useTime;
@@ -53,76 +54,6 @@ public abstract class TerrariaBow extends BowItem implements SubClassMethods {
             sb.setTier(tier.get());
             return sb;
         };
-    }
-
-
-    @Override
-    public void onUseTick(Level level, LivingEntity entity, ItemStack stack, int remainingUseDuration) {
-        if (this.autoSwing) {
-            int drawTime = this.getUseDuration(stack) - remainingUseDuration;
-            float drawProgress = getPowerForTime(drawTime);
-
-            // Auto-Schießen, wenn voll gezogen
-            if (drawProgress >= 1.0F && autoSwingDelay <= 0) {
-                this.releaseUsing(stack, level, entity, 0);
-                entity.startUsingItem(entity.getUsedItemHand());
-                autoSwingDelay = 10; // 0.5s Verzögerung zwischen Schüssen
-            }
-
-            if (autoSwingDelay > 0) {
-                autoSwingDelay--;
-            }
-        }
-    }
-
-
-    @Override
-    public void releaseUsing(ItemStack stack, Level level, LivingEntity entity, int timeLeft) {
-        float drawProgress = getPowerForTime(this.getUseDuration(stack) - timeLeft);
-        //if (drawProgress < 0.1) return;
-        if (drawProgress >= 0.1F || this.autoSwing) {
-            // Arrow Handling
-            AbstractArrow arrow = createArrow(level, entity, stack);
-            arrow = customizeArrow(arrow, drawProgress);
-
-            arrow.shootFromRotation(entity, entity.getXRot(), entity.getYRot(), 0.0F,
-                    this.velocity * 3.0F * drawProgress, 1.0F);
-
-            stack.hurtAndBreak(1, entity, e -> e.broadcastBreakEvent(entity.getUsedItemHand()));
-            level.addFreshEntity(arrow);
-            if (!this.autoSwing) {
-                entity.stopUsingItem();
-            }
-        }
-    }
-
-    protected AbstractArrow createArrow(Level level, LivingEntity shooter, ItemStack bowStack) {
-        ArrowItem arrowItem = (ArrowItem) Items.ARROW;
-        return arrowItem.createArrow(level, bowStack, shooter);
-    }
-
-    protected AbstractArrow customizeArrow(AbstractArrow arrow, float drawProgress) {
-        // Damage Calculation: Base Damage + Arrow Damage
-        arrow.setBaseDamage(this.getBaseDamage() + arrow.getBaseDamage());
-
-        // Remove Knockback
-        arrow.setKnockback(this.getKnockback());
-
-        // Velocity Multiplier
-        //arrow.setDeltaMovement(arrow.getDeltaMovement().scale(this.velocity / 3.0F));
-
-        return arrow;
-    }
-
-    @Override
-    public int getUseDuration(ItemStack stack) {
-        // Kürzere Nutzungsdauer für AutoSwing
-        return this.autoSwing ? Math.max(10, this.useTime / 2) : this.useTime;
-    }
-
-    @Override
-    public UseAnim getUseAnimation(ItemStack stack) {
-        return UseAnim.BOW;
     }
 
     @Override

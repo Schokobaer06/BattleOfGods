@@ -86,6 +86,7 @@ public class BattleOfGods {
         bus.addListener(BattleOfGods::registerRecipeSerializers);
         bus.addListener(ArmorSetBonusHandler::onCommonSetup);
         bus.addListener(this::gatherData);
+        //bus.addListener(BowAnimationHandler::onClientSetup);
 
         addNetworkMessage(CraftPacket.class, CraftPacket::encode, CraftPacket::decode, CraftPacket::handle);
     }
