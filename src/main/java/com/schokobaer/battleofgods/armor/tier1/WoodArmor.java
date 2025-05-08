@@ -25,7 +25,7 @@ public class WoodArmor extends TerrariaArmor {
         super("name", new int[]{0, 1, 1, 0},
                 SoundEvents.ARMOR_EQUIP_GENERIC,
                 15, type,
-                InitRarity.GRAY, InitTier.TIER_1);
+                InitRarity.WHITE, InitTier.TIER_1);
     }
 
     @Override
