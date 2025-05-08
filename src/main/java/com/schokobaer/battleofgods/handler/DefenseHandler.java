@@ -1,13 +1,13 @@
 package com.schokobaer.battleofgods.handler;
 
-import com.schokobaer.battleofgods.category.subClass.TerrariaArmorItem;
+import com.schokobaer.battleofgods.category.subClass.TerrariaArmor;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
-import static com.schokobaer.battleofgods.BattleofgodsMod.MODID;
+import static com.schokobaer.battleofgods.BattleOfGods.MODID;
 
 @Mod.EventBusSubscriber(modid = MODID)
 public class DefenseHandler {
@@ -18,7 +18,7 @@ public class DefenseHandler {
 
             int totalDefense = 0;
             for (ItemStack stack : player.getArmorSlots()) {
-                if (stack.getItem() instanceof TerrariaArmorItem armor)
+                if (stack.getItem() instanceof TerrariaArmor armor)
                     totalDefense += armor.getDefenseValue();
             }
             // Terraria Defense-Formel: Reduziere Schaden um Defense * 0.5

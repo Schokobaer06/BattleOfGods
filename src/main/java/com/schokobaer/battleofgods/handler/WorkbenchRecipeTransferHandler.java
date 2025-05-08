@@ -1,6 +1,6 @@
 package com.schokobaer.battleofgods.handler;
 
-import com.schokobaer.battleofgods.BattleofgodsMod;
+import com.schokobaer.battleofgods.BattleOfGods;
 import com.schokobaer.battleofgods.world.inventory.WorkbenchMenu;
 import mezz.jei.api.gui.ingredient.IRecipeSlotsView;
 import mezz.jei.api.recipe.RecipeType;
@@ -27,7 +27,7 @@ public class WorkbenchRecipeTransferHandler implements IRecipeTransferHandler<Wo
     @Override
     public RecipeType<Object> getRecipeType() {
         return RecipeType.create(
-                BattleofgodsMod.MODID,
+                BattleOfGods.MODID,
                 "workbench",
                 RecipeHandler.BattleRecipe.class
         );

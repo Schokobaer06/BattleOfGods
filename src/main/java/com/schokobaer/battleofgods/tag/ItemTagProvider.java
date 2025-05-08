@@ -1,6 +1,6 @@
 package com.schokobaer.battleofgods.tag;
 
-import com.schokobaer.battleofgods.BattleofgodsMod;
+import com.schokobaer.battleofgods.BattleOfGods;
 import com.schokobaer.battleofgods.init.InitItem;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
@@ -22,13 +22,13 @@ public class ItemTagProvider extends ItemTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider provider) {
-        try{
-            for (RegistryObject<Item> item: InitItem.ITEMS.getEntries()){
-                BattleofgodsMod.LOGGER.debug(item.get().getClass().getSuperclass().getSuperclass().toString());
+        try {
+            for (RegistryObject<Item> item : InitItem.ITEMS.getEntries()) {
+                BattleOfGods.LOGGER.debug(item.get().getClass().getSuperclass().getSuperclass().toString());
             }
 
-        }catch (Exception e){
-            BattleofgodsMod.LOGGER.error("Error while generating item tags for {}", BattleofgodsMod.MODID, e);
+        } catch (Exception e) {
+            BattleOfGods.LOGGER.error("Error while generating item tags for {}", BattleOfGods.MODID, e);
         }
     }
 }

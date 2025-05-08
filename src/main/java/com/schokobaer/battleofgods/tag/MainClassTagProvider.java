@@ -22,19 +22,19 @@ public class MainClassTagProvider extends TagsProvider<MainClass> {
     @Override
     protected void addTags(HolderLookup.Provider provider) {
         /*
-        BattleofgodsMod.LOGGER.info("Gathering main class data for {}", BattleofgodsMod.MODID);
+        BattleOfGods.LOGGER.info("Gathering main class data for {}", BattleOfGods.MODID);
         try {
             for (RegistryObject<Item> item : InitItem.ITEMS.getEntries()) {
 
                 for (RegistryObject<MainClass> mainClass : InitMainClass.MAIN_CLASSES.getEntries()) {
                     if (mainClass.get().equals(((ItemOverride) item.get()).getSubClassMethods().getMainClass())) {
                         tag(mainClass.get().getTag()).addOptional(TagEntry.element(item.getId()).getId());
-                        BattleofgodsMod.LOGGER.debug("Adding item {} to tag {} for {}", item.getId(), mainClass.get().getTag().toString(), BattleofgodsMod.MODID);
+                        BattleOfGods.LOGGER.debug("Adding item {} to tag {} for {}", item.getId(), mainClass.get().getTag().toString(), BattleOfGods.MODID);
                     }
                 }
             }
         } catch (Exception e) {
-            BattleofgodsMod.LOGGER.error("Error while gathering data for {}", BattleofgodsMod.MODID, e);
+            BattleOfGods.LOGGER.error("Error while gathering data for {}", BattleOfGods.MODID, e);
         }
 
          */

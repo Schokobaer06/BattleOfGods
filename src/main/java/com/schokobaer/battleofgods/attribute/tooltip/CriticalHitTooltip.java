@@ -1,10 +1,9 @@
 package com.schokobaer.battleofgods.attribute.tooltip;
 
-import com.schokobaer.battleofgods.BattleofgodsMod;
+import com.schokobaer.battleofgods.BattleOfGods;
 import com.schokobaer.battleofgods.init.InitAttributes;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.Style;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.item.ItemStack;
@@ -17,7 +16,7 @@ import net.minecraftforge.fml.common.Mod;
 import java.util.HashMap;
 import java.util.Map;
 
-@Mod.EventBusSubscriber(modid = BattleofgodsMod.MODID)
+@Mod.EventBusSubscriber(modid = BattleOfGods.MODID)
 @OnlyIn(Dist.CLIENT)
 public class CriticalHitTooltip {
 

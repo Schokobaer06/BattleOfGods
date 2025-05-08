@@ -1,7 +1,7 @@
 package com.schokobaer.battleofgods.handler;
 
-import com.schokobaer.battleofgods.BattleofgodsMod;
-import com.schokobaer.battleofgods.category.subClass.TerrariaArmorItem;
+import com.schokobaer.battleofgods.BattleOfGods;
+import com.schokobaer.battleofgods.category.subClass.TerrariaArmor;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.api.distmarker.Dist;
@@ -13,7 +13,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 
 import java.util.Objects;
 
-@Mod.EventBusSubscriber(modid = BattleofgodsMod.MODID)
+@Mod.EventBusSubscriber(modid = BattleOfGods.MODID)
 @OnlyIn(Dist.CLIENT)
 public class TooltipRemoveHandler {
     @SubscribeEvent
@@ -21,7 +21,7 @@ public class TooltipRemoveHandler {
         Item item = event.getItemStack().getItem();
         if (ForgeRegistries.ITEMS.getKey(item) != null &&
                 Objects.requireNonNull(ForgeRegistries.ITEMS.getKey(item))
-                        .getNamespace().equals(BattleofgodsMod.MODID)) {
+                        .getNamespace().equals(BattleOfGods.MODID)) {
 
             //Critical Hit Chance
             event.getToolTip().removeIf(component -> component.contains(
@@ -41,7 +41,7 @@ public class TooltipRemoveHandler {
             ));
 
         }
-        if (event.getItemStack().getItem() instanceof TerrariaArmorItem)
+        if (event.getItemStack().getItem() instanceof TerrariaArmor)
             //Armor
             event.getToolTip().removeIf(component -> component.contains(
                     Component.translatable("attribute.name.generic.armor")

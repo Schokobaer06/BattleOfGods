@@ -1,7 +1,7 @@
 // JEIPlugin.java
 package com.schokobaer.battleofgods.compat.jei;
 
-import com.schokobaer.battleofgods.BattleofgodsMod;
+import com.schokobaer.battleofgods.BattleOfGods;
 import com.schokobaer.battleofgods.compat.jei.category.WorkbenchCategory;
 import com.schokobaer.battleofgods.handler.RecipeHandler;
 import com.schokobaer.battleofgods.handler.WorkbenchRecipeTransferHandler;
@@ -20,7 +20,7 @@ import net.minecraft.world.item.ItemStack;
 public class JEIPlugin implements IModPlugin {
     @Override
     public ResourceLocation getPluginUid() {
-        return new ResourceLocation(BattleofgodsMod.MODID, "jei_plugin");
+        return new ResourceLocation(BattleOfGods.MODID, "jei_plugin");
     }
 
     // 1. Registriere die Rezeptkategorie
@@ -51,7 +51,7 @@ public class JEIPlugin implements IModPlugin {
     public void registerRecipeTransferHandlers(IRecipeTransferRegistration registration) {
         registration.addRecipeTransferHandler(
                 new WorkbenchRecipeTransferHandler(), RecipeType.create(
-                        BattleofgodsMod.MODID,
+                        BattleOfGods.MODID,
                         "workbench",
                         RecipeHandler.BattleRecipe.class
                 )

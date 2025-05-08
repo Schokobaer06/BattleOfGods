@@ -1,7 +1,7 @@
 package com.schokobaer.battleofgods.category.rarity;
 
 import com.mojang.blaze3d.platform.NativeImage;
-import com.schokobaer.battleofgods.BattleofgodsMod;
+import com.schokobaer.battleofgods.BattleOfGods;
 import net.minecraft.client.Minecraft;
 import net.minecraft.server.packs.resources.Resource;
 import net.minecraftforge.api.distmarker.Dist;
@@ -13,7 +13,7 @@ import net.minecraftforge.fml.common.Mod;
 import java.util.Optional;
 
 @OnlyIn(Dist.CLIENT)
-@Mod.EventBusSubscriber(modid = BattleofgodsMod.MODID, value = Dist.CLIENT, bus = Mod.EventBusSubscriber.Bus.FORGE)
+@Mod.EventBusSubscriber(modid = BattleOfGods.MODID, value = Dist.CLIENT, bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class RarityColorHandler {
     private static float animationProgress = 0;
     private static int tickCounter = 0; // Counter to track ticks
@@ -48,11 +48,11 @@ public class RarityColorHandler {
 
                             return image.getPixelRGBA(x, y);
                         } else {
-                            BattleofgodsMod.LOGGER.error("Texture not found: {}", textureLocation);
+                            BattleOfGods.LOGGER.error("Texture not found: {}", textureLocation);
                             return 0xFF000000;
                         }
                     } catch (Exception e) {
-                        BattleofgodsMod.LOGGER.error("Error loading texture: {}", textureLocation, e);
+                        BattleOfGods.LOGGER.error("Error loading texture: {}", textureLocation, e);
                         return 0xFF000000;
                     }
                 }

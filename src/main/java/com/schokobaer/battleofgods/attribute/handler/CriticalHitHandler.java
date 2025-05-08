@@ -1,6 +1,6 @@
 package com.schokobaer.battleofgods.attribute.handler;
 
-import com.schokobaer.battleofgods.BattleofgodsMod;
+import com.schokobaer.battleofgods.BattleOfGods;
 import com.schokobaer.battleofgods.init.InitAttributes;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.level.ServerLevel;
@@ -18,14 +18,14 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 
-import static com.schokobaer.battleofgods.BattleofgodsMod.LOGGER;
-import static com.schokobaer.battleofgods.BattleofgodsMod.isDebug;
+import static com.schokobaer.battleofgods.BattleOfGods.LOGGER;
+import static com.schokobaer.battleofgods.BattleOfGods.isDebug;
 
-@Mod.EventBusSubscriber(modid = BattleofgodsMod.MODID)
+@Mod.EventBusSubscriber(modid = BattleOfGods.MODID)
 public class CriticalHitHandler {
-    private static Double DEFAULT_CRIT_CHANCE = 0.0; // Standardwert (4%)
     private static final Map<UUID, Double> cachedCritChance = new HashMap<>();
     private static final Map<UUID, Long> lastUpdate = new HashMap<>();
+    private static Double DEFAULT_CRIT_CHANCE = 0.0; // Standardwert (4%)
 
     @SubscribeEvent
     public static void onLivingHurt(LivingHurtEvent event) {

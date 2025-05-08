@@ -1,7 +1,7 @@
 package com.schokobaer.battleofgods.handler;
 
 
-import com.schokobaer.battleofgods.BattleofgodsMod;
+import com.schokobaer.battleofgods.BattleOfGods;
 import com.schokobaer.battleofgods.armor.ArmorSetManager;
 import com.schokobaer.battleofgods.armor.tier1.WoodArmor;
 import com.schokobaer.battleofgods.init.InitItem;
@@ -21,7 +21,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import java.util.UUID;
 import java.util.function.Consumer;
 
-@Mod.EventBusSubscriber(modid = BattleofgodsMod.MODID)
+@Mod.EventBusSubscriber(modid = BattleOfGods.MODID)
 public class ArmorSetBonusHandler {
 
     @SubscribeEvent
@@ -33,7 +33,7 @@ public class ArmorSetBonusHandler {
 
     @SubscribeEvent
     public static void onCommonSetup(FMLCommonSetupEvent event) {
-        //BattleofgodsMod.LOGGER.debug("onCommonSetup wurde aufgerufen");
+        //BattleOfGods.LOGGER.debug("onCommonSetup wurde aufgerufen");
         // Register armor sets and bonuses here
         // Example: ArmorSetManager.registerArmorSet("example_set", InitArmor.EXAMPLE_ARMOR.get());
         // ArmorSetManager.registerSetBonus("example_set_id", new ArmorSetManager.AttributeModifierBonus(
@@ -52,9 +52,9 @@ public class ArmorSetBonusHandler {
                         AttributeModifier.Operation.ADDITION
                 )
         ));
-        if (BattleofgodsMod.isDebug()) {
-            BattleofgodsMod.LOGGER.debug("Registered armor sets: {}", ArmorSetManager.getAllArmorSets());
-            BattleofgodsMod.LOGGER.debug("Registered set bonuses: {}", ArmorSetManager.getAllSetBonuses());
+        if (BattleOfGods.isDebug()) {
+            BattleOfGods.LOGGER.debug("Registered armor sets: {}", ArmorSetManager.getAllArmorSets());
+            BattleOfGods.LOGGER.debug("Registered set bonuses: {}", ArmorSetManager.getAllSetBonuses());
         }
     }
 
@@ -71,8 +71,8 @@ public class ArmorSetBonusHandler {
                             .append(": ")
                             .append(String.valueOf(bonus)
                             ));
-            if (BattleofgodsMod.isDebug()) {
-                BattleofgodsMod.LOGGER.debug("Item: {}, Set Bonus: {}", event.getItemStack().getItem(), setBonus.toString());
+            if (BattleOfGods.isDebug()) {
+                BattleOfGods.LOGGER.debug("Item: {}, Set Bonus: {}", event.getItemStack().getItem(), setBonus.toString());
             }
         }
 

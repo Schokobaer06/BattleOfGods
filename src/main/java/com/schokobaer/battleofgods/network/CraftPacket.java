@@ -1,6 +1,6 @@
 package com.schokobaer.battleofgods.network;
 
-import com.schokobaer.battleofgods.BattleofgodsMod;
+import com.schokobaer.battleofgods.BattleOfGods;
 import com.schokobaer.battleofgods.handler.RecipeHandler;
 import com.schokobaer.battleofgods.world.inventory.WorkbenchMenu;
 import net.minecraft.network.FriendlyByteBuf;
@@ -21,12 +21,12 @@ public class CraftPacket {
         this.recipeId = buf.readResourceLocation();
     }
 
-    public void encode(FriendlyByteBuf buf) {
-        buf.writeResourceLocation(recipeId);
-    }
-
     public static CraftPacket decode(FriendlyByteBuf buffer) {
         return new CraftPacket(buffer.readResourceLocation());
+    }
+
+    public void encode(FriendlyByteBuf buf) {
+        buf.writeResourceLocation(recipeId);
     }
 
     public void handle(Supplier<NetworkEvent.Context> ctx) {
@@ -35,10 +35,11 @@ public class CraftPacket {
             if (player != null && player.containerMenu instanceof WorkbenchMenu menu) {
                 RecipeHandler.getRecipeById(recipeId).ifPresent(recipe -> {
                     if (recipe.getGroup().equals(menu.getRecipeGroup())) {
-                        if (BattleofgodsMod.isDebug()) BattleofgodsMod.LOGGER.debug("CraftPacket - handle has been called: Crafting item: {}", recipeId);
-                        menu.craftItem(player,recipeId);
+                        if (BattleOfGods.isDebug())
+                            BattleOfGods.LOGGER.debug("CraftPacket - handle has been called: Crafting item: {}", recipeId);
+                        menu.craftItem(player, recipeId);
                     } else {
-                        BattleofgodsMod.LOGGER.error("Recipe group mismatch: {} != {}", recipe.getGroup(), menu.getRecipeGroup());
+                        BattleOfGods.LOGGER.error("Recipe group mismatch: {} != {}", recipe.getGroup(), menu.getRecipeGroup());
                     }
                 });
             }

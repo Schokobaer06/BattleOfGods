@@ -1,7 +1,7 @@
 package com.schokobaer.battleofgods.handler;
 
 import com.google.gson.*;
-import com.schokobaer.battleofgods.BattleofgodsMod;
+import com.schokobaer.battleofgods.BattleOfGods;
 import net.minecraft.core.RegistryAccess;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
@@ -40,14 +40,14 @@ public class RecipeHandler {
 
             Set<ResourceLocation> resources = getResources(resourceManager);
 
-            BattleofgodsMod.LOGGER.debug("Found {} recipe resources", resources.size());
+            BattleOfGods.LOGGER.debug("Found {} recipe resources", resources.size());
 
             for (ResourceLocation resource : resources) {
                 try (InputStream stream = resourceManager.getResource(resource).get().open()) {
                     // Extrahiere die Rezept-ID aus dem Dateipfad
                     String path = resource.getPath(); // z.B. 'recipes/copper_broadsword.json'
                     String recipeName = path.substring("recipes/".length(), path.length() - ".json".length());
-                    ResourceLocation recipeId = new ResourceLocation(BattleofgodsMod.MODID, recipeName);
+                    ResourceLocation recipeId = new ResourceLocation(BattleOfGods.MODID, recipeName);
 
                     // Parse die JSON-Datei manuell
                     JsonObject json = JsonParser.parseReader(new InputStreamReader(stream)).getAsJsonObject();
@@ -78,30 +78,30 @@ public class RecipeHandler {
                     BattleRecipe recipe = new BattleRecipe(recipeId, group, category, replace, inputs, output);
                     if (recipe.isValid()) {
                         if (RECIPE_MAP.containsKey(recipeId)) {
-                            BattleofgodsMod.LOGGER.warn("Duplicate recipe ID found: {}", recipeId);
+                            BattleOfGods.LOGGER.warn("Duplicate recipe ID found: {}", recipeId);
                         }
                         if (recipe.isReplace())
                             RECIPES.removeIf(r -> r.getOutput().getItem().equals(recipe.getOutput().getItem()));
                         RECIPES.add(recipe);
-                        BattleofgodsMod.LOGGER.debug("Loaded recipe: {}", recipeId);
+                        BattleOfGods.LOGGER.debug("Loaded recipe: {}", recipeId);
                     }
                 } catch (Exception e) {
                     if (!(e instanceof NullPointerException))
-                        BattleofgodsMod.LOGGER.error("Failed to load recipe: {}", resource, e);
-                    //BattleofgodsMod.LOGGER.warn("Failed to load recipe: {}", resource);
+                        BattleOfGods.LOGGER.error("Failed to load recipe: {}", resource, e);
+                    //BattleOfGods.LOGGER.warn("Failed to load recipe: {}", resource);
                 }
             }
 
             RECIPES.forEach(recipe -> RECIPE_MAP.put(recipe.getId(), recipe));
-            BattleofgodsMod.LOGGER.info("Loaded {} recipes", RECIPES.size());
+            BattleOfGods.LOGGER.info("Loaded {} recipes", RECIPES.size());
         } catch (Exception e) {
-            BattleofgodsMod.LOGGER.error("Failed to load recipes!", e);
+            BattleOfGods.LOGGER.error("Failed to load recipes!", e);
         }
     }
 
     private static Set<ResourceLocation> getResources(ResourceManager resourceManager) {
         Set<String> namespaces = resourceManager.getNamespaces();
-        //BattleofgodsMod.LOGGER.debug("Available namespaces: {}", namespaces);
+        //BattleOfGods.LOGGER.debug("Available namespaces: {}", namespaces);
 
         // Suche nach allen JSON-Dateien im 'recipes'-Ordner des Mods
         Set<ResourceLocation> resources = new HashSet<>();
@@ -109,10 +109,10 @@ public class RecipeHandler {
             try {
                 resources.addAll(resourceManager.listResources(
                         "recipes",
-                        rl -> rl.getNamespace().equals(BattleofgodsMod.MODID) && rl.getPath().endsWith(".json")
+                        rl -> rl.getNamespace().equals(BattleOfGods.MODID) && rl.getPath().endsWith(".json")
                 ).keySet());
             } catch (Exception e) {
-                BattleofgodsMod.LOGGER.warn("Error listing resources in namespace: {}", namespace, e);
+                BattleOfGods.LOGGER.warn("Error listing resources in namespace: {}", namespace, e);
             }
         });
         return resources;
@@ -202,7 +202,6 @@ public class RecipeHandler {
                 .sorted(RECIPE_COMPARATOR)
                 .collect(Collectors.toList());
     }
-
 
 
     public static class BattleRecipe implements Recipe<Container> {

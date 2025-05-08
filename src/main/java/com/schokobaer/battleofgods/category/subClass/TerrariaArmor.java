@@ -32,7 +32,7 @@ import java.util.*;
 import java.util.function.Consumer;
 import java.util.function.Supplier;
 
-public abstract class TerrariaArmorItem extends ArmorItem implements GeoItem, SubClassMethods {
+public abstract class TerrariaArmor extends ArmorItem implements GeoItem, SubClassMethods {
     private final int defense;
     private final Map<Attribute, AttributeModifier> attributeModifiers = new HashMap<>();
     private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
@@ -48,7 +48,7 @@ public abstract class TerrariaArmorItem extends ArmorItem implements GeoItem, Su
      * @param rarity     Rarity of the item
      * @param tier       Tier of the item
      */
-    public TerrariaArmorItem(String name, ArmorMaterial material, Type type, Properties properties, RegistryObject<Rarity> rarity, RegistryObject<Tier> tier) {
+    public TerrariaArmor(String name, ArmorMaterial material, Type type, Properties properties, RegistryObject<Rarity> rarity, RegistryObject<Tier> tier) {
         super(material, type, properties);
         this.defense = material.getDefenseForType(type);
         this.subClass = () -> {
@@ -74,7 +74,7 @@ public abstract class TerrariaArmorItem extends ArmorItem implements GeoItem, Su
      * @param rarity           Rarity of the item
      * @param tier             Tier of the item
      */
-    public TerrariaArmorItem(String name, int[] defense, SoundEvent soundEvent, int enchantmentValue, Type type, RegistryObject<Rarity> rarity, RegistryObject<Tier> tier) {
+    public TerrariaArmor(String name, int[] defense, SoundEvent soundEvent, int enchantmentValue, Type type, RegistryObject<Rarity> rarity, RegistryObject<Tier> tier) {
         super(new ArmorMaterial() {
             @Override
             public int getDurabilityForType(Type type1) {
@@ -140,7 +140,7 @@ public abstract class TerrariaArmorItem extends ArmorItem implements GeoItem, Su
     }
 
     // Füge individuelle Attribute hinzu
-    public TerrariaArmorItem addAttributeModifier(Attribute attribute, double amount, AttributeModifier.Operation operation) {
+    public TerrariaArmor addAttributeModifier(Attribute attribute, double amount, AttributeModifier.Operation operation) {
         UUID uuid = UUID.randomUUID();
         attributeModifiers.put(attribute, new AttributeModifier(uuid, "Armor Modifier", amount, operation));
         return this;

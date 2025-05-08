@@ -1,0 +1,6 @@
+{
+  "parent": "battleofgods:item/wood_bow",
+  "textures": {
+    "layer0": "battleofgods:item/wood_bow_pulling_0"
+  }
+}

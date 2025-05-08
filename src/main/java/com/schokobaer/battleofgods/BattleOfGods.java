@@ -38,8 +38,8 @@ import java.util.function.Function;
 import java.util.function.Supplier;
 
 @Mod("battleofgods")
-public class BattleofgodsMod {
-    public static final Logger LOGGER = LogManager.getLogger(BattleofgodsMod.class);
+public class BattleOfGods {
+    public static final Logger LOGGER = LogManager.getLogger(BattleOfGods.class);
     public static final String MODID = "battleofgods";
     // Start of user code block mod methods
     // End of user code block mod methods
@@ -51,7 +51,7 @@ public class BattleofgodsMod {
 
     //private static final Boolean debug = true;
 
-    public BattleofgodsMod() {
+    public BattleOfGods() {
         // Start of user code block mod constructor
         // End of user code block mod constructor
         MinecraftForge.EVENT_BUS.register(this);
@@ -82,8 +82,8 @@ public class BattleofgodsMod {
         // End of user code block mod init
 
         InitMenu.MENUS.register(bus);
-        bus.addListener(BattleofgodsMod::registerRecipeTypes);
-        bus.addListener(BattleofgodsMod::registerRecipeSerializers);
+        bus.addListener(BattleOfGods::registerRecipeTypes);
+        bus.addListener(BattleOfGods::registerRecipeSerializers);
         bus.addListener(ArmorSetBonusHandler::onCommonSetup);
         bus.addListener(this::gatherData);
 

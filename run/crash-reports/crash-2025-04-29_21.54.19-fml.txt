@@ -44,7 +44,7 @@ Stacktrace:
 -- MOD battleofgods --
 Details:
 	Caused by 0: java.lang.ExceptionInInitializerError
-		at com.schokobaer.battleofgods.BattleofgodsMod.<init>(BattleofgodsMod.java:76) ~[%23196!/:?] {re:classloading}
+		at com.schokobaer.battleofgods.BattleOfGods.<init>(BattleofgodsMod.java:76) ~[%23196!/:?] {re:classloading}
 		at jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[?:?] {}
 		at jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77) ~[?:?] {}
 		at jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[?:?] {}
@@ -70,7 +70,7 @@ Stacktrace:
 	at java.util.Objects.requireNonNull(Objects.java:336) ~[?:?] {re:mixin}
 	at net.minecraftforge.registries.RegistryObject.get(RegistryObject.java:204) ~[forge-1.20.1-47.3.0_mapped_official_1.20.1-recomp.jar%23190%23197!/:?] {re:classloading}
 	at com.schokobaer.battleofgods.init.InitRarity.<clinit>(InitRarity.java:103) ~[%23196!/:?] {re:classloading}
-	at com.schokobaer.battleofgods.BattleofgodsMod.<init>(BattleofgodsMod.java:76) ~[%23196!/:?] {re:classloading}
+	at com.schokobaer.battleofgods.BattleOfGods.<init>(BattleofgodsMod.java:76) ~[%23196!/:?] {re:classloading}
 	at jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[?:?] {}
 	at jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77) ~[?:?] {}
 	at jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[?:?] {}
