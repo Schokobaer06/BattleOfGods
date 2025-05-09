@@ -7,6 +7,6 @@ import com.schokobaer.battleofgods.init.InitTier;
 public class ItemWoodBow extends TerrariaBow {
 
     public ItemWoodBow() {
-        super(4, 1, 30, 0, false, InitRarity.WHITE, InitTier.TIER_1);
+        super(4, 1, 30, 0, false, 0, InitRarity.WHITE, InitTier.TIER_1);
     }
 }
