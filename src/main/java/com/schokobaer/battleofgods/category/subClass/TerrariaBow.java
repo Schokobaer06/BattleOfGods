@@ -2,19 +2,24 @@ package com.schokobaer.battleofgods.category.subClass;
 
 import com.google.common.collect.LinkedHashMultimap;
 import com.google.common.collect.Multimap;
+import com.schokobaer.battleofgods.BattleOfGods;
 import com.schokobaer.battleofgods.category.AbstractSubClass;
 import com.schokobaer.battleofgods.category.SubClassMethods;
 import com.schokobaer.battleofgods.category.mainClass.MainClasses;
 import com.schokobaer.battleofgods.category.rarity.Rarity;
 import com.schokobaer.battleofgods.category.tier.Tier;
 import net.minecraft.network.chat.Component;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResultHolder;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
-import net.minecraft.world.item.BowItem;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.projectile.AbstractArrow;
+import net.minecraft.world.item.*;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.registries.RegistryObject;
 
@@ -23,28 +28,37 @@ import java.util.UUID;
 import java.util.function.Supplier;
 
 public abstract class TerrariaBow extends BowItem implements SubClassMethods {
-    /// Variablen sind declared, aber wir werden sie vorerst nicht verwenden
-    private final int baseDamage;
-    private final float velocity;
-    private final int useTime;
-    private final int knockback;
-    private final boolean autoSwing;
     private final Supplier<AbstractSubClass> subClass;
-    private int autoSwingDelay = 0;
+    /// Variablen sind declared, aber wir werden sie vorerst nicht verwenden
+    private int baseDamage;
+    private float velocity;
+    private int useTime;
+    private int knockback = 0;
+    private boolean autoSwing;
+    private int cooldown = 0;
+    private int piercing;
 
-    public TerrariaBow(int baseDamage, float velocity, int useTime, int knockback, boolean autoSwing,
-                       RegistryObject<Rarity> rarity, RegistryObject<Tier> tier) {
-        super(new Properties()
-                .durability(0)
-                .defaultDurability(0)
-                .setNoRepair()
-        );
+    /**
+     * Abstract class for all BattleOfGods bows
+     *
+     * @param baseDamage Base damage output of bows; damage will be added to arrow damage
+     * @param velocity   Speed of the arrow
+     * @param useTime    Time it takes for every shot
+     * @param knockback  Knockback of the bow
+     * @param autoSwing  If the bow is semi- or fully automatic
+     * @param piercing   Level of piercing of the bow
+     * @param rarity     Rarity of the bow
+     * @param tier       Tier of the bow
+     */
+    public TerrariaBow(int baseDamage, float velocity, int useTime, int knockback, boolean autoSwing, int piercing, RegistryObject<Rarity> rarity, RegistryObject<Tier> tier) {
+        super(new Properties().durability(0).defaultDurability(0).setNoRepair());
 
         this.baseDamage = baseDamage;
         this.velocity = velocity;
         this.useTime = useTime;
         this.knockback = knockback;
         this.autoSwing = autoSwing;
+        this.piercing = piercing;
 
         this.subClass = () -> {
             AbstractSubClass sb = new AbstractSubClass() {
@@ -57,15 +71,97 @@ public abstract class TerrariaBow extends BowItem implements SubClassMethods {
     }
 
     @Override
+    public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
+        ItemStack stack = player.getItemInHand(hand);
+
+        if (cooldown > 0) {
+            return InteractionResultHolder.fail(stack); // Cooldown aktiv, keine Aktion
+        }
+
+        // Schießt sofort einen Pfeil
+        this.fireArrow(stack, level, player, hand, 1.0f); // 1.0f als Standard-Power
+        cooldown = this.getUseTime(); // Cooldown setzen
+
+        return InteractionResultHolder.success(stack);
+    }
+
+    @Override
+    public void releaseUsing(ItemStack stack, Level level, LivingEntity entity, int timeLeft) {
+        // Deactivate because bows are (semi-) automatic
+        // Deaktiviert, weil Bögen (semi-)automatisch sind
+    }
+
+
+    @Override
+    public void inventoryTick(ItemStack stack, Level level, Entity entity, int slot, boolean selected) {
+        if (cooldown > 0) cooldown--;
+    }
+
+    @Override
+    public int getUseDuration(ItemStack stack) {
+        return this.autoSwing ? 72000 : 0;
+    }
+
+    protected void fireArrow(ItemStack stack, Level level, Player player, InteractionHand hand, float power) {
+        if (cooldown > 0) {
+            BattleOfGods.LOGGER.debug("Cooldown aktiv, Pfeil wird nicht geschossen.");
+            return; // Cooldown aktiv, keine Aktion
+        }
+
+        if (BattleOfGods.isDebug()) {
+            BattleOfGods.LOGGER.debug("Bow {} fired with power: {}", stack.getItem(), power);
+        }
+
+        AbstractArrow arrow = createArrow(level, player, stack);
+        if (arrow == null) {
+            BattleOfGods.LOGGER.error("Fehler: Pfeil konnte nicht erstellt werden.");
+            return;
+        }
+
+        arrow = customizeArrow(arrow, power);
+
+        float velocityMultiplier = this.getVelocity() * 3.0f;
+        arrow.shootFromRotation(player, player.getXRot(), player.getYRot(), 0.0f, velocityMultiplier * power, 1.0f);
+
+        if (!level.isClientSide) {
+            level.addFreshEntity(arrow);
+            BattleOfGods.LOGGER.debug("Pfeil wurde erfolgreich gespawnt: {}", arrow);
+            stack.hurtAndBreak(1, player, e -> e.broadcastBreakEvent(hand));
+        } else {
+            BattleOfGods.LOGGER.debug("Client-Seite: Pfeil wird nicht gespawnt.");
+        }
+
+        cooldown = this.useTime; // Cooldown setzen
+    }
+
+    protected AbstractArrow createArrow(Level level, LivingEntity shooter, ItemStack bowStack) {
+        ArrowItem arrowItem = (ArrowItem) (shooter instanceof Player p ? p.getProjectile(bowStack).getItem() : Items.ARROW);
+        AbstractArrow arrow = arrowItem.createArrow(level, bowStack, shooter);
+
+        // Piercing implementieren
+        arrow.setPierceLevel((byte) this.getPiercing());
+
+        return arrow;
+    }
+
+    protected AbstractArrow customizeArrow(AbstractArrow arrow, float drawProgress) {
+        // Terraria-Damage + Arrow-Damage
+        double totalDamage = this.getBaseDamage() + arrow.getBaseDamage();
+
+        arrow.setBaseDamage(totalDamage);
+        arrow.setKnockback(this.getKnockback());
+
+        // Velocity-Anpassung
+        //arrow.setDeltaMovement(arrow.getDeltaMovement().scale(this.velocity / 3.0f));
+
+        return arrow;
+    }
+
+    @Override
     public Multimap<Attribute, AttributeModifier> getAttributeModifiers(EquipmentSlot slot, ItemStack stack) {
         Multimap<Attribute, AttributeModifier> modifiers = LinkedHashMultimap.create();
         if (slot == EquipmentSlot.MAINHAND) {
-            modifiers.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(
-                    UUID.fromString("8b9b1e3e-8e1a-4d86-81a1-2b5b0d9d9d9d"),
-                    "ranged_damage_bonus",
-                    this.baseDamage,
-                    AttributeModifier.Operation.ADDITION
-            ));
+            modifiers.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(UUID.fromString("8b9b1e3e-8e1a-4d86-81a1-2b5b0d9d9d9d"), "ranged_damage_bonus", this.getBaseDamage(), AttributeModifier.Operation.ADDITION));
         }
         return modifiers;
     }
@@ -95,11 +191,47 @@ public abstract class TerrariaBow extends BowItem implements SubClassMethods {
         return baseDamage;
     }
 
+    public void setBaseDamage(int baseDamage) {
+        this.baseDamage = baseDamage;
+    }
+
     public float getVelocity() {
         return velocity;
     }
 
+    public void setVelocity(float velocity) {
+        this.velocity = velocity;
+    }
+
     public int getKnockback() {
         return knockback;
+    }
+
+    public void setKnockback(int knockback) {
+        this.knockback = knockback;
+    }
+
+    public boolean isAutoSwing() {
+        return autoSwing;
+    }
+
+    public void setAutoSwing(boolean autoSwing) {
+        this.autoSwing = autoSwing;
+    }
+
+    public int getPiercing() {
+        return piercing;
+    }
+
+    public void setPiercing(int piercing) {
+        this.piercing = piercing;
+    }
+
+    public int getUseTime() {
+        return useTime;
+    }
+
+    public void setUseTime(int useTime) {
+        this.useTime = useTime;
     }
 }
