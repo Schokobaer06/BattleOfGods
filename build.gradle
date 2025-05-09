@@ -106,13 +106,5 @@ dependencies {
     implementation fg.deobf("me.shedaniel.cloth:cloth-config-forge:11.1.136")
 }
 
-dependencies {
-    annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
-}
-mixin {
-    add sourceSets.main, "mixins.battleofgods.refmap.json"
-    config "mixins.battleofgods.json"
-}
-
 apply from: 'mcreator.gradle'
 
