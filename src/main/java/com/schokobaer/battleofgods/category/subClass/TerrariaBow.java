@@ -9,8 +9,9 @@ import com.schokobaer.battleofgods.category.mainClass.MainClasses;
 import com.schokobaer.battleofgods.category.rarity.Rarity;
 import com.schokobaer.battleofgods.category.tier.Tier;
 import net.minecraft.network.chat.Component;
+import net.minecraft.sounds.SoundEvent;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
@@ -28,8 +29,17 @@ import java.util.UUID;
 import java.util.function.Supplier;
 
 public abstract class TerrariaBow extends BowItem implements SubClassMethods {
+    /**
+     * UUID muss konstant sein, damit Modifier nicht mehrfach stapeln
+     */
+    public static final UUID SPEED_MODIFIER_UUID = UUID.fromString("5f47c8e2-1f56-4e1a-9e8c-3b2c4d5e6f7a");
+    /**
+     * +200% MovementSpeed, neutralisiert den Vanilla-Bow-Slowdown
+     */
+    public static final AttributeModifier SPEED_MODIFIER =
+            new AttributeModifier(SPEED_MODIFIER_UUID, "bow_speed_neutralizer", 2.0, AttributeModifier.Operation.MULTIPLY_TOTAL);
+
     private final Supplier<AbstractSubClass> subClass;
-    /// Variablen sind declared, aber wir werden sie vorerst nicht verwenden
     private int baseDamage;
     private float velocity;
     private int useTime;
@@ -37,6 +47,8 @@ public abstract class TerrariaBow extends BowItem implements SubClassMethods {
     private boolean autoSwing;
     private int cooldown = 0;
     private int piercing;
+    private SoundEvent soundEvent = SoundEvents.ARROW_SHOOT;
+
 
     /**
      * Abstract class for all BattleOfGods bows
@@ -71,42 +83,54 @@ public abstract class TerrariaBow extends BowItem implements SubClassMethods {
     }
 
     @Override
-    public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
-        ItemStack stack = player.getItemInHand(hand);
+    public void onUseTick(Level level, LivingEntity entity, ItemStack stack, int timeLeft) {
+        if (!(entity instanceof Player player)) return;
 
-        if (cooldown > 0) {
-            return InteractionResultHolder.fail(stack); // Cooldown aktiv, keine Aktion
+        // 1) Sprinten erzwingen
+        player.setSprinting(true);
+        ;
+
+        // 2) Speed-Modifier hinzufügen, falls noch nicht vorhanden
+        var speedAttr = player.getAttribute(Attributes.MOVEMENT_SPEED);
+        if (speedAttr != null && !speedAttr.hasModifier(SPEED_MODIFIER)) {
+            speedAttr.addTransientModifier(SPEED_MODIFIER);
         }
 
-        // Schießt sofort einen Pfeil
-        this.fireArrow(stack, level, player, hand, 1.0f); // 1.0f als Standard-Power
-        cooldown = this.getUseTime(); // Cooldown setzen
+        if (BattleOfGods.isDebug())
+            BattleOfGods.LOGGER.debug("Pfeil {} wird verwendet mit Zeit übrig: {}", stack.getItem(), timeLeft);
 
-        return InteractionResultHolder.success(stack);
+        // 3) Automatisches Feuern wie gehabt
+        if (timeLeft <= 1) {
+            fireArrow(stack, level, player, InteractionHand.MAIN_HAND, 1f);
+        }
     }
+
 
     @Override
     public void releaseUsing(ItemStack stack, Level level, LivingEntity entity, int timeLeft) {
-        // Deactivate because bows are (semi-) automatic
-        // Deaktiviert, weil Bögen (semi-)automatisch sind
-    }
+        if (!(entity instanceof Player player)) return;
 
+        // Speed-Modifier beim Loslassen entfernen
+        var speedAttr = player.getAttribute(Attributes.MOVEMENT_SPEED);
+        if (speedAttr != null && speedAttr.hasModifier(SPEED_MODIFIER)) {
+            speedAttr.removeModifier(SPEED_MODIFIER_UUID);
+        }
+    }
 
     @Override
     public void inventoryTick(ItemStack stack, Level level, Entity entity, int slot, boolean selected) {
         if (cooldown > 0) cooldown--;
     }
 
+
     @Override
     public int getUseDuration(ItemStack stack) {
-        return this.autoSwing ? 72000 : 0;
+        //return this.autoSwing ? 72000 : 0;
+        return useTime;
     }
 
+
     protected void fireArrow(ItemStack stack, Level level, Player player, InteractionHand hand, float power) {
-        if (cooldown > 0) {
-            BattleOfGods.LOGGER.debug("Cooldown aktiv, Pfeil wird nicht geschossen.");
-            return; // Cooldown aktiv, keine Aktion
-        }
 
         if (BattleOfGods.isDebug()) {
             BattleOfGods.LOGGER.debug("Bow {} fired with power: {}", stack.getItem(), power);
@@ -131,7 +155,17 @@ public abstract class TerrariaBow extends BowItem implements SubClassMethods {
             BattleOfGods.LOGGER.debug("Client-Seite: Pfeil wird nicht gespawnt.");
         }
 
+        level.playSound(null, player.getX(), player.getY(), player.getZ(), this.getSoundEvent(), player.getSoundSource(), 1.0f, 1.0f);
+
         cooldown = this.useTime; // Cooldown setzen
+    }
+
+    public SoundEvent getSoundEvent() {
+        return soundEvent;
+    }
+
+    public void setSoundEvent(SoundEvent soundEvent) {
+        this.soundEvent = soundEvent;
     }
 
     protected AbstractArrow createArrow(Level level, LivingEntity shooter, ItemStack bowStack) {
@@ -161,7 +195,11 @@ public abstract class TerrariaBow extends BowItem implements SubClassMethods {
     public Multimap<Attribute, AttributeModifier> getAttributeModifiers(EquipmentSlot slot, ItemStack stack) {
         Multimap<Attribute, AttributeModifier> modifiers = LinkedHashMultimap.create();
         if (slot == EquipmentSlot.MAINHAND) {
-            modifiers.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(UUID.fromString("8b9b1e3e-8e1a-4d86-81a1-2b5b0d9d9d9d"), "ranged_damage_bonus", this.getBaseDamage(), AttributeModifier.Operation.ADDITION));
+            modifiers.put(Attributes.ATTACK_DAMAGE,
+                    new AttributeModifier(UUID.fromString("8b9b1e3e-8e1a-4d86-81a1-2b5b0d9d9d9d"),
+                            "ranged_damage_bonus",
+                            this.getBaseDamage(),
+                            AttributeModifier.Operation.ADDITION));
         }
         return modifiers;
     }
@@ -234,4 +272,6 @@ public abstract class TerrariaBow extends BowItem implements SubClassMethods {
     public void setUseTime(int useTime) {
         this.useTime = useTime;
     }
+
+
 }
