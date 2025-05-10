@@ -1,5 +1,9 @@
 {
   "stats": {
+    "minecraft:mined": {
+      "battleofgods:wooden_workbench": 2,
+      "minecraft:grass_block": 4
+    },
     "minecraft:dropped": {
       "minecraft:diamond_sword": 2,
       "minecraft:dirt": 1,
@@ -44,42 +48,29 @@
       "minecraft:wooden_sword": 1,
       "minecraft:diamond_sword": 38,
       "minecraft:dirt": 1,
-      "minecraft:bow": 51,
+      "minecraft:bow": 52,
       "minecraft:crafting_table": 2,
       "minecraft:sculk_catalyst": 2,
       "battleofgods:copper_shortsword": 308,
       "battleofgods:wood_armor_helmet": 1
     },
-    "minecraft:killed": {
-      "minecraft:vindicator": 1,
-      "geckolib:fake_glass": 1,
-      "minecraft:frog": 2,
-      "minecraft:warden": 2,
-      "minecraft:slime": 5,
-      "minecraft:villager": 1,
-      "geckolib:bat": 1
-    },
-    "minecraft:mined": {
-      "battleofgods:wooden_workbench": 2,
-      "minecraft:grass_block": 4
-    },
     "minecraft:custom": {
-      "minecraft:time_since_rest": 436633,
-      "minecraft:sprint_one_cm": 338727,
+      "minecraft:time_since_rest": 449554,
+      "minecraft:sprint_one_cm": 430263,
       "minecraft:damage_taken": 300,
-      "minecraft:walk_one_cm": 311012,
+      "minecraft:walk_one_cm": 382222,
       "minecraft:mob_kills": 13,
       "minecraft:drop": 101,
       "minecraft:damage_dealt": 17494,
       "minecraft:interact_with_crafting_table": 15,
-      "minecraft:fly_one_cm": 124238,
-      "minecraft:play_time": 436633,
-      "minecraft:crouch_one_cm": 20868,
-      "minecraft:sneak_time": 6885,
-      "minecraft:jump": 710,
-      "minecraft:leave_game": 563,
-      "minecraft:time_since_death": 436633,
-      "minecraft:total_world_time": 798588,
+      "minecraft:fly_one_cm": 148890,
+      "minecraft:play_time": 449554,
+      "minecraft:crouch_one_cm": 20914,
+      "minecraft:sneak_time": 6890,
+      "minecraft:jump": 856,
+      "minecraft:leave_game": 582,
+      "minecraft:time_since_death": 449554,
+      "minecraft:total_world_time": 818760,
       "minecraft:fall_one_cm": 2183
     },
     "minecraft:picked_up": {
@@ -101,6 +92,15 @@
       "minecraft:netherite_sword": 1,
       "minecraft:emerald": 256,
       "minecraft:iron_boots": 1
+    },
+    "minecraft:killed": {
+      "minecraft:vindicator": 1,
+      "geckolib:fake_glass": 1,
+      "minecraft:frog": 2,
+      "minecraft:warden": 2,
+      "minecraft:slime": 5,
+      "minecraft:villager": 1,
+      "geckolib:bat": 1
     }
   },
   "DataVersion": 3465

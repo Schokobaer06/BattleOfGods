@@ -81,25 +81,12 @@ public abstract class TerrariaBow extends BowItem implements SubClassMethods {
             return sb;
         };
     }
+    // TODO :  kein AutoSwing; Arrow Pickup/etc.
 
     @Override
     public void onUseTick(Level level, LivingEntity entity, ItemStack stack, int timeLeft) {
         if (!(entity instanceof Player player)) return;
 
-        // 1) Sprinten erzwingen
-        player.setSprinting(true);
-        ;
-
-        // 2) Speed-Modifier hinzufügen, falls noch nicht vorhanden
-        var speedAttr = player.getAttribute(Attributes.MOVEMENT_SPEED);
-        if (speedAttr != null && !speedAttr.hasModifier(SPEED_MODIFIER)) {
-            speedAttr.addTransientModifier(SPEED_MODIFIER);
-        }
-
-        if (BattleOfGods.isDebug())
-            BattleOfGods.LOGGER.debug("Pfeil {} wird verwendet mit Zeit übrig: {}", stack.getItem(), timeLeft);
-
-        // 3) Automatisches Feuern wie gehabt
         if (timeLeft <= 1) {
             fireArrow(stack, level, player, InteractionHand.MAIN_HAND, 1f);
         }
@@ -109,12 +96,6 @@ public abstract class TerrariaBow extends BowItem implements SubClassMethods {
     @Override
     public void releaseUsing(ItemStack stack, Level level, LivingEntity entity, int timeLeft) {
         if (!(entity instanceof Player player)) return;
-
-        // Speed-Modifier beim Loslassen entfernen
-        var speedAttr = player.getAttribute(Attributes.MOVEMENT_SPEED);
-        if (speedAttr != null && speedAttr.hasModifier(SPEED_MODIFIER)) {
-            speedAttr.removeModifier(SPEED_MODIFIER_UUID);
-        }
     }
 
     @Override
@@ -125,17 +106,16 @@ public abstract class TerrariaBow extends BowItem implements SubClassMethods {
 
     @Override
     public int getUseDuration(ItemStack stack) {
-        //return this.autoSwing ? 72000 : 0;
         return useTime;
     }
 
 
     protected void fireArrow(ItemStack stack, Level level, Player player, InteractionHand hand, float power) {
-
+/*
         if (BattleOfGods.isDebug()) {
             BattleOfGods.LOGGER.debug("Bow {} fired with power: {}", stack.getItem(), power);
         }
-
+*/
         AbstractArrow arrow = createArrow(level, player, stack);
         if (arrow == null) {
             BattleOfGods.LOGGER.error("Fehler: Pfeil konnte nicht erstellt werden.");
@@ -149,7 +129,7 @@ public abstract class TerrariaBow extends BowItem implements SubClassMethods {
 
         if (!level.isClientSide) {
             level.addFreshEntity(arrow);
-            BattleOfGods.LOGGER.debug("Pfeil wurde erfolgreich gespawnt: {}", arrow);
+            //BattleOfGods.LOGGER.debug("Pfeil wurde erfolgreich gespawnt: {}", arrow);
             stack.hurtAndBreak(1, player, e -> e.broadcastBreakEvent(hand));
         } else {
             BattleOfGods.LOGGER.debug("Client-Seite: Pfeil wird nicht gespawnt.");
