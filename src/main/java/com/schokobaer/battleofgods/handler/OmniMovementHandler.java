@@ -49,9 +49,6 @@ public class OmniMovementHandler {
     // Füge diese neue Event-Methode in der OmniMovementHandler-Klasse hinzu
     @SubscribeEvent
     public static void onFovUpdate(ComputeFovModifierEvent event) {
-        Player player = event.getPlayer();
-        //boolean isOmniSprinting = player.isSprinting() &&
-        //(player.xxa != 0 || player.zza < 0); // xxa = Seitwärts, zza < 0 = Rückwärts
 
         if (isOmniSprinting) {
             // Behalte existierende FOV-Modifikationen bei und addiere den Sprint-Effekt
