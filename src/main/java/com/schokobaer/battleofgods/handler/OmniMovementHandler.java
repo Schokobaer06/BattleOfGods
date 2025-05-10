@@ -4,6 +4,7 @@ import com.schokobaer.battleofgods.BattleOfGods;
 import net.minecraft.client.KeyMapping;
 import net.minecraft.client.Minecraft;
 import net.minecraft.world.entity.player.Player;
+import net.minecraftforge.client.event.ComputeFovModifierEvent;
 import net.minecraftforge.client.event.MovementInputUpdateEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -13,6 +14,7 @@ public class OmniMovementHandler {
 
     private static final float SPRINT_SPEED_MULTIPLIER = 1.3F;
     private static final float AIR_SPRINT_MULTIPLIER = 1.1F; // Leicht reduzierte Geschwindigkeit in der Luft
+    private static boolean isOmniSprinting = false;
 
     @SubscribeEvent
     public static void onMovementInput(MovementInputUpdateEvent event) {
@@ -26,10 +28,10 @@ public class OmniMovementHandler {
             boolean wantsToSprint = sprintKey.isDown();
             boolean isMoving = event.getInput().leftImpulse != 0 || event.getInput().forwardImpulse != 0;
 
+            isOmniSprinting = isMoving && wantsToSprint && !player.isCrouching();
             if (wantsToSprint && isMoving && !player.isCrouching()) {
                 // Für Luft-Sprint: Entferne player.onGround()-Check
                 float multiplier = player.onGround() ? SPRINT_SPEED_MULTIPLIER : AIR_SPRINT_MULTIPLIER;
-
                 // Bewegung in alle Richtungen skalieren
                 event.getInput().leftImpulse *= multiplier;
                 event.getInput().forwardImpulse *= multiplier;
@@ -38,7 +40,26 @@ public class OmniMovementHandler {
                 if (!player.isSprinting()) {
                     player.setSprinting(true);
                 }
+
+
             }
+        }
+    }
+
+    // Füge diese neue Event-Methode in der OmniMovementHandler-Klasse hinzu
+    @SubscribeEvent
+    public static void onFovUpdate(ComputeFovModifierEvent event) {
+        Player player = event.getPlayer();
+        //boolean isOmniSprinting = player.isSprinting() &&
+        //(player.xxa != 0 || player.zza < 0); // xxa = Seitwärts, zza < 0 = Rückwärts
+
+        if (isOmniSprinting) {
+            // Behalte existierende FOV-Modifikationen bei und addiere den Sprint-Effekt
+            float currentFov = event.getNewFovModifier();
+            float sprintFovAddition = 0.15F; // Vanilla-Wert
+
+            // Nur anwenden, wenn nicht bereits höherer Wert durch andere Mods
+            event.setNewFovModifier(currentFov + sprintFovAddition);
         }
     }
 }
