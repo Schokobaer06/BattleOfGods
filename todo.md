@@ -149,6 +149,7 @@
             - [ ] Squirrel Squire Staff
 - [ ] Config
     - [ ] Spawn Biome
+    - [ ] OmniMovement Toggler
 - [ ] Item Count erhöhen
 - [ ] Logo
 - [ ] Mod Icon
