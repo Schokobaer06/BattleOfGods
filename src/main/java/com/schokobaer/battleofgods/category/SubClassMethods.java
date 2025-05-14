@@ -20,5 +20,6 @@ public interface SubClassMethods {
 
     boolean isFireResistant();
 
+    // Todo: isAutoSwing()
     Multimap<Attribute, AttributeModifier> getAttributeModifiers(EquipmentSlot slot, ItemStack stack);
 }

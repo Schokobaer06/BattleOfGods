@@ -12,6 +12,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
@@ -29,21 +30,12 @@ import java.util.UUID;
 import java.util.function.Supplier;
 
 public abstract class TerrariaBow extends BowItem implements SubClassMethods {
-    /**
-     * UUID muss konstant sein, damit Modifier nicht mehrfach stapeln
-     */
-    public static final UUID SPEED_MODIFIER_UUID = UUID.fromString("5f47c8e2-1f56-4e1a-9e8c-3b2c4d5e6f7a");
-    /**
-     * +200% MovementSpeed, neutralisiert den Vanilla-Bow-Slowdown
-     */
-    public static final AttributeModifier SPEED_MODIFIER =
-            new AttributeModifier(SPEED_MODIFIER_UUID, "bow_speed_neutralizer", 2.0, AttributeModifier.Operation.MULTIPLY_TOTAL);
 
     private final Supplier<AbstractSubClass> subClass;
     private int baseDamage;
     private float velocity;
     private int useTime;
-    private int knockback = 0;
+    private int knockback;
     private boolean autoSwing;
     private int cooldown = 0;
     private int piercing;
@@ -86,9 +78,13 @@ public abstract class TerrariaBow extends BowItem implements SubClassMethods {
     @Override
     public void onUseTick(Level level, LivingEntity entity, ItemStack stack, int timeLeft) {
         if (!(entity instanceof Player player)) return;
+        // Semi Auto
+        if (!isAutoSwing() && timeLeft == (getUseDuration(stack) - getUseTime()))
+            level.playSound(player, player.getX(), player.getY(), player.getZ(), SoundEvents.NOTE_BLOCK_PLING.get() , player.getSoundSource(), 1.0f, 1.0f);
 
-        if (timeLeft <= 1) {
-            fireArrow(stack, level, player, InteractionHand.MAIN_HAND, 1f);
+        // Full Auto
+        if (timeLeft <=1 && isAutoSwing()) {
+            fireArrow(stack, level, player, player.getUsedItemHand(), 1f);
         }
     }
 
@@ -96,29 +92,23 @@ public abstract class TerrariaBow extends BowItem implements SubClassMethods {
     @Override
     public void releaseUsing(ItemStack stack, Level level, LivingEntity entity, int timeLeft) {
         if (!(entity instanceof Player player)) return;
+        // Semi Auto
+        if (!isAutoSwing() && timeLeft <= (getUseDuration(stack) - getUseTime())){
+            //float power = (float) (this.getUseDuration(stack) - timeLeft) / (float) this.getUseDuration(stack);
+            fireArrow(stack, level, player, player.getUsedItemHand(), 1f);
+        }
     }
-
-    @Override
-    public void inventoryTick(ItemStack stack, Level level, Entity entity, int slot, boolean selected) {
-        if (cooldown > 0) cooldown--;
-    }
-
 
     @Override
     public int getUseDuration(ItemStack stack) {
-        return useTime;
+        return (!isAutoSwing()) ? super.getUseDuration(stack) : getUseTime();
     }
 
 
     protected void fireArrow(ItemStack stack, Level level, Player player, InteractionHand hand, float power) {
-/*
-        if (BattleOfGods.isDebug()) {
-            BattleOfGods.LOGGER.debug("Bow {} fired with power: {}", stack.getItem(), power);
-        }
-*/
         AbstractArrow arrow = createArrow(level, player, stack);
         if (arrow == null) {
-            BattleOfGods.LOGGER.error("Fehler: Pfeil konnte nicht erstellt werden.");
+            BattleOfGods.LOGGER.error("Error: Arrow is null");
             return;
         }
 
@@ -131,8 +121,6 @@ public abstract class TerrariaBow extends BowItem implements SubClassMethods {
             level.addFreshEntity(arrow);
             //BattleOfGods.LOGGER.debug("Pfeil wurde erfolgreich gespawnt: {}", arrow);
             stack.hurtAndBreak(1, player, e -> e.broadcastBreakEvent(hand));
-        } else {
-            BattleOfGods.LOGGER.debug("Client-Seite: Pfeil wird nicht gespawnt.");
         }
 
         level.playSound(null, player.getX(), player.getY(), player.getZ(), this.getSoundEvent(), player.getSoundSource(), 1.0f, 1.0f);
@@ -252,6 +240,4 @@ public abstract class TerrariaBow extends BowItem implements SubClassMethods {
     public void setUseTime(int useTime) {
         this.useTime = useTime;
     }
-
-
 }
