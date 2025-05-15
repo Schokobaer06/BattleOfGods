@@ -24,7 +24,7 @@
     - [x] Wooden Armor
     - [x] Wooden Sword
     - [x] Recipes
-- [ ] Plains as Default Spawn
+- [x] Plains as Default Spawn
 - [x] Categories überarbeiten für einfacheren Zugriff
     - [x] Rarity
     - [x] MainClass
