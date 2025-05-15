@@ -163,7 +163,7 @@ public abstract class TerrariaBow extends BowItem implements SubClassMethods {
         AbstractArrow arrow = arrowItem.createArrow(level, arrowStack, shooter);
 
         // Piercing implementieren
-        arrow.setPierceLevel((byte) this.getPiercing());
+        arrow.setPierceLevel((byte) (arrow.getPierceLevel() + (byte) this.getPiercing()));
 
         // Pickup-Logik
         boolean isCreative = player.getAbilities().instabuild;
@@ -178,8 +178,8 @@ public abstract class TerrariaBow extends BowItem implements SubClassMethods {
 
     protected AbstractArrow customizeArrow(AbstractArrow arrow) {
         // Terraria-Damage + Arrow-Damage
-        double totalDamage = this.getBaseDamage();
-        int knockback = this.getKnockback();
+        double totalDamage = this.getBaseDamage() + arrow.getBaseDamage();
+        int knockback = this.getKnockback() + arrow.getKnockback();
 
         // Überprüfen, ob der Besitzer des Pfeils eine LivingEntity ist
         if (arrow.getOwner() instanceof LivingEntity owner) {
