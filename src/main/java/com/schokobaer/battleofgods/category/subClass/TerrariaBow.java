@@ -12,8 +12,6 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResultHolder;
-import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.Attribute;
@@ -22,10 +20,13 @@ import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.item.*;
+import net.minecraft.world.item.enchantment.EnchantmentHelper;
+import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.registries.RegistryObject;
 
 import java.util.List;
+import java.util.Objects;
 import java.util.UUID;
 import java.util.function.Supplier;
 
@@ -104,30 +105,6 @@ public abstract class TerrariaBow extends BowItem implements SubClassMethods {
         return (!isAutoSwing()) ? super.getUseDuration(stack) : getUseTime();
     }
 
-
-    protected void fireArrow(ItemStack stack, Level level, Player player, InteractionHand hand, float power) {
-        AbstractArrow arrow = createArrow(level, player, stack);
-        if (arrow == null) {
-            BattleOfGods.LOGGER.error("Error: Arrow is null");
-            return;
-        }
-
-        arrow = customizeArrow(arrow, power);
-
-        float velocityMultiplier = this.getVelocity() * 3.0f;
-        arrow.shootFromRotation(player, player.getXRot(), player.getYRot(), 0.0f, velocityMultiplier * power, 1.0f);
-
-        if (!level.isClientSide) {
-            level.addFreshEntity(arrow);
-            //BattleOfGods.LOGGER.debug("Pfeil wurde erfolgreich gespawnt: {}", arrow);
-            stack.hurtAndBreak(1, player, e -> e.broadcastBreakEvent(hand));
-        }
-
-        level.playSound(null, player.getX(), player.getY(), player.getZ(), this.getSoundEvent(), player.getSoundSource(), 1.0f, 1.0f);
-
-        cooldown = this.useTime; // Cooldown setzen
-    }
-
     public SoundEvent getSoundEvent() {
         return soundEvent;
     }
@@ -136,26 +113,92 @@ public abstract class TerrariaBow extends BowItem implements SubClassMethods {
         this.soundEvent = soundEvent;
     }
 
+    protected void fireArrow(ItemStack stack, Level level, Player player, InteractionHand hand, float power) {
+        AbstractArrow arrow = createArrow(level, player, stack);
+        if (arrow == null) {
+            BattleOfGods.LOGGER.error("Error: Arrow is null");
+            return;
+        }
+
+        arrow = customizeArrow(arrow);
+
+        float velocityMultiplier = this.getVelocity() * 3.0f;
+        arrow.shootFromRotation(player, player.getXRot(), player.getYRot(), 0.0f, velocityMultiplier * power, 1.0f);
+
+        if (!level.isClientSide) {
+            level.addFreshEntity(arrow);
+            stack.hurtAndBreak(1, player, e -> e.broadcastBreakEvent(hand));
+        }
+
+        // Pfeilverbrauch (außer bei Infinity)
+        boolean hasInfinity = EnchantmentHelper.getTagEnchantmentLevel(Enchantments.INFINITY_ARROWS, stack) > 0;
+        if (!hasInfinity && !player.getAbilities().instabuild) {
+            ItemStack arrowStack = player.getProjectile(stack);
+            if (!arrowStack.isEmpty()) {
+                arrowStack.shrink(1);
+                if (arrowStack.isEmpty()) {
+                    player.getInventory().removeItem(arrowStack);
+                }
+            }
+        }
+
+        level.playSound(null, player.getX(), player.getY(), player.getZ(), this.getSoundEvent(), player.getSoundSource(), 1.0f, 1.0f);
+    }
+
     protected AbstractArrow createArrow(Level level, LivingEntity shooter, ItemStack bowStack) {
-        ArrowItem arrowItem = (ArrowItem) (shooter instanceof Player p ? p.getProjectile(bowStack).getItem() : Items.ARROW);
-        AbstractArrow arrow = arrowItem.createArrow(level, bowStack, shooter);
+        if (!(shooter instanceof Player player)) return null;
+
+        ItemStack arrowStack = player.getProjectile(bowStack);
+        if (arrowStack.isEmpty()) {
+            arrowStack = new ItemStack(Items.ARROW);
+        }
+
+        ArrowItem arrowItem = (ArrowItem) (arrowStack.getItem() instanceof ArrowItem ? arrowStack.getItem() : Items.ARROW);
+        AbstractArrow arrow = arrowItem.createArrow(level, arrowStack, shooter);
 
         // Piercing implementieren
         arrow.setPierceLevel((byte) this.getPiercing());
 
+        // Pickup-Logik
+        boolean isCreative = player.getAbilities().instabuild;
+        if (isCreative || arrowStack.is(Items.SPECTRAL_ARROW) || arrowStack.is(Items.TIPPED_ARROW)) {
+            arrow.pickup = AbstractArrow.Pickup.CREATIVE_ONLY;
+        } else {
+            arrow.pickup = AbstractArrow.Pickup.ALLOWED;
+        }
+
         return arrow;
     }
 
-    protected AbstractArrow customizeArrow(AbstractArrow arrow, float drawProgress) {
+    protected AbstractArrow customizeArrow(AbstractArrow arrow) {
         // Terraria-Damage + Arrow-Damage
         double totalDamage = this.getBaseDamage() + arrow.getBaseDamage();
+        int knockback = this.getKnockback();
+
+        // Überprüfen, ob der Besitzer des Pfeils eine LivingEntity ist
+        if (arrow.getOwner() instanceof LivingEntity owner) {
+            ItemStack ownerItem = owner.getMainHandItem(); // Sicherer Zugriff auf MainHandItem
+
+            // Power-Verzauberung
+            int powerLevel = EnchantmentHelper.getTagEnchantmentLevel(Enchantments.POWER_ARROWS, ownerItem);
+            if (powerLevel > 0) {
+                totalDamage += powerLevel * 0.5 + 0.5;
+            }
+
+            // Punch-Verzauberung
+            int punchLevel = EnchantmentHelper.getTagEnchantmentLevel(Enchantments.PUNCH_ARROWS, ownerItem);
+            if (punchLevel > 0) {
+                knockback += punchLevel;
+            }
+
+            // Flame-Verzauberung
+            if (EnchantmentHelper.getTagEnchantmentLevel(Enchantments.FLAMING_ARROWS, ownerItem) > 0) {
+                arrow.setSecondsOnFire(100);
+            }
+        }
 
         arrow.setBaseDamage(totalDamage);
-        arrow.setKnockback(this.getKnockback());
-
-        // Velocity-Anpassung
-        //arrow.setDeltaMovement(arrow.getDeltaMovement().scale(this.velocity / 3.0f));
-
+        arrow.setKnockback(knockback);
         return arrow;
     }
 
