@@ -121,8 +121,14 @@ public abstract class TerrariaBow extends BowItem implements SubClassMethods {
 
         arrow = customizeArrow(arrow);
 
-        float velocityMultiplier = this.getVelocity();
-        arrow.shootFromRotation(player, player.getXRot(), player.getYRot(), 0.0f, velocityMultiplier * power, 1.0f);
+        // Setze den Schaden vor dem Aufruf von shootFromRotation
+        arrow.setBaseDamage(this.getBaseDamage() / (this.getVelocity() * power * 3f));
+
+        // Schieße den Pfeil
+        arrow.shootFromRotation(player, player.getXRot(), player.getYRot(), 0.0f, this.getVelocity() * power * 3f, 1.0f);
+
+        // Setze den Schaden zurück auf den Basiswert
+        arrow.setBaseDamage(this.getBaseDamage());
 
         if (!level.isClientSide) {
             level.addFreshEntity(arrow);

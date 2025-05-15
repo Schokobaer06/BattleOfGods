@@ -19,12 +19,11 @@
 - [x] JEI Klickbare Area
 - [x] Melee Armor Subclass
     - [x] Setbonus
-- [ ] Wooden Full Set
-    - [ ] Wooden Bow
+- [x] Wooden Full Set
+    - [x] Wooden Bow
     - [x] Wooden Armor
-    - [ ] Wooden Pickaxe
     - [x] Wooden Sword
-    - [ ] Recipes
+    - [x] Recipes
 - [ ] Plains as Default Spawn
 - [x] Categories überarbeiten für einfacheren Zugriff
     - [x] Rarity
@@ -48,6 +47,8 @@
     - [ ] Tin Pickaxe
     - [ ] Tin & Copper Tag
     - [ ] Recipes
+- [ ] Arrows
+  - [ ] Fire Arrow
 - [ ] Iron Full Set
     - [ ] Iron Armor Override
     - [ ] Iron Broadsword/Shortsword

@@ -171,7 +171,7 @@ public abstract class AbstractSubClass {
         }
         //Speed
         if (itemstack.getItem() instanceof TerrariaBow bowItem) {
-            double useTime = bowItem.getUseDuration(itemstack);
+            double useTime = bowItem.getUseTime();
             String UseTimeText = getSpeed(useTime, itemstack.getItem());
             tooltip.add(Component.translatable("tooltip.battleofgods." + UseTimeText).withStyle(ChatFormatting.DARK_GREEN));
         }

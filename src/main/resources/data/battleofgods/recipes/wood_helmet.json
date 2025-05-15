@@ -1,0 +1,16 @@
+{
+  "type": "battleofgods:default_recipe",
+  "group": "workbench",
+  "category": "weapons",
+  "replace": false,
+  "items": [
+    {
+      "item": "minecraft:oak_planks",
+      "count": 20
+    }
+  ],
+  "output": {
+    "item": "battleofgods:wood_armor_helmet",
+    "count": 1
+  }
+}
