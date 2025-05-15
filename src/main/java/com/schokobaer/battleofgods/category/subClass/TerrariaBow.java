@@ -74,7 +74,6 @@ public abstract class TerrariaBow extends BowItem implements SubClassMethods {
             return sb;
         };
     }
-    // TODO :  Arrow Pickup/etc.
 
     @Override
     public void onUseTick(Level level, LivingEntity entity, ItemStack stack, int timeLeft) {
@@ -122,7 +121,7 @@ public abstract class TerrariaBow extends BowItem implements SubClassMethods {
 
         arrow = customizeArrow(arrow);
 
-        float velocityMultiplier = this.getVelocity() * 3.0f;
+        float velocityMultiplier = this.getVelocity();
         arrow.shootFromRotation(player, player.getXRot(), player.getYRot(), 0.0f, velocityMultiplier * power, 1.0f);
 
         if (!level.isClientSide) {
@@ -141,7 +140,8 @@ public abstract class TerrariaBow extends BowItem implements SubClassMethods {
                 }
             }
         }
-
+        if (BattleOfGods.isDebug())
+            BattleOfGods.LOGGER.debug("Arrow fired: {} | {} | {} | {}", arrow.getUUID(), arrow.getPierceLevel(), arrow.getBaseDamage(), arrow.getKnockback());
         level.playSound(null, player.getX(), player.getY(), player.getZ(), this.getSoundEvent(), player.getSoundSource(), 1.0f, 1.0f);
     }
 
@@ -172,7 +172,7 @@ public abstract class TerrariaBow extends BowItem implements SubClassMethods {
 
     protected AbstractArrow customizeArrow(AbstractArrow arrow) {
         // Terraria-Damage + Arrow-Damage
-        double totalDamage = this.getBaseDamage() + arrow.getBaseDamage();
+        double totalDamage = this.getBaseDamage();
         int knockback = this.getKnockback();
 
         // Überprüfen, ob der Besitzer des Pfeils eine LivingEntity ist
@@ -197,6 +197,7 @@ public abstract class TerrariaBow extends BowItem implements SubClassMethods {
             }
         }
 
+
         arrow.setBaseDamage(totalDamage);
         arrow.setKnockback(knockback);
         return arrow;
@@ -204,15 +205,7 @@ public abstract class TerrariaBow extends BowItem implements SubClassMethods {
 
     @Override
     public Multimap<Attribute, AttributeModifier> getAttributeModifiers(EquipmentSlot slot, ItemStack stack) {
-        Multimap<Attribute, AttributeModifier> modifiers = LinkedHashMultimap.create();
-        if (slot == EquipmentSlot.MAINHAND) {
-            modifiers.put(Attributes.ATTACK_DAMAGE,
-                    new AttributeModifier(UUID.fromString("8b9b1e3e-8e1a-4d86-81a1-2b5b0d9d9d9d"),
-                            "ranged_damage_bonus",
-                            this.getBaseDamage(),
-                            AttributeModifier.Operation.ADDITION));
-        }
-        return modifiers;
+        return LinkedHashMultimap.create();
     }
 
     // SubClassMethods Implementierung

@@ -22,7 +22,6 @@
             Player player = event.getEntity();
             boolean isClientSide = player.level().isClientSide();
 
-            // Omni-Sprint-Logik
             if (isClientSide) {
                 KeyMapping sprintKey = Minecraft.getInstance().options.keySprint;
                 boolean wantsToSprint = sprintKey.isDown();
@@ -31,26 +30,23 @@
 
                 isOmniSprinting = isMoving && wantsToSprint && !player.isCrouching();
 
+                // Vanilla-Strafe (0.2F) nur kompensieren, wenn der Bogen aktiv ist
+                if (isUsingBow) {
+                    // Neutralisiere die 80% Reduktion (1 / 0.2 = 5)
+                    float compensation = 5.0F;
+                    event.getInput().leftImpulse *= compensation;
+                    event.getInput().forwardImpulse *= compensation;
+                }
+
+                // Sprint-Logik
                 if (isOmniSprinting) {
                     float multiplier = player.onGround() ? SPRINT_SPEED_MULTIPLIER : AIR_SPRINT_MULTIPLIER;
-
-                    // Kompensiere die Vanilla-Bogen-Verlangsamung
-                    if (isUsingBow) {
-                        multiplier /= 0.7F; // Vanilla reduziert auf 70 %, wir heben das auf
-                    }
-
                     event.getInput().leftImpulse *= multiplier;
                     event.getInput().forwardImpulse *= multiplier;
 
                     if (!player.isSprinting()) {
                         player.setSprinting(true);
                     }
-                }
-
-                // Zusätzlich: Verhindere die Vanilla-Verlangsamung komplett bei Bogen-Nutzung
-                if (isUsingBow) {
-                    event.getInput().leftImpulse /= 0.7F;
-                    event.getInput().forwardImpulse /= 0.7F;
                 }
             }
         }
