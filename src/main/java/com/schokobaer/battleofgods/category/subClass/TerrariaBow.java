@@ -73,7 +73,7 @@ public abstract class TerrariaBow extends BowItem implements SubClassMethods {
             return sb;
         };
     }
-    // TODO :  kein AutoSwing; Arrow Pickup/etc.
+    // TODO :  Arrow Pickup/etc.
 
     @Override
     public void onUseTick(Level level, LivingEntity entity, ItemStack stack, int timeLeft) {
