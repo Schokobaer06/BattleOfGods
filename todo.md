@@ -157,6 +157,7 @@
     - [ ] Spawn Biome
     - [ ] OmniMovement Toggler
 - [ ] Item Count erhöhen
+- [ ] Spawn Bag
 - [ ] Logo
 - [ ] Mod Icon
 - [ ] Custom Main Menu
