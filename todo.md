@@ -36,10 +36,10 @@
   - [ ] optimizing AbstractSubClass
 - [ ] Copper Full Set
     - [ ] Copper Bow
-    - [ ] Copper Helmet
-    - [ ] Copper Chestplate
-    - [ ] Copper Leggings
-    - [ ] Copper Boots
+    - [x] Copper Helmet
+    - [x] Copper Chestplate
+    - [x] Copper Leggings
+    - [x] Copper Boots
     - [ ] Copper Pickaxe
     - [ ] Copper Recipes (Shortsword & Broadsword have to be crafted at anvil)
 - [ ] Tin Full Set
