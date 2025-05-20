@@ -4,11 +4,13 @@ import com.schokobaer.battleofgods.category.mainClass.MainClass;
 import com.schokobaer.battleofgods.category.rarity.Rarity;
 import com.schokobaer.battleofgods.category.tier.Tier;
 import com.schokobaer.battleofgods.dataGeneration.ItemModelProvider;
+import com.schokobaer.battleofgods.dataGeneration.ItemTagProvider;
 import com.schokobaer.battleofgods.handler.ArmorSetBonusHandler;
 import com.schokobaer.battleofgods.handler.RecipeHandler;
 import com.schokobaer.battleofgods.init.*;
 import com.schokobaer.battleofgods.network.CraftPacket;
 import net.minecraft.client.renderer.block.model.ItemModelGenerator;
+import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
 import net.minecraft.network.FriendlyByteBuf;
@@ -37,6 +39,7 @@ import java.util.AbstractMap;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.function.BiConsumer;
 import java.util.function.Function;
@@ -159,8 +162,15 @@ public class BattleOfGods {
         DataGenerator generator = event.getGenerator();
         PackOutput output = generator.getPackOutput();
         ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
+        CompletableFuture<HolderLookup.Provider> lookupProvider = event.getLookupProvider();
 
         // Item Models generieren
+        LOGGER.info("Generating item models");
         generator.addProvider(event.includeClient(), new ItemModelProvider(output, existingFileHelper));
+
+        // Item Tags generieren
+        LOGGER.info("Generating item tags");
+        generator.addProvider(event.includeServer(),
+                new ItemTagProvider(output, lookupProvider, CompletableFuture.completedFuture(null), MODID, existingFileHelper));
     }
 }

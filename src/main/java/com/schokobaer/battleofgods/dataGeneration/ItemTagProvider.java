@@ -17,8 +17,8 @@ import java.util.concurrent.CompletableFuture;
 public class ItemTagProvider extends ItemTagsProvider {
 
 
-    public ItemTagProvider(PackOutput p_275343_, CompletableFuture<HolderLookup.Provider> p_275729_, CompletableFuture<TagLookup<Block>> p_275322_, String modId, @Nullable ExistingFileHelper existingFileHelper) {
-        super(p_275343_, p_275729_, p_275322_, modId, existingFileHelper);
+    public ItemTagProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> holderLookupCompletableFuture, CompletableFuture<TagLookup<Block>> tagLookupCompletableFuture, String modId, @Nullable ExistingFileHelper existingFileHelper) {
+        super(output, holderLookupCompletableFuture, tagLookupCompletableFuture, modId, existingFileHelper);
     }
 
     @Override
@@ -27,11 +27,13 @@ public class ItemTagProvider extends ItemTagsProvider {
             for (RegistryObject<Item> entry : InitItem.ITEMS.getEntries()) {
                 //BattleOfGods.LOGGER.debug(item.get().getClass().getSuperclass().getSuperclass().toString());
                 Item item = entry.get();
-
+                try{
                 if (SubClassMethods.class.isAssignableFrom(item.getClass().getSuperclass())) {
                     SubClassMethods subClassMethods = (SubClassMethods) item.getClass().getSuperclass().cast(item);
                     //String tier = subClassMethods.getTier();
                     //BattleOfGods.LOGGER.debug("Die Parentklasse von {} implementiert SubClassMethods mit Tier: {}", item, tier);
+                }}catch (Exception e){
+                    BattleOfGods.LOGGER.error("Error while generating item tags for item {}", item, e);
                 }
             }
 
