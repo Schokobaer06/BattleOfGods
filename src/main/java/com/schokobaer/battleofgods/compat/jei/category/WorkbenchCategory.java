@@ -1,6 +1,6 @@
 // WorkbenchCategory.java
 package com.schokobaer.battleofgods.compat.jei.category;
-
+/*
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.schokobaer.battleofgods.BattleOfGods;
 import com.schokobaer.battleofgods.handler.RecipeHandler.BattleRecipe;
@@ -93,4 +93,4 @@ public class WorkbenchCategory implements IRecipeCategory<BattleRecipe> {
 
         builder.moveRecipeTransferButton(120, 45);
     }
-}
+}*/

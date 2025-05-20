@@ -1,5 +1,5 @@
 package com.schokobaer.battleofgods.handler;
-
+/*
 import com.schokobaer.battleofgods.BattleOfGods;
 import com.schokobaer.battleofgods.world.inventory.WorkbenchMenu;
 import mezz.jei.api.gui.ingredient.IRecipeSlotsView;
@@ -41,4 +41,4 @@ public class WorkbenchRecipeTransferHandler implements IRecipeTransferHandler<Wo
         }
         return null;
     }
-}
+}*/

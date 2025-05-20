@@ -3,14 +3,19 @@ package com.schokobaer.battleofgods;
 import com.schokobaer.battleofgods.category.mainClass.MainClass;
 import com.schokobaer.battleofgods.category.rarity.Rarity;
 import com.schokobaer.battleofgods.category.tier.Tier;
+import com.schokobaer.battleofgods.dataGeneration.ItemModelProvider;
 import com.schokobaer.battleofgods.handler.ArmorSetBonusHandler;
 import com.schokobaer.battleofgods.handler.RecipeHandler;
 import com.schokobaer.battleofgods.init.*;
 import com.schokobaer.battleofgods.network.CraftPacket;
+import net.minecraft.client.renderer.block.model.ItemModelGenerator;
+import net.minecraft.data.DataGenerator;
+import net.minecraft.data.PackOutput;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.resources.ResourceManagerReloadListener;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.event.AddReloadListenerEvent;
 import net.minecraftforge.event.TickEvent;
@@ -85,7 +90,7 @@ public class BattleOfGods {
         bus.addListener(BattleOfGods::registerRecipeTypes);
         bus.addListener(BattleOfGods::registerRecipeSerializers);
         bus.addListener(ArmorSetBonusHandler::onCommonSetup);
-        bus.addListener(this::gatherData);
+        bus.addListener(BattleOfGods::gatherData);
         //bus.addListener(BowAnimationHandler::onClientSetup);
 
         addNetworkMessage(CraftPacket.class, CraftPacket::encode, CraftPacket::decode, CraftPacket::handle);
@@ -150,54 +155,12 @@ public class BattleOfGods {
     }
 
     @SubscribeEvent
-    public void gatherData(GatherDataEvent event) {
-        /*
-        LOGGER.info("Gathering data");
-        LOGGER.info("Generating subClass tags");
-        event.getGenerator().addProvider(
-                event.includeServer(),
-                (DataProvider.Factory<SubClassTagProvider>) output -> new SubClassTagProvider(
-                        output,
-                        (ResourceKey<? extends Registry<ItemOverride>>) (Object) ForgeRegistries.ITEMS.getRegistryKey(),
-                        event.getLookupProvider(),
-                        MODID,
-                        event.getExistingFileHelper()
-                )
-        );
-        LOGGER.info("Generating mainClass tags");
-        event.getGenerator().addProvider(
-                event.includeServer(),
-                (DataProvider.Factory<MainClassTagProvider>) output -> new MainClassTagProvider(
-                        output,
-                        InitMainClass.MAIN_CLASS_KEY,
-                        event.getLookupProvider(),
-                        MODID,
-                        event.getExistingFileHelper()
-                )
-        );
-        LOGGER.info("Generating Tier tags");
-        event.getGenerator().addProvider(
-                event.includeServer(),
-                (DataProvider.Factory<TierTagProvider>) output -> new TierTagProvider(
-                        output,
-                        InitTier.TIER_KEY,
-                        event.getLookupProvider(),
-                        MODID,
-                        event.getExistingFileHelper()
-                )
-        );
-        LOGGER.info("Generating Rarity tags");
-        event.getGenerator().addProvider(
-                event.includeServer(),
-                (DataProvider.Factory<RarityTagProvider>) output -> new RarityTagProvider(
-                        output,
-                        InitRarity.RARITY_KEY,
-                        event.getLookupProvider(),
-                        MODID,
-                        event.getExistingFileHelper()
-                )
-        );
+    public static void gatherData(GatherDataEvent event) {
+        DataGenerator generator = event.getGenerator();
+        PackOutput output = generator.getPackOutput();
+        ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
 
-         */
+        // Item Models generieren
+        generator.addProvider(event.includeClient(), new ItemModelProvider(output, existingFileHelper));
     }
 }

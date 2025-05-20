@@ -1,6 +1,6 @@
 // JEIPlugin.java
 package com.schokobaer.battleofgods.compat.jei;
-
+/*
 import com.schokobaer.battleofgods.BattleOfGods;
 import com.schokobaer.battleofgods.compat.jei.category.WorkbenchCategory;
 import com.schokobaer.battleofgods.handler.RecipeHandler;
@@ -58,3 +58,5 @@ public class JEIPlugin implements IModPlugin {
         );
     }
 }
+
+ */

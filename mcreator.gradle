@@ -1,4 +1,4 @@
-repositories {
+/*repositories {
   maven {
     url = 'https://cursemaven.com/'
   }
@@ -53,7 +53,7 @@ dependencies {
   implementation fg.deobf('curse.maven:patchouli-306770:4966125')
 }
 
-
+*/
 repositories {
   maven {
       url = 'https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/'
@@ -81,7 +81,7 @@ minecraft {
   }
 }
 
-
+/*
 repositories {
   maven {
     url = 'https://cursemaven.com/'
@@ -154,5 +154,5 @@ dependencies {
     compileOnly(fg.deobf("mezz.jei:jei-1.20.1-forge-api:15.3.0.8"))
     runtimeOnly(fg.deobf("mezz.jei:jei-1.20.1-forge:15.3.0.8"))
 }
-
+*/
 
