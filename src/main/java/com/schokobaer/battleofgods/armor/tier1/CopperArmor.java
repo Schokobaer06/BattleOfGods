@@ -18,14 +18,12 @@ import software.bernie.geckolib.renderer.GeoArmorRenderer;
 
 import java.util.function.Consumer;
 
-public class WoodArmor extends TerrariaArmor {
-    public static final String name = "wood_armor";
-
-    public WoodArmor(Type type) {
-        super(name, new int[]{0, 1, 1, 0},
+public class CopperArmor extends TerrariaArmor {
+    public static final String name = "copper_armor";
+    public CopperArmor(Type type) {
+        super(name,new int[]{1,2,1,0},
                 SoundEvents.ARMOR_EQUIP_GENERIC,
-                15, type,
-                InitRarity.WHITE, InitTier.TIER_1);
+                15, type, InitRarity.WHITE, InitTier.TIER_1);
     }
 
     @Override
@@ -37,9 +35,9 @@ public class WoodArmor extends TerrariaArmor {
             public HumanoidModel<?> getHumanoidArmorModel(LivingEntity livingEntity, ItemStack itemStack, EquipmentSlot equipmentSlot, HumanoidModel<?> original) {
                 if (this.renderer == null) {
                     try {
-                        this.renderer = new WoodArmorRenderer();
+                        this.renderer = new CopperArmorRenderer();
                     } catch (Exception e) {
-                        throw new IllegalStateException("Failed to initialize WoodArmorRenderer", e);
+                        throw new IllegalStateException("Failed to initialize Renderer", e);
                     }
                 }
                 this.renderer.prepForRender(livingEntity, itemStack, equipmentSlot, original);
@@ -48,30 +46,30 @@ public class WoodArmor extends TerrariaArmor {
         });
     }
 
-    public static class WoodArmorModel extends GeoModel<WoodArmor> {
+    public static class CopperArmorModel extends GeoModel<CopperArmor> {
         @Override
-        public ResourceLocation getAnimationResource(WoodArmor object) {
-            return new ResourceLocation(BattleOfGods.MODID, "animations/wood_armor.animation.json");
+        public ResourceLocation getAnimationResource(CopperArmor object) {
+            return new ResourceLocation(BattleOfGods.MODID, "animations/"+ name +".animation.json");
         }
 
         @Override
-        public ResourceLocation getModelResource(WoodArmor object) {
-            return new ResourceLocation(BattleOfGods.MODID, "geo/wood_armor.geo.json");
+        public ResourceLocation getModelResource(CopperArmor object) {
+            return new ResourceLocation(BattleOfGods.MODID, "geo/"+ name +".geo.json");
         }
 
         @Override
-        public ResourceLocation getTextureResource(WoodArmor object) {
-            return new ResourceLocation(BattleOfGods.MODID, "textures/armor/wood_armor.png");
+        public ResourceLocation getTextureResource(CopperArmor object) {
+            return new ResourceLocation(BattleOfGods.MODID, "textures/armor/"+ name +".png");
         }
     }
 
-    public static class WoodArmorRenderer extends GeoArmorRenderer<WoodArmor> {
-        public WoodArmorRenderer() {
-            super(new WoodArmorModel());
+    public static class CopperArmorRenderer extends GeoArmorRenderer<CopperArmor> {
+        public CopperArmorRenderer() {
+            super(new CopperArmorModel());
         }
 
         @Override
-        public RenderType getRenderType(WoodArmor animatable, ResourceLocation texture, MultiBufferSource bufferSource, float partialTick) {
+        public RenderType getRenderType(CopperArmor animatable, ResourceLocation texture, MultiBufferSource bufferSource, float partialTick) {
             return RenderType.entityTranslucentCull(getTextureLocation(animatable));
         }
     }

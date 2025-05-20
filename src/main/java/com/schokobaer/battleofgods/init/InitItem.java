@@ -1,6 +1,7 @@
 package com.schokobaer.battleofgods.init;
 
 import com.schokobaer.battleofgods.BattleOfGods;
+import com.schokobaer.battleofgods.armor.tier1.CopperArmor;
 import com.schokobaer.battleofgods.armor.tier1.WoodArmor;
 import com.schokobaer.battleofgods.category.subClass.TerrariaArmor;
 import com.schokobaer.battleofgods.category.subClass.TerrariaBow;
@@ -42,6 +43,10 @@ public class InitItem {
     public static final RegistryObject<TerrariaArmor> WOOD_ARMOR_CHESTPLATE = ITEMS.register("wood_armor_chestplate", () -> new WoodArmor(ArmorItem.Type.CHESTPLATE));
     public static final RegistryObject<TerrariaArmor> WOOD_ARMOR_LEGGINGS = ITEMS.register("wood_armor_leggings", () -> new WoodArmor(ArmorItem.Type.LEGGINGS));
     public static final RegistryObject<TerrariaArmor> WOOD_ARMOR_BOOTS = ITEMS.register("wood_armor_boots", () -> new WoodArmor(ArmorItem.Type.BOOTS));
+    public static final RegistryObject<TerrariaArmor> COPPER_ARMOR_HELMET = ITEMS.register("copper_armor_helmet", () -> new CopperArmor(ArmorItem.Type.HELMET));
+    public static final RegistryObject<TerrariaArmor> COPPER_ARMOR_CHESTPLATE = ITEMS.register("copper_armor_chestplate", () -> new CopperArmor(ArmorItem.Type.CHESTPLATE));
+    public static final RegistryObject<TerrariaArmor> COPPER_ARMOR_LEGGINGS = ITEMS.register("copper_armor_leggings", () -> new CopperArmor(ArmorItem.Type.LEGGINGS));
+    public static final RegistryObject<TerrariaArmor> COPPER_ARMOR_BOOTS = ITEMS.register("copper_armor_boots", () -> new CopperArmor(ArmorItem.Type.BOOTS));
 
 
     //Methods

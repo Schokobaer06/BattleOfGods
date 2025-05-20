@@ -3,6 +3,7 @@ package com.schokobaer.battleofgods.handler;
 
 import com.schokobaer.battleofgods.BattleOfGods;
 import com.schokobaer.battleofgods.armor.ArmorSetManager;
+import com.schokobaer.battleofgods.armor.tier1.CopperArmor;
 import com.schokobaer.battleofgods.armor.tier1.WoodArmor;
 import com.schokobaer.battleofgods.init.InitItem;
 import net.minecraft.ChatFormatting;
@@ -21,13 +22,15 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import java.util.UUID;
 import java.util.function.Consumer;
 
+import static com.schokobaer.battleofgods.armor.ArmorSetManager.*;
+
 @Mod.EventBusSubscriber(modid = BattleOfGods.MODID)
 public class ArmorSetBonusHandler {
 
     @SubscribeEvent
     public static void onPlayerTick(PlayerTickEvent event) {
         if (event.phase == PlayerTickEvent.Phase.END) {
-            ArmorSetManager.applySetBonuses(event.player);
+            applySetBonuses(event.player);
         }
     }
 
@@ -39,11 +42,11 @@ public class ArmorSetBonusHandler {
         // ArmorSetManager.registerSetBonus("example_set_id", new ArmorSetManager.AttributeModifierBonus(
         //  "example_attribute", new AttributeModifier(...)
         // ));
-        ArmorSetManager.registerArmorSet(WoodArmor.name, InitItem.WOOD_ARMOR_HELMET.get(),
+        registerArmorSet(WoodArmor.name, InitItem.WOOD_ARMOR_HELMET.get(),
                 InitItem.WOOD_ARMOR_CHESTPLATE.get(),
                 InitItem.WOOD_ARMOR_LEGGINGS.get(),
                 InitItem.WOOD_ARMOR_BOOTS.get());
-        ArmorSetManager.registerSetBonus(WoodArmor.name, new ArmorSetManager.AttributeModifierBonus(
+        registerSetBonus(WoodArmor.name, new ArmorSetManager.AttributeModifierBonus(
                 Attributes.ARMOR,
                 new AttributeModifier(
                         UUID.fromString("d4f3b8a0-5c1e-11ec-bf63-0242ac130002"),
@@ -52,19 +55,33 @@ public class ArmorSetBonusHandler {
                         AttributeModifier.Operation.ADDITION
                 )
         ));
+        registerArmorSet(CopperArmor.name, InitItem.COPPER_ARMOR_HELMET.get(),
+                InitItem.COPPER_ARMOR_CHESTPLATE.get(),
+                InitItem.COPPER_ARMOR_LEGGINGS.get(),
+                InitItem.COPPER_ARMOR_BOOTS.get());
+        registerSetBonus(CopperArmor.name, new AttributeModifierBonus(
+                Attributes.ARMOR,
+                new AttributeModifier(
+                        UUID.fromString("d4f3b8a0-5c1e-11ec-bf63-0242ac130002"),
+                        CopperArmor.name + "_set_bonus",
+                        2d,
+                        AttributeModifier.Operation.ADDITION
+                )
+        ));
+
         if (BattleOfGods.isDebug()) {
-            BattleOfGods.LOGGER.debug("Registered armor sets: {}", ArmorSetManager.getAllArmorSets());
-            BattleOfGods.LOGGER.debug("Registered set bonuses: {}", ArmorSetManager.getAllSetBonuses());
+            BattleOfGods.LOGGER.debug("Registered armor sets: {}", getAllArmorSets());
+            BattleOfGods.LOGGER.debug("Registered set bonuses: {}", getAllSetBonuses());
         }
     }
 
     @OnlyIn(Dist.CLIENT)
     @SubscribeEvent
     public static void onItemTooltip(ItemTooltipEvent event) {
-        Consumer<Player> setBonus = ArmorSetManager.getSetBonus(event.getItemStack().getItem());
+        Consumer<Player> setBonus = getSetBonus(event.getItemStack().getItem());
 
 
-        if (setBonus instanceof ArmorSetManager.AttributeModifierBonus bonus) {
+        if (setBonus instanceof AttributeModifierBonus bonus) {
             event.getToolTip().add(
                     Component.translatable("tooltip.battleofgods.armor_set_bonus")
                             .withStyle(ChatFormatting.BLUE)
