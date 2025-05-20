@@ -3,6 +3,7 @@ package com.schokobaer.battleofgods;
 import com.schokobaer.battleofgods.category.mainClass.MainClass;
 import com.schokobaer.battleofgods.category.rarity.Rarity;
 import com.schokobaer.battleofgods.category.tier.Tier;
+import com.schokobaer.battleofgods.dataGeneration.BattleRecipeProvider;
 import com.schokobaer.battleofgods.dataGeneration.ItemModelProvider;
 import com.schokobaer.battleofgods.dataGeneration.ItemTagProvider;
 import com.schokobaer.battleofgods.handler.ArmorSetBonusHandler;
@@ -172,5 +173,9 @@ public class BattleOfGods {
         LOGGER.info("Generating item tags");
         generator.addProvider(event.includeServer(),
                 new ItemTagProvider(output, lookupProvider, CompletableFuture.completedFuture(null), MODID, existingFileHelper));
+
+        // Recipes generieren
+        LOGGER.info("Generating recipes");
+        generator.addProvider(event.includeServer(), new BattleRecipeProvider(output));
     }
 }
