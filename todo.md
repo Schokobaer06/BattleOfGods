@@ -135,10 +135,12 @@
 - [ ] Defense
 - [ ] Animals
     - [ ] Squirrel
-- [ ] NPCS
+- [ ] NPCs
     - [ ] Guide
     - [ ] Merchant
     - [ ] Squirrel with Hat
+- [ ] Difficulty
+  - [ ] DifficultyEvent
 - [ ] Boss
     - [ ] Events
         - [ ] BossAliveEvent
