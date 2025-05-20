@@ -1,4 +1,4 @@
-package com.schokobaer.battleofgods.tag;
+package com.schokobaer.battleofgods.dataGeneration;
 
 import com.schokobaer.battleofgods.BattleOfGods;
 import com.schokobaer.battleofgods.init.InitItem;
