@@ -1,6 +1,7 @@
 package com.schokobaer.battleofgods.dataGeneration;
 
 import com.schokobaer.battleofgods.BattleOfGods;
+import com.schokobaer.battleofgods.category.SubClassMethods;
 import com.schokobaer.battleofgods.init.InitItem;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
@@ -23,8 +24,15 @@ public class ItemTagProvider extends ItemTagsProvider {
     @Override
     protected void addTags(HolderLookup.Provider provider) {
         try {
-            for (RegistryObject<Item> item : InitItem.ITEMS.getEntries()) {
-                BattleOfGods.LOGGER.debug(item.get().getClass().getSuperclass().getSuperclass().toString());
+            for (RegistryObject<Item> entry : InitItem.ITEMS.getEntries()) {
+                //BattleOfGods.LOGGER.debug(item.get().getClass().getSuperclass().getSuperclass().toString());
+                Item item = entry.get();
+
+                if (SubClassMethods.class.isAssignableFrom(item.getClass().getSuperclass())) {
+                    SubClassMethods subClassMethods = (SubClassMethods) item.getClass().getSuperclass().cast(item);
+                    //String tier = subClassMethods.getTier();
+                    //BattleOfGods.LOGGER.debug("Die Parentklasse von {} implementiert SubClassMethods mit Tier: {}", item, tier);
+                }
             }
 
         } catch (Exception e) {

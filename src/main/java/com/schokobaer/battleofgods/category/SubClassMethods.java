@@ -1,6 +1,9 @@
 package com.schokobaer.battleofgods.category;
 
 import com.google.common.collect.Multimap;
+import com.schokobaer.battleofgods.category.mainClass.MainClass;
+import com.schokobaer.battleofgods.category.rarity.Rarity;
+import com.schokobaer.battleofgods.category.tier.Tier;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.ai.attributes.Attribute;
@@ -20,6 +23,13 @@ public interface SubClassMethods {
 
     boolean isFireResistant();
 
-    // Todo: isAutoSwing()
     Multimap<Attribute, AttributeModifier> getAttributeModifiers(EquipmentSlot slot, ItemStack stack);
+    /*
+    boolean isAutoSwing();
+
+    MainClass getMainClass();
+    Rarity getRarity();
+    Tier getTier();
+
+     */
 }
