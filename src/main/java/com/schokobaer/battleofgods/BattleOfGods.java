@@ -1,8 +1,5 @@
 package com.schokobaer.battleofgods;
 
-import com.schokobaer.battleofgods.category.mainClass.MainClass;
-import com.schokobaer.battleofgods.category.rarity.Rarity;
-import com.schokobaer.battleofgods.category.tier.GameTier;
 import com.schokobaer.battleofgods.dataGeneration.BattleRecipeProvider;
 import com.schokobaer.battleofgods.dataGeneration.ItemModelProvider;
 import com.schokobaer.battleofgods.dataGeneration.ItemTagProvider;
@@ -31,7 +28,6 @@ import net.minecraftforge.network.NetworkRegistry;
 import net.minecraftforge.network.simple.SimpleChannel;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegisterEvent;
-import net.minecraftforge.registries.RegistryBuilder;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -64,21 +60,7 @@ public class BattleOfGods {
         // End of user code block mod constructor
         MinecraftForge.EVENT_BUS.register(this);
         IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
-        // Start of user code block mod init
-        InitTier.TIERS.makeRegistry(() -> new RegistryBuilder<GameTier>()
-                .setName(InitTier.TIER_KEY.location())
-                .hasTags());
-        InitRarity.RARITIES.makeRegistry(() -> new RegistryBuilder<Rarity>()
-                .setName(InitRarity.RARITY_KEY.location())
-                .hasTags());
-        InitMainClass.MAIN_CLASSES.makeRegistry(() -> new RegistryBuilder<MainClass>()
-                .setName(InitMainClass.MAIN_CLASS_KEY.location())
-                .hasTags());
-
-
-        InitTier.TIERS.register(bus);
-        InitRarity.RARITIES.register(bus);
-        InitMainClass.MAIN_CLASSES.register(bus);
+        // Start of user code block mod init;
         InitItem.ITEMS.register(bus);
 
         InitAttributes.ATTRIBUTES.register(bus);
@@ -134,30 +116,6 @@ public class BattleOfGods {
     }
 
     @SubscribeEvent
-    public void tick(TickEvent.ServerTickEvent event) {
-        if (event.phase == TickEvent.Phase.END) {
-            List<AbstractMap.SimpleEntry<Runnable, Integer>> actions = new ArrayList<>();
-            workQueue.forEach(work -> {
-                work.setValue(work.getValue() - 1);
-                if (work.getValue() == 0)
-                    actions.add(work);
-            });
-            actions.forEach(e -> e.getKey().run());
-            workQueue.removeAll(actions);
-        }
-    }
-
-
-    @SubscribeEvent
-    public void addReloadListeners(AddReloadListenerEvent event) {
-        event.addListener((ResourceManagerReloadListener) manager -> {
-            if (isDebug())
-                LOGGER.debug("Reloading recipes");
-            RecipeHandler.loadRecipes(manager);
-        });
-    }
-
-    @SubscribeEvent
     public static void gatherData(GatherDataEvent event) {
         DataGenerator generator = event.getGenerator();
         PackOutput output = generator.getPackOutput();
@@ -176,5 +134,28 @@ public class BattleOfGods {
         // Recipes generieren
         LOGGER.info("Generating recipes");
         generator.addProvider(event.includeServer(), new BattleRecipeProvider(output));
+    }
+
+    @SubscribeEvent
+    public void tick(TickEvent.ServerTickEvent event) {
+        if (event.phase == TickEvent.Phase.END) {
+            List<AbstractMap.SimpleEntry<Runnable, Integer>> actions = new ArrayList<>();
+            workQueue.forEach(work -> {
+                work.setValue(work.getValue() - 1);
+                if (work.getValue() == 0)
+                    actions.add(work);
+            });
+            actions.forEach(e -> e.getKey().run());
+            workQueue.removeAll(actions);
+        }
+    }
+
+    @SubscribeEvent
+    public void addReloadListeners(AddReloadListenerEvent event) {
+        event.addListener((ResourceManagerReloadListener) manager -> {
+            if (isDebug())
+                LOGGER.debug("Reloading recipes");
+            RecipeHandler.loadRecipes(manager);
+        });
     }
 }
