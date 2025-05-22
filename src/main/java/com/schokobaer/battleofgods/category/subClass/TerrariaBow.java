@@ -7,7 +7,7 @@ import com.schokobaer.battleofgods.category.AbstractSubClass;
 import com.schokobaer.battleofgods.category.SubClassMethods;
 import com.schokobaer.battleofgods.category.mainClass.MainClasses;
 import com.schokobaer.battleofgods.category.rarity.Rarity;
-import com.schokobaer.battleofgods.category.tier.Tier;
+import com.schokobaer.battleofgods.category.tier.GameTier;
 import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
@@ -16,7 +16,6 @@ import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
-import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.item.*;
@@ -26,8 +25,6 @@ import net.minecraft.world.level.Level;
 import net.minecraftforge.registries.RegistryObject;
 
 import java.util.List;
-import java.util.Objects;
-import java.util.UUID;
 import java.util.function.Supplier;
 
 public abstract class TerrariaBow extends BowItem implements SubClassMethods {
@@ -53,9 +50,9 @@ public abstract class TerrariaBow extends BowItem implements SubClassMethods {
      * @param autoSwing  If the bow is semi- or fully automatic
      * @param piercing   Level of piercing of the bow
      * @param rarity     Rarity of the bow
-     * @param tier       Tier of the bow
+     * @param tier       GameTier of the bow
      */
-    public TerrariaBow(int baseDamage, float velocity, int useTime, int knockback, boolean autoSwing, int piercing, RegistryObject<Rarity> rarity, RegistryObject<Tier> tier) {
+    public TerrariaBow(int baseDamage, float velocity, int useTime, int knockback, boolean autoSwing, int piercing, RegistryObject<Rarity> rarity, RegistryObject<GameTier> tier) {
         super(new Properties().durability(0).defaultDurability(0).setNoRepair());
 
         this.baseDamage = baseDamage;

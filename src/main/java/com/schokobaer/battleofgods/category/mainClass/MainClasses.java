@@ -1,16 +1,25 @@
 package com.schokobaer.battleofgods.category.mainClass;
 
-import com.schokobaer.battleofgods.init.InitMainClass;
+public enum MainClasses implements MainClass{
+    MISC("misc"),
+    MELEE("melee"),
+    RANGED("ranged"),
+    MAGIC("magic"),
+    SUMMONING("summoning"),
+    ROGUE("rogue"),
+    HEALING("healing"),
+    BARD("bard"),
+    TOOL("tool"),
+    ARMOR("armor");
 
-public class MainClasses {
-    public static final MainClass MELEE = InitMainClass.MELEE.get();
-    public static final MainClass MISC = InitMainClass.MISC.get();
-    public static final MainClass RANGED = InitMainClass.RANGED.get();
-    public static final MainClass MAGIC = InitMainClass.MAGIC.get();
-    public static final MainClass SUMMONING = InitMainClass.SUMMONING.get();
-    public static final MainClass ROGUE = InitMainClass.ROGUE.get();
-    public static final MainClass HEALING = InitMainClass.HEALING.get();
-    public static final MainClass BARD = InitMainClass.BARD.get();
-    public static final MainClass TOOL = InitMainClass.TOOL.get();
-    public static final MainClass ARMOR = InitMainClass.ARMOR.get();
+    private final String name;
+
+    MainClasses(String name) {
+        this.name = name;
+    }
+
+
+    public String getName() {
+        return name;
+    }
 }

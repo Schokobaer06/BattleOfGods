@@ -2,7 +2,7 @@ package com.schokobaer.battleofgods;
 
 import com.schokobaer.battleofgods.category.mainClass.MainClass;
 import com.schokobaer.battleofgods.category.rarity.Rarity;
-import com.schokobaer.battleofgods.category.tier.Tier;
+import com.schokobaer.battleofgods.category.tier.GameTier;
 import com.schokobaer.battleofgods.dataGeneration.BattleRecipeProvider;
 import com.schokobaer.battleofgods.dataGeneration.ItemModelProvider;
 import com.schokobaer.battleofgods.dataGeneration.ItemTagProvider;
@@ -10,7 +10,6 @@ import com.schokobaer.battleofgods.handler.ArmorSetBonusHandler;
 import com.schokobaer.battleofgods.handler.RecipeHandler;
 import com.schokobaer.battleofgods.init.*;
 import com.schokobaer.battleofgods.network.CraftPacket;
-import net.minecraft.client.renderer.block.model.ItemModelGenerator;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
@@ -66,7 +65,7 @@ public class BattleOfGods {
         MinecraftForge.EVENT_BUS.register(this);
         IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
         // Start of user code block mod init
-        InitTier.TIERS.makeRegistry(() -> new RegistryBuilder<Tier>()
+        InitTier.TIERS.makeRegistry(() -> new RegistryBuilder<GameTier>()
                 .setName(InitTier.TIER_KEY.location())
                 .hasTags());
         InitRarity.RARITIES.makeRegistry(() -> new RegistryBuilder<Rarity>()

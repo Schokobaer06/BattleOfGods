@@ -6,6 +6,7 @@ import com.schokobaer.battleofgods.category.AbstractSubClass;
 import com.schokobaer.battleofgods.category.SubClassMethods;
 import com.schokobaer.battleofgods.category.mainClass.MainClasses;
 import com.schokobaer.battleofgods.category.rarity.Rarity;
+import com.schokobaer.battleofgods.category.tier.GameTier;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.ai.attributes.Attribute;
@@ -27,7 +28,7 @@ public abstract class Shortsword extends SwordItem implements SubClassMethods {
     private final double knockback;
     private final Supplier<AbstractSubClass> subClass;
 
-    public Shortsword(int attackDamage, float attackSpeed, double knockback, int enchantmentValue, RegistryObject<Rarity> rarity, RegistryObject<com.schokobaer.battleofgods.category.tier.Tier> tier) {
+    public Shortsword(int attackDamage, float attackSpeed, double knockback, int enchantmentValue, RegistryObject<Rarity> rarity, RegistryObject<GameTier> tier) {
         super(new Tier() {
             @Override
             public int getUses() {
@@ -73,7 +74,7 @@ public abstract class Shortsword extends SwordItem implements SubClassMethods {
         };
     }
 
-    public Shortsword(Tier gameTier, int attackDamage, float attackSpeed, double knockback, Properties properties, RegistryObject<Rarity> rarity, RegistryObject<com.schokobaer.battleofgods.category.tier.Tier> tier) {
+    public Shortsword(Tier gameTier, int attackDamage, float attackSpeed, double knockback, Properties properties, RegistryObject<Rarity> rarity, RegistryObject<GameTier> tier) {
         super(gameTier, attackDamage, attackSpeed, properties);
         this.knockback = knockback;
         this.subClass = () -> {

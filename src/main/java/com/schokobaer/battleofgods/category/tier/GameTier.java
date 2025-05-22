@@ -1,4 +1,5 @@
 package com.schokobaer.battleofgods.category.tier;
 
-public record Tier(String name) {
+public interface GameTier {
+    String getName();
 }

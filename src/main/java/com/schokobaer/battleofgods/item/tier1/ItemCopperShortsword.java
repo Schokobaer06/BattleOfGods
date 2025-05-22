@@ -4,8 +4,6 @@ import com.google.common.collect.LinkedHashMultimap;
 import com.google.common.collect.Multimap;
 import com.schokobaer.battleofgods.category.subClass.Shortsword;
 import com.schokobaer.battleofgods.init.InitAttributes;
-import com.schokobaer.battleofgods.init.InitRarity;
-import com.schokobaer.battleofgods.init.InitTier;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;

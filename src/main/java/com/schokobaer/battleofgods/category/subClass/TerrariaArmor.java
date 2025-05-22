@@ -5,7 +5,7 @@ import com.schokobaer.battleofgods.category.AbstractSubClass;
 import com.schokobaer.battleofgods.category.SubClassMethods;
 import com.schokobaer.battleofgods.category.mainClass.MainClasses;
 import com.schokobaer.battleofgods.category.rarity.Rarity;
-import com.schokobaer.battleofgods.category.tier.Tier;
+import com.schokobaer.battleofgods.category.tier.GameTier;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
@@ -46,9 +46,9 @@ public abstract class TerrariaArmor extends ArmorItem implements GeoItem, SubCla
      * @param type       Helmet, Chestplate, Leggings, Boots
      * @param properties Item properties
      * @param rarity     Rarity of the item
-     * @param tier       Tier of the item
+     * @param tier       GameTier of the item
      */
-    public TerrariaArmor(String name, ArmorMaterial material, Type type, Properties properties, RegistryObject<Rarity> rarity, RegistryObject<Tier> tier) {
+    public TerrariaArmor(String name, ArmorMaterial material, Type type, Properties properties, RegistryObject<Rarity> rarity, RegistryObject<GameTier> tier) {
         super(material, type, properties);
         this.defense = material.getDefenseForType(type);
         this.subClass = () -> {
@@ -72,9 +72,9 @@ public abstract class TerrariaArmor extends ArmorItem implements GeoItem, SubCla
      * @param enchantmentValue Enchantment value when enchanting
      * @param type             Armor type (Helmet, Chestplate, Leggings, Boots)
      * @param rarity           Rarity of the item
-     * @param tier             Tier of the item
+     * @param tier             GameTier of the item
      */
-    public TerrariaArmor(String name, int[] defense, SoundEvent soundEvent, int enchantmentValue, Type type, RegistryObject<Rarity> rarity, RegistryObject<Tier> tier) {
+    public TerrariaArmor(String name, int[] defense, SoundEvent soundEvent, int enchantmentValue, Type type, RegistryObject<Rarity> rarity, RegistryObject<GameTier> tier) {
         super(new ArmorMaterial() {
             @Override
             public int getDurabilityForType(Type type1) {

@@ -3,12 +3,12 @@ package com.schokobaer.battleofgods.category;
 
 import com.schokobaer.battleofgods.category.mainClass.MainClass;
 import com.schokobaer.battleofgods.category.mainClass.MainClasses;
+import com.schokobaer.battleofgods.category.rarity.Rarities;
 import com.schokobaer.battleofgods.category.rarity.Rarity;
 import com.schokobaer.battleofgods.category.subClass.TerrariaArmor;
 import com.schokobaer.battleofgods.category.subClass.TerrariaBow;
-import com.schokobaer.battleofgods.category.tier.Tier;
-import com.schokobaer.battleofgods.init.InitRarity;
-import com.schokobaer.battleofgods.init.InitTier;
+import com.schokobaer.battleofgods.category.tier.GameTier;
+import com.schokobaer.battleofgods.category.tier.GameTiers;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.Style;
@@ -26,7 +26,7 @@ import java.util.List;
 public abstract class AbstractSubClass {
     private MainClass mainClass = null;
     private Rarity rarity = null;
-    private Tier tier = null;
+    private GameTier tier = null;
 
 
     public AbstractSubClass() {
@@ -86,31 +86,45 @@ public abstract class AbstractSubClass {
         else return MainClasses.MISC;
     }
 
+    public static MainClass getMainClass(Item item){
+        if (item instanceof SwordItem) {
+            return MainClasses.MELEE;
+        } else if (item instanceof BowItem) {
+            return MainClasses.RANGED;
+        } else if (item instanceof ArmorItem) {
+            return MainClasses.ARMOR;
+        } else {
+            return MainClasses.MISC;
+        }
+    }
+
     public void setMainClass(MainClass mainClass) {
         this.mainClass = mainClass;
     }
 
     public Rarity getRarity() {
         if (rarity != null) return rarity;
-        else return InitRarity.WHITE.get();
+        else return Rarities.WHITE.getRarity();
     }
 
     public void setRarity(Rarity rarity) {
         this.rarity = rarity;
     }
 
-    public Tier getTier() {
+    public GameTier getTier() {
         if (tier != null) return tier;
-        else return InitTier.TIER_1.get();
+        else return GameTiers.TIER_1;
     }
 
-    public void setTier(Tier tier) {
+    public void setTier(GameTier tier) {
         this.tier = tier;
     }
 
     public Component getName(Component name) {
         return name.copy().withStyle(Style.EMPTY.withColor(this.getRarity().getColor()));
     }
+
+
 
     @OnlyIn(Dist.CLIENT)
     public void appendHoverText(ItemStack itemstack, Level level, List<net.minecraft.network.chat.Component> tooltip, TooltipFlag flag) {
@@ -154,7 +168,7 @@ public abstract class AbstractSubClass {
         if (itemstack.getItem() instanceof SwordItem swordItem) {
             float damage = swordItem.getDamage() + 1;
             String damageText = (damage % 1 == 0) ? String.valueOf((int) damage) : String.valueOf(damage);
-            tooltip.add(Component.literal(damageText + " " + this.getMainClass().name() + " ")
+            tooltip.add(Component.literal(damageText + " " + this.getMainClass().getName() + " ")
                     .append(Component.translatable("tooltip.battleofgods.damage"))
                     .withStyle(ChatFormatting.DARK_GREEN));
         }
@@ -165,7 +179,7 @@ public abstract class AbstractSubClass {
         if (itemstack.getItem() instanceof TerrariaBow bowItem) {
             float damage = bowItem.getBaseDamage();
             String damageText = (damage % 1 == 0) ? String.valueOf((int) damage) : String.valueOf(damage);
-            tooltip.add(Component.literal(damageText + " " + this.getMainClass().name() + " ")
+            tooltip.add(Component.literal(damageText + " " + this.getMainClass().getName() + " ")
                     .append(Component.translatable("tooltip.battleofgods.damage"))
                     .withStyle(ChatFormatting.DARK_GREEN));
         }
@@ -199,4 +213,6 @@ public abstract class AbstractSubClass {
         }
         return retval;
     }
+
+
 }

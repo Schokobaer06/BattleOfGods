@@ -31,7 +31,7 @@ public class ItemTagProvider extends ItemTagsProvider {
                 if (SubClassMethods.class.isAssignableFrom(item.getClass().getSuperclass())) {
                     SubClassMethods subClassMethods = (SubClassMethods) item.getClass().getSuperclass().cast(item);
                     //String tier = subClassMethods.getTier();
-                    //BattleOfGods.LOGGER.debug("Die Parentklasse von {} implementiert SubClassMethods mit Tier: {}", item, tier);
+                    //BattleOfGods.LOGGER.debug("Die Parentklasse von {} implementiert SubClassMethods mit GameTier: {}", item, tier);
                 }}catch (Exception e){
                     BattleOfGods.LOGGER.error("Error while generating item tags for item {}", item, e);
                 }
