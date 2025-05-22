@@ -27,6 +27,7 @@ import java.util.stream.Collectors;
 public class RecipeHandler {
     private static final List<BattleRecipe> RECIPES = new ArrayList<>();
     private static final Map<ResourceLocation, BattleRecipe> RECIPE_MAP = new HashMap<>();
+    private static final Set<Item> MATERIAL_ITEMS = new HashSet<>();
 
     // Comparator, sorts by category and then by group
     private static final Comparator<BattleRecipe> RECIPE_COMPARATOR =
@@ -88,7 +89,6 @@ public class RecipeHandler {
                 } catch (Exception e) {
                     if (!(e instanceof NullPointerException))
                         BattleOfGods.LOGGER.error("Failed to load recipe: {}", resource, e);
-                    //BattleOfGods.LOGGER.warn("Failed to load recipe: {}", resource);
                 }
             }
 
@@ -96,6 +96,19 @@ public class RecipeHandler {
             BattleOfGods.LOGGER.info("Loaded {} recipes", RECIPES.size());
         } catch (Exception e) {
             BattleOfGods.LOGGER.error("Failed to load recipes!", e);
+        }
+
+        initializeMaterialItems();
+    }
+
+    private static void initializeMaterialItems() {
+        MATERIAL_ITEMS.clear();
+        for (BattleRecipe recipe : getAllRecipes()) {
+            for (BattleRecipe.IngredientEntry entry : recipe.getInputs()) {
+                for (ItemStack stack : entry.ingredient().getItems()) {
+                    MATERIAL_ITEMS.add(stack.getItem());
+                }
+            }
         }
     }
 
@@ -186,7 +199,7 @@ public class RecipeHandler {
      *
      * @param player current player
      * @param group  the group of the recipe
-     * @return
+     * @return List<BattleRecipe> list of craftable recipes in the group
      */
     public static List<BattleRecipe> getCraftableRecipesByGroup(Player player, String group) {
         return getRecipesByGroup(group).stream()
@@ -195,12 +208,26 @@ public class RecipeHandler {
                 .collect(Collectors.toList());
     }
 
+    /**
+     * Get all recipes which have the given ingredient
+     * @param ingredient the ingredient to search for
+     * @return List<BattleRecipe> list of recipes which have the ingredient
+     */
     public static List<RecipeHandler.BattleRecipe> getRecipesByIngredient(Ingredient ingredient) {
         return getAllRecipes().stream()
                 .filter(recipe -> recipe.getInputs().stream()
                         .anyMatch(entry -> entry.ingredient().equals(ingredient)))
                 .sorted(RECIPE_COMPARATOR)
                 .collect(Collectors.toList());
+    }
+
+    /**
+     * Returns true if the item is a input for any recipe
+     * @param item the item to check
+     * @return true if the item is a input for any recipe, false otherwise
+     */
+    public static boolean isMaterial(Item item) {
+        return MATERIAL_ITEMS.contains(item);
     }
 
 

@@ -32,7 +32,7 @@ public abstract class AbstractSubClass {
     public AbstractSubClass() {
     }
 
-    private static @NotNull String getKnockback(double knockback, Item item) {
+    public static @NotNull String getKnockback(double knockback, Item item) {
         double kb;
         if (item instanceof BowItem)
             kb = knockback;
@@ -54,7 +54,7 @@ public abstract class AbstractSubClass {
         return kbText;
     }
 
-    private static @NotNull String getSpeed(double attackSpeed, Item item) {
+    public static @NotNull String getSpeed(double attackSpeed, Item item) {
         // Terraria-UseTime aus Minecraft-APS errechnen
         int useTime;
         if (item instanceof TerrariaBow)
