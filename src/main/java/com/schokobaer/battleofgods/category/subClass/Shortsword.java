@@ -4,21 +4,19 @@ import com.google.common.collect.LinkedHashMultimap;
 import com.google.common.collect.Multimap;
 import com.schokobaer.battleofgods.category.AbstractSubClass;
 import com.schokobaer.battleofgods.category.SubClassMethods;
+import com.schokobaer.battleofgods.category.mainClass.MainClass;
 import com.schokobaer.battleofgods.category.mainClass.MainClasses;
+import com.schokobaer.battleofgods.category.rarity.Rarities;
 import com.schokobaer.battleofgods.category.rarity.Rarity;
 import com.schokobaer.battleofgods.category.tier.GameTier;
+import com.schokobaer.battleofgods.category.tier.Tiers;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.SwordItem;
-import net.minecraft.world.item.Tier;
-import net.minecraft.world.item.TooltipFlag;
-import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.item.*;
 import net.minecraft.world.level.Level;
-import net.minecraftforge.registries.RegistryObject;
 
 import java.util.List;
 import java.util.UUID;
@@ -27,62 +25,25 @@ import java.util.function.Supplier;
 public abstract class Shortsword extends SwordItem implements SubClassMethods {
     private final double knockback;
     private final Supplier<AbstractSubClass> subClass;
+    private boolean autoSwing;
 
-    public Shortsword(int attackDamage, float attackSpeed, double knockback, int enchantmentValue, RegistryObject<Rarity> rarity, RegistryObject<GameTier> tier) {
-        super(new Tier() {
-            @Override
-            public int getUses() {
-                return 0;
-            }
-
-            @Override
-            public float getSpeed() {
-                return 0;
-            }
-
-            @Override
-            public float getAttackDamageBonus() {
-                return 0;
-            }
-
-            @Override
-            public int getLevel() {
-                return 0;
-            }
-
-            @Override
-            public int getEnchantmentValue() {
-                return enchantmentValue;
-            }
-
-            @Override
-            public Ingredient getRepairIngredient() {
-                return null;
-            }
-        }, attackDamage - 1, attackSpeed - 4, new Properties()
-                .durability(0)
-                .defaultDurability(0)
-                .setNoRepair());
+    public Shortsword(Tier tier, int attackDamage, float attackSpeed, double knockback, boolean isAutoSwing, GameTier gameTier) {
+        super(tier, attackDamage - 1, attackSpeed - 4,
+                new Properties().durability(0)
+                        .defaultDurability(0)
+                        .setNoRepair());
         this.knockback = knockback;
+        this.autoSwing = isAutoSwing;
         this.subClass = () -> {
             AbstractSubClass sb = new AbstractSubClass() {
             };
             sb.setMainClass(MainClasses.MELEE);
-            sb.setRarity(rarity.get());
-            sb.setTier(tier.get());
-            return sb;
-        };
-    }
-
-    public Shortsword(Tier gameTier, int attackDamage, float attackSpeed, double knockback, Properties properties, RegistryObject<Rarity> rarity, RegistryObject<GameTier> tier) {
-        super(gameTier, attackDamage, attackSpeed, properties);
-        this.knockback = knockback;
-        this.subClass = () -> {
-            AbstractSubClass sb = new AbstractSubClass() {
-            };
-            sb.setMainClass(MainClasses.MELEE);
-            sb.setRarity(rarity.get());
-            sb.setTier(tier.get());
+            if (tier instanceof com.schokobaer.battleofgods.category.tier.Tiers) {
+                sb.setRarity(((Tiers) tier).getRarity());
+            } else {
+                sb.setRarity(Rarities.WHITE.getRarity());
+            }
+            sb.setGameTier(gameTier);
             return sb;
         };
     }
@@ -130,6 +91,45 @@ public abstract class Shortsword extends SwordItem implements SubClassMethods {
             );
         }
         return modifiers;
+    }
+
+    public boolean isAutoSwing() {
+        return autoSwing;
+    }
+
+    public void setAutoSwing(boolean autoSwing) {
+        this.autoSwing = autoSwing;
+    }
+
+    public MainClass getMainClass() {
+        return subClass.get().getMainClass();
+    }
+
+    public Rarity getRarity() {
+        return subClass.get().getRarity();
+    }
+
+    public void setRarity(Rarity rarity) {
+        subClass.get().setRarity(rarity);
+    }
+
+    public GameTier getGameTier() {
+        return subClass.get().getGameTier();
+    }
+
+    @Override
+    public net.minecraft.world.item.Rarity getRarity(ItemStack stack) {
+        Item item = stack.getItem();
+        if (item.getClass().getSuperclass() != null && SubClassMethods.class.isAssignableFrom(item.getClass().getSuperclass())) {
+            SubClassMethods subClassItem = (SubClassMethods) item.getClass().getSuperclass().cast(item);
+            return subClassItem.getRarity().asMinecraftRarity();
+        }
+        return super.getRarity(stack);
+    }
+
+    @Override
+    public int getKnockback() {
+        return (int) knockback;
     }
 }
 

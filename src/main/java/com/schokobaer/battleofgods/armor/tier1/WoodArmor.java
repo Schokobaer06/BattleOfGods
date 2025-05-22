@@ -2,6 +2,8 @@ package com.schokobaer.battleofgods.armor.tier1;
 
 import com.schokobaer.battleofgods.BattleOfGods;
 import com.schokobaer.battleofgods.category.subClass.TerrariaArmor;
+import com.schokobaer.battleofgods.category.tier.GameTiers;
+import com.schokobaer.battleofgods.category.tier.Tiers;
 import net.minecraft.client.model.HumanoidModel;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
@@ -21,9 +23,7 @@ public class WoodArmor extends TerrariaArmor {
 
     public WoodArmor(Type type) {
         super(name, new int[]{0, 1, 1, 0},
-                SoundEvents.ARMOR_EQUIP_GENERIC,
-                15, type,
-                InitRarity.WHITE, InitTier.TIER_1);
+                SoundEvents.ARMOR_EQUIP_GENERIC, type, Tiers.WHITE, GameTiers.TIER_1);
     }
 
     @Override

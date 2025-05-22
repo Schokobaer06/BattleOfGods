@@ -5,6 +5,7 @@ import com.google.common.collect.Multimap;
 import com.schokobaer.battleofgods.BattleOfGods;
 import com.schokobaer.battleofgods.category.AbstractSubClass;
 import com.schokobaer.battleofgods.category.SubClassMethods;
+import com.schokobaer.battleofgods.category.mainClass.MainClass;
 import com.schokobaer.battleofgods.category.mainClass.MainClasses;
 import com.schokobaer.battleofgods.category.rarity.Rarity;
 import com.schokobaer.battleofgods.category.tier.GameTier;
@@ -22,9 +23,7 @@ import net.minecraft.world.item.*;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.Level;
-import net.minecraftforge.registries.RegistryObject;
 
-import java.util.List;
 import java.util.function.Supplier;
 
 public abstract class TerrariaBow extends BowItem implements SubClassMethods {
@@ -35,7 +34,6 @@ public abstract class TerrariaBow extends BowItem implements SubClassMethods {
     private int useTime;
     private int knockback;
     private boolean autoSwing;
-    private int cooldown = 0;
     private int piercing;
     private SoundEvent soundEvent = SoundEvents.ARROW_SHOOT;
 
@@ -52,7 +50,7 @@ public abstract class TerrariaBow extends BowItem implements SubClassMethods {
      * @param rarity     Rarity of the bow
      * @param tier       GameTier of the bow
      */
-    public TerrariaBow(int baseDamage, float velocity, int useTime, int knockback, boolean autoSwing, int piercing, RegistryObject<Rarity> rarity, RegistryObject<GameTier> tier) {
+    public TerrariaBow(int baseDamage, float velocity, int useTime, int knockback, boolean autoSwing, int piercing, Rarity rarity, GameTier tier) {
         super(new Properties().durability(0).defaultDurability(0).setNoRepair());
 
         this.baseDamage = baseDamage;
@@ -66,8 +64,8 @@ public abstract class TerrariaBow extends BowItem implements SubClassMethods {
             AbstractSubClass sb = new AbstractSubClass() {
             };
             sb.setMainClass(MainClasses.RANGED);
-            sb.setRarity(rarity.get());
-            sb.setTier(tier.get());
+            sb.setRarity(rarity);
+            sb.setGameTier(tier);
             return sb;
         };
     }
@@ -77,10 +75,10 @@ public abstract class TerrariaBow extends BowItem implements SubClassMethods {
         if (!(entity instanceof Player player)) return;
         // Semi Auto
         if (!isAutoSwing() && timeLeft == (getUseDuration(stack) - getUseTime()))
-            level.playSound(player, player.getX(), player.getY(), player.getZ(), SoundEvents.NOTE_BLOCK_PLING.get() , player.getSoundSource(), 1.0f, 1.0f);
+            level.playSound(player, player.getX(), player.getY(), player.getZ(), SoundEvents.NOTE_BLOCK_PLING.get(), player.getSoundSource(), 1.0f, 1.0f);
 
         // Full Auto
-        if (timeLeft <=1 && isAutoSwing()) {
+        if (timeLeft <= 1 && isAutoSwing()) {
             fireArrow(stack, level, player, player.getUsedItemHand(), 1f);
         }
     }
@@ -90,7 +88,7 @@ public abstract class TerrariaBow extends BowItem implements SubClassMethods {
     public void releaseUsing(ItemStack stack, Level level, LivingEntity entity, int timeLeft) {
         if (!(entity instanceof Player player)) return;
         // Semi Auto
-        if (!isAutoSwing() && timeLeft <= (getUseDuration(stack) - getUseTime())){
+        if (!isAutoSwing() && timeLeft <= (getUseDuration(stack) - getUseTime())) {
             //float power = (float) (this.getUseDuration(stack) - timeLeft) / (float) this.getUseDuration(stack);
             fireArrow(stack, level, player, player.getUsedItemHand(), 1f);
         }
@@ -212,10 +210,6 @@ public abstract class TerrariaBow extends BowItem implements SubClassMethods {
     }
 
     // SubClassMethods Implementierung
-    @Override
-    public void appendHoverText(ItemStack stack, Level level, List<Component> tooltip, TooltipFlag flag) {
-        subClass.get().appendHoverText(stack, level, tooltip, flag);
-    }
 
     @Override
     public Component getName(ItemStack stack) {
@@ -278,5 +272,31 @@ public abstract class TerrariaBow extends BowItem implements SubClassMethods {
 
     public void setUseTime(int useTime) {
         this.useTime = useTime;
+    }
+
+    public MainClass getMainClass() {
+        return subClass.get().getMainClass();
+    }
+
+    public Rarity getRarity() {
+        return subClass.get().getRarity();
+    }
+
+    public void setRarity(Rarity rarity) {
+        subClass.get().setRarity(rarity);
+    }
+
+    public GameTier getGameTier() {
+        return subClass.get().getGameTier();
+    }
+
+    @Override
+    public net.minecraft.world.item.Rarity getRarity(ItemStack stack) {
+        Item item = stack.getItem();
+        if (item.getClass().getSuperclass() != null && SubClassMethods.class.isAssignableFrom(item.getClass().getSuperclass())) {
+            SubClassMethods subClassItem = (SubClassMethods) item.getClass().getSuperclass().cast(item);
+            return subClassItem.getRarity().asMinecraftRarity();
+        }
+        return super.getRarity(stack);
     }
 }

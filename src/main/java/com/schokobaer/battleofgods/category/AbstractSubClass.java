@@ -24,9 +24,9 @@ import org.jetbrains.annotations.NotNull;
 import java.util.List;
 
 public abstract class AbstractSubClass {
-    private MainClass mainClass = null;
-    private Rarity rarity = null;
-    private GameTier tier = null;
+    private MainClass mainClass = MainClasses.MISC;
+    private Rarity rarity = Rarities.WHITE.getRarity();
+    private GameTier tier = GameTiers.TIER_1;
 
 
     public AbstractSubClass() {
@@ -81,12 +81,7 @@ public abstract class AbstractSubClass {
         return speedText;
     }
 
-    public MainClass getMainClass() {
-        if (mainClass != null) return this.mainClass;
-        else return MainClasses.MISC;
-    }
-
-    public static MainClass getMainClass(Item item){
+    public static MainClass getMainClass(Item item) {
         if (item instanceof SwordItem) {
             return MainClasses.MELEE;
         } else if (item instanceof BowItem) {
@@ -98,32 +93,37 @@ public abstract class AbstractSubClass {
         }
     }
 
+    public MainClass getMainClass() {
+        if (mainClass != null) return this.mainClass;
+        else return MainClasses.MISC;
+    }
+
     public void setMainClass(MainClass mainClass) {
-        this.mainClass = mainClass;
+        if (mainClass != null) this.mainClass = mainClass;
+        else this.mainClass = MainClasses.MISC;
     }
 
     public Rarity getRarity() {
-        if (rarity != null) return rarity;
-        else return Rarities.WHITE.getRarity();
+        return rarity;
     }
 
     public void setRarity(Rarity rarity) {
-        this.rarity = rarity;
+        if (rarity != null) this.rarity = rarity;
+        else this.rarity = Rarities.WHITE.getRarity();
     }
 
-    public GameTier getTier() {
-        if (tier != null) return tier;
-        else return GameTiers.TIER_1;
+    public GameTier getGameTier() {
+        return tier;
     }
 
-    public void setTier(GameTier tier) {
-        this.tier = tier;
+    public void setGameTier(GameTier tier) {
+        if (tier != null) this.tier = tier;
+        else this.tier = GameTiers.TIER_1;
     }
 
     public Component getName(Component name) {
         return name.copy().withStyle(Style.EMPTY.withColor(this.getRarity().getColor()));
     }
-
 
 
     @OnlyIn(Dist.CLIENT)

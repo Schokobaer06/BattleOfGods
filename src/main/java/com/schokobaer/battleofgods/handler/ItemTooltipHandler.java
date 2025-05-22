@@ -14,19 +14,27 @@ import java.util.List;
 @Mod.EventBusSubscriber(modid = BattleOfGods.MODID, bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class ItemTooltipHandler {
     private static final boolean isGlobal = true;
-    /*
+
+    /**
+     * Should tooltips apply to every item or only to item from this mod
+     *
+     * @return true if tooltips should apply to every item
+     */
+    public static boolean isGlobal() {
+        return isGlobal;
+    }
+
     /// EVERY ITEM
     @SubscribeEvent
     public void onItemTooltip(ItemTooltipEvent event) {
         Item item = event.getItemStack().getItem();
         List<Component> tooltip = event.getToolTip();
-        if (isGlobal){
+        if (isGlobal) {
 
             /// Material
             if (RecipeHandler.isMaterial(item))
                 tooltip.add(1, Component.translatable("tooltip.battleofgods.material"));
-        }
-        else {
+        } else {
             if (item.getClass().getSuperclass() != null && SubClassMethods.class.isAssignableFrom(item.getClass().getSuperclass())) {
                 SubClassMethods subClassItem = (SubClassMethods) item.getClass().getSuperclass().cast(item);
 
@@ -37,13 +45,5 @@ public class ItemTooltipHandler {
         }
 
 
-    }
-
-    /**
-     * Should tooltips apply to every item or only to item from this mod
-     * @return true if tooltips should apply to every item
-     */
-    public static boolean isGlobal() {
-        return isGlobal;
     }
 }

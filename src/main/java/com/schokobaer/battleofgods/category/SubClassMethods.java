@@ -9,13 +9,8 @@ import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.TooltipFlag;
-import net.minecraft.world.level.Level;
-
-import java.util.List;
 
 public interface SubClassMethods {
-    void appendHoverText(ItemStack itemstack, Level level, List<Component> tooltip, TooltipFlag flag);
 
     Component getName(ItemStack name);
 
@@ -26,9 +21,19 @@ public interface SubClassMethods {
     Multimap<Attribute, AttributeModifier> getAttributeModifiers(EquipmentSlot slot, ItemStack stack);
 
     boolean isAutoSwing();
-    MainClass getMainClass();
-    Rarity getItemRarity();
-    GameTier getGameTier();
+
     void setAutoSwing(boolean autoSwing);
+
+    MainClass getMainClass();
+
+    Rarity getRarity();
+
+    void setRarity(Rarity rarity);
+
+    net.minecraft.world.item.Rarity getRarity(ItemStack stack);
+
+    GameTier getGameTier();
+
+    int getKnockback();
 
 }

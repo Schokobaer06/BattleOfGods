@@ -20,8 +20,8 @@ import java.util.function.Supplier;
 public class WorkbenchMenu extends AbstractContainerMenu implements Supplier<Map<Integer, Slot>> {
     public final Level world;
     public final Player player;
+    private final ContainerLevelAccess access;
     private RecipeHandler.BattleRecipe selectedRecipe;
-    private ContainerLevelAccess access;
     private String recipeGroup;
     private ResourceLocation backgroundLocation = new ResourceLocation("battleofgods:textures/gui/crafting_station/workbench.png");
     private ResourceLocation recipeListLocation = new ResourceLocation("battleofgods:textures/gui/scrollpanel/recipe_list/workbench.png");

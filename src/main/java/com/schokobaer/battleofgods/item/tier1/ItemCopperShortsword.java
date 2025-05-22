@@ -3,6 +3,8 @@ package com.schokobaer.battleofgods.item.tier1;
 import com.google.common.collect.LinkedHashMultimap;
 import com.google.common.collect.Multimap;
 import com.schokobaer.battleofgods.category.subClass.Shortsword;
+import com.schokobaer.battleofgods.category.tier.GameTiers;
+import com.schokobaer.battleofgods.category.tier.Tiers;
 import com.schokobaer.battleofgods.init.InitAttributes;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.ai.attributes.Attribute;
@@ -13,7 +15,7 @@ import java.util.UUID;
 
 public class ItemCopperShortsword extends Shortsword {
     public ItemCopperShortsword() {
-        super(5, 1.54f, 1, 15, InitRarity.WHITE, InitTier.TIER_1);
+        super(Tiers.WHITE, 5, 1.54f, 1, false, GameTiers.TIER_1);
     }
 
     @Override

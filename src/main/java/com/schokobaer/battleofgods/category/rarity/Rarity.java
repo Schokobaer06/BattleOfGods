@@ -2,7 +2,12 @@ package com.schokobaer.battleofgods.category.rarity;
 
 import com.mojang.datafixers.util.Either;
 import com.schokobaer.battleofgods.BattleOfGods;
+import net.minecraft.network.chat.Style;
 import net.minecraft.resources.ResourceLocation;
+
+import java.util.Objects;
+
+import static com.schokobaer.battleofgods.category.rarity.Rarities.*;
 
 /**
  * Class for defining the rarity of an item
@@ -73,6 +78,38 @@ public class Rarity {
     }
     // Constructor for animated Colors with default speed
 
+    /**
+     * Converts a net.minecraft.world.item.Rarity to a Rarity
+     *
+     * @param rarity The net.minecraft.world.item.Rarity to convert
+     * @return The converted Rarity
+     */
+    public static Rarity asRarity(net.minecraft.world.item.Rarity rarity) {
+        var name = rarity.name();
+        int style = Objects.requireNonNull(rarity.getStyleModifier().apply(Style.EMPTY).getColor()).getValue();
+        return new Rarity(name, style);
+    }
+
+    /**
+     * @return The rarity as a net.minecraft.world.item.Rarity
+     */
+    public net.minecraft.world.item.Rarity asMinecraftRarity() {
+        if (this == LIGHT_RED.getRarity() || this == PINK.getRarity() || this == LIGHT_PURPLE.getRarity()) {
+            return net.minecraft.world.item.Rarity.UNCOMMON;
+        } else if (this == LIME.getRarity() || this == YELLOW.getRarity() || this == CYAN.getRarity() ||
+                this == RED.getRarity() || this == PURPLE.getRarity()) {
+            return net.minecraft.world.item.Rarity.RARE;
+        } else if (this == TURQUOISE.getRarity() || this == PURE_GREEN.getRarity() || this == DARK_BLUE.getRarity() ||
+                this == VIOLET.getRarity() || this == HOT_PINK.getRarity() || this == CALAMITY_RED.getRarity() ||
+                this == AMBER.getRarity() || this == DARK_ORANGE.getRarity() || this == RAINBOW.getRarity() ||
+                this == FIERY_RED.getRarity() || this == TEAL.getRarity()) {
+            return net.minecraft.world.item.Rarity.EPIC;
+        } else {
+            return net.minecraft.world.item.Rarity.COMMON;
+        }
+    }
+    //Constructor for animated Colors (customizable speed)
+
     public String CheckDisplayName(String name) {
         if (name == null || name.isEmpty()) {
             BattleOfGods.LOGGER.error("Error: Rarity name is empty or null\nSetting name to Unknown Rarity");
@@ -80,7 +117,6 @@ public class Rarity {
         }
         return name;
     }
-    //Constructor for animated Colors (customizable speed)
 
     public float CheckSpeed(float speed) {
         if (speed <= 0.0f || speed > 2.0f) {

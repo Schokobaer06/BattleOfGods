@@ -6,6 +6,7 @@ import com.schokobaer.battleofgods.category.AbstractSubClass;
 import com.schokobaer.battleofgods.category.SubClassMethods;
 import com.schokobaer.battleofgods.category.mainClass.MainClass;
 import com.schokobaer.battleofgods.category.mainClass.MainClasses;
+import com.schokobaer.battleofgods.category.rarity.Rarities;
 import com.schokobaer.battleofgods.category.rarity.Rarity;
 import com.schokobaer.battleofgods.category.tier.GameTier;
 import com.schokobaer.battleofgods.category.tier.Tiers;
@@ -24,10 +25,10 @@ import java.util.function.Supplier;
 public abstract class Broadsword extends SwordItem implements SubClassMethods {
     private final double knockback;
     private final Supplier<AbstractSubClass> subClass;
-    private boolean autoSwing = false;
+    private boolean autoSwing;
 
-    public Broadsword(int attackDamage, float attackSpeed, double knockback, boolean isAutoSwing) {
-        super(Tiers.WHITE, attackDamage - 1, attackSpeed - 4,
+    public Broadsword(Tier tier, int attackDamage, float attackSpeed, double knockback, boolean isAutoSwing, GameTier gameTier) {
+        super(tier, attackDamage - 1, attackSpeed - 4,
                 new Properties().durability(0)
                         .defaultDurability(0)
                         .setNoRepair());
@@ -37,8 +38,12 @@ public abstract class Broadsword extends SwordItem implements SubClassMethods {
             AbstractSubClass sb = new AbstractSubClass() {
             };
             sb.setMainClass(MainClasses.MELEE);
-            sb.setRarity(Tiers.WHITE.getRarity());
-            sb.setTier(tier.get());
+            if (tier instanceof Tiers) {
+                sb.setRarity(((Tiers) tier).getRarity());
+            } else {
+                sb.setRarity(Rarities.WHITE.getRarity());
+            }
+            sb.setGameTier(gameTier);
             return sb;
         };
     }
@@ -88,30 +93,42 @@ public abstract class Broadsword extends SwordItem implements SubClassMethods {
         return modifiers;
     }
 
-    public boolean  isAutoSwing() {
-        //TODO
-        return false;
+    public boolean isAutoSwing() {
+        return autoSwing;
     }
+
+    public void setAutoSwing(boolean autoSwing) {
+        this.autoSwing = autoSwing;
+    }
+
     public MainClass getMainClass() {
         return subClass.get().getMainClass();
     }
+
     public Rarity getRarity() {
         return subClass.get().getRarity();
     }
-    public GameTier getGameTier() {
-        return subClass.get().getTier();
-    }
-    public Rarity getItemRarity() {
-        return subClass.get().getRarity();
+
+    public void setRarity(Rarity rarity) {
+        subClass.get().setRarity(rarity);
     }
 
+    public GameTier getGameTier() {
+        return subClass.get().getGameTier();
+    }
 
     @Override
     public net.minecraft.world.item.Rarity getRarity(ItemStack stack) {
+        Item item = stack.getItem();
+        if (item.getClass().getSuperclass() != null && SubClassMethods.class.isAssignableFrom(item.getClass().getSuperclass())) {
+            SubClassMethods subClassItem = (SubClassMethods) item.getClass().getSuperclass().cast(item);
+            return subClassItem.getRarity().asMinecraftRarity();
+        }
         return super.getRarity(stack);
     }
-    public void setAutoSwing(boolean autoSwing) {
-        this.autoSwing = autoSwing;
+
+    public int getKnockback() {
+        return (int) this.knockback;
     }
 }
 

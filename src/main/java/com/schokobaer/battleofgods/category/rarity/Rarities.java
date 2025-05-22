@@ -1,13 +1,8 @@
 package com.schokobaer.battleofgods.category.rarity;
 
-import com.schokobaer.battleofgods.BattleOfGods;
-import net.minecraft.ChatFormatting;
-import net.minecraft.network.chat.Style;
 import net.minecraft.resources.ResourceLocation;
 
 import java.util.Arrays;
-import java.util.Objects;
-import java.util.function.UnaryOperator;
 
 public enum Rarities {
     GRAY(new Rarity("Gray", 0x808080)),
@@ -41,14 +36,11 @@ public enum Rarities {
         this.rarity = rarity;
     }
 
-    public Rarity getRarity() {
-        return rarity;
-    }
-
     /**
      * Returns the rarity from the offset of the given rarity
+     *
      * @param current The rarity from which the offset rarity is returned
-     * @param offset The offset to the current rarity
+     * @param offset  The offset to the current rarity
      * @return The rarity from the offset of the given rarity. Returns null if no rarity is found at offset
      */
     public static Rarities shiftRarity(Rarities current, int offset) {
@@ -59,39 +51,9 @@ public enum Rarities {
                 .orElse(null); // Gibt null zurück, wenn der neue Ordinalwert ungültig ist
     }
 
-
-    /**
-     *  @return The rarity as a net.minecraft.world.item.Rarity
-     */
-    public net.minecraft.world.item.Rarity asMinecraftRarity(){
-        try {
-            net.minecraft.world.item.Rarity minecraftRarity = net.minecraft.world.item.Rarity.create(this.rarity.getDisplayName(), style -> {
-                style.withColor(this.rarity.getColor());
-                return style;
-            });
-            ;
-            return minecraftRarity;
-        } catch (Exception e){
-            BattleOfGods.LOGGER.warn("Error: failed to create net.minecraft.world.item.Rarity for {} with color {}:{}", this.rarity.getDisplayName(), this.rarity.getColor(), e.getMessage());
-
-            return switch (this) {
-                case LIGHT_RED, PINK, LIGHT_PURPLE -> net.minecraft.world.item.Rarity.UNCOMMON;
-                case LIME, YELLOW, CYAN, RED, PURPLE -> net.minecraft.world.item.Rarity.RARE;
-                case TURQUOISE, PURE_GREEN, DARK_BLUE, VIOLET, HOT_PINK, CALAMITY_RED, AMBER, DARK_ORANGE, RAINBOW, FIERY_RED, TEAL -> net.minecraft.world.item.Rarity.EPIC;
-                default -> net.minecraft.world.item.Rarity.COMMON;
-            };
-        }
+    public Rarity getRarity() {
+        return rarity;
     }
 
-    /**
-     * Converts a net.minecraft.world.item.Rarity to a Rarity
-     * @param rarity The net.minecraft.world.item.Rarity to convert
-     * @return The converted Rarity
-     */
-    public static Rarity asRarity(net.minecraft.world.item.Rarity rarity) {
-        var name = rarity.name();
-        int style = Objects.requireNonNull(rarity.getStyleModifier().apply(Style.EMPTY).getColor()).getValue();
-        return new Rarity(name, style);
-    }
 
 }

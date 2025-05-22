@@ -27,12 +27,13 @@ public class ItemTagProvider extends ItemTagsProvider {
             for (RegistryObject<Item> entry : InitItem.ITEMS.getEntries()) {
                 //BattleOfGods.LOGGER.debug(item.get().getClass().getSuperclass().getSuperclass().toString());
                 Item item = entry.get();
-                try{
-                if (SubClassMethods.class.isAssignableFrom(item.getClass().getSuperclass())) {
-                    SubClassMethods subClassMethods = (SubClassMethods) item.getClass().getSuperclass().cast(item);
-                    //String tier = subClassMethods.getTier();
-                    //BattleOfGods.LOGGER.debug("Die Parentklasse von {} implementiert SubClassMethods mit GameTier: {}", item, tier);
-                }}catch (Exception e){
+                try {
+                    if (SubClassMethods.class.isAssignableFrom(item.getClass().getSuperclass())) {
+                        SubClassMethods subClassMethods = (SubClassMethods) item.getClass().getSuperclass().cast(item);
+                        //String tier = subClassMethods.getGameTier();
+                        //BattleOfGods.LOGGER.debug("Die Parentklasse von {} implementiert SubClassMethods mit GameTier: {}", item, tier);
+                    }
+                } catch (Exception e) {
                     BattleOfGods.LOGGER.error("Error while generating item tags for item {}", item, e);
                 }
             }

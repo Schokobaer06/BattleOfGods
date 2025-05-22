@@ -2,6 +2,8 @@ package com.schokobaer.battleofgods.armor.tier1;
 
 import com.schokobaer.battleofgods.BattleOfGods;
 import com.schokobaer.battleofgods.category.subClass.TerrariaArmor;
+import com.schokobaer.battleofgods.category.tier.GameTiers;
+import com.schokobaer.battleofgods.category.tier.Tiers;
 import net.minecraft.client.model.HumanoidModel;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
@@ -18,10 +20,10 @@ import java.util.function.Consumer;
 
 public class CopperArmor extends TerrariaArmor {
     public static final String name = "copper_armor";
+
     public CopperArmor(Type type) {
-        super(name,new int[]{1,2,1,0},
-                SoundEvents.ARMOR_EQUIP_GENERIC,
-                15, type, InitRarity.WHITE, InitTier.TIER_1);
+        super(name, new int[]{1, 2, 1, 0},
+                SoundEvents.ARMOR_EQUIP_GENERIC, type, Tiers.WHITE, GameTiers.TIER_1);
     }
 
     @Override
@@ -47,17 +49,17 @@ public class CopperArmor extends TerrariaArmor {
     public static class CopperArmorModel extends GeoModel<CopperArmor> {
         @Override
         public ResourceLocation getAnimationResource(CopperArmor object) {
-            return new ResourceLocation(BattleOfGods.MODID, "animations/"+ name +".animation.json");
+            return new ResourceLocation(BattleOfGods.MODID, "animations/" + name + ".animation.json");
         }
 
         @Override
         public ResourceLocation getModelResource(CopperArmor object) {
-            return new ResourceLocation(BattleOfGods.MODID, "geo/"+ name +".geo.json");
+            return new ResourceLocation(BattleOfGods.MODID, "geo/" + name + ".geo.json");
         }
 
         @Override
         public ResourceLocation getTextureResource(CopperArmor object) {
-            return new ResourceLocation(BattleOfGods.MODID, "textures/armor/"+ name +".png");
+            return new ResourceLocation(BattleOfGods.MODID, "textures/armor/" + name + ".png");
         }
     }
 

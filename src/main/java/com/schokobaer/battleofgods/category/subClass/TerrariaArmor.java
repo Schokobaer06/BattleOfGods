@@ -3,9 +3,11 @@ package com.schokobaer.battleofgods.category.subClass;
 import com.google.common.collect.Multimap;
 import com.schokobaer.battleofgods.category.AbstractSubClass;
 import com.schokobaer.battleofgods.category.SubClassMethods;
+import com.schokobaer.battleofgods.category.mainClass.MainClass;
 import com.schokobaer.battleofgods.category.mainClass.MainClasses;
 import com.schokobaer.battleofgods.category.rarity.Rarity;
 import com.schokobaer.battleofgods.category.tier.GameTier;
+import com.schokobaer.battleofgods.category.tier.Tiers;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
@@ -13,15 +15,11 @@ import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
-import net.minecraft.world.item.ArmorItem;
-import net.minecraft.world.item.ArmorMaterial;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.item.*;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.client.extensions.common.IClientItemExtensions;
 import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.RegistryObject;
 import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib.animatable.GeoItem;
 import software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache;
@@ -45,18 +43,18 @@ public abstract class TerrariaArmor extends ArmorItem implements GeoItem, SubCla
      * @param material   For more advanced configuration
      * @param type       Helmet, Chestplate, Leggings, Boots
      * @param properties Item properties
-     * @param rarity     Rarity of the item
-     * @param tier       GameTier of the item
+     * @param rarity     the rarity of the item
+     * @param gameTier   GameTier of the item
      */
-    public TerrariaArmor(String name, ArmorMaterial material, Type type, Properties properties, RegistryObject<Rarity> rarity, RegistryObject<GameTier> tier) {
+    public TerrariaArmor(String name, ArmorMaterial material, Type type, Properties properties, Rarity rarity, GameTier gameTier) {
         super(material, type, properties);
         this.defense = material.getDefenseForType(type);
         this.subClass = () -> {
             AbstractSubClass sb = new AbstractSubClass() {
             };
             sb.setMainClass(MainClasses.ARMOR);
-            sb.setRarity(rarity.get());
-            sb.setTier(tier.get());
+            sb.setRarity(rarity);
+            sb.setGameTier(gameTier);
             return sb;
         };
 
@@ -65,16 +63,15 @@ public abstract class TerrariaArmor extends ArmorItem implements GeoItem, SubCla
     /**
      * Abstract ArmorItem class for BattleOfGods-Armor.
      *
-     * @param name             name of the armor
-     * @param defense          Defense value for each armor piece (max 4 values)
-     *                         {a b c d} = {Boots, Leggings, Chestplate, Helmet}
-     * @param soundEvent       Equip sound
-     * @param enchantmentValue Enchantment value when enchanting
-     * @param type             Armor type (Helmet, Chestplate, Leggings, Boots)
-     * @param rarity           Rarity of the item
-     * @param tier             GameTier of the item
+     * @param name       name of the armor
+     * @param defense    Defense value for each armor piece (max 4 values)
+     *                   {a b c d} = {Boots, Leggings, Chestplate, Helmet}
+     * @param soundEvent Equip sound
+     * @param type       Armor type (Helmet, Chestplate, Leggings, Boots)
+     * @param tier       the tier of the item
+     * @param gameTier   GameTier of the item
      */
-    public TerrariaArmor(String name, int[] defense, SoundEvent soundEvent, int enchantmentValue, Type type, RegistryObject<Rarity> rarity, RegistryObject<GameTier> tier) {
+    public TerrariaArmor(String name, int[] defense, SoundEvent soundEvent, Type type, Tiers tier, GameTier gameTier) {
         super(new ArmorMaterial() {
             @Override
             public int getDurabilityForType(Type type1) {
@@ -88,7 +85,7 @@ public abstract class TerrariaArmor extends ArmorItem implements GeoItem, SubCla
 
             @Override
             public int getEnchantmentValue() {
-                return enchantmentValue;
+                return tier.getEnchantmentValue();
             }
 
             @Override
@@ -121,8 +118,8 @@ public abstract class TerrariaArmor extends ArmorItem implements GeoItem, SubCla
             AbstractSubClass sb = new AbstractSubClass() {
             };
             sb.setMainClass(MainClasses.ARMOR);
-            sb.setRarity(rarity.get());
-            sb.setTier(tier.get());
+            sb.setRarity(tier.getRarity());
+            sb.setGameTier(gameTier);
             return sb;
         };
     }
@@ -216,4 +213,41 @@ public abstract class TerrariaArmor extends ArmorItem implements GeoItem, SubCla
     }
 
     public abstract void initializeClient(Consumer<IClientItemExtensions> consumer);
+
+    public boolean isAutoSwing() {
+        return false;
+    }
+
+    public void setAutoSwing(boolean autoSwing) {
+    }
+
+    public MainClass getMainClass() {
+        return subClass.get().getMainClass();
+    }
+
+    public Rarity getRarity() {
+        return subClass.get().getRarity();
+    }
+
+    public void setRarity(Rarity rarity) {
+        subClass.get().setRarity(rarity);
+    }
+
+    public GameTier getGameTier() {
+        return subClass.get().getGameTier();
+    }
+
+    @Override
+    public net.minecraft.world.item.Rarity getRarity(ItemStack stack) {
+        Item item = stack.getItem();
+        if (item.getClass().getSuperclass() != null && SubClassMethods.class.isAssignableFrom(item.getClass().getSuperclass())) {
+            SubClassMethods subClassItem = (SubClassMethods) item.getClass().getSuperclass().cast(item);
+            return subClassItem.getRarity().asMinecraftRarity();
+        }
+        return super.getRarity(stack);
+    }
+
+    public int getKnockback() {
+        return 0;
+    }
 }
