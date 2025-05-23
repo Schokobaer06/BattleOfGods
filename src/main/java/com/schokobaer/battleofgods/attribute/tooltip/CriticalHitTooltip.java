@@ -22,7 +22,7 @@ public class CriticalHitTooltip {
 
     private static final Map<ItemStack, Component> tooltipCache = new HashMap<>();
     private static final Map<ItemStack, Long> lastUpdateTimes = new HashMap<>();
-    private static final long UPDATE_INTERVAL_MS = 1000; // 1 Sekunde
+    private static final long UPDATE_INTERVAL_MS = 100; // 2 ticks
 
     @SubscribeEvent
     public static void onItemTooltip(ItemTooltipEvent event) {
@@ -59,7 +59,7 @@ public class CriticalHitTooltip {
             // Tooltip aus dem Cache hinzufügen
             Component cachedTooltip = tooltipCache.get(stack);
             if (!cachedTooltip.getString().isEmpty()) {
-                event.getToolTip().add(cachedTooltip);
+                event.getToolTip().add(3,cachedTooltip);
             }
         }
     }

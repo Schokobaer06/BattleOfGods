@@ -130,5 +130,9 @@ public abstract class Broadsword extends SwordItem implements SubClassMethods {
     public int getKnockback() {
         return (int) this.knockback;
     }
+
+    public float getDamage() {
+        return super.getDamage();
+    }
 }
 

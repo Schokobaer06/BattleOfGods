@@ -131,5 +131,9 @@ public abstract class Shortsword extends SwordItem implements SubClassMethods {
     public int getKnockback() {
         return (int) knockback;
     }
+
+    public float getDamage() {
+        return super.getDamage();
+    }
 }
 
