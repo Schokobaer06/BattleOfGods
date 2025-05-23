@@ -36,4 +36,6 @@ public interface SubClassMethods {
 
     int getKnockback();
 
+    float getDamage();
+
 }

@@ -125,76 +125,60 @@ public abstract class AbstractSubClass {
         return name.copy().withStyle(Style.EMPTY.withColor(this.getRarity().getColor()));
     }
 
+    public static Style getStyle(){
+        return Style.EMPTY.withColor(ChatFormatting.DARK_GREEN);
+    }
+
 
     @OnlyIn(Dist.CLIENT)
     public void appendHoverText(ItemStack itemstack, Level level, List<net.minecraft.network.chat.Component> tooltip, TooltipFlag flag) {
-        /// NORMAL
+        if (itemstack.getItem().getClass().getSuperclass() != null && SubClassMethods.class.isAssignableFrom(itemstack.getItem().getClass().getSuperclass())) return;
+        SubClassMethods subClassItem = (SubClassMethods) itemstack.getItem().getClass().getSuperclass().cast(itemstack.getItem());
 
-        //Rarity
-        tooltip.add(1, Component.translatable("rarity.battleofgods." +
-                this.getRarity().getDisplayName().toLowerCase()).setStyle(
+
+        ///Rarity
+        tooltip.add(Component.translatable("rarity.battleofgods." +
+                subClassItem.getRarity().getDisplayName().toLowerCase()).setStyle(
                 Style.EMPTY.withBold(true)
                         .withColor(this.getRarity().getColor())
                         .withItalic(true)
         ));
-        //Speed
-        if (!(itemstack.getItem() instanceof TerrariaBow || itemstack.getItem() instanceof TerrariaArmor)) {
-            // Get the attack speed attribute (default to 4.0 if missing)
-            double attackSpeed = itemstack.getAttributeModifiers(EquipmentSlot.MAINHAND)
-                    .get(Attributes.ATTACK_SPEED).stream()
-                    .mapToDouble(AttributeModifier::getAmount)
-                    .sum() + 4; // +4.0 because attack speed is offset in Minecraft
 
-            //Convert to Terraria useTime
-            String speedText = getSpeed(attackSpeed, itemstack.getItem());
+        /// Damage
+        float damage = subClassItem.getDamage();
+        tooltip.add(Component.literal(damage + " " + subClassItem.getMainClass() + " ")
+                .append(Component.translatable("tooltip.battleofgods.damage"))
+                .withStyle(getStyle()));
 
-            tooltip.add(Component.translatable("tooltip.battleofgods." + speedText).withStyle(ChatFormatting.DARK_GREEN));
+        /// Speed
+        // Get the attack speed attribute (default to 4.0 if missing)
+        double attackSpeed = itemstack.getAttributeModifiers(EquipmentSlot.MAINHAND)
+                .get(Attributes.ATTACK_SPEED).stream()
+                .mapToDouble(AttributeModifier::getAmount)
+                .sum() + 4; // +4.0 because attack speed is offset in Minecraft
 
-            //Knockback
-            // Get attack knockback attribute (default to 0 if missing)
-            double mcKnockback = itemstack.getAttributeModifiers(EquipmentSlot.MAINHAND)
-                    .get(Attributes.ATTACK_KNOCKBACK).stream()
-                    .mapToDouble(AttributeModifier::getAmount)
-                    .sum();
+        //Convert to Terraria useTime
+        String speedText = getSpeed(attackSpeed, itemstack.getItem());
 
-            // Convert to Terraria Knockback
-            String kbText = getKnockback(mcKnockback, itemstack.getItem());
+        tooltip.add(Component.translatable("tooltip.battleofgods." + speedText)
+                .withStyle(AbstractSubClass.getStyle()));
 
-            tooltip.add(Component.translatable("tooltip.battleofgods." + kbText).withStyle(ChatFormatting.DARK_GREEN));
-        }
-        /// SWORD
+        /// Knockback
+        double knockback = subClassItem.getKnockback();
+        // Convert to Terraria Knockback
+        String kbText = getKnockback(knockback, itemstack.getItem());
+        tooltip.add(Component.translatable("tooltip.battleofgods." + kbText)
+                .withStyle(getStyle()));
 
-        //Damage
-        if (itemstack.getItem() instanceof SwordItem swordItem) {
-            float damage = swordItem.getDamage() + 1;
-            String damageText = (damage % 1 == 0) ? String.valueOf((int) damage) : String.valueOf(damage);
-            tooltip.add(Component.literal(damageText + " " + this.getMainClass().getName() + " ")
-                    .append(Component.translatable("tooltip.battleofgods.damage"))
-                    .withStyle(ChatFormatting.DARK_GREEN));
-        }
-
-        /// BOW
-
-        //Damage
-        if (itemstack.getItem() instanceof TerrariaBow bowItem) {
-            float damage = bowItem.getBaseDamage();
-            String damageText = (damage % 1 == 0) ? String.valueOf((int) damage) : String.valueOf(damage);
-            tooltip.add(Component.literal(damageText + " " + this.getMainClass().getName() + " ")
-                    .append(Component.translatable("tooltip.battleofgods.damage"))
-                    .withStyle(ChatFormatting.DARK_GREEN));
-        }
-        //Speed
-        if (itemstack.getItem() instanceof TerrariaBow bowItem) {
-            double useTime = bowItem.getUseTime();
-            String UseTimeText = getSpeed(useTime, itemstack.getItem());
-            tooltip.add(Component.translatable("tooltip.battleofgods." + UseTimeText).withStyle(ChatFormatting.DARK_GREEN));
-        }
-        //Knockback
-        if (itemstack.getItem() instanceof TerrariaBow bowItem) {
-            double knockback = bowItem.getKnockback();
-            String knockbackText = getKnockback(knockback, itemstack.getItem());
-            tooltip.add(Component.translatable("tooltip.battleofgods." + knockbackText).withStyle(ChatFormatting.DARK_GREEN));
-        }
+        /// Autoswing
+        boolean autoSwing = subClassItem.isAutoSwing();
+        Component componentAutoSwing = (autoSwing)
+                ? Component.literal("✔").withStyle(ChatFormatting.GREEN)
+                : Component.literal("✘").withStyle(ChatFormatting.RED);
+        tooltip.add(Component.translatable("tooltip.battleofgods.autoswing")
+                .withStyle(getStyle())
+                .append(" ")
+                .append(componentAutoSwing));
     }
 
     public boolean hasCraftingRemainingItem(ItemStack stack) {

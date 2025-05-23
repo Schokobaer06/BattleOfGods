@@ -168,7 +168,6 @@ public abstract class TerrariaArmor extends ArmorItem implements GeoItem, SubCla
 
     @Override
     public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltip, TooltipFlag flag) {
-        super.appendHoverText(stack, level, tooltip, flag);
         subClass.get().appendHoverText(stack, level, tooltip, flag);
 
         //Defense
@@ -248,6 +247,11 @@ public abstract class TerrariaArmor extends ArmorItem implements GeoItem, SubCla
     }
 
     public int getKnockback() {
+        return 0;
+    }
+
+    @Override
+    public float getDamage() {
         return 0;
     }
 }

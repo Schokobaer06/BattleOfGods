@@ -299,4 +299,8 @@ public abstract class TerrariaBow extends BowItem implements SubClassMethods {
         }
         return super.getRarity(stack);
     }
+
+    public float getDamage() {
+        return this.getBaseDamage();
+    }
 }

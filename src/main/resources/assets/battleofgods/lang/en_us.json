@@ -73,5 +73,6 @@
   "tooltip.battleofgods.placeable": "Can be placed",
   "tooltip.battleofgods.consumable": "Consumable",
   "tooltip.battleofgods.equipable": "Equipable",
-  "tooltip.battleofgods.ammo": "Ammo"
+  "tooltip.battleofgods.ammo": "Ammo",
+  "tooltip.battleofgods.autoswing": "Autoswing"
 }
