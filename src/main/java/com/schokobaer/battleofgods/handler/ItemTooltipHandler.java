@@ -1,49 +1,91 @@
 package com.schokobaer.battleofgods.handler;
 
-
 import com.schokobaer.battleofgods.BattleOfGods;
-import com.schokobaer.battleofgods.category.SubClassMethods;
+import com.schokobaer.battleofgods.category.mainClass.MainClasses;
+import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
-import net.minecraft.world.item.Item;
+import net.minecraft.network.chat.Style;
+import net.minecraft.tags.ItemTags;
+import net.minecraft.world.item.*;
+import net.minecraft.world.item.context.UseOnContext;
+import net.minecraft.world.item.enchantment.EnchantmentHelper;
+import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraftforge.event.entity.player.ItemTooltipEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.registries.ForgeRegistries;
 
 import java.util.List;
+import java.util.Objects;
 
 @Mod.EventBusSubscriber(modid = BattleOfGods.MODID, bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class ItemTooltipHandler {
     private static final boolean isGlobal = true;
 
-    /**
-     * Should tooltips apply to every item or only to item from this mod
-     *
-     * @return true if tooltips should apply to every item
-     */
     public static boolean isGlobal() {
         return isGlobal;
     }
 
-    /// EVERY ITEM
     @SubscribeEvent
-    public void onItemTooltip(ItemTooltipEvent event) {
-        Item item = event.getItemStack().getItem();
+    public static void onItemTooltip(ItemTooltipEvent event) {
+        ItemStack stack = event.getItemStack();
+        Item item = stack.getItem();
+        String modId = Objects.requireNonNull(ForgeRegistries.ITEMS.getKey(item)).getNamespace();
+        Style style = Style.EMPTY.withColor(ChatFormatting.DARK_GREEN);
+
+        // Nur fremde Items bearbeiten, wenn global aktiv
+        if (!isGlobal || modId.equals(BattleOfGods.MODID)) return;
+
         List<Component> tooltip = event.getToolTip();
-        if (isGlobal) {
+        int insertPos = Math.min(1, tooltip.size()); // Position nach dem Item-Namen
 
-            /// Material
-            if (RecipeHandler.isMaterial(item))
-                tooltip.add(1, Component.translatable("tooltip.battleofgods.material"));
-        } else {
-            if (item.getClass().getSuperclass() != null && SubClassMethods.class.isAssignableFrom(item.getClass().getSuperclass())) {
-                SubClassMethods subClassItem = (SubClassMethods) item.getClass().getSuperclass().cast(item);
-
-                /// Material
-                if (RecipeHandler.isMaterial((Item) subClassItem))
-                    tooltip.add(1, Component.translatable("tooltip.battleofgods.material"));
-            }
+        // Can be placed (Blöcke, Möbel etc.)
+        if (isPlaceable(item)) {
+            tooltip.add(insertPos, Component.translatable("tooltip.battleofgods.placeable").withStyle(style));
         }
 
+        // Consumable (verbrauchbare Items)
+        if (isConsumable(stack)) {
+            tooltip.add(insertPos, Component.translatable("tooltip.battleofgods.consumable").withStyle(style));
+        }
 
+        // Material (Handwerksmaterial)
+        if (RecipeHandler.isMaterial(item)) {
+            tooltip.add(insertPos, Component.translatable("tooltip.battleofgods.material").withStyle(style));
+        }
+
+        // Equipable (Rüstung, Accessoires etc.)
+        if (isEquipable(item)) {
+            tooltip.add(insertPos, Component.translatable("tooltip.battleofgods.equipable").withStyle(style));
+        }
+
+        // Ammo (Munition)
+        if (isAmmo(item)) {
+            tooltip.add(insertPos, Component.translatable("tooltip.battleofgods.ammo").withStyle(style));
+        }
+    }
+
+    // Hilfsmethoden für die Kategorien
+    private static boolean isPlaceable(Item item) {
+        return item instanceof BlockItem ||
+                item instanceof PlaceOnWaterBlockItem ||
+                item instanceof StandingAndWallBlockItem;
+    }
+
+    private static boolean isConsumable(ItemStack stack) {
+        return stack.getItem().isEdible() ||
+                stack.getItem().getUseDuration(stack) > 0;
+    }
+
+    private static boolean isEquipable(Item item) {
+        return item instanceof Equipable || // Für Forge's Equipable-Interface
+                item instanceof ElytraItem;// Für Vanilla Wearable-Items
+    }
+
+    private static boolean isAmmo(Item item) {
+        // Beispiel: Pfeile, Feuerkugeln etc.
+        return item instanceof ArrowItem ||
+                item.getDefaultInstance().is(ItemTags.ARROWS) ||
+                item instanceof ProjectileWeaponItem; // Falls ein Ammo-Tag existiert
     }
 }

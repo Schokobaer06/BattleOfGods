@@ -69,5 +69,9 @@
   "tooltip.battleofgods.weapon_knockback_insanely_strong": "Insanely strong knockback",
   "tooltip.battleofgods.armor": "defense",
   "tooltip.battleofgods.armor_set_bonus": "Set Bonus",
-  "tooltip.battleofgods.material": "Material"
+  "tooltip.battleofgods.material": "Material",
+  "tooltip.battleofgods.placeable": "Can be placed",
+  "tooltip.battleofgods.consumable": "Consumable",
+  "tooltip.battleofgods.equipable": "Equipable",
+  "tooltip.battleofgods.ammo": "Ammo"
 }
