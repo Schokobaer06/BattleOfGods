@@ -6,6 +6,7 @@ import net.minecraft.core.Holder;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.server.level.TicketType;
 import net.minecraft.world.level.ChunkPos;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.biome.Biomes;
@@ -16,12 +17,11 @@ import net.minecraftforge.event.level.LevelEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
-// TODO: fixing tp on cheats off
-
 @Mod.EventBusSubscriber(modid = BattleOfGods.MODID, bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class WorldSpawnHandler {
-    private static final int SEARCH_RADIUS = 4069;
+    private static final int SEARCH_RADIUS = 2048;
     private static final int STEP = 8;
+    private static final Heightmap.Types HEIGHTMAP_TYPE = Heightmap.Types.WORLD_SURFACE;
 
     @SubscribeEvent
     public static void onWorldLoad(LevelEvent.Load event) {
@@ -30,98 +30,41 @@ public class WorldSpawnHandler {
         WorldSpawnData data = level.getDataStorage().computeIfAbsent(
                 WorldSpawnData::load,
                 WorldSpawnData::new,
-                BattleOfGods.MODID + "_world_spawn_data"
+                BattleOfGods.MODID + "_spawn_data"
         );
 
-        if (!data.spawnInitialized) {
-            BattleOfGods.LOGGER.info("Initializing world spawn for the first time");
-            BlockPos foundPos = findSpawnPosition(level);
-
-            if (foundPos != null) {
-                level.getServer().overworld().setDefaultSpawnPos(foundPos, 0.0F);
-                data.customSpawnPos = foundPos;
-                data.spawnInitialized = true;
+        if (!data.initialized) {
+            BlockPos spawnPos = findValidSpawn(level);
+            if (spawnPos != null) {
+                level.getServer().overworld().setDefaultSpawnPos(spawnPos, 0.0F);
+                data.customSpawnPos = spawnPos;
+                data.initialized = true;
                 data.setDirty();
-                BattleOfGods.LOGGER.info("World spawn set to: {}", foundPos);
+                BattleOfGods.LOGGER.info("World spawn initialized at {}", spawnPos);
             }
         }
     }
 
-    private static BlockPos adjustToTrueSurface(ServerLevel level, BlockPos pos) {
-        // Schritt 1: Finde echte Oberfläche
-        BlockPos surface = level.getHeightmapPos(Heightmap.Types.WORLD_SURFACE, pos);
+    private static BlockPos findValidSpawn(ServerLevel level) {
+        BlockPos worldSpawn = level.getSharedSpawnPos();
 
-        // Schritt 2: Sicherer Standplatz checken
-        while (surface.getY() > level.getMinBuildHeight() + 2) {
-            if (level.getBlockState(surface).isSolid()
-                    && level.getBlockState(surface.above()).isAir()
-                    && level.getBlockState(surface.above(2)).isAir()) {
-                return surface.above();
-            }
-            surface = surface.below();
-        }
-        return surface.above();
-    }
-
-    @SubscribeEvent
-    public static void onPlayerJoin(PlayerEvent.PlayerLoggedInEvent event) {
-        if (event.getEntity() instanceof ServerPlayer player) {
-            CompoundTag persistentData = player.getPersistentData();
-            CompoundTag modData = persistentData.getCompound(BattleOfGods.MODID);
-
-            // Nur bei erstmaligem Join
-            if (!modData.contains("initialSpawnDone")) {
-                ServerLevel level = player.serverLevel();
-                WorldSpawnData worldData = level.getDataStorage().get(
-                        WorldSpawnData::load,
-                        BattleOfGods.MODID + "_world_spawn_data"
-                );
-
-                if (worldData != null && worldData.customSpawnPos != null) {
-                    // Teleportation mit Server-side Chunk Loading
-                    ChunkPos spawnChunk = new ChunkPos(worldData.customSpawnPos);
-                    level.getChunk(spawnChunk.x, spawnChunk.z);
-
-                    player.teleportTo(
-                            level,
-                            worldData.customSpawnPos.getX() + 0.5,
-                            worldData.customSpawnPos.getY(),
-                            worldData.customSpawnPos.getZ() + 0.5,
-                            player.getYRot(),
-                            player.getXRot()
-                    );
-
-                    modData.putBoolean("initialSpawnDone", true);
-                    persistentData.put(BattleOfGods.MODID, modData);
-                    BattleOfGods.LOGGER.info("Teleported new player to custom spawn");
-                }
-            }
-        }
-    }
-
-    private static BlockPos findSpawnPosition(ServerLevel level) {
-        BlockPos originalSpawn = level.getSharedSpawnPos();
-
-        // Neue Heightmap-Logik für echte Oberflächenberechnung
-        BlockPos surfacePos = level.getHeightmapPos(Heightmap.Types.WORLD_SURFACE, originalSpawn);
-        surfacePos = adjustToTrueSurface(level, surfacePos);
-
+        // Check original spawn first
+        BlockPos surfacePos = getSurfacePos(level, worldSpawn);
         if (isValidBiome(level, surfacePos)) {
             return surfacePos;
         }
 
-        // Durchsuche Radius mit optimierter Oberflächenlogik
-        for (int r = STEP; r <= SEARCH_RADIUS; r += STEP) {
-            for (int x = -r; x <= r; x += STEP) {
-                for (int z = -r; z <= r; z += STEP) {
-                    if (Math.abs(x) < r && Math.abs(z) < r) continue;
+        // Spiral search pattern
+        for (int radius = STEP; radius <= SEARCH_RADIUS; radius += STEP) {
+            for (int x = -radius; x <= radius; x += STEP) {
+                for (int z = -radius; z <= radius; z += STEP) {
+                    if (Math.abs(x) != radius && Math.abs(z) != radius) continue;
 
-                    BlockPos searchPos = originalSpawn.offset(x, 0, z);
-                    BlockPos foundPos = level.getHeightmapPos(Heightmap.Types.WORLD_SURFACE, searchPos);
-                    foundPos = adjustToTrueSurface(level, foundPos);
+                    BlockPos checkPos = worldSpawn.offset(x, 0, z);
+                    BlockPos surfaceCheckPos = getSurfacePos(level, checkPos);
 
-                    if (isValidBiome(level, foundPos)) {
-                        return foundPos;
+                    if (isValidBiome(level, surfaceCheckPos)) {
+                        return surfaceCheckPos;
                     }
                 }
             }
@@ -130,13 +73,76 @@ public class WorldSpawnHandler {
     }
 
 
-    private static BlockPos adjustToSafeSpawnHeight(ServerLevel level, BlockPos pos) {
-        // Sicherstellen, dass 2 Luftblöcke über dem Spawn sind
-        while (pos.getY() < level.getMaxBuildHeight() - 2
-                && (!level.isEmptyBlock(pos.above()) || !level.isEmptyBlock(pos.above(2)))) {
-            pos = pos.above();
+    private static BlockPos getSurfacePos(ServerLevel level, BlockPos pos) {
+        // Dynamische Höhenberechnung bei jedem Aufruf
+        BlockPos surfacePos = level.getHeightmapPos(HEIGHTMAP_TYPE, pos);
+
+        // Erweiterte Sicherheitsprüfung
+        int safetyChecks = 0;
+        while (safetyChecks++ < 32 &&
+                (!level.getBlockState(surfacePos.below()).isCollisionShapeFullBlock(level, surfacePos.below()) ||
+                        !level.isEmptyBlock(surfacePos))) {
+            surfacePos = surfacePos.above();
         }
-        return pos;
+
+        // Fallback auf ursprüngliche Heightmap
+        if (safetyChecks >= 32) {
+            surfacePos = level.getHeightmapPos(HEIGHTMAP_TYPE, pos);
+        }
+
+        return surfacePos;
+    }
+
+    @SubscribeEvent
+    public static void onPlayerLogin(PlayerEvent.PlayerLoggedInEvent event) {
+        if (!(event.getEntity() instanceof ServerPlayer player)) return;
+
+        CompoundTag playerData = player.getPersistentData();
+        CompoundTag modData = playerData.getCompound(BattleOfGods.MODID);
+
+        if (!modData.getBoolean("spawnProcessed")) {
+            ServerLevel level = player.serverLevel();
+            WorldSpawnData worldData = level.getDataStorage().get(
+                    WorldSpawnData::load,
+                    BattleOfGods.MODID + "_spawn_data"
+            );
+
+            if (worldData != null && worldData.customSpawnPos != null) {
+                // Force chunk loading
+                ChunkPos chunkPos = new ChunkPos(worldData.customSpawnPos);
+                level.getChunkSource().addRegionTicket(
+                        TicketType.POST_TELEPORT,
+                        chunkPos,
+                        1,
+                        player.getId()
+                );
+
+                // Get precise surface position
+                BlockPos spawnPos = getSurfacePos(level, worldData.customSpawnPos);
+
+                // Set respawn and teleport
+                player.setRespawnPosition(
+                        level.dimension(),
+                        spawnPos,
+                        0.0f,
+                        true,
+                        false
+                );
+
+                player.teleportTo(
+                        level,
+                        spawnPos.getX() + 0.5,
+                        spawnPos.getY(),
+                        spawnPos.getZ() + 0.5,
+                        player.getYRot(),
+                        player.getXRot()
+                );
+
+                modData.putBoolean("spawnProcessed", true);
+                playerData.put(BattleOfGods.MODID, modData);
+                BattleOfGods.LOGGER.info("Teleported player {} to custom spawn {}", player.getName().getString(), spawnPos);
+            }
+        }
     }
 
     private static boolean isValidBiome(ServerLevel level, BlockPos pos) {
@@ -144,14 +150,48 @@ public class WorldSpawnHandler {
         return biome.is(Biomes.PLAINS) || biome.is(Biomes.FOREST);
     }
 
-    // World-specific spawn data
+    @SubscribeEvent
+    public static void onPlayerRespawn(PlayerEvent.PlayerRespawnEvent event) {
+        if (event.getEntity() instanceof ServerPlayer player && !event.isEndConquered()) {
+            ServerLevel level = player.serverLevel();
+            WorldSpawnData data = level.getDataStorage().get(
+                    WorldSpawnData::load,
+                    BattleOfGods.MODID + "_spawn_data"
+            );
+
+            if (data != null && data.customSpawnPos != null) {
+                // Erzwinge Chunk-Loading
+                ChunkPos chunkPos = new ChunkPos(data.customSpawnPos);
+                level.getChunkSource().addRegionTicket(
+                        TicketType.POST_TELEPORT,
+                        chunkPos,
+                        1,
+                        player.getId()
+                );
+
+                // Aktualisiere die Oberflächenposition
+                BlockPos surfacePos = getSurfacePos(level, data.customSpawnPos);
+
+                // Teleportiere synchron zum Server-Thread
+                player.server.execute(() -> player.teleportTo(
+                        level,
+                        surfacePos.getX() + 0.5,
+                        surfacePos.getY(),
+                        surfacePos.getZ() + 0.5,
+                        player.getYRot(),
+                        player.getXRot()
+                ));
+            }
+        }
+    }
+
     private static class WorldSpawnData extends SavedData {
-        public boolean spawnInitialized = false;
         public BlockPos customSpawnPos = null;
+        public boolean initialized = false;
 
         public static WorldSpawnData load(CompoundTag tag) {
             WorldSpawnData data = new WorldSpawnData();
-            data.spawnInitialized = tag.getBoolean("initialized");
+            data.initialized = tag.getBoolean("initialized");
             if (tag.contains("spawnPos")) {
                 int[] pos = tag.getIntArray("spawnPos");
                 data.customSpawnPos = new BlockPos(pos[0], pos[1], pos[2]);
@@ -161,9 +201,13 @@ public class WorldSpawnHandler {
 
         @Override
         public CompoundTag save(CompoundTag tag) {
-            tag.putBoolean("initialized", spawnInitialized);
+            tag.putBoolean("initialized", initialized);
             if (customSpawnPos != null) {
-                tag.putIntArray("spawnPos", new int[]{customSpawnPos.getX(), customSpawnPos.getY(), customSpawnPos.getZ()});
+                tag.putIntArray("spawnPos", new int[]{
+                        customSpawnPos.getX(),
+                        customSpawnPos.getY(),
+                        customSpawnPos.getZ()
+                });
             }
             return tag;
         }
