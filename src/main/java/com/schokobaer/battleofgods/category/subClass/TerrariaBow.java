@@ -23,7 +23,9 @@ import net.minecraft.world.item.*;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.Level;
+import org.jetbrains.annotations.Nullable;
 
+import java.util.List;
 import java.util.function.Supplier;
 
 public abstract class TerrariaBow extends BowItem implements SubClassMethods {
@@ -302,5 +304,11 @@ public abstract class TerrariaBow extends BowItem implements SubClassMethods {
 
     public float getDamage() {
         return this.getBaseDamage();
+    }
+
+    @Override
+    public void appendHoverText(ItemStack itemstack, @Nullable Level level, List<Component> tooltip, TooltipFlag flag) {
+        super.appendHoverText(itemstack, level, tooltip, flag);
+        subClass.get().appendHoverText(itemstack, level, tooltip, flag);
     }
 }

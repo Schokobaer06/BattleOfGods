@@ -10,6 +10,7 @@ import com.schokobaer.battleofgods.category.tier.GameTier;
 import com.schokobaer.battleofgods.category.tier.Tiers;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.Style;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -168,17 +169,24 @@ public abstract class TerrariaArmor extends ArmorItem implements GeoItem, SubCla
 
     @Override
     public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltip, TooltipFlag flag) {
-        subClass.get().appendHoverText(stack, level, tooltip, flag);
+        super.appendHoverText(stack, level, tooltip, flag);
+
+        tooltip.add(Component.translatable("rarity.battleofgods." +
+                this.getRarity().getDisplayName().toLowerCase()).setStyle(
+                Style.EMPTY.withBold(true)
+                        .withColor(this.getRarity().getColor())
+                        .withItalic(true)
+        ));
 
         //Defense
         if (tooltip.size() > 2)
             tooltip.add(2, Component.literal(getDefenseValue() + " ")
                     .append(Component.translatable("tooltip.battleofgods.armor"))
-                    .withStyle(ChatFormatting.DARK_GREEN));
+                    .withStyle(AbstractSubClass.getStyle()));
         else
             tooltip.add(Component.literal(this.getDefenseValue() + " ")
                     .append(Component.translatable("tooltip.battleofgods.armor"))
-                    .withStyle(ChatFormatting.DARK_GREEN));
+                    .withStyle(AbstractSubClass.getStyle()));
     }
 
     @Override

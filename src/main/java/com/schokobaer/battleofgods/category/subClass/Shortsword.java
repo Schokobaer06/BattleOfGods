@@ -22,6 +22,8 @@ import java.util.List;
 import java.util.UUID;
 import java.util.function.Supplier;
 
+import static com.schokobaer.battleofgods.category.AbstractSubClass.getStyle;
+
 public abstract class Shortsword extends SwordItem implements SubClassMethods {
     private final double knockback;
     private final Supplier<AbstractSubClass> subClass;
@@ -57,6 +59,17 @@ public abstract class Shortsword extends SwordItem implements SubClassMethods {
     public void appendHoverText(ItemStack itemstack, Level level, List<Component> tooltip, TooltipFlag flag) {
         super.appendHoverText(itemstack, level, tooltip, flag);
         subClass.get().appendHoverText(itemstack, level, tooltip, flag);
+
+        for (int i = 0; i < tooltip.size(); i++) {
+            if (tooltip.get(i).contains(Component.translatable("tooltip.battleofgods.damage"))) {
+                // Überschreibe den Tooltip an diesem Index
+                float damage = this.getDamage();
+                tooltip.add(Component.literal(damage + " true " + this.getMainClass() + " ")
+                        .append(Component.translatable("tooltip.battleofgods.damage"))
+                        .withStyle(getStyle()));
+                break;
+            }
+        }
     }
 
     @Override
