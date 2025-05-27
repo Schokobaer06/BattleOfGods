@@ -2,6 +2,7 @@ package com.schokobaer.battleofgods.category.subClass;
 
 import com.google.common.collect.LinkedHashMultimap;
 import com.google.common.collect.Multimap;
+import com.schokobaer.battleofgods.BattleOfGods;
 import com.schokobaer.battleofgods.category.AbstractSubClass;
 import com.schokobaer.battleofgods.category.SubClassMethods;
 import com.schokobaer.battleofgods.category.mainClass.MainClass;
@@ -158,5 +159,14 @@ public abstract class Broadsword extends SwordItem implements SubClassMethods {
         return super.getDamage();
     }
 
+    @Override
+    public void onUseTick(Level level, LivingEntity entity, ItemStack stack, int count) {
+        if (!this.isAutoSwing()){
+            BattleOfGods.LOGGER.debug("Time to swing: {}", count);
+        }
+        else{
+            super.onUseTick(level, entity, stack, count);
+        }
+    }
 }
 
