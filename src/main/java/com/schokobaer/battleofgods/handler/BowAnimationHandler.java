@@ -30,7 +30,7 @@ public class BowAnimationHandler {
 
                     ItemProperties.register(bow, pullLoc, (stack, level, entity, prop) -> {
                         if (entity == null || entity.getUseItem() != stack) return 0.0F;
-                        return (float) (stack.getUseDuration() - entity.getUseItemRemainingTicks()) / ((bow.getUseDuration(stack) == 72000) ? 20.0F : (float) bow.getUseDuration(stack));
+                        return (float) (stack.getUseDuration() - entity.getUseItemRemainingTicks()) / ((bow.getUseDuration(stack) == 72000) ? (float) bow.getUseTime() : (float) bow.getUseDuration(stack));
                     });
                 }
             }

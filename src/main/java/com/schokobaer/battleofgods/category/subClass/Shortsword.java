@@ -31,9 +31,11 @@ public abstract class Shortsword extends SwordItem implements SubClassMethods {
 
     public Shortsword(Tier tier, int attackDamage, float attackSpeed, double knockback, boolean isAutoSwing, GameTier gameTier) {
         super(tier, attackDamage - 1, attackSpeed - 4,
-                new Properties().durability(0)
+                new Properties()
+                        .durability(0)
                         .defaultDurability(0)
-                        .setNoRepair());
+                        .setNoRepair()
+                        .rarity(tier instanceof Tiers ? ((Tiers) tier).getRarity().asMinecraftRarity() : Rarities.WHITE.getRarity().asMinecraftRarity()));
         this.knockback = knockback;
         this.autoSwing = isAutoSwing;
         this.subClass = () -> {
@@ -57,14 +59,17 @@ public abstract class Shortsword extends SwordItem implements SubClassMethods {
 
     @Override
     public void appendHoverText(ItemStack itemstack, Level level, List<Component> tooltip, TooltipFlag flag) {
-        super.appendHoverText(itemstack, level, tooltip, flag);
         subClass.get().appendHoverText(itemstack, level, tooltip, flag);
+        super.appendHoverText(itemstack, level, tooltip, flag);
 
         for (int i = 0; i < tooltip.size(); i++) {
             if (tooltip.get(i).contains(Component.translatable("tooltip.battleofgods.damage"))) {
                 // Überschreibe den Tooltip an diesem Index
                 float damage = this.getDamage();
-                tooltip.add(Component.literal(damage + " true " + this.getMainClass() + " ")
+                String damageText = (damage % 1 == 0)
+                        ? String.valueOf((int) damage) // If damage is a whole number, show as integer
+                        : String.format("%.1f", damage);
+                tooltip.set(i, Component.literal(damageText + " true " + this.getMainClass().getName() + " ")
                         .append(Component.translatable("tooltip.battleofgods.damage"))
                         .withStyle(getStyle()));
                 break;

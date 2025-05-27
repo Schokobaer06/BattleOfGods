@@ -1,6 +1,7 @@
 package com.schokobaer.battleofgods.category;
 
 
+import com.schokobaer.battleofgods.BattleOfGods;
 import com.schokobaer.battleofgods.category.mainClass.MainClass;
 import com.schokobaer.battleofgods.category.mainClass.MainClasses;
 import com.schokobaer.battleofgods.category.rarity.Rarities;
@@ -9,6 +10,7 @@ import com.schokobaer.battleofgods.category.subClass.TerrariaArmor;
 import com.schokobaer.battleofgods.category.subClass.TerrariaBow;
 import com.schokobaer.battleofgods.category.tier.GameTier;
 import com.schokobaer.battleofgods.category.tier.GameTiers;
+import net.bettercombat.BetterCombat;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.Style;
@@ -30,6 +32,14 @@ public abstract class AbstractSubClass {
 
 
     public AbstractSubClass() {
+    }
+
+    public static float getAttackSpeedFromUseTime(int useTime) {
+        if (useTime <= 0) {
+            BattleOfGods.LOGGER.warn("UseTime must be greater than 0, received: {}", useTime);
+            return 1f;
+        }
+        return 20.0f / useTime;
     }
 
     public static @NotNull String getKnockback(double knockback, Item item) {
@@ -57,8 +67,8 @@ public abstract class AbstractSubClass {
     public static @NotNull String getSpeed(double attackSpeed, Item item) {
         // Terraria-UseTime aus Minecraft-APS errechnen
         int useTime;
-        if (item instanceof TerrariaBow)
-            useTime = (int) attackSpeed;
+        if (item instanceof TerrariaBow bow)
+            useTime = bow.getUseTime();
         else useTime = (int) Math.round(20.0 / attackSpeed);
 
         // Neue Schwellen (UseTime in Terraria-Frames)
@@ -132,13 +142,12 @@ public abstract class AbstractSubClass {
 
     @OnlyIn(Dist.CLIENT)
     public void appendHoverText(ItemStack itemstack, Level level, List<net.minecraft.network.chat.Component> tooltip, TooltipFlag flag) {
-        if (itemstack.getItem().getClass().getSuperclass() != null && SubClassMethods.class.isAssignableFrom(itemstack.getItem().getClass().getSuperclass())) return;
+        if (itemstack.getItem().getClass().getSuperclass() == null && !(SubClassMethods.class.isAssignableFrom(itemstack.getItem().getClass().getSuperclass()))) return;
         SubClassMethods subClassItem = (SubClassMethods) itemstack.getItem().getClass().getSuperclass().cast(itemstack.getItem());
 
-
         ///Rarity
-        tooltip.add(Component.translatable("rarity.battleofgods." +
-                subClassItem.getRarity().getDisplayName().toLowerCase()).setStyle(
+        tooltip.add(1, Component.translatable("rarity.battleofgods." +
+                this.getRarity().getDisplayName().toLowerCase()).setStyle(
                 Style.EMPTY.withBold(true)
                         .withColor(this.getRarity().getColor())
                         .withItalic(true)
@@ -146,7 +155,10 @@ public abstract class AbstractSubClass {
 
         /// Damage
         float damage = subClassItem.getDamage();
-        tooltip.add(Component.literal(damage + " " + subClassItem.getMainClass() + " ")
+        String damageText = (damage % 1 == 0)
+                ? String.valueOf((int) damage) // If damage is a whole number, show as integer
+                : String.format("%.1f", damage); // Otherwise, show with one decimal place
+        tooltip.add(2, Component.literal(damageText + " " + this.getMainClass().getName() + " ")
                 .append(Component.translatable("tooltip.battleofgods.damage"))
                 .withStyle(getStyle()));
 
@@ -156,18 +168,17 @@ public abstract class AbstractSubClass {
                 .get(Attributes.ATTACK_SPEED).stream()
                 .mapToDouble(AttributeModifier::getAmount)
                 .sum() + 4; // +4.0 because attack speed is offset in Minecraft
-
         //Convert to Terraria useTime
         String speedText = getSpeed(attackSpeed, itemstack.getItem());
 
-        tooltip.add(Component.translatable("tooltip.battleofgods." + speedText)
+        tooltip.add(3, Component.translatable("tooltip.battleofgods." + speedText)
                 .withStyle(AbstractSubClass.getStyle()));
 
         /// Knockback
         double knockback = subClassItem.getKnockback();
         // Convert to Terraria Knockback
         String kbText = getKnockback(knockback, itemstack.getItem());
-        tooltip.add(Component.translatable("tooltip.battleofgods." + kbText)
+        tooltip.add(4, Component.translatable("tooltip.battleofgods." + kbText)
                 .withStyle(getStyle()));
 
         /// Autoswing
@@ -175,7 +186,7 @@ public abstract class AbstractSubClass {
         Component componentAutoSwing = (autoSwing)
                 ? Component.literal("✔").withStyle(ChatFormatting.GREEN)
                 : Component.literal("✘").withStyle(ChatFormatting.RED);
-        tooltip.add(Component.translatable("tooltip.battleofgods.autoswing")
+        tooltip.add(5, Component.translatable("tooltip.battleofgods.autoswing")
                 .withStyle(getStyle())
                 .append(" ")
                 .append(componentAutoSwing));
@@ -197,6 +208,5 @@ public abstract class AbstractSubClass {
         }
         return retval;
     }
-
 
 }

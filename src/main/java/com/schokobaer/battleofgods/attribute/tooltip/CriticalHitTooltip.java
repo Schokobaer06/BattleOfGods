@@ -16,6 +16,8 @@ import net.minecraftforge.fml.common.Mod;
 import java.util.HashMap;
 import java.util.Map;
 
+import static com.schokobaer.battleofgods.category.AbstractSubClass.getStyle;
+
 @Mod.EventBusSubscriber(modid = BattleOfGods.MODID)
 @OnlyIn(Dist.CLIENT)
 public class CriticalHitTooltip {
@@ -59,7 +61,7 @@ public class CriticalHitTooltip {
             // Tooltip aus dem Cache hinzufügen
             Component cachedTooltip = tooltipCache.get(stack);
             if (!cachedTooltip.getString().isEmpty()) {
-                event.getToolTip().add(3,cachedTooltip);
+                event.getToolTip().add(3,cachedTooltip.copy().withStyle(getStyle()));
             }
         }
     }

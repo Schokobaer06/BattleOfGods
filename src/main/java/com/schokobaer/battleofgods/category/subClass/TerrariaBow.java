@@ -53,7 +53,11 @@ public abstract class TerrariaBow extends BowItem implements SubClassMethods {
      * @param tier       GameTier of the bow
      */
     public TerrariaBow(int baseDamage, float velocity, int useTime, int knockback, boolean autoSwing, int piercing, Rarity rarity, GameTier tier) {
-        super(new Properties().durability(0).defaultDurability(0).setNoRepair());
+        super(new Properties()
+                .durability(0)
+                .defaultDurability(0)
+                .setNoRepair()
+                .rarity(rarity.asMinecraftRarity()));
 
         this.baseDamage = baseDamage;
         this.velocity = velocity;
@@ -308,7 +312,9 @@ public abstract class TerrariaBow extends BowItem implements SubClassMethods {
 
     @Override
     public void appendHoverText(ItemStack itemstack, @Nullable Level level, List<Component> tooltip, TooltipFlag flag) {
-        super.appendHoverText(itemstack, level, tooltip, flag);
         subClass.get().appendHoverText(itemstack, level, tooltip, flag);
+        super.appendHoverText(itemstack, level, tooltip, flag);
     }
+
+
 }

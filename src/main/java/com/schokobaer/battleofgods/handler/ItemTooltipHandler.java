@@ -83,8 +83,11 @@ public class ItemTooltipHandler {
     }
 
     public static boolean isConsumable(ItemStack stack) {
-        return stack.getItem().isEdible() ||
-                stack.getItem().getUseDuration(stack) > 0;
+        return stack.getItem().isEdible()
+                || stack.getItem() instanceof PotionItem
+                || stack.getItem() instanceof BucketItem
+                || stack.getItem() instanceof SpawnEggItem
+                && !(stack.getItem() instanceof BlockItem); // Blöcke sind nicht konsumierbar
     }
 
     public static boolean isEquipable(Item item) {
@@ -95,7 +98,6 @@ public class ItemTooltipHandler {
     public static boolean isAmmo(Item item) {
         // Beispiel: Pfeile, Feuerkugeln etc.
         return item instanceof ArrowItem ||
-                item.getDefaultInstance().is(ItemTags.ARROWS) ||
-                item instanceof ProjectileWeaponItem; // Falls ein Ammo-Tag existiert
+                item.getDefaultInstance().is(ItemTags.ARROWS);
     }
 }

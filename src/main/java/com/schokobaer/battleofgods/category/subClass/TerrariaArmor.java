@@ -113,7 +113,11 @@ public abstract class TerrariaArmor extends ArmorItem implements GeoItem, SubCla
             public float getKnockbackResistance() {
                 return 0;
             }
-        }, type, new Properties());
+        }, type, new Properties()
+                .durability(0)
+                .defaultDurability(0)
+                .setNoRepair()
+                .rarity(tier.getRarity().asMinecraftRarity()));
         this.defense = defense[type.getSlot().getIndex()];
         this.subClass = () -> {
             AbstractSubClass sb = new AbstractSubClass() {
@@ -169,8 +173,6 @@ public abstract class TerrariaArmor extends ArmorItem implements GeoItem, SubCla
 
     @Override
     public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltip, TooltipFlag flag) {
-        super.appendHoverText(stack, level, tooltip, flag);
-
         tooltip.add(Component.translatable("rarity.battleofgods." +
                 this.getRarity().getDisplayName().toLowerCase()).setStyle(
                 Style.EMPTY.withBold(true)
@@ -187,6 +189,8 @@ public abstract class TerrariaArmor extends ArmorItem implements GeoItem, SubCla
             tooltip.add(Component.literal(this.getDefenseValue() + " ")
                     .append(Component.translatable("tooltip.battleofgods.armor"))
                     .withStyle(AbstractSubClass.getStyle()));
+
+        super.appendHoverText(stack, level, tooltip, flag);
     }
 
     @Override
