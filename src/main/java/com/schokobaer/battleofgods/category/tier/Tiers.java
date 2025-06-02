@@ -2,8 +2,11 @@ package com.schokobaer.battleofgods.category.tier;
 
 import com.schokobaer.battleofgods.category.rarity.Rarities;
 import com.schokobaer.battleofgods.category.rarity.Rarity;
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.level.block.Block;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.function.Supplier;
 
@@ -85,4 +88,46 @@ public enum Tiers implements Tier {
     public Ingredient getRepairIngredient() {
         return repairIngredient.get();
     }
+
+    public static enum MaterialTier implements Tier {
+
+        None();
+
+        @Override
+        public int getUses() {
+            return 0;
+        }
+
+        @Override
+        public float getSpeed() {
+            return 0;
+        }
+
+        @Override
+        public float getAttackDamageBonus() {
+            return 0;
+        }
+
+        @Override
+        public int getLevel() {
+            return 0;
+        }
+
+        @Override
+        public int getEnchantmentValue() {
+            return 0;
+        }
+
+        @Override
+        public Ingredient getRepairIngredient() {
+            return null;
+        }
+
+        @Override
+        public @Nullable TagKey<Block> getTag() {
+            return Tier.super.getTag();
+        }
+    }
+
+    ;
 }
