@@ -108,6 +108,7 @@
         - [ ] Amber
     - [ ] Living Trees
         - [ ] Living Wooden Chest
+- [ ] Overhauling Copper Armor
 - [ ] Weapons
     - [ ] Wooden Sword [Melee]
     - [ ] Wooden Bow [Ranged]
@@ -157,9 +158,15 @@
             - [ ] Squirrel Squire Staff
 - [ ] Config
     - [ ] Spawn Biome
-    - [ ] OmniMovement Toggler
+  - [ ] OmniMovement Toggle
+  - [ ] Item Tooltip Handler Toggle
+  - [ ] World Spawn Handler Toggle
+- [ ] Overhaul Boss Progression
 - [ ] Item Count erhöhen
 - [ ] Spawn Bag
+- [ ] Guide Book
+  - [ ] Bestiary
+  - [ ] Guide
 - [ ] Logo
 - [ ] Mod Icon
 - [ ] Custom Main Menu

@@ -112,7 +112,7 @@ public abstract class Shortsword extends SwordItem implements SubClassMethods {
     }
 
     public boolean isAutoSwing() {
-        return autoSwing;
+        return true;
     }
 
     public void setAutoSwing(boolean autoSwing) {

@@ -11,13 +11,10 @@ import com.schokobaer.battleofgods.category.rarity.Rarity;
 import com.schokobaer.battleofgods.category.tier.GameTier;
 import com.schokobaer.battleofgods.category.tier.Tiers;
 import net.minecraft.network.chat.Component;
-import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
-import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.Level;
 
@@ -117,7 +114,7 @@ public abstract class Broadsword extends SwordItem implements SubClassMethods {
     }
 
     public boolean isAutoSwing() {
-        return autoSwing;
+        return true;
     }
 
     public void setAutoSwing(boolean autoSwing) {
@@ -158,16 +155,6 @@ public abstract class Broadsword extends SwordItem implements SubClassMethods {
         return super.getDamage();
     }
 
-    @Override
-    public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
-        ItemStack itemStack = player.getItemInHand(hand);
 
-        // Überprüfen, ob der Spieler noch in der Abklingzeit ist
-        if (player.getCooldowns().isOnCooldown(this)) {
-            System.out.println("Player is on cooldown for this item:" + player.getCooldowns().getCooldownPercent(this, 0));
-            return InteractionResultHolder.fail(itemStack);
-        }
-        return super.use(level, player, hand);
-    }
 }
 

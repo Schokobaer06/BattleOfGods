@@ -94,8 +94,15 @@ public class WorldSpawnHandler {
     }
 
     private static BlockPos getSurfacePos(ServerLevel level, BlockPos pos) {
-        // Get actual surface position (ignoring vegetation)
-        return level.getHeightmapPos(Heightmap.Types.WORLD_SURFACE, pos);
+        // Kombiniere beide Heightmap-Typen für genaue Position
+        BlockPos surface = level.getHeightmapPos(Heightmap.Types.WORLD_SURFACE, pos);
+        BlockPos motion = level.getHeightmapPos(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, surface);
+
+        return new BlockPos(
+                surface.getX(),
+                Math.max(surface.getY(), motion.getY()),
+                surface.getZ()
+        );
     }
 
     private static boolean isValidBiome(ServerLevel level, BlockPos pos) {
