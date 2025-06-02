@@ -2,7 +2,6 @@ package com.schokobaer.battleofgods.category.subClass;
 
 import com.google.common.collect.LinkedHashMultimap;
 import com.google.common.collect.Multimap;
-import com.schokobaer.battleofgods.BattleOfGods;
 import com.schokobaer.battleofgods.category.AbstractSubClass;
 import com.schokobaer.battleofgods.category.SubClassMethods;
 import com.schokobaer.battleofgods.category.mainClass.MainClass;
@@ -12,9 +11,9 @@ import com.schokobaer.battleofgods.category.rarity.Rarity;
 import com.schokobaer.battleofgods.category.tier.GameTier;
 import com.schokobaer.battleofgods.category.tier.Tiers;
 import net.minecraft.network.chat.Component;
-import net.minecraft.world.entity.Entity;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.EquipmentSlot;
-import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
@@ -160,13 +159,15 @@ public abstract class Broadsword extends SwordItem implements SubClassMethods {
     }
 
     @Override
-    public void onUseTick(Level level, LivingEntity entity, ItemStack stack, int count) {
-        if (!this.isAutoSwing()){
-            BattleOfGods.LOGGER.debug("Time to swing: {}", count);
+    public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
+        ItemStack itemStack = player.getItemInHand(hand);
+
+        // Überprüfen, ob der Spieler noch in der Abklingzeit ist
+        if (player.getCooldowns().isOnCooldown(this)) {
+            System.out.println("Player is on cooldown for this item:" + player.getCooldowns().getCooldownPercent(this, 0));
+            return InteractionResultHolder.fail(itemStack);
         }
-        else{
-            super.onUseTick(level, entity, stack, count);
-        }
+        return super.use(level, player, hand);
     }
 }
 

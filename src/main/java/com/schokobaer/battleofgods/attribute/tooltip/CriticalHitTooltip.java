@@ -24,7 +24,7 @@ public class CriticalHitTooltip {
 
     private static final Map<ItemStack, Component> tooltipCache = new HashMap<>();
     private static final Map<ItemStack, Long> lastUpdateTimes = new HashMap<>();
-    private static final long UPDATE_INTERVAL_MS = 100; // 2 ticks
+    private static final long UPDATE_INTERVAL_MS = 50; // 1 ticks
 
     @SubscribeEvent
     public static void onItemTooltip(ItemTooltipEvent event) {

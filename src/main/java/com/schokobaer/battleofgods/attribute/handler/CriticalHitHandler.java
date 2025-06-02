@@ -25,7 +25,7 @@ import static com.schokobaer.battleofgods.BattleOfGods.isDebug;
 public class CriticalHitHandler {
     private static final Map<UUID, Double> cachedCritChance = new HashMap<>();
     private static final Map<UUID, Long> lastUpdate = new HashMap<>();
-    private static Double DEFAULT_CRIT_CHANCE = 0.0; // Standardwert (4%)
+    private static Double DEFAULT_CRIT_CHANCE = 0.04; // Standardwert (4%)
 
     @SubscribeEvent
     public static void onLivingHurt(LivingHurtEvent event) {

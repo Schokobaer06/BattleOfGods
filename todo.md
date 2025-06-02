@@ -31,9 +31,9 @@
     - [x] Tier
 - [ ] updating AbstractSubclass
   - [ ] adding AutoSwing
-  - [ ] adding True Melee
-  - [ ] adding appendTooltipExtras into interface
-  - [ ] optimizing AbstractSubClass
+  - [x] adding True Melee
+  - [x] adding appendTooltipExtras into interface
+  - [x] optimizing AbstractSubClass
 - [ ] Copper Full Set
     - [ ] Copper Bow
     - [x] Copper Helmet

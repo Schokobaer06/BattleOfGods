@@ -2,15 +2,10 @@ package com.schokobaer.battleofgods.handler;
 
 import com.schokobaer.battleofgods.BattleOfGods;
 import com.schokobaer.battleofgods.category.AbstractSubClass;
-import com.schokobaer.battleofgods.category.mainClass.MainClasses;
-import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.Style;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.*;
-import net.minecraft.world.item.context.UseOnContext;
-import net.minecraft.world.item.enchantment.EnchantmentHelper;
-import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraftforge.event.entity.player.ItemTooltipEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -71,7 +66,7 @@ public class ItemTooltipHandler {
         // Rarity
         if (!(modId.equals(BattleOfGods.MODID))){
             Rarity rarity = item.getRarity(stack);
-            tooltip.add(1, Component.literal(rarity.name()).withStyle(rarity.getStyleModifier()));
+            tooltip.add(1, Component.literal(rarity.name().toLowerCase()).withStyle(rarity.getStyleModifier()));
         }
     }
 
