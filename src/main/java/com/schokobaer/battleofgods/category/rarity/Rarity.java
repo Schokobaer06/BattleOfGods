@@ -7,8 +7,6 @@ import net.minecraft.resources.ResourceLocation;
 
 import java.util.Objects;
 
-import static com.schokobaer.battleofgods.category.rarity.Rarities.*;
-
 /**
  * Class for defining the rarity of an item
  * The rarity is used to determine the color of the item
@@ -88,25 +86,6 @@ public class Rarity {
         var name = rarity.name();
         int style = Objects.requireNonNull(rarity.getStyleModifier().apply(Style.EMPTY).getColor()).getValue();
         return new Rarity(name, style);
-    }
-
-    /**
-     * @return The rarity as a net.minecraft.world.item.Rarity
-     */
-    public net.minecraft.world.item.Rarity asMinecraftRarity() {
-        if (this == LIGHT_RED.getRarity() || this == PINK.getRarity() || this == LIGHT_PURPLE.getRarity()) {
-            return net.minecraft.world.item.Rarity.UNCOMMON;
-        } else if (this == LIME.getRarity() || this == YELLOW.getRarity() || this == CYAN.getRarity() ||
-                this == RED.getRarity() || this == PURPLE.getRarity()) {
-            return net.minecraft.world.item.Rarity.RARE;
-        } else if (this == TURQUOISE.getRarity() || this == PURE_GREEN.getRarity() || this == DARK_BLUE.getRarity() ||
-                this == VIOLET.getRarity() || this == HOT_PINK.getRarity() || this == CALAMITY_RED.getRarity() ||
-                this == AMBER.getRarity() || this == DARK_ORANGE.getRarity() || this == RAINBOW.getRarity() ||
-                this == FIERY_RED.getRarity() || this == TEAL.getRarity()) {
-            return net.minecraft.world.item.Rarity.EPIC;
-        } else {
-            return net.minecraft.world.item.Rarity.COMMON;
-        }
     }
     //Constructor for animated Colors (customizable speed)
 
