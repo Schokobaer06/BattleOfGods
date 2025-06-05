@@ -1,9 +1,9 @@
 package com.schokobaer.battleofgods.armor.tier1;
 
 import com.schokobaer.battleofgods.BattleOfGods;
+import com.schokobaer.battleofgods.category.rarity.Rarities;
 import com.schokobaer.battleofgods.category.subClass.TerrariaArmor;
 import com.schokobaer.battleofgods.category.tier.GameTiers;
-import com.schokobaer.battleofgods.category.tier.Tiers;
 import net.minecraft.client.model.HumanoidModel;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
@@ -23,7 +23,7 @@ public class CopperArmor extends TerrariaArmor {
 
     public CopperArmor(Type type) {
         super(name, new int[]{1, 2, 1, 0},
-                SoundEvents.ARMOR_EQUIP_GENERIC, type, Tiers.WHITE, GameTiers.TIER_1);
+                SoundEvents.ARMOR_EQUIP_GOLD, type, Rarities.WHITE, GameTiers.TIER_1);
     }
 
     @Override

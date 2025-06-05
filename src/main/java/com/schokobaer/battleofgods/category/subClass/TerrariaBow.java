@@ -7,6 +7,7 @@ import com.schokobaer.battleofgods.category.AbstractSubClass;
 import com.schokobaer.battleofgods.category.SubClassMethods;
 import com.schokobaer.battleofgods.category.mainClass.MainClass;
 import com.schokobaer.battleofgods.category.mainClass.MainClasses;
+import com.schokobaer.battleofgods.category.rarity.Rarities;
 import com.schokobaer.battleofgods.category.rarity.Rarity;
 import com.schokobaer.battleofgods.category.tier.GameTier;
 import net.minecraft.network.chat.Component;
@@ -26,11 +27,11 @@ import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
-import java.util.function.Supplier;
 
 public abstract class TerrariaBow extends BowItem implements SubClassMethods {
 
-    private final Supplier<AbstractSubClass> subClass;
+    private final AbstractSubClass subClass = new AbstractSubClass() {
+    };
     private int baseDamage;
     private float velocity;
     private int useTime;
@@ -50,9 +51,9 @@ public abstract class TerrariaBow extends BowItem implements SubClassMethods {
      * @param autoSwing  If the bow is semi- or fully automatic
      * @param piercing   Level of piercing of the bow
      * @param rarity     Rarity of the bow
-     * @param tier       GameTier of the bow
+     * @param gameTier       GameTier of the bow
      */
-    public TerrariaBow(int baseDamage, float velocity, int useTime, int knockback, boolean autoSwing, int piercing, Rarity rarity, GameTier tier) {
+    public TerrariaBow(int baseDamage, float velocity, int useTime, int knockback, boolean autoSwing, int piercing, Rarities rarity, GameTier gameTier) {
         super(new Properties()
                 .durability(0)
                 .defaultDurability(0)
@@ -66,14 +67,9 @@ public abstract class TerrariaBow extends BowItem implements SubClassMethods {
         this.autoSwing = autoSwing;
         this.piercing = piercing;
 
-        this.subClass = () -> {
-            AbstractSubClass sb = new AbstractSubClass() {
-            };
-            sb.setMainClass(MainClasses.RANGED);
-            sb.setRarity(rarity);
-            sb.setGameTier(tier);
-            return sb;
-        };
+        this.subClass.setMainClass(MainClasses.RANGED);
+        this.subClass.setRarity(rarity.getRarity());
+        this.subClass.setGameTier(gameTier);
     }
 
     @Override
@@ -219,7 +215,7 @@ public abstract class TerrariaBow extends BowItem implements SubClassMethods {
 
     @Override
     public Component getName(ItemStack stack) {
-        return subClass.get().getName(super.getName(stack));
+        return subClass.getName(super.getName(stack));
     }
 
     @Override
@@ -281,29 +277,19 @@ public abstract class TerrariaBow extends BowItem implements SubClassMethods {
     }
 
     public MainClass getMainClass() {
-        return subClass.get().getMainClass();
+        return subClass.getMainClass();
     }
 
     public Rarity getRarity() {
-        return subClass.get().getRarity();
+        return subClass.getRarity();
     }
 
     public void setRarity(Rarity rarity) {
-        subClass.get().setRarity(rarity);
+        subClass.setRarity(rarity);
     }
 
     public GameTier getGameTier() {
-        return subClass.get().getGameTier();
-    }
-
-    @Override
-    public net.minecraft.world.item.Rarity getRarity(ItemStack stack) {
-        Item item = stack.getItem();
-        if (item.getClass().getSuperclass() != null && SubClassMethods.class.isAssignableFrom(item.getClass().getSuperclass())) {
-            SubClassMethods subClassItem = (SubClassMethods) item.getClass().getSuperclass().cast(item);
-            return subClassItem.getRarity().asMinecraftRarity();
-        }
-        return super.getRarity(stack);
+        return subClass.getGameTier();
     }
 
     public float getDamage() {
@@ -312,7 +298,7 @@ public abstract class TerrariaBow extends BowItem implements SubClassMethods {
 
     @Override
     public void appendHoverText(ItemStack itemstack, @Nullable Level level, List<Component> tooltip, TooltipFlag flag) {
-        subClass.get().appendHoverText(itemstack, level, tooltip, flag);
+        subClass.appendHoverText(itemstack, level, tooltip, flag);
         super.appendHoverText(itemstack, level, tooltip, flag);
     }
 

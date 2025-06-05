@@ -23,6 +23,7 @@ import net.minecraft.world.level.block.Block;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
@@ -74,6 +75,52 @@ public abstract class AbstractSubClass {
             @Override
             public net.minecraft.tags.TagKey<net.minecraft.world.level.block.Block> getTag() {
                 return blockTag;
+            }
+
+            @Override
+            public net.minecraft.world.item.crafting.Ingredient getRepairIngredient() {
+                // Terraria‐Style: keine Reparatur
+                return Ingredient.EMPTY;
+            }
+        };
+    }
+
+    public static Tier getTier(
+            Tier tier,
+            final int enchantmentValue
+    ) {
+        return new Tier() {
+            @Override
+            public int getUses() {
+                // Terraria‐Style: unzerstörbar → entweder 0 oder Integer.MAX_VALUE.
+                return 0;
+            }
+
+            @Override
+            public float getSpeed() {
+                return tier.getSpeed();
+            }
+
+            @Override
+            public float getAttackDamageBonus() {
+                // Terraria‐Style: kein extra Bonus aus dem Tier selbst
+                return 0f;
+            }
+
+            @Override
+            public int getLevel() {
+                // Fallback für Block‐Drops, falls TierSortingRegistry nicht greift
+                return tier.getLevel();
+            }
+
+            @Override
+            public int getEnchantmentValue() {
+                return enchantmentValue;
+            }
+
+            @Override
+            public @Nullable TagKey<Block> getTag() {
+                return tier.getTag();
             }
 
             @Override

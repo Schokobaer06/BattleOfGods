@@ -2,6 +2,7 @@ package com.schokobaer.battleofgods.item.tier1;
 
 import com.google.common.collect.LinkedHashMultimap;
 import com.google.common.collect.Multimap;
+import com.schokobaer.battleofgods.category.rarity.Rarities;
 import com.schokobaer.battleofgods.category.subClass.Shortsword;
 import com.schokobaer.battleofgods.category.tier.GameTiers;
 import com.schokobaer.battleofgods.category.tier.Tiers;
@@ -15,7 +16,7 @@ import java.util.UUID;
 
 public class ItemCopperShortsword extends Shortsword {
     public ItemCopperShortsword() {
-        super(Tiers.WHITE, 5, 1.54f, 1, false, GameTiers.TIER_1);
+        super(Tiers.GOLD, 5, 1.54f, 1, false, Rarities.WHITE, GameTiers.TIER_1);
     }
 
     @Override

@@ -9,47 +9,41 @@ import com.schokobaer.battleofgods.category.mainClass.MainClasses;
 import com.schokobaer.battleofgods.category.rarity.Rarities;
 import com.schokobaer.battleofgods.category.rarity.Rarity;
 import com.schokobaer.battleofgods.category.tier.GameTier;
-import com.schokobaer.battleofgods.category.tier.Tiers;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
-import net.minecraft.world.item.*;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.SwordItem;
+import net.minecraft.world.item.Tier;
+import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 
 import java.util.List;
 import java.util.UUID;
-import java.util.function.Supplier;
 
 import static com.schokobaer.battleofgods.category.AbstractSubClass.getStyle;
 
 public abstract class Shortsword extends SwordItem implements SubClassMethods {
     private final double knockback;
-    private final Supplier<AbstractSubClass> subClass;
+    private final AbstractSubClass subClass = new AbstractSubClass() {
+    };
     private boolean autoSwing;
 
-    public Shortsword(Tier tier, int attackDamage, float attackSpeed, double knockback, boolean isAutoSwing, GameTier gameTier) {
-        super(tier, attackDamage - 1, attackSpeed - 4,
+    public Shortsword(Tier tier, int attackDamage, float attackSpeed, double knockback, boolean isAutoSwing, Rarities rarity, GameTier gameTier) {
+        super(AbstractSubClass.getTier(tier, rarity.getEnchantmentLevel()), attackDamage - 1, attackSpeed - 4,
                 new Properties()
                         .durability(0)
                         .defaultDurability(0)
                         .setNoRepair()
-                        .rarity(tier instanceof Tiers ? ((Tiers) tier).getRarity().asMinecraftRarity() : Rarities.WHITE.getRarity().asMinecraftRarity()));
+                        .rarity(rarity.asMinecraftRarity())
+        );
         this.knockback = knockback;
         this.autoSwing = isAutoSwing;
-        this.subClass = () -> {
-            AbstractSubClass sb = new AbstractSubClass() {
-            };
-            sb.setMainClass(MainClasses.MELEE);
-            if (tier instanceof com.schokobaer.battleofgods.category.tier.Tiers) {
-                sb.setRarity(((Tiers) tier).getRarity());
-            } else {
-                sb.setRarity(Rarities.WHITE.getRarity());
-            }
-            sb.setGameTier(gameTier);
-            return sb;
-        };
+        this.subClass.setMainClass(MainClasses.MELEE);
+        this.subClass.setRarity(rarity.getRarity());
+        this.subClass.setGameTier(gameTier);
     }
 
     @Override
@@ -59,7 +53,7 @@ public abstract class Shortsword extends SwordItem implements SubClassMethods {
 
     @Override
     public void appendHoverText(ItemStack itemstack, Level level, List<Component> tooltip, TooltipFlag flag) {
-        subClass.get().appendHoverText(itemstack, level, tooltip, flag);
+        subClass.appendHoverText(itemstack, level, tooltip, flag);
         super.appendHoverText(itemstack, level, tooltip, flag);
 
         for (int i = 0; i < tooltip.size(); i++) {
@@ -79,7 +73,7 @@ public abstract class Shortsword extends SwordItem implements SubClassMethods {
 
     @Override
     public Component getName(ItemStack stack) {
-        return subClass.get().getName(super.getName(stack));
+        return subClass.getName(super.getName(stack));
     }
 
     @Override
@@ -111,6 +105,7 @@ public abstract class Shortsword extends SwordItem implements SubClassMethods {
         return modifiers;
     }
 
+    // Not implemented correctly bc issue with better combat
     public boolean isAutoSwing() {
         return true;
     }
@@ -120,29 +115,19 @@ public abstract class Shortsword extends SwordItem implements SubClassMethods {
     }
 
     public MainClass getMainClass() {
-        return subClass.get().getMainClass();
+        return subClass.getMainClass();
     }
 
     public Rarity getRarity() {
-        return subClass.get().getRarity();
+        return subClass.getRarity();
     }
 
     public void setRarity(Rarity rarity) {
-        subClass.get().setRarity(rarity);
+        subClass.setRarity(rarity);
     }
 
     public GameTier getGameTier() {
-        return subClass.get().getGameTier();
-    }
-
-    @Override
-    public net.minecraft.world.item.Rarity getRarity(ItemStack stack) {
-        Item item = stack.getItem();
-        if (item.getClass().getSuperclass() != null && SubClassMethods.class.isAssignableFrom(item.getClass().getSuperclass())) {
-            SubClassMethods subClassItem = (SubClassMethods) item.getClass().getSuperclass().cast(item);
-            return subClassItem.getRarity().asMinecraftRarity();
-        }
-        return super.getRarity(stack);
+        return subClass.getGameTier();
     }
 
     @Override

@@ -30,8 +30,6 @@ public interface SubClassMethods {
 
     void setRarity(Rarity rarity);
 
-    net.minecraft.world.item.Rarity getRarity(ItemStack stack);
-
     GameTier getGameTier();
 
     int getKnockback();
