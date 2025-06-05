@@ -6,25 +6,27 @@ import com.schokobaer.battleofgods.category.mainClass.MainClass;
 import com.schokobaer.battleofgods.category.mainClass.MainClasses;
 import com.schokobaer.battleofgods.category.rarity.Rarities;
 import com.schokobaer.battleofgods.category.rarity.Rarity;
-import com.schokobaer.battleofgods.category.subClass.TerrariaArmor;
 import com.schokobaer.battleofgods.category.subClass.TerrariaBow;
 import com.schokobaer.battleofgods.category.tier.GameTier;
 import com.schokobaer.battleofgods.category.tier.GameTiers;
-import net.bettercombat.BetterCombat;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.Style;
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.item.*;
+import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Block;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
+@SuppressWarnings({"deprecation", "unused"})
 public abstract class AbstractSubClass {
     private MainClass mainClass = MainClasses.MISC;
     private Rarity rarity = Rarities.WHITE.getRarity();
@@ -32,6 +34,60 @@ public abstract class AbstractSubClass {
 
 
     public AbstractSubClass() {
+    }
+
+    public static Tier getTier(
+            Tier tier,
+            final int enchantmentValue,
+            final float destroySpeed,
+            final TagKey<Block> blockTag
+    ) {
+        return new Tier() {
+            @Override
+            public int getUses() {
+                // Terraria‐Style: unzerstörbar → entweder 0 oder Integer.MAX_VALUE.
+                return 0;
+            }
+
+            @Override
+            public float getSpeed() {
+                return destroySpeed;
+            }
+
+            @Override
+            public float getAttackDamageBonus() {
+                // Terraria‐Style: kein extra Bonus aus dem Tier selbst
+                return 0f;
+            }
+
+            @Override
+            public int getLevel() {
+                // Fallback für Block‐Drops, falls TierSortingRegistry nicht greift
+                return tier.getLevel();
+            }
+
+            @Override
+            public int getEnchantmentValue() {
+                return enchantmentValue;
+            }
+
+            @Override
+            public net.minecraft.tags.TagKey<net.minecraft.world.level.block.Block> getTag() {
+                return blockTag;
+            }
+
+            @Override
+            public net.minecraft.world.item.crafting.Ingredient getRepairIngredient() {
+                // Terraria‐Style: keine Reparatur
+                return Ingredient.EMPTY;
+            }
+        };
+    }
+
+    public static float getDestroySpeedFromMiningSpeed(int miningSpeed) {
+        float hitsPerSecond = 60f / (float) miningSpeed;
+        float factor = 1.3f;
+        return hitsPerSecond * factor;
     }
 
     public static float getAttackSpeedFromUseTime(int useTime) {
@@ -207,6 +263,40 @@ public abstract class AbstractSubClass {
             return ItemStack.EMPTY;
         }
         return retval;
+    }
+
+    public static class asTiers implements Tier {
+
+
+        @Override
+        public int getUses() {
+            return 0;
+        }
+
+        @Override
+        public float getSpeed() {
+            return 0;
+        }
+
+        @Override
+        public float getAttackDamageBonus() {
+            return 0;
+        }
+
+        @Override
+        public int getLevel() {
+            return 0;
+        }
+
+        @Override
+        public int getEnchantmentValue() {
+            return 0;
+        }
+
+        @Override
+        public Ingredient getRepairIngredient() {
+            return null;
+        }
     }
 
 }
