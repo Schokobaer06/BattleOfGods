@@ -1,5 +1,9 @@
 {
   "stats": {
+    "minecraft:mined": {
+      "battleofgods:wooden_workbench": 2,
+      "minecraft:grass_block": 4
+    },
     "minecraft:used": {
       "geckolib:bat_spawn_egg": 1,
       "minecraft:oak_log": 20,
@@ -32,6 +36,26 @@
       "battleofgods:copper_shortsword": 309,
       "battleofgods:wood_armor_helmet": 1
     },
+    "minecraft:custom": {
+      "minecraft:time_since_rest": 19502,
+      "minecraft:sprint_one_cm": 448907,
+      "minecraft:damage_taken": 300,
+      "minecraft:walk_one_cm": 464839,
+      "minecraft:mob_kills": 17,
+      "minecraft:drop": 101,
+      "minecraft:damage_dealt": 31397,
+      "minecraft:interact_with_crafting_table": 17,
+      "minecraft:fly_one_cm": 159822,
+      "minecraft:play_time": 496449,
+      "minecraft:crouch_one_cm": 20998,
+      "minecraft:deaths": 2,
+      "minecraft:sneak_time": 6932,
+      "minecraft:jump": 894,
+      "minecraft:leave_game": 624,
+      "minecraft:time_since_death": 19471,
+      "minecraft:total_world_time": 884136,
+      "minecraft:fall_one_cm": 2452
+    },
     "minecraft:picked_up": {
       "minecraft:sculk_catalyst": 3,
       "battleofgods:copper_armor_helmet": 1,
@@ -53,40 +77,6 @@
       "minecraft:emerald": 256,
       "minecraft:iron_boots": 1
     },
-    "minecraft:custom": {
-      "minecraft:time_since_rest": 18299,
-      "minecraft:sprint_one_cm": 448907,
-      "minecraft:damage_taken": 300,
-      "minecraft:walk_one_cm": 463680,
-      "minecraft:mob_kills": 17,
-      "minecraft:drop": 101,
-      "minecraft:damage_dealt": 31397,
-      "minecraft:interact_with_crafting_table": 17,
-      "minecraft:fly_one_cm": 159822,
-      "minecraft:play_time": 495246,
-      "minecraft:crouch_one_cm": 20998,
-      "minecraft:deaths": 2,
-      "minecraft:sneak_time": 6932,
-      "minecraft:jump": 894,
-      "minecraft:leave_game": 623,
-      "minecraft:time_since_death": 18268,
-      "minecraft:total_world_time": 881558,
-      "minecraft:fall_one_cm": 2452
-    },
-    "minecraft:mined": {
-      "battleofgods:wooden_workbench": 2,
-      "minecraft:grass_block": 4
-    },
-    "minecraft:killed": {
-      "minecraft:wolf": 1,
-      "minecraft:vindicator": 1,
-      "geckolib:fake_glass": 1,
-      "minecraft:frog": 3,
-      "minecraft:warden": 4,
-      "minecraft:slime": 5,
-      "minecraft:villager": 1,
-      "geckolib:bat": 1
-    },
     "minecraft:dropped": {
       "minecraft:diamond_sword": 2,
       "minecraft:dirt": 1,
@@ -104,6 +94,16 @@
       "battleofgods:wood_armor_leggings": 1,
       "minecraft:grass_block": 2,
       "minecraft:emerald": 256
+    },
+    "minecraft:killed": {
+      "minecraft:wolf": 1,
+      "minecraft:vindicator": 1,
+      "geckolib:fake_glass": 1,
+      "minecraft:frog": 3,
+      "minecraft:warden": 4,
+      "minecraft:slime": 5,
+      "minecraft:villager": 1,
+      "geckolib:bat": 1
     }
   },
   "DataVersion": 3465

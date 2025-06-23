@@ -2,10 +2,7 @@ package com.schokobaer.battleofgods.category.rarity;
 
 import com.mojang.datafixers.util.Either;
 import com.schokobaer.battleofgods.BattleOfGods;
-import net.minecraft.network.chat.Style;
 import net.minecraft.resources.ResourceLocation;
-
-import java.util.Objects;
 
 /**
  * Class for defining the rarity of an item
@@ -80,12 +77,12 @@ public class Rarity {
      * Converts a net.minecraft.world.item.Rarity to a Rarity
      *
      * @param rarity The net.minecraft.world.item.Rarity to convert
+     * @param color The color of the rarity
      * @return The converted Rarity
      */
-    public static Rarity asRarity(net.minecraft.world.item.Rarity rarity) {
+    public static Rarity asRarity(net.minecraft.world.item.Rarity rarity, int color) {
         var name = rarity.name();
-        int style = Objects.requireNonNull(rarity.getStyleModifier().apply(Style.EMPTY).getColor()).getValue();
-        return new Rarity(name, style);
+        return new Rarity(name, color);
     }
     //Constructor for animated Colors (customizable speed)
 

@@ -61,7 +61,7 @@ public enum Rarities implements IExtensibleEnum {
         }
     }
 
-    public static Rarities create(com.schokobaer.battleofgods.category.rarity.Rarity rarity, int enchantmentLevel) {
+    public static Rarities create(String name, com.schokobaer.battleofgods.category.rarity.Rarity rarity, int enchantmentLevel) {
         throw new IllegalStateException("Enum not extended");
     }
 
