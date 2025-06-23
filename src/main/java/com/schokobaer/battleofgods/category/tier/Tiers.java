@@ -34,8 +34,6 @@ public enum Tiers implements Tier {
         );
     }
 
-    ;
-
     /// Only used für tungsten pickaxe
     public static Tier METEORITE() {
         return new Tier() {
