@@ -58,7 +58,8 @@ public abstract class TerrariaBow extends BowItem implements SubClassMethods {
                 .durability(0)
                 .defaultDurability(0)
                 .setNoRepair()
-                .rarity(rarity.asMinecraftRarity()));
+                .rarity(rarity.asMinecraftRarity())
+        );
 
         this.baseDamage = baseDamage;
         this.velocity = velocity;

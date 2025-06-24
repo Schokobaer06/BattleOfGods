@@ -25,6 +25,7 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @SuppressWarnings({"deprecation", "unused"})
@@ -248,11 +249,12 @@ public abstract class AbstractSubClass {
         if (itemstack.getItem().getClass().getSuperclass() == null && !(SubClassMethods.class.isAssignableFrom(itemstack.getItem().getClass().getSuperclass()))) return;
         SubClassMethods subClassItem = (SubClassMethods) itemstack.getItem().getClass().getSuperclass().cast(itemstack.getItem());
 
+        List<Component> components = new ArrayList<>();
+
         ///Rarity
-        tooltip.add(1, Component.translatable("rarity.battleofgods." +
+        components.add(Component.translatable("rarity.battleofgods." +
                 this.getRarity().getDisplayName().toLowerCase()).setStyle(
-                Style.EMPTY.withBold(true)
-                        .withColor(this.getRarity().getColor())
+                Style.EMPTY.withColor(this.getRarity().getColor())
                         .withItalic(true)
         ));
 
@@ -261,7 +263,7 @@ public abstract class AbstractSubClass {
         String damageText = (damage % 1 == 0)
                 ? String.valueOf((int) damage) // If damage is a whole number, show as integer
                 : String.format("%.1f", damage); // Otherwise, show with one decimal place
-        tooltip.add(2, Component.literal(damageText + " " + this.getMainClass().getName() + " ")
+        components.add(Component.literal(damageText + " " + this.getMainClass().getName() + " ")
                 .append(Component.translatable("tooltip.battleofgods.damage"))
                 .withStyle(getStyle()));
 
@@ -274,14 +276,14 @@ public abstract class AbstractSubClass {
         //Convert to Terraria useTime
         String speedText = getSpeed(attackSpeed, itemstack.getItem());
 
-        tooltip.add(3, Component.translatable("tooltip.battleofgods." + speedText)
+        components.add(Component.translatable("tooltip.battleofgods." + speedText)
                 .withStyle(AbstractSubClass.getStyle()));
 
         /// Knockback
         double knockback = subClassItem.getKnockback();
         // Convert to Terraria Knockback
         String kbText = getKnockback(knockback, itemstack.getItem());
-        tooltip.add(4, Component.translatable("tooltip.battleofgods." + kbText)
+        components.add(Component.translatable("tooltip.battleofgods." + kbText)
                 .withStyle(getStyle()));
 
         /// Autoswing
@@ -289,10 +291,12 @@ public abstract class AbstractSubClass {
         Component componentAutoSwing = (autoSwing)
                 ? Component.literal("✔").withStyle(ChatFormatting.GREEN)
                 : Component.literal("✘").withStyle(ChatFormatting.RED);
-        tooltip.add(5, Component.translatable("tooltip.battleofgods.autoswing")
+        components.add(Component.translatable("tooltip.battleofgods.autoswing")
                 .withStyle(getStyle())
                 .append(" ")
                 .append(componentAutoSwing));
+
+        tooltip.addAll(components);
     }
 
     public boolean hasCraftingRemainingItem(ItemStack stack) {

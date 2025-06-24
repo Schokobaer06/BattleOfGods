@@ -114,7 +114,8 @@ public abstract class TerrariaArmor extends ArmorItem implements GeoItem, SubCla
                 .durability(0)
                 .defaultDurability(0)
                 .setNoRepair()
-                .rarity(rarity.asMinecraftRarity()));
+                .rarity(rarity.asMinecraftRarity())
+        );
         this.defense = defense[type.getSlot().getIndex()];
         this.subClass.setMainClass(MainClasses.ARMOR);
         this.subClass.setRarity(rarity.getRarity());

@@ -64,18 +64,18 @@ public class ItemTooltipHandler {
         }
 
         // Rarity
-        /*
+
         if (!(modId.equals(BattleOfGods.MODID))){
             try {
                 Rarity rarity = item.getRarity(stack);
-                tooltip.add(1, Component.literal(rarity.name().toLowerCase()).withStyle(rarity.getStyleModifier()));
+                tooltip.add(1, Component.literal(rarity.name().toLowerCase()).withStyle(rarity.getStyleModifier()).withStyle(Style.EMPTY.withItalic(true)));
             } catch (Exception e) {
                 BattleOfGods.LOGGER.warn("Failed to get rarity for item: {}", item.getDescriptionId(), e);
             }
 
         }
 
-         */
+
     }
 
     // Hilfsmethoden für die Kategorien

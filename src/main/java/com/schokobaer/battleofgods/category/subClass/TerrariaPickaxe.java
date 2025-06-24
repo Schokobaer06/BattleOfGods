@@ -18,7 +18,8 @@ public class TerrariaPickaxe extends PickaxeItem {
                 .durability(0)
                 .defaultDurability(0)
                 .setNoRepair()
-                .rarity(rarity.asMinecraftRarity()));
+                .rarity(rarity.asMinecraftRarity())
+        );
         this.subClass.setMainClass(MainClasses.TOOL);
         this.subClass.setRarity(rarity.getRarity());
         this.subClass.setGameTier(gameTier);
