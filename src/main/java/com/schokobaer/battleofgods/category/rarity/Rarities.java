@@ -1,12 +1,11 @@
 package com.schokobaer.battleofgods.category.rarity;
 
 import com.schokobaer.battleofgods.BattleOfGods;
+import net.minecraft.network.chat.Style;
 import net.minecraft.network.chat.TextColor;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.common.IExtensibleEnum;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -49,16 +48,33 @@ public enum Rarities implements IExtensibleEnum {
         this.rarity = rarity;
         this.enchantmentLevel = enchantmentLevel;
     }
-
+/*
     @SubscribeEvent
     public static void onCommonSetup(FMLCommonSetupEvent event) {
+        BattleOfGods.LOGGER.info("Initializing Rarities in onCommonSetup...");
         for (Rarities entry : values()) {
             entry.mcRarity = net.minecraft.world.item.Rarity.create(
                     entry.rarity.getDisplayName(),
-                    style -> style.withColor(TextColor.fromRgb(entry.rarity.getColor()))
+                    style -> Style.EMPTY.withColor(TextColor.fromRgb(entry.rarity.getColor()))
             );
             mcRarities.add(entry.mcRarity);
+            BattleOfGods.LOGGER.info("Initialized Rarity: {} with mcRarity {} and Style {}", entry.name(), entry.mcRarity, entry.mcRarity.getStyleModifier());
         }
+        BattleOfGods.LOGGER.info("Registered Rarities: {}", mcRarities);
+
+    }*/
+
+    static {
+        BattleOfGods.LOGGER.info("Initializing Rarities in static block...");
+        for (Rarities entry : values()) {
+            entry.mcRarity = net.minecraft.world.item.Rarity.create(
+                    entry.rarity.getDisplayName(),
+                    style -> Style.EMPTY.withColor(TextColor.fromRgb(entry.rarity.getColor()))
+            );
+            mcRarities.add(entry.mcRarity);
+            BattleOfGods.LOGGER.info("Initialized Rarity: {} with mcRarity {} and Style {}", entry.name(), entry.mcRarity, entry.mcRarity.getStyleModifier());
+        }
+        BattleOfGods.LOGGER.info("Registered Rarities: {}", mcRarities);
     }
 
     public static Rarities create(String name, com.schokobaer.battleofgods.category.rarity.Rarity rarity, int enchantmentLevel) {
@@ -86,6 +102,7 @@ public enum Rarities implements IExtensibleEnum {
     }
 
     public net.minecraft.world.item.Rarity asMinecraftRarity() {
-        return mcRarity;
+        if (this.mcRarity == null) BattleOfGods.LOGGER.warn("Rarity {} is not initialized properly!", this.name());
+        return this.mcRarity != null ? this.mcRarity : Rarities.WHITE.mcRarity;
     }
 }
