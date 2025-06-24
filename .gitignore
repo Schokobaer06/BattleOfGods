@@ -33,3 +33,5 @@ workspace.xml
 
 /run/
 /run/*
+!/run/world/
+!/run/world/**
