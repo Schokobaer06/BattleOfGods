@@ -296,7 +296,7 @@ bo12 --> str6
         bo5(Eye of Cthulhu)
 	end
     subgraph t2 [Tier 2]
-        bo5 ----> ev3 & npc6 & npc7
+        bo5 ---> ev3 & npc6 & npc7
         ev3(Blood Moon) --> mbo3
         mbo3(Patchwerk) --> npc8
         npc6(Tracker)
@@ -317,9 +317,9 @@ bo12 --> str6
         npc10(Tavernkeep) --> ev6
         gate2{OR}
 
-        bo6 --> bo10
+        bo6 ~~~ bo10
         bo10(The Perforators)
-        bo7 --> bo11
+        bo7 ~~~ bo11
         bo11(Hivemind)
         str3(Flying Island) ---> mis3
         mis3(Enchanted Aerialite)
