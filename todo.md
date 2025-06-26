@@ -263,16 +263,16 @@ bi15(Tundra) --> bo20
 %% Goblin Army
 mis1 --> ev5
 %% Evil Bosses
-gate1 --> bo12
+%%gate1 --> bo12
 gate1 ---> npc10 
 gate1 <==> bo6
-gate1 ~~~~ gate2
+bi8 --> gate2
 gate1 <==> bo7
-gate2{OR} <==> bo10
-gate2 <==> bo11
+gate2 <===> bo10
+gate2 <===> bo11
 gate2 --> mis3
-bo9 ---> bo17 
-bo9 ---> bo16
+%%bo9 ---> bo17 
+bo9 --> bo18
 bo12 --> str6
 
 	subgraph t1 [Tier 1]
@@ -304,13 +304,14 @@ bo12 --> str6
         npc8(Confused Zombie)
         bo5 --> ev4
         ev4(Acid Rain<br> Tier 1)
-        gate1{OR}
+        
         bo6(Brain of Cthulhu) 
         bo7(Eater of Worlds)
         bo8(Crabulon)
+		gate1{OR}
     end
     subgraph t3 [Tier 3]
-        str2(Blood Chamber) & ev3 --> bo9
+        str2(Blood Chamber) --> bo9
         bo9(Viscount)
         ev5(Goblin Army) --> npc9
         npc9(Goblin Tinkerer)
@@ -325,7 +326,7 @@ bo12 --> str6
         mis3(Enchanted Aerialite)
         ev6(Old One's Army<br>Tier 1) --> mbo4
         mbo4(Dark Mage)
-        bo9--> bo12
+        bo9 ~~~ bo12
         bo12(Skeletron)
         bo13(Queen Jellyfish) --> npc11
         npc11(Diverman)
@@ -336,7 +337,8 @@ bo12 --> str6
 
     end
     subgraph t4 [Tier 4]
-        bo3 ----------> bo15
+        %%bo3 --------> bo15
+		bo3 ~~~~~~~~ bo15
         bo15(Slime God)
         bo12 --> npc13
         bo12 --> npc14
@@ -358,7 +360,7 @@ bo12 --> str6
         mbo6(Illusionist)
         str3 --> bo19(Star Scouter)
         bo20(Deer Clops)
-        bo18 --> mis7
+        %%bo18 --> mis7
         mis7(Guide Doll) --> bo21
         bo21(Wall of Flesh)
     end
@@ -386,11 +388,11 @@ subgraph hardmode [Hardmode]
 	subgraph t10 [Tier 10]
 
 	end
-	t5 ==> t6
-	t6 ==> t7
-	t7 ==> t8
-	t8 ==> t9
-	t9 ==> t10
+	%%t5 ==> t6
+	%%t6 ==> t7
+	%%t7 ==> t8
+	%%t8 ==> t9
+	%%t9 ==> t10
 end
 subgraph postmoonlord [PostMoonlord]
 	subgraph t11 [Tier 11]
@@ -405,9 +407,9 @@ subgraph postmoonlord [PostMoonlord]
 	subgraph t14 [Tier 14]
 
 	end
-	t11 ==> t12
-	t12 ==> t13
-	t13 ==> t14
+	%%t11 ==> t12
+	%%t12 ==> t13
+	%%t13 ==> t14
 end
 legend ~~~ prehardmode
 prehardmode ==> hardmode
