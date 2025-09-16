@@ -9,7 +9,7 @@
         - [X] ImageButton Sound Fix
     - [X] Crafting
         - [X] return Air
-- [x] JEI compat
+- [x] JEI Compatibility
 - [x] Attributes
     - [x] Critical Hit
 - [x] Weapons Stats
