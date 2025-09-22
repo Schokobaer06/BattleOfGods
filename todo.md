@@ -41,6 +41,7 @@
     - [x] Copper Leggings
     - [x] Copper Boots
     - [ ] Copper Pickaxe
+  - [ ] Copper Axe
     - [ ] Copper Recipes (Shortsword & Broadsword have to be crafted at anvil)
 - [ ] Tin Full Set
     - [ ] Tin Ore
@@ -50,6 +51,7 @@
     - [ ] Tin Leggings
     - [ ] Tin Boots
     - [ ] Tin Pickaxe
+  - [ ] Tin Axe
     - [ ] Tin & Copper Tag
     - [ ] Recipes
 - [ ] Arrows
@@ -59,6 +61,7 @@
     - [ ] Iron Broadsword/Shortsword
     - [ ] Iron Pickaxe
     - [ ] Iron Bow
+  - [ ] Iron Axe
     - [ ] Anvil
     - [ ] Recipes
 - [ ] Lead Full Set
@@ -69,6 +72,7 @@
     - [ ] Lead Leggings
     - [ ] Lead Boots
     - [ ] Lead Pickaxe
+  - [ ] Lead Axe
     - [ ] Anvil
     - [ ] Lead & Iron Tag
     - [ ] Recipes
