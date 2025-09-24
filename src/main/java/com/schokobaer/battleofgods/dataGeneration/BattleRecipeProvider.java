@@ -3,21 +3,14 @@ package com.schokobaer.battleofgods.dataGeneration;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.schokobaer.battleofgods.BattleOfGods;
-import com.schokobaer.battleofgods.handler.RecipeHandler;
 import com.schokobaer.battleofgods.handler.RecipeHandler.BattleRecipe;
-import net.minecraft.client.Minecraft;
-import net.minecraft.core.RegistryAccess;
-import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.data.recipes.RecipeProvider;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
-import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraftforge.registries.ForgeRegistries;
-
 
 import java.util.List;
 import java.util.Objects;
@@ -31,8 +24,7 @@ public class BattleRecipeProvider extends RecipeProvider {
 
     @Override
     protected void buildRecipes(Consumer<FinishedRecipe> consumer) {
-        // Hier können Sie Ihre Rezepte hinzufügen
-        // Beispiel: consumer.accept(new BattleFinishedRecipe(WorkbenchRecipe("example_recipe", "example_group", List.of(new BattleRecipe.IngredientEntry(Ingredient.of(Items.DIAMOND), 1)), new ItemStack(Items.DIAMOND_SWORD))));
+        /// Hier kommen Recipes hin
         //consumer.accept(WorkbenchRecipe("example_recipe", "example_group", List.of(new BattleRecipe.IngredientEntry(Ingredient.of(Items.DIAMOND), 1)), new ItemStack(Items.DIAMOND_SWORD)));
 
     }

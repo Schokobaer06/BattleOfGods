@@ -123,7 +123,8 @@ public class BattleOfGods {
 
         // Item Models generieren
         LOGGER.info("Generating item models");
-        generator.addProvider(event.includeClient(), new ItemModelProvider(output, existingFileHelper));
+        generator.addProvider(event.includeClient(),
+                new ItemModelProvider(output, existingFileHelper));
 
         // Item Tags generieren
         LOGGER.info("Generating item tags");
@@ -132,7 +133,8 @@ public class BattleOfGods {
 
         // Recipes generieren
         LOGGER.info("Generating recipes");
-        generator.addProvider(event.includeServer(), new BattleRecipeProvider(output));
+        generator.addProvider(event.includeServer(),
+                new BattleRecipeProvider(output));
     }
 
     @SubscribeEvent
