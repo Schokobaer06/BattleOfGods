@@ -59,7 +59,7 @@ public class CopperArmor extends TerrariaArmor {
 
         @Override
         public ResourceLocation getTextureResource(CopperArmor object) {
-            return new ResourceLocation(BattleOfGods.MODID, "textures/armor/" + name + ".png");
+            return new ResourceLocation(BattleOfGods.MODID, "textures/armor/" + name + "_layer_1.png");
         }
     }
 

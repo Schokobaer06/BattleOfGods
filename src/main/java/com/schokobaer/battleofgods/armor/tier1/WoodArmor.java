@@ -49,17 +49,17 @@ public class WoodArmor extends TerrariaArmor {
     public static class WoodArmorModel extends GeoModel<WoodArmor> {
         @Override
         public ResourceLocation getAnimationResource(WoodArmor object) {
-            return new ResourceLocation(BattleOfGods.MODID, "animations/wood_armor.animation.json");
+            return new ResourceLocation(BattleOfGods.MODID, "animations/" + name + ".animation.json");
         }
 
         @Override
         public ResourceLocation getModelResource(WoodArmor object) {
-            return new ResourceLocation(BattleOfGods.MODID, "geo/wood_armor.geo.json");
+            return new ResourceLocation(BattleOfGods.MODID, "geo/" + name + ".geo.json");
         }
 
         @Override
         public ResourceLocation getTextureResource(WoodArmor object) {
-            return new ResourceLocation(BattleOfGods.MODID, "textures/armor/wood_armor.png");
+            return new ResourceLocation(BattleOfGods.MODID, "textures/armor/" + name + "_layer_1.png");
         }
     }
 
