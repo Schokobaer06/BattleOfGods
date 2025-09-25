@@ -35,13 +35,13 @@
   - [x] adding appendTooltipExtras into interface
   - [x] optimizing AbstractSubClass
 - [ ] Copper Full Set
-    - [ ] Copper Bow
     - [x] Copper Helmet
     - [x] Copper Chestplate
     - [x] Copper Leggings
     - [x] Copper Boots
-    - [ ] Copper Pickaxe
+  - [x] Copper Pickaxe
   - [ ] Copper Axe
+  - [ ] Copper Bow
     - [ ] Copper Recipes (Shortsword & Broadsword have to be crafted at anvil)
 - [ ] Tin Full Set
     - [ ] Tin Ore
