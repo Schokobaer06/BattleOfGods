@@ -5,14 +5,8 @@ import com.schokobaer.battleofgods.armor.tier1.CopperArmor;
 import com.schokobaer.battleofgods.armor.tier1.WoodArmor;
 import com.schokobaer.battleofgods.category.subClass.TerrariaArmor;
 import com.schokobaer.battleofgods.category.subClass.TerrariaBow;
-import com.schokobaer.battleofgods.item.tier1.ItemCopperBroadsword;
-import com.schokobaer.battleofgods.item.tier1.ItemCopperShortsword;
-import com.schokobaer.battleofgods.item.tier1.ItemWoodBow;
-import com.schokobaer.battleofgods.item.tier1.ItemWoodSword;
-import net.minecraft.world.item.ArmorItem;
-import net.minecraft.world.item.BlockItem;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.SwordItem;
+import com.schokobaer.battleofgods.item.tier1.*;
+import net.minecraft.world.item.*;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -21,7 +15,7 @@ import net.minecraftforge.registries.RegistryObject;
 public class InitItem {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, BattleOfGods.MODID);
 
-    // GameTier 1
+    /// GameTier 1
     //Melee
     public static final RegistryObject<SwordItem> COPPER_BROADSWORD = ITEMS.register("copper_broadsword", ItemCopperBroadsword::new);
     public static final RegistryObject<SwordItem> COPPER_SHORTSWORD = ITEMS.register("copper_shortsword", ItemCopperShortsword::new);
@@ -35,6 +29,7 @@ public class InitItem {
     //Bard
     //Misc
     //Tools
+    public static final RegistryObject<PickaxeItem> COPPER_PICKAXE = ITEMS.register("copper_pickaxe", ItemCopperPickaxe::new);
     //Consumables
     //Blocks
     public static final RegistryObject<Item> WOODEN_WORKBENCH = block(InitBlocks.WOODEN_WORKBENCH);
@@ -49,7 +44,7 @@ public class InitItem {
     public static final RegistryObject<TerrariaArmor> COPPER_ARMOR_BOOTS = ITEMS.register("copper_armor_boots", () -> new CopperArmor(ArmorItem.Type.BOOTS));
 
 
-    //Methods
+    /// Methods
     private static RegistryObject<Item> block(RegistryObject<Block> block) {
         return ITEMS.register(block.getId().getPath(), () -> new BlockItem(block.get(), new Item.Properties()));
     }
