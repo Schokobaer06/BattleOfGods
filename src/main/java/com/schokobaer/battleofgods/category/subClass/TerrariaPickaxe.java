@@ -2,6 +2,7 @@ package com.schokobaer.battleofgods.category.subClass;
 
 import com.google.common.collect.LinkedHashMultimap;
 import com.google.common.collect.Multimap;
+import com.schokobaer.battleofgods.BattleOfGods;
 import com.schokobaer.battleofgods.category.AbstractSubClass;
 import com.schokobaer.battleofgods.category.SubClassMethods;
 import com.schokobaer.battleofgods.category.mainClass.MainClass;
@@ -49,24 +50,50 @@ public class TerrariaPickaxe extends PickaxeItem implements SubClassMethods {
 
     @Override
     public void appendHoverText(ItemStack itemstack, Level level, List<Component> tooltip, TooltipFlag flag) {
-        subClass.appendHoverText(itemstack, level, tooltip, flag);
-        super.appendHoverText(itemstack, level, tooltip, flag);
+        try {
+            subClass.appendHoverText(itemstack, level, tooltip, flag);
+            super.appendHoverText(itemstack, level, tooltip, flag);
 /*
-        for (Component component : tooltip) {
-            // Prüft, ob der Inhalt der Komponente übersetzbar ist
-            if (component.getContents() instanceof TranslatableContents translatableContents) {
-                // Prüft, ob der Übersetzungsschlüssel mit dem gewünschten Text beginnt
-                if (translatableContents.getKey().startsWith("tooltip.battleofgods.weapon_knockback_")) {
-                    tooltip.add(
-                            Component.translatable("tooltip.battleofgods.mining_speed").withStyle(getStyle())
-                                    .append(" ")
-                                    .append(String.valueOf(miningSpeed)).withStyle(ChatFormatting.WHITE));
+            for (int i = 0; i < tooltip.size(); i++) {
+                Component component = tooltip.get(i);
+                boolean isDamageLine = false;
+                // Überprüft den Inhalt der Hauptkomponente
+                if (component.getContents() instanceof TranslatableContents translatableContents) {
+                    if (translatableContents.getKey().equals("tooltip.battleofgods.damage")) {
+                        isDamageLine = true;
+                    }
+                }
+
+                // Wenn nicht gefunden, überprüfe die angehängten Geschwister-Komponenten
+                if (!isDamageLine) {
+                    for (Component sibling : component.getSiblings()) {
+                        if (sibling.getContents() instanceof TranslatableContents translatableContents) {
+                            if (translatableContents.getKey().equals("tooltip.battleofgods.damage")) {
+                                isDamageLine = true;
+                                break;
+                            }
+                        }
+                    }
+                }
+                if (isDamageLine) {
+                    // Überschreibe den Tooltip an diesem Index
+                    float damage = this.getDamage();
+                    String damageText = (damage % 1 == 0)
+                            ? String.valueOf((int) damage) // If damage is a whole number, show as integer
+                            : String.format("%.1f", damage); // Otherwise, show with one decimal place
+                    tooltip.set(i, Component.literal(damageText + " " + MainClasses.MELEE.getName() + " ")
+                            .append(Component.translatable("tooltip.battleofgods.damage"))
+                            .withStyle(AbstractSubClass.getStyle()));
                 }
             }
-        }
 
  */
+        } catch (Exception e) {
+            // Optional: Logge die Ausnahme, um beim Debuggen zu helfen
+            BattleOfGods.LOGGER.error("Error appending hover text for pickaxe {}: ", itemstack.getDisplayName(), e);
+        }
     }
+
 
     @Override
     public Component getName(ItemStack stack) {

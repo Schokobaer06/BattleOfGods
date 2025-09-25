@@ -166,10 +166,11 @@ public abstract class TerrariaArmor extends ArmorItem implements GeoItem, SubCla
 
     @Override
     public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltip, TooltipFlag flag) {
+        super.appendHoverText(stack, level, tooltip, flag);
+
         tooltip.add(Component.translatable("rarity.battleofgods." +
                 this.getRarity().getDisplayName().toLowerCase()).setStyle(
-                Style.EMPTY.withBold(true)
-                        .withColor(this.getRarity().getColor())
+                Style.EMPTY.withColor(this.getRarity().getColor())
                         .withItalic(true)
         ));
 
@@ -183,7 +184,7 @@ public abstract class TerrariaArmor extends ArmorItem implements GeoItem, SubCla
                     .append(Component.translatable("tooltip.battleofgods.armor"))
                     .withStyle(AbstractSubClass.getStyle()));
 
-        super.appendHoverText(stack, level, tooltip, flag);
+
     }
 
     @Override

@@ -27,6 +27,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 @SuppressWarnings({"deprecation", "unused"})
 public abstract class AbstractSubClass {
@@ -270,7 +271,7 @@ public abstract class AbstractSubClass {
         /// Speed
         // Get the attack speed attribute (default to 4.0 if missing)
         double attackSpeed = itemstack.getAttributeModifiers(EquipmentSlot.MAINHAND)
-                .get(Attributes.ATTACK_SPEED).stream()
+                .get(Attributes.ATTACK_SPEED).stream().filter(Objects::nonNull)
                 .mapToDouble(AttributeModifier::getAmount)
                 .sum() + 4; // +4.0 because attack speed is offset in Minecraft
         //Convert to Terraria useTime
