@@ -7,6 +7,14 @@ import com.schokobaer.battleofgods.category.tier.Tiers;
 
 public class ItemCopperBroadsword extends Broadsword {
     public ItemCopperBroadsword() {
-        super(Tiers.GOLD, 9, 0.95f, 1.4, false, Rarities.WHITE, GameTiers.TIER_1);
+        super(
+                Tiers.GOLD,
+                9,
+                0.95f,
+                1.4,
+                false,
+                Rarities.WHITE,
+                GameTiers.TIER_1
+        );
     }
 }

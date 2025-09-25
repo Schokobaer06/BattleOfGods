@@ -7,6 +7,15 @@ import com.schokobaer.battleofgods.category.tier.GameTiers;
 public class ItemWoodBow extends TerrariaBow {
 
     public ItemWoodBow() {
-        super(4, 1, 30, 0, false, 0, Rarities.WHITE, GameTiers.TIER_1);
+        super(
+                4,
+                1,
+                30,
+                0,
+                false,
+                0,
+                Rarities.WHITE,
+                GameTiers.TIER_1
+        );
     }
 }

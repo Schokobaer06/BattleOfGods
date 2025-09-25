@@ -16,7 +16,15 @@ import java.util.UUID;
 
 public class ItemCopperShortsword extends Shortsword {
     public ItemCopperShortsword() {
-        super(Tiers.GOLD, 5, 1.54f, 1, false, Rarities.WHITE, GameTiers.TIER_1);
+        super(
+                Tiers.GOLD,
+                5,
+                1.54f,
+                1,
+                false,
+                Rarities.WHITE,
+                GameTiers.TIER_1
+        );
     }
 
     @Override
