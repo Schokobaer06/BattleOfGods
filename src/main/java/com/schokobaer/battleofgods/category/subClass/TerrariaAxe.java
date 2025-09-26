@@ -2,7 +2,6 @@ package com.schokobaer.battleofgods.category.subClass;
 
 import com.google.common.collect.LinkedHashMultimap;
 import com.google.common.collect.Multimap;
-import com.schokobaer.battleofgods.BattleOfGods;
 import com.schokobaer.battleofgods.category.AbstractSubClass;
 import com.schokobaer.battleofgods.category.SubClassMethods;
 import com.schokobaer.battleofgods.category.mainClass.MainClass;
@@ -24,7 +23,6 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 
 import java.util.List;
-import java.util.Objects;
 import java.util.UUID;
 
 public class TerrariaAxe extends AxeItem implements SubClassMethods {
@@ -54,45 +52,7 @@ public class TerrariaAxe extends AxeItem implements SubClassMethods {
 
     @Override
     public void appendHoverText(ItemStack itemstack, Level level, List<Component> tooltip, TooltipFlag flag) {
-        try {
-            subClass.appendHoverText(itemstack, level, tooltip, flag);
-            super.appendHoverText(itemstack, level, tooltip, flag);
 
-            //tooltip.add(Component.literal(miningSpeed +"% ").append(Component.translatable("tooltip.battleofgods.axe_power")));
-
-            for (int i = 0; i < tooltip.size(); i++) {
-                Component component = tooltip.get(i);
-                boolean isMiningSpeedLine = Objects.equals(component.getContents().toString(),
-                        Component.translatable("tooltip.battleofgods." + AbstractSubClass
-                                        .getKnockback(knockback, itemstack.getItem()))
-                                .getContents()
-                                .toString());
-                // Überprüft den Inhalt der Hauptkomponente
-
-                // Wenn nicht gefunden, überprüfe die angehängten Geschwister-Komponenten
-                if (!isMiningSpeedLine) {
-                    for (Component sibling : component.getSiblings()) {
-                        if (Objects.equals(component.getContents().toString(),
-                                Component.translatable("tooltip.battleofgods." + AbstractSubClass
-                                                .getKnockback(knockback, itemstack.getItem()))
-                                        .getContents()
-                                        .toString())) {
-                            isMiningSpeedLine = true;
-                            break;
-                        }
-                    }
-                }
-                if (isMiningSpeedLine) {
-                    // Überschreibe den Tooltip an diesem Index
-                    tooltip.add(i, Component.literal(miningSpeed + "% ").append(Component.translatable("tooltip.battleofgods.axe_power")).withStyle(AbstractSubClass.getStyle()));
-                }
-            }
-
-
-        } catch (Exception e) {
-            // Optional: Logge die Ausnahme, um beim Debuggen zu helfen
-            BattleOfGods.LOGGER.error("Error appending hover text for axe {}: ", itemstack.getDisplayName(), e);
-        }
     }
 
 

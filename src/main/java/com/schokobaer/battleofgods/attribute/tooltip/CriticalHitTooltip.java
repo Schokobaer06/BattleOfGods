@@ -15,8 +15,7 @@ import net.minecraftforge.fml.common.Mod;
 
 import java.util.HashMap;
 import java.util.Map;
-
-import static com.schokobaer.battleofgods.category.AbstractSubClass.getStyle;
+import java.util.Objects;
 
 @Mod.EventBusSubscriber(modid = BattleOfGods.MODID)
 @OnlyIn(Dist.CLIENT)
@@ -40,7 +39,7 @@ public class CriticalHitTooltip {
                 double defaultCritChance = InitAttributes.CRITICAL_HIT_CHANCE.get().getDefaultValue();
                 double weaponCrit = stack.getAttributeModifiers(EquipmentSlot.MAINHAND)
                         .get(InitAttributes.CRITICAL_HIT_CHANCE.get())
-                        .stream()
+                        .stream().filter(Objects::nonNull)
                         .mapToDouble(AttributeModifier::getAmount)
                         .sum();
                 double bonus = weaponCrit - defaultCritChance;
@@ -61,7 +60,8 @@ public class CriticalHitTooltip {
             // Tooltip aus dem Cache hinzufügen
             Component cachedTooltip = tooltipCache.get(stack);
             if (!cachedTooltip.getString().isEmpty()) {
-                event.getToolTip().add(3,cachedTooltip.copy().withStyle(getStyle()));
+                //event.getToolTip().add(3, cachedTooltip.copy().withStyle(getStyle()));
+                event.getToolTip().add(cachedTooltip.copy());
             }
         }
     }

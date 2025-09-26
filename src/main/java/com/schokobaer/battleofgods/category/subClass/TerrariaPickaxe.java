@@ -2,7 +2,6 @@ package com.schokobaer.battleofgods.category.subClass;
 
 import com.google.common.collect.LinkedHashMultimap;
 import com.google.common.collect.Multimap;
-import com.schokobaer.battleofgods.BattleOfGods;
 import com.schokobaer.battleofgods.category.AbstractSubClass;
 import com.schokobaer.battleofgods.category.SubClassMethods;
 import com.schokobaer.battleofgods.category.mainClass.MainClass;
@@ -10,6 +9,7 @@ import com.schokobaer.battleofgods.category.mainClass.MainClasses;
 import com.schokobaer.battleofgods.category.rarity.Rarities;
 import com.schokobaer.battleofgods.category.rarity.Rarity;
 import com.schokobaer.battleofgods.category.tier.GameTier;
+import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -24,7 +24,6 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 
 import java.util.List;
-import java.util.Objects;
 import java.util.UUID;
 
 public class TerrariaPickaxe extends PickaxeItem implements SubClassMethods {
@@ -54,78 +53,16 @@ public class TerrariaPickaxe extends PickaxeItem implements SubClassMethods {
 
     @Override
     public void appendHoverText(ItemStack itemstack, Level level, List<Component> tooltip, TooltipFlag flag) {
-        try {
-            subClass.appendHoverText(itemstack, level, tooltip, flag);
-            super.appendHoverText(itemstack, level, tooltip, flag);
+        subClass.appendHoverText(itemstack, level, tooltip, flag);
+        super.appendHoverText(itemstack, level, tooltip, flag);
 
-            //tooltip.add(Component.literal(miningSpeed +"% ").append(Component.translatable("tooltip.battleofgods.pickaxe_power")));
-
-            for (int i = 0; i < tooltip.size(); i++) {
-                Component component = tooltip.get(i);
-                boolean isMiningSpeedLine = Objects.equals(component.getContents().toString(),
-                        Component.translatable("tooltip.battleofgods." + AbstractSubClass
-                                        .getKnockback(knockback, itemstack.getItem()))
-                                .getContents()
-                                .toString());
-                // Überprüft den Inhalt der Hauptkomponente
-
-                // Wenn nicht gefunden, überprüfe die angehängten Geschwister-Komponenten
-                if (!isMiningSpeedLine) {
-                    for (Component sibling : component.getSiblings()) {
-                        if (Objects.equals(component.getContents().toString(),
-                                Component.translatable("tooltip.battleofgods." + AbstractSubClass
-                                                .getKnockback(knockback, itemstack.getItem()))
-                                        .getContents()
-                                        .toString())) {
-                            isMiningSpeedLine = true;
-                            break;
-                        }
-                    }
-                }
-                if (isMiningSpeedLine) {
-                    // Überschreibe den Tooltip an diesem Index
-                    tooltip.add(i, Component.literal(miningSpeed + "% ").append(Component.translatable("tooltip.battleofgods.pickaxe_power")).withStyle(AbstractSubClass.getStyle()));
-                }
-            }
-/*
-            for (int i = 0; i < tooltip.size(); i++) {
-                Component component = tooltip.get(i);
-                boolean isDamageLine = false;
-                // Überprüft den Inhalt der Hauptkomponente
-                if (component.getContents() instanceof TranslatableContents translatableContents) {
-                    if (translatableContents.getKey().equals("tooltip.battleofgods.damage")) {
-                        isDamageLine = true;
-                    }
-                }
-
-                // Wenn nicht gefunden, überprüfe die angehängten Geschwister-Komponenten
-                if (!isDamageLine) {
-                    for (Component sibling : component.getSiblings()) {
-                        if (sibling.getContents() instanceof TranslatableContents translatableContents) {
-                            if (translatableContents.getKey().equals("tooltip.battleofgods.damage")) {
-                                isDamageLine = true;
-                                break;
-                            }
-                        }
-                    }
-                }
-                if (isDamageLine) {
-                    // Überschreibe den Tooltip an diesem Index
-                    float damage = this.getDamage();
-                    String damageText = (damage % 1 == 0)
-                            ? String.valueOf((int) damage) // If damage is a whole number, show as integer
-                            : String.format("%.1f", damage); // Otherwise, show with one decimal place
-                    tooltip.set(i, Component.literal(damageText + " " + MainClasses.MELEE.getName() + " ")
-                            .append(Component.translatable("tooltip.battleofgods.damage"))
-                            .withStyle(AbstractSubClass.getStyle()));
-                }
-            }
-
- */
-        } catch (Exception e) {
-            // Optional: Logge die Ausnahme, um beim Debuggen zu helfen
-            BattleOfGods.LOGGER.error("Error appending hover text for pickaxe {}: ", itemstack.getDisplayName(), e);
-        }
+        tooltip.add(
+                Component.literal(miningSpeed + "% ")
+                        .withStyle(ChatFormatting.WHITE)
+                        .append(
+                                Component.translatable("tooltip.battleofgods.pickaxe_power")
+                                        .withStyle(AbstractSubClass.getStyle()))
+        );
     }
 
 
