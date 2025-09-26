@@ -9,6 +9,7 @@ import com.schokobaer.battleofgods.category.mainClass.MainClasses;
 import com.schokobaer.battleofgods.category.rarity.Rarities;
 import com.schokobaer.battleofgods.category.rarity.Rarity;
 import com.schokobaer.battleofgods.category.tier.GameTier;
+import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -52,7 +53,16 @@ public class TerrariaAxe extends AxeItem implements SubClassMethods {
 
     @Override
     public void appendHoverText(ItemStack itemstack, Level level, List<Component> tooltip, TooltipFlag flag) {
+        subClass.appendHoverText(itemstack, level, tooltip, flag);
+        super.appendHoverText(itemstack, level, tooltip, flag);
 
+        tooltip.add(
+                Component.literal(miningSpeed + "% ")
+                        .withStyle(ChatFormatting.WHITE)
+                        .append(
+                                Component.translatable("tooltip.battleofgods.axe_power")
+                                        .withStyle(AbstractSubClass.getStyle()))
+        );
     }
 
 
