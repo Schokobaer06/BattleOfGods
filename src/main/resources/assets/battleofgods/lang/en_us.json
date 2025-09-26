@@ -76,5 +76,7 @@
   "tooltip.battleofgods.equipable": "Equipable",
   "tooltip.battleofgods.ammo": "Ammo",
   "tooltip.battleofgods.autoswing": "Autoswing",
-  "tooltip.battleofgods.mining_speed": "Mining Speed"
+  "tooltip.battleofgods.mining_speed": "Mining Speed",
+  "tooltip.battleofgods.axe_power": "Axe Power",
+  "tooltip.battleofgods.pickaxe_power": "Pickaxe Power"
 }
