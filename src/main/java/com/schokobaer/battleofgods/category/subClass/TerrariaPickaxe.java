@@ -15,6 +15,7 @@ import net.minecraft.tags.TagKey;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
+import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.PickaxeItem;
 import net.minecraft.world.item.Tier;
@@ -24,13 +25,15 @@ import net.minecraft.world.level.block.Block;
 
 import java.util.List;
 import java.util.Objects;
+import java.util.UUID;
 
 public class TerrariaPickaxe extends PickaxeItem implements SubClassMethods {
-    private int miningSpeed;
+    private final int miningSpeed;
+    private final double knockback;
     private final AbstractSubClass subClass = new AbstractSubClass() {
     };
 
-    public TerrariaPickaxe(Tier tier, int miningSpeed, int attackDamage, float attackSpeed, Rarities rarity, GameTier gameTier, TagKey<Block> blocktag) {
+    public TerrariaPickaxe(Tier tier, int miningSpeed, int attackDamage, float attackSpeed, double knockback, Rarities rarity, GameTier gameTier, TagKey<Block> blocktag) {
         super(AbstractSubClass.getTier(tier, rarity.getEnchantmentLevel(), AbstractSubClass.getDestroySpeedFromMiningSpeed(miningSpeed), blocktag), attackDamage, attackSpeed, new Properties()
                 .durability(0)
                 .defaultDurability(0)
@@ -38,6 +41,7 @@ public class TerrariaPickaxe extends PickaxeItem implements SubClassMethods {
                 .rarity(rarity.asMinecraftRarity())
         );
         this.subClass.setMainClass(MainClasses.TOOL);
+        this.knockback = knockback;
         this.subClass.setRarity(rarity.getRarity());
         this.subClass.setGameTier(gameTier);
         this.miningSpeed = miningSpeed;
@@ -53,6 +57,36 @@ public class TerrariaPickaxe extends PickaxeItem implements SubClassMethods {
         try {
             subClass.appendHoverText(itemstack, level, tooltip, flag);
             super.appendHoverText(itemstack, level, tooltip, flag);
+
+            //tooltip.add(Component.literal(miningSpeed +"% ").append(Component.translatable("tooltip.battleofgods.pickaxe_power")));
+
+            for (int i = 0; i < tooltip.size(); i++) {
+                Component component = tooltip.get(i);
+                boolean isMiningSpeedLine = Objects.equals(component.getContents().toString(),
+                        Component.translatable("tooltip.battleofgods." + AbstractSubClass
+                                        .getKnockback(knockback, itemstack.getItem()))
+                                .getContents()
+                                .toString());
+                // Überprüft den Inhalt der Hauptkomponente
+
+                // Wenn nicht gefunden, überprüfe die angehängten Geschwister-Komponenten
+                if (!isMiningSpeedLine) {
+                    for (Component sibling : component.getSiblings()) {
+                        if (Objects.equals(component.getContents().toString(),
+                                Component.translatable("tooltip.battleofgods." + AbstractSubClass
+                                                .getKnockback(knockback, itemstack.getItem()))
+                                        .getContents()
+                                        .toString())) {
+                            isMiningSpeedLine = true;
+                            break;
+                        }
+                    }
+                }
+                if (isMiningSpeedLine) {
+                    // Überschreibe den Tooltip an diesem Index
+                    tooltip.add(i, Component.literal(miningSpeed + "% ").append(Component.translatable("tooltip.battleofgods.pickaxe_power")).withStyle(AbstractSubClass.getStyle()));
+                }
+            }
 /*
             for (int i = 0; i < tooltip.size(); i++) {
                 Component component = tooltip.get(i);
@@ -135,13 +169,7 @@ public class TerrariaPickaxe extends PickaxeItem implements SubClassMethods {
     }
 
     public int getKnockback() {
-        ItemStack stack = new ItemStack(this);
-        var modifiers = getAttributeModifiers(EquipmentSlot.MAINHAND, stack);
-        var knockback = modifiers.get(net.minecraft.world.entity.ai.attributes.Attributes.ATTACK_KNOCKBACK);
-        if (!knockback.isEmpty()) {
-            return (int) Objects.requireNonNull(knockback.iterator().next()).getAmount();
-        }
-        return 0;
+        return (int) this.knockback;
     }
 
 
@@ -149,6 +177,18 @@ public class TerrariaPickaxe extends PickaxeItem implements SubClassMethods {
     public Multimap<Attribute, AttributeModifier> getAttributeModifiers(EquipmentSlot slot, ItemStack stack) {
         Multimap<Attribute, AttributeModifier> modifiers = LinkedHashMultimap.create(); // Veränderbare Multimap
         modifiers.putAll(super.getAttributeModifiers(slot, stack)); // Basis-Modifier
+
+        if (slot == EquipmentSlot.MAINHAND || slot == EquipmentSlot.OFFHAND) {
+            modifiers.put(
+                    Attributes.ATTACK_KNOCKBACK,
+                    new AttributeModifier(
+                            UUID.fromString("123e4567-e89b-12d3-a456-426614174000"), // Eindeutige UUID
+                            "weapon_knockback_bonus",
+                            this.knockback, // Knockback-Wert
+                            AttributeModifier.Operation.ADDITION
+                    )
+            );
+        }
         return modifiers;
     }
 

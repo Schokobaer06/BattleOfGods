@@ -11,6 +11,7 @@ public class ItemCopperPickaxe extends TerrariaPickaxe {
                 15,
                 2,
                 -2.4f,
+                2,
                 com.schokobaer.battleofgods.category.rarity.Rarities.WHITE,
                 GameTiers.TIER_1,
                 BlockTags.MINEABLE_WITH_PICKAXE
