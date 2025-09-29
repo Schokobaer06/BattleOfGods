@@ -11,7 +11,9 @@ import com.schokobaer.battleofgods.category.tier.GameTier;
 import com.schokobaer.battleofgods.category.tier.GameTiers;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.network.chat.Style;
+import net.minecraft.network.chat.contents.TranslatableContents;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
@@ -253,7 +255,7 @@ public abstract class AbstractSubClass {
         List<Component> components = new ArrayList<>();
 
         ///Rarity
-        components.add(Component.translatable("rarity.battleofgods." +
+        tooltip.add(1, Component.translatable("rarity.battleofgods." +
                 this.getRarity().getDisplayName().toLowerCase()).setStyle(
                 Style.EMPTY.withColor(this.getRarity().getColor())
                         .withItalic(true)
@@ -297,7 +299,26 @@ public abstract class AbstractSubClass {
                 .append(" ")
                 .append(componentAutoSwing));
 
-        tooltip.addAll(components);
+        tooltip.addAll(1, components);
+
+        int index = -1;
+        for (int i = 0; i < tooltip.size(); i++) {
+            Component comp = tooltip.get(i);
+            if (comp.getContents() instanceof TranslatableContents tc) { // TranslatableContents kommt mit 1.20.1
+                if (tc.getKey().equals("item.modifiers.mainhand")) {
+                    index = i;
+                    break;
+                }
+            }
+        }
+
+        // Wenn gefunden, füge direkt darunter ein
+        if (index != -1) {
+            tooltip.addAll(1, components);;
+        } else {
+            // Falls nicht gefunden, einfach ans Ende
+            tooltip.addAll(1, components);
+        }
     }
 
     public boolean hasCraftingRemainingItem(ItemStack stack) {
