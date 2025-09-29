@@ -3,7 +3,7 @@ package com.schokobaer.battleofgods.item.tier1;
 import com.google.common.collect.LinkedHashMultimap;
 import com.google.common.collect.Multimap;
 import com.schokobaer.battleofgods.category.AbstractSubClass;
-import com.schokobaer.battleofgods.category.subClass.TerrariaPickaxe;
+import com.schokobaer.battleofgods.category.subClass.TerrariaAxe;
 import com.schokobaer.battleofgods.category.tier.GameTiers;
 import com.schokobaer.battleofgods.category.tier.Tiers;
 import net.minecraft.tags.BlockTags;
@@ -15,16 +15,16 @@ import net.minecraftforge.common.ForgeMod;
 
 import java.util.UUID;
 
-public class ItemCopperPickaxe extends TerrariaPickaxe {
-    public ItemCopperPickaxe() {
+public class ItemCopperAxe extends TerrariaAxe {
+    public ItemCopperAxe() {
         super(Tiers.GOLD,
-                15,
-                2,
-                AbstractSubClass.getAttackSpeedFromUseTime(23),
-                2,
+                21,
+                4,
+                AbstractSubClass.getAttackSpeedFromUseTime(30),
+                4.5,
                 com.schokobaer.battleofgods.category.rarity.Rarities.WHITE,
                 GameTiers.TIER_1,
-                BlockTags.MINEABLE_WITH_PICKAXE
+                BlockTags.MINEABLE_WITH_AXE
         );
     }
 

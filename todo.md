@@ -40,7 +40,7 @@
     - [x] Copper Leggings
     - [x] Copper Boots
   - [x] Copper Pickaxe
-  - [ ] Copper Axe
+  - [x] Copper Axe
   - [ ] Copper Bow
     - [ ] Copper Recipes (Shortsword & Broadsword have to be crafted at anvil)
 - [ ] Tin Full Set

@@ -30,6 +30,7 @@ public class InitItem {
     //Misc
     //Tools
     public static final RegistryObject<PickaxeItem> COPPER_PICKAXE = ITEMS.register("copper_pickaxe", ItemCopperPickaxe::new);
+    public static final RegistryObject<AxeItem> COPPER_AXE = ITEMS.register("copper_axe", ItemCopperAxe::new);
     //Consumables
     //Blocks
     public static final RegistryObject<Item> WOODEN_WORKBENCH = block(InitBlocks.WOODEN_WORKBENCH);
