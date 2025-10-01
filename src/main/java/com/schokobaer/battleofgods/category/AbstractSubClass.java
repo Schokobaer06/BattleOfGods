@@ -350,7 +350,7 @@ public abstract class AbstractSubClass {
         }
 
 
-        tooltip.addAll(components);
+        tooltip.addAll(1,components);
     }
 
     public boolean hasCraftingRemainingItem(ItemStack stack) {
