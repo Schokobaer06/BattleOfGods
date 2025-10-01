@@ -16,10 +16,11 @@ public enum Tiers implements Tier {
     COBALT(5),
     MYTHRIL(6),
     ADAMANTITE(7),
-    CHLOROPHYTE(8),
-    LIHZAHRD(9),
-    EXODIUM(10),
-    AURIC(11);
+    HALLOWED(8),
+    CHLOROPHYTE(9),
+    LIHZAHRD(10),
+    UELIBLOOM(11),
+    AURIC(12);
 
     private final int harvestLevel;
 

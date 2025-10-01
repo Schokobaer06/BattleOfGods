@@ -29,10 +29,11 @@ import java.util.UUID;
 public class TerrariaAxe extends AxeItem implements SubClassMethods {
     private final int miningSpeed;
     private final double knockback;
+    private final int axePower;
     private final AbstractSubClass subClass = new AbstractSubClass() {
     };
 
-    public TerrariaAxe(Tier tier, int miningSpeed, int attackDamage, float attackSpeed, double knockback, Rarities rarity, GameTier gameTier, TagKey<Block> blocktag) {
+    public TerrariaAxe(Tier tier, int miningSpeed, int axePower, int attackDamage, float attackSpeed, double knockback, Rarities rarity, GameTier gameTier, TagKey<Block> blocktag) {
         super(AbstractSubClass.getTier(tier, rarity.getEnchantmentLevel(), AbstractSubClass.getDestroySpeedFromMiningSpeed(miningSpeed), blocktag), attackDamage, attackSpeed, new Properties()
                 .durability(0)
                 .defaultDurability(0)
@@ -44,6 +45,7 @@ public class TerrariaAxe extends AxeItem implements SubClassMethods {
         this.subClass.setRarity(rarity.getRarity());
         this.subClass.setGameTier(gameTier);
         this.miningSpeed = miningSpeed;
+        this.axePower = axePower;
     }
 
     @Override
@@ -55,14 +57,6 @@ public class TerrariaAxe extends AxeItem implements SubClassMethods {
     public void appendHoverText(ItemStack itemstack, Level level, List<Component> tooltip, TooltipFlag flag) {
         subClass.appendHoverText(itemstack, level, tooltip, flag);
         super.appendHoverText(itemstack, level, tooltip, flag);
-
-        tooltip.add(
-                Component.literal(miningSpeed + "% ")
-                        .withStyle(ChatFormatting.WHITE)
-                        .append(
-                                Component.translatable("tooltip.battleofgods.axe_power")
-                                        .withStyle(AbstractSubClass.getStyle()))
-        );
     }
 
 
@@ -131,5 +125,9 @@ public class TerrariaAxe extends AxeItem implements SubClassMethods {
 
     public float getDamage() {
         return this.getAttackDamage();
+    }
+
+    public int getAxePower() {
+        return this.axePower;
     }
 }

@@ -19,6 +19,7 @@ public class ItemCopperPickaxe extends TerrariaPickaxe {
     public ItemCopperPickaxe() {
         super(Tiers.GOLD,
                 15,
+                35,
                 2,
                 AbstractSubClass.getAttackSpeedFromUseTime(23),
                 2,

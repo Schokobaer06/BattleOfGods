@@ -6,7 +6,9 @@ import com.schokobaer.battleofgods.category.mainClass.MainClass;
 import com.schokobaer.battleofgods.category.mainClass.MainClasses;
 import com.schokobaer.battleofgods.category.rarity.Rarities;
 import com.schokobaer.battleofgods.category.rarity.Rarity;
+import com.schokobaer.battleofgods.category.subClass.TerrariaAxe;
 import com.schokobaer.battleofgods.category.subClass.TerrariaBow;
+import com.schokobaer.battleofgods.category.subClass.TerrariaPickaxe;
 import com.schokobaer.battleofgods.category.tier.GameTier;
 import com.schokobaer.battleofgods.category.tier.GameTiers;
 import net.minecraft.ChatFormatting;
@@ -77,12 +79,12 @@ public abstract class AbstractSubClass {
             }
 
             @Override
-            public net.minecraft.tags.TagKey<net.minecraft.world.level.block.Block> getTag() {
+            public TagKey<Block> getTag() {
                 return blockTag;
             }
 
             @Override
-            public net.minecraft.world.item.crafting.Ingredient getRepairIngredient() {
+            public Ingredient getRepairIngredient() {
                 // Terraria‐Style: keine Reparatur
                 return Ingredient.EMPTY;
             }
@@ -128,7 +130,7 @@ public abstract class AbstractSubClass {
             }
 
             @Override
-            public net.minecraft.world.item.crafting.Ingredient getRepairIngredient() {
+            public Ingredient getRepairIngredient() {
                 // Terraria‐Style: keine Reparatur
                 return Ingredient.EMPTY;
             }
@@ -246,16 +248,40 @@ public abstract class AbstractSubClass {
         return Style.EMPTY.withColor(ChatFormatting.DARK_GREEN);
     }
 
+    public int getDefaultToolPower(Tier tier){
+        int power = switch (tier.getLevel()) {
+            case 0 -> 25;   // Wood, Gold (vanilla variant) Tools
+            case 1 -> 30;   // Stone Tools
+            case 2 -> 35;   // Everything that destroys Gold/Platin Ore, for example Iron Tools, Gold (BattleofGods variant) Tools, etc.
+            case 3 -> 55;   //  Everything that destroys Evil Ores, for example Platin Tools, Diamond Tools, etc
+            case 4 -> 65;   // Everything that destroys Hellstone, for example Evil Ore Tools, Netherite Tools, etc.
+            case 5 -> 100; // Everything that destroys Cobalt, for example Hellstone Tools
+            case 6 -> 110; // Everything that destroys Mythril, for example Cobalt Tools
+            case 7 -> 150; // Everything that destroys Adamantite, for example Mythril Tools
+            case 8 -> 180; // Everything that destroys Hallowed Ore, for example Adamantite Tools
+            case 9 -> 200; // Everything that destroys Chlorophyte Ore, for example Pickaxe Axe
+            case 10 -> 210; // Everything that destroys Lihzahrd Ore, for example Picksaw
+            case 11 -> 225; // Everything that destroys Uelibloom Ore, for example Lunar Pickaxe
+            case 12 -> 250; // Everything that destroys Auric Ore, for example Blossom Pickaxe
+            default -> 0;
+        };
+
+        if (tier.getLevel() > 12) {
+            return tier.getLevel() * 25;
+        }
+        return power;
+    }
+
 
     @OnlyIn(Dist.CLIENT)
-    public void appendHoverText(ItemStack itemstack, Level level, List<net.minecraft.network.chat.Component> tooltip, TooltipFlag flag) {
+    public void appendHoverText(ItemStack itemstack, Level level, List<Component> tooltip, TooltipFlag flag) {
         if (itemstack.getItem().getClass().getSuperclass() == null && !(SubClassMethods.class.isAssignableFrom(itemstack.getItem().getClass().getSuperclass()))) return;
         SubClassMethods subClassItem = (SubClassMethods) itemstack.getItem().getClass().getSuperclass().cast(itemstack.getItem());
 
         List<Component> components = new ArrayList<>();
 
         ///Rarity
-        tooltip.add(1, Component.translatable("rarity.battleofgods." +
+        components.add(Component.translatable("rarity.battleofgods." +
                 this.getRarity().getDisplayName().toLowerCase()).setStyle(
                 Style.EMPTY.withColor(this.getRarity().getColor())
                         .withItalic(true)
@@ -299,26 +325,32 @@ public abstract class AbstractSubClass {
                 .append(" ")
                 .append(componentAutoSwing));
 
-        tooltip.addAll(1, components);
+        /// Tool Power
+        if (subClassItem.getMainClass() == MainClasses.TOOL){
+            int toolPower = 0;
+            if (subClassItem.getClass().getSuperclass() == TerrariaPickaxe.class){
+                toolPower = ((TerrariaPickaxe) itemstack.getItem()).getPickaxePower();
 
-        int index = -1;
-        for (int i = 0; i < tooltip.size(); i++) {
-            Component comp = tooltip.get(i);
-            if (comp.getContents() instanceof TranslatableContents tc) { // TranslatableContents kommt mit 1.20.1
-                if (tc.getKey().equals("item.modifiers.mainhand")) {
-                    index = i;
-                    break;
-                }
+                components.add(Component.literal(toolPower + "% ")
+                        .withStyle(ChatFormatting.WHITE)
+                        .append(Component.translatable("tooltip.battleofgods.pickaxe_power")
+                                .withStyle(AbstractSubClass.getStyle())));
             }
+            if (subClassItem.getClass().getSuperclass() == TerrariaAxe.class){
+                toolPower = ((TerrariaAxe) itemstack.getItem()).getAxePower();
+                components.add(Component.literal(toolPower + "% ")
+                        .withStyle(ChatFormatting.WHITE)
+                        .append(Component.translatable("tooltip.battleofgods.axe_power")
+                                .withStyle(AbstractSubClass.getStyle())));
+            }
+
+
+
+
         }
 
-        // Wenn gefunden, füge direkt darunter ein
-        if (index != -1) {
-            tooltip.addAll(1, components);;
-        } else {
-            // Falls nicht gefunden, einfach ans Ende
-            tooltip.addAll(1, components);
-        }
+
+        tooltip.addAll(components);
     }
 
     public boolean hasCraftingRemainingItem(ItemStack stack) {
@@ -337,7 +369,7 @@ public abstract class AbstractSubClass {
         }
         return retval;
     }
-
+/*
     public static class asTiers implements Tier {
 
 
@@ -371,5 +403,5 @@ public abstract class AbstractSubClass {
             return null;
         }
     }
-
+*/
 }

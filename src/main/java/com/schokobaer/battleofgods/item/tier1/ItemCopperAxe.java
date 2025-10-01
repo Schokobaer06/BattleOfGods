@@ -19,6 +19,7 @@ public class ItemCopperAxe extends TerrariaAxe {
     public ItemCopperAxe() {
         super(Tiers.GOLD,
                 21,
+                35,
                 4,
                 AbstractSubClass.getAttackSpeedFromUseTime(30),
                 4.5,
