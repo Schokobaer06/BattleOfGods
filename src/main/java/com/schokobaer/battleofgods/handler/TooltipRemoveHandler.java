@@ -27,18 +27,19 @@ public class TooltipRemoveHandler {
             event.getToolTip().removeIf(component -> component.contains(
                     Component.translatable("attribute.battleofgods.generic.critical_hit")
             ));
-            //Knockback Chance
+            /*
+            //Knockback
             event.getToolTip().removeIf(component -> component.contains(
                     Component.translatable("attribute.name.generic.attack_knockback")
-            ));
+            ));*/
             // Damage
             event.getToolTip().removeIf(component -> component.contains(
                     Component.translatable("attribute.name.generic.attack_damage")
-            ));
+            ));/*
             // Attack Speed
             event.getToolTip().removeIf(component -> component.contains(
                     Component.translatable("attribute.name.generic.attack_speed")
-            ));
+            ));*/
 
         }
         if (event.getItemStack().getItem() instanceof TerrariaArmor)
