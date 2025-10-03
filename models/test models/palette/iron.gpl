@@ -1,0 +1,13 @@
+GIMP Palette
+Name: iron ingot
+Columns: 16
+#
+  0   0   0	Index 0
+ 53  53  53	Index 6
+ 88  88  88	Index 8
+ 94  94  94	Index 1
+114 114 114	Index 3
+130 130 130	Index 7
+168 168 168	Index 2
+216 216 216	Index 4
+255 255 255	Index 5
