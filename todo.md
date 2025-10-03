@@ -160,6 +160,13 @@
         - [ ] Bag
         - [ ] Drops
             - [ ] Squirrel Squire Staff
+- [ ] Tags
+  - [ ] Item Tags
+  - [ ] Block Tags
+  - [ ] Entity Tags
+  - [ ] Armor Tags
+  - [ ] Tool Tags
+  - [ ] Recipe Material Tags
 - [ ] Config
     - [ ] Spawn Biome
   - [ ] OmniMovement Toggle
