@@ -1,9 +1,9 @@
-package com.schokobaer.battleofgods.category;
+package com.schokobaer.battleofgods.utils;
 
 import com.google.common.collect.Multimap;
-import com.schokobaer.battleofgods.category.mainClass.MainClass;
-import com.schokobaer.battleofgods.category.rarity.Rarity;
-import com.schokobaer.battleofgods.category.tier.GameTier;
+import com.schokobaer.battleofgods.utils.mainClass.MainClass;
+import com.schokobaer.battleofgods.utils.rarity.Rarity;
+import com.schokobaer.battleofgods.utils.tier.GameTier;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.ai.attributes.Attribute;

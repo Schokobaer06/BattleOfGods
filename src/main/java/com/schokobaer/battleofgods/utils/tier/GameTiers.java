@@ -1,4 +1,4 @@
-package com.schokobaer.battleofgods.category.tier;
+package com.schokobaer.battleofgods.utils.tier;
 
 public enum GameTiers implements GameTier{
     TIER_1(),

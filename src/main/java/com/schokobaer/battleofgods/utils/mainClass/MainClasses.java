@@ -1,4 +1,4 @@
-package com.schokobaer.battleofgods.category.mainClass;
+package com.schokobaer.battleofgods.utils.mainClass;
 
 public enum MainClasses implements MainClass{
     MISC("misc"),

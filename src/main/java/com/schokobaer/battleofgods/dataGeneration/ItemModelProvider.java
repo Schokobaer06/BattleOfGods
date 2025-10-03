@@ -1,7 +1,7 @@
 package com.schokobaer.battleofgods.dataGeneration;
 
 import com.schokobaer.battleofgods.BattleOfGods;
-import com.schokobaer.battleofgods.category.subClass.TerrariaArmor;
+import com.schokobaer.battleofgods.utils.subClass.TerrariaArmor;
 import com.schokobaer.battleofgods.init.InitItem;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;

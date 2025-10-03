@@ -1,23 +1,22 @@
-package com.schokobaer.battleofgods.category.subClass;
+package com.schokobaer.battleofgods.utils.subClass;
 
 import com.google.common.collect.LinkedHashMultimap;
 import com.google.common.collect.Multimap;
-import com.schokobaer.battleofgods.category.AbstractSubClass;
-import com.schokobaer.battleofgods.category.SubClassMethods;
-import com.schokobaer.battleofgods.category.mainClass.MainClass;
-import com.schokobaer.battleofgods.category.mainClass.MainClasses;
-import com.schokobaer.battleofgods.category.rarity.Rarities;
-import com.schokobaer.battleofgods.category.rarity.Rarity;
-import com.schokobaer.battleofgods.category.tier.GameTier;
-import net.minecraft.ChatFormatting;
+import com.schokobaer.battleofgods.utils.AbstractSubClass;
+import com.schokobaer.battleofgods.utils.SubClassMethods;
+import com.schokobaer.battleofgods.utils.mainClass.MainClass;
+import com.schokobaer.battleofgods.utils.mainClass.MainClasses;
+import com.schokobaer.battleofgods.utils.rarity.Rarities;
+import com.schokobaer.battleofgods.utils.rarity.Rarity;
+import com.schokobaer.battleofgods.utils.tier.GameTier;
 import net.minecraft.network.chat.Component;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.world.item.AxeItem;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.PickaxeItem;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
@@ -26,14 +25,14 @@ import net.minecraft.world.level.block.Block;
 import java.util.List;
 import java.util.UUID;
 
-public class TerrariaPickaxe extends PickaxeItem implements SubClassMethods {
+public class TerrariaAxe extends AxeItem implements SubClassMethods {
     private final int miningSpeed;
     private final double knockback;
-    private final int pickaxePower;
+    private final int axePower;
     private final AbstractSubClass subClass = new AbstractSubClass() {
     };
 
-    public TerrariaPickaxe(Tier tier, int miningSpeed, int pickaxePower, int attackDamage, float attackSpeed, double knockback, Rarities rarity, GameTier gameTier, TagKey<Block> blocktag) {
+    public TerrariaAxe(Tier tier, int miningSpeed, int axePower, int attackDamage, float attackSpeed, double knockback, Rarities rarity, GameTier gameTier, TagKey<Block> blocktag) {
         super(AbstractSubClass.getTier(tier, rarity.getEnchantmentLevel(), AbstractSubClass.getDestroySpeedFromMiningSpeed(miningSpeed), blocktag), attackDamage, attackSpeed, new Properties()
                 .durability(0)
                 .defaultDurability(0)
@@ -45,7 +44,7 @@ public class TerrariaPickaxe extends PickaxeItem implements SubClassMethods {
         this.subClass.setRarity(rarity.getRarity());
         this.subClass.setGameTier(gameTier);
         this.miningSpeed = miningSpeed;
-        this.pickaxePower = pickaxePower;
+        this.axePower = axePower;
     }
 
     @Override
@@ -127,7 +126,7 @@ public class TerrariaPickaxe extends PickaxeItem implements SubClassMethods {
         return this.getAttackDamage();
     }
 
-    public int getPickaxePower() {
-        return this.pickaxePower;
+    public int getAxePower() {
+        return this.axePower;
     }
 }

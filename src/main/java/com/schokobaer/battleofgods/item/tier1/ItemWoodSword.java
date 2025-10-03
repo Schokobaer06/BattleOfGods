@@ -1,9 +1,9 @@
 package com.schokobaer.battleofgods.item.tier1;
 
-import com.schokobaer.battleofgods.category.rarity.Rarities;
-import com.schokobaer.battleofgods.category.subClass.Broadsword;
-import com.schokobaer.battleofgods.category.tier.GameTiers;
-import com.schokobaer.battleofgods.category.tier.Tiers;
+import com.schokobaer.battleofgods.utils.rarity.Rarities;
+import com.schokobaer.battleofgods.utils.subClass.Broadsword;
+import com.schokobaer.battleofgods.utils.tier.GameTiers;
+import com.schokobaer.battleofgods.utils.tier.Tiers;
 
 public class ItemWoodSword extends Broadsword {
     public ItemWoodSword() {

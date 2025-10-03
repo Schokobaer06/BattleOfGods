@@ -1,21 +1,19 @@
-package com.schokobaer.battleofgods.category;
+package com.schokobaer.battleofgods.utils;
 
 
 import com.schokobaer.battleofgods.BattleOfGods;
-import com.schokobaer.battleofgods.category.mainClass.MainClass;
-import com.schokobaer.battleofgods.category.mainClass.MainClasses;
-import com.schokobaer.battleofgods.category.rarity.Rarities;
-import com.schokobaer.battleofgods.category.rarity.Rarity;
-import com.schokobaer.battleofgods.category.subClass.TerrariaAxe;
-import com.schokobaer.battleofgods.category.subClass.TerrariaBow;
-import com.schokobaer.battleofgods.category.subClass.TerrariaPickaxe;
-import com.schokobaer.battleofgods.category.tier.GameTier;
-import com.schokobaer.battleofgods.category.tier.GameTiers;
+import com.schokobaer.battleofgods.utils.mainClass.MainClass;
+import com.schokobaer.battleofgods.utils.mainClass.MainClasses;
+import com.schokobaer.battleofgods.utils.rarity.Rarities;
+import com.schokobaer.battleofgods.utils.rarity.Rarity;
+import com.schokobaer.battleofgods.utils.subClass.TerrariaAxe;
+import com.schokobaer.battleofgods.utils.subClass.TerrariaBow;
+import com.schokobaer.battleofgods.utils.subClass.TerrariaPickaxe;
+import com.schokobaer.battleofgods.utils.tier.GameTier;
+import com.schokobaer.battleofgods.utils.tier.GameTiers;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.network.chat.Style;
-import net.minecraft.network.chat.contents.TranslatableContents;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;

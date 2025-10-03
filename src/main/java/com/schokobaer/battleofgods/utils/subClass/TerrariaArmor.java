@@ -1,13 +1,13 @@
-package com.schokobaer.battleofgods.category.subClass;
+package com.schokobaer.battleofgods.utils.subClass;
 
 import com.google.common.collect.Multimap;
-import com.schokobaer.battleofgods.category.AbstractSubClass;
-import com.schokobaer.battleofgods.category.SubClassMethods;
-import com.schokobaer.battleofgods.category.mainClass.MainClass;
-import com.schokobaer.battleofgods.category.mainClass.MainClasses;
-import com.schokobaer.battleofgods.category.rarity.Rarities;
-import com.schokobaer.battleofgods.category.rarity.Rarity;
-import com.schokobaer.battleofgods.category.tier.GameTier;
+import com.schokobaer.battleofgods.utils.AbstractSubClass;
+import com.schokobaer.battleofgods.utils.SubClassMethods;
+import com.schokobaer.battleofgods.utils.mainClass.MainClass;
+import com.schokobaer.battleofgods.utils.mainClass.MainClasses;
+import com.schokobaer.battleofgods.utils.rarity.Rarities;
+import com.schokobaer.battleofgods.utils.rarity.Rarity;
+import com.schokobaer.battleofgods.utils.tier.GameTier;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.Style;
 import net.minecraft.resources.ResourceLocation;

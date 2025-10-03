@@ -1,7 +1,7 @@
     package com.schokobaer.battleofgods.handler;
 
     import com.schokobaer.battleofgods.BattleOfGods;
-    import com.schokobaer.battleofgods.category.subClass.TerrariaBow;
+    import com.schokobaer.battleofgods.utils.subClass.TerrariaBow;
     import net.minecraft.client.KeyMapping;
     import net.minecraft.client.Minecraft;
     import net.minecraft.world.entity.player.Player;

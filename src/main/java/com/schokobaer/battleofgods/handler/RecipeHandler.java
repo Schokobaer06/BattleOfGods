@@ -29,7 +29,7 @@ public class RecipeHandler {
     private static final Map<ResourceLocation, BattleRecipe> RECIPE_MAP = new HashMap<>();
     private static final Set<Item> MATERIAL_ITEMS = new HashSet<>();
 
-    // Comparator, sorts by category and then by group
+    // Comparator, sorts by utils and then by group
     private static final Comparator<BattleRecipe> RECIPE_COMPARATOR =
             Comparator.comparing(BattleRecipe::getCategory)
                     .thenComparing(BattleRecipe::getGroup);
@@ -53,7 +53,7 @@ public class RecipeHandler {
                     // Parse die JSON-Datei manuell
                     JsonObject json = JsonParser.parseReader(new InputStreamReader(stream)).getAsJsonObject();
                     String group = json.get("group").getAsString();
-                    String category = json.has("category") ? json.get("category").getAsString() : "misc";
+                    String category = json.has("utils") ? json.get("utils").getAsString() : "misc";
                     boolean replace = json.has("replace") && json.get("replace").getAsBoolean();
 
                     // Parse die Zutaten
@@ -245,7 +245,7 @@ public class RecipeHandler {
          *
          * @param id       the ID of the recipe
          * @param group    the group of the recipe
-         * @param category the category of the recipe
+         * @param category the utils of the recipe
          * @param replace  whether to replace the recipe
          * @param inputs   the inputs of the recipe
          * @param output   the output of the recipe
@@ -350,7 +350,7 @@ public class RecipeHandler {
                 // Extrahiere die Felder
                 ResourceLocation id = new ResourceLocation(obj.get("type").getAsString());
                 String group = obj.get("group").getAsString();
-                String category = obj.has("category") ? obj.get("category").getAsString() : "misc";
+                String category = obj.has("utils") ? obj.get("utils").getAsString() : "misc";
                 boolean replace = obj.has("replace") && obj.get("replace").getAsBoolean();
 
                 // Parse Inputs

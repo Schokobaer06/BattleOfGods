@@ -42,7 +42,7 @@ public class BattleRecipeProvider extends RecipeProvider {
         public void serializeRecipeData(JsonObject json) {
             json.addProperty("type", "battleofgods:default_recipe");
             json.addProperty("group", battleRecipe.getGroup());
-            json.addProperty("category", battleRecipe.getCategory());
+            json.addProperty("utils", battleRecipe.getCategory());
             json.addProperty("replace", battleRecipe.isReplace());
 
             // Zutaten hinzufügen

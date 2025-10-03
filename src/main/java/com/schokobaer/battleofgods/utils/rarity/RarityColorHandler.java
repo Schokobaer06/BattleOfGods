@@ -1,4 +1,4 @@
-package com.schokobaer.battleofgods.category.rarity;
+package com.schokobaer.battleofgods.utils.rarity;
 
 import com.mojang.blaze3d.platform.NativeImage;
 import com.schokobaer.battleofgods.BattleOfGods;

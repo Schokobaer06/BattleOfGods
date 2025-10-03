@@ -1,7 +1,7 @@
 package com.schokobaer.battleofgods.dataGeneration;
 
 import com.schokobaer.battleofgods.BattleOfGods;
-import com.schokobaer.battleofgods.category.SubClassMethods;
+import com.schokobaer.battleofgods.utils.SubClassMethods;
 import com.schokobaer.battleofgods.init.InitItem;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;

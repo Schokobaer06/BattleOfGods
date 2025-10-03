@@ -1,9 +1,9 @@
 package com.schokobaer.battleofgods.armor.tier1;
 
 import com.schokobaer.battleofgods.BattleOfGods;
-import com.schokobaer.battleofgods.category.rarity.Rarities;
-import com.schokobaer.battleofgods.category.subClass.TerrariaArmor;
-import com.schokobaer.battleofgods.category.tier.GameTiers;
+import com.schokobaer.battleofgods.utils.rarity.Rarities;
+import com.schokobaer.battleofgods.utils.subClass.TerrariaArmor;
+import com.schokobaer.battleofgods.utils.tier.GameTiers;
 import net.minecraft.client.model.HumanoidModel;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;

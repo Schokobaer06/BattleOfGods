@@ -1,4 +1,4 @@
-package com.schokobaer.battleofgods.category.tier;
+package com.schokobaer.battleofgods.utils.tier;
 
 import com.schokobaer.battleofgods.BattleOfGods;
 import net.minecraft.resources.ResourceLocation;

@@ -1,7 +1,7 @@
 package com.schokobaer.battleofgods.handler;
 
 import com.schokobaer.battleofgods.BattleOfGods;
-import com.schokobaer.battleofgods.category.AbstractSubClass;
+import com.schokobaer.battleofgods.utils.AbstractSubClass;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.Style;
 import net.minecraft.tags.ItemTags;

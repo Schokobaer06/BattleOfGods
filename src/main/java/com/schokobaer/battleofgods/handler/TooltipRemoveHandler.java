@@ -1,7 +1,7 @@
 package com.schokobaer.battleofgods.handler;
 
 import com.schokobaer.battleofgods.BattleOfGods;
-import com.schokobaer.battleofgods.category.subClass.TerrariaArmor;
+import com.schokobaer.battleofgods.utils.subClass.TerrariaArmor;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.api.distmarker.Dist;

@@ -2,10 +2,10 @@ package com.schokobaer.battleofgods.item.tier1;
 
 import com.google.common.collect.LinkedHashMultimap;
 import com.google.common.collect.Multimap;
-import com.schokobaer.battleofgods.category.AbstractSubClass;
-import com.schokobaer.battleofgods.category.subClass.TerrariaPickaxe;
-import com.schokobaer.battleofgods.category.tier.GameTiers;
-import com.schokobaer.battleofgods.category.tier.Tiers;
+import com.schokobaer.battleofgods.utils.AbstractSubClass;
+import com.schokobaer.battleofgods.utils.subClass.TerrariaPickaxe;
+import com.schokobaer.battleofgods.utils.tier.GameTiers;
+import com.schokobaer.battleofgods.utils.tier.Tiers;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.ai.attributes.Attribute;
@@ -23,7 +23,7 @@ public class ItemCopperPickaxe extends TerrariaPickaxe {
                 2,
                 AbstractSubClass.getAttackSpeedFromUseTime(23),
                 2,
-                com.schokobaer.battleofgods.category.rarity.Rarities.WHITE,
+                com.schokobaer.battleofgods.utils.rarity.Rarities.WHITE,
                 GameTiers.TIER_1,
                 BlockTags.MINEABLE_WITH_PICKAXE
         );
