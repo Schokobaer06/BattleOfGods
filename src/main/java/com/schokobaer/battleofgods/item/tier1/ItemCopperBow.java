@@ -4,13 +4,12 @@ import com.schokobaer.battleofgods.utils.rarity.Rarities;
 import com.schokobaer.battleofgods.utils.subClass.TerrariaBow;
 import com.schokobaer.battleofgods.utils.tier.GameTiers;
 
-public class ItemWoodBow extends TerrariaBow {
-
-    public ItemWoodBow() {
+public class ItemCopperBow extends TerrariaBow {
+    public ItemCopperBow() {
         super(
-                4,
-                6.1f,
-                30,
+                6,
+                6.6f,
+                29,
                 0,
                 false,
                 0,

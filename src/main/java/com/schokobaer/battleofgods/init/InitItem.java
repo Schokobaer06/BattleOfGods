@@ -21,7 +21,8 @@ public class InitItem {
     public static final RegistryObject<SwordItem> COPPER_SHORTSWORD = ITEMS.register("copper_shortsword", ItemCopperShortsword::new);
     public static final RegistryObject<SwordItem> WOOD_SWORD = ITEMS.register("wood_sword", ItemWoodSword::new);
     //Ranged
-    public static final RegistryObject<TerrariaBow> WOOD_BOW = ITEMS.register("wood_bow", ItemWoodBow::new);
+    public static final RegistryObject<BowItem> WOOD_BOW = ITEMS.register("wood_bow", ItemWoodBow::new);
+    public static final RegistryObject<BowItem> COPPER_BOW = ITEMS.register("copper_bow", ItemCopperBow::new);
     //Magic
     //Summon
     //Throwing
@@ -35,14 +36,14 @@ public class InitItem {
     //Blocks
     public static final RegistryObject<Item> WOODEN_WORKBENCH = block(InitBlocks.WOODEN_WORKBENCH);
     //Armor
-    public static final RegistryObject<TerrariaArmor> WOOD_ARMOR_HELMET = ITEMS.register("wood_armor_helmet", () -> new WoodArmor(ArmorItem.Type.HELMET));
-    public static final RegistryObject<TerrariaArmor> WOOD_ARMOR_CHESTPLATE = ITEMS.register("wood_armor_chestplate", () -> new WoodArmor(ArmorItem.Type.CHESTPLATE));
-    public static final RegistryObject<TerrariaArmor> WOOD_ARMOR_LEGGINGS = ITEMS.register("wood_armor_leggings", () -> new WoodArmor(ArmorItem.Type.LEGGINGS));
-    public static final RegistryObject<TerrariaArmor> WOOD_ARMOR_BOOTS = ITEMS.register("wood_armor_boots", () -> new WoodArmor(ArmorItem.Type.BOOTS));
-    public static final RegistryObject<TerrariaArmor> COPPER_ARMOR_HELMET = ITEMS.register("copper_armor_helmet", () -> new CopperArmor(ArmorItem.Type.HELMET));
-    public static final RegistryObject<TerrariaArmor> COPPER_ARMOR_CHESTPLATE = ITEMS.register("copper_armor_chestplate", () -> new CopperArmor(ArmorItem.Type.CHESTPLATE));
-    public static final RegistryObject<TerrariaArmor> COPPER_ARMOR_LEGGINGS = ITEMS.register("copper_armor_leggings", () -> new CopperArmor(ArmorItem.Type.LEGGINGS));
-    public static final RegistryObject<TerrariaArmor> COPPER_ARMOR_BOOTS = ITEMS.register("copper_armor_boots", () -> new CopperArmor(ArmorItem.Type.BOOTS));
+    public static final RegistryObject<ArmorItem> WOOD_ARMOR_HELMET = ITEMS.register("wood_armor_helmet", () -> new WoodArmor(ArmorItem.Type.HELMET));
+    public static final RegistryObject<ArmorItem> WOOD_ARMOR_CHESTPLATE = ITEMS.register("wood_armor_chestplate", () -> new WoodArmor(ArmorItem.Type.CHESTPLATE));
+    public static final RegistryObject<ArmorItem> WOOD_ARMOR_LEGGINGS = ITEMS.register("wood_armor_leggings", () -> new WoodArmor(ArmorItem.Type.LEGGINGS));
+    public static final RegistryObject<ArmorItem> WOOD_ARMOR_BOOTS = ITEMS.register("wood_armor_boots", () -> new WoodArmor(ArmorItem.Type.BOOTS));
+    public static final RegistryObject<ArmorItem> COPPER_ARMOR_HELMET = ITEMS.register("copper_armor_helmet", () -> new CopperArmor(ArmorItem.Type.HELMET));
+    public static final RegistryObject<ArmorItem> COPPER_ARMOR_CHESTPLATE = ITEMS.register("copper_armor_chestplate", () -> new CopperArmor(ArmorItem.Type.CHESTPLATE));
+    public static final RegistryObject<ArmorItem> COPPER_ARMOR_LEGGINGS = ITEMS.register("copper_armor_leggings", () -> new CopperArmor(ArmorItem.Type.LEGGINGS));
+    public static final RegistryObject<ArmorItem> COPPER_ARMOR_BOOTS = ITEMS.register("copper_armor_boots", () -> new CopperArmor(ArmorItem.Type.BOOTS));
 
 
     /// Methods
