@@ -29,12 +29,12 @@
     - [x] Rarity
     - [x] MainClass
     - [x] Tier
-- [ ] updating AbstractSubclass
-  - [ ] adding AutoSwing
+- [x] updating AbstractSubclass
+  - [x] adding AutoSwing
   - [x] adding True Melee
   - [x] adding appendTooltipExtras into interface
   - [x] optimizing AbstractSubClass
-- [ ] Copper Full Set
+- [x] Copper Full Set
     - [x] Copper Helmet
     - [x] Copper Chestplate
     - [x] Copper Leggings
