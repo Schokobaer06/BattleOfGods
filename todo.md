@@ -41,8 +41,7 @@
     - [x] Copper Boots
   - [x] Copper Pickaxe
   - [x] Copper Axe
-  - [ ] Copper Bow
-    - [ ] Copper Recipes (Shortsword & Broadsword have to be crafted at anvil)
+  - [x] Copper Bow
 - [ ] Tin Full Set
     - [ ] Tin Ore
     - [ ] Tin Ingot
@@ -53,7 +52,6 @@
     - [ ] Tin Pickaxe
   - [ ] Tin Axe
     - [ ] Tin & Copper Tag
-    - [ ] Recipes
 - [ ] Arrows
   - [ ] Fire Arrow
 - [ ] Iron Full Set
@@ -63,7 +61,7 @@
     - [ ] Iron Bow
   - [ ] Iron Axe
     - [ ] Anvil
-    - [ ] Recipes
+    - [ ] Iron Armor (Override?)
 - [ ] Lead Full Set
     - [ ] Lead Ore
     - [ ] Lead Ingot
@@ -75,7 +73,11 @@
   - [ ] Lead Axe
     - [ ] Anvil
     - [ ] Lead & Iron Tag
-    - [ ] Recipes
+- [ ] Recipes
+  - Copper
+  - Tin
+  - Iron
+  - Lead
 - [ ] Items
     - [ ] Cloth
     - [ ] Fallen Star
