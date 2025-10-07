@@ -38,6 +38,13 @@ public abstract class AbstractSubClass {
     private GameTier tier = GameTiers.TIER_1;
 
 
+    public static class Velocity {
+        public static float VELOCITY_MULTIPLIER = 0.25F;
+        public static float MIN_VELOCITY = 1.5F;
+        public static float MAX_VELOCITY = 6.0F;
+        public static float VANILLA_REFERENCE = 3.0F;
+    }
+
     public AbstractSubClass() {
     }
 
@@ -246,7 +253,7 @@ public abstract class AbstractSubClass {
         return Style.EMPTY.withColor(ChatFormatting.DARK_GREEN);
     }
 
-    public int getDefaultToolPower(Tier tier){
+    public static int getDefaultToolPower(Tier tier){
         int power = switch (tier.getLevel()) {
             case 0 -> 25;   // Wood, Gold (vanilla variant) Tools
             case 1 -> 30;   // Stone Tools
@@ -270,6 +277,12 @@ public abstract class AbstractSubClass {
         return power;
     }
 
+    public static float getMinecraftVelocityFromTerrariaVelocity(float velocity) {
+        float baseConversion = (velocity / 10.0F) * Velocity.VANILLA_REFERENCE;
+        float convertedVelocity = baseConversion * Velocity.VELOCITY_MULTIPLIER;
+        return Math.max(Velocity.MIN_VELOCITY,
+                Math.min(Velocity.MAX_VELOCITY, convertedVelocity));
+    }
 
     @OnlyIn(Dist.CLIENT)
     public void appendHoverText(ItemStack itemstack, Level level, List<Component> tooltip, TooltipFlag flag) {

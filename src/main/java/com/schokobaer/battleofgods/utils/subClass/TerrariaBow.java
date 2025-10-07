@@ -10,9 +10,12 @@ import com.schokobaer.battleofgods.utils.mainClass.MainClasses;
 import com.schokobaer.battleofgods.utils.rarity.Rarities;
 import com.schokobaer.battleofgods.utils.rarity.Rarity;
 import com.schokobaer.battleofgods.utils.tier.GameTier;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
+import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
@@ -82,7 +85,7 @@ public abstract class TerrariaBow extends BowItem implements SubClassMethods {
 
         // Full Auto
         if (timeLeft <= 1 && isAutoSwing()) {
-            fireArrow(stack, level, player, player.getUsedItemHand(), 1f);
+            fireArrow(stack, level, player, player.getUsedItemHand());
         }
     }
 
@@ -93,7 +96,7 @@ public abstract class TerrariaBow extends BowItem implements SubClassMethods {
         // Semi Auto
         if (!isAutoSwing() && timeLeft <= (getUseDuration(stack) - getUseTime())) {
             //float power = (float) (this.getUseDuration(stack) - timeLeft) / (float) this.getUseDuration(stack);
-            fireArrow(stack, level, player, player.getUsedItemHand(), 1f);
+            fireArrow(stack, level, player, player.getUsedItemHand());
         }
     }
 
@@ -110,7 +113,7 @@ public abstract class TerrariaBow extends BowItem implements SubClassMethods {
         this.soundEvent = soundEvent;
     }
 
-    protected void fireArrow(ItemStack stack, Level level, Player player, InteractionHand hand, float power) {
+    protected void fireArrow(ItemStack stack, Level level, Player player, InteractionHand hand) {
         AbstractArrow arrow = createArrow(level, player, stack);
         if (arrow == null) {
             BattleOfGods.LOGGER.error("Error: Arrow is null");
@@ -120,13 +123,14 @@ public abstract class TerrariaBow extends BowItem implements SubClassMethods {
         arrow = customizeArrow(arrow);
 
         // Setze den Schaden vor dem Aufruf von shootFromRotation
-        arrow.setBaseDamage(this.getBaseDamage() / (this.getVelocity() * power * 3f));
+        //arrow.setBaseDamage(this.getBaseDamage() / (this.getVelocity() * 3f));
 
         // Schieße den Pfeil
-        arrow.shootFromRotation(player, player.getXRot(), player.getYRot(), 0.0f, this.getVelocity() * power * 3f, 1.0f);
+        arrow.shootFromRotation(player, player.getXRot(), player.getYRot(), 0.0f, AbstractSubClass.getMinecraftVelocityFromTerrariaVelocity(this.getVelocity()), 1.0f);
 
         // Setze den Schaden zurück auf den Basiswert
-        arrow.setBaseDamage(this.getBaseDamage());
+        //arrow.setBaseDamage(this.getBaseDamage());
+        this.spawnArrowParticles(level, player, arrow);
 
         if (!level.isClientSide) {
             level.addFreshEntity(arrow);
@@ -146,7 +150,8 @@ public abstract class TerrariaBow extends BowItem implements SubClassMethods {
         }
         if (BattleOfGods.isDebug())
             BattleOfGods.LOGGER.debug("Arrow fired: {} | {} | {} | {}", arrow.getUUID(), arrow.getPierceLevel(), arrow.getBaseDamage(), arrow.getKnockback());
-        level.playSound(null, player.getX(), player.getY(), player.getZ(), this.getSoundEvent(), player.getSoundSource(), 1.0f, 1.0f);
+        level.playSound(null, player.getX(), player.getY(), player.getZ(), this.getSoundEvent(), SoundSource.PLAYERS, 1.0f, 1.0F / (level.getRandom().nextFloat() * 0.4F + 1.2F) + 0.5F);
+        player.awardStat(Stats.ITEM_USED.get(this));
     }
 
     protected AbstractArrow createArrow(Level level, LivingEntity shooter, ItemStack bowStack) {
@@ -176,7 +181,7 @@ public abstract class TerrariaBow extends BowItem implements SubClassMethods {
 
     protected AbstractArrow customizeArrow(AbstractArrow arrow) {
         // Terraria-Damage + Arrow-Damage
-        double totalDamage = this.getBaseDamage() + arrow.getBaseDamage();
+        double totalDamage = this.getBaseDamage();
         int knockback = this.getKnockback() + arrow.getKnockback();
 
         // Überprüfen, ob der Besitzer des Pfeils eine LivingEntity ist
@@ -301,6 +306,21 @@ public abstract class TerrariaBow extends BowItem implements SubClassMethods {
     public void appendHoverText(ItemStack itemstack, @Nullable Level level, List<Component> tooltip, TooltipFlag flag) {
         subClass.appendHoverText(itemstack, level, tooltip, flag);
         super.appendHoverText(itemstack, level, tooltip, flag);
+    }
+
+    protected void spawnArrowParticles(Level level, LivingEntity shooter, AbstractArrow arrow) {
+        if (level.isClientSide) {
+            // Erzeuge Particles entlang der Flugbahn
+            for (int i = 0; i < 5; ++i) {
+                level.addParticle(ParticleTypes.CRIT,
+                        arrow.getX() + arrow.getDeltaMovement().x * (double) i / 4.0D,
+                        arrow.getY() + arrow.getDeltaMovement().y * (double) i / 4.0D,
+                        arrow.getZ() + arrow.getDeltaMovement().z * (double) i / 4.0D,
+                        -arrow.getDeltaMovement().x,
+                        -arrow.getDeltaMovement().y + 0.2D,
+                        -arrow.getDeltaMovement().z);
+            }
+        }
     }
 
 
