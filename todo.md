@@ -44,7 +44,10 @@
   - [x] Copper Bow
 - [ ] Tin Full Set
     - [ ] Tin Ore
+    - [ ] Tin Raw Ore
+    - [ ] Tin Raw Ore Block
     - [ ] Tin Ingot
+    - [ ] Tin Block
     - [ ] Tin Helmet
     - [ ] Tin Chestplate
     - [ ] Tin Leggings
