@@ -2,6 +2,8 @@
   "replace": false,
   "values": [
     "battleofgods:tin_ore",
-    "battleofgods:deepslate_tin_ore"
+    "battleofgods:deepslate_tin_ore",
+    "battleofgods:tin_block",
+    "battleofgods:raw_tin_block"
   ]
 }

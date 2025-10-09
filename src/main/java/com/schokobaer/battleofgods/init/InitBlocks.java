@@ -17,24 +17,27 @@ public class InitBlocks {
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, BattleOfGods.MODID);
     public static final RegistryObject<Block> WOODEN_WORKBENCH = BLOCKS.register("wooden_workbench", WoodenWorkbenchBlock::new);
 
-    //Ores
+    //Ores - diese sind korrekt!
     public static final RegistryObject<Block> TIN_ORE = BLOCKS.register("tin_ore",
             () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.COPPER_ORE)
-                    .requiresCorrectToolForDrops(), UniformInt.of(2, 5))
-            {
-
-            });
+                    .requiresCorrectToolForDrops(), UniformInt.of(2, 5)));
 
     public static final RegistryObject<Block> DEEPSLATE_TIN_ORE = BLOCKS.register("deepslate_tin_ore",
             () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE_COPPER_ORE)
                     .requiresCorrectToolForDrops(), UniformInt.of(2, 5)));
 
+    // Falls du spezifische Properties willst:
     public static final RegistryObject<Block> TIN_BLOCK = BLOCKS.register("tin_block",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)
+            () -> new Block(BlockBehaviour.Properties.of()
                     .mapColor(MapColor.COLOR_LIGHT_GRAY)
-                    .strength(3.0F, 6.0F).sound(SoundType.COPPER)));
+                    .requiresCorrectToolForDrops()
+                    .strength(3.0F, 6.0F) // Genau wie Copper Block
+                    .sound(SoundType.COPPER)));
 
     public static final RegistryObject<Block> RAW_TIN_BLOCK = BLOCKS.register("raw_tin_block",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.RAW_COPPER_BLOCK)
-                    .mapColor(MapColor.COLOR_LIGHT_GRAY)));
+            () -> new Block(BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.COLOR_LIGHT_GRAY)
+                    .requiresCorrectToolForDrops()
+                    .strength(5.0F, 6.0F) // Genau wie Raw Copper Block
+                    .sound(SoundType.STONE)));
 }
