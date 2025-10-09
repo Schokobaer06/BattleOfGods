@@ -35,6 +35,10 @@ public class InitItem {
     //Consumables
     //Blocks
     public static final RegistryObject<Item> WOODEN_WORKBENCH = block(InitBlocks.WOODEN_WORKBENCH);
+    public static final RegistryObject<Item> TIN_ORE = block(InitBlocks.TIN_ORE);
+    public static final RegistryObject<Item> DEEPSLATE_TIN_ORE = block(InitBlocks.DEEPSLATE_TIN_ORE);
+    public static final RegistryObject<Item> TIN_BLOCK = block(InitBlocks.TIN_BLOCK);
+    public static final RegistryObject<Item> RAW_TIN_BLOCK = block(InitBlocks.RAW_TIN_BLOCK);
     //Armor
     public static final RegistryObject<ArmorItem> WOOD_ARMOR_HELMET = ITEMS.register("wood_armor_helmet", () -> new WoodArmor(ArmorItem.Type.HELMET));
     public static final RegistryObject<ArmorItem> WOOD_ARMOR_CHESTPLATE = ITEMS.register("wood_armor_chestplate", () -> new WoodArmor(ArmorItem.Type.CHESTPLATE));
@@ -44,6 +48,9 @@ public class InitItem {
     public static final RegistryObject<ArmorItem> COPPER_ARMOR_CHESTPLATE = ITEMS.register("copper_armor_chestplate", () -> new CopperArmor(ArmorItem.Type.CHESTPLATE));
     public static final RegistryObject<ArmorItem> COPPER_ARMOR_LEGGINGS = ITEMS.register("copper_armor_leggings", () -> new CopperArmor(ArmorItem.Type.LEGGINGS));
     public static final RegistryObject<ArmorItem> COPPER_ARMOR_BOOTS = ITEMS.register("copper_armor_boots", () -> new CopperArmor(ArmorItem.Type.BOOTS));
+    //Ores
+    public static final RegistryObject<Item> TIN_INGOT = ITEMS.register("tin_ingot",() -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> RAW_TIN = ITEMS.register("raw_tin",() -> new Item(new Item.Properties()));
 
 
     /// Methods
