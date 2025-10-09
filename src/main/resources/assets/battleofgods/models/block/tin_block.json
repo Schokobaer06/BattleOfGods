@@ -1,0 +1,6 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "battleofgods:block/tin_block"
+  }
+}
