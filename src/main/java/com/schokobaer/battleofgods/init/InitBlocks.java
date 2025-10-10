@@ -31,7 +31,7 @@ public class InitBlocks {
             () -> new Block(BlockBehaviour.Properties.of()
                     .mapColor(MapColor.COLOR_LIGHT_GRAY)
                     .requiresCorrectToolForDrops()
-                    .strength(3.0F, 6.0F) // Genau wie Copper Block
+                    .strength(3F, 6F) // Genau wie Copper Block
                     .sound(SoundType.COPPER)));
 
     public static final RegistryObject<Block> RAW_TIN_BLOCK = BLOCKS.register("raw_tin_block",

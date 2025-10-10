@@ -43,17 +43,19 @@
   - [x] Copper Axe
   - [x] Copper Bow
 - [ ] Tin Full Set
-    - [ ] Tin Ore
-    - [ ] Tin Raw Ore
-    - [ ] Tin Raw Ore Block
-    - [ ] Tin Ingot
-    - [ ] Tin Block
+    - [x] Tin Ore
+    - [x] Tin Raw Ore
+    - [x] Tin Raw Ore Block
+    - [x] Tin Ingot
+    - [x] Tin Block
     - [ ] Tin Helmet
     - [ ] Tin Chestplate
     - [ ] Tin Leggings
     - [ ] Tin Boots
     - [ ] Tin Pickaxe
-  - [ ] Tin Axe
+    - [ ] Tin Broadsword/Shortsword
+    - [ ] Tin Bow
+    - [ ] Tin Axe
     - [ ] Tin & Copper Tag
 - [ ] Arrows
   - [ ] Fire Arrow
